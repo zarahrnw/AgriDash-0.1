@@ -1,0 +1,6 @@
+﻿tahun,tanaman,tanaman_asli,luas_panen_ha,produksi_ton,produktivitas_kuintal_ha,is_estimate,sumber
+,Padi,Padi,34198.23,198324.32,57.99,False,BPS Kabupaten Kediri - Tanaman Pangan
+,Kedelai,Kedelai,1.9,2.5,13.17,False,BPS Kabupaten Kediri - Tanaman Pangan
+,Kacang Tanah,Kacang Tanah,476.5,843.7,17.71,False,BPS Kabupaten Kediri - Tanaman Pangan
+,Ubi Jalar,Ubi Jalar,538.5,15825.83,293.89,False,BPS Kabupaten Kediri - Tanaman Pangan
+,Ubi Kayu,Ketela Pohon,652.8,18597.02,284.88,False,BPS Kabupaten Kediri - Tanaman Pangan
