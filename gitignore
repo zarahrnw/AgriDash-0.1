@@ -1,0 +1,40 @@
+# ===== Environment & Secrets =====
+.env
+.env.local
+*.env
+!.env.example
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+.ipynb_checkpoints/
+
+# ===== Node / Frontend =====
+node_modules/
+dist/
+build/
+.next/
+
+# ===== Database =====
+*.sqlite3
+*.db
+
+# ===== ML Models (file besar, jangan commit) =====
+models/trained/*
+!models/trained/.gitkeep
+
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===== Logs =====
+*.log
+logs/
