@@ -1,0 +1,417 @@
+﻿kecamatan,komoditas,luas_panen,satuan_luas_panen,is_estimate,metode,status_qc
+Mojo,Jahe,5000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Mojo,Kapulaga,5500.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Mojo,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Kunyit,1000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Mojo,Laos/Lengkuas,1000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Mojo,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Mojo,Temulawak,4000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Mojo,Jeruk Nipis,500.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Mojo,Serai,3000.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Semen,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Semen,Jeruk Nipis,15000.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Semen,Serai,5000.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Ngadiluwih,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngadiluwih,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kras,Jeruk Nipis,300.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Kras,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ringinrejo,Jeruk Nipis,196.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Ringinrejo,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Mengkudu/Pace,70.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Kandat,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandat,Jeruk Nipis,50.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Kandat,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Jahe,89.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Wates,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Wates,Jeruk Nipis,76.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Wates,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Mengkudu/Pace,700.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Ngancar,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngancar,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Plosoklaten,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Jahe,239.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Gurah,Kapulaga,5.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Gurah,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Kunyit,5.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Gurah,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gurah,Jeruk Nipis,1365.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Gurah,Serai,55.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Puncu,Jahe,50000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Puncu,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Puncu,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Jahe,32000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Kepung,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kepung,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Jahe,4400.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Kandangan,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Kencur,1000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Kandangan,Kunyit,1700.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Kandangan,Laos/Lengkuas,1000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Kandangan,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Temulawak,400.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Kandangan,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kandangan,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Pare,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Badas,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kunjang,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Plemahan,Jahe,47.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Plemahan,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plemahan,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plemahan,Kencur,27.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Plemahan,Kunyit,134.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Plemahan,Laos/Lengkuas,5.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Plemahan,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plemahan,Lidah Buaya,1650.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Plemahan,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Plemahan,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Plemahan,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plemahan,Temuireng,33.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Plemahan,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Plemahan,Temulawak,47.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Plemahan,Jeruk Nipis,250.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Plemahan,Serai,100.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Purwoasri,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Purwoasri,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Jahe,485.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Papar,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Kunyit,381.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Papar,Laos/Lengkuas,499.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Papar,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Papar,Temulawak,52.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Papar,Jeruk Nipis,86.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Papar,Serai,211.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Pagu,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Pagu,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Kayenkidul,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Mengkudu/Pace,32.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Gampengrejo,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Gampengrejo,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Kunyit,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Ngasem,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Kunyit,3350000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Banyakan,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Banyakan,Temulawak,800000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Banyakan,Jeruk Nipis,1000.0,Pohon,False,Data sumber BPS tingkat kecamatan,OK
+Banyakan,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Kunyit,850000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Grogol,Laos/Lengkuas,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Grogol,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Jahe,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Kapulaga,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Keji Beling,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Kencur,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Kunyit,272968.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Tarokan,Laos/Lengkuas,1000.0,m2,False,Data sumber BPS tingkat kecamatan,OK
+Tarokan,Lempuyang,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Lidah Buaya,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Mahkota Dewa,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Mengkudu/Pace,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Sambiloto,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Temuireng,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Temukunci,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Temulawak,,m2,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Jeruk Nipis,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
+Tarokan,Serai,,Pohon,False,Data sumber BPS tingkat kecamatan,NULL
