@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agri Dash V.01 - Kabupaten Kediri</title>
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+        <div class="logo-area">
+
+            <img
+                src="aset/logo mix.png"
+                alt="Agri Dash V.01 Kabupaten Kediri"
+                class="logo-image"
+            >
+
+        </div>
+
+
+        <!-- MENU UTAMA -->
+        <div class="menu-section">
+
+            <div class="menu-title">
+                MENU UTAMA
+            </div>
+
+
+            <button
+                class="menu-item active"
+                onclick="showPage('dashboard', this)"
+            >
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Dashboard</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('monitoring', this)"
+            >
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>Monitoring Wilayah</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('harga', this)"
+            >
+
+                <i class="fa-solid fa-coins"></i>
+
+                <span>Harga Pangan</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('cuaca', this)"
+            >
+
+                <i class="fa-solid fa-cloud-sun"></i>
+
+                <span>Cuaca & Risiko</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('prediksi', this)"
+            >
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <span>Prediksi & EWS</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('ketahanan', this)"
+            >
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <span>Ketahanan Pangan</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('data', this)"
+            >
+
+                <i class="fa-solid fa-database"></i>
+
+                <span>Data Center</span>
+
+            </button>
+
+        </div>
+
+
+        <!-- FITUR TAMBAHAN -->
+
+        <div class="menu-section additional">
+
+            <div class="menu-title">
+                FITUR TAMBAHAN
+            </div>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('report', this)"
+            >
+
+                <i class="fa-regular fa-file-lines"></i>
+
+                <span>Export / Reporting</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('audit', this)"
+            >
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>Audit Trail</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('users', this)"
+            >
+
+                <i class="fa-solid fa-users"></i>
+
+                <span>Role & User Management</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                onclick="showPage('integration', this)"
+            >
+
+                <i class="fa-solid fa-link"></i>
+
+                <span>Integrasi e-Tani / SIP</span>
+
+            </button>
+
+        </div>
+
+
+        <!-- FOOTER SIDEBAR -->
+
+        <div class="sidebar-footer">
+
+            <div class="footer-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <div>
+                <strong>Pertanian Maju</strong>
+                <span>Kediri Sejahtera</span>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    placeholder="Cari komoditas, kecamatan, atau informasi..."
+                >
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <div class="date-picker">
+
+                    <i class="fa-regular fa-calendar"></i>
+
+                    <span>Sen, 16 Jun 2025</span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+
+                <div class="notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong>Admin</strong>
+
+                        <small>Super Admin</small>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section
+            id="dashboard"
+            class="page active-page"
+        >
+
+            <!-- HEADER -->
+
+            <div class="dashboard-header">
+
+                <div>
+
+                    <h1>
+                        Selamat pagi, Admin <span>👋</span>
+                    </h1>
+
+                    <p>
+                        Berikut ringkasan kondisi pertanian Kabupaten Kediri hari ini.
+                    </p>
+
+                </div>
+
+
+                <div class="weather-mini">
+
+                    <div class="weather-icon">
+                        ☀️
+                    </div>
+
+                    <div>
+
+                        <strong>28°C</strong>
+
+                        <span>Cerah Berawan</span>
+
+                    </div>
+
+                    <div class="weather-location">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span>Kab. Kediri</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <div class="stats-grid">
+
+
+                <!-- PRODUKSI -->
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+
+                    </div>
+
+                    <span class="stat-label">
+                        Total Produksi
+                    </span>
+
+                    <h2>
+                        742.580
+                        <small>ton</small>
+                    </h2>
+
+                    <div class="stat-growth">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        5,2%
+                    </div>
+
+                    <small class="comparison">
+                        vs. periode sebelumnya
+                    </small>
+
+                </div>
+
+
+
+                <!-- LUAS PANEN -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Luas Panen
+                    </span>
+
+                    <h2>
+                        128.430
+                        <small>ha</small>
+                    </h2>
+
+                    <div class="stat-growth">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        3,8%
+                    </div>
+
+                    <small class="comparison">
+                        vs. periode sebelumnya
+                    </small>
+
+                </div>
+
+
+
+                <!-- PRODUKTIVITAS -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Produktivitas
+                    </span>
+
+                    <h2>
+                        5,78
+                        <small>ton/ha</small>
+                    </h2>
+
+                    <div class="stat-growth">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        1,6%
+                    </div>
+
+                    <small class="comparison">
+                        vs. periode sebelumnya
+                    </small>
+
+                </div>
+
+
+
+                <!-- HARGA -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon yellow">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Harga Komoditas Tertinggi
+                    </span>
+
+                    <h3>
+                        Cabai Merah
+                    </h3>
+
+                    <h2 class="price">
+                        Rp 48.000<small>/kg</small>
+                    </h2>
+
+                    <div class="stat-growth">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        12,5%
+                    </div>
+
+                    <small class="comparison">
+                        vs. minggu lalu
+                    </small>
+
+                </div>
+
+
+
+                <!-- WARNING -->
+
+                <div class="stat-card warning-card">
+
+                    <div class="stat-icon red">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Wilayah Berstatus Warning
+                    </span>
+
+                    <h2>
+                        3
+                        <small>kecamatan</small>
+                    </h2>
+
+                    <div class="warning-text">
+                        Perlu perhatian
+                    </div>
+
+                    <i class="fa-solid fa-chevron-right warning-arrow"></i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CHART + STATUS + WARNING
+            ================================================== -->
+
+            <div class="main-grid">
+
+
+                <!-- TREND -->
+
+                <div class="card trend-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Tren Produksi dan Harga
+                            </h3>
+
+                        </div>
+
+                        <select>
+
+                            <option>
+                                6 Bulan Terakhir
+                            </option>
+
+                            <option>
+                                1 Tahun
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="tabs">
+
+                        <button class="tab active">
+                            Produksi
+                        </button>
+
+                        <button class="tab">
+                            Harga
+                        </button>
+
+                        <button class="tab">
+                            Produktivitas
+                        </button>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas id="productionChart"></canvas>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- STATUS WILAYAH -->
+
+                <div class="card status-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Status Wilayah
+                        </h3>
+
+                        <a href="#">
+                            Lihat Peta Lengkap →
+                        </a>
+
+                    </div>
+
+
+                    <div class="map-container">
+
+                        <div class="kediri-map">
+
+                            <div class="map-text">
+                                KEDIRI
+                            </div>
+
+                        </div>
+
+
+                        <div class="map-legend">
+
+                            <div>
+                                <span class="dot green-dot"></span>
+                                <div>
+                                    <strong>Normal</strong>
+                                    <small>26 kecamatan</small>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <span class="dot yellow-dot"></span>
+                                <div>
+                                    <strong>Waspada</strong>
+                                    <small>5 kecamatan</small>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <span class="dot red-dot"></span>
+                                <div>
+                                    <strong>Kritis</strong>
+                                    <small>3 kecamatan</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- EARLY WARNING -->
+
+                <div class="card warning-list-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            <span class="header-warning-icon">
+                                ⚠
+                            </span>
+                            Early Warning
+                        </h3>
+
+                        <a href="#">
+                            Lihat Semua →
+                        </a>
+
+                    </div>
+
+
+                    <div class="warning-item">
+
+                        <div class="warning-circle danger">
+                            !
+                        </div>
+
+                        <div>
+
+                            <div class="warning-title">
+                                Penurunan produksi jagung
+
+                                <span>
+                                    2 jam lalu
+                                </span>
+                            </div>
+
+                            <p>
+                                Kec. Ngadiluwih
+                            </p>
+
+                            <small>
+                                -18% dibanding bulan lalu
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="warning-item">
+
+                        <div class="warning-circle warning">
+                            !
+                        </div>
+
+                        <div>
+
+                            <div class="warning-title">
+                                Kenaikan harga cabai merah
+
+                                <span>
+                                    5 jam lalu
+                                </span>
+                            </div>
+
+                            <p>
+                                Kec. Pare
+                            </p>
+
+                            <small>
+                                +15% dalam 7 hari
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="warning-item">
+
+                        <div class="warning-circle warning">
+                            !
+                        </div>
+
+                        <div>
+
+                            <div class="warning-title">
+                                Risiko hujan tinggi
+
+                                <span>
+                                    8 jam lalu
+                                </span>
+                            </div>
+
+                            <p>
+                                Kec. Wates
+                            </p>
+
+                            <small>
+                                Potensi gagal panen padi
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 BOTTOM GRID
+            ================================================== -->
+
+            <div class="bottom-grid">
+
+
+                <!-- TOP KECAMATAN -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            🏆 Top 5 Kecamatan
+                            <span>(Produksi)</span>
+                        </h3>
+
+                        <a href="#">
+                            Lihat Semua →
+                        </a>
+
+                    </div>
+
+
+                    <div class="ranking">
+
+                        <div class="rank-row">
+
+                            <div class="rank-number">
+                                1
+                            </div>
+
+                            <span>Pare</span>
+
+                            <strong>
+                                48.320 ton
+                            </strong>
+
+                            <em>
+                                ↑ 12%
+                            </em>
+
+                        </div>
+
+
+                        <div class="rank-row">
+
+                            <div class="rank-number">
+                                2
+                            </div>
+
+                            <span>Kandat</span>
+
+                            <strong>
+                                42.170 ton
+                            </strong>
+
+                            <em>
+                                ↑ 8%
+                            </em>
+
+                        </div>
+
+
+                        <div class="rank-row">
+
+                            <div class="rank-number">
+                                3
+                            </div>
+
+                            <span>Ngadiluwih</span>
+
+                            <strong>
+                                38.950 ton
+                            </strong>
+
+                            <em>
+                                ↑ 6%
+                            </em>
+
+                        </div>
+
+
+                        <div class="rank-row">
+
+                            <div class="rank-number">
+                                4
+                            </div>
+
+                            <span>Wates</span>
+
+                            <strong>
+                                36.780 ton
+                            </strong>
+
+                            <em>
+                                ↑ 4%
+                            </em>
+
+                        </div>
+
+
+                        <div class="rank-row">
+
+                            <div class="rank-number">
+                                5
+                            </div>
+
+                            <span>Kras</span>
+
+                            <strong>
+                                32.410 ton
+                            </strong>
+
+                            <em>
+                                ↑ 3%
+                            </em>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SMART INSIGHT -->
+
+                <div class="card insight-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            💡 Smart Insight
+                        </h3>
+
+                        <a href="#">
+                            Lihat Detail →
+                        </a>
+
+                    </div>
+
+
+                    <div class="insight-content">
+
+                        <div class="insight-leaf">
+                            🌱
+                        </div>
+
+                        <p>
+
+                            Produksi padi di Kecamatan Pare
+                            meningkat <strong>12%</strong>
+                            pada periode ini,
+
+                            <span>
+                                didorong oleh cuaca yang lebih stabil
+                                dan peningkatan luas tanam.
+                            </span>
+
+                        </p>
+
+                    </div>
+
+
+                    <button class="insight-button">
+                        Lihat Rekomendasi
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+
+                <!-- KOMODITAS -->
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            🌱 Komoditas Utama
+                        </h3>
+
+                        <a href="#">
+                            Lihat Semua →
+                        </a>
+
+                    </div>
+
+
+                    <div class="commodity-row">
+
+                        <div class="commodity-name">
+                            🌾
+                            <span>Padi</span>
+                        </div>
+
+                        <div class="commodity-bar">
+
+                            <div style="width:82%"></div>
+
+                        </div>
+
+                        <strong>
+                            38,2%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="commodity-row">
+
+                        <div class="commodity-name">
+                            🌽
+                            <span>Jagung</span>
+                        </div>
+
+                        <div class="commodity-bar yellow-bar">
+
+                            <div style="width:65%"></div>
+
+                        </div>
+
+                        <strong>
+                            28,7%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="commodity-row">
+
+                        <div class="commodity-name">
+                            🫘
+                            <span>Kedelai</span>
+                        </div>
+
+                        <div class="commodity-bar">
+
+                            <div style="width:40%"></div>
+
+                        </div>
+
+                        <strong>
+                            12,6%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="commodity-row">
+
+                        <div class="commodity-name">
+                            🌶️
+                            <span>Cabai</span>
+                        </div>
+
+                        <div class="commodity-bar yellow-bar">
+
+                            <div style="width:30%"></div>
+
+                        </div>
+
+                        <strong>
+                            8,9%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="commodity-row">
+
+                        <div class="commodity-name">
+                            🧅
+                            <span>Bawang Merah</span>
+                        </div>
+
+                        <div class="commodity-bar red-bar">
+
+                            <div style="width:23%"></div>
+
+                        </div>
+
+                        <strong>
+                            6,4%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MONITORING WILAYAH
+        ================================================== -->
+
+        <section id="monitoring" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Monitoring Wilayah</h1>
+
+                    <p>
+                        Pantau kondisi pertanian berdasarkan kecamatan dan komoditas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="filter-card">
+
+                <select>
+                    <option>Semua Kecamatan</option>
+                    <option>Pare</option>
+                    <option>Kandat</option>
+                    <option>Ngadiluwih</option>
+                    <option>Wates</option>
+                    <option>Kras</option>
+                </select>
+
+
+                <select>
+                    <option>Semua Komoditas</option>
+                    <option>Padi</option>
+                    <option>Jagung</option>
+                    <option>Kedelai</option>
+                    <option>Cabai</option>
+                </select>
+
+
+                <select>
+                    <option>2025</option>
+                    <option>2024</option>
+                    <option>2023</option>
+                </select>
+
+
+                <button class="green-button">
+                    Terapkan
+                </button>
+
+            </div>
+
+
+            <div class="two-column">
+
+                <div class="card large-map">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Peta Kondisi Pertanian
+                        </h3>
+
+                        <button class="outline-button">
+                            ⛶ Lihat Peta
+                        </button>
+
+                    </div>
+
+                    <div class="large-map-area">
+
+                        <div class="large-kediri-map">
+                            KEDIRI
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Rekap Kecamatan
+                        </h3>
+
+                    </div>
+
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Kecamatan
+                                </th>
+
+                                <th>
+                                    Produksi
+                                </th>
+
+                                <th>
+                                    Luas
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+                                <td>Pare</td>
+                                <td>48.320</td>
+                                <td>12.540</td>
+                                <td>
+                                    <span class="status normal">
+                                        Normal
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Kandat</td>
+                                <td>42.170</td>
+                                <td>10.210</td>
+                                <td>
+                                    <span class="status normal">
+                                        Normal
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Ngadiluwih</td>
+                                <td>38.950</td>
+                                <td>10.890</td>
+                                <td>
+                                    <span class="status warning">
+                                        Waspada
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Wates</td>
+                                <td>36.780</td>
+                                <td>10.210</td>
+                                <td>
+                                    <span class="status critical">
+                                        Kritis
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HARGA PANGAN
+        ================================================== -->
+
+        <section id="harga" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Harga Pangan</h1>
+
+                    <p>
+                        Pantau perkembangan harga komoditas pangan.
+                    </p>
+
+                </div>
+
+                <button class="green-button">
+                    <i class="fa-solid fa-rotate"></i>
+                    Perbarui Data
+                </button>
+
+            </div>
+
+
+            <div class="stats-grid small-stats">
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Cabai Merah
+                    </span>
+
+                    <h2>
+                        Rp 48.000
+                    </h2>
+
+                    <div class="stat-growth">
+                        ↑ 12,5%
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Bawang Merah
+                    </span>
+
+                    <h2>
+                        Rp 32.000
+                    </h2>
+
+                    <div class="stat-growth">
+                        ↑ 6,2%
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Beras
+                    </span>
+
+                    <h2>
+                        Rp 14.500
+                    </h2>
+
+                    <div class="stat-growth">
+                        ↑ 2,1%
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Jagung
+                    </span>
+
+                    <h2>
+                        Rp 9.800
+                    </h2>
+
+                    <div class="stat-growth down">
+                        ↓ 1,2%
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card full-chart">
+
+                <div class="card-header">
+
+                    <h3>
+                        Perkembangan Harga Komoditas
+                    </h3>
+
+                    <select>
+
+                        <option>
+                            6 Bulan
+                        </option>
+
+                        <option>
+                            1 Tahun
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <canvas id="priceChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CUACA
+        ================================================== -->
+
+        <section id="cuaca" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Cuaca & Risiko</h1>
+
+                    <p>
+                        Informasi cuaca dan risiko yang berkaitan dengan pertanian.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="weather-grid">
+
+                <div class="weather-big card">
+
+                    <span>
+                        📍 Kabupaten Kediri
+                    </span>
+
+                    <h1>
+                        28°C
+                    </h1>
+
+                    <h3>
+                        ☀️ Cerah Berawan
+                    </h3>
+
+
+                    <div class="weather-details">
+
+                        <div>
+                            💧
+                            <span>
+                                Kelembapan
+                                <strong>72%</strong>
+                            </span>
+                        </div>
+
+                        <div>
+                            💨
+                            <span>
+                                Angin
+                                <strong>12 km/jam</strong>
+                            </span>
+                        </div>
+
+                        <div>
+                            🌧️
+                            <span>
+                                Curah Hujan
+                                <strong>20 mm</strong>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Prakiraan 5 Hari
+                        </h3>
+
+                    </div>
+
+
+                    <div class="forecast">
+
+                        <div>
+                            <strong>Sen</strong>
+                            ☀️
+                            <b>28°</b>
+                        </div>
+
+                        <div>
+                            <strong>Sel</strong>
+                            🌤️
+                            <b>27°</b>
+                        </div>
+
+                        <div>
+                            <strong>Rab</strong>
+                            🌧️
+                            <b>26°</b>
+                        </div>
+
+                        <div>
+                            <strong>Kam</strong>
+                            ☀️
+                            <b>28°</b>
+                        </div>
+
+                        <div>
+                            <strong>Jum</strong>
+                            🌤️
+                            <b>29°</b>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PREDIKSI
+        ================================================== -->
+
+        <section id="prediksi" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Prediksi & Early Warning System</h1>
+
+                    <p>
+                        Prediksi produksi dan peringatan risiko pertanian.
+                    </p>
+
+                </div>
+
+                <button class="green-button">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Jalankan Prediksi
+                </button>
+
+            </div>
+
+
+            <div class="two-column">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Prediksi Produksi Padi
+                        </h3>
+
+                    </div>
+
+                    <canvas id="predictionChart"></canvas>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            ⚠️ Potensi Risiko
+                        </h3>
+
+                    </div>
+
+
+                    <div class="risk-box critical">
+                        <strong>Kekeringan</strong>
+                        <span>Kec. Ngadiluwih</span>
+                        <small>Risiko tinggi</small>
+                    </div>
+
+
+                    <div class="risk-box warning">
+                        <strong>Serangan Hama</strong>
+                        <span>Kec. Pare</span>
+                        <small>Risiko sedang</small>
+                    </div>
+
+
+                    <div class="risk-box info">
+                        <strong>Curah Hujan Ekstrem</strong>
+                        <span>Kec. Wates</span>
+                        <small>Perlu monitoring</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             KETAHANAN PANGAN
+        ================================================== -->
+
+        <section id="ketahanan" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Ketahanan Pangan</h1>
+
+                    <p>
+                        Monitoring indikator ketahanan pangan Kabupaten Kediri.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-label">
+                        Indeks Ketahanan Pangan
+                    </span>
+                    <h2>82,4</h2>
+                    <div class="stat-growth">
+                        ↑ 3,2%
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <span class="stat-label">
+                        Ketersediaan Pangan
+                    </span>
+                    <h2>91,2%</h2>
+                    <div class="stat-growth">
+                        ↑ 2,8%
+                    </div>
+                </div>
+
+
+                <div class="stat-card">
+                    <span class="stat-label">
+                        Stabilitas Harga
+                    </span>
+                    <h2>87,6%</h2>
+                    <div class="stat-growth">
+                        ↑ 1,8%
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DATA CENTER
+        ================================================== -->
+
+        <section id="data" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Data Center</h1>
+
+                    <p>
+                        Pusat pengelolaan seluruh dataset Agri Dash.
+                    </p>
+
+                </div>
+
+                <button class="green-button">
+                    + Tambah Data
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Dataset
+                            </th>
+
+                            <th>
+                                Sumber
+                            </th>
+
+                            <th>
+                                Update
+                            </th>
+
+                            <th>
+                                Record
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>Produksi Tanaman</td>
+                            <td>BPS</td>
+                            <td>16 Juni 2025</td>
+                            <td>24.500</td>
+                            <td>
+                                <span class="status normal">
+                                    Aktif
+                                </span>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Harga Komoditas</td>
+                            <td>Bapanas</td>
+                            <td>16 Juni 2025</td>
+                            <td>12.300</td>
+                            <td>
+                                <span class="status normal">
+                                    Aktif
+                                </span>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Data Cuaca</td>
+                            <td>BMKG</td>
+                            <td>16 Juni 2025</td>
+                            <td>32.800</td>
+                            <td>
+                                <span class="status normal">
+                                    Aktif
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EXPORT
+        ================================================== -->
+
+        <section id="report" class="page">
+
+            <div class="page-title">
+
+                <h1>Export / Reporting</h1>
+
+            </div>
+
+
+            <div class="report-grid">
+
+                <div class="report-card">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    <h3>
+                        Laporan Produksi
+                    </h3>
+
+                    <p>
+                        Data produksi berdasarkan kecamatan dan komoditas.
+                    </p>
+
+                    <button class="green-button">
+                        Export Excel
+                    </button>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <i class="fa-solid fa-coins"></i>
+
+                    <h3>
+                        Laporan Harga
+                    </h3>
+
+                    <p>
+                        Tren harga dan perubahan harga komoditas.
+                    </p>
+
+                    <button class="green-button">
+                        Export PDF
+                    </button>
+
+                </div>
+
+
+                <div class="report-card">
+
+                    <i class="fa-solid fa-cloud"></i>
+
+                    <h3>
+                        Laporan Cuaca
+                    </h3>
+
+                    <p>
+                        Data cuaca dan risiko pertanian.
+                    </p>
+
+                    <button class="green-button">
+                        Export Excel
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             AUDIT TRAIL
+        ================================================== -->
+
+        <section id="audit" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Audit Trail</h1>
+
+                    <p>
+                        Riwayat aktivitas pengguna dalam sistem.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Waktu</th>
+                            <th>User</th>
+                            <th>Aktivitas</th>
+                            <th>Data</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>16 Jun 2025 09:34</td>
+                            <td>Admin</td>
+                            <td>Update produksi</td>
+                            <td>Padi - Pare</td>
+                            <td>
+                                <span class="status normal">
+                                    Berhasil
+                                </span>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>16 Jun 2025 09:20</td>
+                            <td>Admin DKPP</td>
+                            <td>Export laporan</td>
+                            <td>Laporan Produksi</td>
+                            <td>
+                                <span class="status normal">
+                                    Berhasil
+                                </span>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             USER MANAGEMENT
+        ================================================== -->
+
+        <section id="users" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Role & User Management</h1>
+
+                    <p>
+                        Kelola pengguna dan hak akses sistem.
+                    </p>
+
+                </div>
+
+                <button class="green-button">
+                    + Tambah User
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Nama</th>
+                            <th>Role</th>
+                            <th>Instansi</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+                            <td>Budi Santoso</td>
+                            <td>Super Admin</td>
+                            <td>DKPP Kediri</td>
+                            <td>🟢 Aktif</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Siti Nuraini</td>
+                            <td>Admin DKPP</td>
+                            <td>DKPP Kediri</td>
+                            <td>🟢 Aktif</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Andi Pratama</td>
+                            <td>BPP</td>
+                            <td>BPP Kediri</td>
+                            <td>🟢 Aktif</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INTEGRATION
+        ================================================== -->
+
+        <section id="integration" class="page">
+
+            <div class="page-title">
+
+                <div>
+
+                    <h1>Integrasi e-Tani / SIP</h1>
+
+                    <p>
+                        Monitoring koneksi dan sinkronisasi sistem eksternal.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="integration-grid">
+
+                <div class="integration-card">
+
+                    <div class="integration-logo">
+                        🌾
+                    </div>
+
+                    <h3>
+                        e-Tani
+                    </h3>
+
+                    <span class="connected">
+                        ● Terhubung
+                    </span>
+
+                    <p>
+                        Sinkronisasi data pertanian dan komoditas.
+                    </p>
+
+                    <button class="outline-button">
+                        Sinkronisasi
+                    </button>
+
+                </div>
+
+
+                <div class="integration-card">
+
+                    <div class="integration-logo">
+                        🔗
+                    </div>
+
+                    <h3>
+                        SIP
+                    </h3>
+
+                    <span class="connected">
+                        ● Terhubung
+                    </span>
+
+                    <p>
+                        Sinkronisasi data sistem pertanian terkait.
+                    </p>
+
+                    <button class="outline-button">
+                        Sinkronisasi
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
