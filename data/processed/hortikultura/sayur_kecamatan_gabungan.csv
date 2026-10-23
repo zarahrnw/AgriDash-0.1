@@ -1,0 +1,677 @@
+kecamatan,komoditas,kelompok,luas_panen,satuan,luas_ha,produksi_kuintal,produksi_ton,ada_data,produktivitas_ku_ha
+Badas,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Bawang Daun,Sayuran,9.0,Ha,9.0,614.0,61.4,True,68.22222222222223
+Kandat,Bawang Daun,Sayuran,10.5,Ha,10.5,909.0,90.9,True,86.57142857142857
+Kayenkidul,Bawang Daun,Sayuran,2.0,Ha,2.0,140.0,14.0,True,70.0
+Kepung,Bawang Daun,Sayuran,572.0,Ha,572.0,41391.0,4139.1,True,72.3618881118881
+Kras,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Bawang Daun,Sayuran,4.0,Ha,4.0,290.0,29.0,True,72.5
+Ngancar,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Bawang Daun,Sayuran,13.0,Ha,13.0,920.0,92.0,True,70.76923076923077
+Purwoasri,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Bawang Daun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Bawang Merah,Sayuran,371.0,Ha,371.0,19576.0,1957.6,True,52.76549865229111
+Banyakan,Bawang Merah,Sayuran,6.0,Ha,6.0,190.0,19.0,True,31.666666666666668
+Gampengrejo,Bawang Merah,Sayuran,20.0,Ha,20.0,1788.0,178.8,True,89.4
+Grogol,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Bawang Merah,Sayuran,9.0,Ha,9.0,622.0,62.2,True,69.11111111111111
+Kandat,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Bawang Merah,Sayuran,1.0,Ha,1.0,70.0,7.0,True,70.0
+Kepung,Bawang Merah,Sayuran,160.0,Ha,160.0,11542.0,1154.2,True,72.1375
+Kras,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Bawang Merah,Sayuran,13.5,Ha,13.5,1080.0,108.0,True,80.0
+Mojo,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Bawang Merah,Sayuran,1.0,Ha,1.0,73.0,7.3,True,73.0
+Ngancar,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Bawang Merah,Sayuran,2.0,Ha,2.0,135.0,13.5,True,67.5
+Pagu,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Bawang Merah,Sayuran,11.0,Ha,11.0,700.0,70.0,True,63.63636363636363
+Pare,Bawang Merah,Sayuran,36.0,Ha,36.0,2400.0,240.0,True,66.66666666666667
+Plemahan,Bawang Merah,Sayuran,435.0,Ha,435.0,36600.0,3660.0,True,84.13793103448276
+Plosoklaten,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Bawang Merah,Sayuran,6.0,Ha,6.0,464.0,46.4,True,77.33333333333333
+Ringinrejo,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Bawang Merah,Sayuran,17.0,Ha,17.0,1140.0,114.0,True,67.05882352941177
+Tarokan,Bawang Merah,Sayuran,117.0,Ha,117.0,7222.0,722.2,True,61.72649572649573
+Wates,Bawang Merah,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Bawang Putih,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Bayam,Sayuran,7.0,Ha,7.0,1020.0,102.0,True,145.71428571428572
+Kandangan,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Bayam,Sayuran,36.0,Ha,36.0,3250.0,325.0,True,90.27777777777777
+Ngancar,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Bayam,Sayuran,2.0,Ha,2.0,120.0,12.0,True,60.0
+Wates,Bayam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Buncis,Sayuran,12.0,Ha,12.0,1818.0,181.8,True,151.5
+Kandat,Buncis,Sayuran,0.5,Ha,0.5,25.0,2.5,True,50.0
+Kayenkidul,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Buncis,Sayuran,24.0,Ha,24.0,2107.0,210.7,True,87.79166666666667
+Kras,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Buncis,Sayuran,1.0,Ha,1.0,120.0,12.0,True,120.0
+Mojo,Buncis,Sayuran,10.0,Ha,10.0,543.0,54.3,True,54.3
+Ngadiluwih,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Buncis,Sayuran,21.0,Ha,21.0,3448.0,344.8,True,164.1904761904762
+Ngasem,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Buncis,Sayuran,14.0,Ha,14.0,2251.0,225.1,True,160.78571428571428
+Plemahan,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Buncis,Sayuran,42.0,Ha,42.0,5549.0,554.9,True,132.11904761904762
+Puncu,Buncis,Sayuran,32.0,Ha,32.0,3905.0,390.5,True,122.03125
+Purwoasri,Buncis,Sayuran,2.0,Ha,2.0,300.0,30.0,True,150.0
+Ringinrejo,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Buncis,Sayuran,1.0,Ha,1.0,121.0,12.1,True,121.0
+Tarokan,Buncis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Buncis,Sayuran,8.0,Ha,8.0,753.0,75.3,True,94.125
+Badas,Cabai Besar/TW/Teropong,Sayuran,1.0,Ha,1.0,175.0,17.5,True,175.0
+Banyakan,Cabai Besar/TW/Teropong,Sayuran,2.0,Ha,2.0,151.0,15.1,True,75.5
+Gampengrejo,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Cabai Besar/TW/Teropong,Sayuran,2.0,Ha,2.0,275.0,27.5,True,137.5
+Kandangan,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Cabai Besar/TW/Teropong,Sayuran,18.0,Ha,18.0,1122.0,112.2,True,62.333333333333336
+Kayenkidul,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Cabai Besar/TW/Teropong,Sayuran,561.0,Ha,561.0,63661.0,6366.1,True,113.47771836007131
+Kras,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Cabai Besar/TW/Teropong,Sayuran,14.0,Ha,14.0,2070.0,207.0,True,147.85714285714286
+Ngadiluwih,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Cabai Besar/TW/Teropong,Sayuran,112.0,Ha,112.0,21727.5,2172.75,True,193.99553571428572
+Ngasem,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Cabai Besar/TW/Teropong,Sayuran,29.0,Ha,29.0,2951.0,295.1,True,101.75862068965517
+Purwoasri,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Cabai Besar/TW/Teropong,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Cabai Besar/TW/Teropong,Sayuran,7.0,Ha,7.0,1582.0,158.2,True,226.0
+Tarokan,Cabai Besar/TW/Teropong,Sayuran,2.0,Ha,2.0,104.0,10.4,True,52.0
+Wates,Cabai Besar/TW/Teropong,Sayuran,164.0,Ha,164.0,43621.0,4362.1,True,265.9817073170732
+Badas,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Cabai Keriting,Sayuran,25.0,Ha,25.0,1432.0,143.2,True,57.28
+Kayenkidul,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Cabai Keriting,Sayuran,26.8,Ha,26.8,2771.0,277.1,True,103.3955223880597
+Kras,Cabai Keriting,Sayuran,13.0,Ha,13.0,1150.0,115.0,True,88.46153846153847
+Kunjang,Cabai Keriting,Sayuran,2.0,Ha,2.0,138.0,13.8,True,69.0
+Mojo,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Cabai Keriting,Sayuran,1.0,Ha,1.0,151.3,15.13,True,151.3
+Ngancar,Cabai Keriting,Sayuran,74.0,Ha,74.0,12772.0,1277.2,True,172.59459459459458
+Ngasem,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Cabai Keriting,Sayuran,27.0,Ha,27.0,2316.0,231.6,True,85.77777777777777
+Plemahan,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Cabai Keriting,Sayuran,46.0,Ha,46.0,4938.0,493.8,True,107.34782608695652
+Purwoasri,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Cabai Keriting,Sayuran,125.0,Ha,125.0,29101.0,2910.1,True,232.808
+Semen,Cabai Keriting,Sayuran,1.0,Ha,1.0,65.0,6.5,True,65.0
+Tarokan,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Cabai Keriting,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Cabai Rawit,Sayuran,1.0,Ha,1.0,141.0,14.1,True,141.0
+Banyakan,Cabai Rawit,Sayuran,1.0,Ha,1.0,162.0,16.2,True,162.0
+Gampengrejo,Cabai Rawit,Sayuran,6.0,Ha,6.0,540.0,54.0,True,90.0
+Grogol,Cabai Rawit,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Cabai Rawit,Sayuran,715.0,Ha,715.0,76767.0,7676.7,True,107.36643356643357
+Kandangan,Cabai Rawit,Sayuran,3.0,Ha,3.0,174.0,17.4,True,58.0
+Kandat,Cabai Rawit,Sayuran,123.0,Ha,123.0,25487.0,2548.7,True,207.21138211382114
+Kayenkidul,Cabai Rawit,Sayuran,769.0,Ha,769.0,57575.0,5757.5,True,74.86996098829648
+Kepung,Cabai Rawit,Sayuran,1823.0,Ha,1823.0,196780.0,19678.0,True,107.94295117937466
+Kras,Cabai Rawit,Sayuran,34.0,Ha,34.0,2250.0,225.0,True,66.17647058823529
+Kunjang,Cabai Rawit,Sayuran,6.0,Ha,6.0,626.0,62.6,True,104.33333333333333
+Mojo,Cabai Rawit,Sayuran,6.0,Ha,6.0,104.0,10.4,True,17.333333333333332
+Ngadiluwih,Cabai Rawit,Sayuran,2.0,Ha,2.0,157.0,15.7,True,78.5
+Ngancar,Cabai Rawit,Sayuran,289.0,Ha,289.0,57106.0,5710.6,True,197.59861591695503
+Ngasem,Cabai Rawit,Sayuran,236.0,Ha,236.0,19132.62,1913.262,True,81.07042372881355
+Pagu,Cabai Rawit,Sayuran,2125.0,Ha,2125.0,175943.0,17594.3,True,82.79670588235294
+Papar,Cabai Rawit,Sayuran,11.0,Ha,11.0,1705.0,170.5,True,155.0
+Pare,Cabai Rawit,Sayuran,61.0,Ha,61.0,4749.0,474.9,True,77.85245901639344
+Plemahan,Cabai Rawit,Sayuran,71.0,Ha,71.0,8867.75,886.775,True,124.89788732394366
+Plosoklaten,Cabai Rawit,Sayuran,607.0,Ha,607.0,47163.24,4716.324,True,77.69891268533772
+Puncu,Cabai Rawit,Sayuran,2035.0,Ha,2035.0,264278.0,26427.8,True,129.86633906633907
+Purwoasri,Cabai Rawit,Sayuran,8.0,Ha,8.0,943.0,94.3,True,117.875
+Ringinrejo,Cabai Rawit,Sayuran,375.0,Ha,375.0,61816.0,6181.6,True,164.84266666666667
+Semen,Cabai Rawit,Sayuran,101.0,Ha,101.0,13179.0,1317.9,True,130.4851485148515
+Tarokan,Cabai Rawit,Sayuran,1.0,Ha,1.0,50.0,5.0,True,50.0
+Wates,Cabai Rawit,Sayuran,352.0,Ha,352.0,79918.0,7991.8,True,227.03977272727272
+Badas,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Banyakan,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Gampengrejo,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Grogol,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Gurah,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kandangan,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kandat,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kayenkidul,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kepung,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kras,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kunjang,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Mojo,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Ngadiluwih,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Ngancar,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Ngasem,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Pagu,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Papar,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Pare,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Plemahan,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Plosoklaten,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Puncu,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Purwoasri,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Ringinrejo,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Semen,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Tarokan,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Wates,Jamur Lainnya,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Badas,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Banyakan,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Gampengrejo,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Grogol,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Gurah,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kandangan,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kandat,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kayenkidul,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kepung,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kras,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Kunjang,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Mojo,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Ngadiluwih,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Ngancar,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Ngasem,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Pagu,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Papar,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Pare,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Plemahan,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Plosoklaten,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Puncu,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Purwoasri,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Ringinrejo,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Semen,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Tarokan,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Wates,Jamur Merang,Jamur,0.0,M2,0.0,0.0,0.0,False,
+Badas,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Jamur Tiram,Jamur,520.0,Ha,520.0,2601.0,260.1,True,
+Gampengrejo,Jamur Tiram,Jamur,361.0,Ha,361.0,701.3,70.13,True,
+Grogol,Jamur Tiram,Jamur,435.0,Ha,435.0,1236.0,123.6,True,
+Gurah,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Jamur Tiram,Jamur,155.0,Ha,155.0,157.0,15.7,True,
+Kunjang,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Jamur Tiram,Jamur,313.0,Ha,313.0,239.3,23.93,True,
+Purwoasri,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Jamur Tiram,Jamur,900.0,Ha,900.0,1870.0,187.0,True,
+Tarokan,Jamur Tiram,Jamur,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Jamur Tiram,Jamur,264.0,Ha,264.0,225.0,22.5,True,
+Badas,Kacang Panjang,Sayuran,3.0,Ha,3.0,277.0,27.7,True,92.33333333333333
+Banyakan,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Kacang Panjang,Sayuran,2.0,Ha,2.0,205.0,20.5,True,102.5
+Kandangan,Kacang Panjang,Sayuran,14.0,Ha,14.0,1610.0,161.0,True,115.0
+Kandat,Kacang Panjang,Sayuran,9.0,Ha,9.0,1000.0,100.0,True,111.11111111111111
+Kayenkidul,Kacang Panjang,Sayuran,7.0,Ha,7.0,808.0,80.8,True,115.42857142857143
+Kepung,Kacang Panjang,Sayuran,59.7,Ha,59.7,4745.0,474.5,True,79.48073701842546
+Kras,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Kacang Panjang,Sayuran,16.0,Ha,16.0,977.0,97.7,True,61.0625
+Mojo,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Kacang Panjang,Sayuran,48.0,Ha,48.0,7121.0,712.1,True,148.35416666666666
+Ngasem,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Kacang Panjang,Sayuran,14.0,Ha,14.0,914.0,91.4,True,65.28571428571429
+Pare,Kacang Panjang,Sayuran,39.0,Ha,39.0,3244.0,324.4,True,83.17948717948718
+Plemahan,Kacang Panjang,Sayuran,68.0,Ha,68.0,11901.95,1190.1950000000002,True,175.02867647058824
+Plosoklaten,Kacang Panjang,Sayuran,60.0,Ha,60.0,6544.5,654.45,True,109.075
+Puncu,Kacang Panjang,Sayuran,37.0,Ha,37.0,2678.0,267.8,True,72.37837837837837
+Purwoasri,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Kacang Panjang,Sayuran,28.0,Ha,28.0,3116.0,311.6,True,111.28571428571429
+Semen,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Kacang Panjang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Kacang Panjang,Sayuran,15.0,Ha,15.0,2665.0,266.5,True,177.66666666666666
+Badas,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Kangkung,Sayuran,3.0,Ha,3.0,2031.0,203.1,True,677.0
+Kepung,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Kangkung,Sayuran,11.0,Ha,11.0,1757.0,175.7,True,159.72727272727272
+Ngancar,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Kangkung,Sayuran,1.0,Ha,1.0,745.0,74.5,True,745.0
+Ringinrejo,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Kangkung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Kembang Kol,Sayuran,8.0,Ha,8.0,1054.0,105.4,True,131.75
+Banyakan,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Kembang Kol,Sayuran,26.0,Ha,26.0,2918.0,291.8,True,112.23076923076923
+Kras,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Kembang Kol,Sayuran,44.0,Ha,44.0,5048.0,504.8,True,114.72727272727273
+Ngasem,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Kembang Kol,Sayuran,2.0,Ha,2.0,280.0,28.0,True,140.0
+Pare,Kembang Kol,Sayuran,28.0,Ha,28.0,4653.0,465.3,True,166.17857142857142
+Plemahan,Kembang Kol,Sayuran,33.0,Ha,33.0,2574.5,257.45,True,78.01515151515152
+Plosoklaten,Kembang Kol,Sayuran,46.0,Ha,46.0,6900.0,690.0,True,150.0
+Puncu,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Kembang Kol,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Kembang Kol,Sayuran,3.0,Ha,3.0,184.0,18.4,True,61.333333333333336
+Badas,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Kentang,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Ketimun,Sayuran,11.0,Ha,11.0,1770.0,177.0,True,160.9090909090909
+Kandangan,Ketimun,Sayuran,12.0,Ha,12.0,3228.0,322.8,True,269.0
+Kandat,Ketimun,Sayuran,18.0,Ha,18.0,2605.0,260.5,True,144.72222222222223
+Kayenkidul,Ketimun,Sayuran,6.0,Ha,6.0,953.0,95.3,True,158.83333333333334
+Kepung,Ketimun,Sayuran,36.0,Ha,36.0,5803.0,580.3,True,161.19444444444446
+Kras,Ketimun,Sayuran,5.0,Ha,5.0,1850.0,185.0,True,370.0
+Kunjang,Ketimun,Sayuran,12.0,Ha,12.0,3400.0,340.0,True,283.3333333333333
+Mojo,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Ketimun,Sayuran,1.0,Ha,1.0,380.0,38.0,True,380.0
+Ngancar,Ketimun,Sayuran,37.0,Ha,37.0,12623.0,1262.3,True,341.1621621621622
+Ngasem,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Ketimun,Sayuran,40.0,Ha,40.0,6232.0,623.2,True,155.8
+Plemahan,Ketimun,Sayuran,51.0,Ha,51.0,7277.8,727.78,True,142.70196078431374
+Plosoklaten,Ketimun,Sayuran,59.0,Ha,59.0,14324.5,1432.45,True,242.78813559322035
+Puncu,Ketimun,Sayuran,20.0,Ha,20.0,3439.0,343.9,True,171.95
+Purwoasri,Ketimun,Sayuran,1.0,Ha,1.0,120.0,12.0,True,120.0
+Ringinrejo,Ketimun,Sayuran,18.0,Ha,18.0,3639.0,363.9,True,202.16666666666666
+Semen,Ketimun,Sayuran,2.0,Ha,2.0,345.0,34.5,True,172.5
+Tarokan,Ketimun,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Ketimun,Sayuran,1.0,Ha,1.0,120.0,12.0,True,120.0
+Badas,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Kubis,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Labu Siam,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Melon,Sayuran,3.0,Ha,3.0,425.0,42.5,True,141.66666666666666
+Gampengrejo,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Melon,Sayuran,37.0,Ha,37.0,7135.0,713.5,True,192.83783783783784
+Kayenkidul,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Melon,Sayuran,3.0,Ha,3.0,339.0,33.9,True,113.0
+Ngancar,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Melon,Sayuran,9.0,Ha,9.0,1450.0,145.0,True,161.11111111111111
+Ringinrejo,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Melon,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Paprika,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Petsai/Sawi,Sayuran,89.0,Ha,89.0,9265.0,926.5,True,104.10112359550561
+Banyakan,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Petsai/Sawi,Sayuran,52.0,Ha,52.0,5575.0,557.5,True,107.21153846153847
+Kras,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Petsai/Sawi,Sayuran,37.0,Ha,37.0,6819.0,681.9,True,184.2972972972973
+Ngancar,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Petsai/Sawi,Sayuran,60.0,Ha,60.0,5334.0,533.4,True,88.9
+Plemahan,Petsai/Sawi,Sayuran,36.0,Ha,36.0,2025.75,202.575,True,56.270833333333336
+Plosoklaten,Petsai/Sawi,Sayuran,38.0,Ha,38.0,4965.0,496.5,True,130.6578947368421
+Puncu,Petsai/Sawi,Sayuran,2.0,Ha,2.0,155.0,15.5,True,77.5
+Purwoasri,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Petsai/Sawi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Semangka,Sayuran,1.0,Ha,1.0,185.0,18.5,True,185.0
+Gampengrejo,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Semangka,Sayuran,1.0,Ha,1.0,154.0,15.4,True,154.0
+Kandangan,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Semangka,Sayuran,43.0,Ha,43.0,6780.0,678.0,True,157.67441860465115
+Kayenkidul,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Semangka,Sayuran,4.0,Ha,4.0,556.0,55.6,True,139.0
+Kunjang,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Semangka,Sayuran,6.0,Ha,6.0,1232.0,123.2,True,205.33333333333334
+Pagu,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Semangka,Sayuran,45.0,Ha,45.0,7300.0,730.0,True,162.22222222222223
+Ringinrejo,Semangka,Sayuran,7.0,Ha,7.0,1025.0,102.5,True,146.42857142857142
+Semen,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Semangka,Sayuran,1.0,Ha,1.0,200.0,20.0,True,200.0
+Wates,Semangka,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Stroberi,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Badas,Terung,Sayuran,2.0,Ha,2.0,645.0,64.5,True,322.5
+Banyakan,Terung,Sayuran,1.0,Ha,1.0,110.0,11.0,True,110.0
+Gampengrejo,Terung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Terung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Terung,Sayuran,13.0,Ha,13.0,3991.0,399.1,True,307.0
+Kandangan,Terung,Sayuran,12.0,Ha,12.0,3289.0,328.9,True,274.0833333333333
+Kandat,Terung,Sayuran,1.5,Ha,1.5,300.0,30.0,True,200.0
+Kayenkidul,Terung,Sayuran,7.0,Ha,7.0,1797.0,179.7,True,256.7142857142857
+Kepung,Terung,Sayuran,15.0,Ha,15.0,2478.0,247.8,True,165.2
+Kras,Terung,Sayuran,12.0,Ha,12.0,8412.0,841.2,True,701.0
+Kunjang,Terung,Sayuran,4.0,Ha,4.0,1533.0,153.3,True,383.25
+Mojo,Terung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Terung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Terung,Sayuran,47.0,Ha,47.0,25301.0,2530.1,True,538.3191489361702
+Ngasem,Terung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Terung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Terung,Sayuran,3.0,Ha,3.0,575.0,57.5,True,191.66666666666666
+Pare,Terung,Sayuran,34.0,Ha,34.0,7326.0,732.6,True,215.47058823529412
+Plemahan,Terung,Sayuran,44.5,Ha,44.5,16033.44,1603.344,True,360.3020224719101
+Plosoklaten,Terung,Sayuran,59.0,Ha,59.0,17182.0,1718.2,True,291.22033898305085
+Puncu,Terung,Sayuran,26.0,Ha,26.0,5504.0,550.4,True,211.69230769230768
+Purwoasri,Terung,Sayuran,4.0,Ha,4.0,685.0,68.5,True,171.25
+Ringinrejo,Terung,Sayuran,24.0,Ha,24.0,5658.0,565.8,True,235.75
+Semen,Terung,Sayuran,5.0,Ha,5.0,948.0,94.8,True,189.6
+Tarokan,Terung,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Terung,Sayuran,23.0,Ha,23.0,6468.0,646.8,True,281.2173913043478
+Badas,Tomat,Sayuran,1.0,Ha,1.0,210.0,21.0,True,210.0
+Banyakan,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Tomat,Sayuran,1.0,Ha,1.0,200.0,20.0,True,200.0
+Kandangan,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Tomat,Sayuran,0.5,Ha,0.5,100.0,10.0,True,200.0
+Kayenkidul,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Tomat,Sayuran,96.0,Ha,96.0,12408.0,1240.8,True,129.25
+Kras,Tomat,Sayuran,7.0,Ha,7.0,2263.0,226.3,True,323.2857142857143
+Kunjang,Tomat,Sayuran,2.0,Ha,2.0,361.0,36.1,True,180.5
+Mojo,Tomat,Sayuran,6.0,Ha,6.0,1166.0,116.6,True,194.33333333333334
+Ngadiluwih,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Tomat,Sayuran,69.0,Ha,69.0,21427.0,2142.7,True,310.536231884058
+Ngasem,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Tomat,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Tomat,Sayuran,17.0,Ha,17.0,1606.0,160.6,True,94.47058823529412
+Plemahan,Tomat,Sayuran,38.0,Ha,38.0,9793.35,979.335,True,257.71973684210525
+Plosoklaten,Tomat,Sayuran,59.0,Ha,59.0,14985.0,1498.5,True,253.98305084745763
+Puncu,Tomat,Sayuran,29.0,Ha,29.0,4565.0,456.5,True,157.41379310344828
+Purwoasri,Tomat,Sayuran,2.0,Ha,2.0,595.0,59.5,True,297.5
+Ringinrejo,Tomat,Sayuran,17.0,Ha,17.0,2701.0,270.1,True,158.88235294117646
+Semen,Tomat,Sayuran,5.0,Ha,5.0,803.0,80.3,True,160.6
+Tarokan,Tomat,Sayuran,0.75,Ha,0.75,98.0,9.8,True,130.66666666666666
+Wates,Tomat,Sayuran,18.0,Ha,18.0,2718.0,271.8,True,151.0
+Badas,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Banyakan,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gampengrejo,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Grogol,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Gurah,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandangan,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kandat,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kayenkidul,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kepung,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kras,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Kunjang,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Mojo,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngadiluwih,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngancar,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ngasem,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pagu,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Papar,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Pare,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plemahan,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Plosoklaten,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Puncu,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Purwoasri,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Ringinrejo,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Semen,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Tarokan,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
+Wates,Wortel,Sayuran,0.0,Ha,0.0,0.0,0.0,False,
