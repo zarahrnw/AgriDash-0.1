@@ -592,7 +592,7 @@ async function loadDashboardSummary() {
 }
 
 
-// 2. Mengambil data untuk tabel Monitoring Wilayah (Dengan Parameter Filter)
+// 2. Mengambil data untuk tabel Monitoring Wilayah (Dengan Endpoint Rekap Baru)
 async function loadMonitoringData(filterKecamatan = "") {
 
     const tabel = document.getElementById("tabelMonitoring");
@@ -604,27 +604,22 @@ async function loadMonitoringData(filterKecamatan = "") {
 
     try {
 
-        // Jika ada filter, tambahkan query parameter di URL
-        const url = filterKecamatan 
-            ? `${API_BASE_URL}/api/v1/tanaman-pangan?kecamatan=${encodeURIComponent(filterKecamatan)}` 
-            : `${API_BASE_URL}/api/v1/tanaman-pangan`;
-
-        const response = await fetch(url);
+        // Karena backend sudah menghitung rekap, kita panggil endpoint rekap-kecamatan
+        const response = await fetch(`${API_BASE_URL}/api/v1/rekap-kecamatan`);
 
         if (!response.ok) {
 
-            throw new Error("Gagal mengambil data tanaman pangan.");
+            throw new Error("Gagal mengambil data rekap kecamatan.");
 
         }
 
         const result = await response.json();
+        let rows = result.data;
 
-
-        // Mendukung respons berupa array atau objek berisi data
-        const rows = Array.isArray(result)
-            ? result
-            : result.data;
-
+        // Filter manual di frontend berdasarkan pilihan dropdown
+        if (filterKecamatan) {
+            rows = rows.filter(item => item.kecamatan.toLowerCase() === filterKecamatan.toLowerCase());
+        }
 
         if (!Array.isArray(rows) || rows.length === 0) {
 
@@ -638,43 +633,15 @@ async function loadMonitoringData(filterKecamatan = "") {
 
         }
 
-
-        // Menggabungkan produksi dan luas panen per kecamatan
-        const rekap = {};
-
-        rows.forEach((item) => {
-
-            const kecamatan = item.kecamatan;
-
-            if (!kecamatan) return;
-
-            if (!rekap[kecamatan]) {
-
-                rekap[kecamatan] = {
-                    produksi: 0,
-                    luas: 0
-                };
-
-            }
-
-            rekap[kecamatan].produksi +=
-                Number(item.produksi_ton) || 0;
-
-            rekap[kecamatan].luas +=
-                Number(item.luas_panen_ha) || 0;
-
-        });
-
-
-        // Render baris tabel
-        tabel.innerHTML = Object.entries(rekap)
-            .map(([kecamatan, data]) => `
+        // Render baris tabel (Data sudah dalam bentuk rekap dari backend)
+        tabel.innerHTML = rows
+            .map((item) => `
                 <tr>
-                    <td>${kecamatan}</td>
-                    <td>${data.produksi.toLocaleString("id-ID", {
+                    <td>${item.kecamatan}</td>
+                    <td>${item.produksi_ton.toLocaleString("id-ID", {
                         maximumFractionDigits: 2
                     })}</td>
-                    <td>${data.luas.toLocaleString("id-ID", {
+                    <td>${item.luas_panen_ha.toLocaleString("id-ID", {
                         maximumFractionDigits: 2
                     })}</td>
                     <td>
@@ -712,9 +679,8 @@ async function loadTop5Kecamatan() {
 
     try {
 
-        const response = await fetch(
-            `${API_BASE_URL}/api/v1/tanaman-pangan`
-        );
+        // Kita juga bisa pakai endpoint rekap untuk Top 5 ini
+        const response = await fetch(`${API_BASE_URL}/api/v1/rekap-kecamatan`);
 
         if (!response.ok) {
 
@@ -723,9 +689,12 @@ async function loadTop5Kecamatan() {
         }
 
         const result = await response.json();
-        const rows = result.data;
+        
+        // Karena endpoint rekap sudah otomatis mengurutkan dari yang terbesar,
+        // kita tinggal potong (slice) 5 data teratas
+        const top5 = result.data.slice(0, 5);
 
-        if (!Array.isArray(rows) || rows.length === 0) {
+        if (!Array.isArray(top5) || top5.length === 0) {
 
             container.innerHTML = "<p>Data kecamatan belum tersedia.</p>";
 
@@ -733,34 +702,10 @@ async function loadTop5Kecamatan() {
 
         }
 
-        // Jumlahkan produksi seluruh komoditas per kecamatan
-        const rekap = {};
-
-        rows.forEach((item) => {
-
-            const nama = item.kecamatan;
-
-            if (!nama) return;
-
-            if (!rekap[nama]) {
-
-                rekap[nama] = 0;
-
-            }
-
-            rekap[nama] += Number(item.produksi_ton) || 0;
-
-        });
-
-        // Urutkan berdasarkan produksi terbesar dan ambil lima teratas
-        const top5 = Object.entries(rekap)
-            .sort((a, b) => b[1] - a[1])
-            .slice(0, 5);
-
         // Render dengan DOM agar aman
         container.innerHTML = "";
 
-        top5.forEach(([nama, produksi], index) => {
+        top5.forEach((item, index) => {
 
             const row = document.createElement("div");
             row.className = "rank-row";
@@ -770,10 +715,10 @@ async function loadTop5Kecamatan() {
             rankNumber.textContent = index + 1;
 
             const nameSpan = document.createElement("span");
-            nameSpan.textContent = nama;
+            nameSpan.textContent = item.kecamatan;
 
             const valueStrong = document.createElement("strong");
-            valueStrong.textContent = produksi.toLocaleString("id-ID", {
+            valueStrong.textContent = item.produksi_ton.toLocaleString("id-ID", {
                 maximumFractionDigits: 0
             }) + " ton";
 
