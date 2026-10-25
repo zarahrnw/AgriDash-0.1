@@ -592,18 +592,24 @@ async function loadDashboardSummary() {
 }
 
 
-// 2. Mengambil data untuk tabel Monitoring Wilayah
-async function loadMonitoringData() {
+// 2. Mengambil data untuk tabel Monitoring Wilayah (Dengan Parameter Filter)
+async function loadMonitoringData(filterKecamatan = "") {
 
     const tabel = document.getElementById("tabelMonitoring");
 
     if (!tabel) return;
 
+    // Tampilkan loading setiap kali tombol Terapkan diklik
+    tabel.innerHTML = `<tr><td colspan="4">Memuat data...</td></tr>`;
+
     try {
 
-        const response = await fetch(
-            `${API_BASE_URL}/api/v1/tanaman-pangan`
-        );
+        // Jika ada filter, tambahkan query parameter di URL
+        const url = filterKecamatan 
+            ? `${API_BASE_URL}/api/v1/tanaman-pangan?kecamatan=${encodeURIComponent(filterKecamatan)}` 
+            : `${API_BASE_URL}/api/v1/tanaman-pangan`;
+
+        const response = await fetch(url);
 
         if (!response.ok) {
 
@@ -624,7 +630,7 @@ async function loadMonitoringData() {
 
             tabel.innerHTML = `
                 <tr>
-                    <td colspan="4">Belum ada data.</td>
+                    <td colspan="4">Belum ada data untuk kecamatan ini.</td>
                 </tr>
             `;
 
@@ -791,11 +797,68 @@ async function loadTop5Kecamatan() {
 }
 
 
+// 4. Mengisi Dropdown Filter Kecamatan dari API
+async function loadFilterKecamatan() {
+    const dropdown = document.getElementById("filterKecamatan");
+
+    if (!dropdown) return;
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/v1/kecamatan`);
+
+        if (!response.ok) {
+            throw new Error("Gagal mengambil data master kecamatan.");
+        }
+
+        const result = await response.json();
+        const daftarKecamatan = result.data;
+
+        if (!Array.isArray(daftarKecamatan) || daftarKecamatan.length === 0) {
+            return;
+        }
+
+        // Bersihkan isi dropdown, lalu kembalikan opsi default "Semua Kecamatan"
+        dropdown.innerHTML = `<option value="">Semua Kecamatan</option>`;
+
+        // Looping data kecamatan dan masukkan ke dalam <option>
+        daftarKecamatan.forEach((namaKecamatan) => {
+            const option = document.createElement("option");
+            option.value = namaKecamatan; // Nilai yang dikirim ke API
+            option.textContent = namaKecamatan; // Teks yang dilihat user
+            dropdown.appendChild(option);
+        });
+
+    } catch (error) {
+        console.error("Gagal memuat filter kecamatan:", error);
+    }
+}
+
+
+// 5. Menambahkan fungsi klik pada tombol "Terapkan"
+function setupFilterButton() {
+    // Cari tombol berwarna hijau di dalam kotak filter (class .filter-card)
+    const tombolTerapkan = document.querySelector(".filter-card .green-button");
+    const dropdownKecamatan = document.getElementById("filterKecamatan");
+
+    if (tombolTerapkan && dropdownKecamatan) {
+        tombolTerapkan.addEventListener("click", () => {
+            // Ambil kecamatan yang dipilih saat ini
+            const kecamatanTerpilih = dropdownKecamatan.value;
+            
+            // Panggil ulang tabel dengan filter tersebut
+            loadMonitoringData(kecamatanTerpilih);
+        });
+    }
+}
+
+
 // Jalankan semua integrasi setelah HTML selesai dimuat
 document.addEventListener("DOMContentLoaded", () => {
 
     loadDashboardSummary();
-    loadMonitoringData();
+    loadMonitoringData(); // Panggil awal tanpa filter (tampil semua data)
     loadTop5Kecamatan();
+    loadFilterKecamatan(); 
+    setupFilterButton(); // Aktifkan fungsi tombol Terapkan
 
 });
