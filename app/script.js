@@ -472,3 +472,330 @@ if (predictionChart) {
     });
 
 }
+
+
+
+/* =========================================================
+   INTEGRASI API BACKEND FASTAPI
+========================================================= */
+
+const API_BASE_URL = "http://127.0.0.1:8000";
+
+
+// 1. Mengambil ringkasan produksi dan luas panen
+async function loadDashboardSummary() {
+
+    const statusAPI = document.getElementById("statusAPI");
+
+    try {
+
+        const response = await fetch(
+            `${API_BASE_URL}/api/v1/tanaman-pangan/ringkasan`
+        );
+
+        if (!response.ok) {
+
+            throw new Error("Gagal mengambil data ringkasan.");
+
+        }
+
+        const data = await response.json();
+
+        const totalProduksi = Number(data.total_produksi_ton) || 0;
+        const totalLuasPanen = Number(data.total_luas_panen_ha) || 0;
+
+
+        // Isi kartu Total Produksi
+        const elProduksi = document.getElementById("totalProduksi");
+
+        if (elProduksi) {
+
+            elProduksi.textContent =
+                totalProduksi.toLocaleString("id-ID");
+
+        }
+
+
+        // Isi kartu Luas Panen
+        const elLuas = document.getElementById("totalLuasPanen");
+
+        if (elLuas) {
+
+            elLuas.textContent =
+                totalLuasPanen.toLocaleString("id-ID");
+
+        }
+
+
+        // Hitung & isi Produktivitas (Produksi ÷ Luas)
+        const elProduktivitas =
+            document.getElementById("totalProduktivitas");
+
+        if (elProduktivitas) {
+
+            if (totalLuasPanen > 0) {
+
+                const produktivitas =
+                    totalProduksi / totalLuasPanen;
+
+                elProduktivitas.textContent =
+                    produktivitas.toLocaleString("id-ID", {
+                        maximumFractionDigits: 2
+                    });
+
+            } else {
+
+                elProduktivitas.textContent = "Belum tersedia";
+
+            }
+
+        }
+
+
+        // Status API
+        if (statusAPI) {
+
+            statusAPI.textContent =
+                "✅ Data berhasil dimuat dari backend.";
+
+            statusAPI.style.color = "#265322";
+
+        }
+
+    } catch (error) {
+
+        console.error("Gagal memuat ringkasan:", error);
+
+
+        // Fallback tampilan
+        const elProduksi = document.getElementById("totalProduksi");
+        const elLuas = document.getElementById("totalLuasPanen");
+        const elProduktivitas =
+            document.getElementById("totalProduktivitas");
+
+        if (elProduksi) elProduksi.textContent = "—";
+        if (elLuas) elLuas.textContent = "—";
+        if (elProduktivitas) elProduktivitas.textContent = "Belum tersedia";
+
+
+        if (statusAPI) {
+
+            statusAPI.textContent =
+                "⚠️ Gagal memuat data. Periksa koneksi backend.";
+
+            statusAPI.style.color = "#b91c1c";
+
+        }
+
+    }
+
+}
+
+
+// 2. Mengambil data untuk tabel Monitoring Wilayah
+async function loadMonitoringData() {
+
+    const tabel = document.getElementById("tabelMonitoring");
+
+    if (!tabel) return;
+
+    try {
+
+        const response = await fetch(
+            `${API_BASE_URL}/api/v1/tanaman-pangan`
+        );
+
+        if (!response.ok) {
+
+            throw new Error("Gagal mengambil data tanaman pangan.");
+
+        }
+
+        const result = await response.json();
+
+
+        // Mendukung respons berupa array atau objek berisi data
+        const rows = Array.isArray(result)
+            ? result
+            : result.data;
+
+
+        if (!Array.isArray(rows) || rows.length === 0) {
+
+            tabel.innerHTML = `
+                <tr>
+                    <td colspan="4">Belum ada data.</td>
+                </tr>
+            `;
+
+            return;
+
+        }
+
+
+        // Menggabungkan produksi dan luas panen per kecamatan
+        const rekap = {};
+
+        rows.forEach((item) => {
+
+            const kecamatan = item.kecamatan;
+
+            if (!kecamatan) return;
+
+            if (!rekap[kecamatan]) {
+
+                rekap[kecamatan] = {
+                    produksi: 0,
+                    luas: 0
+                };
+
+            }
+
+            rekap[kecamatan].produksi +=
+                Number(item.produksi_ton) || 0;
+
+            rekap[kecamatan].luas +=
+                Number(item.luas_panen_ha) || 0;
+
+        });
+
+
+        // Render baris tabel
+        tabel.innerHTML = Object.entries(rekap)
+            .map(([kecamatan, data]) => `
+                <tr>
+                    <td>${kecamatan}</td>
+                    <td>${data.produksi.toLocaleString("id-ID", {
+                        maximumFractionDigits: 2
+                    })}</td>
+                    <td>${data.luas.toLocaleString("id-ID", {
+                        maximumFractionDigits: 2
+                    })}</td>
+                    <td>
+                        <span class="status normal">
+                            Data tersedia
+                        </span>
+                    </td>
+                </tr>
+            `)
+            .join("");
+
+    } catch (error) {
+
+        console.error("Gagal memuat monitoring:", error);
+
+        tabel.innerHTML = `
+            <tr>
+                <td colspan="4">
+                    Gagal memuat data dari backend.
+                </td>
+            </tr>
+        `;
+
+    }
+
+}
+
+
+// 3. Mengambil data untuk Top 5 Kecamatan (Produksi)
+async function loadTop5Kecamatan() {
+
+    const container = document.getElementById("top5Kecamatan");
+
+    if (!container) return;
+
+    try {
+
+        const response = await fetch(
+            `${API_BASE_URL}/api/v1/tanaman-pangan`
+        );
+
+        if (!response.ok) {
+
+            throw new Error("Gagal mengambil data tanaman pangan.");
+
+        }
+
+        const result = await response.json();
+        const rows = result.data;
+
+        if (!Array.isArray(rows) || rows.length === 0) {
+
+            container.innerHTML = "<p>Data kecamatan belum tersedia.</p>";
+
+            return;
+
+        }
+
+        // Jumlahkan produksi seluruh komoditas per kecamatan
+        const rekap = {};
+
+        rows.forEach((item) => {
+
+            const nama = item.kecamatan;
+
+            if (!nama) return;
+
+            if (!rekap[nama]) {
+
+                rekap[nama] = 0;
+
+            }
+
+            rekap[nama] += Number(item.produksi_ton) || 0;
+
+        });
+
+        // Urutkan berdasarkan produksi terbesar dan ambil lima teratas
+        const top5 = Object.entries(rekap)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 5);
+
+        // Render dengan DOM agar aman
+        container.innerHTML = "";
+
+        top5.forEach(([nama, produksi], index) => {
+
+            const row = document.createElement("div");
+            row.className = "rank-row";
+
+            const rankNumber = document.createElement("div");
+            rankNumber.className = "rank-number";
+            rankNumber.textContent = index + 1;
+
+            const nameSpan = document.createElement("span");
+            nameSpan.textContent = nama;
+
+            const valueStrong = document.createElement("strong");
+            valueStrong.textContent = produksi.toLocaleString("id-ID", {
+                maximumFractionDigits: 0
+            }) + " ton";
+
+            const trendEm = document.createElement("em");
+            trendEm.innerHTML = "↑";
+            trendEm.style.color = "#8ab45b";
+
+            row.append(rankNumber, nameSpan, valueStrong, trendEm);
+            container.appendChild(row);
+
+        });
+
+    } catch (error) {
+
+        console.error("Gagal memuat Top 5 Kecamatan:", error);
+
+        container.innerHTML = "<p style='color:red;'>Gagal memuat data kecamatan.</p>";
+
+    }
+
+}
+
+
+// Jalankan semua integrasi setelah HTML selesai dimuat
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadDashboardSummary();
+    loadMonitoringData();
+    loadTop5Kecamatan();
+
+});
