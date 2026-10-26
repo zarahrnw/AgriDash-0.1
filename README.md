@@ -1,84 +1,226 @@
-# AgriDash-0.1
+# AgriDash API
 
-Sistem informasi pertanian dan ketahanan pangan untuk Kabupaten Kediri, dikembangkan sebagai bagian dari program hilirisasi SINERGI. Agri-Dash membantu DKPP/Dispertabun memantau produksi pertanian, harga pangan, cuaca, dan ketahanan pangan secara terintegrasi, lengkap dengan prediksi dan peringatan dini (Early Warning System).
+**Version:** 0.1.0  
+**Project:** AgriDash  
+**Repository:** [AgriDash-0.1](https://github.com/zarahrnw/AgriDash-0.1)
+
+AgriDash merupakan sistem informasi pertanian dan ketahanan pangan untuk Kabupaten Kediri yang dikembangkan sebagai bagian dari program hilirisasi SINERGI. Sistem ini dirancang untuk membantu Dinas Ketahanan Pangan dan Pertanian (DKPP/Dispertabun) memantau produksi pertanian, harga pangan, kondisi cuaca, dan ketahanan pangan secara terintegrasi.
+
+AgriDash menyediakan dukungan analisis data, prediksi, serta sistem peringatan dini (*Early Warning System*) untuk membantu proses pemantauan dan pengambilan keputusan.
 
 ## Fitur Utama
 
-1. **Dashboard Eksekutif** — KPI, alert, tren, dan smart insight untuk pimpinan
-2. **Monitoring Wilayah** — Peta produksi, luas panen, produktivitas, dan wilayah prioritas
-3. **Harga Pangan** — Monitoring harga, tren, volatilitas, dan alert
-4. **Cuaca & Risiko** — Cuaca, prakiraan, dan risiko pertanian
-5. **Prediksi & Early Warning** — Forecast produksi/produktivitas/harga dan peringatan dini
-6. **Ketahanan Pangan** — Indeks, peta, tren, faktor dominan, dan prioritas
-7. **Insight & Rekomendasi** — Rekomendasi komoditas dan insight otomatis
-8. **Data Center** — Flexible upload, API, validasi, histori, dan tata kelola data
+1. **Dashboard Eksekutif**  
+   Menampilkan indikator kinerja utama (KPI), peringatan, tren, dan *insight* untuk mendukung pengambilan keputusan.
+
+2. **Monitoring Wilayah**  
+   Menyajikan data produksi, luas panen, dan produktivitas pertanian berdasarkan kecamatan.
+
+3. **Monitoring Harga Pangan**  
+   Mendukung pemantauan harga pangan dan analisis tren harga. Fitur ini masih dalam pengembangan.
+
+4. **Cuaca dan Risiko**  
+   Mengintegrasikan data cuaca dari API BMKG untuk mendukung pemantauan kondisi cuaca dan risiko pertanian.
+
+5. **Prediksi dan Early Warning System**  
+   Menyediakan dukungan API untuk integrasi model *machine learning* dan sistem peringatan dini.
+
+6. **Ketahanan Pangan**  
+   Mendukung pemantauan indeks dan status ketahanan pangan.
+
+7. **Insight dan Rekomendasi**  
+   Menyediakan *insight* analitis dan rekomendasi komoditas untuk mendukung perencanaan pertanian.
+
+8. **Data Center**  
+   Mendukung pengunggahan data CSV dan Excel melalui API dengan autentikasi sesuai hak akses pengguna.
 
 ## Tech Stack
 
-- **Backend**: FastAPI, PostgreSQL, SQLAlchemy
-- **Data & ML**: pandas, scikit-learn, statsmodels, Prophet
-- **Frontend**: (lihat `app/`)
-- **Sumber data eksternal**: BMKG (cuaca), Siskaperbapo Jatim (harga pangan), Badan Pangan Nasional (ketahanan pangan)
+| Komponen | Teknologi |
+|---|---|
+| Backend | FastAPI, Python 3.11 |
+| Database | Supabase (PostgreSQL) |
+| ORM | SQLAlchemy |
+| Autentikasi | OAuth2, JWT |
+| Password Hashing | Passlib, Bcrypt |
+| Data Processing | Pandas |
+| External API | BMKG |
+| Testing | Pytest |
+| Testing Database | SQLite in-memory |
 
 ## Struktur Folder
 
-```
+```text
 AgriDash-0.1/
-├── api/            # Backend/API (routers, schemas, services)
-├── app/            # Frontend/UI (components, pages, styles)
-├── data/           # Dataset (raw, derived, external)
-├── docs/           # Dokumentasi (data dictionary, API docs)
+├── api/            # Backend API dan endpoint
+├── app/            # Frontend dan antarmuka pengguna
+├── data/           # Dataset raw, derived, dan external
+├── docs/           # Dokumentasi proyek
 ├── lib/            # Shared library
-├── models/         # ML models (trained, configs)
-├── notebooks/      # Eksplorasi & eksperimen data/model
-├── public/         # Asset statis frontend
-├── src/            # Pipeline & shared logic (etl, ml, utils)
-└── tests/          # Unit & integration test
+├── models/         # Model machine learning dan konfigurasi
+├── notebooks/      # Eksplorasi data dan eksperimen model
+├── public/         # Aset statis frontend
+├── src/            # Pipeline ETL, ML, dan utilitas bersama
+└── tests/          # Unit test dan integration test
 ```
 
-## Pembagian Role
+*Catatan: Struktur di atas merupakan gambaran direktori proyek. Pastikan nama folder dan lokasi modul sesuai dengan struktur aktual repositori.*
 
-| Role | Penanggung Jawab | Fokus Folder |
+## Pembagian Tugas Tim
+
+| Role | Penanggung Jawab | Fokus Pengembangan |
 |---|---|---|
 | Data Engineer | Zarah | `data/`, `src/etl/` |
 | ML Engineer | Zerlina | `models/`, `src/ml/`, `notebooks/` |
-| Backend/API | Linda | `api/`, `src/utils/` |
-| Frontend/UI | Dhini | `app/`, `public/` |
+| Backend/API Developer | Linda | `api/`, `src/utils/` |
+| Frontend/UI Developer | Dhini | `app/`, `public/` |
 
-## Setup Lokal
+## Persyaratan Sistem
 
-1. Clone repository:
-   ```bash
-   git clone https://github.com/zarahrnw/AgriDash-0.1.git
-   cd AgriDash-0.1
-   ```
+Sebelum menjalankan proyek, pastikan perangkat telah memiliki:
 
-2. Buat virtual environment dan install dependency:
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate      # Windows
-   source venv/bin/activate   # macOS/Linux
-   pip install -r requirements.txt
-   ```
+- Python 3.11
+- Git
+- Akses ke database Supabase PostgreSQL
+- Dependency proyek yang tercantum dalam `requirements.txt`
 
-3. Copy `.env.example` menjadi `.env` dan isi credential/API key yang diperlukan:
-   ```bash
-   cp .env.example .env
-   ```
+## Instalasi dan Konfigurasi Lokal
 
-4. Jalankan backend (setelah `api/main.py` tersedia):
-   ```bash
-   uvicorn api.main:app --reload
-   ```
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/zarahrnw/AgriDash-0.1.git
+cd AgriDash-0.1
+```
+
+### 2. Buat Virtual Environment
+
+Jalankan perintah berikut pada Windows:
+
+```powershell
+python -m venv venv
+venv\Scripts\activate
+```
+
+Pada macOS atau Linux:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Instal Dependency
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Konfigurasi Environment Variables
+
+Buat file `.env` di direktori utama proyek, sejajar dengan `README.md`.
+
+Isi file `.env` dengan konfigurasi berikut:
+
+```env
+DATABASE_URL="postgresql://..."
+SECRET_KEY="ganti_dengan_kunci_rahasia"
+ALGORITHM="HS256"
+```
+
+Keterangan:
+
+- `DATABASE_URL`: Connection string untuk menghubungkan aplikasi dengan database Supabase PostgreSQL.
+- `SECRET_KEY`: Kunci rahasia yang digunakan untuk proses penandatanganan token JWT.
+- `ALGORITHM`: Algoritma yang digunakan untuk penandatanganan token JWT.
+
+**Penting:**
+- Ganti nilai contoh dengan konfigurasi yang sesuai dengan lingkungan pengembangan.
+- Mintalah connection string database kepada pengelola proyek.
+- Jangan mengunggah file `.env` yang berisi kredensial asli ke GitHub.
+- Pastikan nama variabel sesuai dengan yang dibaca oleh kode backend.
+
+Untuk memudahkan konfigurasi anggota tim, sediakan file `.env.example` yang berisi nama variabel dan nilai placeholder tanpa kredensial asli.
+
+### 5. Jalankan Backend
+
+Jika entry point aplikasi berada di `api/main.py`, jalankan:
+
+```bash
+uvicorn api.main:app --reload
+```
+
+Secara default, aplikasi dapat diakses melalui:
+
+```text
+http://127.0.0.1:8000
+```
+
+Pastikan perintah tersebut sesuai dengan lokasi objek `app` pada kode aktual.
+
+### 6. Jalankan Automated Testing
+
+```bash
+python -m pytest -v
+```
+
+Perintah ini menjalankan pengujian yang tersedia di direktori `tests/`.
+
+## Dokumentasi API
+
+AgriDash menggunakan FastAPI yang menyediakan dokumentasi API interaktif melalui Swagger UI.
+
+Setelah backend berhasil dijalankan, buka:
+
+**Swagger UI:** http://127.0.0.1:8000/docs
+
+Dokumentasi alternatif tersedia melalui:
+
+**ReDoc:** http://127.0.0.1:8000/redoc
+
+### Endpoint Utama
+
+Berikut adalah endpoint yang direncanakan sebagai akses utama layanan API. Ketersediaan dan metode HTTP perlu disesuaikan dengan implementasi aktual.
+
+| Modul | Endpoint | Kegunaan |
+|---|---|---|
+| Autentikasi | `POST /api/v1/auth/register` | Registrasi pengguna |
+| Autentikasi | `POST /api/v1/auth/login` | Login pengguna |
+| Tanaman Pangan | `GET /api/v1/tanaman-pangan` | Mengakses data tanaman pangan |
+| Cuaca dan EWS | `GET /api/v1/ews-cuaca/{kode_wilayah}` | Mengakses informasi cuaca dan peringatan dini |
+| Data Center | `POST /api/v1/tanaman-pangan/upload` | Mengunggah data tanaman pangan |
+| Prediksi | `POST /api/v1/prediksi` | Mengakses layanan prediksi |
+
+Beberapa endpoint mungkin memerlukan autentikasi dan otorisasi tertentu. Periksa dokumentasi Swagger UI untuk mengetahui parameter, skema request dan response, serta persyaratan akses masing-masing endpoint.
 
 ## Sumber Data
 
-- Hortikultura, Perkebunan, Peternakan, Perikanan — BPS Kabupaten Kediri ("Kabupaten Kediri Dalam Angka")
-- Tanaman Pangan — estimasi berbasis proporsi luas sawah per kecamatan (lihat `notebooks/Pembagian Tanaman Pangan.ipynb`)
-- Cuaca — API BMKG
-- Harga Pangan — Siskaperbapo Jawa Timur
-- Ketahanan Pangan — Badan Pangan Nasional (Bapanas)
+| Data | Sumber |
+|---|---|
+| Hortikultura, perkebunan, peternakan, dan perikanan | BPS Kabupaten Kediri, publikasi *Kabupaten Kediri Dalam Angka* |
+| Tanaman pangan | Estimasi berbasis proporsi luas sawah per kecamatan |
+| Cuaca | API BMKG |
+| Harga pangan | Siskaperbapo Jawa Timur |
+| Ketahanan pangan | Badan Pangan Nasional (Bapanas) |
 
-## Status Project
+Untuk informasi mengenai metode pembagian estimasi tanaman pangan, lihat notebook `notebooks/Pembagian Tanaman Pangan.ipynb`, apabila file tersebut tersedia pada repositori.
 
-🚧 Dalam pengembangan aktif.
+## Status Pengembangan
+
+**Status:** Dalam pengembangan aktif.
+
+Pengembangan mencakup backend API, integrasi database, pengolahan data, integrasi sumber data eksternal, serta dukungan layanan analitik dan prediksi.
+
+Fitur yang telah selesai, sedang dikembangkan, atau belum diimplementasikan perlu dikonfirmasi melalui kode sumber dan hasil pengujian terbaru.
+
+## Kontributor
+
+| Nama | Peran |
+|---|---|
+| Zarah | Data Engineer |
+| Zerlina | ML Engineer |
+| Linda | Backend/API Developer |
+| Dhini | Frontend/UI Developer |
+
+---
+
+Dikembangkan sebagai bagian dari program hilirisasi SINERGI untuk mendukung analisis data pertanian dan ketahanan pangan Kabupaten Kediri.
