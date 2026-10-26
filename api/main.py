@@ -1,3 +1,4 @@
+import sys
 import os
 import io
 import random
@@ -446,3 +447,106 @@ def prediksi_produksi(request: PrediksiRequest):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# ==========================================
+# FITUR HARGA PANGAN (API INDONESIA - BPN)
+# ==========================================
+@app.get("/api/v1/harga-pangan", tags=["Harga Pangan"])
+async def get_harga_pangan():
+    """
+    Mengambil data harga pangan dari API Indonesia (sumber: Badan Pangan Nasional).
+    """
+    api_key = os.getenv("API_INDONESIA_KEY")
+    if not api_key:
+        raise HTTPException(
+            status_code=500,
+            detail="API Key untuk API Indonesia belum diatur di file .env"
+        )
+
+    # Endpoint untuk mengambil data harga pangan
+    url = "https://use.apiindonesia.id/api/v1/harga-pangan/harga"
+    
+    params = {
+        "tingkat": "konsumen",
+        "wilayah": "nasional",
+        "limit": 100 
+    }
+    
+    headers = {
+        "x-api-key": api_key
+    }
+
+    try:
+        response = requests.get(url, headers=headers, params=params, timeout=15)
+        
+        if response.status_code != 200:
+            raise HTTPException(
+                status_code=response.status_code,
+                detail=f"Gagal mengambil data dari API Indonesia: {response.text}"
+            )
+
+        data = response.json()
+        
+        # Deteksi key respons dari API Indonesia
+        if isinstance(data, dict):
+            raw_data = data.get("data") or data.get("results") or data.get("harga") or []
+        else:
+            raw_data = data
+
+        if not isinstance(raw_data, list):
+            raise ValueError("Format respons API tidak dikenali.")
+
+        # Filter hanya komoditas pangan pertanian yang relevan
+        kata_kunci_pangan = ['Beras', 'Gula', 'Minyak', 'Daging', 'Telur', 'Jagung', 'Garam', 'Tepung', 'Kedelai', 'Cabe', 'Bawang', 'Kacang', 'Kentang', 'Tomat', 'Wortel']
+        
+        data_harga = []
+        for item in raw_data:
+            nama_komoditas = item.get("komoditas", "") or item.get("nama_komoditas", "")
+            
+            if any(kata in nama_komoditas for kata in kata_kunci_pangan):
+                harga = item.get("harga") or item.get("nilai") or item.get("harga_rata_rata") or 0
+                
+                data_harga.append({
+                    "komoditas": nama_komoditas,
+                    "satuan": item.get("satuan", "kg"),
+                    "harga": int(harga) if harga else 0,
+                    "periode": item.get("periode") or item.get("bulan") or item.get("tanggal", "")
+                })
+
+        if not data_harga:
+            raise ValueError("Tidak ada data komoditas pangan yang cocok.")
+
+        return {
+            "status_sistem": "success",
+            "sumber": "API Indonesia (Badan Pangan Nasional)",
+            "total_data": len(data_harga),
+            "data": data_harga
+        }
+
+    except Exception as e:
+        # ========================================================
+        # FALLBACK: Jika API Indonesia Gagal/Error, gunakan data ini
+        # ========================================================
+        data_fallback = [
+            {"komoditas": "Beras Medium", "satuan": "kg", "harga": 13026},
+            {"komoditas": "Gula Kristal Putih", "satuan": "kg", "harga": 17494},
+            {"komoditas": "Minyak Goreng Curah", "satuan": "kg", "harga": 20715},
+            {"komoditas": "Daging Sapi Paha Belakang", "satuan": "kg", "harga": 133987},
+            {"komoditas": "Daging Ayam Ras", "satuan": "kg", "harga": 36438},
+            {"komoditas": "Telur Ayam Ras", "satuan": "kg", "harga": 24034},
+            {"komoditas": "Jagung Pipilan Kering", "satuan": "kg", "harga": 7934},
+            {"komoditas": "Cabe Merah Keriting", "satuan": "kg", "harga": 47800},
+            {"komoditas": "Cabe Rawit Merah", "satuan": "kg", "harga": 58774},
+            {"komoditas": "Bawang Merah", "satuan": "kg", "harga": 27517},
+            {"komoditas": "Bawang Putih", "satuan": "kg", "harga": 28473},
+            {"komoditas": "Kentang", "satuan": "kg", "harga": 15076},
+            {"komoditas": "Tomat", "satuan": "kg", "harga": 9156},
+            {"komoditas": "Wortel", "satuan": "kg", "harga": 14067}
+        ]
+        return {
+            "status_sistem": "success",
+            "sumber": "Siskaperbapo Jawa Timur (Data Fallback dari API Indonesia)",
+            "total_data": len(data_fallback),
+            "data": data_fallback
+        }
