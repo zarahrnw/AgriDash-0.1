@@ -1,9 +1,12 @@
-import csv
-from pathlib import Path
+import os
 from typing import Optional
-
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import create_engine, text
+from dotenv import load_dotenv
+
+# Memuat kredensial dari file .env
+load_dotenv()
 
 app = FastAPI(
     title="AgriDash API",
@@ -19,172 +22,155 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_FILE = (
-    BASE_DIR
-    / "data"
-    / "derived"
-    / "Tanaman Pangan Per Kecamatan.csv"
-)
+# Koneksi ke Database Supabase
+DATABASE_URL = os.getenv("DATABASE_URL")
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL tidak ditemukan di file .env")
 
-NUMERIC_COLUMNS = (
-    "luas_panen_ha",
-    "produksi_ton",
-    "produktivitas_kuintal_ha",
-)
-
-
-def load_crop_data() -> list[dict]:
-    """Membaca data tanaman pangan dari file CSV dengan penanganan error."""
-    if not DATA_FILE.exists():
-        raise FileNotFoundError(
-            f"File dataset tidak ditemukan di path: {DATA_FILE}"
-        )
-
-    rows = []
-    try:
-        with DATA_FILE.open("r", encoding="utf-8-sig", newline="") as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                for column in NUMERIC_COLUMNS:
-                    value = (row.get(column) or "").strip()
-                    if not value:
-                        row[column] = None
-                        continue
-                    try:
-                        row[column] = float(value)
-                    except ValueError:
-                        raise ValueError(
-                            f"Nilai tidak valid pada baris {reader.line_num}, "
-                            f"kolom {column}: {value!r}"
-                        )
-                rows.append(row)
-    except UnicodeDecodeError:
-        raise ValueError("Format file CSV tidak valid (gagal decode).")
-
-    return rows
+engine = create_engine(DATABASE_URL)
 
 
 @app.get("/health", tags=["System"])
 def health_check():
-    """Memeriksa apakah API berjalan."""
-    return {"status": "ok", "service": "AgriDash API"}
-
-
-@app.get("/api/v1/kecamatan", tags=["Master Data"])
-def get_daftar_kecamatan():
-    """Mengambil daftar unik kecamatan yang tersedia."""
+    """Memeriksa apakah API dan Database berjalan."""
     try:
-        rows = load_crop_data()
+        with engine.connect() as conn:
+            conn.execute(text("SELECT 1"))
+        return {"status": "ok", "service": "AgriDash API", "database": "connected"}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-    kecamatan_set = {
-        row["kecamatan"].strip() for row in rows if row.get("kecamatan")
-    }
-
-    return {"total": len(kecamatan_set), "data": sorted(list(kecamatan_set))}
+        return {"status": "error", "service": "AgriDash API", "database": str(e)}
 
 
 # ==========================================
-# FITUR BARU 1: REKAP DATA (BACKEND MENGHITUNG)
+# ENDPOINT MASTER KECAMATAN (Dari Supabase)
+# ==========================================
+@app.get("/api/v1/kecamatan", tags=["Master Data"])
+def get_daftar_kecamatan():
+    """Mengambil daftar unik kecamatan dari tabel master_kecamatan."""
+    try:
+        with engine.connect() as conn:
+            # Mengambil daftar nama kecamatan dan mengurutkannya
+            result = conn.execute(text("SELECT kecamatan FROM master_kecamatan ORDER BY kecamatan ASC"))
+            kecamatan_list = [row[0] for row in result]
+            
+        return {"total": len(kecamatan_list), "data": kecamatan_list}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ==========================================
+# ENDPOINT REKAP KECAMATAN (Dari Supabase)
 # ==========================================
 @app.get("/api/v1/rekap-kecamatan", tags=["Tanaman Pangan"])
 def get_rekap_kecamatan():
-    """
-    Mengambil total produksi dan luas panen yang sudah dijumlahkan per kecamatan.
-    Frontend tinggal menampilkan, tidak perlu hitung manual lagi.
-    """
+    """Menjumlahkan total produksi dan luas panen per kecamatan langsung dari Database."""
     try:
-        rows = load_crop_data()
+        with engine.connect() as conn:
+            # Query SQL untuk SUM data dari tabel tanaman_pangan
+            query = text("""
+                SELECT 
+                    kecamatan, 
+                    SUM(produksi_ton) as total_produksi, 
+                    SUM(luas_panen_ha) as total_luas
+                FROM tanaman_pangan
+                GROUP BY kecamatan
+                ORDER BY total_produksi DESC
+            """)
+            result = conn.execute(query)
+            
+            # Format hasil menjadi list of dictionaries
+            data = [
+                {
+                    "kecamatan": row.kecamatan,
+                    "produksi_ton": round(row.total_produksi or 0, 2),
+                    "luas_panen_ha": round(row.total_luas or 0, 2)
+                }
+                for row in result
+            ]
+            
+        return {"total_kecamatan": len(data), "data": data}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-    rekap = {}
-    for row in rows:
-        kecamatan = row.get("kecamatan")
-        if not kecamatan:
-            continue
-
-        if kecamatan not in rekap:
-            rekap[kecamatan] = {"produksi_ton": 0, "luas_panen_ha": 0}
-
-        # Tambahkan angka produksi dan luas
-        rekap[kecamatan]["produksi_ton"] += row.get("produksi_ton") or 0
-        rekap[kecamatan]["luas_panen_ha"] += row.get("luas_panen_ha") or 0
-
-    # Ubah format menjadi list dan bulatkan angkanya
-    hasil = []
-    for kecamatan, nilai in rekap.items():
-        hasil.append({
-            "kecamatan": kecamatan,
-            "produksi_ton": round(nilai["produksi_ton"], 2),
-            "luas_panen_ha": round(nilai["luas_panen_ha"], 2)
-        })
-
-    # Urutkan berdasarkan produksi terbesar secara default
-    hasil.sort(key=lambda x: x["produksi_ton"], reverse=True)
-
-    return {"total_kecamatan": len(hasil), "data": hasil}
-
 
 # ==========================================
-# FITUR BARU 2: SORTING & PAGINATION
+# ENDPOINT DATA TANAMAN PANGAN (Dari Supabase)
 # ==========================================
 @app.get("/api/v1/tanaman-pangan", tags=["Tanaman Pangan"])
 def get_tanaman_pangan(
     kecamatan: Optional[str] = Query(default=None, description="Filter berdasarkan nama kecamatan"),
     tanaman: Optional[str] = Query(default=None, description="Filter berdasarkan jenis tanaman"),
-    limit: int = Query(default=50, description="Batasi jumlah data yang ditarik (Pagination)"),
+    limit: int = Query(default=50, description="Batasi jumlah data yang ditarik"),
     sort_by: str = Query(default="produksi_ton", description="Urutkan berdasarkan: produksi_ton / luas_panen_ha"),
 ):
-    """Mengambil data tanaman pangan dengan filter, sorting, dan limit."""
+    """Mengambil data tanaman pangan dari database dengan filter, sorting, dan limit."""
     try:
-        rows = load_crop_data()
+        with engine.connect() as conn:
+            # Base query
+            query_str = "SELECT * FROM tanaman_pangan WHERE 1=1"
+            params = {}
+
+            # Tambahkan filter jika ada
+            if kecamatan:
+                query_str += " AND LOWER(kecamatan) = LOWER(:kecamatan)"
+                params["kecamatan"] = kecamatan
+            
+            if tanaman:
+                query_str += " AND LOWER(tanaman) = LOWER(:tanaman)"
+                params["tanaman"] = tanaman
+
+            # Validasi kolom sorting agar aman dari SQL Injection
+            valid_sorts = ["produksi_ton", "luas_panen_ha", "produktivitas_kuintal_ha"]
+            if sort_by not in valid_sorts:
+                sort_by = "produksi_ton"
+
+            # Tambahkan sorting dan limit
+            query_str += f" ORDER BY {sort_by} DESC LIMIT :limit"
+            params["limit"] = limit
+
+            result = conn.execute(text(query_str), params)
+            
+            # Mengambil hasil query
+            rows = [dict(row._mapping) for row in result]
+
+        return {
+            "total_data_ditampilkan": len(rows),
+            "filters": {"kecamatan": kecamatan, "tanaman": tanaman, "sort_by": sort_by},
+            "data": rows,
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-    # 1. Filtering
-    if kecamatan:
-        kecamatan_filter = kecamatan.strip().casefold()
-        rows = [r for r in rows if r.get("kecamatan", "").strip().casefold() == kecamatan_filter]
 
-    if tanaman:
-        tanaman_filter = tanaman.strip().casefold()
-        rows = [r for r in rows if r.get("tanaman", "").strip().casefold() == tanaman_filter]
-
-    # 2. Sorting (Hanya untuk kolom numerik)
-    if sort_by in ["produksi_ton", "luas_panen_ha", "produktivitas_kuintal_ha"]:
-        rows = sorted(rows, key=lambda x: x.get(sort_by) or 0, reverse=True)
-
-    # 3. Pagination (Membatasi jumlah data)
-    total_sebelum_limit = len(rows)
-    rows = rows[:limit]
-
-    return {
-        "total_data_tersedia": total_sebelum_limit,
-        "data_ditampilkan": len(rows),
-        "filters": {"kecamatan": kecamatan, "tanaman": tanaman, "sort_by": sort_by},
-        "data": rows,
-    }
-
-
+# ==========================================
+# ENDPOINT RINGKASAN DASHBOARD (Dari Supabase)
+# ==========================================
 @app.get("/api/v1/tanaman-pangan/ringkasan", tags=["Tanaman Pangan"])
 def get_ringkasan_tanaman_pangan():
-    """Menyediakan ringkasan statistik tanaman pangan."""
+    """Menyediakan ringkasan statistik untuk Dashboard."""
     try:
-        rows = load_crop_data()
+        with engine.connect() as conn:
+            # Query untuk total produksi dan luas
+            query_sum = text("""
+                SELECT 
+                    SUM(produksi_ton) as total_prod, 
+                    SUM(luas_panen_ha) as total_luas
+                FROM tanaman_pangan
+            """)
+            result_sum = conn.execute(query_sum).fetchone()
+
+            # Query untuk menghitung jumlah kecamatan unik
+            query_count = text("SELECT COUNT(DISTINCT kecamatan) as jml_kec, COUNT(DISTINCT tanaman) as jml_tanaman FROM tanaman_pangan")
+            result_count = conn.execute(query_count).fetchone()
+
+        total_produksi = result_sum.total_prod or 0
+        total_luas = result_sum.total_luas or 0
+
+        return {
+            "total_produksi_ton": round(total_produksi, 2),
+            "total_luas_panen_ha": round(total_luas, 2),
+            "jumlah_kecamatan": result_count.jml_kec,
+            "jumlah_jenis_tanaman": result_count.jml_tanaman,
+        }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-    total_produksi = sum(r["produksi_ton"] for r in rows if r.get("produksi_ton") is not None)
-    total_luas_panen = sum(r["luas_panen_ha"] for r in rows if r.get("luas_panen_ha") is not None)
-    jumlah_kecamatan = len({r["kecamatan"].strip().casefold() for r in rows if r.get("kecamatan")})
-    jumlah_jenis_tanaman = len({r["tanaman"].strip().casefold() for r in rows if r.get("tanaman")})
-
-    return {
-        "total_produksi_ton": round(total_produksi, 2),
-        "total_luas_panen_ha": round(total_luas_panen, 2),
-        "jumlah_kecamatan": jumlah_kecamatan,
-        "jumlah_jenis_tanaman": jumlah_jenis_tanaman,
-    }

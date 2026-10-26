@@ -12,3 +12,7 @@ setup_test.py
 
 # IDE
 .vscode/
+
+# Environment Variables & Secrets (PENTING!)
+.env
+PASSWORD.md
