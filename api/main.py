@@ -314,3 +314,78 @@ def get_cuaca_bmkg(kode_kecamatan: str):
         raise HTTPException(status_code=504, detail="Koneksi ke server BMKG timeout.")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# ==========================================
+# FITUR EARLY WARNING SYSTEM (EWS) CUACA
+# ==========================================
+@app.get("/api/v1/ews-cuaca/{kode_kecamatan}", tags=["Cuaca & Risiko"])
+def get_ews_cuaca(kode_kecamatan: str):
+    """
+    Menganalisis data cuaca BMKG dan memberikan status peringatan dini (EWS) untuk pertanian.
+    """
+    try:
+        # 1. Ambil data dari API BMKG (sama seperti endpoint sebelumnya)
+        url = f"https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4={kode_kecamatan}"
+        response = requests.get(url, timeout=10)
+        
+        if response.status_code != 200:
+            raise HTTPException(status_code=404, detail="Data cuaca untuk kode wilayah tersebut tidak ditemukan.")
+            
+        data_bmkg = response.json()
+        if not data_bmkg.get("data"):
+            raise HTTPException(status_code=404, detail="Data cuaca kosong.")
+
+        cuaca_hari_ini = data_bmkg["data"][0]["cuaca"][0]
+        prakiraan = cuaca_hari_ini[0] if cuaca_hari_ini else {}
+
+        # 2. Ekstrak variabel cuaca
+        suhu = prakiraan.get("t", 0)
+        kelembapan = prakiraan.get("hu", 0)
+        curah_hujan = prakiraan.get("tp", 0)
+        kondisi = prakiraan.get("weather_desc", "")
+
+        # 3. LOGIKA EARLY WARNING SYSTEM (EWS)
+        status_ews = "AMAN"
+        pesan_ews = "Kondisi cuaca normal untuk aktivitas pertanian."
+        rekomendasi = "Lanjutkan aktivitas pertanian seperti biasa."
+
+        # Skenario 1: Hujan Ekstrem (Risiko Banjir / Gagal Panen)
+        if curah_hujan > 50.0:
+            status_ews = "BAHAYA"
+            pesan_ews = f"Curah hujan sangat tinggi ({curah_hujan} mm)."
+            rekomendasi = "Tunda pemupukan dan segera lakukan pengecekan drainase untuk mencegah genangan."
+
+        # Skenario 2: Kelembapan Tinggi + Hujan (Risiko Jamur / Hama)
+        elif kelembapan > 80 and curah_hujan > 10.0:
+            status_ews = "WASPADA"
+            pesan_ews = f"Kelembapan tinggi ({kelembapan}%) disertai hujan."
+            rekomendasi = "Waspadai serangan jamur dan hama. Pastikan sirkulasi udara tanaman baik."
+
+        # Skenario 3: Suhu Sangat Panas (Risiko Kekeringan)
+        elif suhu > 34.0:
+            status_ews = "WASPADA"
+            pesan_ews = f"Suhu udara sangat panas ({suhu}°C)."
+            rekomendasi = "Lakukan penyiraman tambahan pada pagi/sore hari untuk menjaga kelembapan tanah."
+
+        # 4. Kembalikan respons
+        return {
+            "status_sistem": "success",
+            "lokasi": {
+                "kecamatan": data_bmkg["data"][0]["lokasi"].get("kecamatan"),
+                "desa": data_bmkg["data"][0]["lokasi"].get("desa")
+            },
+            "parameter_cuaca": {
+                "suhu": suhu,
+                "kelembapan": kelembapan,
+                "curah_hujan": curah_hujan,
+                "kondisi": kondisi
+            },
+            "analisis_ews": {
+                "status": status_ews,
+                "pesan": pesan_ews,
+                "rekomendasi": rekomendasi
+            }
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
