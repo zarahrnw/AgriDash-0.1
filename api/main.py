@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
+import requests # <--- Tambahkan ini
 
 # Library Autentikasi
 from passlib.context import CryptContext
@@ -264,3 +265,52 @@ async def upload_tanaman_pangan(
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Gagal memproses file: {str(e)}")
+
+# ==========================================
+# FITUR INTEGRASI API CUACA BMKG
+# ==========================================
+@app.get("/api/v1/cuaca/{kode_kecamatan}", tags=["Cuaca & Risiko"])
+def get_cuaca_bmkg(kode_kecamatan: str):
+    """
+    Mengambil data prakiraan cuaca dari API BMKG.
+    Menggunakan kode kecamatan (contoh: 3506010 untuk Mojo).
+    """
+    try:
+        # 1. Tembak API BMKG
+        url = f"https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4={kode_kecamatan}"
+        response = requests.get(url, timeout=10)
+        
+        # Cek jika respons dari BMKG error
+        if response.status_code != 200:
+            raise HTTPException(status_code=404, detail="Data cuaca untuk kode wilayah tersebut tidak ditemukan di BMKG.")
+            
+        data_bmkg = response.json()
+
+        # 2. Validasi jika data kosong
+        if not data_bmkg.get("data"):
+            raise HTTPException(status_code=404, detail="Data cuaca kosong.")
+
+        # 3. Ambil data prakiraan pertama (hari ini)
+        cuaca_hari_ini = data_bmkg["data"][0]["cuaca"][0]
+        
+        # 4. Ambil 3 parameter utama (suhu, kelembapan, cuaca)
+        # Data BMKG biasanya merilis beberapa jam. Kita ambil jam pertama.
+        prakiraan_pertama = cuaca_hari_ini[0] if cuaca_hari_ini else {}
+
+        return {
+            "status": "success",
+            "lokasi": data_bmkg["data"][0]["lokasi"],
+            "prakiraan_terdekat": {
+                "waktu_lokal": prakiraan_pertama.get("local_datetime"),
+                "suhu_celsius": prakiraan_pertama.get("t"),
+                "kelembapan_persen": prakiraan_pertama.get("hu"),
+                "curah_hujan_mm": prakiraan_pertama.get("tp"),
+                "kondisi_cuaca": prakiraan_pertama.get("weather_desc"),
+                "kecepatan_angin_km_jam": prakiraan_pertama.get("ws")
+            }
+        }
+
+    except requests.exceptions.Timeout:
+        raise HTTPException(status_code=504, detail="Koneksi ke server BMKG timeout.")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
