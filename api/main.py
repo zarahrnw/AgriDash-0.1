@@ -1,6 +1,8 @@
 import os
+import io
+import pandas as pd
 from typing import Optional
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import create_engine, text
 from dotenv import load_dotenv
@@ -49,7 +51,6 @@ def get_daftar_kecamatan():
     """Mengambil daftar unik kecamatan dari tabel master_kecamatan."""
     try:
         with engine.connect() as conn:
-            # Mengambil daftar nama kecamatan dan mengurutkannya
             result = conn.execute(text("SELECT kecamatan FROM master_kecamatan ORDER BY kecamatan ASC"))
             kecamatan_list = [row[0] for row in result]
             
@@ -66,7 +67,6 @@ def get_rekap_kecamatan():
     """Menjumlahkan total produksi dan luas panen per kecamatan langsung dari Database."""
     try:
         with engine.connect() as conn:
-            # Query SQL untuk SUM data dari tabel tanaman_pangan
             query = text("""
                 SELECT 
                     kecamatan, 
@@ -78,7 +78,6 @@ def get_rekap_kecamatan():
             """)
             result = conn.execute(query)
             
-            # Format hasil menjadi list of dictionaries
             data = [
                 {
                     "kecamatan": row.kecamatan,
@@ -106,11 +105,9 @@ def get_tanaman_pangan(
     """Mengambil data tanaman pangan dari database dengan filter, sorting, dan limit."""
     try:
         with engine.connect() as conn:
-            # Base query
             query_str = "SELECT * FROM tanaman_pangan WHERE 1=1"
             params = {}
 
-            # Tambahkan filter jika ada
             if kecamatan:
                 query_str += " AND LOWER(kecamatan) = LOWER(:kecamatan)"
                 params["kecamatan"] = kecamatan
@@ -119,18 +116,14 @@ def get_tanaman_pangan(
                 query_str += " AND LOWER(tanaman) = LOWER(:tanaman)"
                 params["tanaman"] = tanaman
 
-            # Validasi kolom sorting agar aman dari SQL Injection
             valid_sorts = ["produksi_ton", "luas_panen_ha", "produktivitas_kuintal_ha"]
             if sort_by not in valid_sorts:
                 sort_by = "produksi_ton"
 
-            # Tambahkan sorting dan limit
             query_str += f" ORDER BY {sort_by} DESC LIMIT :limit"
             params["limit"] = limit
 
             result = conn.execute(text(query_str), params)
-            
-            # Mengambil hasil query
             rows = [dict(row._mapping) for row in result]
 
         return {
@@ -150,7 +143,6 @@ def get_ringkasan_tanaman_pangan():
     """Menyediakan ringkasan statistik untuk Dashboard."""
     try:
         with engine.connect() as conn:
-            # Query untuk total produksi dan luas
             query_sum = text("""
                 SELECT 
                     SUM(produksi_ton) as total_prod, 
@@ -159,7 +151,6 @@ def get_ringkasan_tanaman_pangan():
             """)
             result_sum = conn.execute(query_sum).fetchone()
 
-            # Query untuk menghitung jumlah kecamatan unik
             query_count = text("SELECT COUNT(DISTINCT kecamatan) as jml_kec, COUNT(DISTINCT tanaman) as jml_tanaman FROM tanaman_pangan")
             result_count = conn.execute(query_count).fetchone()
 
@@ -174,3 +165,57 @@ def get_ringkasan_tanaman_pangan():
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# ==========================================
+# FITUR DATA CENTER: UPLOAD CSV (BULK INSERT)
+# ==========================================
+@app.post("/api/v1/tanaman-pangan/upload", tags=["Data Center"])
+async def upload_tanaman_pangan(file: UploadFile = File(...)):
+    """
+    Mengunggah file CSV atau Excel untuk memperbarui data tanaman pangan secara instan (Bulk Insert).
+    """
+    if not file.filename.endswith(('.csv', '.xlsx')):
+        raise HTTPException(status_code=400, detail="Format file harus CSV atau Excel (.xlsx)")
+
+    try:
+        contents = await file.read()
+        
+        if file.filename.endswith('.csv'):
+            df = pd.read_csv(io.BytesIO(contents))
+        else:
+            df = pd.read_excel(io.BytesIO(contents))
+
+        # Validasi kolom
+        required_columns = ['kecamatan', 'tanaman', 'luas_panen_ha', 'produksi_ton', 'produktivitas_kuintal_ha']
+        for col in required_columns:
+            if col not in df.columns:
+                raise HTTPException(status_code=400, detail=f"Kolom '{col}' tidak ditemukan di dalam file.")
+
+        # Bersihkan data NaN (kosong) agar tidak error saat masuk ke PostgreSQL
+        df = df.replace({pd.NA: None, float('nan'): None})
+
+        # Ubah DataFrame menjadi list of dictionaries
+        data_to_insert = df.to_dict(orient='records')
+
+        query = text("""
+            INSERT INTO tanaman_pangan 
+            (kecamatan, tanaman, luas_panen_ha, produksi_ton, produktivitas_kuintal_ha)
+            VALUES 
+            (:kecamatan, :tanaman, :luas_panen_ha, :produksi_ton, :produktivitas_kuintal_ha)
+        """)
+        
+        with engine.begin() as conn:
+            # Hapus data lama terlebih dahulu (TRUNCATE) agar tidak terjadi duplikasi
+            conn.execute(text("TRUNCATE TABLE tanaman_pangan RESTART IDENTITY"))
+            
+            # Eksekusi Bulk Insert
+            conn.execute(query, data_to_insert)
+
+        return {
+            "status": "success",
+            "message": f"Berhasil mengganti data lama dengan {len(df)} baris data baru secara instan!",
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Gagal memproses file: {str(e)}")
