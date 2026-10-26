@@ -389,3 +389,73 @@ def get_ews_cuaca(kode_kecamatan: str):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+# ==========================================
+# FITUR PREDIKSI MACHINE LEARNING (SIMULASI)
+# ==========================================
+from pydantic import BaseModel
+
+class PrediksiRequest(BaseModel):
+    kecamatan: str
+    tanaman: str
+    bulan_ke_depan: int = 1
+
+@app.post("/api/v1/prediksi", tags=["Prediksi & EWS"])
+def prediksi_produksi(request: PrediksiRequest):
+    """
+    Endpoint simulasi untuk Prediksi Produksi.
+    Nantinya, endpoint ini akan memanggil model ML (Prophet/ARIMA).
+    """
+    try:
+        # 1. Ambil data historis dari database untuk melihat tren
+        with engine.connect() as conn:
+            query = text("""
+                SELECT SUM(produksi_ton) as total_produksi 
+                FROM tanaman_pangan 
+                WHERE LOWER(kecamatan) = LOWER(:kecamatan) 
+                AND LOWER(tanaman) = LOWER(:tanaman)
+            """)
+            result = conn.execute(query, {"kecamatan": request.kecamatan, "tanaman": request.tanaman}).fetchone()
+            
+            total_produksi_sekarang = result.total_produksi or 0
+
+        if total_produksi_sekarang == 0:
+            raise HTTPException(status_code=404, detail="Data historis untuk kecamatan dan tanaman tersebut tidak ditemukan.")
+
+        # 2. SIMULASI MODEL ML (Ini tempat temanmu nanti memasukkan model Prophet/ARIMA)
+        # Kita buat simulasi: Prediksi naik 5% per bulan, dengan fluktuasi acak (bisa positif/negatif)
+        import random
+        tren_kenaikan = 0.05 * request.bulan_ke_depan 
+        fluktuasi = random.uniform(-0.02, 0.02) # Fluktuasi -2% sampai +2%
+        
+        persentase_perubahan = tren_kenaikan + fluktuasi
+        nilai_prediksi = total_produksi_sekarang * (1 + persentase_perubahan)
+
+        # Tentukan Status EWS berdasarkan hasil prediksi
+        if persentase_perubahan < 0:
+            status_ews = "WASPADA (Potensi Penurunan)"
+            rekomendasi = "Disarankan untuk meninjau kembali alokasi pupuk dan waspada terhadap cuaca ekstrem."
+        else:
+            status_ews = "AMAN (Potensi Kenaikan)"
+            rekomendasi = "Pertahankan kondisi saat ini dan optimalkan panen."
+
+        # 3. Kembalikan hasil ke Frontend
+        return {
+            "status_sistem": "success",
+            "parameter": {
+                "kecamatan": request.kecamatan,
+                "tanaman": request.tanaman,
+                "bulan_ke_depan": request.bulan_ke_depan
+            },
+            "hasil_prediksi": {
+                "produksi_saat_ini_ton": round(total_produksi_sekarang, 2),
+                "prediksi_produksi_ton": round(nilai_prediksi, 2),
+                "persentase_perubahan": f"{round(persentase_perubahan * 100, 2)}%",
+                "status": status_ews,
+                "rekomendasi": rekomendasi
+            },
+            "catatan_ml": "Hasil ini masih berupa simulasi backend. Model Machine Learning (Prophet/ARIMA) akan diintegrasikan di sini."
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
