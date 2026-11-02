@@ -1,4 +1,3 @@
-import sys
 import os
 import io
 import random
@@ -450,12 +449,13 @@ def prediksi_produksi(request: PrediksiRequest):
 
 
 # ==========================================
-# FITUR HARGA PANGAN (API INDONESIA - BPN)
+# FITUR HARGA PANGAN (API INDONESIA - JAWA TIMUR)
 # ==========================================
 @app.get("/api/v1/harga-pangan", tags=["Harga Pangan"])
 async def get_harga_pangan():
     """
-    Mengambil data harga pangan dari API Indonesia (sumber: Badan Pangan Nasional).
+    Mengambil data harga pangan tingkat Provinsi Jawa Timur dari API Indonesia (BPN).
+    Data bersifat bulanan.
     """
     api_key = os.getenv("API_INDONESIA_KEY")
     if not api_key:
@@ -467,9 +467,11 @@ async def get_harga_pangan():
     # Endpoint untuk mengambil data harga pangan
     url = "https://use.apiindonesia.id/api/v1/harga-pangan/harga"
     
+    # Parameter: filter untuk Provinsi Jawa Timur
     params = {
         "tingkat": "konsumen",
-        "wilayah": "nasional",
+        "wilayah": "provinsi",
+        "provinsi": "jawa timur",
         "limit": 100 
     }
     
@@ -511,42 +513,45 @@ async def get_harga_pangan():
                     "komoditas": nama_komoditas,
                     "satuan": item.get("satuan", "kg"),
                     "harga": int(harga) if harga else 0,
-                    "periode": item.get("periode") or item.get("bulan") or item.get("tanggal", "")
+                    "periode": item.get("periode") or item.get("bulan") or item.get("tanggal", ""),
+                    "wilayah": item.get("provinsi", "Jawa Timur")
                 })
 
         if not data_harga:
-            raise ValueError("Tidak ada data komoditas pangan yang cocok.")
+            raise ValueError("Tidak ada data komoditas pangan untuk Jawa Timur.")
 
         return {
             "status_sistem": "success",
-            "sumber": "API Indonesia (Badan Pangan Nasional)",
+            "sumber": "API Indonesia (BPN) - Provinsi Jawa Timur",
+            "catatan": "Data bersifat bulanan, bukan harga harian.",
             "total_data": len(data_harga),
             "data": data_harga
         }
 
     except Exception as e:
         # ========================================================
-        # FALLBACK: Jika API Indonesia Gagal/Error, gunakan data ini
+        # FALLBACK: Jika API Indonesia Gagal, gunakan data Kediri
         # ========================================================
         data_fallback = [
-            {"komoditas": "Beras Medium", "satuan": "kg", "harga": 13026},
-            {"komoditas": "Gula Kristal Putih", "satuan": "kg", "harga": 17494},
-            {"komoditas": "Minyak Goreng Curah", "satuan": "kg", "harga": 20715},
-            {"komoditas": "Daging Sapi Paha Belakang", "satuan": "kg", "harga": 133987},
-            {"komoditas": "Daging Ayam Ras", "satuan": "kg", "harga": 36438},
-            {"komoditas": "Telur Ayam Ras", "satuan": "kg", "harga": 24034},
-            {"komoditas": "Jagung Pipilan Kering", "satuan": "kg", "harga": 7934},
-            {"komoditas": "Cabe Merah Keriting", "satuan": "kg", "harga": 47800},
-            {"komoditas": "Cabe Rawit Merah", "satuan": "kg", "harga": 58774},
-            {"komoditas": "Bawang Merah", "satuan": "kg", "harga": 27517},
-            {"komoditas": "Bawang Putih", "satuan": "kg", "harga": 28473},
-            {"komoditas": "Kentang", "satuan": "kg", "harga": 15076},
-            {"komoditas": "Tomat", "satuan": "kg", "harga": 9156},
-            {"komoditas": "Wortel", "satuan": "kg", "harga": 14067}
+            {"komoditas": "Beras Medium", "satuan": "kg", "harga": 13026, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Gula Kristal Putih", "satuan": "kg", "harga": 17494, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Minyak Goreng Curah", "satuan": "kg", "harga": 20715, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Daging Sapi Paha Belakang", "satuan": "kg", "harga": 133987, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Daging Ayam Ras", "satuan": "kg", "harga": 36438, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Telur Ayam Ras", "satuan": "kg", "harga": 24034, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Jagung Pipilan Kering", "satuan": "kg", "harga": 7934, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Cabe Merah Keriting", "satuan": "kg", "harga": 47800, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Cabe Rawit Merah", "satuan": "kg", "harga": 58774, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Bawang Merah", "satuan": "kg", "harga": 27517, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Bawang Putih", "satuan": "kg", "harga": 28473, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Kentang", "satuan": "kg", "harga": 15076, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Tomat", "satuan": "kg", "harga": 9156, "periode": "2026-01", "wilayah": "Jawa Timur"},
+            {"komoditas": "Wortel", "satuan": "kg", "harga": 14067, "periode": "2026-01", "wilayah": "Jawa Timur"}
         ]
         return {
             "status_sistem": "success",
-            "sumber": "Siskaperbapo Jawa Timur (Data Fallback dari API Indonesia)",
+            "sumber": "Fallback Data (Harga Pangan Jawa Timur)",
+            "catatan": "API Indonesia gagal diakses, menggunakan data cadangan.",
             "total_data": len(data_fallback),
             "data": data_fallback
         }
