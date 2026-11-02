@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Agri Dash V.01 Kabupaten Kediri</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="login-page">
+
+    <!-- SISI KIRI: GAMBAR -->
+    <div class="login-left">
+        <img src="aset/loginKiri.jpg" alt="Ilustrasi Agri Dash" class="login-side-image">
+        <h2>Pertanian Maju, Kediri Sejahtera</h2>
+        <p>Pantau produksi, harga, dan cuaca dalam satu dashboard.</p>
+    </div>
+
+    <!-- SISI KANAN: KOTAK LOGIN FLOATING -->
+    <div class="login-right">
+
+        <div class="login-card">
+
+            <div class="login-brand">
+                <img src="aset/LOGOFULL.png" alt="Agri Dash" class="login-logo" onerror="this.style.display='none'">
+                <h1>Agri Dash <span>V.01</span></h1>
+            </div>
+
+            <h2>Selamat Datang!</h2>
+            <p class="subtitle">Silakan masuk untuk melanjutkan</p>
+
+            <div class="role-switch">
+                <button type="button" class="role-btn active" data-role="superadmin">
+                    <i class="fa-solid fa-user-shield"></i> Super Admin
+                </button>
+                <button type="button" class="role-btn" data-role="admin">
+                    <i class="fa-solid fa-user-gear"></i> Admin
+                </button>
+                </button>
+                <button type="button" class="role-btn" data-role="user">
+                    <i class="fa-solid fa-user"></i> User
+                </button>
+            </div>
+
+            <form id="loginForm" autocomplete="off">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="username" placeholder="Masukkan username" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Masukkan password" required>
+                        <button type="button" id="togglePassword" class="toggle-pass">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="errorMsg" class="error-msg"></div>
+
+                <button type="submit" class="login-btn">
+                    Masuk <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="demo-box">
+                <strong>Akun demo:</strong>
+                <span>Super Admin → <code>superadmin</code> / <code>super123</code></span>
+                <span>Admin → <code>admin</code> / <code>admin123</code></span>
+                <span>User → <code>user</code> / <code>user123</code></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>
