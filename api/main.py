@@ -266,7 +266,7 @@ def get_ringkasan_tanaman_pangan():
 
 
 # ==========================================
-# FITUR DATA CENTER: UPLOAD CSV
+# FITUR DATA CENTER: UPLOAD CSV (DENGAN AUDIT TRAIL)
 # ==========================================
 @app.post("/api/v1/tanaman-pangan/upload", tags=["Data Center"])
 async def upload_tanaman_pangan(
@@ -296,6 +296,19 @@ async def upload_tanaman_pangan(
                     VALUES (:kecamatan, :tanaman, :luas_panen_ha, :produksi_ton, :produktivitas_kuintal_ha)
                 """),
                 data_to_insert
+            )
+            
+            # --- AUDIT TRAIL ---
+            conn.execute(
+                text("""
+                    INSERT INTO audit_trail (username, action, details)
+                    VALUES (:username, :action, :details)
+                """),
+                {
+                    "username": current_admin['username'],
+                    "action": "Upload Data CSV",
+                    "details": f"Berhasil upload {len(df)} baris data tanaman pangan."
+                }
             )
 
         return {
@@ -453,62 +466,30 @@ def prediksi_produksi(request: PrediksiRequest):
 # ==========================================
 @app.get("/api/v1/harga-pangan", tags=["Harga Pangan"])
 async def get_harga_pangan():
-    """
-    Mengambil data harga pangan tingkat Provinsi Jawa Timur dari API Indonesia (BPN).
-    Data bersifat bulanan.
-    """
     api_key = os.getenv("API_INDONESIA_KEY")
     if not api_key:
-        raise HTTPException(
-            status_code=500,
-            detail="API Key untuk API Indonesia belum diatur di file .env"
-        )
+        raise HTTPException(status_code=500, detail="API Key untuk API Indonesia belum diatur di file .env")
 
-    # Endpoint untuk mengambil data harga pangan
     url = "https://use.apiindonesia.id/api/v1/harga-pangan/harga"
-    
-    # Parameter: filter untuk Provinsi Jawa Timur
-    params = {
-        "tingkat": "konsumen",
-        "wilayah": "provinsi",
-        "provinsi": "jawa timur",
-        "limit": 100 
-    }
-    
-    headers = {
-        "x-api-key": api_key
-    }
+    params = {"tingkat": "konsumen", "wilayah": "provinsi", "provinsi": "jawa timur", "limit": 100}
+    headers = {"x-api-key": api_key}
 
     try:
         response = requests.get(url, headers=headers, params=params, timeout=15)
-        
         if response.status_code != 200:
-            raise HTTPException(
-                status_code=response.status_code,
-                detail=f"Gagal mengambil data dari API Indonesia: {response.text}"
-            )
+            raise HTTPException(status_code=response.status_code, detail=f"Gagal mengambil data dari API Indonesia: {response.text}")
 
         data = response.json()
-        
-        # Deteksi key respons dari API Indonesia
-        if isinstance(data, dict):
-            raw_data = data.get("data") or data.get("results") or data.get("harga") or []
-        else:
-            raw_data = data
-
+        raw_data = data.get("data") or data.get("results") or data.get("harga") or [] if isinstance(data, dict) else data
         if not isinstance(raw_data, list):
             raise ValueError("Format respons API tidak dikenali.")
 
-        # Filter hanya komoditas pangan pertanian yang relevan
         kata_kunci_pangan = ['Beras', 'Gula', 'Minyak', 'Daging', 'Telur', 'Jagung', 'Garam', 'Tepung', 'Kedelai', 'Cabe', 'Bawang', 'Kacang', 'Kentang', 'Tomat', 'Wortel']
-        
         data_harga = []
         for item in raw_data:
             nama_komoditas = item.get("komoditas", "") or item.get("nama_komoditas", "")
-            
             if any(kata in nama_komoditas for kata in kata_kunci_pangan):
                 harga = item.get("harga") or item.get("nilai") or item.get("harga_rata_rata") or 0
-                
                 data_harga.append({
                     "komoditas": nama_komoditas,
                     "satuan": item.get("satuan", "kg"),
@@ -529,9 +510,6 @@ async def get_harga_pangan():
         }
 
     except Exception as e:
-        # ========================================================
-        # FALLBACK: Jika API Indonesia Gagal, gunakan data Kediri
-        # ========================================================
         data_fallback = [
             {"komoditas": "Beras Medium", "satuan": "kg", "harga": 13026, "periode": "2026-01", "wilayah": "Jawa Timur"},
             {"komoditas": "Gula Kristal Putih", "satuan": "kg", "harga": 17494, "periode": "2026-01", "wilayah": "Jawa Timur"},
@@ -555,3 +533,90 @@ async def get_harga_pangan():
             "total_data": len(data_fallback),
             "data": data_fallback
         }
+
+
+# ==========================================
+# FITUR AUDIT TRAIL (BACA LOG)
+# ==========================================
+@app.get("/api/v1/audit-trail", tags=["Audit Trail"])
+def get_audit_trail(current_admin: dict = Depends(get_current_admin)):
+    """
+    Mengambil riwayat aktivitas (log) dari database.
+    Endpoint ini dilindungi (hanya Admin yang bisa lihat).
+    """
+    try:
+        with get_engine().connect() as conn:
+            query = text("""
+                SELECT id, username, action, details, timestamp 
+                FROM audit_trail 
+                ORDER BY timestamp DESC 
+                LIMIT 50
+            """)
+            result = conn.execute(query)
+            
+            data_log = [{
+                "id": row.id,
+                "username": row.username,
+                "action": row.action,
+                "details": row.details,
+                "timestamp": str(row.timestamp)
+            } for row in result]
+
+        return {
+            "status_sistem": "success",
+            "total_data": len(data_log),
+            "data": data_log
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ==========================================
+# FITUR EXECUTIVE SUMMARY (1x TEMBAK DASHBOARD)
+# ==========================================
+@app.get("/api/v1/dashboard-eksekutif", tags=["Dashboard"])
+def get_dashboard_eksekutif():
+    """
+    Menggabungkan semua data penting untuk Dashboard dalam 1x request.
+    """
+    try:
+        with get_engine().connect() as conn:
+            # 1. Ringkasan Angka
+            ringkasan = conn.execute(text("""
+                SELECT SUM(produksi_ton) as total_prod, SUM(luas_panen_ha) as total_luas,
+                       COUNT(DISTINCT kecamatan) as jml_kec, COUNT(DISTINCT tanaman) as jml_tanaman
+                FROM tanaman_pangan
+            """)).fetchone()
+            
+            # 2. Top 5 Kecamatan (Berdasarkan Produksi)
+            top5 = conn.execute(text("""
+                SELECT kecamatan, SUM(produksi_ton) as total_produksi
+                FROM tanaman_pangan GROUP BY kecamatan ORDER BY total_produksi DESC LIMIT 5
+            """)).fetchall()
+            
+            top5_data = [{"kecamatan": row.kecamatan, "produksi_ton": round(row.total_produksi or 0, 2)} for row in top5]
+
+        # 3. Ambil Cuaca (Contoh untuk Kecamatan Mojo)
+        try:
+            cuaca_res = requests.get("https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4=35.06.01.2001", timeout=5)
+            cuaca_data = cuaca_res.json()["data"][0]["cuaca"][0][0] if cuaca_res.status_code == 200 else {}
+        except:
+            cuaca_data = {}
+
+        return {
+            "status_sistem": "success",
+            "data_ringkasan": {
+                "total_produksi_ton": round(ringkasan.total_prod or 0, 2),
+                "total_luas_panen_ha": round(ringkasan.total_luas or 0, 2),
+                "jumlah_kecamatan": ringkasan.jml_kec,
+                "jumlah_jenis_tanaman": ringkasan.jml_tanaman,
+            },
+            "top_5_kecamatan": top5_data,
+            "cuaca_terkini": {
+                "suhu": cuaca_data.get("t"),
+                "kondisi": cuaca_data.get("weather_desc")
+            },
+            "catatan": "Data ini diambil dari database dan API BMKG secara real-time."
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
