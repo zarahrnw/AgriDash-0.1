@@ -1,28 +1,163 @@
-﻿Jenis Tanaman,Luas Panen Tanaman Sayuran dan Buah-Buahan Semusim
-Bawang Daun/Scallion(ha),610.5
-Bawang Merah/Shallots(ha),1205.5
-Bawang Putih/Garlic(ha),-
-Bayam/Spinach(ha),45
-Buncis/string bean(ha),167.5
-Cabai Rawit/Chili/Cayenne Pepper(ha),9761
-Kacang Panjang/Long Beans(ha),419.7
-Kangkung/Water Spinach(ha),15
-Kembang Kol/Cauliflower(ha),190
-Kentang/Potato(ha),-
-Ketimun/Cucumber(ha),330
-Kubis/Cabbage(ha),-
-Labu Siam/Chayote(ha),-
-Melon/Melon(ha),52
-Paprika/Bell Pepper(ha),-
-Petsai/Sawi/Chinese Cabbage/mustard green(ha),314
-Semangka/Watermelon(ha),108
-Stroberi/Strawberry(ha),-
-Terung/Eggplant(ha),337
-Tomat/Tomato(ha),368.25
-Wortel/Carrot(ha),-
-Cabai Besar/TW/Teropong/Chili/Big chili(ha),912
-"Cabai Keriting / Chili/Curly chili
+﻿Tahun,Jenis Tanaman,Luas Panen Tanaman Sayuran dan Buah-Buahan Semusim
+2020,Bawang Daun/Scallion(ha),490.4
+2020,Bawang Merah/Shallots(ha),1213.7
+2020,Bawang Putih/Garlic(ha),8
+2020,Bayam/Spinach(ha),49.5
+2020,Buncis/string bean(ha),148.3
+2020,Cabai Rawit/Chili/Cayenne Pepper(ha),8415.4
+2020,Kacang Panjang/Long Beans(ha),354.7
+2020,Kangkung/Water Spinach(ha),15
+2020,Kembang Kol/Cauliflower(ha),180
+2020,Kentang/Potato(ha),4.25
+2020,Ketimun/Cucumber(ha),290.75
+2020,Kubis/Cabbage(ha),6
+2020,Labu Siam/Chayote(ha),12
+2020,Melon/Melon(ha),62.2
+2020,Paprika/Bell Pepper(ha),-
+2020,Petsai/Sawi/Chinese Cabbage/mustard green(ha),290.5
+2020,Semangka/Watermelon(ha),106.2
+2020,Stroberi/Strawberry(ha),1
+2020,Terung/Eggplant(ha),303.8
+2020,Tomat/Tomato(ha),349.3
+2020,Wortel/Carrot(ha),27
+2020,Cabai Besar/TW/Teropong/Chili/Big chili(ha),715.45
+2020,"Cabai Keriting / Chili/Curly chili
+(ha)",289.8
+2020,Jamur Tiram/King Oyster Mushroom(m2),3112
+2020,Jamur Merang/Straw Mushroom(m2),-
+2020,Jamur Lainnya/Mushroom(m2),184
+2021,Bawang Daun/Scallion(ha),590.7
+2021,Bawang Merah/Shallots(ha),1198.45
+2021,Bawang Putih/Garlic(ha),6.7
+2021,Bayam/Spinach(ha),45
+2021,Buncis/string bean(ha),137.5
+2021,Cabai Rawit/Chili/Cayenne Pepper(ha),8659.3
+2021,Kacang Panjang/Long Beans(ha),403.75
+2021,Kangkung/Water Spinach(ha),14.7
+2021,Kembang Kol/Cauliflower(ha),183.7
+2021,Kentang/Potato(ha),3
+2021,Ketimun/Cucumber(ha),296.75
+2021,Kubis/Cabbage(ha),9.2
+2021,Labu Siam/Chayote(ha),13
+2021,Melon/Melon(ha),43.45
+2021,Paprika/Bell Pepper(ha),-
+2021,Petsai/Sawi/Chinese Cabbage/mustard green(ha),352.7
+2021,Semangka/Watermelon(ha),103.75
+2021,Stroberi/Strawberry(ha),-
+2021,Terung/Eggplant(ha),313.5
+2021,Tomat/Tomato(ha),324.45
+2021,Wortel/Carrot(ha),-
+2021,Cabai Besar/TW/Teropong/Chili/Big chili(ha),873.5
+2021,"Cabai Keriting / Chili/Curly chili
+(ha)",332.05
+2021,Jamur Tiram/King Oyster Mushroom(m2),2613
+2021,Jamur Merang/Straw Mushroom(m2),138
+2021,Jamur Lainnya/Mushroom(m2),204
+2022,Bawang Daun/Scallion(ha),679.5
+2022,Bawang Merah/Shallots(ha),1152.3
+2022,Bawang Putih/Garlic(ha),3.75
+2022,Bayam/Spinach(ha),55
+2022,Buncis/string bean(ha),174.25
+2022,Cabai Rawit/Chili/Cayenne Pepper(ha),9609.15
+2022,Kacang Panjang/Long Beans(ha),390.9
+2022,Kangkung/Water Spinach(ha),17
+2022,Kembang Kol/Cauliflower(ha),180
+2022,Kentang/Potato(ha),-
+2022,Ketimun/Cucumber(ha),355.4
+2022,Kubis/Cabbage(ha),7.5
+2022,Labu Siam/Chayote(ha),20
+2022,Melon/Melon(ha),50.5
+2022,Paprika/Bell Pepper(ha),0.25
+2022,Petsai/Sawi/Chinese Cabbage/mustard green(ha),297.5
+2022,Semangka/Watermelon(ha),109.95
+2022,Stroberi/Strawberry(ha),-
+2022,Terung/Eggplant(ha),318.4
+2022,Tomat/Tomato(ha),346
+2022,Wortel/Carrot(ha),-
+2022,Cabai Besar/TW/Teropong/Chili/Big chili(ha),844.4
+2022,"Cabai Keriting / Chili/Curly chili
+(ha)",325.25
+2022,Jamur Tiram/King Oyster Mushroom(m2),3191
+2022,Jamur Merang/Straw Mushroom(m2),342
+2022,Jamur Lainnya/Mushroom(m2),97
+2023,Bawang Daun/Scallion(ha),598.5
+2023,Bawang Merah/Shallots(ha),1205.5
+2023,Bawang Putih/Garlic(ha),5
+2023,Bayam/Spinach(ha),48
+2023,Buncis/string bean(ha),167.75
+2023,Cabai Rawit/Chili/Cayenne Pepper(ha),9054
+2023,Kacang Panjang/Long Beans(ha),389.7
+2023,Kangkung/Water Spinach(ha),15
+2023,Kembang Kol/Cauliflower(ha),183.9
+2023,Kentang/Potato(ha),2
+2023,Ketimun/Cucumber(ha),290.2
+2023,Kubis/Cabbage(ha),11.5
+2023,Labu Siam/Chayote(ha),5
+2023,Melon/Melon(ha),54
+2023,Paprika/Bell Pepper(ha),-
+2023,Petsai/Sawi/Chinese Cabbage/mustard green(ha),308.25
+2023,Semangka/Watermelon(ha),99
+2023,Stroberi/Strawberry(ha),1.8
+2023,Terung/Eggplant(ha),277.2
+2023,Tomat/Tomato(ha),325
+2023,Wortel/Carrot(ha),16.75
+2023,Cabai Besar/TW/Teropong/Chili/Big chili(ha),870.2
+2023,"Cabai Keriting / Chili/Curly chili
+(ha)",339.25
+2023,Jamur Tiram/King Oyster Mushroom(m2),2694
+2023,Jamur Merang/Straw Mushroom(m2),133
+2023,Jamur Lainnya/Mushroom(m2),225
+2024,Bawang Daun/Scallion(ha),525.5
+2024,Bawang Merah/Shallots(ha),1178.25
+2024,Bawang Putih/Garlic(ha),6
+2024,Bayam/Spinach(ha),54.75
+2024,Buncis/string bean(ha),166.45
+2024,Cabai Rawit/Chili/Cayenne Pepper(ha),10269.75
+2024,Kacang Panjang/Long Beans(ha),350.5
+2024,Kangkung/Water Spinach(ha),15.75
+2024,Kembang Kol/Cauliflower(ha),185.7
+2024,Kentang/Potato(ha),1
+2024,Ketimun/Cucumber(ha),325
+2024,Kubis/Cabbage(ha),-
+2024,Labu Siam/Chayote(ha),9
+2024,Melon/Melon(ha),52.5
+2024,Paprika/Bell Pepper(ha),-
+2024,Petsai/Sawi/Chinese Cabbage/mustard green(ha),326.45
+2024,Semangka/Watermelon(ha),107
+2024,Stroberi/Strawberry(ha),-
+2024,Terung/Eggplant(ha),339.25
+2024,Tomat/Tomato(ha),339.25
+2024,Wortel/Carrot(ha),4
+2024,Cabai Besar/TW/Teropong/Chili/Big chili(ha),979
+2024,"Cabai Keriting / Chili/Curly chili
+(ha)",333.5
+2024,Jamur Tiram/King Oyster Mushroom(m2),2710
+2024,Jamur Merang/Straw Mushroom(m2),406
+2024,Jamur Lainnya/Mushroom(m2),249
+2025,Bawang Daun/Scallion(ha),610.5
+2025,Bawang Merah/Shallots(ha),1205.5
+2025,Bawang Putih/Garlic(ha),-
+2025,Bayam/Spinach(ha),45
+2025,Buncis/string bean(ha),167.5
+2025,Cabai Rawit/Chili/Cayenne Pepper(ha),9761
+2025,Kacang Panjang/Long Beans(ha),419.7
+2025,Kangkung/Water Spinach(ha),15
+2025,Kembang Kol/Cauliflower(ha),190
+2025,Kentang/Potato(ha),-
+2025,Ketimun/Cucumber(ha),330
+2025,Kubis/Cabbage(ha),-
+2025,Labu Siam/Chayote(ha),-
+2025,Melon/Melon(ha),52
+2025,Paprika/Bell Pepper(ha),-
+2025,Petsai/Sawi/Chinese Cabbage/mustard green(ha),314
+2025,Semangka/Watermelon(ha),108
+2025,Stroberi/Strawberry(ha),-
+2025,Terung/Eggplant(ha),337
+2025,Tomat/Tomato(ha),368.25
+2025,Wortel/Carrot(ha),-
+2025,Cabai Besar/TW/Teropong/Chili/Big chili(ha),912
+2025,"Cabai Keriting / Chili/Curly chili
 (ha)",340.8
-Jamur Tiram/King Oyster Mushroom(m2),2948
-Jamur Merang/Straw Mushroom(m2),-
-Jamur Lainnya/Mushroom(m2),-
+2025,Jamur Tiram/King Oyster Mushroom(m2),2948
+2025,Jamur Merang/Straw Mushroom(m2),-
+2025,Jamur Lainnya/Mushroom(m2),-
