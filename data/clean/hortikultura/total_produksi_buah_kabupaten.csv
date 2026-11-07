@@ -1,0 +1,163 @@
+﻿tahun,komoditas,produksi_kuintal,satuan,is_dummy
+2020,Alpukat/Avocado,190091.55,Kw,True
+2020,Anggur/Grape,132.0,Kw,True
+2020,Apel/Apple,38.15,Kw,True
+2020,Belimbing/Star Fruit,42292.9,Kw,True
+2020,Buah Naga/Hylocereus polyrhizus,5492.6,Kw,True
+2020,Duku/Langsat/Kokosan/Duku,165.9,Kw,True
+2020,Durian/Durian,167107.45,Kw,True
+2020,Jambu Air/Water Apple,17923.45,Kw,True
+2020,Jambu Biji/Guava,13846.6,Kw,True
+2020,Jengkol/Jengkol,213.6,Kw,True
+2020,Jeruk Besar/Pomelo,118.5,Kw,True
+2020,Jeruk Lemon/Lemon,4383.2,Kw,True
+2020,Jeruk Siam/Keprok/Orange/Tangerine,99937.15,Kw,True
+2020,Lengkeng/Dimocarpus longan,7047.2,Kw,True
+2020,Mangga/Mango,722494.85,Kw,True
+2020,Manggis/Mangosteen,6433.0,Kw,True
+2020,Melinjo/Gnetum/Melinjo,51803.9,Kw,True
+2020,Nangka/Cempedak/Jackfruit,40550.95,Kw,True
+2020,Nenas/Pineapple,3714341.0,Kw,True
+2020,Pepaya/Papaya,51205.15,Kw,True
+2020,Petai/Twisted Cluster Bean,28414.2,Kw,True
+2020,Pisang/Banana,523053.3,Kw,True
+2020,Rambutan/Rambutan,50871.15,Kw,True
+2020,Salak/Snakefruit,2531.25,Kw,True
+2020,Sawo/Sapodilla/Sawo,12962.75,Kw,True
+2020,Sirsak/Soursop,38150.7,Kw,True
+2020,Sukun/Breadfruit,4534.0,Kw,True
+2021,Alpukat/Avocado,213288.1,Kw,True
+2021,Anggur/Grape,139.45,Kw,True
+2021,Apel/Apple,0.0,Kw,True
+2021,Belimbing/Star Fruit,44945.45,Kw,True
+2021,Buah Naga/Hylocereus polyrhizus,4260.3,Kw,True
+2021,Duku/Langsat/Kokosan/Duku,88.6,Kw,True
+2021,Durian/Durian,190539.5,Kw,True
+2021,Jambu Air/Water Apple,18849.8,Kw,True
+2021,Jambu Biji/Guava,15668.3,Kw,True
+2021,Jengkol/Jengkol,260.75,Kw,True
+2021,Jeruk Besar/Pomelo,76.25,Kw,True
+2021,Jeruk Lemon/Lemon,4870.05,Kw,True
+2021,Jeruk Siam/Keprok/Orange/Tangerine,104344.7,Kw,True
+2021,Lengkeng/Dimocarpus longan,6729.65,Kw,True
+2021,Mangga/Mango,747946.1,Kw,True
+2021,Manggis/Mangosteen,7075.25,Kw,True
+2021,Melinjo/Gnetum/Melinjo,56994.8,Kw,True
+2021,Nangka/Cempedak/Jackfruit,42907.4,Kw,True
+2021,Nenas/Pineapple,4390987.2,Kw,True
+2021,Pepaya/Papaya,51597.0,Kw,True
+2021,Petai/Twisted Cluster Bean,28520.5,Kw,True
+2021,Pisang/Banana,558718.6,Kw,True
+2021,Rambutan/Rambutan,53669.6,Kw,True
+2021,Salak/Snakefruit,2374.6,Kw,True
+2021,Sawo/Sapodilla/Sawo,13989.6,Kw,True
+2021,Sirsak/Soursop,39363.15,Kw,True
+2021,Sukun/Breadfruit,4324.75,Kw,True
+2022,Alpukat/Avocado,215692.5,Kw,True
+2022,Anggur/Grape,131.2,Kw,True
+2022,Apel/Apple,0.0,Kw,True
+2022,Belimbing/Star Fruit,39462.3,Kw,True
+2022,Buah Naga/Hylocereus polyrhizus,5178.6,Kw,True
+2022,Duku/Langsat/Kokosan/Duku,76.8,Kw,True
+2022,Durian/Durian,189748.2,Kw,True
+2022,Jambu Air/Water Apple,21248.85,Kw,True
+2022,Jambu Biji/Guava,13878.15,Kw,True
+2022,Jengkol/Jengkol,209.0,Kw,True
+2022,Jeruk Besar/Pomelo,87.55,Kw,True
+2022,Jeruk Lemon/Lemon,5425.5,Kw,True
+2022,Jeruk Siam/Keprok/Orange/Tangerine,101239.3,Kw,True
+2022,Lengkeng/Dimocarpus longan,7497.85,Kw,True
+2022,Mangga/Mango,859824.2,Kw,True
+2022,Manggis/Mangosteen,6213.55,Kw,True
+2022,Melinjo/Gnetum/Melinjo,64493.1,Kw,True
+2022,Nangka/Cempedak/Jackfruit,43734.5,Kw,True
+2022,Nenas/Pineapple,4279680.8,Kw,True
+2022,Pepaya/Papaya,57376.25,Kw,True
+2022,Petai/Twisted Cluster Bean,29487.65,Kw,True
+2022,Pisang/Banana,577104.75,Kw,True
+2022,Rambutan/Rambutan,57119.6,Kw,True
+2022,Salak/Snakefruit,2384.0,Kw,True
+2022,Sawo/Sapodilla/Sawo,14317.15,Kw,True
+2022,Sirsak/Soursop,40974.0,Kw,True
+2022,Sukun/Breadfruit,4205.3,Kw,True
+2023,Alpukat/Avocado,218390.15,Kw,True
+2023,Anggur/Grape,91.0,Kw,True
+2023,Apel/Apple,35.0,Kw,True
+2023,Belimbing/Star Fruit,37271.75,Kw,True
+2023,Buah Naga/Hylocereus polyrhizus,5929.3,Kw,True
+2023,Duku/Langsat/Kokosan/Duku,95.75,Kw,True
+2023,Durian/Durian,181269.2,Kw,True
+2023,Jambu Air/Water Apple,19422.8,Kw,True
+2023,Jambu Biji/Guava,13834.05,Kw,True
+2023,Jengkol/Jengkol,321.8,Kw,True
+2023,Jeruk Besar/Pomelo,35.0,Kw,True
+2023,Jeruk Lemon/Lemon,5472.25,Kw,True
+2023,Jeruk Siam/Keprok/Orange/Tangerine,122487.0,Kw,True
+2023,Lengkeng/Dimocarpus longan,6722.45,Kw,True
+2023,Mangga/Mango,782867.55,Kw,True
+2023,Manggis/Mangosteen,7089.2,Kw,True
+2023,Melinjo/Gnetum/Melinjo,63765.65,Kw,True
+2023,Nangka/Cempedak/Jackfruit,44713.55,Kw,True
+2023,Nenas/Pineapple,3286665.0,Kw,True
+2023,Pepaya/Papaya,55343.8,Kw,True
+2023,Petai/Twisted Cluster Bean,31398.15,Kw,True
+2023,Pisang/Banana,545672.05,Kw,True
+2023,Rambutan/Rambutan,56043.85,Kw,True
+2023,Salak/Snakefruit,2808.05,Kw,True
+2023,Sawo/Sapodilla/Sawo,14972.15,Kw,True
+2023,Sirsak/Soursop,43633.8,Kw,True
+2023,Sukun/Breadfruit,4221.8,Kw,True
+2024,Alpukat/Avocado,227683.95,Kw,True
+2024,Anggur/Grape,101.0,Kw,True
+2024,Apel/Apple,0.0,Kw,True
+2024,Belimbing/Star Fruit,48840.15,Kw,True
+2024,Buah Naga/Hylocereus polyrhizus,7345.6,Kw,True
+2024,Duku/Langsat/Kokosan/Duku,123.0,Kw,True
+2024,Durian/Durian,213382.8,Kw,True
+2024,Jambu Air/Water Apple,19869.85,Kw,True
+2024,Jambu Biji/Guava,15608.45,Kw,True
+2024,Jengkol/Jengkol,288.0,Kw,True
+2024,Jeruk Besar/Pomelo,89.15,Kw,True
+2024,Jeruk Lemon/Lemon,5587.0,Kw,True
+2024,Jeruk Siam/Keprok/Orange/Tangerine,118608.25,Kw,True
+2024,Lengkeng/Dimocarpus longan,7567.8,Kw,True
+2024,Mangga/Mango,857932.5,Kw,True
+2024,Manggis/Mangosteen,5729.8,Kw,True
+2024,Melinjo/Gnetum/Melinjo,55929.05,Kw,True
+2024,Nangka/Cempedak/Jackfruit,47256.85,Kw,True
+2024,Nenas/Pineapple,4316258.85,Kw,True
+2024,Pepaya/Papaya,54649.9,Kw,True
+2024,Petai/Twisted Cluster Bean,31498.15,Kw,True
+2024,Pisang/Banana,638513.95,Kw,True
+2024,Rambutan/Rambutan,63576.5,Kw,True
+2024,Salak/Snakefruit,2652.7,Kw,True
+2024,Sawo/Sapodilla/Sawo,14743.55,Kw,True
+2024,Sirsak/Soursop,43531.1,Kw,True
+2024,Sukun/Breadfruit,4198.4,Kw,True
+2025,Alpukat/Avocado,228170.92,Kw,False
+2025,Anggur/Grape,0.0,Kw,False
+2025,Apel/Apple,0.0,Kw,False
+2025,Belimbing/Star Fruit,44857.12,Kw,False
+2025,Buah Naga/Hylocereus polyrhizus,5122.0,Kw,False
+2025,Duku/Langsat/Kokosan/Duku,43.0,Kw,False
+2025,Durian/Durian,202306.48,Kw,False
+2025,Jambu Air/Water Apple,21762.93,Kw,False
+2025,Jambu Biji/Guava,16287.51,Kw,False
+2025,Jengkol/Jengkol,115.5,Kw,False
+2025,Jeruk Besar/Pomelo,40.25,Kw,False
+2025,Jeruk Lemon/Lemon,5330.86,Kw,False
+2025,Jeruk Siam/Keprok/Orange/Tangerine,112267.5,Kw,False
+2025,Lengkeng/Dimocarpus longan,7781.89,Kw,False
+2025,Mangga/Mango,834761.71,Kw,False
+2025,Manggis/Mangosteen,6537.0,Kw,False
+2025,Melinjo/Gnetum/Melinjo,63942.11,Kw,False
+2025,Nangka/Cempedak/Jackfruit,47050.39,Kw,False
+2025,Nenas/Pineapple,4248946.23,Kw,False
+2025,Pepaya/Papaya,59164.0,Kw,False
+2025,Petai/Twisted Cluster Bean,33043.57,Kw,False
+2025,Pisang/Banana,622222.84,Kw,False
+2025,Rambutan/Rambutan,59573.5,Kw,False
+2025,Salak/Snakefruit,2396.6,Kw,False
+2025,Sawo/Sapodilla/Sawo,15704.01,Kw,False
+2025,Sirsak/Soursop,43820.12,Kw,False
+2025,Sukun/Breadfruit,4519.75,Kw,False

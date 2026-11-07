@@ -1,0 +1,4213 @@
+﻿tahun,kecamatan,komoditas,produksi_kuintal,is_dummy
+2020,Badas,Alpukat,802.0,True
+2020,Banyakan,Alpukat,4892.85,True
+2020,Gampengrejo,Alpukat,0.0,True
+2020,Grogol,Alpukat,17024.0,True
+2020,Gurah,Alpukat,0.0,True
+2020,Kandangan,Alpukat,1836.75,True
+2020,Kandat,Alpukat,2995.0,True
+2020,Kayenkidul,Alpukat,610.0,True
+2020,Kepung,Alpukat,51200.0,True
+2020,Kras,Alpukat,2691.0,True
+2020,Kunjang,Alpukat,257.0,True
+2020,Mojo,Alpukat,19489.0,True
+2020,Ngadiluwih,Alpukat,3221.0,True
+2020,Ngancar,Alpukat,24750.0,True
+2020,Ngasem,Alpukat,705.4,True
+2020,Pagu,Alpukat,1515.8,True
+2020,Papar,Alpukat,0.0,True
+2020,Pare,Alpukat,0.0,True
+2020,Plemahan,Alpukat,16531.0,True
+2020,Plosoklaten,Alpukat,6164.0,True
+2020,Puncu,Alpukat,3270.0,True
+2020,Purwoasri,Alpukat,228.0,True
+2020,Ringinrejo,Alpukat,11353.0,True
+2020,Semen,Alpukat,6005.0,True
+2020,Tarokan,Alpukat,203.75,True
+2020,Wates,Alpukat,14347.0,True
+2020,Badas,Anggur,0.0,True
+2020,Banyakan,Anggur,0.0,True
+2020,Gampengrejo,Anggur,53.0,True
+2020,Grogol,Anggur,0.0,True
+2020,Gurah,Anggur,0.0,True
+2020,Kandangan,Anggur,0.0,True
+2020,Kandat,Anggur,0.0,True
+2020,Kayenkidul,Anggur,0.0,True
+2020,Kepung,Anggur,0.0,True
+2020,Kras,Anggur,0.0,True
+2020,Kunjang,Anggur,0.0,True
+2020,Mojo,Anggur,0.0,True
+2020,Ngadiluwih,Anggur,0.0,True
+2020,Ngancar,Anggur,0.0,True
+2020,Ngasem,Anggur,79.0,True
+2020,Pagu,Anggur,0.0,True
+2020,Papar,Anggur,0.0,True
+2020,Pare,Anggur,0.0,True
+2020,Plemahan,Anggur,0.0,True
+2020,Plosoklaten,Anggur,0.0,True
+2020,Puncu,Anggur,0.0,True
+2020,Purwoasri,Anggur,0.0,True
+2020,Ringinrejo,Anggur,0.0,True
+2020,Semen,Anggur,0.0,True
+2020,Tarokan,Anggur,0.0,True
+2020,Wates,Anggur,0.0,True
+2020,Badas,Apel,0.0,True
+2020,Banyakan,Apel,0.0,True
+2020,Gampengrejo,Apel,0.0,True
+2020,Grogol,Apel,0.0,True
+2020,Gurah,Apel,0.0,True
+2020,Kandangan,Apel,38.15,True
+2020,Kandat,Apel,0.0,True
+2020,Kayenkidul,Apel,0.0,True
+2020,Kepung,Apel,0.0,True
+2020,Kras,Apel,0.0,True
+2020,Kunjang,Apel,0.0,True
+2020,Mojo,Apel,0.0,True
+2020,Ngadiluwih,Apel,0.0,True
+2020,Ngancar,Apel,0.0,True
+2020,Ngasem,Apel,0.0,True
+2020,Pagu,Apel,0.0,True
+2020,Papar,Apel,0.0,True
+2020,Pare,Apel,0.0,True
+2020,Plemahan,Apel,0.0,True
+2020,Plosoklaten,Apel,0.0,True
+2020,Puncu,Apel,0.0,True
+2020,Purwoasri,Apel,0.0,True
+2020,Ringinrejo,Apel,0.0,True
+2020,Semen,Apel,0.0,True
+2020,Tarokan,Apel,0.0,True
+2020,Wates,Apel,0.0,True
+2020,Badas,Belimbing,0.0,True
+2020,Banyakan,Belimbing,0.0,True
+2020,Gampengrejo,Belimbing,305.4,True
+2020,Grogol,Belimbing,185.0,True
+2020,Gurah,Belimbing,4068.5,True
+2020,Kandangan,Belimbing,99.0,True
+2020,Kandat,Belimbing,284.0,True
+2020,Kayenkidul,Belimbing,395.0,True
+2020,Kepung,Belimbing,105.0,True
+2020,Kras,Belimbing,264.0,True
+2020,Kunjang,Belimbing,382.0,True
+2020,Mojo,Belimbing,2051.0,True
+2020,Ngadiluwih,Belimbing,5.0,True
+2020,Ngancar,Belimbing,0.0,True
+2020,Ngasem,Belimbing,70.85,True
+2020,Pagu,Belimbing,28393.0,True
+2020,Papar,Belimbing,0.0,True
+2020,Pare,Belimbing,198.25,True
+2020,Plemahan,Belimbing,904.2,True
+2020,Plosoklaten,Belimbing,115.3,True
+2020,Puncu,Belimbing,124.8,True
+2020,Purwoasri,Belimbing,201.6,True
+2020,Ringinrejo,Belimbing,3958.0,True
+2020,Semen,Belimbing,0.0,True
+2020,Tarokan,Belimbing,0.0,True
+2020,Wates,Belimbing,183.0,True
+2020,Badas,Buah Naga,0.0,True
+2020,Banyakan,Buah Naga,434.0,True
+2020,Gampengrejo,Buah Naga,0.0,True
+2020,Grogol,Buah Naga,0.0,True
+2020,Gurah,Buah Naga,0.0,True
+2020,Kandangan,Buah Naga,0.0,True
+2020,Kandat,Buah Naga,0.0,True
+2020,Kayenkidul,Buah Naga,0.0,True
+2020,Kepung,Buah Naga,0.0,True
+2020,Kras,Buah Naga,0.0,True
+2020,Kunjang,Buah Naga,0.0,True
+2020,Mojo,Buah Naga,0.0,True
+2020,Ngadiluwih,Buah Naga,2020.0,True
+2020,Ngancar,Buah Naga,0.0,True
+2020,Ngasem,Buah Naga,0.0,True
+2020,Pagu,Buah Naga,0.0,True
+2020,Papar,Buah Naga,186.8,True
+2020,Pare,Buah Naga,1333.8,True
+2020,Plemahan,Buah Naga,401.0,True
+2020,Plosoklaten,Buah Naga,0.0,True
+2020,Puncu,Buah Naga,0.0,True
+2020,Purwoasri,Buah Naga,0.0,True
+2020,Ringinrejo,Buah Naga,992.0,True
+2020,Semen,Buah Naga,125.0,True
+2020,Tarokan,Buah Naga,0.0,True
+2020,Wates,Buah Naga,0.0,True
+2020,Badas,Duku/Langsat/Kokosan,0.0,True
+2020,Banyakan,Duku/Langsat/Kokosan,0.0,True
+2020,Gampengrejo,Duku/Langsat/Kokosan,29.15,True
+2020,Grogol,Duku/Langsat/Kokosan,25.0,True
+2020,Gurah,Duku/Langsat/Kokosan,0.0,True
+2020,Kandangan,Duku/Langsat/Kokosan,0.0,True
+2020,Kandat,Duku/Langsat/Kokosan,22.2,True
+2020,Kayenkidul,Duku/Langsat/Kokosan,0.0,True
+2020,Kepung,Duku/Langsat/Kokosan,19.75,True
+2020,Kras,Duku/Langsat/Kokosan,0.0,True
+2020,Kunjang,Duku/Langsat/Kokosan,0.0,True
+2020,Mojo,Duku/Langsat/Kokosan,28.8,True
+2020,Ngadiluwih,Duku/Langsat/Kokosan,0.0,True
+2020,Ngancar,Duku/Langsat/Kokosan,0.0,True
+2020,Ngasem,Duku/Langsat/Kokosan,0.0,True
+2020,Pagu,Duku/Langsat/Kokosan,0.0,True
+2020,Papar,Duku/Langsat/Kokosan,0.0,True
+2020,Pare,Duku/Langsat/Kokosan,0.0,True
+2020,Plemahan,Duku/Langsat/Kokosan,0.0,True
+2020,Plosoklaten,Duku/Langsat/Kokosan,0.0,True
+2020,Puncu,Duku/Langsat/Kokosan,0.0,True
+2020,Purwoasri,Duku/Langsat/Kokosan,13.0,True
+2020,Ringinrejo,Duku/Langsat/Kokosan,0.0,True
+2020,Semen,Duku/Langsat/Kokosan,0.0,True
+2020,Tarokan,Duku/Langsat/Kokosan,28.0,True
+2020,Wates,Duku/Langsat/Kokosan,0.0,True
+2020,Badas,Durian,507.0,True
+2020,Banyakan,Durian,2248.0,True
+2020,Gampengrejo,Durian,0.0,True
+2020,Grogol,Durian,212.0,True
+2020,Gurah,Durian,0.0,True
+2020,Kandangan,Durian,18656.25,True
+2020,Kandat,Durian,179.0,True
+2020,Kayenkidul,Durian,0.0,True
+2020,Kepung,Durian,28310.0,True
+2020,Kras,Durian,0.0,True
+2020,Kunjang,Durian,0.0,True
+2020,Mojo,Durian,27205.0,True
+2020,Ngadiluwih,Durian,0.0,True
+2020,Ngancar,Durian,2494.2,True
+2020,Ngasem,Durian,143.0,True
+2020,Pagu,Durian,0.0,True
+2020,Papar,Durian,0.0,True
+2020,Pare,Durian,0.0,True
+2020,Plemahan,Durian,150.0,True
+2020,Plosoklaten,Durian,5955.2,True
+2020,Puncu,Durian,10286.0,True
+2020,Purwoasri,Durian,67.0,True
+2020,Ringinrejo,Durian,9929.4,True
+2020,Semen,Durian,60444.0,True
+2020,Tarokan,Durian,321.4,True
+2020,Wates,Durian,0.0,True
+2020,Badas,Jambu Air,250.8,True
+2020,Banyakan,Jambu Air,0.0,True
+2020,Gampengrejo,Jambu Air,465.0,True
+2020,Grogol,Jambu Air,0.0,True
+2020,Gurah,Jambu Air,1890.0,True
+2020,Kandangan,Jambu Air,115.0,True
+2020,Kandat,Jambu Air,149.0,True
+2020,Kayenkidul,Jambu Air,0.0,True
+2020,Kepung,Jambu Air,55.0,True
+2020,Kras,Jambu Air,129.0,True
+2020,Kunjang,Jambu Air,490.0,True
+2020,Mojo,Jambu Air,267.0,True
+2020,Ngadiluwih,Jambu Air,1004.0,True
+2020,Ngancar,Jambu Air,0.0,True
+2020,Ngasem,Jambu Air,0.0,True
+2020,Pagu,Jambu Air,0.0,True
+2020,Papar,Jambu Air,0.0,True
+2020,Pare,Jambu Air,99.0,True
+2020,Plemahan,Jambu Air,3281.0,True
+2020,Plosoklaten,Jambu Air,91.0,True
+2020,Puncu,Jambu Air,0.0,True
+2020,Purwoasri,Jambu Air,7192.5,True
+2020,Ringinrejo,Jambu Air,901.15,True
+2020,Semen,Jambu Air,1526.0,True
+2020,Tarokan,Jambu Air,0.0,True
+2020,Wates,Jambu Air,18.0,True
+2020,Badas,Jambu Biji,1164.0,True
+2020,Banyakan,Jambu Biji,109.0,True
+2020,Gampengrejo,Jambu Biji,152.0,True
+2020,Grogol,Jambu Biji,0.0,True
+2020,Gurah,Jambu Biji,4194.0,True
+2020,Kandangan,Jambu Biji,0.0,True
+2020,Kandat,Jambu Biji,0.0,True
+2020,Kayenkidul,Jambu Biji,0.0,True
+2020,Kepung,Jambu Biji,58.5,True
+2020,Kras,Jambu Biji,260.0,True
+2020,Kunjang,Jambu Biji,324.3,True
+2020,Mojo,Jambu Biji,175.0,True
+2020,Ngadiluwih,Jambu Biji,1005.3,True
+2020,Ngancar,Jambu Biji,20.0,True
+2020,Ngasem,Jambu Biji,239.0,True
+2020,Pagu,Jambu Biji,0.0,True
+2020,Papar,Jambu Biji,0.0,True
+2020,Pare,Jambu Biji,348.0,True
+2020,Plemahan,Jambu Biji,3015.0,True
+2020,Plosoklaten,Jambu Biji,502.0,True
+2020,Puncu,Jambu Biji,461.0,True
+2020,Purwoasri,Jambu Biji,266.0,True
+2020,Ringinrejo,Jambu Biji,1372.5,True
+2020,Semen,Jambu Biji,18.0,True
+2020,Tarokan,Jambu Biji,163.0,True
+2020,Wates,Jambu Biji,0.0,True
+2020,Badas,Jengkol,50.0,True
+2020,Banyakan,Jengkol,0.0,True
+2020,Gampengrejo,Jengkol,0.0,True
+2020,Grogol,Jengkol,0.0,True
+2020,Gurah,Jengkol,0.0,True
+2020,Kandangan,Jengkol,0.0,True
+2020,Kandat,Jengkol,0.0,True
+2020,Kayenkidul,Jengkol,0.0,True
+2020,Kepung,Jengkol,0.0,True
+2020,Kras,Jengkol,0.0,True
+2020,Kunjang,Jengkol,0.0,True
+2020,Mojo,Jengkol,113.6,True
+2020,Ngadiluwih,Jengkol,0.0,True
+2020,Ngancar,Jengkol,0.0,True
+2020,Ngasem,Jengkol,0.0,True
+2020,Pagu,Jengkol,0.0,True
+2020,Papar,Jengkol,0.0,True
+2020,Pare,Jengkol,0.0,True
+2020,Plemahan,Jengkol,0.0,True
+2020,Plosoklaten,Jengkol,0.0,True
+2020,Puncu,Jengkol,0.0,True
+2020,Purwoasri,Jengkol,0.0,True
+2020,Ringinrejo,Jengkol,0.0,True
+2020,Semen,Jengkol,0.0,True
+2020,Tarokan,Jengkol,0.0,True
+2020,Wates,Jengkol,50.0,True
+2020,Badas,Jeruk Besar,0.0,True
+2020,Banyakan,Jeruk Besar,0.0,True
+2020,Gampengrejo,Jeruk Besar,0.0,True
+2020,Grogol,Jeruk Besar,0.0,True
+2020,Gurah,Jeruk Besar,30.0,True
+2020,Kandangan,Jeruk Besar,0.0,True
+2020,Kandat,Jeruk Besar,0.0,True
+2020,Kayenkidul,Jeruk Besar,0.0,True
+2020,Kepung,Jeruk Besar,19.0,True
+2020,Kras,Jeruk Besar,0.0,True
+2020,Kunjang,Jeruk Besar,0.0,True
+2020,Mojo,Jeruk Besar,0.0,True
+2020,Ngadiluwih,Jeruk Besar,0.0,True
+2020,Ngancar,Jeruk Besar,32.0,True
+2020,Ngasem,Jeruk Besar,0.0,True
+2020,Pagu,Jeruk Besar,0.0,True
+2020,Papar,Jeruk Besar,0.0,True
+2020,Pare,Jeruk Besar,0.0,True
+2020,Plemahan,Jeruk Besar,6.0,True
+2020,Plosoklaten,Jeruk Besar,0.0,True
+2020,Puncu,Jeruk Besar,0.0,True
+2020,Purwoasri,Jeruk Besar,0.0,True
+2020,Ringinrejo,Jeruk Besar,31.5,True
+2020,Semen,Jeruk Besar,0.0,True
+2020,Tarokan,Jeruk Besar,0.0,True
+2020,Wates,Jeruk Besar,0.0,True
+2020,Badas,Jeruk Lemon,0.0,True
+2020,Banyakan,Jeruk Lemon,0.0,True
+2020,Gampengrejo,Jeruk Lemon,0.0,True
+2020,Grogol,Jeruk Lemon,0.0,True
+2020,Gurah,Jeruk Lemon,0.0,True
+2020,Kandangan,Jeruk Lemon,0.0,True
+2020,Kandat,Jeruk Lemon,453.0,True
+2020,Kayenkidul,Jeruk Lemon,48.8,True
+2020,Kepung,Jeruk Lemon,0.0,True
+2020,Kras,Jeruk Lemon,52.0,True
+2020,Kunjang,Jeruk Lemon,59.8,True
+2020,Mojo,Jeruk Lemon,0.0,True
+2020,Ngadiluwih,Jeruk Lemon,42.0,True
+2020,Ngancar,Jeruk Lemon,0.0,True
+2020,Ngasem,Jeruk Lemon,0.0,True
+2020,Pagu,Jeruk Lemon,0.0,True
+2020,Papar,Jeruk Lemon,0.0,True
+2020,Pare,Jeruk Lemon,0.0,True
+2020,Plemahan,Jeruk Lemon,0.0,True
+2020,Plosoklaten,Jeruk Lemon,2612.0,True
+2020,Puncu,Jeruk Lemon,24.6,True
+2020,Purwoasri,Jeruk Lemon,0.0,True
+2020,Ringinrejo,Jeruk Lemon,1004.0,True
+2020,Semen,Jeruk Lemon,0.0,True
+2020,Tarokan,Jeruk Lemon,53.0,True
+2020,Wates,Jeruk Lemon,34.0,True
+2020,Badas,Jeruk Siam/Keprok,0.0,True
+2020,Banyakan,Jeruk Siam/Keprok,9216.5,True
+2020,Gampengrejo,Jeruk Siam/Keprok,0.0,True
+2020,Grogol,Jeruk Siam/Keprok,0.0,True
+2020,Gurah,Jeruk Siam/Keprok,0.0,True
+2020,Kandangan,Jeruk Siam/Keprok,0.0,True
+2020,Kandat,Jeruk Siam/Keprok,0.0,True
+2020,Kayenkidul,Jeruk Siam/Keprok,0.0,True
+2020,Kepung,Jeruk Siam/Keprok,0.0,True
+2020,Kras,Jeruk Siam/Keprok,485.3,True
+2020,Kunjang,Jeruk Siam/Keprok,1187.8,True
+2020,Mojo,Jeruk Siam/Keprok,23406.0,True
+2020,Ngadiluwih,Jeruk Siam/Keprok,0.0,True
+2020,Ngancar,Jeruk Siam/Keprok,502.0,True
+2020,Ngasem,Jeruk Siam/Keprok,1717.15,True
+2020,Pagu,Jeruk Siam/Keprok,0.0,True
+2020,Papar,Jeruk Siam/Keprok,0.0,True
+2020,Pare,Jeruk Siam/Keprok,0.0,True
+2020,Plemahan,Jeruk Siam/Keprok,0.0,True
+2020,Plosoklaten,Jeruk Siam/Keprok,0.0,True
+2020,Puncu,Jeruk Siam/Keprok,0.0,True
+2020,Purwoasri,Jeruk Siam/Keprok,0.0,True
+2020,Ringinrejo,Jeruk Siam/Keprok,14400.0,True
+2020,Semen,Jeruk Siam/Keprok,18116.4,True
+2020,Tarokan,Jeruk Siam/Keprok,29094.0,True
+2020,Wates,Jeruk Siam/Keprok,1812.0,True
+2020,Badas,Lengkeng,0.0,True
+2020,Banyakan,Lengkeng,0.0,True
+2020,Gampengrejo,Lengkeng,0.0,True
+2020,Grogol,Lengkeng,6.0,True
+2020,Gurah,Lengkeng,117.15,True
+2020,Kandangan,Lengkeng,0.0,True
+2020,Kandat,Lengkeng,0.0,True
+2020,Kayenkidul,Lengkeng,1646.0,True
+2020,Kepung,Lengkeng,58.0,True
+2020,Kras,Lengkeng,0.0,True
+2020,Kunjang,Lengkeng,0.0,True
+2020,Mojo,Lengkeng,254.0,True
+2020,Ngadiluwih,Lengkeng,0.0,True
+2020,Ngancar,Lengkeng,1432.3,True
+2020,Ngasem,Lengkeng,375.0,True
+2020,Pagu,Lengkeng,0.0,True
+2020,Papar,Lengkeng,0.0,True
+2020,Pare,Lengkeng,0.0,True
+2020,Plemahan,Lengkeng,0.0,True
+2020,Plosoklaten,Lengkeng,0.0,True
+2020,Puncu,Lengkeng,0.0,True
+2020,Purwoasri,Lengkeng,372.75,True
+2020,Ringinrejo,Lengkeng,2149.0,True
+2020,Semen,Lengkeng,637.0,True
+2020,Tarokan,Lengkeng,0.0,True
+2020,Wates,Lengkeng,0.0,True
+2020,Badas,Mangga,20478.0,True
+2020,Banyakan,Mangga,250854.75,True
+2020,Gampengrejo,Mangga,4632.0,True
+2020,Grogol,Mangga,142190.25,True
+2020,Gurah,Mangga,3467.0,True
+2020,Kandangan,Mangga,6723.0,True
+2020,Kandat,Mangga,2232.0,True
+2020,Kayenkidul,Mangga,223.0,True
+2020,Kepung,Mangga,0.0,True
+2020,Kras,Mangga,785.0,True
+2020,Kunjang,Mangga,10317.0,True
+2020,Mojo,Mangga,6259.0,True
+2020,Ngadiluwih,Mangga,4044.85,True
+2020,Ngancar,Mangga,0.0,True
+2020,Ngasem,Mangga,0.0,True
+2020,Pagu,Mangga,7466.0,True
+2020,Papar,Mangga,3044.0,True
+2020,Pare,Mangga,0.0,True
+2020,Plemahan,Mangga,0.0,True
+2020,Plosoklaten,Mangga,3101.0,True
+2020,Puncu,Mangga,0.0,True
+2020,Purwoasri,Mangga,0.0,True
+2020,Ringinrejo,Mangga,9569.0,True
+2020,Semen,Mangga,1176.0,True
+2020,Tarokan,Mangga,245933.0,True
+2020,Wates,Mangga,0.0,True
+2020,Badas,Manggis,125.0,True
+2020,Banyakan,Manggis,0.0,True
+2020,Gampengrejo,Manggis,0.0,True
+2020,Grogol,Manggis,0.0,True
+2020,Gurah,Manggis,0.0,True
+2020,Kandangan,Manggis,5471.0,True
+2020,Kandat,Manggis,0.0,True
+2020,Kayenkidul,Manggis,0.0,True
+2020,Kepung,Manggis,0.0,True
+2020,Kras,Manggis,0.0,True
+2020,Kunjang,Manggis,0.0,True
+2020,Mojo,Manggis,196.0,True
+2020,Ngadiluwih,Manggis,0.0,True
+2020,Ngancar,Manggis,263.0,True
+2020,Ngasem,Manggis,0.0,True
+2020,Pagu,Manggis,0.0,True
+2020,Papar,Manggis,0.0,True
+2020,Pare,Manggis,0.0,True
+2020,Plemahan,Manggis,0.0,True
+2020,Plosoklaten,Manggis,0.0,True
+2020,Puncu,Manggis,0.0,True
+2020,Purwoasri,Manggis,0.0,True
+2020,Ringinrejo,Manggis,253.0,True
+2020,Semen,Manggis,0.0,True
+2020,Tarokan,Manggis,125.0,True
+2020,Wates,Manggis,0.0,True
+2020,Badas,Melinjo,27177.25,True
+2020,Banyakan,Melinjo,188.0,True
+2020,Gampengrejo,Melinjo,0.0,True
+2020,Grogol,Melinjo,0.0,True
+2020,Gurah,Melinjo,2082.0,True
+2020,Kandangan,Melinjo,1017.0,True
+2020,Kandat,Melinjo,0.0,True
+2020,Kayenkidul,Melinjo,0.0,True
+2020,Kepung,Melinjo,0.0,True
+2020,Kras,Melinjo,234.0,True
+2020,Kunjang,Melinjo,426.0,True
+2020,Mojo,Melinjo,600.0,True
+2020,Ngadiluwih,Melinjo,196.2,True
+2020,Ngancar,Melinjo,1757.6,True
+2020,Ngasem,Melinjo,1073.0,True
+2020,Pagu,Melinjo,711.0,True
+2020,Papar,Melinjo,0.0,True
+2020,Pare,Melinjo,0.0,True
+2020,Plemahan,Melinjo,0.0,True
+2020,Plosoklaten,Melinjo,15082.85,True
+2020,Puncu,Melinjo,0.0,True
+2020,Purwoasri,Melinjo,341.0,True
+2020,Ringinrejo,Melinjo,918.0,True
+2020,Semen,Melinjo,0.0,True
+2020,Tarokan,Melinjo,0.0,True
+2020,Wates,Melinjo,0.0,True
+2020,Badas,Nangka/Cempedak,7593.0,True
+2020,Banyakan,Nangka/Cempedak,3364.85,True
+2020,Gampengrejo,Nangka/Cempedak,171.0,True
+2020,Grogol,Nangka/Cempedak,0.0,True
+2020,Gurah,Nangka/Cempedak,0.0,True
+2020,Kandangan,Nangka/Cempedak,5433.0,True
+2020,Kandat,Nangka/Cempedak,623.0,True
+2020,Kayenkidul,Nangka/Cempedak,367.0,True
+2020,Kepung,Nangka/Cempedak,0.0,True
+2020,Kras,Nangka/Cempedak,610.0,True
+2020,Kunjang,Nangka/Cempedak,1624.0,True
+2020,Mojo,Nangka/Cempedak,133.0,True
+2020,Ngadiluwih,Nangka/Cempedak,1693.0,True
+2020,Ngancar,Nangka/Cempedak,0.0,True
+2020,Ngasem,Nangka/Cempedak,698.0,True
+2020,Pagu,Nangka/Cempedak,1103.0,True
+2020,Papar,Nangka/Cempedak,314.0,True
+2020,Pare,Nangka/Cempedak,1188.0,True
+2020,Plemahan,Nangka/Cempedak,2460.2,True
+2020,Plosoklaten,Nangka/Cempedak,1519.0,True
+2020,Puncu,Nangka/Cempedak,233.15,True
+2020,Purwoasri,Nangka/Cempedak,948.0,True
+2020,Ringinrejo,Nangka/Cempedak,10158.75,True
+2020,Semen,Nangka/Cempedak,248.0,True
+2020,Tarokan,Nangka/Cempedak,69.0,True
+2020,Wates,Nangka/Cempedak,0.0,True
+2020,Badas,Nenas,0.0,True
+2020,Banyakan,Nenas,0.0,True
+2020,Gampengrejo,Nenas,3744.0,True
+2020,Grogol,Nenas,0.0,True
+2020,Gurah,Nenas,0.0,True
+2020,Kandangan,Nenas,0.0,True
+2020,Kandat,Nenas,23548.0,True
+2020,Kayenkidul,Nenas,0.0,True
+2020,Kepung,Nenas,0.0,True
+2020,Kras,Nenas,18.8,True
+2020,Kunjang,Nenas,0.0,True
+2020,Mojo,Nenas,6265.0,True
+2020,Ngadiluwih,Nenas,0.0,True
+2020,Ngancar,Nenas,3553186.0,True
+2020,Ngasem,Nenas,0.0,True
+2020,Pagu,Nenas,0.0,True
+2020,Papar,Nenas,0.0,True
+2020,Pare,Nenas,0.0,True
+2020,Plemahan,Nenas,0.0,True
+2020,Plosoklaten,Nenas,66158.0,True
+2020,Puncu,Nenas,18152.0,True
+2020,Purwoasri,Nenas,0.0,True
+2020,Ringinrejo,Nenas,26072.0,True
+2020,Semen,Nenas,0.0,True
+2020,Tarokan,Nenas,8172.0,True
+2020,Wates,Nenas,9025.2,True
+2020,Badas,Pepaya,961.4,True
+2020,Banyakan,Pepaya,1204.75,True
+2020,Gampengrejo,Pepaya,0.0,True
+2020,Grogol,Pepaya,0.0,True
+2020,Gurah,Pepaya,4181.0,True
+2020,Kandangan,Pepaya,0.0,True
+2020,Kandat,Pepaya,7246.0,True
+2020,Kayenkidul,Pepaya,0.0,True
+2020,Kepung,Pepaya,0.0,True
+2020,Kras,Pepaya,2591.0,True
+2020,Kunjang,Pepaya,0.0,True
+2020,Mojo,Pepaya,1591.0,True
+2020,Ngadiluwih,Pepaya,376.0,True
+2020,Ngancar,Pepaya,1319.0,True
+2020,Ngasem,Pepaya,105.0,True
+2020,Pagu,Pepaya,34.0,True
+2020,Papar,Pepaya,0.0,True
+2020,Pare,Pepaya,1937.0,True
+2020,Plemahan,Pepaya,0.0,True
+2020,Plosoklaten,Pepaya,3922.0,True
+2020,Puncu,Pepaya,18664.0,True
+2020,Purwoasri,Pepaya,0.0,True
+2020,Ringinrejo,Pepaya,2134.0,True
+2020,Semen,Pepaya,2078.0,True
+2020,Tarokan,Pepaya,53.0,True
+2020,Wates,Pepaya,2808.0,True
+2020,Badas,Petai,537.0,True
+2020,Banyakan,Petai,10400.0,True
+2020,Gampengrejo,Petai,0.0,True
+2020,Grogol,Petai,0.0,True
+2020,Gurah,Petai,0.0,True
+2020,Kandangan,Petai,434.0,True
+2020,Kandat,Petai,53.0,True
+2020,Kayenkidul,Petai,23.2,True
+2020,Kepung,Petai,2135.0,True
+2020,Kras,Petai,0.0,True
+2020,Kunjang,Petai,0.0,True
+2020,Mojo,Petai,7645.6,True
+2020,Ngadiluwih,Petai,0.0,True
+2020,Ngancar,Petai,0.0,True
+2020,Ngasem,Petai,159.0,True
+2020,Pagu,Petai,0.0,True
+2020,Papar,Petai,0.0,True
+2020,Pare,Petai,0.0,True
+2020,Plemahan,Petai,192.6,True
+2020,Plosoklaten,Petai,2381.0,True
+2020,Puncu,Petai,748.8,True
+2020,Purwoasri,Petai,0.0,True
+2020,Ringinrejo,Petai,963.0,True
+2020,Semen,Petai,2742.0,True
+2020,Tarokan,Petai,0.0,True
+2020,Wates,Petai,0.0,True
+2020,Badas,Pisang,0.0,True
+2020,Banyakan,Pisang,8069.0,True
+2020,Gampengrejo,Pisang,819.8,True
+2020,Grogol,Pisang,21207.0,True
+2020,Gurah,Pisang,0.0,True
+2020,Kandangan,Pisang,164511.0,True
+2020,Kandat,Pisang,87231.25,True
+2020,Kayenkidul,Pisang,965.85,True
+2020,Kepung,Pisang,12656.0,True
+2020,Kras,Pisang,941.0,True
+2020,Kunjang,Pisang,9069.75,True
+2020,Mojo,Pisang,13559.0,True
+2020,Ngadiluwih,Pisang,8256.0,True
+2020,Ngancar,Pisang,0.0,True
+2020,Ngasem,Pisang,0.0,True
+2020,Pagu,Pisang,958.0,True
+2020,Papar,Pisang,6614.0,True
+2020,Pare,Pisang,0.0,True
+2020,Plemahan,Pisang,21504.0,True
+2020,Plosoklaten,Pisang,0.0,True
+2020,Puncu,Pisang,102039.0,True
+2020,Purwoasri,Pisang,28085.25,True
+2020,Ringinrejo,Pisang,17068.0,True
+2020,Semen,Pisang,225.2,True
+2020,Tarokan,Pisang,10288.8,True
+2020,Wates,Pisang,8985.4,True
+2020,Badas,Rambutan,7213.25,True
+2020,Banyakan,Rambutan,0.0,True
+2020,Gampengrejo,Rambutan,857.0,True
+2020,Grogol,Rambutan,0.0,True
+2020,Gurah,Rambutan,266.0,True
+2020,Kandangan,Rambutan,4231.0,True
+2020,Kandat,Rambutan,3926.5,True
+2020,Kayenkidul,Rambutan,815.0,True
+2020,Kepung,Rambutan,1968.6,True
+2020,Kras,Rambutan,2176.6,True
+2020,Kunjang,Rambutan,2623.0,True
+2020,Mojo,Rambutan,12951.4,True
+2020,Ngadiluwih,Rambutan,0.0,True
+2020,Ngancar,Rambutan,2093.0,True
+2020,Ngasem,Rambutan,0.0,True
+2020,Pagu,Rambutan,0.0,True
+2020,Papar,Rambutan,0.0,True
+2020,Pare,Rambutan,3334.0,True
+2020,Plemahan,Rambutan,161.8,True
+2020,Plosoklaten,Rambutan,2322.0,True
+2020,Puncu,Rambutan,0.0,True
+2020,Purwoasri,Rambutan,4690.0,True
+2020,Ringinrejo,Rambutan,1242.0,True
+2020,Semen,Rambutan,0.0,True
+2020,Tarokan,Rambutan,0.0,True
+2020,Wates,Rambutan,0.0,True
+2020,Badas,Salak,0.0,True
+2020,Banyakan,Salak,0.0,True
+2020,Gampengrejo,Salak,0.0,True
+2020,Grogol,Salak,0.0,True
+2020,Gurah,Salak,0.0,True
+2020,Kandangan,Salak,49.0,True
+2020,Kandat,Salak,0.0,True
+2020,Kayenkidul,Salak,0.0,True
+2020,Kepung,Salak,0.0,True
+2020,Kras,Salak,0.0,True
+2020,Kunjang,Salak,0.0,True
+2020,Mojo,Salak,480.0,True
+2020,Ngadiluwih,Salak,0.0,True
+2020,Ngancar,Salak,415.0,True
+2020,Ngasem,Salak,0.0,True
+2020,Pagu,Salak,0.0,True
+2020,Papar,Salak,0.0,True
+2020,Pare,Salak,0.0,True
+2020,Plemahan,Salak,0.0,True
+2020,Plosoklaten,Salak,1105.0,True
+2020,Puncu,Salak,0.0,True
+2020,Purwoasri,Salak,0.0,True
+2020,Ringinrejo,Salak,171.75,True
+2020,Semen,Salak,196.5,True
+2020,Tarokan,Salak,74.0,True
+2020,Wates,Salak,40.0,True
+2020,Badas,Sawo,3852.0,True
+2020,Banyakan,Sawo,777.0,True
+2020,Gampengrejo,Sawo,0.0,True
+2020,Grogol,Sawo,0.0,True
+2020,Gurah,Sawo,2705.0,True
+2020,Kandangan,Sawo,0.0,True
+2020,Kandat,Sawo,0.0,True
+2020,Kayenkidul,Sawo,274.0,True
+2020,Kepung,Sawo,126.0,True
+2020,Kras,Sawo,19.4,True
+2020,Kunjang,Sawo,225.25,True
+2020,Mojo,Sawo,241.6,True
+2020,Ngadiluwih,Sawo,0.0,True
+2020,Ngancar,Sawo,0.0,True
+2020,Ngasem,Sawo,0.0,True
+2020,Pagu,Sawo,0.0,True
+2020,Papar,Sawo,0.0,True
+2020,Pare,Sawo,0.0,True
+2020,Plemahan,Sawo,1348.0,True
+2020,Plosoklaten,Sawo,513.0,True
+2020,Puncu,Sawo,0.0,True
+2020,Purwoasri,Sawo,299.0,True
+2020,Ringinrejo,Sawo,0.0,True
+2020,Semen,Sawo,2447.5,True
+2020,Tarokan,Sawo,135.0,True
+2020,Wates,Sawo,0.0,True
+2020,Badas,Sirsak,1442.4,True
+2020,Banyakan,Sirsak,490.4,True
+2020,Gampengrejo,Sirsak,0.0,True
+2020,Grogol,Sirsak,0.0,True
+2020,Gurah,Sirsak,0.0,True
+2020,Kandangan,Sirsak,814.0,True
+2020,Kandat,Sirsak,0.0,True
+2020,Kayenkidul,Sirsak,269.0,True
+2020,Kepung,Sirsak,0.0,True
+2020,Kras,Sirsak,427.5,True
+2020,Kunjang,Sirsak,517.4,True
+2020,Mojo,Sirsak,4375.0,True
+2020,Ngadiluwih,Sirsak,60.0,True
+2020,Ngancar,Sirsak,191.0,True
+2020,Ngasem,Sirsak,134.0,True
+2020,Pagu,Sirsak,0.0,True
+2020,Papar,Sirsak,0.0,True
+2020,Pare,Sirsak,2502.0,True
+2020,Plemahan,Sirsak,338.0,True
+2020,Plosoklaten,Sirsak,15099.0,True
+2020,Puncu,Sirsak,1998.0,True
+2020,Purwoasri,Sirsak,511.0,True
+2020,Ringinrejo,Sirsak,1716.0,True
+2020,Semen,Sirsak,801.0,True
+2020,Tarokan,Sirsak,6085.0,True
+2020,Wates,Sirsak,380.0,True
+2020,Badas,Sukun,385.0,True
+2020,Banyakan,Sukun,240.0,True
+2020,Gampengrejo,Sukun,82.0,True
+2020,Grogol,Sukun,0.0,True
+2020,Gurah,Sukun,0.0,True
+2020,Kandangan,Sukun,0.0,True
+2020,Kandat,Sukun,0.0,True
+2020,Kayenkidul,Sukun,154.0,True
+2020,Kepung,Sukun,0.0,True
+2020,Kras,Sukun,180.0,True
+2020,Kunjang,Sukun,0.0,True
+2020,Mojo,Sukun,940.0,True
+2020,Ngadiluwih,Sukun,0.0,True
+2020,Ngancar,Sukun,379.0,True
+2020,Ngasem,Sukun,40.0,True
+2020,Pagu,Sukun,37.0,True
+2020,Papar,Sukun,90.0,True
+2020,Pare,Sukun,0.0,True
+2020,Plemahan,Sukun,0.0,True
+2020,Plosoklaten,Sukun,124.0,True
+2020,Puncu,Sukun,121.0,True
+2020,Purwoasri,Sukun,437.0,True
+2020,Ringinrejo,Sukun,1190.0,True
+2020,Semen,Sukun,135.0,True
+2020,Tarokan,Sukun,0.0,True
+2020,Wates,Sukun,0.0,True
+2021,Badas,Alpukat,1066.0,True
+2021,Banyakan,Alpukat,3870.0,True
+2021,Gampengrejo,Alpukat,1043.0,True
+2021,Grogol,Alpukat,17781.0,True
+2021,Gurah,Alpukat,1216.75,True
+2021,Kandangan,Alpukat,2055.0,True
+2021,Kandat,Alpukat,3090.2,True
+2021,Kayenkidul,Alpukat,0.0,True
+2021,Kepung,Alpukat,58138.4,True
+2021,Kras,Alpukat,3642.0,True
+2021,Kunjang,Alpukat,249.0,True
+2021,Mojo,Alpukat,22657.0,True
+2021,Ngadiluwih,Alpukat,3119.0,True
+2021,Ngancar,Alpukat,27121.0,True
+2021,Ngasem,Alpukat,665.0,True
+2021,Pagu,Alpukat,1420.75,True
+2021,Papar,Alpukat,572.0,True
+2021,Pare,Alpukat,420.0,True
+2021,Plemahan,Alpukat,21408.0,True
+2021,Plosoklaten,Alpukat,5271.0,True
+2021,Puncu,Alpukat,4130.0,True
+2021,Purwoasri,Alpukat,0.0,True
+2021,Ringinrejo,Alpukat,11050.0,True
+2021,Semen,Alpukat,7583.0,True
+2021,Tarokan,Alpukat,181.0,True
+2021,Wates,Alpukat,15539.0,True
+2021,Badas,Anggur,0.0,True
+2021,Banyakan,Anggur,0.0,True
+2021,Gampengrejo,Anggur,46.0,True
+2021,Grogol,Anggur,0.0,True
+2021,Gurah,Anggur,0.0,True
+2021,Kandangan,Anggur,0.0,True
+2021,Kandat,Anggur,0.0,True
+2021,Kayenkidul,Anggur,0.0,True
+2021,Kepung,Anggur,0.0,True
+2021,Kras,Anggur,0.0,True
+2021,Kunjang,Anggur,0.0,True
+2021,Mojo,Anggur,0.0,True
+2021,Ngadiluwih,Anggur,0.0,True
+2021,Ngancar,Anggur,0.0,True
+2021,Ngasem,Anggur,0.0,True
+2021,Pagu,Anggur,0.0,True
+2021,Papar,Anggur,0.0,True
+2021,Pare,Anggur,0.0,True
+2021,Plemahan,Anggur,23.15,True
+2021,Plosoklaten,Anggur,0.0,True
+2021,Puncu,Anggur,0.0,True
+2021,Purwoasri,Anggur,0.0,True
+2021,Ringinrejo,Anggur,0.0,True
+2021,Semen,Anggur,0.0,True
+2021,Tarokan,Anggur,0.0,True
+2021,Wates,Anggur,70.3,True
+2021,Badas,Apel,0.0,True
+2021,Banyakan,Apel,0.0,True
+2021,Gampengrejo,Apel,0.0,True
+2021,Grogol,Apel,0.0,True
+2021,Gurah,Apel,0.0,True
+2021,Kandangan,Apel,0.0,True
+2021,Kandat,Apel,0.0,True
+2021,Kayenkidul,Apel,0.0,True
+2021,Kepung,Apel,0.0,True
+2021,Kras,Apel,0.0,True
+2021,Kunjang,Apel,0.0,True
+2021,Mojo,Apel,0.0,True
+2021,Ngadiluwih,Apel,0.0,True
+2021,Ngancar,Apel,0.0,True
+2021,Ngasem,Apel,0.0,True
+2021,Pagu,Apel,0.0,True
+2021,Papar,Apel,0.0,True
+2021,Pare,Apel,0.0,True
+2021,Plemahan,Apel,0.0,True
+2021,Plosoklaten,Apel,0.0,True
+2021,Puncu,Apel,0.0,True
+2021,Purwoasri,Apel,0.0,True
+2021,Ringinrejo,Apel,0.0,True
+2021,Semen,Apel,0.0,True
+2021,Tarokan,Apel,0.0,True
+2021,Wates,Apel,0.0,True
+2021,Badas,Belimbing,34.4,True
+2021,Banyakan,Belimbing,0.0,True
+2021,Gampengrejo,Belimbing,314.0,True
+2021,Grogol,Belimbing,180.0,True
+2021,Gurah,Belimbing,4235.25,True
+2021,Kandangan,Belimbing,0.0,True
+2021,Kandat,Belimbing,252.0,True
+2021,Kayenkidul,Belimbing,459.0,True
+2021,Kepung,Belimbing,115.0,True
+2021,Kras,Belimbing,224.0,True
+2021,Kunjang,Belimbing,340.0,True
+2021,Mojo,Belimbing,2273.0,True
+2021,Ngadiluwih,Belimbing,0.0,True
+2021,Ngancar,Belimbing,0.0,True
+2021,Ngasem,Belimbing,73.0,True
+2021,Pagu,Belimbing,30894.0,True
+2021,Papar,Belimbing,0.0,True
+2021,Pare,Belimbing,247.8,True
+2021,Plemahan,Belimbing,750.0,True
+2021,Plosoklaten,Belimbing,137.0,True
+2021,Puncu,Belimbing,157.0,True
+2021,Purwoasri,Belimbing,229.0,True
+2021,Ringinrejo,Belimbing,3781.0,True
+2021,Semen,Belimbing,0.0,True
+2021,Tarokan,Belimbing,73.0,True
+2021,Wates,Belimbing,177.0,True
+2021,Badas,Buah Naga,0.0,True
+2021,Banyakan,Buah Naga,0.0,True
+2021,Gampengrejo,Buah Naga,0.0,True
+2021,Grogol,Buah Naga,0.0,True
+2021,Gurah,Buah Naga,0.0,True
+2021,Kandangan,Buah Naga,0.0,True
+2021,Kandat,Buah Naga,0.0,True
+2021,Kayenkidul,Buah Naga,0.0,True
+2021,Kepung,Buah Naga,0.0,True
+2021,Kras,Buah Naga,0.0,True
+2021,Kunjang,Buah Naga,0.0,True
+2021,Mojo,Buah Naga,0.0,True
+2021,Ngadiluwih,Buah Naga,1926.0,True
+2021,Ngancar,Buah Naga,0.0,True
+2021,Ngasem,Buah Naga,0.0,True
+2021,Pagu,Buah Naga,0.0,True
+2021,Papar,Buah Naga,0.0,True
+2021,Pare,Buah Naga,1170.0,True
+2021,Plemahan,Buah Naga,0.0,True
+2021,Plosoklaten,Buah Naga,0.0,True
+2021,Puncu,Buah Naga,0.0,True
+2021,Purwoasri,Buah Naga,0.0,True
+2021,Ringinrejo,Buah Naga,1038.3,True
+2021,Semen,Buah Naga,126.0,True
+2021,Tarokan,Buah Naga,0.0,True
+2021,Wates,Buah Naga,0.0,True
+2021,Badas,Duku/Langsat/Kokosan,17.0,True
+2021,Banyakan,Duku/Langsat/Kokosan,0.0,True
+2021,Gampengrejo,Duku/Langsat/Kokosan,0.0,True
+2021,Grogol,Duku/Langsat/Kokosan,0.0,True
+2021,Gurah,Duku/Langsat/Kokosan,0.0,True
+2021,Kandangan,Duku/Langsat/Kokosan,0.0,True
+2021,Kandat,Duku/Langsat/Kokosan,0.0,True
+2021,Kayenkidul,Duku/Langsat/Kokosan,0.0,True
+2021,Kepung,Duku/Langsat/Kokosan,10.0,True
+2021,Kras,Duku/Langsat/Kokosan,0.0,True
+2021,Kunjang,Duku/Langsat/Kokosan,0.0,True
+2021,Mojo,Duku/Langsat/Kokosan,28.0,True
+2021,Ngadiluwih,Duku/Langsat/Kokosan,0.0,True
+2021,Ngancar,Duku/Langsat/Kokosan,0.0,True
+2021,Ngasem,Duku/Langsat/Kokosan,0.0,True
+2021,Pagu,Duku/Langsat/Kokosan,0.0,True
+2021,Papar,Duku/Langsat/Kokosan,0.0,True
+2021,Pare,Duku/Langsat/Kokosan,0.0,True
+2021,Plemahan,Duku/Langsat/Kokosan,0.0,True
+2021,Plosoklaten,Duku/Langsat/Kokosan,0.0,True
+2021,Puncu,Duku/Langsat/Kokosan,0.0,True
+2021,Purwoasri,Duku/Langsat/Kokosan,14.0,True
+2021,Ringinrejo,Duku/Langsat/Kokosan,0.0,True
+2021,Semen,Duku/Langsat/Kokosan,19.6,True
+2021,Tarokan,Duku/Langsat/Kokosan,0.0,True
+2021,Wates,Duku/Langsat/Kokosan,0.0,True
+2021,Badas,Durian,672.6,True
+2021,Banyakan,Durian,2362.0,True
+2021,Gampengrejo,Durian,0.0,True
+2021,Grogol,Durian,0.0,True
+2021,Gurah,Durian,0.0,True
+2021,Kandangan,Durian,17885.0,True
+2021,Kandat,Durian,0.0,True
+2021,Kayenkidul,Durian,0.0,True
+2021,Kepung,Durian,27930.0,True
+2021,Kras,Durian,99.0,True
+2021,Kunjang,Durian,58.5,True
+2021,Mojo,Durian,36180.0,True
+2021,Ngadiluwih,Durian,0.0,True
+2021,Ngancar,Durian,2605.0,True
+2021,Ngasem,Durian,127.0,True
+2021,Pagu,Durian,0.0,True
+2021,Papar,Durian,0.0,True
+2021,Pare,Durian,242.4,True
+2021,Plemahan,Durian,154.0,True
+2021,Plosoklaten,Durian,5483.0,True
+2021,Puncu,Durian,11193.0,True
+2021,Purwoasri,Durian,0.0,True
+2021,Ringinrejo,Durian,13753.0,True
+2021,Semen,Durian,71403.0,True
+2021,Tarokan,Durian,392.0,True
+2021,Wates,Durian,0.0,True
+2021,Badas,Jambu Air,251.8,True
+2021,Banyakan,Jambu Air,0.0,True
+2021,Gampengrejo,Jambu Air,505.85,True
+2021,Grogol,Jambu Air,0.0,True
+2021,Gurah,Jambu Air,1784.2,True
+2021,Kandangan,Jambu Air,0.0,True
+2021,Kandat,Jambu Air,166.0,True
+2021,Kayenkidul,Jambu Air,0.0,True
+2021,Kepung,Jambu Air,66.0,True
+2021,Kras,Jambu Air,165.85,True
+2021,Kunjang,Jambu Air,439.0,True
+2021,Mojo,Jambu Air,313.0,True
+2021,Ngadiluwih,Jambu Air,819.3,True
+2021,Ngancar,Jambu Air,0.0,True
+2021,Ngasem,Jambu Air,85.5,True
+2021,Pagu,Jambu Air,0.0,True
+2021,Papar,Jambu Air,0.0,True
+2021,Pare,Jambu Air,106.0,True
+2021,Plemahan,Jambu Air,4214.5,True
+2021,Plosoklaten,Jambu Air,0.0,True
+2021,Puncu,Jambu Air,0.0,True
+2021,Purwoasri,Jambu Air,7500.0,True
+2021,Ringinrejo,Jambu Air,908.8,True
+2021,Semen,Jambu Air,1452.0,True
+2021,Tarokan,Jambu Air,51.0,True
+2021,Wates,Jambu Air,21.0,True
+2021,Badas,Jambu Biji,1322.0,True
+2021,Banyakan,Jambu Biji,145.5,True
+2021,Gampengrejo,Jambu Biji,188.0,True
+2021,Grogol,Jambu Biji,0.0,True
+2021,Gurah,Jambu Biji,4859.0,True
+2021,Kandangan,Jambu Biji,0.0,True
+2021,Kandat,Jambu Biji,161.0,True
+2021,Kayenkidul,Jambu Biji,130.0,True
+2021,Kepung,Jambu Biji,82.0,True
+2021,Kras,Jambu Biji,272.8,True
+2021,Kunjang,Jambu Biji,315.0,True
+2021,Mojo,Jambu Biji,0.0,True
+2021,Ngadiluwih,Jambu Biji,1019.0,True
+2021,Ngancar,Jambu Biji,21.0,True
+2021,Ngasem,Jambu Biji,285.0,True
+2021,Pagu,Jambu Biji,0.0,True
+2021,Papar,Jambu Biji,0.0,True
+2021,Pare,Jambu Biji,310.4,True
+2021,Plemahan,Jambu Biji,4065.0,True
+2021,Plosoklaten,Jambu Biji,556.0,True
+2021,Puncu,Jambu Biji,384.6,True
+2021,Purwoasri,Jambu Biji,237.0,True
+2021,Ringinrejo,Jambu Biji,1125.0,True
+2021,Semen,Jambu Biji,16.0,True
+2021,Tarokan,Jambu Biji,174.0,True
+2021,Wates,Jambu Biji,0.0,True
+2021,Badas,Jengkol,0.0,True
+2021,Banyakan,Jengkol,0.0,True
+2021,Gampengrejo,Jengkol,0.0,True
+2021,Grogol,Jengkol,53.75,True
+2021,Gurah,Jengkol,0.0,True
+2021,Kandangan,Jengkol,0.0,True
+2021,Kandat,Jengkol,0.0,True
+2021,Kayenkidul,Jengkol,0.0,True
+2021,Kepung,Jengkol,0.0,True
+2021,Kras,Jengkol,0.0,True
+2021,Kunjang,Jengkol,0.0,True
+2021,Mojo,Jengkol,103.0,True
+2021,Ngadiluwih,Jengkol,0.0,True
+2021,Ngancar,Jengkol,0.0,True
+2021,Ngasem,Jengkol,0.0,True
+2021,Pagu,Jengkol,0.0,True
+2021,Papar,Jengkol,49.0,True
+2021,Pare,Jengkol,0.0,True
+2021,Plemahan,Jengkol,0.0,True
+2021,Plosoklaten,Jengkol,0.0,True
+2021,Puncu,Jengkol,0.0,True
+2021,Purwoasri,Jengkol,0.0,True
+2021,Ringinrejo,Jengkol,0.0,True
+2021,Semen,Jengkol,0.0,True
+2021,Tarokan,Jengkol,0.0,True
+2021,Wates,Jengkol,55.0,True
+2021,Badas,Jeruk Besar,0.0,True
+2021,Banyakan,Jeruk Besar,0.0,True
+2021,Gampengrejo,Jeruk Besar,0.0,True
+2021,Grogol,Jeruk Besar,0.0,True
+2021,Gurah,Jeruk Besar,27.25,True
+2021,Kandangan,Jeruk Besar,0.0,True
+2021,Kandat,Jeruk Besar,0.0,True
+2021,Kayenkidul,Jeruk Besar,0.0,True
+2021,Kepung,Jeruk Besar,0.0,True
+2021,Kras,Jeruk Besar,0.0,True
+2021,Kunjang,Jeruk Besar,31.0,True
+2021,Mojo,Jeruk Besar,0.0,True
+2021,Ngadiluwih,Jeruk Besar,0.0,True
+2021,Ngancar,Jeruk Besar,0.0,True
+2021,Ngasem,Jeruk Besar,11.0,True
+2021,Pagu,Jeruk Besar,0.0,True
+2021,Papar,Jeruk Besar,0.0,True
+2021,Pare,Jeruk Besar,0.0,True
+2021,Plemahan,Jeruk Besar,7.0,True
+2021,Plosoklaten,Jeruk Besar,0.0,True
+2021,Puncu,Jeruk Besar,0.0,True
+2021,Purwoasri,Jeruk Besar,0.0,True
+2021,Ringinrejo,Jeruk Besar,0.0,True
+2021,Semen,Jeruk Besar,0.0,True
+2021,Tarokan,Jeruk Besar,0.0,True
+2021,Wates,Jeruk Besar,0.0,True
+2021,Badas,Jeruk Lemon,0.0,True
+2021,Banyakan,Jeruk Lemon,0.0,True
+2021,Gampengrejo,Jeruk Lemon,0.0,True
+2021,Grogol,Jeruk Lemon,0.0,True
+2021,Gurah,Jeruk Lemon,27.0,True
+2021,Kandangan,Jeruk Lemon,0.0,True
+2021,Kandat,Jeruk Lemon,630.0,True
+2021,Kayenkidul,Jeruk Lemon,43.8,True
+2021,Kepung,Jeruk Lemon,24.0,True
+2021,Kras,Jeruk Lemon,60.0,True
+2021,Kunjang,Jeruk Lemon,80.0,True
+2021,Mojo,Jeruk Lemon,0.0,True
+2021,Ngadiluwih,Jeruk Lemon,42.0,True
+2021,Ngancar,Jeruk Lemon,0.0,True
+2021,Ngasem,Jeruk Lemon,43.25,True
+2021,Pagu,Jeruk Lemon,0.0,True
+2021,Papar,Jeruk Lemon,0.0,True
+2021,Pare,Jeruk Lemon,0.0,True
+2021,Plemahan,Jeruk Lemon,0.0,True
+2021,Plosoklaten,Jeruk Lemon,2662.0,True
+2021,Puncu,Jeruk Lemon,0.0,True
+2021,Purwoasri,Jeruk Lemon,0.0,True
+2021,Ringinrejo,Jeruk Lemon,1199.0,True
+2021,Semen,Jeruk Lemon,0.0,True
+2021,Tarokan,Jeruk Lemon,59.0,True
+2021,Wates,Jeruk Lemon,0.0,True
+2021,Badas,Jeruk Siam/Keprok,0.0,True
+2021,Banyakan,Jeruk Siam/Keprok,10031.0,True
+2021,Gampengrejo,Jeruk Siam/Keprok,0.0,True
+2021,Grogol,Jeruk Siam/Keprok,0.0,True
+2021,Gurah,Jeruk Siam/Keprok,0.0,True
+2021,Kandangan,Jeruk Siam/Keprok,0.0,True
+2021,Kandat,Jeruk Siam/Keprok,0.0,True
+2021,Kayenkidul,Jeruk Siam/Keprok,0.0,True
+2021,Kepung,Jeruk Siam/Keprok,103.0,True
+2021,Kras,Jeruk Siam/Keprok,0.0,True
+2021,Kunjang,Jeruk Siam/Keprok,0.0,True
+2021,Mojo,Jeruk Siam/Keprok,24624.4,True
+2021,Ngadiluwih,Jeruk Siam/Keprok,0.0,True
+2021,Ngancar,Jeruk Siam/Keprok,0.0,True
+2021,Ngasem,Jeruk Siam/Keprok,0.0,True
+2021,Pagu,Jeruk Siam/Keprok,2571.0,True
+2021,Papar,Jeruk Siam/Keprok,0.0,True
+2021,Pare,Jeruk Siam/Keprok,0.0,True
+2021,Plemahan,Jeruk Siam/Keprok,0.0,True
+2021,Plosoklaten,Jeruk Siam/Keprok,0.0,True
+2021,Puncu,Jeruk Siam/Keprok,0.0,True
+2021,Purwoasri,Jeruk Siam/Keprok,0.0,True
+2021,Ringinrejo,Jeruk Siam/Keprok,15971.3,True
+2021,Semen,Jeruk Siam/Keprok,16993.0,True
+2021,Tarokan,Jeruk Siam/Keprok,34051.0,True
+2021,Wates,Jeruk Siam/Keprok,0.0,True
+2021,Badas,Lengkeng,0.0,True
+2021,Banyakan,Lengkeng,0.0,True
+2021,Gampengrejo,Lengkeng,0.0,True
+2021,Grogol,Lengkeng,0.0,True
+2021,Gurah,Lengkeng,0.0,True
+2021,Kandangan,Lengkeng,0.0,True
+2021,Kandat,Lengkeng,0.0,True
+2021,Kayenkidul,Lengkeng,1309.0,True
+2021,Kepung,Lengkeng,0.0,True
+2021,Kras,Lengkeng,0.0,True
+2021,Kunjang,Lengkeng,88.0,True
+2021,Mojo,Lengkeng,250.15,True
+2021,Ngadiluwih,Lengkeng,0.0,True
+2021,Ngancar,Lengkeng,1478.0,True
+2021,Ngasem,Lengkeng,326.0,True
+2021,Pagu,Lengkeng,0.0,True
+2021,Papar,Lengkeng,0.0,True
+2021,Pare,Lengkeng,0.0,True
+2021,Plemahan,Lengkeng,149.0,True
+2021,Plosoklaten,Lengkeng,0.0,True
+2021,Puncu,Lengkeng,0.0,True
+2021,Purwoasri,Lengkeng,492.0,True
+2021,Ringinrejo,Lengkeng,1810.0,True
+2021,Semen,Lengkeng,760.0,True
+2021,Tarokan,Lengkeng,0.0,True
+2021,Wates,Lengkeng,67.5,True
+2021,Badas,Mangga,19648.0,True
+2021,Banyakan,Mangga,254856.0,True
+2021,Gampengrejo,Mangga,4935.8,True
+2021,Grogol,Mangga,147157.0,True
+2021,Gurah,Mangga,4960.0,True
+2021,Kandangan,Mangga,8275.0,True
+2021,Kandat,Mangga,0.0,True
+2021,Kayenkidul,Mangga,0.0,True
+2021,Kepung,Mangga,0.0,True
+2021,Kras,Mangga,0.0,True
+2021,Kunjang,Mangga,11041.0,True
+2021,Mojo,Mangga,7191.0,True
+2021,Ngadiluwih,Mangga,4018.0,True
+2021,Ngancar,Mangga,0.0,True
+2021,Ngasem,Mangga,682.5,True
+2021,Pagu,Mangga,6639.0,True
+2021,Papar,Mangga,3552.0,True
+2021,Pare,Mangga,0.0,True
+2021,Plemahan,Mangga,0.0,True
+2021,Plosoklaten,Mangga,3377.0,True
+2021,Puncu,Mangga,0.0,True
+2021,Purwoasri,Mangga,0.0,True
+2021,Ringinrejo,Mangga,9348.0,True
+2021,Semen,Mangga,1050.0,True
+2021,Tarokan,Mangga,261215.8,True
+2021,Wates,Mangga,0.0,True
+2021,Badas,Manggis,0.0,True
+2021,Banyakan,Manggis,0.0,True
+2021,Gampengrejo,Manggis,0.0,True
+2021,Grogol,Manggis,0.0,True
+2021,Gurah,Manggis,0.0,True
+2021,Kandangan,Manggis,5967.0,True
+2021,Kandat,Manggis,0.0,True
+2021,Kayenkidul,Manggis,0.0,True
+2021,Kepung,Manggis,0.0,True
+2021,Kras,Manggis,0.0,True
+2021,Kunjang,Manggis,126.0,True
+2021,Mojo,Manggis,249.25,True
+2021,Ngadiluwih,Manggis,0.0,True
+2021,Ngancar,Manggis,331.0,True
+2021,Ngasem,Manggis,0.0,True
+2021,Pagu,Manggis,0.0,True
+2021,Papar,Manggis,0.0,True
+2021,Pare,Manggis,0.0,True
+2021,Plemahan,Manggis,0.0,True
+2021,Plosoklaten,Manggis,0.0,True
+2021,Puncu,Manggis,0.0,True
+2021,Purwoasri,Manggis,0.0,True
+2021,Ringinrejo,Manggis,277.0,True
+2021,Semen,Manggis,125.0,True
+2021,Tarokan,Manggis,0.0,True
+2021,Wates,Manggis,0.0,True
+2021,Badas,Melinjo,29207.0,True
+2021,Banyakan,Melinjo,305.0,True
+2021,Gampengrejo,Melinjo,0.0,True
+2021,Grogol,Melinjo,0.0,True
+2021,Gurah,Melinjo,2105.0,True
+2021,Kandangan,Melinjo,967.0,True
+2021,Kandat,Melinjo,0.0,True
+2021,Kayenkidul,Melinjo,0.0,True
+2021,Kepung,Melinjo,211.0,True
+2021,Kras,Melinjo,301.0,True
+2021,Kunjang,Melinjo,0.0,True
+2021,Mojo,Melinjo,593.5,True
+2021,Ngadiluwih,Melinjo,212.0,True
+2021,Ngancar,Melinjo,1720.0,True
+2021,Ngasem,Melinjo,1120.0,True
+2021,Pagu,Melinjo,640.3,True
+2021,Papar,Melinjo,0.0,True
+2021,Pare,Melinjo,0.0,True
+2021,Plemahan,Melinjo,187.0,True
+2021,Plosoklaten,Melinjo,18206.0,True
+2021,Puncu,Melinjo,0.0,True
+2021,Purwoasri,Melinjo,0.0,True
+2021,Ringinrejo,Melinjo,915.0,True
+2021,Semen,Melinjo,0.0,True
+2021,Tarokan,Melinjo,305.0,True
+2021,Wates,Melinjo,0.0,True
+2021,Badas,Nangka/Cempedak,9212.5,True
+2021,Banyakan,Nangka/Cempedak,3631.0,True
+2021,Gampengrejo,Nangka/Cempedak,171.0,True
+2021,Grogol,Nangka/Cempedak,289.0,True
+2021,Gurah,Nangka/Cempedak,0.0,True
+2021,Kandangan,Nangka/Cempedak,5440.0,True
+2021,Kandat,Nangka/Cempedak,755.0,True
+2021,Kayenkidul,Nangka/Cempedak,362.0,True
+2021,Kepung,Nangka/Cempedak,0.0,True
+2021,Kras,Nangka/Cempedak,622.6,True
+2021,Kunjang,Nangka/Cempedak,1445.2,True
+2021,Mojo,Nangka/Cempedak,135.0,True
+2021,Ngadiluwih,Nangka/Cempedak,1610.0,True
+2021,Ngancar,Nangka/Cempedak,0.0,True
+2021,Ngasem,Nangka/Cempedak,639.0,True
+2021,Pagu,Nangka/Cempedak,1257.5,True
+2021,Papar,Nangka/Cempedak,0.0,True
+2021,Pare,Nangka/Cempedak,1545.4,True
+2021,Plemahan,Nangka/Cempedak,3051.0,True
+2021,Plosoklaten,Nangka/Cempedak,1904.0,True
+2021,Puncu,Nangka/Cempedak,0.0,True
+2021,Purwoasri,Nangka/Cempedak,1078.2,True
+2021,Ringinrejo,Nangka/Cempedak,9416.0,True
+2021,Semen,Nangka/Cempedak,273.0,True
+2021,Tarokan,Nangka/Cempedak,70.0,True
+2021,Wates,Nangka/Cempedak,0.0,True
+2021,Badas,Nenas,0.0,True
+2021,Banyakan,Nenas,0.0,True
+2021,Gampengrejo,Nenas,0.0,True
+2021,Grogol,Nenas,0.0,True
+2021,Gurah,Nenas,0.0,True
+2021,Kandangan,Nenas,0.0,True
+2021,Kandat,Nenas,25932.0,True
+2021,Kayenkidul,Nenas,0.0,True
+2021,Kepung,Nenas,0.0,True
+2021,Kras,Nenas,15.0,True
+2021,Kunjang,Nenas,0.0,True
+2021,Mojo,Nenas,7125.0,True
+2021,Ngadiluwih,Nenas,0.0,True
+2021,Ngancar,Nenas,4210037.0,True
+2021,Ngasem,Nenas,0.0,True
+2021,Pagu,Nenas,0.0,True
+2021,Papar,Nenas,0.0,True
+2021,Pare,Nenas,0.0,True
+2021,Plemahan,Nenas,0.0,True
+2021,Plosoklaten,Nenas,86207.0,True
+2021,Puncu,Nenas,19586.2,True
+2021,Purwoasri,Nenas,0.0,True
+2021,Ringinrejo,Nenas,34638.0,True
+2021,Semen,Nenas,0.0,True
+2021,Tarokan,Nenas,0.0,True
+2021,Wates,Nenas,7447.0,True
+2021,Badas,Pepaya,1356.0,True
+2021,Banyakan,Pepaya,1660.0,True
+2021,Gampengrejo,Pepaya,43.0,True
+2021,Grogol,Pepaya,0.0,True
+2021,Gurah,Pepaya,5004.0,True
+2021,Kandangan,Pepaya,562.0,True
+2021,Kandat,Pepaya,6813.0,True
+2021,Kayenkidul,Pepaya,0.0,True
+2021,Kepung,Pepaya,0.0,True
+2021,Kras,Pepaya,2670.0,True
+2021,Kunjang,Pepaya,0.0,True
+2021,Mojo,Pepaya,1469.0,True
+2021,Ngadiluwih,Pepaya,0.0,True
+2021,Ngancar,Pepaya,1638.0,True
+2021,Ngasem,Pepaya,131.0,True
+2021,Pagu,Pepaya,43.0,True
+2021,Papar,Pepaya,119.0,True
+2021,Pare,Pepaya,1717.0,True
+2021,Plemahan,Pepaya,0.0,True
+2021,Plosoklaten,Pepaya,5003.0,True
+2021,Puncu,Pepaya,15463.0,True
+2021,Purwoasri,Pepaya,0.0,True
+2021,Ringinrejo,Pepaya,1972.0,True
+2021,Semen,Pepaya,2677.0,True
+2021,Tarokan,Pepaya,55.0,True
+2021,Wates,Pepaya,3202.0,True
+2021,Badas,Petai,606.0,True
+2021,Banyakan,Petai,9352.25,True
+2021,Gampengrejo,Petai,0.0,True
+2021,Grogol,Petai,95.0,True
+2021,Gurah,Petai,228.0,True
+2021,Kandangan,Petai,605.0,True
+2021,Kandat,Petai,0.0,True
+2021,Kayenkidul,Petai,23.0,True
+2021,Kepung,Petai,2695.0,True
+2021,Kras,Petai,0.0,True
+2021,Kunjang,Petai,0.0,True
+2021,Mojo,Petai,7520.0,True
+2021,Ngadiluwih,Petai,0.0,True
+2021,Ngancar,Petai,0.0,True
+2021,Ngasem,Petai,162.25,True
+2021,Pagu,Petai,0.0,True
+2021,Papar,Petai,0.0,True
+2021,Pare,Petai,34.0,True
+2021,Plemahan,Petai,190.0,True
+2021,Plosoklaten,Petai,2865.0,True
+2021,Puncu,Petai,958.0,True
+2021,Purwoasri,Petai,0.0,True
+2021,Ringinrejo,Petai,999.0,True
+2021,Semen,Petai,2188.0,True
+2021,Tarokan,Petai,0.0,True
+2021,Wates,Petai,0.0,True
+2021,Badas,Pisang,0.0,True
+2021,Banyakan,Pisang,8622.5,True
+2021,Gampengrejo,Pisang,821.0,True
+2021,Grogol,Pisang,22924.75,True
+2021,Gurah,Pisang,5085.0,True
+2021,Kandangan,Pisang,182411.0,True
+2021,Kandat,Pisang,96377.0,True
+2021,Kayenkidul,Pisang,1065.0,True
+2021,Kepung,Pisang,13358.0,True
+2021,Kras,Pisang,1307.0,True
+2021,Kunjang,Pisang,8341.0,True
+2021,Mojo,Pisang,13642.0,True
+2021,Ngadiluwih,Pisang,8500.0,True
+2021,Ngancar,Pisang,5713.6,True
+2021,Ngasem,Pisang,250.0,True
+2021,Pagu,Pisang,1045.0,True
+2021,Papar,Pisang,7419.0,True
+2021,Pare,Pisang,2041.0,True
+2021,Plemahan,Pisang,20099.75,True
+2021,Plosoklaten,Pisang,1881.0,True
+2021,Puncu,Pisang,92566.0,True
+2021,Purwoasri,Pisang,25673.0,True
+2021,Ringinrejo,Pisang,21552.0,True
+2021,Semen,Pisang,274.0,True
+2021,Tarokan,Pisang,9156.0,True
+2021,Wates,Pisang,8594.0,True
+2021,Badas,Rambutan,8099.0,True
+2021,Banyakan,Rambutan,0.0,True
+2021,Gampengrejo,Rambutan,744.0,True
+2021,Grogol,Rambutan,0.0,True
+2021,Gurah,Rambutan,356.0,True
+2021,Kandangan,Rambutan,4614.0,True
+2021,Kandat,Rambutan,4726.0,True
+2021,Kayenkidul,Rambutan,0.0,True
+2021,Kepung,Rambutan,1712.6,True
+2021,Kras,Rambutan,2399.0,True
+2021,Kunjang,Rambutan,2227.0,True
+2021,Mojo,Rambutan,14692.0,True
+2021,Ngadiluwih,Rambutan,0.0,True
+2021,Ngancar,Rambutan,2157.75,True
+2021,Ngasem,Rambutan,0.0,True
+2021,Pagu,Rambutan,0.0,True
+2021,Papar,Rambutan,0.0,True
+2021,Pare,Rambutan,3786.25,True
+2021,Plemahan,Rambutan,179.0,True
+2021,Plosoklaten,Rambutan,2312.0,True
+2021,Puncu,Rambutan,0.0,True
+2021,Purwoasri,Rambutan,4158.0,True
+2021,Ringinrejo,Rambutan,1507.0,True
+2021,Semen,Rambutan,0.0,True
+2021,Tarokan,Rambutan,0.0,True
+2021,Wates,Rambutan,0.0,True
+2021,Badas,Salak,0.0,True
+2021,Banyakan,Salak,0.0,True
+2021,Gampengrejo,Salak,167.0,True
+2021,Grogol,Salak,0.0,True
+2021,Gurah,Salak,0.0,True
+2021,Kandangan,Salak,0.0,True
+2021,Kandat,Salak,0.0,True
+2021,Kayenkidul,Salak,0.0,True
+2021,Kepung,Salak,0.0,True
+2021,Kras,Salak,0.0,True
+2021,Kunjang,Salak,0.0,True
+2021,Mojo,Salak,552.0,True
+2021,Ngadiluwih,Salak,0.0,True
+2021,Ngancar,Salak,437.3,True
+2021,Ngasem,Salak,0.0,True
+2021,Pagu,Salak,0.0,True
+2021,Papar,Salak,0.0,True
+2021,Pare,Salak,0.0,True
+2021,Plemahan,Salak,0.0,True
+2021,Plosoklaten,Salak,1079.3,True
+2021,Puncu,Salak,0.0,True
+2021,Purwoasri,Salak,0.0,True
+2021,Ringinrejo,Salak,139.0,True
+2021,Semen,Salak,0.0,True
+2021,Tarokan,Salak,0.0,True
+2021,Wates,Salak,0.0,True
+2021,Badas,Sawo,4665.0,True
+2021,Banyakan,Sawo,805.0,True
+2021,Gampengrejo,Sawo,0.0,True
+2021,Grogol,Sawo,0.0,True
+2021,Gurah,Sawo,2725.0,True
+2021,Kandangan,Sawo,0.0,True
+2021,Kandat,Sawo,0.0,True
+2021,Kayenkidul,Sawo,279.3,True
+2021,Kepung,Sawo,0.0,True
+2021,Kras,Sawo,21.3,True
+2021,Kunjang,Sawo,231.15,True
+2021,Mojo,Sawo,205.0,True
+2021,Ngadiluwih,Sawo,0.0,True
+2021,Ngancar,Sawo,0.0,True
+2021,Ngasem,Sawo,0.0,True
+2021,Pagu,Sawo,0.0,True
+2021,Papar,Sawo,0.0,True
+2021,Pare,Sawo,0.0,True
+2021,Plemahan,Sawo,1566.0,True
+2021,Plosoklaten,Sawo,594.0,True
+2021,Puncu,Sawo,0.0,True
+2021,Purwoasri,Sawo,301.85,True
+2021,Ringinrejo,Sawo,0.0,True
+2021,Semen,Sawo,2459.0,True
+2021,Tarokan,Sawo,137.0,True
+2021,Wates,Sawo,0.0,True
+2021,Badas,Sirsak,1167.6,True
+2021,Banyakan,Sirsak,445.0,True
+2021,Gampengrejo,Sirsak,0.0,True
+2021,Grogol,Sirsak,0.0,True
+2021,Gurah,Sirsak,0.0,True
+2021,Kandangan,Sirsak,1008.0,True
+2021,Kandat,Sirsak,0.0,True
+2021,Kayenkidul,Sirsak,0.0,True
+2021,Kepung,Sirsak,5.5,True
+2021,Kras,Sirsak,391.0,True
+2021,Kunjang,Sirsak,499.2,True
+2021,Mojo,Sirsak,4200.0,True
+2021,Ngadiluwih,Sirsak,57.25,True
+2021,Ngancar,Sirsak,206.0,True
+2021,Ngasem,Sirsak,0.0,True
+2021,Pagu,Sirsak,0.0,True
+2021,Papar,Sirsak,0.0,True
+2021,Pare,Sirsak,2492.0,True
+2021,Plemahan,Sirsak,336.0,True
+2021,Plosoklaten,Sirsak,16610.0,True
+2021,Puncu,Sirsak,2142.0,True
+2021,Purwoasri,Sirsak,557.0,True
+2021,Ringinrejo,Sirsak,1571.0,True
+2021,Semen,Sirsak,1016.6,True
+2021,Tarokan,Sirsak,6257.0,True
+2021,Wates,Sirsak,402.0,True
+2021,Badas,Sukun,433.75,True
+2021,Banyakan,Sukun,279.0,True
+2021,Gampengrejo,Sukun,0.0,True
+2021,Grogol,Sukun,0.0,True
+2021,Gurah,Sukun,0.0,True
+2021,Kandangan,Sukun,0.0,True
+2021,Kandat,Sukun,0.0,True
+2021,Kayenkidul,Sukun,0.0,True
+2021,Kepung,Sukun,0.0,True
+2021,Kras,Sukun,187.0,True
+2021,Kunjang,Sukun,0.0,True
+2021,Mojo,Sukun,1125.0,True
+2021,Ngadiluwih,Sukun,0.0,True
+2021,Ngancar,Sukun,470.0,True
+2021,Ngasem,Sukun,0.0,True
+2021,Pagu,Sukun,0.0,True
+2021,Papar,Sukun,0.0,True
+2021,Pare,Sukun,0.0,True
+2021,Plemahan,Sukun,90.0,True
+2021,Plosoklaten,Sukun,0.0,True
+2021,Puncu,Sukun,0.0,True
+2021,Purwoasri,Sukun,369.0,True
+2021,Ringinrejo,Sukun,1341.0,True
+2021,Semen,Sukun,30.0,True
+2021,Tarokan,Sukun,0.0,True
+2021,Wates,Sukun,0.0,True
+2022,Badas,Alpukat,1127.3,True
+2022,Banyakan,Alpukat,3914.75,True
+2022,Gampengrejo,Alpukat,1082.0,True
+2022,Grogol,Alpukat,15638.8,True
+2022,Gurah,Alpukat,1212.0,True
+2022,Kandangan,Alpukat,1876.0,True
+2022,Kandat,Alpukat,2647.0,True
+2022,Kayenkidul,Alpukat,875.4,True
+2022,Kepung,Alpukat,54926.0,True
+2022,Kras,Alpukat,3794.8,True
+2022,Kunjang,Alpukat,0.0,True
+2022,Mojo,Alpukat,26220.0,True
+2022,Ngadiluwih,Alpukat,3191.0,True
+2022,Ngancar,Alpukat,28985.0,True
+2022,Ngasem,Alpukat,955.0,True
+2022,Pagu,Alpukat,1640.4,True
+2022,Papar,Alpukat,552.0,True
+2022,Pare,Alpukat,369.0,True
+2022,Plemahan,Alpukat,19831.0,True
+2022,Plosoklaten,Alpukat,5689.0,True
+2022,Puncu,Alpukat,4241.0,True
+2022,Purwoasri,Alpukat,0.0,True
+2022,Ringinrejo,Alpukat,12985.8,True
+2022,Semen,Alpukat,8165.25,True
+2022,Tarokan,Alpukat,226.0,True
+2022,Wates,Alpukat,15548.0,True
+2022,Badas,Anggur,19.0,True
+2022,Banyakan,Anggur,0.0,True
+2022,Gampengrejo,Anggur,87.0,True
+2022,Grogol,Anggur,0.0,True
+2022,Gurah,Anggur,0.0,True
+2022,Kandangan,Anggur,0.0,True
+2022,Kandat,Anggur,0.0,True
+2022,Kayenkidul,Anggur,0.0,True
+2022,Kepung,Anggur,0.0,True
+2022,Kras,Anggur,0.0,True
+2022,Kunjang,Anggur,0.0,True
+2022,Mojo,Anggur,0.0,True
+2022,Ngadiluwih,Anggur,0.0,True
+2022,Ngancar,Anggur,0.0,True
+2022,Ngasem,Anggur,0.0,True
+2022,Pagu,Anggur,0.0,True
+2022,Papar,Anggur,0.0,True
+2022,Pare,Anggur,25.2,True
+2022,Plemahan,Anggur,0.0,True
+2022,Plosoklaten,Anggur,0.0,True
+2022,Puncu,Anggur,0.0,True
+2022,Purwoasri,Anggur,0.0,True
+2022,Ringinrejo,Anggur,0.0,True
+2022,Semen,Anggur,0.0,True
+2022,Tarokan,Anggur,0.0,True
+2022,Wates,Anggur,0.0,True
+2022,Badas,Apel,0.0,True
+2022,Banyakan,Apel,0.0,True
+2022,Gampengrejo,Apel,0.0,True
+2022,Grogol,Apel,0.0,True
+2022,Gurah,Apel,0.0,True
+2022,Kandangan,Apel,0.0,True
+2022,Kandat,Apel,0.0,True
+2022,Kayenkidul,Apel,0.0,True
+2022,Kepung,Apel,0.0,True
+2022,Kras,Apel,0.0,True
+2022,Kunjang,Apel,0.0,True
+2022,Mojo,Apel,0.0,True
+2022,Ngadiluwih,Apel,0.0,True
+2022,Ngancar,Apel,0.0,True
+2022,Ngasem,Apel,0.0,True
+2022,Pagu,Apel,0.0,True
+2022,Papar,Apel,0.0,True
+2022,Pare,Apel,0.0,True
+2022,Plemahan,Apel,0.0,True
+2022,Plosoklaten,Apel,0.0,True
+2022,Puncu,Apel,0.0,True
+2022,Purwoasri,Apel,0.0,True
+2022,Ringinrejo,Apel,0.0,True
+2022,Semen,Apel,0.0,True
+2022,Tarokan,Apel,0.0,True
+2022,Wates,Apel,0.0,True
+2022,Badas,Belimbing,41.0,True
+2022,Banyakan,Belimbing,0.0,True
+2022,Gampengrejo,Belimbing,402.0,True
+2022,Grogol,Belimbing,190.0,True
+2022,Gurah,Belimbing,4014.0,True
+2022,Kandangan,Belimbing,16.0,True
+2022,Kandat,Belimbing,308.0,True
+2022,Kayenkidul,Belimbing,371.2,True
+2022,Kepung,Belimbing,95.0,True
+2022,Kras,Belimbing,260.0,True
+2022,Kunjang,Belimbing,392.5,True
+2022,Mojo,Belimbing,2145.0,True
+2022,Ngadiluwih,Belimbing,5.0,True
+2022,Ngancar,Belimbing,8.0,True
+2022,Ngasem,Belimbing,69.3,True
+2022,Pagu,Belimbing,25448.0,True
+2022,Papar,Belimbing,0.0,True
+2022,Pare,Belimbing,215.2,True
+2022,Plemahan,Belimbing,973.0,True
+2022,Plosoklaten,Belimbing,168.0,True
+2022,Puncu,Belimbing,155.0,True
+2022,Purwoasri,Belimbing,252.5,True
+2022,Ringinrejo,Belimbing,3665.0,True
+2022,Semen,Belimbing,0.0,True
+2022,Tarokan,Belimbing,76.6,True
+2022,Wates,Belimbing,192.0,True
+2022,Badas,Buah Naga,0.0,True
+2022,Banyakan,Buah Naga,0.0,True
+2022,Gampengrejo,Buah Naga,0.0,True
+2022,Grogol,Buah Naga,0.0,True
+2022,Gurah,Buah Naga,0.0,True
+2022,Kandangan,Buah Naga,0.0,True
+2022,Kandat,Buah Naga,0.0,True
+2022,Kayenkidul,Buah Naga,0.0,True
+2022,Kepung,Buah Naga,0.0,True
+2022,Kras,Buah Naga,0.0,True
+2022,Kunjang,Buah Naga,0.0,True
+2022,Mojo,Buah Naga,0.0,True
+2022,Ngadiluwih,Buah Naga,2446.85,True
+2022,Ngancar,Buah Naga,0.0,True
+2022,Ngasem,Buah Naga,128.0,True
+2022,Pagu,Buah Naga,0.0,True
+2022,Papar,Buah Naga,0.0,True
+2022,Pare,Buah Naga,1231.75,True
+2022,Plemahan,Buah Naga,0.0,True
+2022,Plosoklaten,Buah Naga,0.0,True
+2022,Puncu,Buah Naga,0.0,True
+2022,Purwoasri,Buah Naga,0.0,True
+2022,Ringinrejo,Buah Naga,1200.0,True
+2022,Semen,Buah Naga,172.0,True
+2022,Tarokan,Buah Naga,0.0,True
+2022,Wates,Buah Naga,0.0,True
+2022,Badas,Duku/Langsat/Kokosan,0.0,True
+2022,Banyakan,Duku/Langsat/Kokosan,0.0,True
+2022,Gampengrejo,Duku/Langsat/Kokosan,0.0,True
+2022,Grogol,Duku/Langsat/Kokosan,0.0,True
+2022,Gurah,Duku/Langsat/Kokosan,0.0,True
+2022,Kandangan,Duku/Langsat/Kokosan,9.0,True
+2022,Kandat,Duku/Langsat/Kokosan,0.0,True
+2022,Kayenkidul,Duku/Langsat/Kokosan,0.0,True
+2022,Kepung,Duku/Langsat/Kokosan,0.0,True
+2022,Kras,Duku/Langsat/Kokosan,0.0,True
+2022,Kunjang,Duku/Langsat/Kokosan,0.0,True
+2022,Mojo,Duku/Langsat/Kokosan,28.8,True
+2022,Ngadiluwih,Duku/Langsat/Kokosan,0.0,True
+2022,Ngancar,Duku/Langsat/Kokosan,0.0,True
+2022,Ngasem,Duku/Langsat/Kokosan,0.0,True
+2022,Pagu,Duku/Langsat/Kokosan,0.0,True
+2022,Papar,Duku/Langsat/Kokosan,0.0,True
+2022,Pare,Duku/Langsat/Kokosan,0.0,True
+2022,Plemahan,Duku/Langsat/Kokosan,0.0,True
+2022,Plosoklaten,Duku/Langsat/Kokosan,0.0,True
+2022,Puncu,Duku/Langsat/Kokosan,0.0,True
+2022,Purwoasri,Duku/Langsat/Kokosan,14.0,True
+2022,Ringinrejo,Duku/Langsat/Kokosan,0.0,True
+2022,Semen,Duku/Langsat/Kokosan,0.0,True
+2022,Tarokan,Duku/Langsat/Kokosan,0.0,True
+2022,Wates,Duku/Langsat/Kokosan,25.0,True
+2022,Badas,Durian,621.0,True
+2022,Banyakan,Durian,2049.0,True
+2022,Gampengrejo,Durian,0.0,True
+2022,Grogol,Durian,214.0,True
+2022,Gurah,Durian,0.0,True
+2022,Kandangan,Durian,16827.0,True
+2022,Kandat,Durian,0.0,True
+2022,Kayenkidul,Durian,0.0,True
+2022,Kepung,Durian,26892.0,True
+2022,Kras,Durian,113.0,True
+2022,Kunjang,Durian,75.2,True
+2022,Mojo,Durian,30343.0,True
+2022,Ngadiluwih,Durian,0.0,True
+2022,Ngancar,Durian,2904.0,True
+2022,Ngasem,Durian,119.0,True
+2022,Pagu,Durian,0.0,True
+2022,Papar,Durian,191.0,True
+2022,Pare,Durian,0.0,True
+2022,Plemahan,Durian,0.0,True
+2022,Plosoklaten,Durian,6597.0,True
+2022,Puncu,Durian,11614.0,True
+2022,Purwoasri,Durian,68.8,True
+2022,Ringinrejo,Durian,11125.0,True
+2022,Semen,Durian,79565.0,True
+2022,Tarokan,Durian,430.2,True
+2022,Wates,Durian,0.0,True
+2022,Badas,Jambu Air,276.0,True
+2022,Banyakan,Jambu Air,0.0,True
+2022,Gampengrejo,Jambu Air,422.0,True
+2022,Grogol,Jambu Air,0.0,True
+2022,Gurah,Jambu Air,1534.0,True
+2022,Kandangan,Jambu Air,0.0,True
+2022,Kandat,Jambu Air,133.0,True
+2022,Kayenkidul,Jambu Air,0.0,True
+2022,Kepung,Jambu Air,60.2,True
+2022,Kras,Jambu Air,135.0,True
+2022,Kunjang,Jambu Air,574.0,True
+2022,Mojo,Jambu Air,391.0,True
+2022,Ngadiluwih,Jambu Air,848.15,True
+2022,Ngancar,Jambu Air,0.0,True
+2022,Ngasem,Jambu Air,67.0,True
+2022,Pagu,Jambu Air,0.0,True
+2022,Papar,Jambu Air,67.25,True
+2022,Pare,Jambu Air,128.85,True
+2022,Plemahan,Jambu Air,4816.0,True
+2022,Plosoklaten,Jambu Air,104.0,True
+2022,Puncu,Jambu Air,0.0,True
+2022,Purwoasri,Jambu Air,8898.0,True
+2022,Ringinrejo,Jambu Air,993.0,True
+2022,Semen,Jambu Air,1711.4,True
+2022,Tarokan,Jambu Air,65.0,True
+2022,Wates,Jambu Air,25.0,True
+2022,Badas,Jambu Biji,1015.0,True
+2022,Banyakan,Jambu Biji,130.0,True
+2022,Gampengrejo,Jambu Biji,159.0,True
+2022,Grogol,Jambu Biji,0.0,True
+2022,Gurah,Jambu Biji,3831.0,True
+2022,Kandangan,Jambu Biji,0.0,True
+2022,Kandat,Jambu Biji,140.8,True
+2022,Kayenkidul,Jambu Biji,137.0,True
+2022,Kepung,Jambu Biji,80.0,True
+2022,Kras,Jambu Biji,291.75,True
+2022,Kunjang,Jambu Biji,438.0,True
+2022,Mojo,Jambu Biji,0.0,True
+2022,Ngadiluwih,Jambu Biji,874.0,True
+2022,Ngancar,Jambu Biji,0.0,True
+2022,Ngasem,Jambu Biji,250.0,True
+2022,Pagu,Jambu Biji,0.0,True
+2022,Papar,Jambu Biji,0.0,True
+2022,Pare,Jambu Biji,420.0,True
+2022,Plemahan,Jambu Biji,3195.0,True
+2022,Plosoklaten,Jambu Biji,657.0,True
+2022,Puncu,Jambu Biji,409.0,True
+2022,Purwoasri,Jambu Biji,301.0,True
+2022,Ringinrejo,Jambu Biji,1325.6,True
+2022,Semen,Jambu Biji,20.0,True
+2022,Tarokan,Jambu Biji,204.0,True
+2022,Wates,Jambu Biji,0.0,True
+2022,Badas,Jengkol,0.0,True
+2022,Banyakan,Jengkol,0.0,True
+2022,Gampengrejo,Jengkol,49.0,True
+2022,Grogol,Jengkol,0.0,True
+2022,Gurah,Jengkol,0.0,True
+2022,Kandangan,Jengkol,0.0,True
+2022,Kandat,Jengkol,0.0,True
+2022,Kayenkidul,Jengkol,0.0,True
+2022,Kepung,Jengkol,0.0,True
+2022,Kras,Jengkol,0.0,True
+2022,Kunjang,Jengkol,55.0,True
+2022,Mojo,Jengkol,105.0,True
+2022,Ngadiluwih,Jengkol,0.0,True
+2022,Ngancar,Jengkol,0.0,True
+2022,Ngasem,Jengkol,0.0,True
+2022,Pagu,Jengkol,0.0,True
+2022,Papar,Jengkol,0.0,True
+2022,Pare,Jengkol,0.0,True
+2022,Plemahan,Jengkol,0.0,True
+2022,Plosoklaten,Jengkol,0.0,True
+2022,Puncu,Jengkol,0.0,True
+2022,Purwoasri,Jengkol,0.0,True
+2022,Ringinrejo,Jengkol,0.0,True
+2022,Semen,Jengkol,0.0,True
+2022,Tarokan,Jengkol,0.0,True
+2022,Wates,Jengkol,0.0,True
+2022,Badas,Jeruk Besar,0.0,True
+2022,Banyakan,Jeruk Besar,0.0,True
+2022,Gampengrejo,Jeruk Besar,0.0,True
+2022,Grogol,Jeruk Besar,0.0,True
+2022,Gurah,Jeruk Besar,31.0,True
+2022,Kandangan,Jeruk Besar,0.0,True
+2022,Kandat,Jeruk Besar,0.0,True
+2022,Kayenkidul,Jeruk Besar,0.0,True
+2022,Kepung,Jeruk Besar,0.0,True
+2022,Kras,Jeruk Besar,33.3,True
+2022,Kunjang,Jeruk Besar,0.0,True
+2022,Mojo,Jeruk Besar,0.0,True
+2022,Ngadiluwih,Jeruk Besar,0.0,True
+2022,Ngancar,Jeruk Besar,0.0,True
+2022,Ngasem,Jeruk Besar,0.0,True
+2022,Pagu,Jeruk Besar,0.0,True
+2022,Papar,Jeruk Besar,0.0,True
+2022,Pare,Jeruk Besar,0.0,True
+2022,Plemahan,Jeruk Besar,7.0,True
+2022,Plosoklaten,Jeruk Besar,0.0,True
+2022,Puncu,Jeruk Besar,0.0,True
+2022,Purwoasri,Jeruk Besar,0.0,True
+2022,Ringinrejo,Jeruk Besar,0.0,True
+2022,Semen,Jeruk Besar,16.25,True
+2022,Tarokan,Jeruk Besar,0.0,True
+2022,Wates,Jeruk Besar,0.0,True
+2022,Badas,Jeruk Lemon,0.0,True
+2022,Banyakan,Jeruk Lemon,0.0,True
+2022,Gampengrejo,Jeruk Lemon,0.0,True
+2022,Grogol,Jeruk Lemon,0.0,True
+2022,Gurah,Jeruk Lemon,0.0,True
+2022,Kandangan,Jeruk Lemon,34.0,True
+2022,Kandat,Jeruk Lemon,483.0,True
+2022,Kayenkidul,Jeruk Lemon,56.0,True
+2022,Kepung,Jeruk Lemon,0.0,True
+2022,Kras,Jeruk Lemon,61.25,True
+2022,Kunjang,Jeruk Lemon,62.0,True
+2022,Mojo,Jeruk Lemon,0.0,True
+2022,Ngadiluwih,Jeruk Lemon,55.0,True
+2022,Ngancar,Jeruk Lemon,0.0,True
+2022,Ngasem,Jeruk Lemon,41.25,True
+2022,Pagu,Jeruk Lemon,0.0,True
+2022,Papar,Jeruk Lemon,0.0,True
+2022,Pare,Jeruk Lemon,0.0,True
+2022,Plemahan,Jeruk Lemon,0.0,True
+2022,Plosoklaten,Jeruk Lemon,3393.0,True
+2022,Puncu,Jeruk Lemon,0.0,True
+2022,Purwoasri,Jeruk Lemon,0.0,True
+2022,Ringinrejo,Jeruk Lemon,1193.0,True
+2022,Semen,Jeruk Lemon,0.0,True
+2022,Tarokan,Jeruk Lemon,47.0,True
+2022,Wates,Jeruk Lemon,0.0,True
+2022,Badas,Jeruk Siam/Keprok,0.0,True
+2022,Banyakan,Jeruk Siam/Keprok,10695.0,True
+2022,Gampengrejo,Jeruk Siam/Keprok,0.0,True
+2022,Grogol,Jeruk Siam/Keprok,0.0,True
+2022,Gurah,Jeruk Siam/Keprok,0.0,True
+2022,Kandangan,Jeruk Siam/Keprok,0.0,True
+2022,Kandat,Jeruk Siam/Keprok,0.0,True
+2022,Kayenkidul,Jeruk Siam/Keprok,0.0,True
+2022,Kepung,Jeruk Siam/Keprok,0.0,True
+2022,Kras,Jeruk Siam/Keprok,0.0,True
+2022,Kunjang,Jeruk Siam/Keprok,1282.8,True
+2022,Mojo,Jeruk Siam/Keprok,25301.0,True
+2022,Ngadiluwih,Jeruk Siam/Keprok,239.0,True
+2022,Ngancar,Jeruk Siam/Keprok,1274.0,True
+2022,Ngasem,Jeruk Siam/Keprok,1640.0,True
+2022,Pagu,Jeruk Siam/Keprok,0.0,True
+2022,Papar,Jeruk Siam/Keprok,0.0,True
+2022,Pare,Jeruk Siam/Keprok,0.0,True
+2022,Plemahan,Jeruk Siam/Keprok,0.0,True
+2022,Plosoklaten,Jeruk Siam/Keprok,0.0,True
+2022,Puncu,Jeruk Siam/Keprok,0.0,True
+2022,Purwoasri,Jeruk Siam/Keprok,0.0,True
+2022,Ringinrejo,Jeruk Siam/Keprok,17318.0,True
+2022,Semen,Jeruk Siam/Keprok,14962.5,True
+2022,Tarokan,Jeruk Siam/Keprok,28527.0,True
+2022,Wates,Jeruk Siam/Keprok,0.0,True
+2022,Badas,Lengkeng,151.0,True
+2022,Banyakan,Lengkeng,0.0,True
+2022,Gampengrejo,Lengkeng,59.0,True
+2022,Grogol,Lengkeng,6.0,True
+2022,Gurah,Lengkeng,0.0,True
+2022,Kandangan,Lengkeng,0.0,True
+2022,Kandat,Lengkeng,0.0,True
+2022,Kayenkidul,Lengkeng,1704.0,True
+2022,Kepung,Lengkeng,0.0,True
+2022,Kras,Lengkeng,0.0,True
+2022,Kunjang,Lengkeng,0.0,True
+2022,Mojo,Lengkeng,199.0,True
+2022,Ngadiluwih,Lengkeng,0.0,True
+2022,Ngancar,Lengkeng,1496.0,True
+2022,Ngasem,Lengkeng,347.85,True
+2022,Pagu,Lengkeng,62.0,True
+2022,Papar,Lengkeng,0.0,True
+2022,Pare,Lengkeng,0.0,True
+2022,Plemahan,Lengkeng,0.0,True
+2022,Plosoklaten,Lengkeng,0.0,True
+2022,Puncu,Lengkeng,0.0,True
+2022,Purwoasri,Lengkeng,501.0,True
+2022,Ringinrejo,Lengkeng,2072.0,True
+2022,Semen,Lengkeng,769.0,True
+2022,Tarokan,Lengkeng,131.0,True
+2022,Wates,Lengkeng,0.0,True
+2022,Badas,Mangga,25919.0,True
+2022,Banyakan,Mangga,298962.0,True
+2022,Gampengrejo,Mangga,5458.2,True
+2022,Grogol,Mangga,195990.0,True
+2022,Gurah,Mangga,4342.85,True
+2022,Kandangan,Mangga,8708.0,True
+2022,Kandat,Mangga,2088.0,True
+2022,Kayenkidul,Mangga,232.0,True
+2022,Kepung,Mangga,0.0,True
+2022,Kras,Mangga,0.0,True
+2022,Kunjang,Mangga,10960.0,True
+2022,Mojo,Mangga,8622.0,True
+2022,Ngadiluwih,Mangga,4306.0,True
+2022,Ngancar,Mangga,0.0,True
+2022,Ngasem,Mangga,0.0,True
+2022,Pagu,Mangga,7504.0,True
+2022,Papar,Mangga,4181.4,True
+2022,Pare,Mangga,0.0,True
+2022,Plemahan,Mangga,1233.6,True
+2022,Plosoklaten,Mangga,3459.0,True
+2022,Puncu,Mangga,0.0,True
+2022,Purwoasri,Mangga,131.0,True
+2022,Ringinrejo,Mangga,9737.0,True
+2022,Semen,Mangga,1062.15,True
+2022,Tarokan,Mangga,266928.0,True
+2022,Wates,Mangga,0.0,True
+2022,Badas,Manggis,0.0,True
+2022,Banyakan,Manggis,0.0,True
+2022,Gampengrejo,Manggis,0.0,True
+2022,Grogol,Manggis,0.0,True
+2022,Gurah,Manggis,0.0,True
+2022,Kandangan,Manggis,5111.3,True
+2022,Kandat,Manggis,0.0,True
+2022,Kayenkidul,Manggis,125.0,True
+2022,Kepung,Manggis,0.0,True
+2022,Kras,Manggis,0.0,True
+2022,Kunjang,Manggis,0.0,True
+2022,Mojo,Manggis,242.75,True
+2022,Ngadiluwih,Manggis,125.5,True
+2022,Ngancar,Manggis,374.0,True
+2022,Ngasem,Manggis,0.0,True
+2022,Pagu,Manggis,0.0,True
+2022,Papar,Manggis,0.0,True
+2022,Pare,Manggis,0.0,True
+2022,Plemahan,Manggis,0.0,True
+2022,Plosoklaten,Manggis,0.0,True
+2022,Puncu,Manggis,0.0,True
+2022,Purwoasri,Manggis,0.0,True
+2022,Ringinrejo,Manggis,235.0,True
+2022,Semen,Manggis,0.0,True
+2022,Tarokan,Manggis,0.0,True
+2022,Wates,Manggis,0.0,True
+2022,Badas,Melinjo,39208.0,True
+2022,Banyakan,Melinjo,0.0,True
+2022,Gampengrejo,Melinjo,0.0,True
+2022,Grogol,Melinjo,0.0,True
+2022,Gurah,Melinjo,1844.0,True
+2022,Kandangan,Melinjo,915.0,True
+2022,Kandat,Melinjo,0.0,True
+2022,Kayenkidul,Melinjo,0.0,True
+2022,Kepung,Melinjo,0.0,True
+2022,Kras,Melinjo,0.0,True
+2022,Kunjang,Melinjo,511.5,True
+2022,Mojo,Melinjo,522.6,True
+2022,Ngadiluwih,Melinjo,234.0,True
+2022,Ngancar,Melinjo,1909.0,True
+2022,Ngasem,Melinjo,1021.0,True
+2022,Pagu,Melinjo,713.0,True
+2022,Papar,Melinjo,0.0,True
+2022,Pare,Melinjo,0.0,True
+2022,Plemahan,Melinjo,0.0,True
+2022,Plosoklaten,Melinjo,16782.0,True
+2022,Puncu,Melinjo,0.0,True
+2022,Purwoasri,Melinjo,0.0,True
+2022,Ringinrejo,Melinjo,833.0,True
+2022,Semen,Melinjo,0.0,True
+2022,Tarokan,Melinjo,0.0,True
+2022,Wates,Melinjo,0.0,True
+2022,Badas,Nangka/Cempedak,8579.3,True
+2022,Banyakan,Nangka/Cempedak,3017.2,True
+2022,Gampengrejo,Nangka/Cempedak,218.0,True
+2022,Grogol,Nangka/Cempedak,0.0,True
+2022,Gurah,Nangka/Cempedak,0.0,True
+2022,Kandangan,Nangka/Cempedak,5506.0,True
+2022,Kandat,Nangka/Cempedak,849.0,True
+2022,Kayenkidul,Nangka/Cempedak,312.0,True
+2022,Kepung,Nangka/Cempedak,0.0,True
+2022,Kras,Nangka/Cempedak,0.0,True
+2022,Kunjang,Nangka/Cempedak,1655.0,True
+2022,Mojo,Nangka/Cempedak,125.0,True
+2022,Ngadiluwih,Nangka/Cempedak,2161.0,True
+2022,Ngancar,Nangka/Cempedak,0.0,True
+2022,Ngasem,Nangka/Cempedak,642.0,True
+2022,Pagu,Nangka/Cempedak,1440.0,True
+2022,Papar,Nangka/Cempedak,309.0,True
+2022,Pare,Nangka/Cempedak,1405.0,True
+2022,Plemahan,Nangka/Cempedak,2671.0,True
+2022,Plosoklaten,Nangka/Cempedak,1739.0,True
+2022,Puncu,Nangka/Cempedak,271.0,True
+2022,Purwoasri,Nangka/Cempedak,1243.0,True
+2022,Ringinrejo,Nangka/Cempedak,11279.0,True
+2022,Semen,Nangka/Cempedak,313.0,True
+2022,Tarokan,Nangka/Cempedak,0.0,True
+2022,Wates,Nangka/Cempedak,0.0,True
+2022,Badas,Nenas,0.0,True
+2022,Banyakan,Nenas,0.0,True
+2022,Gampengrejo,Nenas,0.0,True
+2022,Grogol,Nenas,1510.5,True
+2022,Gurah,Nenas,6380.0,True
+2022,Kandangan,Nenas,0.0,True
+2022,Kandat,Nenas,23882.0,True
+2022,Kayenkidul,Nenas,0.0,True
+2022,Kepung,Nenas,0.0,True
+2022,Kras,Nenas,19.15,True
+2022,Kunjang,Nenas,6425.0,True
+2022,Mojo,Nenas,0.0,True
+2022,Ngadiluwih,Nenas,0.0,True
+2022,Ngancar,Nenas,4095702.0,True
+2022,Ngasem,Nenas,0.0,True
+2022,Pagu,Nenas,6863.0,True
+2022,Papar,Nenas,0.0,True
+2022,Pare,Nenas,5468.0,True
+2022,Plemahan,Nenas,0.0,True
+2022,Plosoklaten,Nenas,73956.0,True
+2022,Puncu,Nenas,19452.0,True
+2022,Purwoasri,Nenas,0.0,True
+2022,Ringinrejo,Nenas,31095.0,True
+2022,Semen,Nenas,0.0,True
+2022,Tarokan,Nenas,0.0,True
+2022,Wates,Nenas,8928.15,True
+2022,Badas,Pepaya,1187.5,True
+2022,Banyakan,Pepaya,1737.8,True
+2022,Gampengrejo,Pepaya,44.0,True
+2022,Grogol,Pepaya,0.0,True
+2022,Gurah,Pepaya,4780.15,True
+2022,Kandangan,Pepaya,721.0,True
+2022,Kandat,Pepaya,7060.0,True
+2022,Kayenkidul,Pepaya,0.0,True
+2022,Kepung,Pepaya,0.0,True
+2022,Kras,Pepaya,2633.0,True
+2022,Kunjang,Pepaya,0.0,True
+2022,Mojo,Pepaya,1728.0,True
+2022,Ngadiluwih,Pepaya,0.0,True
+2022,Ngancar,Pepaya,1443.0,True
+2022,Ngasem,Pepaya,138.8,True
+2022,Pagu,Pepaya,0.0,True
+2022,Papar,Pepaya,107.0,True
+2022,Pare,Pepaya,1945.0,True
+2022,Plemahan,Pepaya,0.0,True
+2022,Plosoklaten,Pepaya,5344.0,True
+2022,Puncu,Pepaya,19594.0,True
+2022,Purwoasri,Pepaya,180.0,True
+2022,Ringinrejo,Pepaya,2510.0,True
+2022,Semen,Pepaya,2941.0,True
+2022,Tarokan,Pepaya,57.0,True
+2022,Wates,Pepaya,3225.0,True
+2022,Badas,Petai,552.85,True
+2022,Banyakan,Petai,10516.0,True
+2022,Gampengrejo,Petai,0.0,True
+2022,Grogol,Petai,101.0,True
+2022,Gurah,Petai,223.5,True
+2022,Kandangan,Petai,575.0,True
+2022,Kandat,Petai,0.0,True
+2022,Kayenkidul,Petai,23.0,True
+2022,Kepung,Petai,2763.0,True
+2022,Kras,Petai,0.0,True
+2022,Kunjang,Petai,0.0,True
+2022,Mojo,Petai,7043.0,True
+2022,Ngadiluwih,Petai,0.0,True
+2022,Ngancar,Petai,0.0,True
+2022,Ngasem,Petai,151.0,True
+2022,Pagu,Petai,98.0,True
+2022,Papar,Petai,0.0,True
+2022,Pare,Petai,0.0,True
+2022,Plemahan,Petai,0.0,True
+2022,Plosoklaten,Petai,2456.0,True
+2022,Puncu,Petai,955.3,True
+2022,Purwoasri,Petai,0.0,True
+2022,Ringinrejo,Petai,1233.0,True
+2022,Semen,Petai,2599.0,True
+2022,Tarokan,Petai,198.0,True
+2022,Wates,Petai,0.0,True
+2022,Badas,Pisang,0.0,True
+2022,Banyakan,Pisang,9508.0,True
+2022,Gampengrejo,Pisang,0.0,True
+2022,Grogol,Pisang,24434.3,True
+2022,Gurah,Pisang,4305.0,True
+2022,Kandangan,Pisang,150809.0,True
+2022,Kandat,Pisang,122321.0,True
+2022,Kayenkidul,Pisang,1236.0,True
+2022,Kepung,Pisang,13080.0,True
+2022,Kras,Pisang,0.0,True
+2022,Kunjang,Pisang,11505.0,True
+2022,Mojo,Pisang,12114.0,True
+2022,Ngadiluwih,Pisang,10344.0,True
+2022,Ngancar,Pisang,6655.2,True
+2022,Ngasem,Pisang,286.0,True
+2022,Pagu,Pisang,1370.0,True
+2022,Papar,Pisang,6826.0,True
+2022,Pare,Pisang,0.0,True
+2022,Plemahan,Pisang,28750.25,True
+2022,Plosoklaten,Pisang,0.0,True
+2022,Puncu,Pisang,101360.0,True
+2022,Purwoasri,Pisang,31636.0,True
+2022,Ringinrejo,Pisang,23587.0,True
+2022,Semen,Pisang,0.0,True
+2022,Tarokan,Pisang,8898.0,True
+2022,Wates,Pisang,8080.0,True
+2022,Badas,Rambutan,8061.0,True
+2022,Banyakan,Rambutan,0.0,True
+2022,Gampengrejo,Rambutan,720.0,True
+2022,Grogol,Rambutan,0.0,True
+2022,Gurah,Rambutan,357.0,True
+2022,Kandangan,Rambutan,4853.2,True
+2022,Kandat,Rambutan,4172.75,True
+2022,Kayenkidul,Rambutan,0.0,True
+2022,Kepung,Rambutan,1651.0,True
+2022,Kras,Rambutan,3089.0,True
+2022,Kunjang,Rambutan,2425.0,True
+2022,Mojo,Rambutan,17217.0,True
+2022,Ngadiluwih,Rambutan,0.0,True
+2022,Ngancar,Rambutan,2184.25,True
+2022,Ngasem,Rambutan,333.0,True
+2022,Pagu,Rambutan,0.0,True
+2022,Papar,Rambutan,125.2,True
+2022,Pare,Rambutan,3802.4,True
+2022,Plemahan,Rambutan,156.0,True
+2022,Plosoklaten,Rambutan,2483.8,True
+2022,Puncu,Rambutan,0.0,True
+2022,Purwoasri,Rambutan,4245.0,True
+2022,Ringinrejo,Rambutan,1244.0,True
+2022,Semen,Rambutan,0.0,True
+2022,Tarokan,Rambutan,0.0,True
+2022,Wates,Rambutan,0.0,True
+2022,Badas,Salak,0.0,True
+2022,Banyakan,Salak,0.0,True
+2022,Gampengrejo,Salak,0.0,True
+2022,Grogol,Salak,97.0,True
+2022,Gurah,Salak,22.0,True
+2022,Kandangan,Salak,0.0,True
+2022,Kandat,Salak,0.0,True
+2022,Kayenkidul,Salak,0.0,True
+2022,Kepung,Salak,0.0,True
+2022,Kras,Salak,0.0,True
+2022,Kunjang,Salak,0.0,True
+2022,Mojo,Salak,524.0,True
+2022,Ngadiluwih,Salak,0.0,True
+2022,Ngancar,Salak,488.0,True
+2022,Ngasem,Salak,0.0,True
+2022,Pagu,Salak,0.0,True
+2022,Papar,Salak,22.0,True
+2022,Pare,Salak,0.0,True
+2022,Plemahan,Salak,0.0,True
+2022,Plosoklaten,Salak,1195.0,True
+2022,Puncu,Salak,0.0,True
+2022,Purwoasri,Salak,0.0,True
+2022,Ringinrejo,Salak,0.0,True
+2022,Semen,Salak,0.0,True
+2022,Tarokan,Salak,0.0,True
+2022,Wates,Salak,36.0,True
+2022,Badas,Sawo,3952.0,True
+2022,Banyakan,Sawo,946.0,True
+2022,Gampengrejo,Sawo,0.0,True
+2022,Grogol,Sawo,0.0,True
+2022,Gurah,Sawo,3063.0,True
+2022,Kandangan,Sawo,0.0,True
+2022,Kandat,Sawo,0.0,True
+2022,Kayenkidul,Sawo,313.0,True
+2022,Kepung,Sawo,71.0,True
+2022,Kras,Sawo,0.0,True
+2022,Kunjang,Sawo,218.0,True
+2022,Mojo,Sawo,241.5,True
+2022,Ngadiluwih,Sawo,0.0,True
+2022,Ngancar,Sawo,0.0,True
+2022,Ngasem,Sawo,219.0,True
+2022,Pagu,Sawo,65.4,True
+2022,Papar,Sawo,0.0,True
+2022,Pare,Sawo,0.0,True
+2022,Plemahan,Sawo,1473.0,True
+2022,Plosoklaten,Sawo,550.25,True
+2022,Puncu,Sawo,60.0,True
+2022,Purwoasri,Sawo,289.0,True
+2022,Ringinrejo,Sawo,126.0,True
+2022,Semen,Sawo,2575.0,True
+2022,Tarokan,Sawo,155.0,True
+2022,Wates,Sawo,0.0,True
+2022,Badas,Sirsak,1283.0,True
+2022,Banyakan,Sirsak,544.0,True
+2022,Gampengrejo,Sirsak,0.0,True
+2022,Grogol,Sirsak,0.0,True
+2022,Gurah,Sirsak,0.0,True
+2022,Kandangan,Sirsak,1045.0,True
+2022,Kandat,Sirsak,0.0,True
+2022,Kayenkidul,Sirsak,245.0,True
+2022,Kepung,Sirsak,0.0,True
+2022,Kras,Sirsak,474.0,True
+2022,Kunjang,Sirsak,498.0,True
+2022,Mojo,Sirsak,4038.0,True
+2022,Ngadiluwih,Sirsak,0.0,True
+2022,Ngancar,Sirsak,204.25,True
+2022,Ngasem,Sirsak,0.0,True
+2022,Pagu,Sirsak,0.0,True
+2022,Papar,Sirsak,213.25,True
+2022,Pare,Sirsak,2830.0,True
+2022,Plemahan,Sirsak,361.0,True
+2022,Plosoklaten,Sirsak,18084.0,True
+2022,Puncu,Sirsak,1989.0,True
+2022,Purwoasri,Sirsak,594.0,True
+2022,Ringinrejo,Sirsak,1885.0,True
+2022,Semen,Sirsak,1003.0,True
+2022,Tarokan,Sirsak,5133.0,True
+2022,Wates,Sirsak,550.5,True
+2022,Badas,Sukun,443.0,True
+2022,Banyakan,Sukun,271.0,True
+2022,Gampengrejo,Sukun,28.0,True
+2022,Grogol,Sukun,0.0,True
+2022,Gurah,Sukun,0.0,True
+2022,Kandangan,Sukun,0.0,True
+2022,Kandat,Sukun,0.0,True
+2022,Kayenkidul,Sukun,0.0,True
+2022,Kepung,Sukun,0.0,True
+2022,Kras,Sukun,0.0,True
+2022,Kunjang,Sukun,0.0,True
+2022,Mojo,Sukun,1274.0,True
+2022,Ngadiluwih,Sukun,0.0,True
+2022,Ngancar,Sukun,401.0,True
+2022,Ngasem,Sukun,53.0,True
+2022,Pagu,Sukun,0.0,True
+2022,Papar,Sukun,0.0,True
+2022,Pare,Sukun,0.0,True
+2022,Plemahan,Sukun,0.0,True
+2022,Plosoklaten,Sukun,0.0,True
+2022,Puncu,Sukun,128.3,True
+2022,Purwoasri,Sukun,505.0,True
+2022,Ringinrejo,Sukun,1102.0,True
+2022,Semen,Sukun,0.0,True
+2022,Tarokan,Sukun,0.0,True
+2022,Wates,Sukun,0.0,True
+2023,Badas,Alpukat,0.0,True
+2023,Banyakan,Alpukat,5108.6,True
+2023,Gampengrejo,Alpukat,969.0,True
+2023,Grogol,Alpukat,18180.0,True
+2023,Gurah,Alpukat,1118.0,True
+2023,Kandangan,Alpukat,0.0,True
+2023,Kandat,Alpukat,3108.0,True
+2023,Kayenkidul,Alpukat,0.0,True
+2023,Kepung,Alpukat,63934.0,True
+2023,Kras,Alpukat,3261.0,True
+2023,Kunjang,Alpukat,288.0,True
+2023,Mojo,Alpukat,24539.0,True
+2023,Ngadiluwih,Alpukat,3542.0,True
+2023,Ngancar,Alpukat,31578.0,True
+2023,Ngasem,Alpukat,0.0,True
+2023,Pagu,Alpukat,0.0,True
+2023,Papar,Alpukat,510.8,True
+2023,Pare,Alpukat,438.0,True
+2023,Plemahan,Alpukat,22802.0,True
+2023,Plosoklaten,Alpukat,6051.4,True
+2023,Puncu,Alpukat,3256.75,True
+2023,Purwoasri,Alpukat,225.0,True
+2023,Ringinrejo,Alpukat,11015.6,True
+2023,Semen,Alpukat,6341.0,True
+2023,Tarokan,Alpukat,0.0,True
+2023,Wates,Alpukat,12124.0,True
+2023,Badas,Anggur,0.0,True
+2023,Banyakan,Anggur,0.0,True
+2023,Gampengrejo,Anggur,0.0,True
+2023,Grogol,Anggur,0.0,True
+2023,Gurah,Anggur,0.0,True
+2023,Kandangan,Anggur,0.0,True
+2023,Kandat,Anggur,0.0,True
+2023,Kayenkidul,Anggur,0.0,True
+2023,Kepung,Anggur,0.0,True
+2023,Kras,Anggur,0.0,True
+2023,Kunjang,Anggur,0.0,True
+2023,Mojo,Anggur,0.0,True
+2023,Ngadiluwih,Anggur,0.0,True
+2023,Ngancar,Anggur,0.0,True
+2023,Ngasem,Anggur,91.0,True
+2023,Pagu,Anggur,0.0,True
+2023,Papar,Anggur,0.0,True
+2023,Pare,Anggur,0.0,True
+2023,Plemahan,Anggur,0.0,True
+2023,Plosoklaten,Anggur,0.0,True
+2023,Puncu,Anggur,0.0,True
+2023,Purwoasri,Anggur,0.0,True
+2023,Ringinrejo,Anggur,0.0,True
+2023,Semen,Anggur,0.0,True
+2023,Tarokan,Anggur,0.0,True
+2023,Wates,Anggur,0.0,True
+2023,Badas,Apel,0.0,True
+2023,Banyakan,Apel,0.0,True
+2023,Gampengrejo,Apel,0.0,True
+2023,Grogol,Apel,0.0,True
+2023,Gurah,Apel,0.0,True
+2023,Kandangan,Apel,0.0,True
+2023,Kandat,Apel,0.0,True
+2023,Kayenkidul,Apel,0.0,True
+2023,Kepung,Apel,0.0,True
+2023,Kras,Apel,0.0,True
+2023,Kunjang,Apel,0.0,True
+2023,Mojo,Apel,35.0,True
+2023,Ngadiluwih,Apel,0.0,True
+2023,Ngancar,Apel,0.0,True
+2023,Ngasem,Apel,0.0,True
+2023,Pagu,Apel,0.0,True
+2023,Papar,Apel,0.0,True
+2023,Pare,Apel,0.0,True
+2023,Plemahan,Apel,0.0,True
+2023,Plosoklaten,Apel,0.0,True
+2023,Puncu,Apel,0.0,True
+2023,Purwoasri,Apel,0.0,True
+2023,Ringinrejo,Apel,0.0,True
+2023,Semen,Apel,0.0,True
+2023,Tarokan,Apel,0.0,True
+2023,Wates,Apel,0.0,True
+2023,Badas,Belimbing,34.5,True
+2023,Banyakan,Belimbing,0.0,True
+2023,Gampengrejo,Belimbing,385.0,True
+2023,Grogol,Belimbing,170.0,True
+2023,Gurah,Belimbing,4601.0,True
+2023,Kandangan,Belimbing,0.0,True
+2023,Kandat,Belimbing,265.0,True
+2023,Kayenkidul,Belimbing,467.0,True
+2023,Kepung,Belimbing,0.0,True
+2023,Kras,Belimbing,266.0,True
+2023,Kunjang,Belimbing,342.0,True
+2023,Mojo,Belimbing,2242.0,True
+2023,Ngadiluwih,Belimbing,5.0,True
+2023,Ngancar,Belimbing,10.0,True
+2023,Ngasem,Belimbing,67.0,True
+2023,Pagu,Belimbing,23156.3,True
+2023,Papar,Belimbing,0.0,True
+2023,Pare,Belimbing,242.5,True
+2023,Plemahan,Belimbing,841.0,True
+2023,Plosoklaten,Belimbing,125.0,True
+2023,Puncu,Belimbing,160.0,True
+2023,Purwoasri,Belimbing,264.25,True
+2023,Ringinrejo,Belimbing,3344.2,True
+2023,Semen,Belimbing,0.0,True
+2023,Tarokan,Belimbing,71.0,True
+2023,Wates,Belimbing,213.0,True
+2023,Badas,Buah Naga,0.0,True
+2023,Banyakan,Buah Naga,368.0,True
+2023,Gampengrejo,Buah Naga,0.0,True
+2023,Grogol,Buah Naga,0.0,True
+2023,Gurah,Buah Naga,0.0,True
+2023,Kandangan,Buah Naga,267.0,True
+2023,Kandat,Buah Naga,0.0,True
+2023,Kayenkidul,Buah Naga,0.0,True
+2023,Kepung,Buah Naga,0.0,True
+2023,Kras,Buah Naga,0.0,True
+2023,Kunjang,Buah Naga,0.0,True
+2023,Mojo,Buah Naga,0.0,True
+2023,Ngadiluwih,Buah Naga,2326.5,True
+2023,Ngancar,Buah Naga,0.0,True
+2023,Ngasem,Buah Naga,0.0,True
+2023,Pagu,Buah Naga,0.0,True
+2023,Papar,Buah Naga,0.0,True
+2023,Pare,Buah Naga,1456.0,True
+2023,Plemahan,Buah Naga,0.0,True
+2023,Plosoklaten,Buah Naga,0.0,True
+2023,Puncu,Buah Naga,303.0,True
+2023,Purwoasri,Buah Naga,0.0,True
+2023,Ringinrejo,Buah Naga,1082.0,True
+2023,Semen,Buah Naga,126.8,True
+2023,Tarokan,Buah Naga,0.0,True
+2023,Wates,Buah Naga,0.0,True
+2023,Badas,Duku/Langsat/Kokosan,0.0,True
+2023,Banyakan,Duku/Langsat/Kokosan,0.0,True
+2023,Gampengrejo,Duku/Langsat/Kokosan,0.0,True
+2023,Grogol,Duku/Langsat/Kokosan,0.0,True
+2023,Gurah,Duku/Langsat/Kokosan,0.0,True
+2023,Kandangan,Duku/Langsat/Kokosan,0.0,True
+2023,Kandat,Duku/Langsat/Kokosan,0.0,True
+2023,Kayenkidul,Duku/Langsat/Kokosan,0.0,True
+2023,Kepung,Duku/Langsat/Kokosan,0.0,True
+2023,Kras,Duku/Langsat/Kokosan,16.85,True
+2023,Kunjang,Duku/Langsat/Kokosan,0.0,True
+2023,Mojo,Duku/Langsat/Kokosan,25.0,True
+2023,Ngadiluwih,Duku/Langsat/Kokosan,10.15,True
+2023,Ngancar,Duku/Langsat/Kokosan,0.0,True
+2023,Ngasem,Duku/Langsat/Kokosan,31.75,True
+2023,Pagu,Duku/Langsat/Kokosan,0.0,True
+2023,Papar,Duku/Langsat/Kokosan,0.0,True
+2023,Pare,Duku/Langsat/Kokosan,0.0,True
+2023,Plemahan,Duku/Langsat/Kokosan,0.0,True
+2023,Plosoklaten,Duku/Langsat/Kokosan,0.0,True
+2023,Puncu,Duku/Langsat/Kokosan,0.0,True
+2023,Purwoasri,Duku/Langsat/Kokosan,12.0,True
+2023,Ringinrejo,Duku/Langsat/Kokosan,0.0,True
+2023,Semen,Duku/Langsat/Kokosan,0.0,True
+2023,Tarokan,Duku/Langsat/Kokosan,0.0,True
+2023,Wates,Duku/Langsat/Kokosan,0.0,True
+2023,Badas,Durian,700.0,True
+2023,Banyakan,Durian,2479.15,True
+2023,Gampengrejo,Durian,0.0,True
+2023,Grogol,Durian,226.0,True
+2023,Gurah,Durian,0.0,True
+2023,Kandangan,Durian,18659.0,True
+2023,Kandat,Durian,194.0,True
+2023,Kayenkidul,Durian,0.0,True
+2023,Kepung,Durian,31926.2,True
+2023,Kras,Durian,117.25,True
+2023,Kunjang,Durian,0.0,True
+2023,Mojo,Durian,31468.0,True
+2023,Ngadiluwih,Durian,0.0,True
+2023,Ngancar,Durian,2300.4,True
+2023,Ngasem,Durian,136.0,True
+2023,Pagu,Durian,0.0,True
+2023,Papar,Durian,0.0,True
+2023,Pare,Durian,226.6,True
+2023,Plemahan,Durian,195.0,True
+2023,Plosoklaten,Durian,4751.15,True
+2023,Puncu,Durian,9292.75,True
+2023,Purwoasri,Durian,66.0,True
+2023,Ringinrejo,Durian,11416.2,True
+2023,Semen,Durian,67115.5,True
+2023,Tarokan,Durian,0.0,True
+2023,Wates,Durian,0.0,True
+2023,Badas,Jambu Air,215.6,True
+2023,Banyakan,Jambu Air,56.0,True
+2023,Gampengrejo,Jambu Air,387.0,True
+2023,Grogol,Jambu Air,0.0,True
+2023,Gurah,Jambu Air,1583.0,True
+2023,Kandangan,Jambu Air,0.0,True
+2023,Kandat,Jambu Air,0.0,True
+2023,Kayenkidul,Jambu Air,0.0,True
+2023,Kepung,Jambu Air,0.0,True
+2023,Kras,Jambu Air,128.0,True
+2023,Kunjang,Jambu Air,486.0,True
+2023,Mojo,Jambu Air,294.0,True
+2023,Ngadiluwih,Jambu Air,784.0,True
+2023,Ngancar,Jambu Air,96.0,True
+2023,Ngasem,Jambu Air,76.85,True
+2023,Pagu,Jambu Air,0.0,True
+2023,Papar,Jambu Air,0.0,True
+2023,Pare,Jambu Air,108.75,True
+2023,Plemahan,Jambu Air,4792.0,True
+2023,Plosoklaten,Jambu Air,100.0,True
+2023,Puncu,Jambu Air,0.0,True
+2023,Purwoasri,Jambu Air,7262.8,True
+2023,Ringinrejo,Jambu Air,1091.8,True
+2023,Semen,Jambu Air,1879.0,True
+2023,Tarokan,Jambu Air,62.0,True
+2023,Wates,Jambu Air,20.0,True
+2023,Badas,Jambu Biji,1096.0,True
+2023,Banyakan,Jambu Biji,110.0,True
+2023,Gampengrejo,Jambu Biji,183.0,True
+2023,Grogol,Jambu Biji,0.0,True
+2023,Gurah,Jambu Biji,3937.0,True
+2023,Kandangan,Jambu Biji,0.0,True
+2023,Kandat,Jambu Biji,0.0,True
+2023,Kayenkidul,Jambu Biji,109.4,True
+2023,Kepung,Jambu Biji,84.5,True
+2023,Kras,Jambu Biji,291.0,True
+2023,Kunjang,Jambu Biji,335.0,True
+2023,Mojo,Jambu Biji,165.0,True
+2023,Ngadiluwih,Jambu Biji,802.0,True
+2023,Ngancar,Jambu Biji,20.0,True
+2023,Ngasem,Jambu Biji,239.75,True
+2023,Pagu,Jambu Biji,0.0,True
+2023,Papar,Jambu Biji,0.0,True
+2023,Pare,Jambu Biji,332.0,True
+2023,Plemahan,Jambu Biji,3275.0,True
+2023,Plosoklaten,Jambu Biji,562.0,True
+2023,Puncu,Jambu Biji,421.0,True
+2023,Purwoasri,Jambu Biji,273.25,True
+2023,Ringinrejo,Jambu Biji,1390.15,True
+2023,Semen,Jambu Biji,18.0,True
+2023,Tarokan,Jambu Biji,190.0,True
+2023,Wates,Jambu Biji,0.0,True
+2023,Badas,Jengkol,0.0,True
+2023,Banyakan,Jengkol,0.0,True
+2023,Gampengrejo,Jengkol,50.0,True
+2023,Grogol,Jengkol,0.0,True
+2023,Gurah,Jengkol,0.0,True
+2023,Kandangan,Jengkol,0.0,True
+2023,Kandat,Jengkol,0.0,True
+2023,Kayenkidul,Jengkol,0.0,True
+2023,Kepung,Jengkol,0.0,True
+2023,Kras,Jengkol,0.0,True
+2023,Kunjang,Jengkol,0.0,True
+2023,Mojo,Jengkol,112.0,True
+2023,Ngadiluwih,Jengkol,0.0,True
+2023,Ngancar,Jengkol,0.0,True
+2023,Ngasem,Jengkol,47.0,True
+2023,Pagu,Jengkol,0.0,True
+2023,Papar,Jengkol,0.0,True
+2023,Pare,Jengkol,0.0,True
+2023,Plemahan,Jengkol,55.0,True
+2023,Plosoklaten,Jengkol,57.8,True
+2023,Puncu,Jengkol,0.0,True
+2023,Purwoasri,Jengkol,0.0,True
+2023,Ringinrejo,Jengkol,0.0,True
+2023,Semen,Jengkol,0.0,True
+2023,Tarokan,Jengkol,0.0,True
+2023,Wates,Jengkol,0.0,True
+2023,Badas,Jeruk Besar,0.0,True
+2023,Banyakan,Jeruk Besar,0.0,True
+2023,Gampengrejo,Jeruk Besar,0.0,True
+2023,Grogol,Jeruk Besar,0.0,True
+2023,Gurah,Jeruk Besar,35.0,True
+2023,Kandangan,Jeruk Besar,0.0,True
+2023,Kandat,Jeruk Besar,0.0,True
+2023,Kayenkidul,Jeruk Besar,0.0,True
+2023,Kepung,Jeruk Besar,0.0,True
+2023,Kras,Jeruk Besar,0.0,True
+2023,Kunjang,Jeruk Besar,0.0,True
+2023,Mojo,Jeruk Besar,0.0,True
+2023,Ngadiluwih,Jeruk Besar,0.0,True
+2023,Ngancar,Jeruk Besar,0.0,True
+2023,Ngasem,Jeruk Besar,0.0,True
+2023,Pagu,Jeruk Besar,0.0,True
+2023,Papar,Jeruk Besar,0.0,True
+2023,Pare,Jeruk Besar,0.0,True
+2023,Plemahan,Jeruk Besar,0.0,True
+2023,Plosoklaten,Jeruk Besar,0.0,True
+2023,Puncu,Jeruk Besar,0.0,True
+2023,Purwoasri,Jeruk Besar,0.0,True
+2023,Ringinrejo,Jeruk Besar,0.0,True
+2023,Semen,Jeruk Besar,0.0,True
+2023,Tarokan,Jeruk Besar,0.0,True
+2023,Wates,Jeruk Besar,0.0,True
+2023,Badas,Jeruk Lemon,34.2,True
+2023,Banyakan,Jeruk Lemon,22.0,True
+2023,Gampengrejo,Jeruk Lemon,0.0,True
+2023,Grogol,Jeruk Lemon,0.0,True
+2023,Gurah,Jeruk Lemon,0.0,True
+2023,Kandangan,Jeruk Lemon,0.0,True
+2023,Kandat,Jeruk Lemon,497.0,True
+2023,Kayenkidul,Jeruk Lemon,49.4,True
+2023,Kepung,Jeruk Lemon,0.0,True
+2023,Kras,Jeruk Lemon,49.0,True
+2023,Kunjang,Jeruk Lemon,76.8,True
+2023,Mojo,Jeruk Lemon,0.0,True
+2023,Ngadiluwih,Jeruk Lemon,50.0,True
+2023,Ngancar,Jeruk Lemon,0.0,True
+2023,Ngasem,Jeruk Lemon,35.85,True
+2023,Pagu,Jeruk Lemon,0.0,True
+2023,Papar,Jeruk Lemon,0.0,True
+2023,Pare,Jeruk Lemon,0.0,True
+2023,Plemahan,Jeruk Lemon,0.0,True
+2023,Plosoklaten,Jeruk Lemon,3259.0,True
+2023,Puncu,Jeruk Lemon,0.0,True
+2023,Purwoasri,Jeruk Lemon,0.0,True
+2023,Ringinrejo,Jeruk Lemon,1350.0,True
+2023,Semen,Jeruk Lemon,0.0,True
+2023,Tarokan,Jeruk Lemon,49.0,True
+2023,Wates,Jeruk Lemon,0.0,True
+2023,Badas,Jeruk Siam/Keprok,0.0,True
+2023,Banyakan,Jeruk Siam/Keprok,11765.0,True
+2023,Gampengrejo,Jeruk Siam/Keprok,0.0,True
+2023,Grogol,Jeruk Siam/Keprok,4217.0,True
+2023,Gurah,Jeruk Siam/Keprok,0.0,True
+2023,Kandangan,Jeruk Siam/Keprok,3690.0,True
+2023,Kandat,Jeruk Siam/Keprok,0.0,True
+2023,Kayenkidul,Jeruk Siam/Keprok,0.0,True
+2023,Kepung,Jeruk Siam/Keprok,0.0,True
+2023,Kras,Jeruk Siam/Keprok,396.0,True
+2023,Kunjang,Jeruk Siam/Keprok,0.0,True
+2023,Mojo,Jeruk Siam/Keprok,29477.0,True
+2023,Ngadiluwih,Jeruk Siam/Keprok,0.0,True
+2023,Ngancar,Jeruk Siam/Keprok,209.0,True
+2023,Ngasem,Jeruk Siam/Keprok,1568.0,True
+2023,Pagu,Jeruk Siam/Keprok,1628.0,True
+2023,Papar,Jeruk Siam/Keprok,0.0,True
+2023,Pare,Jeruk Siam/Keprok,0.0,True
+2023,Plemahan,Jeruk Siam/Keprok,0.0,True
+2023,Plosoklaten,Jeruk Siam/Keprok,3908.0,True
+2023,Puncu,Jeruk Siam/Keprok,2782.0,True
+2023,Purwoasri,Jeruk Siam/Keprok,0.0,True
+2023,Ringinrejo,Jeruk Siam/Keprok,15621.0,True
+2023,Semen,Jeruk Siam/Keprok,18223.0,True
+2023,Tarokan,Jeruk Siam/Keprok,29003.0,True
+2023,Wates,Jeruk Siam/Keprok,0.0,True
+2023,Badas,Lengkeng,0.0,True
+2023,Banyakan,Lengkeng,0.0,True
+2023,Gampengrejo,Lengkeng,0.0,True
+2023,Grogol,Lengkeng,0.0,True
+2023,Gurah,Lengkeng,0.0,True
+2023,Kandangan,Lengkeng,0.0,True
+2023,Kandat,Lengkeng,0.0,True
+2023,Kayenkidul,Lengkeng,1308.0,True
+2023,Kepung,Lengkeng,0.0,True
+2023,Kras,Lengkeng,0.0,True
+2023,Kunjang,Lengkeng,87.0,True
+2023,Mojo,Lengkeng,225.0,True
+2023,Ngadiluwih,Lengkeng,0.0,True
+2023,Ngancar,Lengkeng,1475.0,True
+2023,Ngasem,Lengkeng,377.0,True
+2023,Pagu,Lengkeng,0.0,True
+2023,Papar,Lengkeng,0.0,True
+2023,Pare,Lengkeng,44.0,True
+2023,Plemahan,Lengkeng,0.0,True
+2023,Plosoklaten,Lengkeng,0.0,True
+2023,Puncu,Lengkeng,0.0,True
+2023,Purwoasri,Lengkeng,509.15,True
+2023,Ringinrejo,Lengkeng,1923.3,True
+2023,Semen,Lengkeng,774.0,True
+2023,Tarokan,Lengkeng,0.0,True
+2023,Wates,Lengkeng,0.0,True
+2023,Badas,Mangga,27130.0,True
+2023,Banyakan,Mangga,247277.75,True
+2023,Gampengrejo,Mangga,4384.0,True
+2023,Grogol,Mangga,186424.0,True
+2023,Gurah,Mangga,4629.0,True
+2023,Kandangan,Mangga,7914.8,True
+2023,Kandat,Mangga,2498.75,True
+2023,Kayenkidul,Mangga,246.0,True
+2023,Kepung,Mangga,0.0,True
+2023,Kras,Mangga,738.0,True
+2023,Kunjang,Mangga,9481.0,True
+2023,Mojo,Mangga,8459.0,True
+2023,Ngadiluwih,Mangga,3679.0,True
+2023,Ngancar,Mangga,0.0,True
+2023,Ngasem,Mangga,0.0,True
+2023,Pagu,Mangga,8578.0,True
+2023,Papar,Mangga,3338.0,True
+2023,Pare,Mangga,0.0,True
+2023,Plemahan,Mangga,0.0,True
+2023,Plosoklaten,Mangga,2913.0,True
+2023,Puncu,Mangga,0.0,True
+2023,Purwoasri,Mangga,0.0,True
+2023,Ringinrejo,Mangga,11157.25,True
+2023,Semen,Mangga,1251.0,True
+2023,Tarokan,Mangga,252769.0,True
+2023,Wates,Mangga,0.0,True
+2023,Badas,Manggis,0.0,True
+2023,Banyakan,Manggis,0.0,True
+2023,Gampengrejo,Manggis,125.0,True
+2023,Grogol,Manggis,0.0,True
+2023,Gurah,Manggis,0.0,True
+2023,Kandangan,Manggis,6053.0,True
+2023,Kandat,Manggis,0.0,True
+2023,Kayenkidul,Manggis,0.0,True
+2023,Kepung,Manggis,0.0,True
+2023,Kras,Manggis,0.0,True
+2023,Kunjang,Manggis,0.0,True
+2023,Mojo,Manggis,238.0,True
+2023,Ngadiluwih,Manggis,0.0,True
+2023,Ngancar,Manggis,314.0,True
+2023,Ngasem,Manggis,0.0,True
+2023,Pagu,Manggis,0.0,True
+2023,Papar,Manggis,0.0,True
+2023,Pare,Manggis,0.0,True
+2023,Plemahan,Manggis,0.0,True
+2023,Plosoklaten,Manggis,0.0,True
+2023,Puncu,Manggis,0.0,True
+2023,Purwoasri,Manggis,0.0,True
+2023,Ringinrejo,Manggis,234.0,True
+2023,Semen,Manggis,0.0,True
+2023,Tarokan,Manggis,0.0,True
+2023,Wates,Manggis,125.2,True
+2023,Badas,Melinjo,38777.6,True
+2023,Banyakan,Melinjo,0.0,True
+2023,Gampengrejo,Melinjo,0.0,True
+2023,Grogol,Melinjo,0.0,True
+2023,Gurah,Melinjo,1822.0,True
+2023,Kandangan,Melinjo,973.0,True
+2023,Kandat,Melinjo,0.0,True
+2023,Kayenkidul,Melinjo,354.2,True
+2023,Kepung,Melinjo,0.0,True
+2023,Kras,Melinjo,235.0,True
+2023,Kunjang,Melinjo,478.0,True
+2023,Mojo,Melinjo,513.25,True
+2023,Ngadiluwih,Melinjo,223.0,True
+2023,Ngancar,Melinjo,1842.6,True
+2023,Ngasem,Melinjo,980.0,True
+2023,Pagu,Melinjo,697.0,True
+2023,Papar,Melinjo,0.0,True
+2023,Pare,Melinjo,0.0,True
+2023,Plemahan,Melinjo,186.0,True
+2023,Plosoklaten,Melinjo,15768.0,True
+2023,Puncu,Melinjo,0.0,True
+2023,Purwoasri,Melinjo,0.0,True
+2023,Ringinrejo,Melinjo,916.0,True
+2023,Semen,Melinjo,0.0,True
+2023,Tarokan,Melinjo,0.0,True
+2023,Wates,Melinjo,0.0,True
+2023,Badas,Nangka/Cempedak,10533.0,True
+2023,Banyakan,Nangka/Cempedak,2795.5,True
+2023,Gampengrejo,Nangka/Cempedak,200.8,True
+2023,Grogol,Nangka/Cempedak,0.0,True
+2023,Gurah,Nangka/Cempedak,0.0,True
+2023,Kandangan,Nangka/Cempedak,4545.0,True
+2023,Kandat,Nangka/Cempedak,777.0,True
+2023,Kayenkidul,Nangka/Cempedak,371.0,True
+2023,Kepung,Nangka/Cempedak,0.0,True
+2023,Kras,Nangka/Cempedak,566.0,True
+2023,Kunjang,Nangka/Cempedak,1440.0,True
+2023,Mojo,Nangka/Cempedak,148.2,True
+2023,Ngadiluwih,Nangka/Cempedak,1759.0,True
+2023,Ngancar,Nangka/Cempedak,0.0,True
+2023,Ngasem,Nangka/Cempedak,745.8,True
+2023,Pagu,Nangka/Cempedak,1284.0,True
+2023,Papar,Nangka/Cempedak,268.8,True
+2023,Pare,Nangka/Cempedak,1201.0,True
+2023,Plemahan,Nangka/Cempedak,3110.0,True
+2023,Plosoklaten,Nangka/Cempedak,2181.0,True
+2023,Puncu,Nangka/Cempedak,239.0,True
+2023,Purwoasri,Nangka/Cempedak,1115.85,True
+2023,Ringinrejo,Nangka/Cempedak,11112.6,True
+2023,Semen,Nangka/Cempedak,320.0,True
+2023,Tarokan,Nangka/Cempedak,0.0,True
+2023,Wates,Nangka/Cempedak,0.0,True
+2023,Badas,Nenas,0.0,True
+2023,Banyakan,Nenas,0.0,True
+2023,Gampengrejo,Nenas,0.0,True
+2023,Grogol,Nenas,0.0,True
+2023,Gurah,Nenas,0.0,True
+2023,Kandangan,Nenas,0.0,True
+2023,Kandat,Nenas,22468.0,True
+2023,Kayenkidul,Nenas,0.0,True
+2023,Kepung,Nenas,0.0,True
+2023,Kras,Nenas,0.0,True
+2023,Kunjang,Nenas,0.0,True
+2023,Mojo,Nenas,0.0,True
+2023,Ngadiluwih,Nenas,0.0,True
+2023,Ngancar,Nenas,3105041.0,True
+2023,Ngasem,Nenas,0.0,True
+2023,Pagu,Nenas,0.0,True
+2023,Papar,Nenas,0.0,True
+2023,Pare,Nenas,0.0,True
+2023,Plemahan,Nenas,0.0,True
+2023,Plosoklaten,Nenas,89498.0,True
+2023,Puncu,Nenas,20344.0,True
+2023,Purwoasri,Nenas,0.0,True
+2023,Ringinrejo,Nenas,32403.0,True
+2023,Semen,Nenas,8037.0,True
+2023,Tarokan,Nenas,0.0,True
+2023,Wates,Nenas,8874.0,True
+2023,Badas,Pepaya,1211.3,True
+2023,Banyakan,Pepaya,1695.0,True
+2023,Gampengrejo,Pepaya,0.0,True
+2023,Grogol,Pepaya,0.0,True
+2023,Gurah,Pepaya,4487.0,True
+2023,Kandangan,Pepaya,0.0,True
+2023,Kandat,Pepaya,8820.0,True
+2023,Kayenkidul,Pepaya,337.0,True
+2023,Kepung,Pepaya,0.0,True
+2023,Kras,Pepaya,2921.0,True
+2023,Kunjang,Pepaya,0.0,True
+2023,Mojo,Pepaya,1934.5,True
+2023,Ngadiluwih,Pepaya,0.0,True
+2023,Ngancar,Pepaya,1321.0,True
+2023,Ngasem,Pepaya,0.0,True
+2023,Pagu,Pepaya,39.0,True
+2023,Papar,Pepaya,121.0,True
+2023,Pare,Pepaya,2051.0,True
+2023,Plemahan,Pepaya,0.0,True
+2023,Plosoklaten,Pepaya,3958.0,True
+2023,Puncu,Pepaya,17332.0,True
+2023,Purwoasri,Pepaya,215.0,True
+2023,Ringinrejo,Pepaya,2633.0,True
+2023,Semen,Pepaya,2866.0,True
+2023,Tarokan,Pepaya,62.0,True
+2023,Wates,Pepaya,3340.0,True
+2023,Badas,Petai,589.0,True
+2023,Banyakan,Petai,11311.0,True
+2023,Gampengrejo,Petai,0.0,True
+2023,Grogol,Petai,92.0,True
+2023,Gurah,Petai,220.0,True
+2023,Kandangan,Petai,532.0,True
+2023,Kandat,Petai,0.0,True
+2023,Kayenkidul,Petai,25.75,True
+2023,Kepung,Petai,2284.0,True
+2023,Kras,Petai,0.0,True
+2023,Kunjang,Petai,0.0,True
+2023,Mojo,Petai,8581.0,True
+2023,Ngadiluwih,Petai,0.0,True
+2023,Ngancar,Petai,0.0,True
+2023,Ngasem,Petai,133.0,True
+2023,Pagu,Petai,0.0,True
+2023,Papar,Petai,0.0,True
+2023,Pare,Petai,174.0,True
+2023,Plemahan,Petai,229.0,True
+2023,Plosoklaten,Petai,2861.0,True
+2023,Puncu,Petai,891.4,True
+2023,Purwoasri,Petai,0.0,True
+2023,Ringinrejo,Petai,1034.0,True
+2023,Semen,Petai,2226.0,True
+2023,Tarokan,Petai,215.0,True
+2023,Wates,Petai,0.0,True
+2023,Badas,Pisang,0.0,True
+2023,Banyakan,Pisang,8457.0,True
+2023,Gampengrejo,Pisang,747.0,True
+2023,Grogol,Pisang,21439.0,True
+2023,Gurah,Pisang,4866.0,True
+2023,Kandangan,Pisang,164430.0,True
+2023,Kandat,Pisang,96295.0,True
+2023,Kayenkidul,Pisang,0.0,True
+2023,Kepung,Pisang,15647.0,True
+2023,Kras,Pisang,1146.0,True
+2023,Kunjang,Pisang,8448.0,True
+2023,Mojo,Pisang,13513.0,True
+2023,Ngadiluwih,Pisang,7364.15,True
+2023,Ngancar,Pisang,5967.0,True
+2023,Ngasem,Pisang,276.5,True
+2023,Pagu,Pisang,0.0,True
+2023,Papar,Pisang,7378.0,True
+2023,Pare,Pisang,1943.0,True
+2023,Plemahan,Pisang,24172.4,True
+2023,Plosoklaten,Pisang,1545.0,True
+2023,Puncu,Pisang,95222.0,True
+2023,Purwoasri,Pisang,32270.0,True
+2023,Ringinrejo,Pisang,17655.0,True
+2023,Semen,Pisang,0.0,True
+2023,Tarokan,Pisang,9876.0,True
+2023,Wates,Pisang,7015.0,True
+2023,Badas,Rambutan,8374.0,True
+2023,Banyakan,Rambutan,0.0,True
+2023,Gampengrejo,Rambutan,793.0,True
+2023,Grogol,Rambutan,0.0,True
+2023,Gurah,Rambutan,368.0,True
+2023,Kandangan,Rambutan,4174.3,True
+2023,Kandat,Rambutan,3512.0,True
+2023,Kayenkidul,Rambutan,0.0,True
+2023,Kepung,Rambutan,1650.4,True
+2023,Kras,Rambutan,2507.15,True
+2023,Kunjang,Rambutan,2595.0,True
+2023,Mojo,Rambutan,16598.0,True
+2023,Ngadiluwih,Rambutan,0.0,True
+2023,Ngancar,Rambutan,2217.0,True
+2023,Ngasem,Rambutan,0.0,True
+2023,Pagu,Rambutan,0.0,True
+2023,Papar,Rambutan,0.0,True
+2023,Pare,Rambutan,4514.0,True
+2023,Plemahan,Rambutan,0.0,True
+2023,Plosoklaten,Rambutan,2683.0,True
+2023,Puncu,Rambutan,0.0,True
+2023,Purwoasri,Rambutan,4515.0,True
+2023,Ringinrejo,Rambutan,1543.0,True
+2023,Semen,Rambutan,0.0,True
+2023,Tarokan,Rambutan,0.0,True
+2023,Wates,Rambutan,0.0,True
+2023,Badas,Salak,73.85,True
+2023,Banyakan,Salak,0.0,True
+2023,Gampengrejo,Salak,108.0,True
+2023,Grogol,Salak,0.0,True
+2023,Gurah,Salak,20.0,True
+2023,Kandangan,Salak,0.0,True
+2023,Kandat,Salak,0.0,True
+2023,Kayenkidul,Salak,0.0,True
+2023,Kepung,Salak,0.0,True
+2023,Kras,Salak,143.0,True
+2023,Kunjang,Salak,86.0,True
+2023,Mojo,Salak,420.2,True
+2023,Ngadiluwih,Salak,0.0,True
+2023,Ngancar,Salak,438.0,True
+2023,Ngasem,Salak,0.0,True
+2023,Pagu,Salak,0.0,True
+2023,Papar,Salak,0.0,True
+2023,Pare,Salak,0.0,True
+2023,Plemahan,Salak,0.0,True
+2023,Plosoklaten,Salak,1348.0,True
+2023,Puncu,Salak,138.0,True
+2023,Purwoasri,Salak,0.0,True
+2023,Ringinrejo,Salak,0.0,True
+2023,Semen,Salak,0.0,True
+2023,Tarokan,Salak,0.0,True
+2023,Wates,Salak,33.0,True
+2023,Badas,Sawo,4675.0,True
+2023,Banyakan,Sawo,1071.15,True
+2023,Gampengrejo,Sawo,0.0,True
+2023,Grogol,Sawo,0.0,True
+2023,Gurah,Sawo,2860.0,True
+2023,Kandangan,Sawo,0.0,True
+2023,Kandat,Sawo,0.0,True
+2023,Kayenkidul,Sawo,291.0,True
+2023,Kepung,Sawo,0.0,True
+2023,Kras,Sawo,26.0,True
+2023,Kunjang,Sawo,220.0,True
+2023,Mojo,Sawo,264.0,True
+2023,Ngadiluwih,Sawo,0.0,True
+2023,Ngancar,Sawo,0.0,True
+2023,Ngasem,Sawo,0.0,True
+2023,Pagu,Sawo,73.0,True
+2023,Papar,Sawo,0.0,True
+2023,Pare,Sawo,0.0,True
+2023,Plemahan,Sawo,1785.0,True
+2023,Plosoklaten,Sawo,686.0,True
+2023,Puncu,Sawo,0.0,True
+2023,Purwoasri,Sawo,324.0,True
+2023,Ringinrejo,Sawo,0.0,True
+2023,Semen,Sawo,2445.0,True
+2023,Tarokan,Sawo,181.0,True
+2023,Wates,Sawo,71.0,True
+2023,Badas,Sirsak,1350.25,True
+2023,Banyakan,Sirsak,538.0,True
+2023,Gampengrejo,Sirsak,0.0,True
+2023,Grogol,Sirsak,0.0,True
+2023,Gurah,Sirsak,0.0,True
+2023,Kandangan,Sirsak,820.25,True
+2023,Kandat,Sirsak,129.0,True
+2023,Kayenkidul,Sirsak,238.0,True
+2023,Kepung,Sirsak,0.0,True
+2023,Kras,Sirsak,450.0,True
+2023,Kunjang,Sirsak,449.0,True
+2023,Mojo,Sirsak,4302.0,True
+2023,Ngadiluwih,Sirsak,75.3,True
+2023,Ngancar,Sirsak,214.0,True
+2023,Ngasem,Sirsak,0.0,True
+2023,Pagu,Sirsak,217.0,True
+2023,Papar,Sirsak,195.0,True
+2023,Pare,Sirsak,3039.0,True
+2023,Plemahan,Sirsak,330.0,True
+2023,Plosoklaten,Sirsak,18208.0,True
+2023,Puncu,Sirsak,2347.0,True
+2023,Purwoasri,Sirsak,596.0,True
+2023,Ringinrejo,Sirsak,1811.0,True
+2023,Semen,Sirsak,1045.0,True
+2023,Tarokan,Sirsak,6823.0,True
+2023,Wates,Sirsak,457.0,True
+2023,Badas,Sukun,377.25,True
+2023,Banyakan,Sukun,238.3,True
+2023,Gampengrejo,Sukun,0.0,True
+2023,Grogol,Sukun,0.0,True
+2023,Gurah,Sukun,0.0,True
+2023,Kandangan,Sukun,0.0,True
+2023,Kandat,Sukun,0.0,True
+2023,Kayenkidul,Sukun,0.0,True
+2023,Kepung,Sukun,30.0,True
+2023,Kras,Sukun,211.0,True
+2023,Kunjang,Sukun,0.0,True
+2023,Mojo,Sukun,1227.0,True
+2023,Ngadiluwih,Sukun,31.0,True
+2023,Ngancar,Sukun,378.0,True
+2023,Ngasem,Sukun,46.75,True
+2023,Pagu,Sukun,0.0,True
+2023,Papar,Sukun,0.0,True
+2023,Pare,Sukun,0.0,True
+2023,Plemahan,Sukun,0.0,True
+2023,Plosoklaten,Sukun,0.0,True
+2023,Puncu,Sukun,0.0,True
+2023,Purwoasri,Sukun,423.0,True
+2023,Ringinrejo,Sukun,1259.5,True
+2023,Semen,Sukun,0.0,True
+2023,Tarokan,Sukun,0.0,True
+2023,Wates,Sukun,0.0,True
+2024,Badas,Alpukat,1122.0,True
+2024,Banyakan,Alpukat,5428.0,True
+2024,Gampengrejo,Alpukat,1048.85,True
+2024,Grogol,Alpukat,17907.25,True
+2024,Gurah,Alpukat,0.0,True
+2024,Kandangan,Alpukat,2257.75,True
+2024,Kandat,Alpukat,3264.3,True
+2024,Kayenkidul,Alpukat,738.0,True
+2024,Kepung,Alpukat,62095.0,True
+2024,Kras,Alpukat,4047.0,True
+2024,Kunjang,Alpukat,276.0,True
+2024,Mojo,Alpukat,28211.0,True
+2024,Ngadiluwih,Alpukat,3569.0,True
+2024,Ngancar,Alpukat,29801.0,True
+2024,Ngasem,Alpukat,733.0,True
+2024,Pagu,Alpukat,1467.0,True
+2024,Papar,Alpukat,546.0,True
+2024,Pare,Alpukat,399.0,True
+2024,Plemahan,Alpukat,20451.0,True
+2024,Plosoklaten,Alpukat,6834.0,True
+2024,Puncu,Alpukat,3707.0,True
+2024,Purwoasri,Alpukat,0.0,True
+2024,Ringinrejo,Alpukat,10562.8,True
+2024,Semen,Alpukat,7965.0,True
+2024,Tarokan,Alpukat,233.0,True
+2024,Wates,Alpukat,15021.0,True
+2024,Badas,Anggur,0.0,True
+2024,Banyakan,Anggur,0.0,True
+2024,Gampengrejo,Anggur,50.0,True
+2024,Grogol,Anggur,0.0,True
+2024,Gurah,Anggur,0.0,True
+2024,Kandangan,Anggur,0.0,True
+2024,Kandat,Anggur,0.0,True
+2024,Kayenkidul,Anggur,0.0,True
+2024,Kepung,Anggur,0.0,True
+2024,Kras,Anggur,0.0,True
+2024,Kunjang,Anggur,0.0,True
+2024,Mojo,Anggur,0.0,True
+2024,Ngadiluwih,Anggur,0.0,True
+2024,Ngancar,Anggur,0.0,True
+2024,Ngasem,Anggur,0.0,True
+2024,Pagu,Anggur,0.0,True
+2024,Papar,Anggur,0.0,True
+2024,Pare,Anggur,0.0,True
+2024,Plemahan,Anggur,51.0,True
+2024,Plosoklaten,Anggur,0.0,True
+2024,Puncu,Anggur,0.0,True
+2024,Purwoasri,Anggur,0.0,True
+2024,Ringinrejo,Anggur,0.0,True
+2024,Semen,Anggur,0.0,True
+2024,Tarokan,Anggur,0.0,True
+2024,Wates,Anggur,0.0,True
+2024,Badas,Apel,0.0,True
+2024,Banyakan,Apel,0.0,True
+2024,Gampengrejo,Apel,0.0,True
+2024,Grogol,Apel,0.0,True
+2024,Gurah,Apel,0.0,True
+2024,Kandangan,Apel,0.0,True
+2024,Kandat,Apel,0.0,True
+2024,Kayenkidul,Apel,0.0,True
+2024,Kepung,Apel,0.0,True
+2024,Kras,Apel,0.0,True
+2024,Kunjang,Apel,0.0,True
+2024,Mojo,Apel,0.0,True
+2024,Ngadiluwih,Apel,0.0,True
+2024,Ngancar,Apel,0.0,True
+2024,Ngasem,Apel,0.0,True
+2024,Pagu,Apel,0.0,True
+2024,Papar,Apel,0.0,True
+2024,Pare,Apel,0.0,True
+2024,Plemahan,Apel,0.0,True
+2024,Plosoklaten,Apel,0.0,True
+2024,Puncu,Apel,0.0,True
+2024,Purwoasri,Apel,0.0,True
+2024,Ringinrejo,Apel,0.0,True
+2024,Semen,Apel,0.0,True
+2024,Tarokan,Apel,0.0,True
+2024,Wates,Apel,0.0,True
+2024,Badas,Belimbing,35.0,True
+2024,Banyakan,Belimbing,0.0,True
+2024,Gampengrejo,Belimbing,426.25,True
+2024,Grogol,Belimbing,170.6,True
+2024,Gurah,Belimbing,5477.0,True
+2024,Kandangan,Belimbing,0.0,True
+2024,Kandat,Belimbing,279.6,True
+2024,Kayenkidul,Belimbing,473.0,True
+2024,Kepung,Belimbing,119.0,True
+2024,Kras,Belimbing,255.0,True
+2024,Kunjang,Belimbing,352.2,True
+2024,Mojo,Belimbing,2141.0,True
+2024,Ngadiluwih,Belimbing,5.0,True
+2024,Ngancar,Belimbing,11.0,True
+2024,Ngasem,Belimbing,80.0,True
+2024,Pagu,Belimbing,33181.0,True
+2024,Papar,Belimbing,0.0,True
+2024,Pare,Belimbing,224.0,True
+2024,Plemahan,Belimbing,994.0,True
+2024,Plosoklaten,Belimbing,126.0,True
+2024,Puncu,Belimbing,133.0,True
+2024,Purwoasri,Belimbing,218.3,True
+2024,Ringinrejo,Belimbing,3851.0,True
+2024,Semen,Belimbing,0.0,True
+2024,Tarokan,Belimbing,74.2,True
+2024,Wates,Belimbing,214.0,True
+2024,Badas,Buah Naga,237.0,True
+2024,Banyakan,Buah Naga,0.0,True
+2024,Gampengrejo,Buah Naga,410.0,True
+2024,Grogol,Buah Naga,0.0,True
+2024,Gurah,Buah Naga,0.0,True
+2024,Kandangan,Buah Naga,0.0,True
+2024,Kandat,Buah Naga,0.0,True
+2024,Kayenkidul,Buah Naga,0.0,True
+2024,Kepung,Buah Naga,0.0,True
+2024,Kras,Buah Naga,0.0,True
+2024,Kunjang,Buah Naga,0.0,True
+2024,Mojo,Buah Naga,0.0,True
+2024,Ngadiluwih,Buah Naga,2319.0,True
+2024,Ngancar,Buah Naga,0.0,True
+2024,Ngasem,Buah Naga,529.0,True
+2024,Pagu,Buah Naga,192.0,True
+2024,Papar,Buah Naga,0.0,True
+2024,Pare,Buah Naga,1493.0,True
+2024,Plemahan,Buah Naga,0.0,True
+2024,Plosoklaten,Buah Naga,220.0,True
+2024,Puncu,Buah Naga,0.0,True
+2024,Purwoasri,Buah Naga,0.0,True
+2024,Ringinrejo,Buah Naga,1309.6,True
+2024,Semen,Buah Naga,146.0,True
+2024,Tarokan,Buah Naga,0.0,True
+2024,Wates,Buah Naga,490.0,True
+2024,Badas,Duku/Langsat/Kokosan,0.0,True
+2024,Banyakan,Duku/Langsat/Kokosan,0.0,True
+2024,Gampengrejo,Duku/Langsat/Kokosan,0.0,True
+2024,Grogol,Duku/Langsat/Kokosan,0.0,True
+2024,Gurah,Duku/Langsat/Kokosan,0.0,True
+2024,Kandangan,Duku/Langsat/Kokosan,0.0,True
+2024,Kandat,Duku/Langsat/Kokosan,31.0,True
+2024,Kayenkidul,Duku/Langsat/Kokosan,0.0,True
+2024,Kepung,Duku/Langsat/Kokosan,0.0,True
+2024,Kras,Duku/Langsat/Kokosan,0.0,True
+2024,Kunjang,Duku/Langsat/Kokosan,0.0,True
+2024,Mojo,Duku/Langsat/Kokosan,28.0,True
+2024,Ngadiluwih,Duku/Langsat/Kokosan,0.0,True
+2024,Ngancar,Duku/Langsat/Kokosan,20.0,True
+2024,Ngasem,Duku/Langsat/Kokosan,32.0,True
+2024,Pagu,Duku/Langsat/Kokosan,0.0,True
+2024,Papar,Duku/Langsat/Kokosan,0.0,True
+2024,Pare,Duku/Langsat/Kokosan,0.0,True
+2024,Plemahan,Duku/Langsat/Kokosan,0.0,True
+2024,Plosoklaten,Duku/Langsat/Kokosan,0.0,True
+2024,Puncu,Duku/Langsat/Kokosan,0.0,True
+2024,Purwoasri,Duku/Langsat/Kokosan,12.0,True
+2024,Ringinrejo,Duku/Langsat/Kokosan,0.0,True
+2024,Semen,Duku/Langsat/Kokosan,0.0,True
+2024,Tarokan,Duku/Langsat/Kokosan,0.0,True
+2024,Wates,Duku/Langsat/Kokosan,0.0,True
+2024,Badas,Durian,649.0,True
+2024,Banyakan,Durian,2231.15,True
+2024,Gampengrejo,Durian,0.0,True
+2024,Grogol,Durian,0.0,True
+2024,Gurah,Durian,0.0,True
+2024,Kandangan,Durian,23665.0,True
+2024,Kandat,Durian,0.0,True
+2024,Kayenkidul,Durian,0.0,True
+2024,Kepung,Durian,35759.0,True
+2024,Kras,Durian,112.0,True
+2024,Kunjang,Durian,0.0,True
+2024,Mojo,Durian,33348.5,True
+2024,Ngadiluwih,Durian,0.0,True
+2024,Ngancar,Durian,3080.0,True
+2024,Ngasem,Durian,152.15,True
+2024,Pagu,Durian,0.0,True
+2024,Papar,Durian,0.0,True
+2024,Pare,Durian,0.0,True
+2024,Plemahan,Durian,0.0,True
+2024,Plosoklaten,Durian,6501.0,True
+2024,Puncu,Durian,12128.0,True
+2024,Purwoasri,Durian,64.0,True
+2024,Ringinrejo,Durian,11337.0,True
+2024,Semen,Durian,83861.75,True
+2024,Tarokan,Durian,379.0,True
+2024,Wates,Durian,115.25,True
+2024,Badas,Jambu Air,255.0,True
+2024,Banyakan,Jambu Air,0.0,True
+2024,Gampengrejo,Jambu Air,460.3,True
+2024,Grogol,Jambu Air,0.0,True
+2024,Gurah,Jambu Air,1900.0,True
+2024,Kandangan,Jambu Air,0.0,True
+2024,Kandat,Jambu Air,159.0,True
+2024,Kayenkidul,Jambu Air,0.0,True
+2024,Kepung,Jambu Air,58.6,True
+2024,Kras,Jambu Air,158.85,True
+2024,Kunjang,Jambu Air,436.6,True
+2024,Mojo,Jambu Air,297.75,True
+2024,Ngadiluwih,Jambu Air,862.0,True
+2024,Ngancar,Jambu Air,0.0,True
+2024,Ngasem,Jambu Air,94.0,True
+2024,Pagu,Jambu Air,0.0,True
+2024,Papar,Jambu Air,0.0,True
+2024,Pare,Jambu Air,114.25,True
+2024,Plemahan,Jambu Air,3984.2,True
+2024,Plosoklaten,Jambu Air,88.0,True
+2024,Puncu,Jambu Air,92.0,True
+2024,Purwoasri,Jambu Air,7697.0,True
+2024,Ringinrejo,Jambu Air,1064.0,True
+2024,Semen,Jambu Air,2065.3,True
+2024,Tarokan,Jambu Air,57.0,True
+2024,Wates,Jambu Air,26.0,True
+2024,Badas,Jambu Biji,1436.0,True
+2024,Banyakan,Jambu Biji,141.0,True
+2024,Gampengrejo,Jambu Biji,153.5,True
+2024,Grogol,Jambu Biji,0.0,True
+2024,Gurah,Jambu Biji,3786.5,True
+2024,Kandangan,Jambu Biji,0.0,True
+2024,Kandat,Jambu Biji,191.0,True
+2024,Kayenkidul,Jambu Biji,108.8,True
+2024,Kepung,Jambu Biji,89.0,True
+2024,Kras,Jambu Biji,250.4,True
+2024,Kunjang,Jambu Biji,466.0,True
+2024,Mojo,Jambu Biji,176.6,True
+2024,Ngadiluwih,Jambu Biji,1164.2,True
+2024,Ngancar,Jambu Biji,25.2,True
+2024,Ngasem,Jambu Biji,328.0,True
+2024,Pagu,Jambu Biji,0.0,True
+2024,Papar,Jambu Biji,0.0,True
+2024,Pare,Jambu Biji,363.0,True
+2024,Plemahan,Jambu Biji,3812.75,True
+2024,Plosoklaten,Jambu Biji,649.0,True
+2024,Puncu,Jambu Biji,545.0,True
+2024,Purwoasri,Jambu Biji,253.3,True
+2024,Ringinrejo,Jambu Biji,1454.0,True
+2024,Semen,Jambu Biji,18.0,True
+2024,Tarokan,Jambu Biji,197.2,True
+2024,Wates,Jambu Biji,0.0,True
+2024,Badas,Jengkol,56.0,True
+2024,Banyakan,Jengkol,0.0,True
+2024,Gampengrejo,Jengkol,0.0,True
+2024,Grogol,Jengkol,0.0,True
+2024,Gurah,Jengkol,0.0,True
+2024,Kandangan,Jengkol,56.0,True
+2024,Kandat,Jengkol,0.0,True
+2024,Kayenkidul,Jengkol,0.0,True
+2024,Kepung,Jengkol,0.0,True
+2024,Kras,Jengkol,0.0,True
+2024,Kunjang,Jengkol,0.0,True
+2024,Mojo,Jengkol,129.0,True
+2024,Ngadiluwih,Jengkol,0.0,True
+2024,Ngancar,Jengkol,0.0,True
+2024,Ngasem,Jengkol,0.0,True
+2024,Pagu,Jengkol,0.0,True
+2024,Papar,Jengkol,0.0,True
+2024,Pare,Jengkol,0.0,True
+2024,Plemahan,Jengkol,47.0,True
+2024,Plosoklaten,Jengkol,0.0,True
+2024,Puncu,Jengkol,0.0,True
+2024,Purwoasri,Jengkol,0.0,True
+2024,Ringinrejo,Jengkol,0.0,True
+2024,Semen,Jengkol,0.0,True
+2024,Tarokan,Jengkol,0.0,True
+2024,Wates,Jengkol,0.0,True
+2024,Badas,Jeruk Besar,0.0,True
+2024,Banyakan,Jeruk Besar,0.0,True
+2024,Gampengrejo,Jeruk Besar,0.0,True
+2024,Grogol,Jeruk Besar,0.0,True
+2024,Gurah,Jeruk Besar,32.15,True
+2024,Kandangan,Jeruk Besar,0.0,True
+2024,Kandat,Jeruk Besar,0.0,True
+2024,Kayenkidul,Jeruk Besar,20.0,True
+2024,Kepung,Jeruk Besar,0.0,True
+2024,Kras,Jeruk Besar,0.0,True
+2024,Kunjang,Jeruk Besar,0.0,True
+2024,Mojo,Jeruk Besar,0.0,True
+2024,Ngadiluwih,Jeruk Besar,0.0,True
+2024,Ngancar,Jeruk Besar,0.0,True
+2024,Ngasem,Jeruk Besar,26.0,True
+2024,Pagu,Jeruk Besar,11.0,True
+2024,Papar,Jeruk Besar,0.0,True
+2024,Pare,Jeruk Besar,0.0,True
+2024,Plemahan,Jeruk Besar,0.0,True
+2024,Plosoklaten,Jeruk Besar,0.0,True
+2024,Puncu,Jeruk Besar,0.0,True
+2024,Purwoasri,Jeruk Besar,0.0,True
+2024,Ringinrejo,Jeruk Besar,0.0,True
+2024,Semen,Jeruk Besar,0.0,True
+2024,Tarokan,Jeruk Besar,0.0,True
+2024,Wates,Jeruk Besar,0.0,True
+2024,Badas,Jeruk Lemon,0.0,True
+2024,Banyakan,Jeruk Lemon,0.0,True
+2024,Gampengrejo,Jeruk Lemon,0.0,True
+2024,Grogol,Jeruk Lemon,0.0,True
+2024,Gurah,Jeruk Lemon,0.0,True
+2024,Kandangan,Jeruk Lemon,0.0,True
+2024,Kandat,Jeruk Lemon,680.0,True
+2024,Kayenkidul,Jeruk Lemon,55.0,True
+2024,Kepung,Jeruk Lemon,27.0,True
+2024,Kras,Jeruk Lemon,62.0,True
+2024,Kunjang,Jeruk Lemon,62.0,True
+2024,Mojo,Jeruk Lemon,26.0,True
+2024,Ngadiluwih,Jeruk Lemon,51.0,True
+2024,Ngancar,Jeruk Lemon,0.0,True
+2024,Ngasem,Jeruk Lemon,37.0,True
+2024,Pagu,Jeruk Lemon,0.0,True
+2024,Papar,Jeruk Lemon,28.0,True
+2024,Pare,Jeruk Lemon,0.0,True
+2024,Plemahan,Jeruk Lemon,0.0,True
+2024,Plosoklaten,Jeruk Lemon,3184.0,True
+2024,Puncu,Jeruk Lemon,35.0,True
+2024,Purwoasri,Jeruk Lemon,0.0,True
+2024,Ringinrejo,Jeruk Lemon,1289.0,True
+2024,Semen,Jeruk Lemon,0.0,True
+2024,Tarokan,Jeruk Lemon,51.0,True
+2024,Wates,Jeruk Lemon,0.0,True
+2024,Badas,Jeruk Siam/Keprok,1487.0,True
+2024,Banyakan,Jeruk Siam/Keprok,9671.0,True
+2024,Gampengrejo,Jeruk Siam/Keprok,0.0,True
+2024,Grogol,Jeruk Siam/Keprok,0.0,True
+2024,Gurah,Jeruk Siam/Keprok,1327.0,True
+2024,Kandangan,Jeruk Siam/Keprok,0.0,True
+2024,Kandat,Jeruk Siam/Keprok,0.0,True
+2024,Kayenkidul,Jeruk Siam/Keprok,0.0,True
+2024,Kepung,Jeruk Siam/Keprok,127.75,True
+2024,Kras,Jeruk Siam/Keprok,463.4,True
+2024,Kunjang,Jeruk Siam/Keprok,0.0,True
+2024,Mojo,Jeruk Siam/Keprok,28120.0,True
+2024,Ngadiluwih,Jeruk Siam/Keprok,0.0,True
+2024,Ngancar,Jeruk Siam/Keprok,3086.0,True
+2024,Ngasem,Jeruk Siam/Keprok,1685.85,True
+2024,Pagu,Jeruk Siam/Keprok,0.0,True
+2024,Papar,Jeruk Siam/Keprok,3820.85,True
+2024,Pare,Jeruk Siam/Keprok,0.0,True
+2024,Plemahan,Jeruk Siam/Keprok,0.0,True
+2024,Plosoklaten,Jeruk Siam/Keprok,0.0,True
+2024,Puncu,Jeruk Siam/Keprok,0.0,True
+2024,Purwoasri,Jeruk Siam/Keprok,0.0,True
+2024,Ringinrejo,Jeruk Siam/Keprok,19604.0,True
+2024,Semen,Jeruk Siam/Keprok,16605.4,True
+2024,Tarokan,Jeruk Siam/Keprok,32610.0,True
+2024,Wates,Jeruk Siam/Keprok,0.0,True
+2024,Badas,Lengkeng,0.0,True
+2024,Banyakan,Lengkeng,0.0,True
+2024,Gampengrejo,Lengkeng,45.0,True
+2024,Grogol,Lengkeng,6.75,True
+2024,Gurah,Lengkeng,0.0,True
+2024,Kandangan,Lengkeng,0.0,True
+2024,Kandat,Lengkeng,0.0,True
+2024,Kayenkidul,Lengkeng,1512.25,True
+2024,Kepung,Lengkeng,0.0,True
+2024,Kras,Lengkeng,0.0,True
+2024,Kunjang,Lengkeng,0.0,True
+2024,Mojo,Lengkeng,223.0,True
+2024,Ngadiluwih,Lengkeng,0.0,True
+2024,Ngancar,Lengkeng,1560.0,True
+2024,Ngasem,Lengkeng,445.0,True
+2024,Pagu,Lengkeng,88.0,True
+2024,Papar,Lengkeng,0.0,True
+2024,Pare,Lengkeng,0.0,True
+2024,Plemahan,Lengkeng,0.0,True
+2024,Plosoklaten,Lengkeng,0.0,True
+2024,Puncu,Lengkeng,0.0,True
+2024,Purwoasri,Lengkeng,531.0,True
+2024,Ringinrejo,Lengkeng,2253.0,True
+2024,Semen,Lengkeng,774.0,True
+2024,Tarokan,Lengkeng,129.8,True
+2024,Wates,Lengkeng,0.0,True
+2024,Badas,Mangga,24679.0,True
+2024,Banyakan,Mangga,296828.0,True
+2024,Gampengrejo,Mangga,5027.0,True
+2024,Grogol,Mangga,188323.0,True
+2024,Gurah,Mangga,4399.0,True
+2024,Kandangan,Mangga,9881.0,True
+2024,Kandat,Mangga,2414.0,True
+2024,Kayenkidul,Mangga,254.0,True
+2024,Kepung,Mangga,0.0,True
+2024,Kras,Mangga,1030.15,True
+2024,Kunjang,Mangga,9671.85,True
+2024,Mojo,Mangga,8336.0,True
+2024,Ngadiluwih,Mangga,3587.0,True
+2024,Ngancar,Mangga,0.0,True
+2024,Ngasem,Mangga,698.0,True
+2024,Pagu,Mangga,9488.0,True
+2024,Papar,Mangga,3141.5,True
+2024,Pare,Mangga,120.0,True
+2024,Plemahan,Mangga,0.0,True
+2024,Plosoklaten,Mangga,3139.0,True
+2024,Puncu,Mangga,0.0,True
+2024,Purwoasri,Mangga,0.0,True
+2024,Ringinrejo,Mangga,12866.0,True
+2024,Semen,Mangga,0.0,True
+2024,Tarokan,Mangga,274050.0,True
+2024,Wates,Mangga,0.0,True
+2024,Badas,Manggis,0.0,True
+2024,Banyakan,Manggis,0.0,True
+2024,Gampengrejo,Manggis,0.0,True
+2024,Grogol,Manggis,0.0,True
+2024,Gurah,Manggis,125.8,True
+2024,Kandangan,Manggis,4782.0,True
+2024,Kandat,Manggis,0.0,True
+2024,Kayenkidul,Manggis,0.0,True
+2024,Kepung,Manggis,0.0,True
+2024,Kras,Manggis,0.0,True
+2024,Kunjang,Manggis,0.0,True
+2024,Mojo,Manggis,213.0,True
+2024,Ngadiluwih,Manggis,0.0,True
+2024,Ngancar,Manggis,382.0,True
+2024,Ngasem,Manggis,0.0,True
+2024,Pagu,Manggis,0.0,True
+2024,Papar,Manggis,0.0,True
+2024,Pare,Manggis,0.0,True
+2024,Plemahan,Manggis,0.0,True
+2024,Plosoklaten,Manggis,0.0,True
+2024,Puncu,Manggis,0.0,True
+2024,Purwoasri,Manggis,0.0,True
+2024,Ringinrejo,Manggis,227.0,True
+2024,Semen,Manggis,0.0,True
+2024,Tarokan,Manggis,0.0,True
+2024,Wates,Manggis,0.0,True
+2024,Badas,Melinjo,29951.0,True
+2024,Banyakan,Melinjo,0.0,True
+2024,Gampengrejo,Melinjo,0.0,True
+2024,Grogol,Melinjo,0.0,True
+2024,Gurah,Melinjo,2150.75,True
+2024,Kandangan,Melinjo,989.0,True
+2024,Kandat,Melinjo,0.0,True
+2024,Kayenkidul,Melinjo,0.0,True
+2024,Kepung,Melinjo,0.0,True
+2024,Kras,Melinjo,286.0,True
+2024,Kunjang,Melinjo,475.0,True
+2024,Mojo,Melinjo,0.0,True
+2024,Ngadiluwih,Melinjo,251.0,True
+2024,Ngancar,Melinjo,2022.5,True
+2024,Ngasem,Melinjo,984.0,True
+2024,Pagu,Melinjo,643.6,True
+2024,Papar,Melinjo,0.0,True
+2024,Pare,Melinjo,0.0,True
+2024,Plemahan,Melinjo,214.0,True
+2024,Plosoklaten,Melinjo,16942.0,True
+2024,Puncu,Melinjo,0.0,True
+2024,Purwoasri,Melinjo,0.0,True
+2024,Ringinrejo,Melinjo,1020.2,True
+2024,Semen,Melinjo,0.0,True
+2024,Tarokan,Melinjo,0.0,True
+2024,Wates,Melinjo,0.0,True
+2024,Badas,Nangka/Cempedak,8394.0,True
+2024,Banyakan,Nangka/Cempedak,3292.0,True
+2024,Gampengrejo,Nangka/Cempedak,178.0,True
+2024,Grogol,Nangka/Cempedak,282.85,True
+2024,Gurah,Nangka/Cempedak,0.0,True
+2024,Kandangan,Nangka/Cempedak,6299.0,True
+2024,Kandat,Nangka/Cempedak,741.0,True
+2024,Kayenkidul,Nangka/Cempedak,364.0,True
+2024,Kepung,Nangka/Cempedak,0.0,True
+2024,Kras,Nangka/Cempedak,711.0,True
+2024,Kunjang,Nangka/Cempedak,1848.0,True
+2024,Mojo,Nangka/Cempedak,150.0,True
+2024,Ngadiluwih,Nangka/Cempedak,1764.0,True
+2024,Ngancar,Nangka/Cempedak,0.0,True
+2024,Ngasem,Nangka/Cempedak,811.0,True
+2024,Pagu,Nangka/Cempedak,1327.0,True
+2024,Papar,Nangka/Cempedak,308.0,True
+2024,Pare,Nangka/Cempedak,1399.0,True
+2024,Plemahan,Nangka/Cempedak,3370.0,True
+2024,Plosoklaten,Nangka/Cempedak,1966.0,True
+2024,Puncu,Nangka/Cempedak,295.0,True
+2024,Purwoasri,Nangka/Cempedak,1329.4,True
+2024,Ringinrejo,Nangka/Cempedak,11646.0,True
+2024,Semen,Nangka/Cempedak,285.0,True
+2024,Tarokan,Nangka/Cempedak,84.0,True
+2024,Wates,Nangka/Cempedak,412.6,True
+2024,Badas,Nenas,0.0,True
+2024,Banyakan,Nenas,0.0,True
+2024,Gampengrejo,Nenas,0.0,True
+2024,Grogol,Nenas,0.0,True
+2024,Gurah,Nenas,0.0,True
+2024,Kandangan,Nenas,0.0,True
+2024,Kandat,Nenas,27946.0,True
+2024,Kayenkidul,Nenas,0.0,True
+2024,Kepung,Nenas,0.0,True
+2024,Kras,Nenas,18.0,True
+2024,Kunjang,Nenas,0.0,True
+2024,Mojo,Nenas,0.0,True
+2024,Ngadiluwih,Nenas,0.0,True
+2024,Ngancar,Nenas,4121740.0,True
+2024,Ngasem,Nenas,0.0,True
+2024,Pagu,Nenas,0.0,True
+2024,Papar,Nenas,0.0,True
+2024,Pare,Nenas,0.0,True
+2024,Plemahan,Nenas,0.0,True
+2024,Plosoklaten,Nenas,96218.0,True
+2024,Puncu,Nenas,25777.0,True
+2024,Purwoasri,Nenas,0.0,True
+2024,Ringinrejo,Nenas,35637.0,True
+2024,Semen,Nenas,0.0,True
+2024,Tarokan,Nenas,0.0,True
+2024,Wates,Nenas,8922.85,True
+2024,Badas,Pepaya,1363.0,True
+2024,Banyakan,Pepaya,1441.0,True
+2024,Gampengrejo,Pepaya,40.0,True
+2024,Grogol,Pepaya,0.0,True
+2024,Gurah,Pepaya,4651.0,True
+2024,Kandangan,Pepaya,699.0,True
+2024,Kandat,Pepaya,8121.3,True
+2024,Kayenkidul,Pepaya,281.0,True
+2024,Kepung,Pepaya,0.0,True
+2024,Kras,Pepaya,3110.0,True
+2024,Kunjang,Pepaya,0.0,True
+2024,Mojo,Pepaya,1514.0,True
+2024,Ngadiluwih,Pepaya,0.0,True
+2024,Ngancar,Pepaya,1553.6,True
+2024,Ngasem,Pepaya,110.0,True
+2024,Pagu,Pepaya,41.0,True
+2024,Papar,Pepaya,125.0,True
+2024,Pare,Pepaya,1974.0,True
+2024,Plemahan,Pepaya,0.0,True
+2024,Plosoklaten,Pepaya,4548.0,True
+2024,Puncu,Pepaya,16703.0,True
+2024,Purwoasri,Pepaya,186.0,True
+2024,Ringinrejo,Pepaya,2329.0,True
+2024,Semen,Pepaya,2509.4,True
+2024,Tarokan,Pepaya,0.0,True
+2024,Wates,Pepaya,3350.6,True
+2024,Badas,Petai,549.0,True
+2024,Banyakan,Petai,12750.0,True
+2024,Gampengrejo,Petai,0.0,True
+2024,Grogol,Petai,99.0,True
+2024,Gurah,Petai,264.0,True
+2024,Kandangan,Petai,524.0,True
+2024,Kandat,Petai,72.0,True
+2024,Kayenkidul,Petai,25.15,True
+2024,Kepung,Petai,2252.0,True
+2024,Kras,Petai,0.0,True
+2024,Kunjang,Petai,0.0,True
+2024,Mojo,Petai,7409.0,True
+2024,Ngadiluwih,Petai,0.0,True
+2024,Ngancar,Petai,0.0,True
+2024,Ngasem,Petai,130.0,True
+2024,Pagu,Petai,0.0,True
+2024,Papar,Petai,0.0,True
+2024,Pare,Petai,0.0,True
+2024,Plemahan,Petai,247.0,True
+2024,Plosoklaten,Petai,2522.0,True
+2024,Puncu,Petai,915.0,True
+2024,Purwoasri,Petai,55.0,True
+2024,Ringinrejo,Petai,1145.0,True
+2024,Semen,Petai,2311.0,True
+2024,Tarokan,Petai,229.0,True
+2024,Wates,Petai,0.0,True
+2024,Badas,Pisang,0.0,True
+2024,Banyakan,Pisang,10336.0,True
+2024,Gampengrejo,Pisang,837.0,True
+2024,Grogol,Pisang,21784.0,True
+2024,Gurah,Pisang,5222.0,True
+2024,Kandangan,Pisang,184926.25,True
+2024,Kandat,Pisang,119015.0,True
+2024,Kayenkidul,Pisang,0.0,True
+2024,Kepung,Pisang,16163.0,True
+2024,Kras,Pisang,0.0,True
+2024,Kunjang,Pisang,9184.0,True
+2024,Mojo,Pisang,17586.0,True
+2024,Ngadiluwih,Pisang,10549.0,True
+2024,Ngancar,Pisang,7378.0,True
+2024,Ngasem,Pisang,291.0,True
+2024,Pagu,Pisang,0.0,True
+2024,Papar,Pisang,8638.0,True
+2024,Pare,Pisang,1897.0,True
+2024,Plemahan,Pisang,27607.0,True
+2024,Plosoklaten,Pisang,1732.3,True
+2024,Puncu,Pisang,117046.25,True
+2024,Purwoasri,Pisang,37574.0,True
+2024,Ringinrejo,Pisang,22517.15,True
+2024,Semen,Pisang,257.0,True
+2024,Tarokan,Pisang,10063.0,True
+2024,Wates,Pisang,7911.0,True
+2024,Badas,Rambutan,9174.0,True
+2024,Banyakan,Rambutan,0.0,True
+2024,Gampengrejo,Rambutan,962.0,True
+2024,Grogol,Rambutan,0.0,True
+2024,Gurah,Rambutan,355.4,True
+2024,Kandangan,Rambutan,6089.0,True
+2024,Kandat,Rambutan,4677.3,True
+2024,Kayenkidul,Rambutan,1065.0,True
+2024,Kepung,Rambutan,1733.0,True
+2024,Kras,Rambutan,3182.0,True
+2024,Kunjang,Rambutan,2558.0,True
+2024,Mojo,Rambutan,18046.0,True
+2024,Ngadiluwih,Rambutan,0.0,True
+2024,Ngancar,Rambutan,1790.0,True
+2024,Ngasem,Rambutan,0.0,True
+2024,Pagu,Rambutan,0.0,True
+2024,Papar,Rambutan,96.0,True
+2024,Pare,Rambutan,3967.0,True
+2024,Plemahan,Rambutan,0.0,True
+2024,Plosoklaten,Rambutan,2515.0,True
+2024,Puncu,Rambutan,0.0,True
+2024,Purwoasri,Rambutan,4835.0,True
+2024,Ringinrejo,Rambutan,1526.8,True
+2024,Semen,Rambutan,0.0,True
+2024,Tarokan,Rambutan,1005.0,True
+2024,Wates,Rambutan,0.0,True
+2024,Badas,Salak,0.0,True
+2024,Banyakan,Salak,0.0,True
+2024,Gampengrejo,Salak,0.0,True
+2024,Grogol,Salak,0.0,True
+2024,Gurah,Salak,21.0,True
+2024,Kandangan,Salak,119.85,True
+2024,Kandat,Salak,124.0,True
+2024,Kayenkidul,Salak,0.0,True
+2024,Kepung,Salak,0.0,True
+2024,Kras,Salak,0.0,True
+2024,Kunjang,Salak,0.0,True
+2024,Mojo,Salak,516.0,True
+2024,Ngadiluwih,Salak,0.0,True
+2024,Ngancar,Salak,429.0,True
+2024,Ngasem,Salak,0.0,True
+2024,Pagu,Salak,0.0,True
+2024,Papar,Salak,0.0,True
+2024,Pare,Salak,0.0,True
+2024,Plemahan,Salak,0.0,True
+2024,Plosoklaten,Salak,1350.85,True
+2024,Puncu,Salak,0.0,True
+2024,Purwoasri,Salak,0.0,True
+2024,Ringinrejo,Salak,52.0,True
+2024,Semen,Salak,0.0,True
+2024,Tarokan,Salak,0.0,True
+2024,Wates,Salak,40.0,True
+2024,Badas,Sawo,4027.0,True
+2024,Banyakan,Sawo,1008.0,True
+2024,Gampengrejo,Sawo,0.0,True
+2024,Grogol,Sawo,0.0,True
+2024,Gurah,Sawo,2883.0,True
+2024,Kandangan,Sawo,0.0,True
+2024,Kandat,Sawo,0.0,True
+2024,Kayenkidul,Sawo,325.0,True
+2024,Kepung,Sawo,0.0,True
+2024,Kras,Sawo,25.3,True
+2024,Kunjang,Sawo,200.0,True
+2024,Mojo,Sawo,236.2,True
+2024,Ngadiluwih,Sawo,65.15,True
+2024,Ngancar,Sawo,0.0,True
+2024,Ngasem,Sawo,168.15,True
+2024,Pagu,Sawo,0.0,True
+2024,Papar,Sawo,0.0,True
+2024,Pare,Sawo,0.0,True
+2024,Plemahan,Sawo,2107.0,True
+2024,Plosoklaten,Sawo,563.75,True
+2024,Puncu,Sawo,0.0,True
+2024,Purwoasri,Sawo,335.0,True
+2024,Ringinrejo,Sawo,0.0,True
+2024,Semen,Sawo,2800.0,True
+2024,Tarokan,Sawo,0.0,True
+2024,Wates,Sawo,0.0,True
+2024,Badas,Sirsak,1253.15,True
+2024,Banyakan,Sirsak,466.0,True
+2024,Gampengrejo,Sirsak,0.0,True
+2024,Grogol,Sirsak,0.0,True
+2024,Gurah,Sirsak,0.0,True
+2024,Kandangan,Sirsak,1099.0,True
+2024,Kandat,Sirsak,0.0,True
+2024,Kayenkidul,Sirsak,308.0,True
+2024,Kepung,Sirsak,5.0,True
+2024,Kras,Sirsak,0.0,True
+2024,Kunjang,Sirsak,562.0,True
+2024,Mojo,Sirsak,4071.0,True
+2024,Ngadiluwih,Sirsak,71.6,True
+2024,Ngancar,Sirsak,197.6,True
+2024,Ngasem,Sirsak,0.0,True
+2024,Pagu,Sirsak,0.0,True
+2024,Papar,Sirsak,0.0,True
+2024,Pare,Sirsak,2505.0,True
+2024,Plemahan,Sirsak,373.0,True
+2024,Plosoklaten,Sirsak,18896.0,True
+2024,Puncu,Sirsak,2596.0,True
+2024,Purwoasri,Sirsak,641.0,True
+2024,Ringinrejo,Sirsak,1827.0,True
+2024,Semen,Sirsak,930.5,True
+2024,Tarokan,Sirsak,7161.25,True
+2024,Wates,Sirsak,568.0,True
+2024,Badas,Sukun,478.0,True
+2024,Banyakan,Sukun,0.0,True
+2024,Gampengrejo,Sukun,0.0,True
+2024,Grogol,Sukun,0.0,True
+2024,Gurah,Sukun,0.0,True
+2024,Kandangan,Sukun,0.0,True
+2024,Kandat,Sukun,0.0,True
+2024,Kayenkidul,Sukun,0.0,True
+2024,Kepung,Sukun,30.0,True
+2024,Kras,Sukun,189.0,True
+2024,Kunjang,Sukun,0.0,True
+2024,Mojo,Sukun,1201.25,True
+2024,Ngadiluwih,Sukun,0.0,True
+2024,Ngancar,Sukun,394.0,True
+2024,Ngasem,Sukun,0.0,True
+2024,Pagu,Sukun,0.0,True
+2024,Papar,Sukun,0.0,True
+2024,Pare,Sukun,0.0,True
+2024,Plemahan,Sukun,0.0,True
+2024,Plosoklaten,Sukun,0.0,True
+2024,Puncu,Sukun,0.0,True
+2024,Purwoasri,Sukun,545.0,True
+2024,Ringinrejo,Sukun,1361.15,True
+2024,Semen,Sukun,0.0,True
+2024,Tarokan,Sukun,0.0,True
+2024,Wates,Sukun,0.0,True
+2025,Badas,Alpukat,1026.0,False
+2025,Banyakan,Alpukat,4895.0,False
+2025,Gampengrejo,Alpukat,1019.0,False
+2025,Grogol,Alpukat,17300.0,False
+2025,Gurah,Alpukat,1343.0,False
+2025,Kandangan,Alpukat,2081.15,False
+2025,Kandat,Alpukat,3240.0,False
+2025,Kayenkidul,Alpukat,842.0,False
+2025,Kepung,Alpukat,59750.0,False
+2025,Kras,Alpukat,3540.0,False
+2025,Kunjang,Alpukat,318.0,False
+2025,Mojo,Alpukat,24632.0,False
+2025,Ngadiluwih,Alpukat,3604.0,False
+2025,Ngancar,Alpukat,32580.0,False
+2025,Ngasem,Alpukat,868.77,False
+2025,Pagu,Alpukat,1655.0,False
+2025,Papar,Alpukat,607.0,False
+2025,Pare,Alpukat,415.0,False
+2025,Plemahan,Alpukat,22020.0,False
+2025,Plosoklaten,Alpukat,6875.0,False
+2025,Puncu,Alpukat,4000.0,False
+2025,Purwoasri,Alpukat,250.0,False
+2025,Ringinrejo,Alpukat,12272.0,False
+2025,Semen,Alpukat,8200.0,False
+2025,Tarokan,Alpukat,204.0,False
+2025,Wates,Alpukat,14634.0,False
+2025,Badas,Anggur,0.0,False
+2025,Banyakan,Anggur,0.0,False
+2025,Gampengrejo,Anggur,0.0,False
+2025,Grogol,Anggur,0.0,False
+2025,Gurah,Anggur,0.0,False
+2025,Kandangan,Anggur,0.0,False
+2025,Kandat,Anggur,0.0,False
+2025,Kayenkidul,Anggur,0.0,False
+2025,Kepung,Anggur,0.0,False
+2025,Kras,Anggur,0.0,False
+2025,Kunjang,Anggur,0.0,False
+2025,Mojo,Anggur,0.0,False
+2025,Ngadiluwih,Anggur,0.0,False
+2025,Ngancar,Anggur,0.0,False
+2025,Ngasem,Anggur,0.0,False
+2025,Pagu,Anggur,0.0,False
+2025,Papar,Anggur,0.0,False
+2025,Pare,Anggur,0.0,False
+2025,Plemahan,Anggur,0.0,False
+2025,Plosoklaten,Anggur,0.0,False
+2025,Puncu,Anggur,0.0,False
+2025,Purwoasri,Anggur,0.0,False
+2025,Ringinrejo,Anggur,0.0,False
+2025,Semen,Anggur,0.0,False
+2025,Tarokan,Anggur,0.0,False
+2025,Wates,Anggur,0.0,False
+2025,Badas,Apel,0.0,False
+2025,Banyakan,Apel,0.0,False
+2025,Gampengrejo,Apel,0.0,False
+2025,Grogol,Apel,0.0,False
+2025,Gurah,Apel,0.0,False
+2025,Kandangan,Apel,0.0,False
+2025,Kandat,Apel,0.0,False
+2025,Kayenkidul,Apel,0.0,False
+2025,Kepung,Apel,0.0,False
+2025,Kras,Apel,0.0,False
+2025,Kunjang,Apel,0.0,False
+2025,Mojo,Apel,0.0,False
+2025,Ngadiluwih,Apel,0.0,False
+2025,Ngancar,Apel,0.0,False
+2025,Ngasem,Apel,0.0,False
+2025,Pagu,Apel,0.0,False
+2025,Papar,Apel,0.0,False
+2025,Pare,Apel,0.0,False
+2025,Plemahan,Apel,0.0,False
+2025,Plosoklaten,Apel,0.0,False
+2025,Puncu,Apel,0.0,False
+2025,Purwoasri,Apel,0.0,False
+2025,Ringinrejo,Apel,0.0,False
+2025,Semen,Apel,0.0,False
+2025,Tarokan,Apel,0.0,False
+2025,Wates,Apel,0.0,False
+2025,Badas,Belimbing,40.8,False
+2025,Banyakan,Belimbing,0.0,False
+2025,Gampengrejo,Belimbing,396.0,False
+2025,Grogol,Belimbing,194.0,False
+2025,Gurah,Belimbing,4786.0,False
+2025,Kandangan,Belimbing,0.0,False
+2025,Kandat,Belimbing,308.2,False
+2025,Kayenkidul,Belimbing,456.0,False
+2025,Kepung,Belimbing,116.0,False
+2025,Kras,Belimbing,264.0,False
+2025,Kunjang,Belimbing,390.4,False
+2025,Mojo,Belimbing,2195.0,False
+2025,Ngadiluwih,Belimbing,2.0,False
+2025,Ngancar,Belimbing,10.0,False
+2025,Ngasem,Belimbing,72.87,False
+2025,Pagu,Belimbing,29644.0,False
+2025,Papar,Belimbing,0.0,False
+2025,Pare,Belimbing,237.2,False
+2025,Plemahan,Belimbing,983.0,False
+2025,Plosoklaten,Belimbing,151.4,False
+2025,Puncu,Belimbing,150.0,False
+2025,Purwoasri,Belimbing,266.25,False
+2025,Ringinrejo,Belimbing,3910.0,False
+2025,Semen,Belimbing,0.0,False
+2025,Tarokan,Belimbing,84.0,False
+2025,Wates,Belimbing,200.0,False
+2025,Badas,Buah Naga,0.0,False
+2025,Banyakan,Buah Naga,0.0,False
+2025,Gampengrejo,Buah Naga,0.0,False
+2025,Grogol,Buah Naga,0.0,False
+2025,Gurah,Buah Naga,0.0,False
+2025,Kandangan,Buah Naga,0.0,False
+2025,Kandat,Buah Naga,0.0,False
+2025,Kayenkidul,Buah Naga,0.0,False
+2025,Kepung,Buah Naga,0.0,False
+2025,Kras,Buah Naga,0.0,False
+2025,Kunjang,Buah Naga,0.0,False
+2025,Mojo,Buah Naga,0.0,False
+2025,Ngadiluwih,Buah Naga,2310.0,False
+2025,Ngancar,Buah Naga,0.0,False
+2025,Ngasem,Buah Naga,0.0,False
+2025,Pagu,Buah Naga,0.0,False
+2025,Papar,Buah Naga,0.0,False
+2025,Pare,Buah Naga,1472.0,False
+2025,Plemahan,Buah Naga,0.0,False
+2025,Plosoklaten,Buah Naga,0.0,False
+2025,Puncu,Buah Naga,0.0,False
+2025,Purwoasri,Buah Naga,0.0,False
+2025,Ringinrejo,Buah Naga,1180.0,False
+2025,Semen,Buah Naga,160.0,False
+2025,Tarokan,Buah Naga,0.0,False
+2025,Wates,Buah Naga,0.0,False
+2025,Badas,Duku/Langsat/Kokosan,0.0,False
+2025,Banyakan,Duku/Langsat/Kokosan,0.0,False
+2025,Gampengrejo,Duku/Langsat/Kokosan,0.0,False
+2025,Grogol,Duku/Langsat/Kokosan,0.0,False
+2025,Gurah,Duku/Langsat/Kokosan,0.0,False
+2025,Kandangan,Duku/Langsat/Kokosan,0.0,False
+2025,Kandat,Duku/Langsat/Kokosan,0.0,False
+2025,Kayenkidul,Duku/Langsat/Kokosan,0.0,False
+2025,Kepung,Duku/Langsat/Kokosan,0.0,False
+2025,Kras,Duku/Langsat/Kokosan,0.0,False
+2025,Kunjang,Duku/Langsat/Kokosan,0.0,False
+2025,Mojo,Duku/Langsat/Kokosan,28.0,False
+2025,Ngadiluwih,Duku/Langsat/Kokosan,0.0,False
+2025,Ngancar,Duku/Langsat/Kokosan,0.0,False
+2025,Ngasem,Duku/Langsat/Kokosan,0.0,False
+2025,Pagu,Duku/Langsat/Kokosan,0.0,False
+2025,Papar,Duku/Langsat/Kokosan,0.0,False
+2025,Pare,Duku/Langsat/Kokosan,0.0,False
+2025,Plemahan,Duku/Langsat/Kokosan,0.0,False
+2025,Plosoklaten,Duku/Langsat/Kokosan,0.0,False
+2025,Puncu,Duku/Langsat/Kokosan,0.0,False
+2025,Purwoasri,Duku/Langsat/Kokosan,15.0,False
+2025,Ringinrejo,Duku/Langsat/Kokosan,0.0,False
+2025,Semen,Duku/Langsat/Kokosan,0.0,False
+2025,Tarokan,Duku/Langsat/Kokosan,0.0,False
+2025,Wates,Duku/Langsat/Kokosan,0.0,False
+2025,Badas,Durian,688.8,False
+2025,Banyakan,Durian,2550.0,False
+2025,Gampengrejo,Durian,0.0,False
+2025,Grogol,Durian,230.3,False
+2025,Gurah,Durian,0.0,False
+2025,Kandangan,Durian,21184.83,False
+2025,Kandat,Durian,192.0,False
+2025,Kayenkidul,Durian,0.0,False
+2025,Kepung,Durian,32950.0,False
+2025,Kras,Durian,118.0,False
+2025,Kunjang,Durian,69.0,False
+2025,Mojo,Durian,35745.0,False
+2025,Ngadiluwih,Durian,0.0,False
+2025,Ngancar,Durian,3000.0,False
+2025,Ngasem,Durian,141.75,False
+2025,Pagu,Durian,0.0,False
+2025,Papar,Durian,0.0,False
+2025,Pare,Durian,240.8,False
+2025,Plemahan,Durian,183.0,False
+2025,Plosoklaten,Durian,5939.0,False
+2025,Puncu,Durian,11500.0,False
+2025,Purwoasri,Durian,74.0,False
+2025,Ringinrejo,Durian,13100.0,False
+2025,Semen,Durian,74000.0,False
+2025,Tarokan,Durian,400.0,False
+2025,Wates,Durian,0.0,False
+2025,Badas,Jambu Air,278.0,False
+2025,Banyakan,Jambu Air,0.0,False
+2025,Gampengrejo,Jambu Air,492.0,False
+2025,Grogol,Jambu Air,0.0,False
+2025,Gurah,Jambu Air,1887.0,False
+2025,Kandangan,Jambu Air,0.0,False
+2025,Kandat,Jambu Air,162.0,False
+2025,Kayenkidul,Jambu Air,0.0,False
+2025,Kepung,Jambu Air,63.0,False
+2025,Kras,Jambu Air,160.0,False
+2025,Kunjang,Jambu Air,536.6,False
+2025,Mojo,Jambu Air,360.0,False
+2025,Ngadiluwih,Jambu Air,990.0,False
+2025,Ngancar,Jambu Air,0.0,False
+2025,Ngasem,Jambu Air,83.83,False
+2025,Pagu,Jambu Air,0.0,False
+2025,Papar,Jambu Air,0.0,False
+2025,Pare,Jambu Air,116.0,False
+2025,Plemahan,Jambu Air,4505.5,False
+2025,Plosoklaten,Jambu Air,95.0,False
+2025,Puncu,Jambu Air,0.0,False
+2025,Purwoasri,Jambu Air,9015.0,False
+2025,Ringinrejo,Jambu Air,1109.0,False
+2025,Semen,Jambu Air,1820.0,False
+2025,Tarokan,Jambu Air,66.0,False
+2025,Wates,Jambu Air,24.0,False
+2025,Badas,Jambu Biji,1283.2,False
+2025,Banyakan,Jambu Biji,137.0,False
+2025,Gampengrejo,Jambu Biji,187.5,False
+2025,Grogol,Jambu Biji,0.0,False
+2025,Gurah,Jambu Biji,4627.0,False
+2025,Kandangan,Jambu Biji,0.0,False
+2025,Kandat,Jambu Biji,168.4,False
+2025,Kayenkidul,Jambu Biji,127.0,False
+2025,Kepung,Jambu Biji,79.0,False
+2025,Kras,Jambu Biji,276.0,False
+2025,Kunjang,Jambu Biji,414.0,False
+2025,Mojo,Jambu Biji,180.0,False
+2025,Ngadiluwih,Jambu Biji,1040.0,False
+2025,Ngancar,Jambu Biji,25.0,False
+2025,Ngasem,Jambu Biji,296.2,False
+2025,Pagu,Jambu Biji,0.0,False
+2025,Papar,Jambu Biji,0.0,False
+2025,Pare,Jambu Biji,388.0,False
+2025,Plemahan,Jambu Biji,3992.2,False
+2025,Plosoklaten,Jambu Biji,612.01,False
+2025,Puncu,Jambu Biji,500.0,False
+2025,Purwoasri,Jambu Biji,280.0,False
+2025,Ringinrejo,Jambu Biji,1471.0,False
+2025,Semen,Jambu Biji,20.0,False
+2025,Tarokan,Jambu Biji,184.0,False
+2025,Wates,Jambu Biji,0.0,False
+2025,Badas,Jengkol,0.0,False
+2025,Banyakan,Jengkol,0.0,False
+2025,Gampengrejo,Jengkol,0.0,False
+2025,Grogol,Jengkol,0.0,False
+2025,Gurah,Jengkol,0.0,False
+2025,Kandangan,Jengkol,0.0,False
+2025,Kandat,Jengkol,0.0,False
+2025,Kayenkidul,Jengkol,0.0,False
+2025,Kepung,Jengkol,0.0,False
+2025,Kras,Jengkol,0.0,False
+2025,Kunjang,Jengkol,0.0,False
+2025,Mojo,Jengkol,115.5,False
+2025,Ngadiluwih,Jengkol,0.0,False
+2025,Ngancar,Jengkol,0.0,False
+2025,Ngasem,Jengkol,0.0,False
+2025,Pagu,Jengkol,0.0,False
+2025,Papar,Jengkol,0.0,False
+2025,Pare,Jengkol,0.0,False
+2025,Plemahan,Jengkol,0.0,False
+2025,Plosoklaten,Jengkol,0.0,False
+2025,Puncu,Jengkol,0.0,False
+2025,Purwoasri,Jengkol,0.0,False
+2025,Ringinrejo,Jengkol,0.0,False
+2025,Semen,Jengkol,0.0,False
+2025,Tarokan,Jengkol,0.0,False
+2025,Wates,Jengkol,0.0,False
+2025,Badas,Jeruk Besar,0.0,False
+2025,Banyakan,Jeruk Besar,0.0,False
+2025,Gampengrejo,Jeruk Besar,0.0,False
+2025,Grogol,Jeruk Besar,0.0,False
+2025,Gurah,Jeruk Besar,34.0,False
+2025,Kandangan,Jeruk Besar,0.0,False
+2025,Kandat,Jeruk Besar,0.0,False
+2025,Kayenkidul,Jeruk Besar,0.0,False
+2025,Kepung,Jeruk Besar,0.0,False
+2025,Kras,Jeruk Besar,0.0,False
+2025,Kunjang,Jeruk Besar,0.0,False
+2025,Mojo,Jeruk Besar,0.0,False
+2025,Ngadiluwih,Jeruk Besar,0.0,False
+2025,Ngancar,Jeruk Besar,0.0,False
+2025,Ngasem,Jeruk Besar,0.0,False
+2025,Pagu,Jeruk Besar,0.0,False
+2025,Papar,Jeruk Besar,0.0,False
+2025,Pare,Jeruk Besar,0.0,False
+2025,Plemahan,Jeruk Besar,6.25,False
+2025,Plosoklaten,Jeruk Besar,0.0,False
+2025,Puncu,Jeruk Besar,0.0,False
+2025,Purwoasri,Jeruk Besar,0.0,False
+2025,Ringinrejo,Jeruk Besar,0.0,False
+2025,Semen,Jeruk Besar,0.0,False
+2025,Tarokan,Jeruk Besar,0.0,False
+2025,Wates,Jeruk Besar,0.0,False
+2025,Badas,Jeruk Lemon,0.0,False
+2025,Banyakan,Jeruk Lemon,0.0,False
+2025,Gampengrejo,Jeruk Lemon,0.0,False
+2025,Grogol,Jeruk Lemon,0.0,False
+2025,Gurah,Jeruk Lemon,0.0,False
+2025,Kandangan,Jeruk Lemon,0.0,False
+2025,Kandat,Jeruk Lemon,600.0,False
+2025,Kayenkidul,Jeruk Lemon,52.6,False
+2025,Kepung,Jeruk Lemon,0.0,False
+2025,Kras,Jeruk Lemon,59.0,False
+2025,Kunjang,Jeruk Lemon,76.0,False
+2025,Mojo,Jeruk Lemon,0.0,False
+2025,Ngadiluwih,Jeruk Lemon,50.0,False
+2025,Ngancar,Jeruk Lemon,0.0,False
+2025,Ngasem,Jeruk Lemon,42.26,False
+2025,Pagu,Jeruk Lemon,0.0,False
+2025,Papar,Jeruk Lemon,0.0,False
+2025,Pare,Jeruk Lemon,0.0,False
+2025,Plemahan,Jeruk Lemon,0.0,False
+2025,Plosoklaten,Jeruk Lemon,3100.0,False
+2025,Puncu,Jeruk Lemon,0.0,False
+2025,Purwoasri,Jeruk Lemon,0.0,False
+2025,Ringinrejo,Jeruk Lemon,1294.0,False
+2025,Semen,Jeruk Lemon,0.0,False
+2025,Tarokan,Jeruk Lemon,57.0,False
+2025,Wates,Jeruk Lemon,0.0,False
+2025,Badas,Jeruk Siam/Keprok,0.0,False
+2025,Banyakan,Jeruk Siam/Keprok,11255.0,False
+2025,Gampengrejo,Jeruk Siam/Keprok,0.0,False
+2025,Grogol,Jeruk Siam/Keprok,0.0,False
+2025,Gurah,Jeruk Siam/Keprok,0.0,False
+2025,Kandangan,Jeruk Siam/Keprok,0.0,False
+2025,Kandat,Jeruk Siam/Keprok,0.0,False
+2025,Kayenkidul,Jeruk Siam/Keprok,0.0,False
+2025,Kepung,Jeruk Siam/Keprok,114.0,False
+2025,Kras,Jeruk Siam/Keprok,500.0,False
+2025,Kunjang,Jeruk Siam/Keprok,1370.0,False
+2025,Mojo,Jeruk Siam/Keprok,28750.0,False
+2025,Ngadiluwih,Jeruk Siam/Keprok,0.0,False
+2025,Ngancar,Jeruk Siam/Keprok,0.0,False
+2025,Ngasem,Jeruk Siam/Keprok,1733.5,False
+2025,Pagu,Jeruk Siam/Keprok,0.0,False
+2025,Papar,Jeruk Siam/Keprok,0.0,False
+2025,Pare,Jeruk Siam/Keprok,0.0,False
+2025,Plemahan,Jeruk Siam/Keprok,0.0,False
+2025,Plosoklaten,Jeruk Siam/Keprok,0.0,False
+2025,Puncu,Jeruk Siam/Keprok,0.0,False
+2025,Purwoasri,Jeruk Siam/Keprok,0.0,False
+2025,Ringinrejo,Jeruk Siam/Keprok,18317.0,False
+2025,Semen,Jeruk Siam/Keprok,18050.0,False
+2025,Tarokan,Jeruk Siam/Keprok,32178.0,False
+2025,Wates,Jeruk Siam/Keprok,0.0,False
+2025,Badas,Lengkeng,0.0,False
+2025,Banyakan,Lengkeng,0.0,False
+2025,Gampengrejo,Lengkeng,0.0,False
+2025,Grogol,Lengkeng,6.15,False
+2025,Gurah,Lengkeng,0.0,False
+2025,Kandangan,Lengkeng,0.0,False
+2025,Kandat,Lengkeng,0.0,False
+2025,Kayenkidul,Lengkeng,1660.0,False
+2025,Kepung,Lengkeng,0.0,False
+2025,Kras,Lengkeng,0.0,False
+2025,Kunjang,Lengkeng,93.0,False
+2025,Mojo,Lengkeng,250.0,False
+2025,Ngadiluwih,Lengkeng,0.0,False
+2025,Ngancar,Lengkeng,1550.0,False
+2025,Ngasem,Lengkeng,419.74,False
+2025,Pagu,Lengkeng,0.0,False
+2025,Papar,Lengkeng,0.0,False
+2025,Pare,Lengkeng,0.0,False
+2025,Plemahan,Lengkeng,0.0,False
+2025,Plosoklaten,Lengkeng,0.0,False
+2025,Puncu,Lengkeng,0.0,False
+2025,Purwoasri,Lengkeng,498.0,False
+2025,Ringinrejo,Lengkeng,2390.0,False
+2025,Semen,Lengkeng,760.0,False
+2025,Tarokan,Lengkeng,155.0,False
+2025,Wates,Lengkeng,0.0,False
+2025,Badas,Mangga,25816.0,False
+2025,Banyakan,Mangga,290000.0,False
+2025,Gampengrejo,Mangga,5050.0,False
+2025,Grogol,Mangga,183000.0,False
+2025,Gurah,Mangga,4777.8,False
+2025,Kandangan,Mangga,8646.43,False
+2025,Kandat,Mangga,2519.4,False
+2025,Kayenkidul,Mangga,229.0,False
+2025,Kepung,Mangga,0.0,False
+2025,Kras,Mangga,900.0,False
+2025,Kunjang,Mangga,10972.0,False
+2025,Mojo,Mangga,8150.0,False
+2025,Ngadiluwih,Mangga,3985.5,False
+2025,Ngancar,Mangga,0.0,False
+2025,Ngasem,Mangga,852.43,False
+2025,Pagu,Mangga,8325.0,False
+2025,Papar,Mangga,3772.0,False
+2025,Pare,Mangga,120.0,False
+2025,Plemahan,Mangga,0.0,False
+2025,Plosoklaten,Mangga,3363.2,False
+2025,Puncu,Mangga,0.0,False
+2025,Purwoasri,Mangga,0.0,False
+2025,Ringinrejo,Mangga,11401.0,False
+2025,Semen,Mangga,1200.0,False
+2025,Tarokan,Mangga,261681.95,False
+2025,Wates,Mangga,0.0,False
+2025,Badas,Manggis,0.0,False
+2025,Banyakan,Manggis,0.0,False
+2025,Gampengrejo,Manggis,0.0,False
+2025,Grogol,Manggis,0.0,False
+2025,Gurah,Manggis,0.0,False
+2025,Kandangan,Manggis,5654.0,False
+2025,Kandat,Manggis,0.0,False
+2025,Kayenkidul,Manggis,0.0,False
+2025,Kepung,Manggis,0.0,False
+2025,Kras,Manggis,0.0,False
+2025,Kunjang,Manggis,0.0,False
+2025,Mojo,Manggis,250.0,False
+2025,Ngadiluwih,Manggis,0.0,False
+2025,Ngancar,Manggis,358.0,False
+2025,Ngasem,Manggis,0.0,False
+2025,Pagu,Manggis,0.0,False
+2025,Papar,Manggis,0.0,False
+2025,Pare,Manggis,0.0,False
+2025,Plemahan,Manggis,0.0,False
+2025,Plosoklaten,Manggis,0.0,False
+2025,Puncu,Manggis,0.0,False
+2025,Purwoasri,Manggis,0.0,False
+2025,Ringinrejo,Manggis,275.0,False
+2025,Semen,Manggis,0.0,False
+2025,Tarokan,Manggis,0.0,False
+2025,Wates,Manggis,0.0,False
+2025,Badas,Melinjo,36285.8,False
+2025,Banyakan,Melinjo,0.0,False
+2025,Gampengrejo,Melinjo,0.0,False
+2025,Grogol,Melinjo,0.0,False
+2025,Gurah,Melinjo,2180.0,False
+2025,Kandangan,Melinjo,1136.54,False
+2025,Kandat,Melinjo,0.0,False
+2025,Kayenkidul,Melinjo,0.0,False
+2025,Kepung,Melinjo,0.0,False
+2025,Kras,Melinjo,295.0,False
+2025,Kunjang,Melinjo,490.0,False
+2025,Mojo,Melinjo,605.2,False
+2025,Ngadiluwih,Melinjo,250.0,False
+2025,Ngancar,Melinjo,2000.0,False
+2025,Ngasem,Melinjo,1060.87,False
+2025,Pagu,Melinjo,764.0,False
+2025,Papar,Melinjo,0.0,False
+2025,Pare,Melinjo,0.0,False
+2025,Plemahan,Melinjo,189.05,False
+2025,Plosoklaten,Melinjo,17710.65,False
+2025,Puncu,Melinjo,0.0,False
+2025,Purwoasri,Melinjo,0.0,False
+2025,Ringinrejo,Melinjo,975.0,False
+2025,Semen,Melinjo,0.0,False
+2025,Tarokan,Melinjo,0.0,False
+2025,Wates,Melinjo,0.0,False
+2025,Badas,Nangka/Cempedak,10233.4,False
+2025,Banyakan,Nangka/Cempedak,3517.0,False
+2025,Gampengrejo,Nangka/Cempedak,210.0,False
+2025,Grogol,Nangka/Cempedak,0.0,False
+2025,Gurah,Nangka/Cempedak,0.0,False
+2025,Kandangan,Nangka/Cempedak,5706.17,False
+2025,Kandat,Nangka/Cempedak,775.8,False
+2025,Kayenkidul,Nangka/Cempedak,369.0,False
+2025,Kepung,Nangka/Cempedak,0.0,False
+2025,Kras,Nangka/Cempedak,634.0,False
+2025,Kunjang,Nangka/Cempedak,1634.0,False
+2025,Mojo,Nangka/Cempedak,143.0,False
+2025,Ngadiluwih,Nangka/Cempedak,2088.6,False
+2025,Ngancar,Nangka/Cempedak,0.0,False
+2025,Ngasem,Nangka/Cempedak,719.22,False
+2025,Pagu,Nangka/Cempedak,1300.0,False
+2025,Papar,Nangka/Cempedak,313.0,False
+2025,Pare,Nangka/Cempedak,1557.0,False
+2025,Plemahan,Nangka/Cempedak,3337.0,False
+2025,Plosoklaten,Nangka/Cempedak,2094.2,False
+2025,Puncu,Nangka/Cempedak,270.0,False
+2025,Purwoasri,Nangka/Cempedak,1227.0,False
+2025,Ringinrejo,Nangka/Cempedak,10500.0,False
+2025,Semen,Nangka/Cempedak,330.0,False
+2025,Tarokan,Nangka/Cempedak,92.0,False
+2025,Wates,Nangka/Cempedak,0.0,False
+2025,Badas,Nenas,0.0,False
+2025,Banyakan,Nenas,0.0,False
+2025,Gampengrejo,Nenas,0.0,False
+2025,Grogol,Nenas,0.0,False
+2025,Gurah,Nenas,0.0,False
+2025,Kandangan,Nenas,0.0,False
+2025,Kandat,Nenas,25720.0,False
+2025,Kayenkidul,Nenas,0.0,False
+2025,Kepung,Nenas,0.0,False
+2025,Kras,Nenas,20.0,False
+2025,Kunjang,Nenas,0.0,False
+2025,Mojo,Nenas,0.0,False
+2025,Ngadiluwih,Nenas,0.0,False
+2025,Ngancar,Nenas,4065389.23,False
+2025,Ngasem,Nenas,0.0,False
+2025,Pagu,Nenas,0.0,False
+2025,Papar,Nenas,0.0,False
+2025,Pare,Nenas,0.0,False
+2025,Plemahan,Nenas,0.0,False
+2025,Plosoklaten,Nenas,90150.0,False
+2025,Puncu,Nenas,23337.0,False
+2025,Purwoasri,Nenas,0.0,False
+2025,Ringinrejo,Nenas,35230.0,False
+2025,Semen,Nenas,0.0,False
+2025,Tarokan,Nenas,0.0,False
+2025,Wates,Nenas,9100.0,False
+2025,Badas,Pepaya,1320.0,False
+2025,Banyakan,Pepaya,1583.0,False
+2025,Gampengrejo,Pepaya,45.0,False
+2025,Grogol,Pepaya,0.0,False
+2025,Gurah,Pepaya,4755.0,False
+2025,Kandangan,Pepaya,650.0,False
+2025,Kandat,Pepaya,8325.0,False
+2025,Kayenkidul,Pepaya,335.0,False
+2025,Kepung,Pepaya,0.0,False
+2025,Kras,Pepaya,2740.0,False
+2025,Kunjang,Pepaya,0.0,False
+2025,Mojo,Pepaya,1853.0,False
+2025,Ngadiluwih,Pepaya,0.0,False
+2025,Ngancar,Pepaya,1540.0,False
+2025,Ngasem,Pepaya,134.0,False
+2025,Pagu,Pepaya,46.0,False
+2025,Papar,Pepaya,123.0,False
+2025,Pare,Pepaya,1980.0,False
+2025,Plemahan,Pepaya,0.0,False
+2025,Plosoklaten,Pepaya,4980.0,False
+2025,Puncu,Pepaya,19387.0,False
+2025,Purwoasri,Pepaya,206.0,False
+2025,Ringinrejo,Pepaya,2488.0,False
+2025,Semen,Pepaya,2840.0,False
+2025,Tarokan,Pepaya,59.0,False
+2025,Wates,Pepaya,3775.0,False
+2025,Badas,Petai,620.0,False
+2025,Banyakan,Petai,12150.0,False
+2025,Gampengrejo,Petai,0.0,False
+2025,Grogol,Petai,102.18,False
+2025,Gurah,Petai,270.0,False
+2025,Kandangan,Petai,571.43,False
+2025,Kandat,Petai,0.0,False
+2025,Kayenkidul,Petai,24.0,False
+2025,Kepung,Petai,2750.0,False
+2025,Kras,Petai,0.0,False
+2025,Kunjang,Petai,0.0,False
+2025,Mojo,Petai,8166.0,False
+2025,Ngadiluwih,Petai,0.0,False
+2025,Ngancar,Petai,0.0,False
+2025,Ngasem,Petai,158.71,False
+2025,Pagu,Petai,0.0,False
+2025,Papar,Petai,0.0,False
+2025,Pare,Petai,0.0,False
+2025,Plemahan,Petai,218.25,False
+2025,Plosoklaten,Petai,2861.0,False
+2025,Puncu,Petai,1030.0,False
+2025,Purwoasri,Petai,0.0,False
+2025,Ringinrejo,Petai,1207.0,False
+2025,Semen,Petai,2700.0,False
+2025,Tarokan,Petai,215.0,False
+2025,Wates,Petai,0.0,False
+2025,Badas,Pisang,0.0,False
+2025,Banyakan,Pisang,9500.0,False
+2025,Gampengrejo,Pisang,954.0,False
+2025,Grogol,Pisang,26709.92,False
+2025,Gurah,Pisang,5286.2,False
+2025,Kandangan,Pisang,179457.43,False
+2025,Kandat,Pisang,111151.6,False
+2025,Kayenkidul,Pisang,1204.0,False
+2025,Kepung,Pisang,14585.0,False
+2025,Kras,Pisang,1248.0,False
+2025,Kunjang,Pisang,10430.0,False
+2025,Mojo,Pisang,15356.6,False
+2025,Ngadiluwih,Pisang,9587.0,False
+2025,Ngancar,Pisang,6850.0,False
+2025,Ngasem,Pisang,268.54,False
+2025,Pagu,Pisang,1318.0,False
+2025,Papar,Pisang,7975.0,False
+2025,Pare,Pisang,2072.4,False
+2025,Plemahan,Pisang,26125.0,False
+2025,Plosoklaten,Pisang,1956.0,False
+2025,Puncu,Pisang,113830.0,False
+2025,Purwoasri,Pisang,33710.0,False
+2025,Ringinrejo,Pisang,23048.0,False
+2025,Semen,Pisang,310.0,False
+2025,Tarokan,Pisang,10290.15,False
+2025,Wates,Pisang,9000.0,False
+2025,Badas,Rambutan,8500.0,False
+2025,Banyakan,Rambutan,0.0,False
+2025,Gampengrejo,Rambutan,854.0,False
+2025,Grogol,Rambutan,0.0,False
+2025,Gurah,Rambutan,350.0,False
+2025,Kandangan,Rambutan,5368.25,False
+2025,Kandat,Rambutan,4500.0,False
+2025,Kayenkidul,Rambutan,0.0,False
+2025,Kepung,Rambutan,2090.0,False
+2025,Kras,Rambutan,2800.0,False
+2025,Kunjang,Rambutan,2900.0,False
+2025,Mojo,Rambutan,15793.5,False
+2025,Ngadiluwih,Rambutan,0.0,False
+2025,Ngancar,Rambutan,2100.0,False
+2025,Ngasem,Rambutan,0.0,False
+2025,Pagu,Rambutan,0.0,False
+2025,Papar,Rambutan,115.0,False
+2025,Pare,Rambutan,4519.0,False
+2025,Plemahan,Rambutan,183.75,False
+2025,Plosoklaten,Rambutan,3000.0,False
+2025,Puncu,Rambutan,0.0,False
+2025,Purwoasri,Rambutan,5000.0,False
+2025,Ringinrejo,Rambutan,1500.0,False
+2025,Semen,Rambutan,0.0,False
+2025,Tarokan,Rambutan,0.0,False
+2025,Wates,Rambutan,0.0,False
+2025,Badas,Salak,0.0,False
+2025,Banyakan,Salak,0.0,False
+2025,Gampengrejo,Salak,0.0,False
+2025,Grogol,Salak,0.0,False
+2025,Gurah,Salak,21.0,False
+2025,Kandangan,Salak,0.0,False
+2025,Kandat,Salak,0.0,False
+2025,Kayenkidul,Salak,0.0,False
+2025,Kepung,Salak,0.0,False
+2025,Kras,Salak,0.0,False
+2025,Kunjang,Salak,0.0,False
+2025,Mojo,Salak,525.6,False
+2025,Ngadiluwih,Salak,0.0,False
+2025,Ngancar,Salak,510.0,False
+2025,Ngasem,Salak,0.0,False
+2025,Pagu,Salak,0.0,False
+2025,Papar,Salak,0.0,False
+2025,Pare,Salak,0.0,False
+2025,Plemahan,Salak,0.0,False
+2025,Plosoklaten,Salak,1300.0,False
+2025,Puncu,Salak,0.0,False
+2025,Purwoasri,Salak,0.0,False
+2025,Ringinrejo,Salak,0.0,False
+2025,Semen,Salak,0.0,False
+2025,Tarokan,Salak,0.0,False
+2025,Wates,Salak,40.0,False
+2025,Badas,Sawo,4689.92,False
+2025,Banyakan,Sawo,1025.0,False
+2025,Gampengrejo,Sawo,0.0,False
+2025,Grogol,Sawo,0.0,False
+2025,Gurah,Sawo,3323.0,False
+2025,Kandangan,Sawo,0.0,False
+2025,Kandat,Sawo,0.0,False
+2025,Kayenkidul,Sawo,320.0,False
+2025,Kepung,Sawo,0.0,False
+2025,Kras,Sawo,27.0,False
+2025,Kunjang,Sawo,228.0,False
+2025,Mojo,Sawo,251.0,False
+2025,Ngadiluwih,Sawo,0.0,False
+2025,Ngancar,Sawo,0.0,False
+2025,Ngasem,Sawo,198.05,False
+2025,Pagu,Sawo,69.0,False
+2025,Papar,Sawo,0.0,False
+2025,Pare,Sawo,0.0,False
+2025,Plemahan,Sawo,1859.7,False
+2025,Plosoklaten,Sawo,663.34,False
+2025,Puncu,Sawo,0.0,False
+2025,Purwoasri,Sawo,327.0,False
+2025,Ringinrejo,Sawo,0.0,False
+2025,Semen,Sawo,2550.0,False
+2025,Tarokan,Sawo,173.0,False
+2025,Wates,Sawo,0.0,False
+2025,Badas,Sirsak,1421.25,False
+2025,Banyakan,Sirsak,532.0,False
+2025,Gampengrejo,Sirsak,0.0,False
+2025,Grogol,Sirsak,0.0,False
+2025,Gurah,Sirsak,0.0,False
+2025,Kandangan,Sirsak,1014.78,False
+2025,Kandat,Sirsak,0.0,False
+2025,Kayenkidul,Sirsak,290.0,False
+2025,Kepung,Sirsak,4.5,False
+2025,Kras,Sirsak,431.0,False
+2025,Kunjang,Sirsak,566.0,False
+2025,Mojo,Sirsak,4360.0,False
+2025,Ngadiluwih,Sirsak,75.0,False
+2025,Ngancar,Sirsak,210.0,False
+2025,Ngasem,Sirsak,176.87,False
+2025,Pagu,Sirsak,0.0,False
+2025,Papar,Sirsak,0.0,False
+2025,Pare,Sirsak,2891.5,False
+2025,Plemahan,Sirsak,411.4,False
+2025,Plosoklaten,Sirsak,18297.82,False
+2025,Puncu,Sirsak,2450.0,False
+2025,Purwoasri,Sirsak,614.0,False
+2025,Ringinrejo,Sirsak,2050.0,False
+2025,Semen,Sirsak,1012.0,False
+2025,Tarokan,Sirsak,6509.0,False
+2025,Wates,Sirsak,503.0,False
+2025,Badas,Sukun,432.25,False
+2025,Banyakan,Sukun,283.0,False
+2025,Gampengrejo,Sukun,0.0,False
+2025,Grogol,Sukun,0.0,False
+2025,Gurah,Sukun,0.0,False
+2025,Kandangan,Sukun,0.0,False
+2025,Kandat,Sukun,0.0,False
+2025,Kayenkidul,Sukun,0.0,False
+2025,Kepung,Sukun,33.0,False
+2025,Kras,Sukun,229.0,False
+2025,Kunjang,Sukun,0.0,False
+2025,Mojo,Sukun,1242.0,False
+2025,Ngadiluwih,Sukun,0.0,False
+2025,Ngancar,Sukun,450.0,False
+2025,Ngasem,Sukun,52.5,False
+2025,Pagu,Sukun,0.0,False
+2025,Papar,Sukun,0.0,False
+2025,Pare,Sukun,0.0,False
+2025,Plemahan,Sukun,0.0,False
+2025,Plosoklaten,Sukun,0.0,False
+2025,Puncu,Sukun,0.0,False
+2025,Purwoasri,Sukun,482.0,False
+2025,Ringinrejo,Sukun,1316.0,False
+2025,Semen,Sukun,0.0,False
+2025,Tarokan,Sukun,0.0,False
+2025,Wates,Sukun,0.0,False

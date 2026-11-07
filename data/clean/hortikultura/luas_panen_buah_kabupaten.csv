@@ -1,0 +1,163 @@
+﻿tahun,komoditas,luas_panen,satuan,is_dummy
+2020,Alpukat/Avocado,1168.15,Ha,True
+2020,Anggur/Grape,1.75,Ha,True
+2020,Apel/Apple,0.25,Ha,True
+2020,Belimbing/Star Fruit,250.35,Ha,True
+2020,Buah Naga/Hylocereus polyrhizus,18.25,Ha,True
+2020,Duku/Langsat/Kokosan/Duku,4.0,Ha,True
+2020,Durian/Durian,1949.2,Ha,True
+2020,Jambu Air/Water Apple,124.5,Ha,True
+2020,Jambu Biji/Guava,97.5,Ha,True
+2020,Jengkol/Jengkol,4.5,Ha,True
+2020,Jeruk Besar/Pomelo,3.75,Ha,True
+2020,Jeruk Lemon/Lemon,24.25,Ha,True
+2020,Jeruk Siam/Keprok/Orange/Tangerine,337.75,Ha,True
+2020,Lengkeng/Dimocarpus longan,51.4,Ha,True
+2020,Mangga/Mango,2748.6,Ha,True
+2020,Manggis/Mangosteen,60.55,Ha,True
+2020,Melinjo/Gnetum/Melinjo,390.95,Ha,True
+2020,Nangka/Cempedak/Jackfruit,281.95,Ha,True
+2020,Nenas/Pineapple,2990.2,Ha,True
+2020,Pepaya/Papaya,114.5,Ha,True
+2020,Petai/Twisted Cluster Bean,313.5,Ha,True
+2020,Pisang/Banana,1454.45,Ha,True
+2020,Rambutan/Rambutan,258.3,Ha,True
+2020,Salak/Snakefruit,16.75,Ha,True
+2020,Sawo/Sapodilla/Sawo,95.0,Ha,True
+2020,Sirsak/Soursop,250.25,Ha,True
+2020,Sukun/Breadfruit,36.3,Ha,True
+2021,Alpukat/Avocado,1325.2,Ha,True
+2021,Anggur/Grape,2.5,Ha,True
+2021,Apel/Apple,0.0,Ha,True
+2021,Belimbing/Star Fruit,243.4,Ha,True
+2021,Buah Naga/Hylocereus polyrhizus,13.5,Ha,True
+2021,Duku/Langsat/Kokosan/Duku,2.75,Ha,True
+2021,Durian/Durian,2227.5,Ha,True
+2021,Jambu Air/Water Apple,124.55,Ha,True
+2021,Jambu Biji/Guava,113.65,Ha,True
+2021,Jengkol/Jengkol,4.25,Ha,True
+2021,Jeruk Besar/Pomelo,2.25,Ha,True
+2021,Jeruk Lemon/Lemon,27.5,Ha,True
+2021,Jeruk Siam/Keprok/Orange/Tangerine,390.0,Ha,True
+2021,Lengkeng/Dimocarpus longan,45.75,Ha,True
+2021,Mangga/Mango,2936.6,Ha,True
+2021,Manggis/Mangosteen,65.25,Ha,True
+2021,Melinjo/Gnetum/Melinjo,449.05,Ha,True
+2021,Nangka/Cempedak/Jackfruit,287.8,Ha,True
+2021,Nenas/Pineapple,3321.65,Ha,True
+2021,Pepaya/Papaya,116.9,Ha,True
+2021,Petai/Twisted Cluster Bean,320.45,Ha,True
+2021,Pisang/Banana,1521.65,Ha,True
+2021,Rambutan/Rambutan,269.1,Ha,True
+2021,Salak/Snakefruit,15.5,Ha,True
+2021,Sawo/Sapodilla/Sawo,94.8,Ha,True
+2021,Sirsak/Soursop,255.45,Ha,True
+2021,Sukun/Breadfruit,32.75,Ha,True
+2022,Alpukat/Avocado,1373.85,Ha,True
+2022,Anggur/Grape,2.75,Ha,True
+2022,Apel/Apple,0.0,Ha,True
+2022,Belimbing/Star Fruit,219.05,Ha,True
+2022,Buah Naga/Hylocereus polyrhizus,17.5,Ha,True
+2022,Duku/Langsat/Kokosan/Duku,2.5,Ha,True
+2022,Durian/Durian,2261.65,Ha,True
+2022,Jambu Air/Water Apple,151.3,Ha,True
+2022,Jambu Biji/Guava,103.25,Ha,True
+2022,Jengkol/Jengkol,3.2,Ha,True
+2022,Jeruk Besar/Pomelo,1.0,Ha,True
+2022,Jeruk Lemon/Lemon,29.9,Ha,True
+2022,Jeruk Siam/Keprok/Orange/Tangerine,357.2,Ha,True
+2022,Lengkeng/Dimocarpus longan,54.55,Ha,True
+2022,Mangga/Mango,3277.45,Ha,True
+2022,Manggis/Mangosteen,53.65,Ha,True
+2022,Melinjo/Gnetum/Melinjo,503.8,Ha,True
+2022,Nangka/Cempedak/Jackfruit,274.95,Ha,True
+2022,Nenas/Pineapple,3276.45,Ha,True
+2022,Pepaya/Papaya,129.3,Ha,True
+2022,Petai/Twisted Cluster Bean,332.55,Ha,True
+2022,Pisang/Banana,1581.4,Ha,True
+2022,Rambutan/Rambutan,277.95,Ha,True
+2022,Salak/Snakefruit,17.25,Ha,True
+2022,Sawo/Sapodilla/Sawo,106.55,Ha,True
+2022,Sirsak/Soursop,250.3,Ha,True
+2022,Sukun/Breadfruit,32.0,Ha,True
+2023,Alpukat/Avocado,1388.05,Ha,True
+2023,Anggur/Grape,1.5,Ha,True
+2023,Apel/Apple,0.5,Ha,True
+2023,Belimbing/Star Fruit,205.1,Ha,True
+2023,Buah Naga/Hylocereus polyrhizus,18.85,Ha,True
+2023,Duku/Langsat/Kokosan/Duku,3.0,Ha,True
+2023,Durian/Durian,2186.7,Ha,True
+2023,Jambu Air/Water Apple,127.15,Ha,True
+2023,Jambu Biji/Guava,98.85,Ha,True
+2023,Jengkol/Jengkol,5.25,Ha,True
+2023,Jeruk Besar/Pomelo,1.0,Ha,True
+2023,Jeruk Lemon/Lemon,32.5,Ha,True
+2023,Jeruk Siam/Keprok/Orange/Tangerine,423.5,Ha,True
+2023,Lengkeng/Dimocarpus longan,51.1,Ha,True
+2023,Mangga/Mango,2961.3,Ha,True
+2023,Manggis/Mangosteen,70.0,Ha,True
+2023,Melinjo/Gnetum/Melinjo,500.85,Ha,True
+2023,Nangka/Cempedak/Jackfruit,301.75,Ha,True
+2023,Nenas/Pineapple,2761.6,Ha,True
+2023,Pepaya/Papaya,122.8,Ha,True
+2023,Petai/Twisted Cluster Bean,357.5,Ha,True
+2023,Pisang/Banana,1464.65,Ha,True
+2023,Rambutan/Rambutan,282.8,Ha,True
+2023,Salak/Snakefruit,20.6,Ha,True
+2023,Sawo/Sapodilla/Sawo,113.0,Ha,True
+2023,Sirsak/Soursop,277.35,Ha,True
+2023,Sukun/Breadfruit,32.95,Ha,True
+2024,Alpukat/Avocado,1468.95,Ha,True
+2024,Anggur/Grape,1.0,Ha,True
+2024,Apel/Apple,0.0,Ha,True
+2024,Belimbing/Star Fruit,255.65,Ha,True
+2024,Buah Naga/Hylocereus polyrhizus,25.3,Ha,True
+2024,Duku/Langsat/Kokosan/Duku,3.75,Ha,True
+2024,Durian/Durian,2601.6,Ha,True
+2024,Jambu Air/Water Apple,140.5,Ha,True
+2024,Jambu Biji/Guava,114.45,Ha,True
+2024,Jengkol/Jengkol,4.75,Ha,True
+2024,Jeruk Besar/Pomelo,3.5,Ha,True
+2024,Jeruk Lemon/Lemon,29.95,Ha,True
+2024,Jeruk Siam/Keprok/Orange/Tangerine,413.75,Ha,True
+2024,Lengkeng/Dimocarpus longan,55.85,Ha,True
+2024,Mangga/Mango,3156.0,Ha,True
+2024,Manggis/Mangosteen,49.0,Ha,True
+2024,Melinjo/Gnetum/Melinjo,409.35,Ha,True
+2024,Nangka/Cempedak/Jackfruit,319.0,Ha,True
+2024,Nenas/Pineapple,3189.4,Ha,True
+2024,Pepaya/Papaya,124.9,Ha,True
+2024,Petai/Twisted Cluster Bean,342.2,Ha,True
+2024,Pisang/Banana,1711.3,Ha,True
+2024,Rambutan/Rambutan,310.5,Ha,True
+2024,Salak/Snakefruit,17.25,Ha,True
+2024,Sawo/Sapodilla/Sawo,105.05,Ha,True
+2024,Sirsak/Soursop,258.7,Ha,True
+2024,Sukun/Breadfruit,32.5,Ha,True
+2025,Alpukat/Avocado,1449.4,Ha,False
+2025,Anggur/Grape,0.0,Ha,False
+2025,Apel/Apple,0.0,Ha,False
+2025,Belimbing/Star Fruit,244.85,Ha,False
+2025,Buah Naga/Hylocereus polyrhizus,16.25,Ha,False
+2025,Duku/Langsat/Kokosan/Duku,2.0,Ha,False
+2025,Durian/Durian,2375.75,Ha,False
+2025,Jambu Air/Water Apple,147.35,Ha,False
+2025,Jambu Biji/Guava,118.9,Ha,False
+2025,Jengkol/Jengkol,2.0,Ha,False
+2025,Jeruk Besar/Pomelo,1.5,Ha,False
+2025,Jeruk Lemon/Lemon,26.0,Ha,False
+2025,Jeruk Siam/Keprok/Orange/Tangerine,414.7,Ha,False
+2025,Lengkeng/Dimocarpus longan,56.1,Ha,False
+2025,Mangga/Mango,3222.0,Ha,False
+2025,Manggis/Mangosteen,63.2,Ha,False
+2025,Melinjo/Gnetum/Melinjo,513.5,Ha,False
+2025,Nangka/Cempedak/Jackfruit,318.3,Ha,False
+2025,Nenas/Pineapple,3173.75,Ha,False
+2025,Pepaya/Papaya,138.6,Ha,False
+2025,Petai/Twisted Cluster Bean,348.85,Ha,False
+2025,Pisang/Banana,1739.35,Ha,False
+2025,Rambutan/Rambutan,292.25,Ha,False
+2025,Salak/Snakefruit,17.05,Ha,False
+2025,Sawo/Sapodilla/Sawo,115.4,Ha,False
+2025,Sirsak/Soursop,275.15,Ha,False
+2025,Sukun/Breadfruit,36.05,Ha,False
