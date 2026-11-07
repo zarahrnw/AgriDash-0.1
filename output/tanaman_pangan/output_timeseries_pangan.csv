@@ -1,0 +1,2081 @@
+Tahun,kecamatan,tanaman,nilai,target,model_digunakan,tipe
+2020,Badas,Kacang Tanah,0.96,luas_panen_ha,aktual,aktual
+2021,Badas,Kacang Tanah,0.85,luas_panen_ha,aktual,aktual
+2022,Badas,Kacang Tanah,0.88,luas_panen_ha,aktual,aktual
+2023,Badas,Kacang Tanah,0.79,luas_panen_ha,aktual,aktual
+2024,Badas,Kacang Tanah,0.82,luas_panen_ha,aktual,aktual
+2025,Badas,Kacang Tanah,0.75,luas_panen_ha,aktual,aktual
+2026,Badas,Kacang Tanah,0.718,luas_panen_ha,ets,forecast
+2027,Badas,Kacang Tanah,0.683,luas_panen_ha,ets,forecast
+2020,Badas,Kacang Tanah,1.71,produksi_ton,aktual,aktual
+2021,Badas,Kacang Tanah,1.46,produksi_ton,aktual,aktual
+2022,Badas,Kacang Tanah,1.58,produksi_ton,aktual,aktual
+2023,Badas,Kacang Tanah,1.41,produksi_ton,aktual,aktual
+2024,Badas,Kacang Tanah,1.44,produksi_ton,aktual,aktual
+2025,Badas,Kacang Tanah,1.32,produksi_ton,aktual,aktual
+2026,Badas,Kacang Tanah,1.268,produksi_ton,ets,forecast
+2027,Badas,Kacang Tanah,1.206,produksi_ton,ets,forecast
+2020,Badas,Kedelai,5.92,luas_panen_ha,aktual,aktual
+2021,Badas,Kedelai,6.94,luas_panen_ha,aktual,aktual
+2022,Badas,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2023,Badas,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2024,Badas,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2025,Badas,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2026,Badas,Kedelai,0.0,luas_panen_ha,ets,forecast
+2027,Badas,Kedelai,0.0,luas_panen_ha,ets,forecast
+2020,Badas,Kedelai,7.65,produksi_ton,aktual,aktual
+2021,Badas,Kedelai,8.69,produksi_ton,aktual,aktual
+2022,Badas,Kedelai,0.0,produksi_ton,aktual,aktual
+2023,Badas,Kedelai,0.0,produksi_ton,aktual,aktual
+2024,Badas,Kedelai,0.0,produksi_ton,aktual,aktual
+2025,Badas,Kedelai,0.0,produksi_ton,aktual,aktual
+2026,Badas,Kedelai,0.0,produksi_ton,ets,forecast
+2027,Badas,Kedelai,0.0,produksi_ton,ets,forecast
+2020,Badas,Ketela Pohon,0.91,luas_panen_ha,aktual,aktual
+2021,Badas,Ketela Pohon,0.88,luas_panen_ha,aktual,aktual
+2022,Badas,Ketela Pohon,0.79,luas_panen_ha,aktual,aktual
+2023,Badas,Ketela Pohon,0.85,luas_panen_ha,aktual,aktual
+2024,Badas,Ketela Pohon,0.88,luas_panen_ha,aktual,aktual
+2025,Badas,Ketela Pohon,1.02,luas_panen_ha,aktual,aktual
+2026,Badas,Ketela Pohon,1.044,luas_panen_ha,arima,forecast
+2027,Badas,Ketela Pohon,1.048,luas_panen_ha,arima,forecast
+2020,Badas,Ketela Pohon,28.41,produksi_ton,aktual,aktual
+2021,Badas,Ketela Pohon,27.04,produksi_ton,aktual,aktual
+2022,Badas,Ketela Pohon,23.89,produksi_ton,aktual,aktual
+2023,Badas,Ketela Pohon,24.86,produksi_ton,aktual,aktual
+2024,Badas,Ketela Pohon,26.06,produksi_ton,aktual,aktual
+2025,Badas,Ketela Pohon,29.15,produksi_ton,aktual,aktual
+2026,Badas,Ketela Pohon,30.258,produksi_ton,arima,forecast
+2027,Badas,Ketela Pohon,30.655,produksi_ton,arima,forecast
+2020,Badas,Padi,1616.92,luas_panen_ha,aktual,aktual
+2021,Badas,Padi,1681.62,luas_panen_ha,aktual,aktual
+2022,Badas,Padi,1610.42,luas_panen_ha,aktual,aktual
+2023,Badas,Padi,1750.83,luas_panen_ha,aktual,aktual
+2024,Badas,Padi,1714.95,luas_panen_ha,aktual,aktual
+2025,Badas,Padi,1692.61,luas_panen_ha,aktual,aktual
+2026,Badas,Padi,1705.71,luas_panen_ha,arima,forecast
+2027,Badas,Padi,1698.028,luas_panen_ha,arima,forecast
+2020,Badas,Padi,8929.25,produksi_ton,aktual,aktual
+2021,Badas,Padi,9622.62,produksi_ton,aktual,aktual
+2022,Badas,Padi,8872.76,produksi_ton,aktual,aktual
+2023,Badas,Padi,9519.52,produksi_ton,aktual,aktual
+2024,Badas,Padi,9454.87,produksi_ton,aktual,aktual
+2025,Badas,Padi,9815.85,produksi_ton,aktual,aktual
+2026,Badas,Padi,9826.796,produksi_ton,lr,forecast
+2027,Badas,Padi,9957.553,produksi_ton,lr,forecast
+2020,Badas,Ubi Jalar,0.89,luas_panen_ha,aktual,aktual
+2021,Badas,Ubi Jalar,0.91,luas_panen_ha,aktual,aktual
+2022,Badas,Ubi Jalar,0.92,luas_panen_ha,aktual,aktual
+2023,Badas,Ubi Jalar,1.01,luas_panen_ha,aktual,aktual
+2024,Badas,Ubi Jalar,0.91,luas_panen_ha,aktual,aktual
+2025,Badas,Ubi Jalar,0.84,luas_panen_ha,aktual,aktual
+2026,Badas,Ubi Jalar,0.897,luas_panen_ha,lr,forecast
+2027,Badas,Ubi Jalar,0.893,luas_panen_ha,lr,forecast
+2020,Badas,Ubi Jalar,23.12,produksi_ton,aktual,aktual
+2021,Badas,Ubi Jalar,24.41,produksi_ton,aktual,aktual
+2022,Badas,Ubi Jalar,25.49,produksi_ton,aktual,aktual
+2023,Badas,Ubi Jalar,27.38,produksi_ton,aktual,aktual
+2024,Badas,Ubi Jalar,25.78,produksi_ton,aktual,aktual
+2025,Badas,Ubi Jalar,24.8,produksi_ton,aktual,aktual
+2026,Badas,Ubi Jalar,24.591,produksi_ton,arima,forecast
+2027,Badas,Ubi Jalar,24.546,produksi_ton,arima,forecast
+2020,Banyakan,Kacang Tanah,45.59,luas_panen_ha,aktual,aktual
+2021,Banyakan,Kacang Tanah,40.93,luas_panen_ha,aktual,aktual
+2022,Banyakan,Kacang Tanah,45.16,luas_panen_ha,aktual,aktual
+2023,Banyakan,Kacang Tanah,46.04,luas_panen_ha,aktual,aktual
+2024,Banyakan,Kacang Tanah,46.86,luas_panen_ha,aktual,aktual
+2025,Banyakan,Kacang Tanah,47.11,luas_panen_ha,aktual,aktual
+2026,Banyakan,Kacang Tanah,47.909,luas_panen_ha,ets,forecast
+2027,Banyakan,Kacang Tanah,48.659,luas_panen_ha,ets,forecast
+2020,Banyakan,Kacang Tanah,88.83,produksi_ton,aktual,aktual
+2021,Banyakan,Kacang Tanah,77.16,produksi_ton,aktual,aktual
+2022,Banyakan,Kacang Tanah,84.51,produksi_ton,aktual,aktual
+2023,Banyakan,Kacang Tanah,82.13,produksi_ton,aktual,aktual
+2024,Banyakan,Kacang Tanah,79.97,produksi_ton,aktual,aktual
+2025,Banyakan,Kacang Tanah,83.42,produksi_ton,aktual,aktual
+2026,Banyakan,Kacang Tanah,80.467,produksi_ton,arima,forecast
+2027,Banyakan,Kacang Tanah,82.995,produksi_ton,arima,forecast
+2020,Banyakan,Kedelai,0.22,luas_panen_ha,aktual,aktual
+2021,Banyakan,Kedelai,0.2,luas_panen_ha,aktual,aktual
+2022,Banyakan,Kedelai,0.18,luas_panen_ha,aktual,aktual
+2023,Banyakan,Kedelai,0.19,luas_panen_ha,aktual,aktual
+2024,Banyakan,Kedelai,0.2,luas_panen_ha,aktual,aktual
+2025,Banyakan,Kedelai,0.19,luas_panen_ha,aktual,aktual
+2026,Banyakan,Kedelai,0.183,luas_panen_ha,lr,forecast
+2027,Banyakan,Kedelai,0.179,luas_panen_ha,lr,forecast
+2020,Banyakan,Kedelai,0.26,produksi_ton,aktual,aktual
+2021,Banyakan,Kedelai,0.24,produksi_ton,aktual,aktual
+2022,Banyakan,Kedelai,0.23,produksi_ton,aktual,aktual
+2023,Banyakan,Kedelai,0.25,produksi_ton,aktual,aktual
+2024,Banyakan,Kedelai,0.25,produksi_ton,aktual,aktual
+2025,Banyakan,Kedelai,0.25,produksi_ton,aktual,aktual
+2026,Banyakan,Kedelai,0.25,produksi_ton,arima,forecast
+2027,Banyakan,Kedelai,0.25,produksi_ton,arima,forecast
+2020,Banyakan,Ketela Pohon,60.85,luas_panen_ha,aktual,aktual
+2021,Banyakan,Ketela Pohon,54.94,luas_panen_ha,aktual,aktual
+2022,Banyakan,Ketela Pohon,61.79,luas_panen_ha,aktual,aktual
+2023,Banyakan,Ketela Pohon,55.21,luas_panen_ha,aktual,aktual
+2024,Banyakan,Ketela Pohon,56.27,luas_panen_ha,aktual,aktual
+2025,Banyakan,Ketela Pohon,64.55,luas_panen_ha,aktual,aktual
+2026,Banyakan,Ketela Pohon,59.334,luas_panen_ha,arima,forecast
+2027,Banyakan,Ketela Pohon,62.62,luas_panen_ha,arima,forecast
+2020,Banyakan,Ketela Pohon,1585.74,produksi_ton,aktual,aktual
+2021,Banyakan,Ketela Pohon,1468.15,produksi_ton,aktual,aktual
+2022,Banyakan,Ketela Pohon,1685.35,produksi_ton,aktual,aktual
+2023,Banyakan,Ketela Pohon,1439.73,produksi_ton,aktual,aktual
+2024,Banyakan,Ketela Pohon,1527.6,produksi_ton,aktual,aktual
+2025,Banyakan,Ketela Pohon,1838.77,produksi_ton,aktual,aktual
+2026,Banyakan,Ketela Pohon,1714.501,produksi_ton,ets,forecast
+2027,Banyakan,Ketela Pohon,1762.451,produksi_ton,ets,forecast
+2020,Banyakan,Padi,829.62,luas_panen_ha,aktual,aktual
+2021,Banyakan,Padi,924.26,luas_panen_ha,aktual,aktual
+2022,Banyakan,Padi,915.48,luas_panen_ha,aktual,aktual
+2023,Banyakan,Padi,891.62,luas_panen_ha,aktual,aktual
+2024,Banyakan,Padi,825.13,luas_panen_ha,aktual,aktual
+2025,Banyakan,Padi,782.28,luas_panen_ha,aktual,aktual
+2026,Banyakan,Padi,738.968,luas_panen_ha,ets,forecast
+2027,Banyakan,Padi,695.752,luas_panen_ha,ets,forecast
+2020,Banyakan,Padi,4490.35,produksi_ton,aktual,aktual
+2021,Banyakan,Padi,4827.13,produksi_ton,aktual,aktual
+2022,Banyakan,Padi,4834.52,produksi_ton,aktual,aktual
+2023,Banyakan,Padi,4790.86,produksi_ton,aktual,aktual
+2024,Banyakan,Padi,4633.49,produksi_ton,aktual,aktual
+2025,Banyakan,Padi,4536.62,produksi_ton,aktual,aktual
+2026,Banyakan,Padi,4476.478,produksi_ton,arima,forecast
+2027,Banyakan,Padi,4439.14,produksi_ton,arima,forecast
+2020,Banyakan,Ubi Jalar,55.22,luas_panen_ha,aktual,aktual
+2021,Banyakan,Ubi Jalar,51.76,luas_panen_ha,aktual,aktual
+2022,Banyakan,Ubi Jalar,48.2,luas_panen_ha,aktual,aktual
+2023,Banyakan,Ubi Jalar,55.08,luas_panen_ha,aktual,aktual
+2024,Banyakan,Ubi Jalar,53.13,luas_panen_ha,aktual,aktual
+2025,Banyakan,Ubi Jalar,53.24,luas_panen_ha,aktual,aktual
+2026,Banyakan,Ubi Jalar,53.204,luas_panen_ha,arima,forecast
+2027,Banyakan,Ubi Jalar,53.216,luas_panen_ha,arima,forecast
+2020,Banyakan,Ubi Jalar,1781.33,produksi_ton,aktual,aktual
+2021,Banyakan,Ubi Jalar,1667.51,produksi_ton,aktual,aktual
+2022,Banyakan,Ubi Jalar,1557.72,produksi_ton,aktual,aktual
+2023,Banyakan,Ubi Jalar,1724.41,produksi_ton,aktual,aktual
+2024,Banyakan,Ubi Jalar,1622.47,produksi_ton,aktual,aktual
+2025,Banyakan,Ubi Jalar,1564.77,produksi_ton,aktual,aktual
+2026,Banyakan,Ubi Jalar,1547.912,produksi_ton,ets,forecast
+2027,Banyakan,Ubi Jalar,1517.877,produksi_ton,ets,forecast
+2020,Gampengrejo,Kacang Tanah,1.34,luas_panen_ha,aktual,aktual
+2021,Gampengrejo,Kacang Tanah,1.19,luas_panen_ha,aktual,aktual
+2022,Gampengrejo,Kacang Tanah,1.07,luas_panen_ha,aktual,aktual
+2023,Gampengrejo,Kacang Tanah,1.08,luas_panen_ha,aktual,aktual
+2024,Gampengrejo,Kacang Tanah,1.01,luas_panen_ha,aktual,aktual
+2025,Gampengrejo,Kacang Tanah,1.11,luas_panen_ha,aktual,aktual
+2026,Gampengrejo,Kacang Tanah,1.14,luas_panen_ha,arima,forecast
+2027,Gampengrejo,Kacang Tanah,1.15,luas_panen_ha,arima,forecast
+2020,Gampengrejo,Kacang Tanah,2.38,produksi_ton,aktual,aktual
+2021,Gampengrejo,Kacang Tanah,2.04,produksi_ton,aktual,aktual
+2022,Gampengrejo,Kacang Tanah,1.9,produksi_ton,aktual,aktual
+2023,Gampengrejo,Kacang Tanah,1.91,produksi_ton,aktual,aktual
+2024,Gampengrejo,Kacang Tanah,1.83,produksi_ton,aktual,aktual
+2025,Gampengrejo,Kacang Tanah,1.97,produksi_ton,aktual,aktual
+2026,Gampengrejo,Kacang Tanah,2.046,produksi_ton,arima,forecast
+2027,Gampengrejo,Kacang Tanah,2.086,produksi_ton,arima,forecast
+2020,Gampengrejo,Kedelai,4.67,luas_panen_ha,aktual,aktual
+2021,Gampengrejo,Kedelai,4.69,luas_panen_ha,aktual,aktual
+2022,Gampengrejo,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2023,Gampengrejo,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2024,Gampengrejo,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2025,Gampengrejo,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2026,Gampengrejo,Kedelai,0.0,luas_panen_ha,ets,forecast
+2027,Gampengrejo,Kedelai,0.0,luas_panen_ha,ets,forecast
+2020,Gampengrejo,Kedelai,6.23,produksi_ton,aktual,aktual
+2021,Gampengrejo,Kedelai,6.54,produksi_ton,aktual,aktual
+2022,Gampengrejo,Kedelai,0.0,produksi_ton,aktual,aktual
+2023,Gampengrejo,Kedelai,0.0,produksi_ton,aktual,aktual
+2024,Gampengrejo,Kedelai,0.0,produksi_ton,aktual,aktual
+2025,Gampengrejo,Kedelai,0.01,produksi_ton,aktual,aktual
+2026,Gampengrejo,Kedelai,0.0,produksi_ton,ets,forecast
+2027,Gampengrejo,Kedelai,0.0,produksi_ton,ets,forecast
+2020,Gampengrejo,Ketela Pohon,1.4,luas_panen_ha,aktual,aktual
+2021,Gampengrejo,Ketela Pohon,1.5,luas_panen_ha,aktual,aktual
+2022,Gampengrejo,Ketela Pohon,1.47,luas_panen_ha,aktual,aktual
+2023,Gampengrejo,Ketela Pohon,1.62,luas_panen_ha,aktual,aktual
+2024,Gampengrejo,Ketela Pohon,1.71,luas_panen_ha,aktual,aktual
+2025,Gampengrejo,Ketela Pohon,1.52,luas_panen_ha,aktual,aktual
+2026,Gampengrejo,Ketela Pohon,1.565,luas_panen_ha,arima,forecast
+2027,Gampengrejo,Ketela Pohon,1.554,luas_panen_ha,arima,forecast
+2020,Gampengrejo,Ketela Pohon,36.13,produksi_ton,aktual,aktual
+2021,Gampengrejo,Ketela Pohon,37.04,produksi_ton,aktual,aktual
+2022,Gampengrejo,Ketela Pohon,37.19,produksi_ton,aktual,aktual
+2023,Gampengrejo,Ketela Pohon,42.86,produksi_ton,aktual,aktual
+2024,Gampengrejo,Ketela Pohon,47.53,produksi_ton,aktual,aktual
+2025,Gampengrejo,Ketela Pohon,43.32,produksi_ton,aktual,aktual
+2026,Gampengrejo,Ketela Pohon,47.987,produksi_ton,lr,forecast
+2027,Gampengrejo,Ketela Pohon,50.076,produksi_ton,lr,forecast
+2020,Gampengrejo,Padi,305.79,luas_panen_ha,aktual,aktual
+2021,Gampengrejo,Padi,323.42,luas_panen_ha,aktual,aktual
+2022,Gampengrejo,Padi,311.05,luas_panen_ha,aktual,aktual
+2023,Gampengrejo,Padi,358.32,luas_panen_ha,aktual,aktual
+2024,Gampengrejo,Padi,413.06,luas_panen_ha,aktual,aktual
+2025,Gampengrejo,Padi,422.96,luas_panen_ha,aktual,aktual
+2026,Gampengrejo,Padi,445.971,luas_panen_ha,ets,forecast
+2027,Gampengrejo,Padi,471.743,luas_panen_ha,ets,forecast
+2020,Gampengrejo,Padi,1781.2,produksi_ton,aktual,aktual
+2021,Gampengrejo,Padi,1904.99,produksi_ton,aktual,aktual
+2022,Gampengrejo,Padi,1883.47,produksi_ton,aktual,aktual
+2023,Gampengrejo,Padi,2074.06,produksi_ton,aktual,aktual
+2024,Gampengrejo,Padi,2390.17,produksi_ton,aktual,aktual
+2025,Gampengrejo,Padi,2452.84,produksi_ton,aktual,aktual
+2026,Gampengrejo,Padi,2581.555,produksi_ton,lr,forecast
+2027,Gampengrejo,Padi,2724.536,produksi_ton,lr,forecast
+2020,Gampengrejo,Ubi Jalar,1.42,luas_panen_ha,aktual,aktual
+2021,Gampengrejo,Ubi Jalar,1.4,luas_panen_ha,aktual,aktual
+2022,Gampengrejo,Ubi Jalar,1.35,luas_panen_ha,aktual,aktual
+2023,Gampengrejo,Ubi Jalar,1.2,luas_panen_ha,aktual,aktual
+2024,Gampengrejo,Ubi Jalar,1.21,luas_panen_ha,aktual,aktual
+2025,Gampengrejo,Ubi Jalar,1.25,luas_panen_ha,aktual,aktual
+2026,Gampengrejo,Ubi Jalar,1.26,luas_panen_ha,arima,forecast
+2027,Gampengrejo,Ubi Jalar,1.262,luas_panen_ha,arima,forecast
+2020,Gampengrejo,Ubi Jalar,38.24,produksi_ton,aktual,aktual
+2021,Gampengrejo,Ubi Jalar,38.69,produksi_ton,aktual,aktual
+2022,Gampengrejo,Ubi Jalar,38.15,produksi_ton,aktual,aktual
+2023,Gampengrejo,Ubi Jalar,34.47,produksi_ton,aktual,aktual
+2024,Gampengrejo,Ubi Jalar,35.18,produksi_ton,aktual,aktual
+2025,Gampengrejo,Ubi Jalar,36.86,produksi_ton,aktual,aktual
+2026,Gampengrejo,Ubi Jalar,36.891,produksi_ton,arima,forecast
+2027,Gampengrejo,Ubi Jalar,36.891,produksi_ton,arima,forecast
+2020,Grogol,Kacang Tanah,9.83,luas_panen_ha,aktual,aktual
+2021,Grogol,Kacang Tanah,9.67,luas_panen_ha,aktual,aktual
+2022,Grogol,Kacang Tanah,9.4,luas_panen_ha,aktual,aktual
+2023,Grogol,Kacang Tanah,10.27,luas_panen_ha,aktual,aktual
+2024,Grogol,Kacang Tanah,9.42,luas_panen_ha,aktual,aktual
+2025,Grogol,Kacang Tanah,10.36,luas_panen_ha,aktual,aktual
+2026,Grogol,Kacang Tanah,9.557,luas_panen_ha,arima,forecast
+2027,Grogol,Kacang Tanah,10.243,luas_panen_ha,arima,forecast
+2020,Grogol,Kacang Tanah,17.42,produksi_ton,aktual,aktual
+2021,Grogol,Kacang Tanah,16.84,produksi_ton,aktual,aktual
+2022,Grogol,Kacang Tanah,15.94,produksi_ton,aktual,aktual
+2023,Grogol,Kacang Tanah,17.98,produksi_ton,aktual,aktual
+2024,Grogol,Kacang Tanah,16.62,produksi_ton,aktual,aktual
+2025,Grogol,Kacang Tanah,18.35,produksi_ton,aktual,aktual
+2026,Grogol,Kacang Tanah,17.074,produksi_ton,arima,forecast
+2027,Grogol,Kacang Tanah,18.015,produksi_ton,arima,forecast
+2020,Grogol,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2021,Grogol,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2022,Grogol,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2023,Grogol,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2024,Grogol,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2025,Grogol,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2026,Grogol,Kedelai,0.04,luas_panen_ha,ets,forecast
+2027,Grogol,Kedelai,0.04,luas_panen_ha,ets,forecast
+2020,Grogol,Kedelai,0.05,produksi_ton,aktual,aktual
+2021,Grogol,Kedelai,0.06,produksi_ton,aktual,aktual
+2022,Grogol,Kedelai,0.05,produksi_ton,aktual,aktual
+2023,Grogol,Kedelai,0.05,produksi_ton,aktual,aktual
+2024,Grogol,Kedelai,0.05,produksi_ton,aktual,aktual
+2025,Grogol,Kedelai,0.05,produksi_ton,aktual,aktual
+2026,Grogol,Kedelai,0.05,produksi_ton,arima,forecast
+2027,Grogol,Kedelai,0.05,produksi_ton,arima,forecast
+2020,Grogol,Ketela Pohon,12.24,luas_panen_ha,aktual,aktual
+2021,Grogol,Ketela Pohon,11.68,luas_panen_ha,aktual,aktual
+2022,Grogol,Ketela Pohon,11.68,luas_panen_ha,aktual,aktual
+2023,Grogol,Ketela Pohon,11.66,luas_panen_ha,aktual,aktual
+2024,Grogol,Ketela Pohon,12.32,luas_panen_ha,aktual,aktual
+2025,Grogol,Ketela Pohon,14.2,luas_panen_ha,aktual,aktual
+2026,Grogol,Ketela Pohon,16.08,luas_panen_ha,ets,forecast
+2027,Grogol,Ketela Pohon,17.96,luas_panen_ha,ets,forecast
+2020,Grogol,Ketela Pohon,386.17,produksi_ton,aktual,aktual
+2021,Grogol,Ketela Pohon,357.75,produksi_ton,aktual,aktual
+2022,Grogol,Ketela Pohon,360.49,produksi_ton,aktual,aktual
+2023,Grogol,Ketela Pohon,355.31,produksi_ton,aktual,aktual
+2024,Grogol,Ketela Pohon,363.75,produksi_ton,aktual,aktual
+2025,Grogol,Ketela Pohon,404.43,produksi_ton,aktual,aktual
+2026,Grogol,Ketela Pohon,417.115,produksi_ton,arima,forecast
+2027,Grogol,Ketela Pohon,421.07,produksi_ton,arima,forecast
+2020,Grogol,Padi,916.06,luas_panen_ha,aktual,aktual
+2021,Grogol,Padi,924.85,luas_panen_ha,aktual,aktual
+2022,Grogol,Padi,1027.73,luas_panen_ha,aktual,aktual
+2023,Grogol,Padi,935.73,luas_panen_ha,aktual,aktual
+2024,Grogol,Padi,818.77,luas_panen_ha,aktual,aktual
+2025,Grogol,Padi,848.24,luas_panen_ha,aktual,aktual
+2026,Grogol,Padi,836.969,luas_panen_ha,ets,forecast
+2027,Grogol,Padi,815.562,luas_panen_ha,ets,forecast
+2020,Grogol,Padi,4972.1,produksi_ton,aktual,aktual
+2021,Grogol,Padi,5251.75,produksi_ton,aktual,aktual
+2022,Grogol,Padi,5852.18,produksi_ton,aktual,aktual
+2023,Grogol,Padi,5282.24,produksi_ton,aktual,aktual
+2024,Grogol,Padi,4792.55,produksi_ton,aktual,aktual
+2025,Grogol,Padi,4919.18,produksi_ton,aktual,aktual
+2026,Grogol,Padi,4957.119,produksi_ton,lr,forecast
+2027,Grogol,Padi,4893.915,produksi_ton,lr,forecast
+2020,Grogol,Ubi Jalar,10.87,luas_panen_ha,aktual,aktual
+2021,Grogol,Ubi Jalar,11.14,luas_panen_ha,aktual,aktual
+2022,Grogol,Ubi Jalar,10.97,luas_panen_ha,aktual,aktual
+2023,Grogol,Ubi Jalar,10.36,luas_panen_ha,aktual,aktual
+2024,Grogol,Ubi Jalar,11.47,luas_panen_ha,aktual,aktual
+2025,Grogol,Ubi Jalar,11.71,luas_panen_ha,aktual,aktual
+2026,Grogol,Ubi Jalar,11.545,luas_panen_ha,ets,forecast
+2027,Grogol,Ubi Jalar,11.676,luas_panen_ha,ets,forecast
+2020,Grogol,Ubi Jalar,318.06,produksi_ton,aktual,aktual
+2021,Grogol,Ubi Jalar,326.92,produksi_ton,aktual,aktual
+2022,Grogol,Ubi Jalar,335.45,produksi_ton,aktual,aktual
+2023,Grogol,Ubi Jalar,310.39,produksi_ton,aktual,aktual
+2024,Grogol,Ubi Jalar,335.08,produksi_ton,aktual,aktual
+2025,Grogol,Ubi Jalar,344.17,produksi_ton,aktual,aktual
+2026,Grogol,Ubi Jalar,341.342,produksi_ton,ets,forecast
+2027,Grogol,Ubi Jalar,345.055,produksi_ton,ets,forecast
+2020,Gurah,Kacang Tanah,3.47,luas_panen_ha,aktual,aktual
+2021,Gurah,Kacang Tanah,3.59,luas_panen_ha,aktual,aktual
+2022,Gurah,Kacang Tanah,3.59,luas_panen_ha,aktual,aktual
+2023,Gurah,Kacang Tanah,3.59,luas_panen_ha,aktual,aktual
+2024,Gurah,Kacang Tanah,3.8,luas_panen_ha,aktual,aktual
+2025,Gurah,Kacang Tanah,3.96,luas_panen_ha,aktual,aktual
+2026,Gurah,Kacang Tanah,4.058,luas_panen_ha,ets,forecast
+2027,Gurah,Kacang Tanah,4.156,luas_panen_ha,ets,forecast
+2020,Gurah,Kacang Tanah,6.4,produksi_ton,aktual,aktual
+2021,Gurah,Kacang Tanah,6.35,produksi_ton,aktual,aktual
+2022,Gurah,Kacang Tanah,6.11,produksi_ton,aktual,aktual
+2023,Gurah,Kacang Tanah,6.39,produksi_ton,aktual,aktual
+2024,Gurah,Kacang Tanah,6.81,produksi_ton,aktual,aktual
+2025,Gurah,Kacang Tanah,7.02,produksi_ton,aktual,aktual
+2026,Gurah,Kacang Tanah,7.103,produksi_ton,arima,forecast
+2027,Gurah,Kacang Tanah,7.136,produksi_ton,arima,forecast
+2020,Gurah,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2021,Gurah,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2022,Gurah,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2023,Gurah,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2024,Gurah,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2025,Gurah,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2026,Gurah,Kedelai,0.02,luas_panen_ha,ets,forecast
+2027,Gurah,Kedelai,0.02,luas_panen_ha,ets,forecast
+2020,Gurah,Kedelai,0.02,produksi_ton,aktual,aktual
+2021,Gurah,Kedelai,0.02,produksi_ton,aktual,aktual
+2022,Gurah,Kedelai,0.02,produksi_ton,aktual,aktual
+2023,Gurah,Kedelai,0.02,produksi_ton,aktual,aktual
+2024,Gurah,Kedelai,0.02,produksi_ton,aktual,aktual
+2025,Gurah,Kedelai,0.02,produksi_ton,aktual,aktual
+2026,Gurah,Kedelai,0.02,produksi_ton,ets,forecast
+2027,Gurah,Kedelai,0.02,produksi_ton,ets,forecast
+2020,Gurah,Ketela Pohon,7.61,luas_panen_ha,aktual,aktual
+2021,Gurah,Ketela Pohon,7.67,luas_panen_ha,aktual,aktual
+2022,Gurah,Ketela Pohon,7.5,luas_panen_ha,aktual,aktual
+2023,Gurah,Ketela Pohon,6.88,luas_panen_ha,aktual,aktual
+2024,Gurah,Ketela Pohon,6.11,luas_panen_ha,aktual,aktual
+2025,Gurah,Ketela Pohon,5.43,luas_panen_ha,aktual,aktual
+2026,Gurah,Ketela Pohon,4.842,luas_panen_ha,arima,forecast
+2027,Gurah,Ketela Pohon,4.333,luas_panen_ha,arima,forecast
+2020,Gurah,Ketela Pohon,225.38,produksi_ton,aktual,aktual
+2021,Gurah,Ketela Pohon,227.11,produksi_ton,aktual,aktual
+2022,Gurah,Ketela Pohon,216.29,produksi_ton,aktual,aktual
+2023,Gurah,Ketela Pohon,196.0,produksi_ton,aktual,aktual
+2024,Gurah,Ketela Pohon,174.26,produksi_ton,aktual,aktual
+2025,Gurah,Ketela Pohon,154.65,produksi_ton,aktual,aktual
+2026,Gurah,Ketela Pohon,137.664,produksi_ton,arima,forecast
+2027,Gurah,Ketela Pohon,122.951,produksi_ton,arima,forecast
+2020,Gurah,Padi,1875.32,luas_panen_ha,aktual,aktual
+2021,Gurah,Padi,2184.34,luas_panen_ha,aktual,aktual
+2022,Gurah,Padi,1924.66,luas_panen_ha,aktual,aktual
+2023,Gurah,Padi,2074.67,luas_panen_ha,aktual,aktual
+2024,Gurah,Padi,2007.93,luas_panen_ha,aktual,aktual
+2025,Gurah,Padi,1763.23,luas_panen_ha,aktual,aktual
+2026,Gurah,Padi,1659.52,luas_panen_ha,ets,forecast
+2027,Gurah,Padi,1499.639,luas_panen_ha,ets,forecast
+2020,Gurah,Padi,11163.25,produksi_ton,aktual,aktual
+2021,Gurah,Padi,13533.5,produksi_ton,aktual,aktual
+2022,Gurah,Padi,11708.23,produksi_ton,aktual,aktual
+2023,Gurah,Padi,12352.52,produksi_ton,aktual,aktual
+2024,Gurah,Padi,12172.84,produksi_ton,aktual,aktual
+2025,Gurah,Padi,10225.41,produksi_ton,aktual,aktual
+2026,Gurah,Padi,9860.049,produksi_ton,arima,forecast
+2027,Gurah,Padi,9791.503,produksi_ton,arima,forecast
+2020,Gurah,Ubi Jalar,4.01,luas_panen_ha,aktual,aktual
+2021,Gurah,Ubi Jalar,3.65,luas_panen_ha,aktual,aktual
+2022,Gurah,Ubi Jalar,3.85,luas_panen_ha,aktual,aktual
+2023,Gurah,Ubi Jalar,3.83,luas_panen_ha,aktual,aktual
+2024,Gurah,Ubi Jalar,4.0,luas_panen_ha,aktual,aktual
+2025,Gurah,Ubi Jalar,4.48,luas_panen_ha,aktual,aktual
+2026,Gurah,Ubi Jalar,4.761,luas_panen_ha,ets,forecast
+2027,Gurah,Ubi Jalar,5.125,luas_panen_ha,ets,forecast
+2020,Gurah,Ubi Jalar,109.93,produksi_ton,aktual,aktual
+2021,Gurah,Ubi Jalar,99.89,produksi_ton,aktual,aktual
+2022,Gurah,Ubi Jalar,103.67,produksi_ton,aktual,aktual
+2023,Gurah,Ubi Jalar,107.93,produksi_ton,aktual,aktual
+2024,Gurah,Ubi Jalar,117.73,produksi_ton,aktual,aktual
+2025,Gurah,Ubi Jalar,131.6,produksi_ton,aktual,aktual
+2026,Gurah,Ubi Jalar,145.47,produksi_ton,ets,forecast
+2027,Gurah,Ubi Jalar,159.34,produksi_ton,ets,forecast
+2020,Kandangan,Kacang Tanah,17.1,luas_panen_ha,aktual,aktual
+2021,Kandangan,Kacang Tanah,18.21,luas_panen_ha,aktual,aktual
+2022,Kandangan,Kacang Tanah,15.9,luas_panen_ha,aktual,aktual
+2023,Kandangan,Kacang Tanah,14.64,luas_panen_ha,aktual,aktual
+2024,Kandangan,Kacang Tanah,14.09,luas_panen_ha,aktual,aktual
+2025,Kandangan,Kacang Tanah,12.37,luas_panen_ha,aktual,aktual
+2026,Kandangan,Kacang Tanah,11.658,luas_panen_ha,ets,forecast
+2027,Kandangan,Kacang Tanah,10.593,luas_panen_ha,ets,forecast
+2020,Kandangan,Kacang Tanah,30.33,produksi_ton,aktual,aktual
+2021,Kandangan,Kacang Tanah,32.3,produksi_ton,aktual,aktual
+2022,Kandangan,Kacang Tanah,27.39,produksi_ton,aktual,aktual
+2023,Kandangan,Kacang Tanah,25.72,produksi_ton,aktual,aktual
+2024,Kandangan,Kacang Tanah,25.68,produksi_ton,aktual,aktual
+2025,Kandangan,Kacang Tanah,21.91,produksi_ton,aktual,aktual
+2026,Kandangan,Kacang Tanah,20.859,produksi_ton,ets,forecast
+2027,Kandangan,Kacang Tanah,19.041,produksi_ton,ets,forecast
+2020,Kandangan,Kedelai,0.03,luas_panen_ha,aktual,aktual
+2021,Kandangan,Kedelai,0.03,luas_panen_ha,aktual,aktual
+2022,Kandangan,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2023,Kandangan,Kedelai,0.05,luas_panen_ha,aktual,aktual
+2024,Kandangan,Kedelai,0.05,luas_panen_ha,aktual,aktual
+2025,Kandangan,Kedelai,0.05,luas_panen_ha,aktual,aktual
+2026,Kandangan,Kedelai,0.05,luas_panen_ha,arima,forecast
+2027,Kandangan,Kedelai,0.05,luas_panen_ha,arima,forecast
+2020,Kandangan,Kedelai,0.04,produksi_ton,aktual,aktual
+2021,Kandangan,Kedelai,0.05,produksi_ton,aktual,aktual
+2022,Kandangan,Kedelai,0.06,produksi_ton,aktual,aktual
+2023,Kandangan,Kedelai,0.07,produksi_ton,aktual,aktual
+2024,Kandangan,Kedelai,0.06,produksi_ton,aktual,aktual
+2025,Kandangan,Kedelai,0.07,produksi_ton,aktual,aktual
+2026,Kandangan,Kedelai,0.075,produksi_ton,ets,forecast
+2027,Kandangan,Kedelai,0.079,produksi_ton,ets,forecast
+2020,Kandangan,Ketela Pohon,22.09,luas_panen_ha,aktual,aktual
+2021,Kandangan,Ketela Pohon,20.16,luas_panen_ha,aktual,aktual
+2022,Kandangan,Ketela Pohon,21.28,luas_panen_ha,aktual,aktual
+2023,Kandangan,Ketela Pohon,20.02,luas_panen_ha,aktual,aktual
+2024,Kandangan,Ketela Pohon,18.55,luas_panen_ha,aktual,aktual
+2025,Kandangan,Ketela Pohon,16.95,luas_panen_ha,aktual,aktual
+2026,Kandangan,Ketela Pohon,16.662,luas_panen_ha,ets,forecast
+2027,Kandangan,Ketela Pohon,15.754,luas_panen_ha,ets,forecast
+2020,Kandangan,Ketela Pohon,648.37,produksi_ton,aktual,aktual
+2021,Kandangan,Ketela Pohon,567.77,produksi_ton,aktual,aktual
+2022,Kandangan,Ketela Pohon,579.07,produksi_ton,aktual,aktual
+2023,Kandangan,Ketela Pohon,544.75,produksi_ton,aktual,aktual
+2024,Kandangan,Ketela Pohon,528.18,produksi_ton,aktual,aktual
+2025,Kandangan,Ketela Pohon,482.97,produksi_ton,aktual,aktual
+2026,Kandangan,Ketela Pohon,460.509,produksi_ton,ets,forecast
+2027,Kandangan,Ketela Pohon,432.507,produksi_ton,ets,forecast
+2020,Kandangan,Padi,1876.71,luas_panen_ha,aktual,aktual
+2021,Kandangan,Padi,1755.2,luas_panen_ha,aktual,aktual
+2022,Kandangan,Padi,1599.32,luas_panen_ha,aktual,aktual
+2023,Kandangan,Padi,1517.25,luas_panen_ha,aktual,aktual
+2024,Kandangan,Padi,1547.86,luas_panen_ha,aktual,aktual
+2025,Kandangan,Padi,1389.16,luas_panen_ha,aktual,aktual
+2026,Kandangan,Padi,1300.066,luas_panen_ha,ets,forecast
+2027,Kandangan,Padi,1210.299,luas_panen_ha,ets,forecast
+2020,Kandangan,Padi,11712.89,produksi_ton,aktual,aktual
+2021,Kandangan,Padi,11093.14,produksi_ton,aktual,aktual
+2022,Kandangan,Padi,9727.66,produksi_ton,aktual,aktual
+2023,Kandangan,Padi,8964.56,produksi_ton,aktual,aktual
+2024,Kandangan,Padi,8763.67,produksi_ton,aktual,aktual
+2025,Kandangan,Padi,8056.11,produksi_ton,aktual,aktual
+2026,Kandangan,Padi,7197.334,produksi_ton,ets,forecast
+2027,Kandangan,Padi,6475.417,produksi_ton,ets,forecast
+2020,Kandangan,Ubi Jalar,14.09,luas_panen_ha,aktual,aktual
+2021,Kandangan,Ubi Jalar,15.0,luas_panen_ha,aktual,aktual
+2022,Kandangan,Ubi Jalar,13.72,luas_panen_ha,aktual,aktual
+2023,Kandangan,Ubi Jalar,12.59,luas_panen_ha,aktual,aktual
+2024,Kandangan,Ubi Jalar,13.85,luas_panen_ha,aktual,aktual
+2025,Kandangan,Ubi Jalar,13.99,luas_panen_ha,aktual,aktual
+2026,Kandangan,Ubi Jalar,13.966,luas_panen_ha,arima,forecast
+2027,Kandangan,Ubi Jalar,13.97,luas_panen_ha,arima,forecast
+2020,Kandangan,Ubi Jalar,402.51,produksi_ton,aktual,aktual
+2021,Kandangan,Ubi Jalar,450.59,produksi_ton,aktual,aktual
+2022,Kandangan,Ubi Jalar,403.81,produksi_ton,aktual,aktual
+2023,Kandangan,Ubi Jalar,354.83,produksi_ton,aktual,aktual
+2024,Kandangan,Ubi Jalar,403.12,produksi_ton,aktual,aktual
+2025,Kandangan,Ubi Jalar,411.0,produksi_ton,aktual,aktual
+2026,Kandangan,Ubi Jalar,409.284,produksi_ton,arima,forecast
+2027,Kandangan,Ubi Jalar,409.657,produksi_ton,arima,forecast
+2020,Kandat,Kacang Tanah,8.89,luas_panen_ha,aktual,aktual
+2021,Kandat,Kacang Tanah,8.82,luas_panen_ha,aktual,aktual
+2022,Kandat,Kacang Tanah,9.36,luas_panen_ha,aktual,aktual
+2023,Kandat,Kacang Tanah,9.68,luas_panen_ha,aktual,aktual
+2024,Kandat,Kacang Tanah,10.02,luas_panen_ha,aktual,aktual
+2025,Kandat,Kacang Tanah,10.87,luas_panen_ha,aktual,aktual
+2026,Kandat,Kacang Tanah,10.989,luas_panen_ha,ets,forecast
+2027,Kandat,Kacang Tanah,11.383,luas_panen_ha,ets,forecast
+2020,Kandat,Kacang Tanah,13.95,produksi_ton,aktual,aktual
+2021,Kandat,Kacang Tanah,13.6,produksi_ton,aktual,aktual
+2022,Kandat,Kacang Tanah,14.92,produksi_ton,aktual,aktual
+2023,Kandat,Kacang Tanah,16.15,produksi_ton,aktual,aktual
+2024,Kandat,Kacang Tanah,16.85,produksi_ton,aktual,aktual
+2025,Kandat,Kacang Tanah,19.25,produksi_ton,aktual,aktual
+2026,Kandat,Kacang Tanah,19.535,produksi_ton,ets,forecast
+2027,Kandat,Kacang Tanah,20.606,produksi_ton,ets,forecast
+2020,Kandat,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2021,Kandat,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2022,Kandat,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2023,Kandat,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2024,Kandat,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2025,Kandat,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2026,Kandat,Kedelai,0.04,luas_panen_ha,ets,forecast
+2027,Kandat,Kedelai,0.04,luas_panen_ha,ets,forecast
+2020,Kandat,Kedelai,0.06,produksi_ton,aktual,aktual
+2021,Kandat,Kedelai,0.06,produksi_ton,aktual,aktual
+2022,Kandat,Kedelai,0.06,produksi_ton,aktual,aktual
+2023,Kandat,Kedelai,0.06,produksi_ton,aktual,aktual
+2024,Kandat,Kedelai,0.06,produksi_ton,aktual,aktual
+2025,Kandat,Kedelai,0.06,produksi_ton,aktual,aktual
+2026,Kandat,Kedelai,0.06,produksi_ton,ets,forecast
+2027,Kandat,Kedelai,0.06,produksi_ton,ets,forecast
+2020,Kandat,Ketela Pohon,12.27,luas_panen_ha,aktual,aktual
+2021,Kandat,Ketela Pohon,14.35,luas_panen_ha,aktual,aktual
+2022,Kandat,Ketela Pohon,12.49,luas_panen_ha,aktual,aktual
+2023,Kandat,Ketela Pohon,14.15,luas_panen_ha,aktual,aktual
+2024,Kandat,Ketela Pohon,16.38,luas_panen_ha,aktual,aktual
+2025,Kandat,Ketela Pohon,14.89,luas_panen_ha,aktual,aktual
+2026,Kandat,Ketela Pohon,15.556,luas_panen_ha,arima,forecast
+2027,Kandat,Ketela Pohon,15.258,luas_panen_ha,arima,forecast
+2020,Kandat,Ketela Pohon,323.22,produksi_ton,aktual,aktual
+2021,Kandat,Ketela Pohon,394.31,produksi_ton,aktual,aktual
+2022,Kandat,Ketela Pohon,352.84,produksi_ton,aktual,aktual
+2023,Kandat,Ketela Pohon,389.25,produksi_ton,aktual,aktual
+2024,Kandat,Ketela Pohon,472.45,produksi_ton,aktual,aktual
+2025,Kandat,Ketela Pohon,424.27,produksi_ton,aktual,aktual
+2026,Kandat,Ketela Pohon,443.516,produksi_ton,arima,forecast
+2027,Kandat,Ketela Pohon,435.828,produksi_ton,arima,forecast
+2020,Kandat,Padi,1342.01,luas_panen_ha,aktual,aktual
+2021,Kandat,Padi,1396.01,luas_panen_ha,aktual,aktual
+2022,Kandat,Padi,1253.39,luas_panen_ha,aktual,aktual
+2023,Kandat,Padi,1262.73,luas_panen_ha,aktual,aktual
+2024,Kandat,Padi,1443.39,luas_panen_ha,aktual,aktual
+2025,Kandat,Padi,1539.72,luas_panen_ha,aktual,aktual
+2026,Kandat,Padi,1555.659,luas_panen_ha,arima,forecast
+2027,Kandat,Padi,1558.296,luas_panen_ha,arima,forecast
+2020,Kandat,Padi,7072.26,produksi_ton,aktual,aktual
+2021,Kandat,Padi,7572.42,produksi_ton,aktual,aktual
+2022,Kandat,Padi,7114.35,produksi_ton,aktual,aktual
+2023,Kandat,Padi,6880.38,produksi_ton,aktual,aktual
+2024,Kandat,Padi,8118.29,produksi_ton,aktual,aktual
+2025,Kandat,Padi,8929.23,produksi_ton,aktual,aktual
+2026,Kandat,Padi,9113.629,produksi_ton,arima,forecast
+2027,Kandat,Padi,9155.559,produksi_ton,arima,forecast
+2020,Kandat,Ubi Jalar,14.85,luas_panen_ha,aktual,aktual
+2021,Kandat,Ubi Jalar,14.68,luas_panen_ha,aktual,aktual
+2022,Kandat,Ubi Jalar,12.89,luas_panen_ha,aktual,aktual
+2023,Kandat,Ubi Jalar,13.8,luas_panen_ha,aktual,aktual
+2024,Kandat,Ubi Jalar,13.02,luas_panen_ha,aktual,aktual
+2025,Kandat,Ubi Jalar,12.29,luas_panen_ha,aktual,aktual
+2026,Kandat,Ubi Jalar,11.901,luas_panen_ha,ets,forecast
+2027,Kandat,Ubi Jalar,11.419,luas_panen_ha,ets,forecast
+2020,Kandat,Ubi Jalar,465.75,produksi_ton,aktual,aktual
+2021,Kandat,Ubi Jalar,441.46,produksi_ton,aktual,aktual
+2022,Kandat,Ubi Jalar,389.36,produksi_ton,aktual,aktual
+2023,Kandat,Ubi Jalar,405.53,produksi_ton,aktual,aktual
+2024,Kandat,Ubi Jalar,386.01,produksi_ton,aktual,aktual
+2025,Kandat,Ubi Jalar,361.05,produksi_ton,aktual,aktual
+2026,Kandat,Ubi Jalar,340.825,produksi_ton,ets,forecast
+2027,Kandat,Ubi Jalar,321.577,produksi_ton,ets,forecast
+2020,Kayenkidul,Kacang Tanah,3.77,luas_panen_ha,aktual,aktual
+2021,Kayenkidul,Kacang Tanah,4.14,luas_panen_ha,aktual,aktual
+2022,Kayenkidul,Kacang Tanah,3.69,luas_panen_ha,aktual,aktual
+2023,Kayenkidul,Kacang Tanah,3.27,luas_panen_ha,aktual,aktual
+2024,Kayenkidul,Kacang Tanah,3.0,luas_panen_ha,aktual,aktual
+2025,Kayenkidul,Kacang Tanah,3.5,luas_panen_ha,aktual,aktual
+2026,Kayenkidul,Kacang Tanah,3.501,luas_panen_ha,arima,forecast
+2027,Kayenkidul,Kacang Tanah,3.501,luas_panen_ha,arima,forecast
+2020,Kayenkidul,Kacang Tanah,6.96,produksi_ton,aktual,aktual
+2021,Kayenkidul,Kacang Tanah,7.36,produksi_ton,aktual,aktual
+2022,Kayenkidul,Kacang Tanah,6.36,produksi_ton,aktual,aktual
+2023,Kayenkidul,Kacang Tanah,5.91,produksi_ton,aktual,aktual
+2024,Kayenkidul,Kacang Tanah,5.35,produksi_ton,aktual,aktual
+2025,Kayenkidul,Kacang Tanah,6.19,produksi_ton,aktual,aktual
+2026,Kayenkidul,Kacang Tanah,6.119,produksi_ton,arima,forecast
+2027,Kayenkidul,Kacang Tanah,6.125,produksi_ton,arima,forecast
+2020,Kayenkidul,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2021,Kayenkidul,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2022,Kayenkidul,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2023,Kayenkidul,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2024,Kayenkidul,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2025,Kayenkidul,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2026,Kayenkidul,Kedelai,0.01,luas_panen_ha,ets,forecast
+2027,Kayenkidul,Kedelai,0.01,luas_panen_ha,ets,forecast
+2020,Kayenkidul,Kedelai,0.02,produksi_ton,aktual,aktual
+2021,Kayenkidul,Kedelai,0.02,produksi_ton,aktual,aktual
+2022,Kayenkidul,Kedelai,0.02,produksi_ton,aktual,aktual
+2023,Kayenkidul,Kedelai,0.02,produksi_ton,aktual,aktual
+2024,Kayenkidul,Kedelai,0.02,produksi_ton,aktual,aktual
+2025,Kayenkidul,Kedelai,0.02,produksi_ton,aktual,aktual
+2026,Kayenkidul,Kedelai,0.02,produksi_ton,ets,forecast
+2027,Kayenkidul,Kedelai,0.02,produksi_ton,ets,forecast
+2020,Kayenkidul,Ketela Pohon,5.8,luas_panen_ha,aktual,aktual
+2021,Kayenkidul,Ketela Pohon,5.46,luas_panen_ha,aktual,aktual
+2022,Kayenkidul,Ketela Pohon,5.2,luas_panen_ha,aktual,aktual
+2023,Kayenkidul,Ketela Pohon,4.77,luas_panen_ha,aktual,aktual
+2024,Kayenkidul,Ketela Pohon,5.07,luas_panen_ha,aktual,aktual
+2025,Kayenkidul,Ketela Pohon,4.79,luas_panen_ha,aktual,aktual
+2026,Kayenkidul,Ketela Pohon,4.517,luas_panen_ha,ets,forecast
+2027,Kayenkidul,Ketela Pohon,4.326,luas_panen_ha,ets,forecast
+2020,Kayenkidul,Ketela Pohon,163.8,produksi_ton,aktual,aktual
+2021,Kayenkidul,Ketela Pohon,147.55,produksi_ton,aktual,aktual
+2022,Kayenkidul,Ketela Pohon,140.89,produksi_ton,aktual,aktual
+2023,Kayenkidul,Ketela Pohon,135.06,produksi_ton,aktual,aktual
+2024,Kayenkidul,Ketela Pohon,148.43,produksi_ton,aktual,aktual
+2025,Kayenkidul,Ketela Pohon,136.43,produksi_ton,aktual,aktual
+2026,Kayenkidul,Ketela Pohon,131.356,produksi_ton,lr,forecast
+2027,Kayenkidul,Ketela Pohon,127.355,produksi_ton,lr,forecast
+2020,Kayenkidul,Padi,1193.01,luas_panen_ha,aktual,aktual
+2021,Kayenkidul,Padi,1155.26,luas_panen_ha,aktual,aktual
+2022,Kayenkidul,Padi,1321.41,luas_panen_ha,aktual,aktual
+2023,Kayenkidul,Padi,1331.58,luas_panen_ha,aktual,aktual
+2024,Kayenkidul,Padi,1542.19,luas_panen_ha,aktual,aktual
+2025,Kayenkidul,Padi,1488.5,luas_panen_ha,aktual,aktual
+2026,Kayenkidul,Padi,1497.353,luas_panen_ha,arima,forecast
+2027,Kayenkidul,Padi,1495.893,luas_panen_ha,arima,forecast
+2020,Kayenkidul,Padi,6431.09,produksi_ton,aktual,aktual
+2021,Kayenkidul,Padi,6096.2,produksi_ton,aktual,aktual
+2022,Kayenkidul,Padi,7296.41,produksi_ton,aktual,aktual
+2023,Kayenkidul,Padi,7706.65,produksi_ton,aktual,aktual
+2024,Kayenkidul,Padi,9224.78,produksi_ton,aktual,aktual
+2025,Kayenkidul,Padi,8632.19,produksi_ton,aktual,aktual
+2026,Kayenkidul,Padi,8684.712,produksi_ton,arima,forecast
+2027,Kayenkidul,Padi,8680.057,produksi_ton,arima,forecast
+2020,Kayenkidul,Ubi Jalar,4.31,luas_panen_ha,aktual,aktual
+2021,Kayenkidul,Ubi Jalar,4.17,luas_panen_ha,aktual,aktual
+2022,Kayenkidul,Ubi Jalar,3.99,luas_panen_ha,aktual,aktual
+2023,Kayenkidul,Ubi Jalar,3.84,luas_panen_ha,aktual,aktual
+2024,Kayenkidul,Ubi Jalar,4.13,luas_panen_ha,aktual,aktual
+2025,Kayenkidul,Ubi Jalar,3.95,luas_panen_ha,aktual,aktual
+2026,Kayenkidul,Ubi Jalar,3.858,luas_panen_ha,lr,forecast
+2027,Kayenkidul,Ubi Jalar,3.799,luas_panen_ha,lr,forecast
+2020,Kayenkidul,Ubi Jalar,129.81,produksi_ton,aktual,aktual
+2021,Kayenkidul,Ubi Jalar,122.84,produksi_ton,aktual,aktual
+2022,Kayenkidul,Ubi Jalar,117.76,produksi_ton,aktual,aktual
+2023,Kayenkidul,Ubi Jalar,112.06,produksi_ton,aktual,aktual
+2024,Kayenkidul,Ubi Jalar,116.24,produksi_ton,aktual,aktual
+2025,Kayenkidul,Ubi Jalar,116.1,produksi_ton,aktual,aktual
+2026,Kayenkidul,Ubi Jalar,116.044,produksi_ton,arima,forecast
+2027,Kayenkidul,Ubi Jalar,116.022,produksi_ton,arima,forecast
+2020,Kepung,Kacang Tanah,50.87,luas_panen_ha,aktual,aktual
+2021,Kepung,Kacang Tanah,50.23,luas_panen_ha,aktual,aktual
+2022,Kepung,Kacang Tanah,48.39,luas_panen_ha,aktual,aktual
+2023,Kepung,Kacang Tanah,52.09,luas_panen_ha,aktual,aktual
+2024,Kepung,Kacang Tanah,55.86,luas_panen_ha,aktual,aktual
+2025,Kepung,Kacang Tanah,60.19,luas_panen_ha,aktual,aktual
+2026,Kepung,Kacang Tanah,64.514,luas_panen_ha,ets,forecast
+2027,Kepung,Kacang Tanah,68.867,luas_panen_ha,ets,forecast
+2020,Kepung,Kacang Tanah,84.32,produksi_ton,aktual,aktual
+2021,Kepung,Kacang Tanah,86.57,produksi_ton,aktual,aktual
+2022,Kepung,Kacang Tanah,84.85,produksi_ton,aktual,aktual
+2023,Kepung,Kacang Tanah,90.08,produksi_ton,aktual,aktual
+2024,Kepung,Kacang Tanah,98.52,produksi_ton,aktual,aktual
+2025,Kepung,Kacang Tanah,106.58,produksi_ton,aktual,aktual
+2026,Kepung,Kacang Tanah,112.462,produksi_ton,arima,forecast
+2027,Kepung,Kacang Tanah,116.754,produksi_ton,arima,forecast
+2020,Kepung,Kedelai,0.19,luas_panen_ha,aktual,aktual
+2021,Kepung,Kedelai,0.21,luas_panen_ha,aktual,aktual
+2022,Kepung,Kedelai,0.2,luas_panen_ha,aktual,aktual
+2023,Kepung,Kedelai,0.23,luas_panen_ha,aktual,aktual
+2024,Kepung,Kedelai,0.23,luas_panen_ha,aktual,aktual
+2025,Kepung,Kedelai,0.24,luas_panen_ha,aktual,aktual
+2026,Kepung,Kedelai,0.251,luas_panen_ha,ets,forecast
+2027,Kepung,Kedelai,0.26,luas_panen_ha,ets,forecast
+2020,Kepung,Kedelai,0.23,produksi_ton,aktual,aktual
+2021,Kepung,Kedelai,0.26,produksi_ton,aktual,aktual
+2022,Kepung,Kedelai,0.24,produksi_ton,aktual,aktual
+2023,Kepung,Kedelai,0.29,produksi_ton,aktual,aktual
+2024,Kepung,Kedelai,0.29,produksi_ton,aktual,aktual
+2025,Kepung,Kedelai,0.32,produksi_ton,aktual,aktual
+2026,Kepung,Kedelai,0.331,produksi_ton,ets,forecast
+2027,Kepung,Kedelai,0.348,produksi_ton,ets,forecast
+2020,Kepung,Ketela Pohon,78.59,luas_panen_ha,aktual,aktual
+2021,Kepung,Ketela Pohon,75.16,luas_panen_ha,aktual,aktual
+2022,Kepung,Ketela Pohon,81.3,luas_panen_ha,aktual,aktual
+2023,Kepung,Ketela Pohon,88.54,luas_panen_ha,aktual,aktual
+2024,Kepung,Ketela Pohon,92.93,luas_panen_ha,aktual,aktual
+2025,Kepung,Ketela Pohon,82.47,luas_panen_ha,aktual,aktual
+2026,Kepung,Ketela Pohon,81.848,luas_panen_ha,arima,forecast
+2027,Kepung,Ketela Pohon,81.811,luas_panen_ha,arima,forecast
+2020,Kepung,Ketela Pohon,2181.17,produksi_ton,aktual,aktual
+2021,Kepung,Ketela Pohon,2148.22,produksi_ton,aktual,aktual
+2022,Kepung,Ketela Pohon,2420.6,produksi_ton,aktual,aktual
+2023,Kepung,Ketela Pohon,2547.55,produksi_ton,aktual,aktual
+2024,Kepung,Ketela Pohon,2744.42,produksi_ton,aktual,aktual
+2025,Kepung,Ketela Pohon,2349.27,produksi_ton,aktual,aktual
+2026,Kepung,Ketela Pohon,2411.285,produksi_ton,arima,forecast
+2027,Kepung,Ketela Pohon,2401.552,produksi_ton,arima,forecast
+2020,Kepung,Padi,1654.97,luas_panen_ha,aktual,aktual
+2021,Kepung,Padi,1716.62,luas_panen_ha,aktual,aktual
+2022,Kepung,Padi,1582.03,luas_panen_ha,aktual,aktual
+2023,Kepung,Padi,1482.35,luas_panen_ha,aktual,aktual
+2024,Kepung,Padi,1611.21,luas_panen_ha,aktual,aktual
+2025,Kepung,Padi,1828.42,luas_panen_ha,aktual,aktual
+2026,Kepung,Padi,1901.966,luas_panen_ha,arima,forecast
+2027,Kepung,Padi,1926.868,luas_panen_ha,arima,forecast
+2020,Kepung,Padi,8952.86,produksi_ton,aktual,aktual
+2021,Kepung,Padi,9725.32,produksi_ton,aktual,aktual
+2022,Kepung,Padi,8902.25,produksi_ton,aktual,aktual
+2023,Kepung,Padi,8772.46,produksi_ton,aktual,aktual
+2024,Kepung,Padi,9558.2,produksi_ton,aktual,aktual
+2025,Kepung,Padi,10603.46,produksi_ton,aktual,aktual
+2026,Kepung,Padi,10815.113,produksi_ton,arima,forecast
+2027,Kepung,Padi,10857.97,produksi_ton,arima,forecast
+2020,Kepung,Ubi Jalar,54.28,luas_panen_ha,aktual,aktual
+2021,Kepung,Ubi Jalar,52.04,luas_panen_ha,aktual,aktual
+2022,Kepung,Ubi Jalar,58.13,luas_panen_ha,aktual,aktual
+2023,Kepung,Ubi Jalar,64.56,luas_panen_ha,aktual,aktual
+2024,Kepung,Ubi Jalar,63.71,luas_panen_ha,aktual,aktual
+2025,Kepung,Ubi Jalar,68.03,luas_panen_ha,aktual,aktual
+2026,Kepung,Ubi Jalar,71.144,luas_panen_ha,ets,forecast
+2027,Kepung,Ubi Jalar,74.292,luas_panen_ha,ets,forecast
+2020,Kepung,Ubi Jalar,1796.21,produksi_ton,aktual,aktual
+2021,Kepung,Ubi Jalar,1716.19,produksi_ton,aktual,aktual
+2022,Kepung,Ubi Jalar,1935.77,produksi_ton,aktual,aktual
+2023,Kepung,Ubi Jalar,2048.46,produksi_ton,aktual,aktual
+2024,Kepung,Ubi Jalar,1932.71,produksi_ton,aktual,aktual
+2025,Kepung,Ubi Jalar,1999.2,produksi_ton,aktual,aktual
+2026,Kepung,Ubi Jalar,1987.716,produksi_ton,arima,forecast
+2027,Kepung,Ubi Jalar,1989.699,produksi_ton,arima,forecast
+2020,Kras,Kacang Tanah,3.99,luas_panen_ha,aktual,aktual
+2021,Kras,Kacang Tanah,4.41,luas_panen_ha,aktual,aktual
+2022,Kras,Kacang Tanah,5.03,luas_panen_ha,aktual,aktual
+2023,Kras,Kacang Tanah,4.94,luas_panen_ha,aktual,aktual
+2024,Kras,Kacang Tanah,4.54,luas_panen_ha,aktual,aktual
+2025,Kras,Kacang Tanah,5.32,luas_panen_ha,aktual,aktual
+2026,Kras,Kacang Tanah,5.4,luas_panen_ha,lr,forecast
+2027,Kras,Kacang Tanah,5.599,luas_panen_ha,lr,forecast
+2020,Kras,Kacang Tanah,6.4,produksi_ton,aktual,aktual
+2021,Kras,Kacang Tanah,7.41,produksi_ton,aktual,aktual
+2022,Kras,Kacang Tanah,8.5,produksi_ton,aktual,aktual
+2023,Kras,Kacang Tanah,8.37,produksi_ton,aktual,aktual
+2024,Kras,Kacang Tanah,8.05,produksi_ton,aktual,aktual
+2025,Kras,Kacang Tanah,9.42,produksi_ton,aktual,aktual
+2026,Kras,Kacang Tanah,9.714,produksi_ton,lr,forecast
+2027,Kras,Kacang Tanah,10.197,produksi_ton,lr,forecast
+2020,Kras,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2021,Kras,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2022,Kras,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2023,Kras,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2024,Kras,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2025,Kras,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2026,Kras,Kedelai,0.02,luas_panen_ha,ets,forecast
+2027,Kras,Kedelai,0.02,luas_panen_ha,ets,forecast
+2020,Kras,Kedelai,0.02,produksi_ton,aktual,aktual
+2021,Kras,Kedelai,0.02,produksi_ton,aktual,aktual
+2022,Kras,Kedelai,0.03,produksi_ton,aktual,aktual
+2023,Kras,Kedelai,0.03,produksi_ton,aktual,aktual
+2024,Kras,Kedelai,0.03,produksi_ton,aktual,aktual
+2025,Kras,Kedelai,0.03,produksi_ton,aktual,aktual
+2026,Kras,Kedelai,0.03,produksi_ton,arima,forecast
+2027,Kras,Kedelai,0.03,produksi_ton,arima,forecast
+2020,Kras,Ketela Pohon,5.62,luas_panen_ha,aktual,aktual
+2021,Kras,Ketela Pohon,6.01,luas_panen_ha,aktual,aktual
+2022,Kras,Ketela Pohon,6.64,luas_panen_ha,aktual,aktual
+2023,Kras,Ketela Pohon,7.43,luas_panen_ha,aktual,aktual
+2024,Kras,Ketela Pohon,7.59,luas_panen_ha,aktual,aktual
+2025,Kras,Ketela Pohon,7.29,luas_panen_ha,aktual,aktual
+2026,Kras,Ketela Pohon,7.096,luas_panen_ha,arima,forecast
+2027,Kras,Ketela Pohon,6.972,luas_panen_ha,arima,forecast
+2020,Kras,Ketela Pohon,164.18,produksi_ton,aktual,aktual
+2021,Kras,Ketela Pohon,171.08,produksi_ton,aktual,aktual
+2022,Kras,Ketela Pohon,182.78,produksi_ton,aktual,aktual
+2023,Kras,Ketela Pohon,197.65,produksi_ton,aktual,aktual
+2024,Kras,Ketela Pohon,207.25,produksi_ton,aktual,aktual
+2025,Kras,Ketela Pohon,207.68,produksi_ton,aktual,aktual
+2026,Kras,Ketela Pohon,208.011,produksi_ton,arima,forecast
+2027,Kras,Ketela Pohon,208.265,produksi_ton,arima,forecast
+2020,Kras,Padi,1883.53,luas_panen_ha,aktual,aktual
+2021,Kras,Padi,1717.37,luas_panen_ha,aktual,aktual
+2022,Kras,Padi,1921.57,luas_panen_ha,aktual,aktual
+2023,Kras,Padi,2044.0,luas_panen_ha,aktual,aktual
+2024,Kras,Padi,1942.49,luas_panen_ha,aktual,aktual
+2025,Kras,Padi,1700.37,luas_panen_ha,aktual,aktual
+2026,Kras,Padi,1715.045,luas_panen_ha,arima,forecast
+2027,Kras,Padi,1714.156,luas_panen_ha,arima,forecast
+2020,Kras,Padi,10725.49,produksi_ton,aktual,aktual
+2021,Kras,Padi,9571.65,produksi_ton,aktual,aktual
+2022,Kras,Padi,11083.76,produksi_ton,aktual,aktual
+2023,Kras,Padi,11788.18,produksi_ton,aktual,aktual
+2024,Kras,Padi,11090.47,produksi_ton,aktual,aktual
+2025,Kras,Padi,9860.86,produksi_ton,aktual,aktual
+2026,Kras,Padi,10094.647,produksi_ton,arima,forecast
+2027,Kras,Padi,10050.197,produksi_ton,arima,forecast
+2020,Kras,Ubi Jalar,5.18,luas_panen_ha,aktual,aktual
+2021,Kras,Ubi Jalar,4.98,luas_panen_ha,aktual,aktual
+2022,Kras,Ubi Jalar,5.51,luas_panen_ha,aktual,aktual
+2023,Kras,Ubi Jalar,6.19,luas_panen_ha,aktual,aktual
+2024,Kras,Ubi Jalar,6.09,luas_panen_ha,aktual,aktual
+2025,Kras,Ubi Jalar,6.01,luas_panen_ha,aktual,aktual
+2026,Kras,Ubi Jalar,5.993,luas_panen_ha,arima,forecast
+2027,Kras,Ubi Jalar,5.989,luas_panen_ha,arima,forecast
+2020,Kras,Ubi Jalar,161.2,produksi_ton,aktual,aktual
+2021,Kras,Ubi Jalar,158.76,produksi_ton,aktual,aktual
+2022,Kras,Ubi Jalar,168.95,produksi_ton,aktual,aktual
+2023,Kras,Ubi Jalar,181.91,produksi_ton,aktual,aktual
+2024,Kras,Ubi Jalar,179.45,produksi_ton,aktual,aktual
+2025,Kras,Ubi Jalar,176.73,produksi_ton,aktual,aktual
+2026,Kras,Ubi Jalar,176.064,produksi_ton,arima,forecast
+2027,Kras,Ubi Jalar,175.901,produksi_ton,arima,forecast
+2020,Kunjang,Kacang Tanah,2.08,luas_panen_ha,aktual,aktual
+2021,Kunjang,Kacang Tanah,2.27,luas_panen_ha,aktual,aktual
+2022,Kunjang,Kacang Tanah,2.34,luas_panen_ha,aktual,aktual
+2023,Kunjang,Kacang Tanah,2.59,luas_panen_ha,aktual,aktual
+2024,Kunjang,Kacang Tanah,2.78,luas_panen_ha,aktual,aktual
+2025,Kunjang,Kacang Tanah,2.61,luas_panen_ha,aktual,aktual
+2026,Kunjang,Kacang Tanah,2.553,luas_panen_ha,arima,forecast
+2027,Kunjang,Kacang Tanah,2.534,luas_panen_ha,arima,forecast
+2020,Kunjang,Kacang Tanah,3.7,produksi_ton,aktual,aktual
+2021,Kunjang,Kacang Tanah,3.92,produksi_ton,aktual,aktual
+2022,Kunjang,Kacang Tanah,3.91,produksi_ton,aktual,aktual
+2023,Kunjang,Kacang Tanah,4.48,produksi_ton,aktual,aktual
+2024,Kunjang,Kacang Tanah,4.91,produksi_ton,aktual,aktual
+2025,Kunjang,Kacang Tanah,4.63,produksi_ton,aktual,aktual
+2026,Kunjang,Kacang Tanah,5.077,produksi_ton,ets,forecast
+2027,Kunjang,Kacang Tanah,5.311,produksi_ton,ets,forecast
+2020,Kunjang,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2021,Kunjang,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2022,Kunjang,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2023,Kunjang,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2024,Kunjang,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2025,Kunjang,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2026,Kunjang,Kedelai,0.01,luas_panen_ha,ets,forecast
+2027,Kunjang,Kedelai,0.01,luas_panen_ha,ets,forecast
+2020,Kunjang,Kedelai,0.01,produksi_ton,aktual,aktual
+2021,Kunjang,Kedelai,0.01,produksi_ton,aktual,aktual
+2022,Kunjang,Kedelai,0.01,produksi_ton,aktual,aktual
+2023,Kunjang,Kedelai,0.01,produksi_ton,aktual,aktual
+2024,Kunjang,Kedelai,0.01,produksi_ton,aktual,aktual
+2025,Kunjang,Kedelai,0.01,produksi_ton,aktual,aktual
+2026,Kunjang,Kedelai,0.01,produksi_ton,ets,forecast
+2027,Kunjang,Kedelai,0.01,produksi_ton,ets,forecast
+2020,Kunjang,Ketela Pohon,4.62,luas_panen_ha,aktual,aktual
+2021,Kunjang,Ketela Pohon,4.72,luas_panen_ha,aktual,aktual
+2022,Kunjang,Ketela Pohon,4.51,luas_panen_ha,aktual,aktual
+2023,Kunjang,Ketela Pohon,4.2,luas_panen_ha,aktual,aktual
+2024,Kunjang,Ketela Pohon,3.68,luas_panen_ha,aktual,aktual
+2025,Kunjang,Ketela Pohon,3.58,luas_panen_ha,aktual,aktual
+2026,Kunjang,Ketela Pohon,3.355,luas_panen_ha,lr,forecast
+2027,Kunjang,Ketela Pohon,3.109,luas_panen_ha,lr,forecast
+2020,Kunjang,Ketela Pohon,121.03,produksi_ton,aktual,aktual
+2021,Kunjang,Ketela Pohon,122.3,produksi_ton,aktual,aktual
+2022,Kunjang,Ketela Pohon,122.54,produksi_ton,aktual,aktual
+2023,Kunjang,Ketela Pohon,117.99,produksi_ton,aktual,aktual
+2024,Kunjang,Ketela Pohon,105.65,produksi_ton,aktual,aktual
+2025,Kunjang,Ketela Pohon,102.02,produksi_ton,aktual,aktual
+2026,Kunjang,Ketela Pohon,100.266,produksi_ton,arima,forecast
+2027,Kunjang,Ketela Pohon,99.419,produksi_ton,arima,forecast
+2020,Kunjang,Padi,1449.12,luas_panen_ha,aktual,aktual
+2021,Kunjang,Padi,1337.4,luas_panen_ha,aktual,aktual
+2022,Kunjang,Padi,1253.29,luas_panen_ha,aktual,aktual
+2023,Kunjang,Padi,1387.51,luas_panen_ha,aktual,aktual
+2024,Kunjang,Padi,1434.65,luas_panen_ha,aktual,aktual
+2025,Kunjang,Padi,1458.23,luas_panen_ha,aktual,aktual
+2026,Kunjang,Padi,1461.075,luas_panen_ha,arima,forecast
+2027,Kunjang,Padi,1461.418,luas_panen_ha,arima,forecast
+2020,Kunjang,Padi,8615.09,produksi_ton,aktual,aktual
+2021,Kunjang,Padi,7663.44,produksi_ton,aktual,aktual
+2022,Kunjang,Padi,7428.12,produksi_ton,aktual,aktual
+2023,Kunjang,Padi,8393.55,produksi_ton,aktual,aktual
+2024,Kunjang,Padi,8640.39,produksi_ton,aktual,aktual
+2025,Kunjang,Padi,8456.66,produksi_ton,aktual,aktual
+2026,Kunjang,Padi,8509.955,produksi_ton,lr,forecast
+2027,Kunjang,Padi,8598.644,produksi_ton,lr,forecast
+2020,Kunjang,Ubi Jalar,3.42,luas_panen_ha,aktual,aktual
+2021,Kunjang,Ubi Jalar,3.06,luas_panen_ha,aktual,aktual
+2022,Kunjang,Ubi Jalar,2.89,luas_panen_ha,aktual,aktual
+2023,Kunjang,Ubi Jalar,2.95,luas_panen_ha,aktual,aktual
+2024,Kunjang,Ubi Jalar,3.39,luas_panen_ha,aktual,aktual
+2025,Kunjang,Ubi Jalar,2.95,luas_panen_ha,aktual,aktual
+2026,Kunjang,Ubi Jalar,2.98,luas_panen_ha,lr,forecast
+2027,Kunjang,Ubi Jalar,2.943,luas_panen_ha,lr,forecast
+2020,Kunjang,Ubi Jalar,92.8,produksi_ton,aktual,aktual
+2021,Kunjang,Ubi Jalar,86.33,produksi_ton,aktual,aktual
+2022,Kunjang,Ubi Jalar,82.94,produksi_ton,aktual,aktual
+2023,Kunjang,Ubi Jalar,87.21,produksi_ton,aktual,aktual
+2024,Kunjang,Ubi Jalar,100.37,produksi_ton,aktual,aktual
+2025,Kunjang,Ubi Jalar,86.82,produksi_ton,aktual,aktual
+2026,Kunjang,Ubi Jalar,91.061,produksi_ton,lr,forecast
+2027,Kunjang,Ubi Jalar,91.532,produksi_ton,lr,forecast
+2020,Mojo,Kacang Tanah,86.55,luas_panen_ha,aktual,aktual
+2021,Mojo,Kacang Tanah,87.55,luas_panen_ha,aktual,aktual
+2022,Mojo,Kacang Tanah,85.65,luas_panen_ha,aktual,aktual
+2023,Mojo,Kacang Tanah,77.2,luas_panen_ha,aktual,aktual
+2024,Mojo,Kacang Tanah,68.73,luas_panen_ha,aktual,aktual
+2025,Mojo,Kacang Tanah,76.46,luas_panen_ha,aktual,aktual
+2026,Mojo,Kacang Tanah,68.821,luas_panen_ha,lr,forecast
+2027,Mojo,Kacang Tanah,65.525,luas_panen_ha,lr,forecast
+2020,Mojo,Kacang Tanah,154.58,produksi_ton,aktual,aktual
+2021,Mojo,Kacang Tanah,163.97,produksi_ton,aktual,aktual
+2022,Mojo,Kacang Tanah,153.46,produksi_ton,aktual,aktual
+2023,Mojo,Kacang Tanah,138.38,produksi_ton,aktual,aktual
+2024,Mojo,Kacang Tanah,127.45,produksi_ton,aktual,aktual
+2025,Mojo,Kacang Tanah,135.38,produksi_ton,aktual,aktual
+2026,Mojo,Kacang Tanah,123.473,produksi_ton,lr,forecast
+2027,Mojo,Kacang Tanah,117.169,produksi_ton,lr,forecast
+2020,Mojo,Kedelai,0.25,luas_panen_ha,aktual,aktual
+2021,Mojo,Kedelai,0.28,luas_panen_ha,aktual,aktual
+2022,Mojo,Kedelai,0.28,luas_panen_ha,aktual,aktual
+2023,Mojo,Kedelai,0.28,luas_panen_ha,aktual,aktual
+2024,Mojo,Kedelai,0.31,luas_panen_ha,aktual,aktual
+2025,Mojo,Kedelai,0.3,luas_panen_ha,aktual,aktual
+2026,Mojo,Kedelai,0.302,luas_panen_ha,arima,forecast
+2027,Mojo,Kedelai,0.302,luas_panen_ha,arima,forecast
+2020,Mojo,Kedelai,0.32,produksi_ton,aktual,aktual
+2021,Mojo,Kedelai,0.37,produksi_ton,aktual,aktual
+2022,Mojo,Kedelai,0.36,produksi_ton,aktual,aktual
+2023,Mojo,Kedelai,0.35,produksi_ton,aktual,aktual
+2024,Mojo,Kedelai,0.39,produksi_ton,aktual,aktual
+2025,Mojo,Kedelai,0.4,produksi_ton,aktual,aktual
+2026,Mojo,Kedelai,0.41,produksi_ton,ets,forecast
+2027,Mojo,Kedelai,0.423,produksi_ton,ets,forecast
+2020,Mojo,Ketela Pohon,105.47,luas_panen_ha,aktual,aktual
+2021,Mojo,Ketela Pohon,122.38,luas_panen_ha,aktual,aktual
+2022,Mojo,Ketela Pohon,114.21,luas_panen_ha,aktual,aktual
+2023,Mojo,Ketela Pohon,109.43,luas_panen_ha,aktual,aktual
+2024,Mojo,Ketela Pohon,103.73,luas_panen_ha,aktual,aktual
+2025,Mojo,Ketela Pohon,104.75,luas_panen_ha,aktual,aktual
+2026,Mojo,Ketela Pohon,104.369,luas_panen_ha,arima,forecast
+2027,Mojo,Ketela Pohon,104.511,luas_panen_ha,arima,forecast
+2020,Mojo,Ketela Pohon,3050.45,produksi_ton,aktual,aktual
+2021,Mojo,Ketela Pohon,3434.07,produksi_ton,aktual,aktual
+2022,Mojo,Ketela Pohon,3315.11,produksi_ton,aktual,aktual
+2023,Mojo,Ketela Pohon,3270.11,produksi_ton,aktual,aktual
+2024,Mojo,Ketela Pohon,3078.35,produksi_ton,aktual,aktual
+2025,Mojo,Ketela Pohon,2984.06,produksi_ton,aktual,aktual
+2026,Mojo,Ketela Pohon,2957.05,produksi_ton,arima,forecast
+2027,Mojo,Ketela Pohon,2949.312,produksi_ton,arima,forecast
+2020,Mojo,Padi,848.51,luas_panen_ha,aktual,aktual
+2021,Mojo,Padi,829.47,luas_panen_ha,aktual,aktual
+2022,Mojo,Padi,890.95,luas_panen_ha,aktual,aktual
+2023,Mojo,Padi,858.08,luas_panen_ha,aktual,aktual
+2024,Mojo,Padi,761.03,luas_panen_ha,aktual,aktual
+2025,Mojo,Padi,718.64,luas_panen_ha,aktual,aktual
+2026,Mojo,Padi,708.804,luas_panen_ha,arima,forecast
+2027,Mojo,Padi,706.521,luas_panen_ha,arima,forecast
+2020,Mojo,Padi,5077.45,produksi_ton,aktual,aktual
+2021,Mojo,Padi,4895.77,produksi_ton,aktual,aktual
+2022,Mojo,Padi,5232.24,produksi_ton,aktual,aktual
+2023,Mojo,Padi,4875.24,produksi_ton,aktual,aktual
+2024,Mojo,Padi,4323.99,produksi_ton,aktual,aktual
+2025,Mojo,Padi,4167.57,produksi_ton,aktual,aktual
+2026,Mojo,Padi,3990.449,produksi_ton,ets,forecast
+2027,Mojo,Padi,3808.787,produksi_ton,ets,forecast
+2020,Mojo,Ubi Jalar,105.81,luas_panen_ha,aktual,aktual
+2021,Mojo,Ubi Jalar,96.04,luas_panen_ha,aktual,aktual
+2022,Mojo,Ubi Jalar,106.46,luas_panen_ha,aktual,aktual
+2023,Mojo,Ubi Jalar,95.85,luas_panen_ha,aktual,aktual
+2024,Mojo,Ubi Jalar,91.32,luas_panen_ha,aktual,aktual
+2025,Mojo,Ubi Jalar,86.41,luas_panen_ha,aktual,aktual
+2026,Mojo,Ubi Jalar,84.805,luas_panen_ha,ets,forecast
+2027,Mojo,Ubi Jalar,81.326,luas_panen_ha,ets,forecast
+2020,Mojo,Ubi Jalar,3022.9,produksi_ton,aktual,aktual
+2021,Mojo,Ubi Jalar,2869.72,produksi_ton,aktual,aktual
+2022,Mojo,Ubi Jalar,3076.1,produksi_ton,aktual,aktual
+2023,Mojo,Ubi Jalar,2796.85,produksi_ton,aktual,aktual
+2024,Mojo,Ubi Jalar,2662.93,produksi_ton,aktual,aktual
+2025,Mojo,Ubi Jalar,2539.4,produksi_ton,aktual,aktual
+2026,Mojo,Ubi Jalar,2495.637,produksi_ton,ets,forecast
+2027,Mojo,Ubi Jalar,2400.653,produksi_ton,ets,forecast
+2020,Ngadiluwih,Kacang Tanah,8.23,luas_panen_ha,aktual,aktual
+2021,Ngadiluwih,Kacang Tanah,7.34,luas_panen_ha,aktual,aktual
+2022,Ngadiluwih,Kacang Tanah,8.21,luas_panen_ha,aktual,aktual
+2023,Ngadiluwih,Kacang Tanah,9.51,luas_panen_ha,aktual,aktual
+2024,Ngadiluwih,Kacang Tanah,11.19,luas_panen_ha,aktual,aktual
+2025,Ngadiluwih,Kacang Tanah,10.21,luas_panen_ha,aktual,aktual
+2026,Ngadiluwih,Kacang Tanah,11.39,luas_panen_ha,lr,forecast
+2027,Ngadiluwih,Kacang Tanah,12.04,luas_panen_ha,lr,forecast
+2020,Ngadiluwih,Kacang Tanah,13.53,produksi_ton,aktual,aktual
+2021,Ngadiluwih,Kacang Tanah,11.97,produksi_ton,aktual,aktual
+2022,Ngadiluwih,Kacang Tanah,12.87,produksi_ton,aktual,aktual
+2023,Ngadiluwih,Kacang Tanah,15.41,produksi_ton,aktual,aktual
+2024,Ngadiluwih,Kacang Tanah,18.82,produksi_ton,aktual,aktual
+2025,Ngadiluwih,Kacang Tanah,18.07,produksi_ton,aktual,aktual
+2026,Ngadiluwih,Kacang Tanah,19.691,produksi_ton,lr,forecast
+2027,Ngadiluwih,Kacang Tanah,20.999,produksi_ton,lr,forecast
+2020,Ngadiluwih,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2021,Ngadiluwih,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2022,Ngadiluwih,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2023,Ngadiluwih,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2024,Ngadiluwih,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2025,Ngadiluwih,Kedelai,0.04,luas_panen_ha,aktual,aktual
+2026,Ngadiluwih,Kedelai,0.04,luas_panen_ha,ets,forecast
+2027,Ngadiluwih,Kedelai,0.04,luas_panen_ha,ets,forecast
+2020,Ngadiluwih,Kedelai,0.04,produksi_ton,aktual,aktual
+2021,Ngadiluwih,Kedelai,0.05,produksi_ton,aktual,aktual
+2022,Ngadiluwih,Kedelai,0.04,produksi_ton,aktual,aktual
+2023,Ngadiluwih,Kedelai,0.05,produksi_ton,aktual,aktual
+2024,Ngadiluwih,Kedelai,0.05,produksi_ton,aktual,aktual
+2025,Ngadiluwih,Kedelai,0.05,produksi_ton,aktual,aktual
+2026,Ngadiluwih,Kedelai,0.05,produksi_ton,arima,forecast
+2027,Ngadiluwih,Kedelai,0.05,produksi_ton,arima,forecast
+2020,Ngadiluwih,Ketela Pohon,10.99,luas_panen_ha,aktual,aktual
+2021,Ngadiluwih,Ketela Pohon,10.54,luas_panen_ha,aktual,aktual
+2022,Ngadiluwih,Ketela Pohon,11.65,luas_panen_ha,aktual,aktual
+2023,Ngadiluwih,Ketela Pohon,12.86,luas_panen_ha,aktual,aktual
+2024,Ngadiluwih,Ketela Pohon,12.01,luas_panen_ha,aktual,aktual
+2025,Ngadiluwih,Ketela Pohon,13.98,luas_panen_ha,aktual,aktual
+2026,Ngadiluwih,Ketela Pohon,14.062,luas_panen_ha,ets,forecast
+2027,Ngadiluwih,Ketela Pohon,14.65,luas_panen_ha,ets,forecast
+2020,Ngadiluwih,Ketela Pohon,278.17,produksi_ton,aktual,aktual
+2021,Ngadiluwih,Ketela Pohon,275.02,produksi_ton,aktual,aktual
+2022,Ngadiluwih,Ketela Pohon,308.83,produksi_ton,aktual,aktual
+2023,Ngadiluwih,Ketela Pohon,341.58,produksi_ton,aktual,aktual
+2024,Ngadiluwih,Ketela Pohon,332.09,produksi_ton,aktual,aktual
+2025,Ngadiluwih,Ketela Pohon,398.36,produksi_ton,aktual,aktual
+2026,Ngadiluwih,Ketela Pohon,402.833,produksi_ton,ets,forecast
+2027,Ngadiluwih,Ketela Pohon,425.83,produksi_ton,ets,forecast
+2020,Ngadiluwih,Padi,873.61,luas_panen_ha,aktual,aktual
+2021,Ngadiluwih,Padi,871.96,luas_panen_ha,aktual,aktual
+2022,Ngadiluwih,Padi,869.85,luas_panen_ha,aktual,aktual
+2023,Ngadiluwih,Padi,818.08,luas_panen_ha,aktual,aktual
+2024,Ngadiluwih,Padi,774.43,luas_panen_ha,aktual,aktual
+2025,Ngadiluwih,Padi,900.24,luas_panen_ha,aktual,aktual
+2026,Ngadiluwih,Padi,830.241,luas_panen_ha,lr,forecast
+2027,Ngadiluwih,Padi,824.206,luas_panen_ha,lr,forecast
+2020,Ngadiluwih,Padi,5385.01,produksi_ton,aktual,aktual
+2021,Ngadiluwih,Padi,5591.8,produksi_ton,aktual,aktual
+2022,Ngadiluwih,Padi,5529.66,produksi_ton,aktual,aktual
+2023,Ngadiluwih,Padi,4974.82,produksi_ton,aktual,aktual
+2024,Ngadiluwih,Padi,4579.51,produksi_ton,aktual,aktual
+2025,Ngadiluwih,Padi,5220.72,produksi_ton,aktual,aktual
+2026,Ngadiluwih,Padi,4772.271,produksi_ton,lr,forecast
+2027,Ngadiluwih,Padi,4646.18,produksi_ton,lr,forecast
+2020,Ngadiluwih,Ubi Jalar,13.9,luas_panen_ha,aktual,aktual
+2021,Ngadiluwih,Ubi Jalar,12.5,luas_panen_ha,aktual,aktual
+2022,Ngadiluwih,Ubi Jalar,13.24,luas_panen_ha,aktual,aktual
+2023,Ngadiluwih,Ubi Jalar,11.86,luas_panen_ha,aktual,aktual
+2024,Ngadiluwih,Ubi Jalar,11.67,luas_panen_ha,aktual,aktual
+2025,Ngadiluwih,Ubi Jalar,11.54,luas_panen_ha,aktual,aktual
+2026,Ngadiluwih,Ubi Jalar,11.608,luas_panen_ha,arima,forecast
+2027,Ngadiluwih,Ubi Jalar,11.572,luas_panen_ha,arima,forecast
+2020,Ngadiluwih,Ubi Jalar,424.28,produksi_ton,aktual,aktual
+2021,Ngadiluwih,Ubi Jalar,378.53,produksi_ton,aktual,aktual
+2022,Ngadiluwih,Ubi Jalar,391.87,produksi_ton,aktual,aktual
+2023,Ngadiluwih,Ubi Jalar,351.42,produksi_ton,aktual,aktual
+2024,Ngadiluwih,Ubi Jalar,337.95,produksi_ton,aktual,aktual
+2025,Ngadiluwih,Ubi Jalar,339.0,produksi_ton,aktual,aktual
+2026,Ngadiluwih,Ubi Jalar,338.764,produksi_ton,arima,forecast
+2027,Ngadiluwih,Ubi Jalar,338.817,produksi_ton,arima,forecast
+2020,Ngancar,Kacang Tanah,41.11,luas_panen_ha,aktual,aktual
+2021,Ngancar,Kacang Tanah,38.15,luas_panen_ha,aktual,aktual
+2022,Ngancar,Kacang Tanah,43.32,luas_panen_ha,aktual,aktual
+2023,Ngancar,Kacang Tanah,45.39,luas_panen_ha,aktual,aktual
+2024,Ngancar,Kacang Tanah,48.97,luas_panen_ha,aktual,aktual
+2025,Ngancar,Kacang Tanah,50.28,luas_panen_ha,aktual,aktual
+2026,Ngancar,Kacang Tanah,52.575,luas_panen_ha,ets,forecast
+2027,Ngancar,Kacang Tanah,54.871,luas_panen_ha,ets,forecast
+2020,Ngancar,Kacang Tanah,70.39,produksi_ton,aktual,aktual
+2021,Ngancar,Kacang Tanah,63.04,produksi_ton,aktual,aktual
+2022,Ngancar,Kacang Tanah,74.56,produksi_ton,aktual,aktual
+2023,Ngancar,Kacang Tanah,80.99,produksi_ton,aktual,aktual
+2024,Ngancar,Kacang Tanah,88.1,produksi_ton,aktual,aktual
+2025,Ngancar,Kacang Tanah,89.02,produksi_ton,aktual,aktual
+2026,Ngancar,Kacang Tanah,89.157,produksi_ton,arima,forecast
+2027,Ngancar,Kacang Tanah,89.177,produksi_ton,arima,forecast
+2020,Ngancar,Kedelai,0.25,luas_panen_ha,aktual,aktual
+2021,Ngancar,Kedelai,0.23,luas_panen_ha,aktual,aktual
+2022,Ngancar,Kedelai,0.22,luas_panen_ha,aktual,aktual
+2023,Ngancar,Kedelai,0.2,luas_panen_ha,aktual,aktual
+2024,Ngancar,Kedelai,0.18,luas_panen_ha,aktual,aktual
+2025,Ngancar,Kedelai,0.2,luas_panen_ha,aktual,aktual
+2026,Ngancar,Kedelai,0.171,luas_panen_ha,lr,forecast
+2027,Ngancar,Kedelai,0.159,luas_panen_ha,lr,forecast
+2020,Ngancar,Kedelai,0.31,produksi_ton,aktual,aktual
+2021,Ngancar,Kedelai,0.28,produksi_ton,aktual,aktual
+2022,Ngancar,Kedelai,0.27,produksi_ton,aktual,aktual
+2023,Ngancar,Kedelai,0.25,produksi_ton,aktual,aktual
+2024,Ngancar,Kedelai,0.23,produksi_ton,aktual,aktual
+2025,Ngancar,Kedelai,0.26,produksi_ton,aktual,aktual
+2026,Ngancar,Kedelai,0.266,produksi_ton,arima,forecast
+2027,Ngancar,Kedelai,0.267,produksi_ton,arima,forecast
+2020,Ngancar,Ketela Pohon,82.47,luas_panen_ha,aktual,aktual
+2021,Ngancar,Ketela Pohon,82.86,luas_panen_ha,aktual,aktual
+2022,Ngancar,Ketela Pohon,81.78,luas_panen_ha,aktual,aktual
+2023,Ngancar,Ketela Pohon,77.77,luas_panen_ha,aktual,aktual
+2024,Ngancar,Ketela Pohon,78.42,luas_panen_ha,aktual,aktual
+2025,Ngancar,Ketela Pohon,68.88,luas_panen_ha,aktual,aktual
+2026,Ngancar,Ketela Pohon,70.169,luas_panen_ha,ets,forecast
+2027,Ngancar,Ketela Pohon,67.732,luas_panen_ha,ets,forecast
+2020,Ngancar,Ketela Pohon,2191.53,produksi_ton,aktual,aktual
+2021,Ngancar,Ketela Pohon,2198.93,produksi_ton,aktual,aktual
+2022,Ngancar,Ketela Pohon,2204.74,produksi_ton,aktual,aktual
+2023,Ngancar,Ketela Pohon,2205.24,produksi_ton,aktual,aktual
+2024,Ngancar,Ketela Pohon,2260.56,produksi_ton,aktual,aktual
+2025,Ngancar,Ketela Pohon,1962.25,produksi_ton,aktual,aktual
+2026,Ngancar,Ketela Pohon,2076.021,produksi_ton,ets,forecast
+2027,Ngancar,Ketela Pohon,2049.087,produksi_ton,ets,forecast
+2020,Ngancar,Padi,1131.14,luas_panen_ha,aktual,aktual
+2021,Ngancar,Padi,1296.23,luas_panen_ha,aktual,aktual
+2022,Ngancar,Padi,1452.66,luas_panen_ha,aktual,aktual
+2023,Ngancar,Padi,1507.5,luas_panen_ha,aktual,aktual
+2024,Ngancar,Padi,1326.41,luas_panen_ha,aktual,aktual
+2025,Ngancar,Padi,1170.31,luas_panen_ha,aktual,aktual
+2026,Ngancar,Padi,1068.447,luas_panen_ha,arima,forecast
+2027,Ngancar,Padi,1001.975,luas_panen_ha,arima,forecast
+2020,Ngancar,Padi,6386.02,produksi_ton,aktual,aktual
+2021,Ngancar,Padi,7574.2,produksi_ton,aktual,aktual
+2022,Ngancar,Padi,8196.58,produksi_ton,aktual,aktual
+2023,Ngancar,Padi,8784.48,produksi_ton,aktual,aktual
+2024,Ngancar,Padi,7590.62,produksi_ton,aktual,aktual
+2025,Ngancar,Padi,6786.93,produksi_ton,aktual,aktual
+2026,Ngancar,Padi,6436.364,produksi_ton,arima,forecast
+2027,Ngancar,Padi,6283.449,produksi_ton,arima,forecast
+2020,Ngancar,Ubi Jalar,47.34,luas_panen_ha,aktual,aktual
+2021,Ngancar,Ubi Jalar,55.51,luas_panen_ha,aktual,aktual
+2022,Ngancar,Ubi Jalar,52.43,luas_panen_ha,aktual,aktual
+2023,Ngancar,Ubi Jalar,57.62,luas_panen_ha,aktual,aktual
+2024,Ngancar,Ubi Jalar,54.4,luas_panen_ha,aktual,aktual
+2025,Ngancar,Ubi Jalar,56.82,luas_panen_ha,aktual,aktual
+2026,Ngancar,Ubi Jalar,54.758,luas_panen_ha,arima,forecast
+2027,Ngancar,Ubi Jalar,56.515,luas_panen_ha,arima,forecast
+2020,Ngancar,Ubi Jalar,1388.77,produksi_ton,aktual,aktual
+2021,Ngancar,Ubi Jalar,1573.36,produksi_ton,aktual,aktual
+2022,Ngancar,Ubi Jalar,1456.83,produksi_ton,aktual,aktual
+2023,Ngancar,Ubi Jalar,1673.67,produksi_ton,aktual,aktual
+2024,Ngancar,Ubi Jalar,1590.22,produksi_ton,aktual,aktual
+2025,Ngancar,Ubi Jalar,1669.85,produksi_ton,aktual,aktual
+2026,Ngancar,Ubi Jalar,1606.826,produksi_ton,arima,forecast
+2027,Ngancar,Ubi Jalar,1656.707,produksi_ton,arima,forecast
+2020,Ngasem,Kacang Tanah,1.32,luas_panen_ha,aktual,aktual
+2021,Ngasem,Kacang Tanah,1.21,luas_panen_ha,aktual,aktual
+2022,Ngasem,Kacang Tanah,1.24,luas_panen_ha,aktual,aktual
+2023,Ngasem,Kacang Tanah,1.14,luas_panen_ha,aktual,aktual
+2024,Ngasem,Kacang Tanah,1.29,luas_panen_ha,aktual,aktual
+2025,Ngasem,Kacang Tanah,1.33,luas_panen_ha,aktual,aktual
+2026,Ngasem,Kacang Tanah,1.374,luas_panen_ha,ets,forecast
+2027,Ngasem,Kacang Tanah,1.439,luas_panen_ha,ets,forecast
+2020,Ngasem,Kacang Tanah,2.08,produksi_ton,aktual,aktual
+2021,Ngasem,Kacang Tanah,1.95,produksi_ton,aktual,aktual
+2022,Ngasem,Kacang Tanah,2.08,produksi_ton,aktual,aktual
+2023,Ngasem,Kacang Tanah,1.97,produksi_ton,aktual,aktual
+2024,Ngasem,Kacang Tanah,2.23,produksi_ton,aktual,aktual
+2025,Ngasem,Kacang Tanah,2.35,produksi_ton,aktual,aktual
+2026,Ngasem,Kacang Tanah,2.318,produksi_ton,ets,forecast
+2027,Ngasem,Kacang Tanah,2.377,produksi_ton,ets,forecast
+2020,Ngasem,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2021,Ngasem,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2022,Ngasem,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2023,Ngasem,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2024,Ngasem,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2025,Ngasem,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2026,Ngasem,Kedelai,0.01,luas_panen_ha,ets,forecast
+2027,Ngasem,Kedelai,0.01,luas_panen_ha,ets,forecast
+2020,Ngasem,Kedelai,0.01,produksi_ton,aktual,aktual
+2021,Ngasem,Kedelai,0.01,produksi_ton,aktual,aktual
+2022,Ngasem,Kedelai,0.01,produksi_ton,aktual,aktual
+2023,Ngasem,Kedelai,0.01,produksi_ton,aktual,aktual
+2024,Ngasem,Kedelai,0.01,produksi_ton,aktual,aktual
+2025,Ngasem,Kedelai,0.01,produksi_ton,aktual,aktual
+2026,Ngasem,Kedelai,0.01,produksi_ton,ets,forecast
+2027,Ngasem,Kedelai,0.01,produksi_ton,ets,forecast
+2020,Ngasem,Ketela Pohon,2.06,luas_panen_ha,aktual,aktual
+2021,Ngasem,Ketela Pohon,2.14,luas_panen_ha,aktual,aktual
+2022,Ngasem,Ketela Pohon,2.04,luas_panen_ha,aktual,aktual
+2023,Ngasem,Ketela Pohon,1.93,luas_panen_ha,aktual,aktual
+2024,Ngasem,Ketela Pohon,1.86,luas_panen_ha,aktual,aktual
+2025,Ngasem,Ketela Pohon,1.82,luas_panen_ha,aktual,aktual
+2026,Ngasem,Ketela Pohon,1.76,luas_panen_ha,ets,forecast
+2027,Ngasem,Ketela Pohon,1.699,luas_panen_ha,ets,forecast
+2020,Ngasem,Ketela Pohon,57.66,produksi_ton,aktual,aktual
+2021,Ngasem,Ketela Pohon,60.06,produksi_ton,aktual,aktual
+2022,Ngasem,Ketela Pohon,58.72,produksi_ton,aktual,aktual
+2023,Ngasem,Ketela Pohon,58.37,produksi_ton,aktual,aktual
+2024,Ngasem,Ketela Pohon,54.49,produksi_ton,aktual,aktual
+2025,Ngasem,Ketela Pohon,51.82,produksi_ton,aktual,aktual
+2026,Ngasem,Ketela Pohon,48.706,produksi_ton,ets,forecast
+2027,Ngasem,Ketela Pohon,45.58,produksi_ton,ets,forecast
+2020,Ngasem,Padi,376.62,luas_panen_ha,aktual,aktual
+2021,Ngasem,Padi,374.02,luas_panen_ha,aktual,aktual
+2022,Ngasem,Padi,402.75,luas_panen_ha,aktual,aktual
+2023,Ngasem,Padi,399.96,luas_panen_ha,aktual,aktual
+2024,Ngasem,Padi,397.97,luas_panen_ha,aktual,aktual
+2025,Ngasem,Padi,385.71,luas_panen_ha,aktual,aktual
+2026,Ngasem,Padi,387.191,luas_panen_ha,arima,forecast
+2027,Ngasem,Padi,387.012,luas_panen_ha,arima,forecast
+2020,Ngasem,Padi,1911.14,produksi_ton,aktual,aktual
+2021,Ngasem,Padi,1878.32,produksi_ton,aktual,aktual
+2022,Ngasem,Padi,2084.4,produksi_ton,aktual,aktual
+2023,Ngasem,Padi,2167.16,produksi_ton,aktual,aktual
+2024,Ngasem,Padi,2241.37,produksi_ton,aktual,aktual
+2025,Ngasem,Padi,2236.81,produksi_ton,aktual,aktual
+2026,Ngasem,Padi,2235.742,produksi_ton,arima,forecast
+2027,Ngasem,Padi,2235.492,produksi_ton,arima,forecast
+2020,Ngasem,Ubi Jalar,1.67,luas_panen_ha,aktual,aktual
+2021,Ngasem,Ubi Jalar,1.48,luas_panen_ha,aktual,aktual
+2022,Ngasem,Ubi Jalar,1.67,luas_panen_ha,aktual,aktual
+2023,Ngasem,Ubi Jalar,1.6,luas_panen_ha,aktual,aktual
+2024,Ngasem,Ubi Jalar,1.66,luas_panen_ha,aktual,aktual
+2025,Ngasem,Ubi Jalar,1.5,luas_panen_ha,aktual,aktual
+2026,Ngasem,Ubi Jalar,1.641,luas_panen_ha,arima,forecast
+2027,Ngasem,Ubi Jalar,1.516,luas_panen_ha,arima,forecast
+2020,Ngasem,Ubi Jalar,47.55,produksi_ton,aktual,aktual
+2021,Ngasem,Ubi Jalar,41.95,produksi_ton,aktual,aktual
+2022,Ngasem,Ubi Jalar,49.06,produksi_ton,aktual,aktual
+2023,Ngasem,Ubi Jalar,46.67,produksi_ton,aktual,aktual
+2024,Ngasem,Ubi Jalar,50.8,produksi_ton,aktual,aktual
+2025,Ngasem,Ubi Jalar,44.1,produksi_ton,aktual,aktual
+2026,Ngasem,Ubi Jalar,49.96,produksi_ton,arima,forecast
+2027,Ngasem,Ubi Jalar,44.835,produksi_ton,arima,forecast
+2020,Pagu,Kacang Tanah,1.2,luas_panen_ha,aktual,aktual
+2021,Pagu,Kacang Tanah,1.27,luas_panen_ha,aktual,aktual
+2022,Pagu,Kacang Tanah,1.22,luas_panen_ha,aktual,aktual
+2023,Pagu,Kacang Tanah,1.09,luas_panen_ha,aktual,aktual
+2024,Pagu,Kacang Tanah,1.16,luas_panen_ha,aktual,aktual
+2025,Pagu,Kacang Tanah,1.23,luas_panen_ha,aktual,aktual
+2026,Pagu,Kacang Tanah,1.227,luas_panen_ha,arima,forecast
+2027,Pagu,Kacang Tanah,1.227,luas_panen_ha,arima,forecast
+2020,Pagu,Kacang Tanah,2.22,produksi_ton,aktual,aktual
+2021,Pagu,Kacang Tanah,2.34,produksi_ton,aktual,aktual
+2022,Pagu,Kacang Tanah,2.27,produksi_ton,aktual,aktual
+2023,Pagu,Kacang Tanah,1.96,produksi_ton,aktual,aktual
+2024,Pagu,Kacang Tanah,2.09,produksi_ton,aktual,aktual
+2025,Pagu,Kacang Tanah,2.19,produksi_ton,aktual,aktual
+2026,Pagu,Kacang Tanah,2.18,produksi_ton,arima,forecast
+2027,Pagu,Kacang Tanah,2.181,produksi_ton,arima,forecast
+2020,Pagu,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2021,Pagu,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2022,Pagu,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2023,Pagu,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2024,Pagu,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2025,Pagu,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2026,Pagu,Kedelai,0.0,luas_panen_ha,ets,forecast
+2027,Pagu,Kedelai,0.0,luas_panen_ha,ets,forecast
+2020,Pagu,Kedelai,0.0,produksi_ton,aktual,aktual
+2021,Pagu,Kedelai,0.0,produksi_ton,aktual,aktual
+2022,Pagu,Kedelai,0.0,produksi_ton,aktual,aktual
+2023,Pagu,Kedelai,0.0,produksi_ton,aktual,aktual
+2024,Pagu,Kedelai,0.0,produksi_ton,aktual,aktual
+2025,Pagu,Kedelai,0.01,produksi_ton,aktual,aktual
+2026,Pagu,Kedelai,0.007,produksi_ton,ets,forecast
+2027,Pagu,Kedelai,0.008,produksi_ton,ets,forecast
+2020,Pagu,Ketela Pohon,1.74,luas_panen_ha,aktual,aktual
+2021,Pagu,Ketela Pohon,1.82,luas_panen_ha,aktual,aktual
+2022,Pagu,Ketela Pohon,1.99,luas_panen_ha,aktual,aktual
+2023,Pagu,Ketela Pohon,1.9,luas_panen_ha,aktual,aktual
+2024,Pagu,Ketela Pohon,1.69,luas_panen_ha,aktual,aktual
+2025,Pagu,Ketela Pohon,1.69,luas_panen_ha,aktual,aktual
+2026,Pagu,Ketela Pohon,1.69,luas_panen_ha,arima,forecast
+2027,Pagu,Ketela Pohon,1.69,luas_panen_ha,arima,forecast
+2020,Pagu,Ketela Pohon,52.84,produksi_ton,aktual,aktual
+2021,Pagu,Ketela Pohon,53.09,produksi_ton,aktual,aktual
+2022,Pagu,Ketela Pohon,56.72,produksi_ton,aktual,aktual
+2023,Pagu,Ketela Pohon,56.99,produksi_ton,aktual,aktual
+2024,Pagu,Ketela Pohon,50.62,produksi_ton,aktual,aktual
+2025,Pagu,Ketela Pohon,48.18,produksi_ton,aktual,aktual
+2026,Pagu,Ketela Pohon,47.595,produksi_ton,arima,forecast
+2027,Pagu,Ketela Pohon,47.455,produksi_ton,arima,forecast
+2020,Pagu,Padi,1061.62,luas_panen_ha,aktual,aktual
+2021,Pagu,Padi,1192.96,luas_panen_ha,aktual,aktual
+2022,Pagu,Padi,1118.73,luas_panen_ha,aktual,aktual
+2023,Pagu,Padi,1036.55,luas_panen_ha,aktual,aktual
+2024,Pagu,Padi,1075.9,luas_panen_ha,aktual,aktual
+2025,Pagu,Padi,1093.48,luas_panen_ha,aktual,aktual
+2026,Pagu,Padi,1088.786,luas_panen_ha,arima,forecast
+2027,Pagu,Padi,1090.04,luas_panen_ha,arima,forecast
+2020,Pagu,Padi,5654.42,produksi_ton,aktual,aktual
+2021,Pagu,Padi,6563.84,produksi_ton,aktual,aktual
+2022,Pagu,Padi,5906.59,produksi_ton,aktual,aktual
+2023,Pagu,Padi,5740.45,produksi_ton,aktual,aktual
+2024,Pagu,Padi,6060.24,produksi_ton,aktual,aktual
+2025,Pagu,Padi,6341.37,produksi_ton,aktual,aktual
+2026,Pagu,Padi,6413.232,produksi_ton,arima,forecast
+2027,Pagu,Padi,6431.601,produksi_ton,arima,forecast
+2020,Pagu,Ubi Jalar,1.27,luas_panen_ha,aktual,aktual
+2021,Pagu,Ubi Jalar,1.3,luas_panen_ha,aktual,aktual
+2022,Pagu,Ubi Jalar,1.29,luas_panen_ha,aktual,aktual
+2023,Pagu,Ubi Jalar,1.2,luas_panen_ha,aktual,aktual
+2024,Pagu,Ubi Jalar,1.22,luas_panen_ha,aktual,aktual
+2025,Pagu,Ubi Jalar,1.39,luas_panen_ha,aktual,aktual
+2026,Pagu,Ubi Jalar,1.413,luas_panen_ha,arima,forecast
+2027,Pagu,Ubi Jalar,1.416,luas_panen_ha,arima,forecast
+2020,Pagu,Ubi Jalar,34.71,produksi_ton,aktual,aktual
+2021,Pagu,Ubi Jalar,34.72,produksi_ton,aktual,aktual
+2022,Pagu,Ubi Jalar,36.29,produksi_ton,aktual,aktual
+2023,Pagu,Ubi Jalar,34.74,produksi_ton,aktual,aktual
+2024,Pagu,Ubi Jalar,35.56,produksi_ton,aktual,aktual
+2025,Pagu,Ubi Jalar,41.0,produksi_ton,aktual,aktual
+2026,Pagu,Ubi Jalar,39.412,produksi_ton,ets,forecast
+2027,Pagu,Ubi Jalar,40.338,produksi_ton,ets,forecast
+2020,Papar,Kacang Tanah,5.1,luas_panen_ha,aktual,aktual
+2021,Papar,Kacang Tanah,4.57,luas_panen_ha,aktual,aktual
+2022,Papar,Kacang Tanah,4.56,luas_panen_ha,aktual,aktual
+2023,Papar,Kacang Tanah,4.6,luas_panen_ha,aktual,aktual
+2024,Papar,Kacang Tanah,4.33,luas_panen_ha,aktual,aktual
+2025,Papar,Kacang Tanah,3.83,luas_panen_ha,aktual,aktual
+2026,Papar,Kacang Tanah,3.795,luas_panen_ha,lr,forecast
+2027,Papar,Kacang Tanah,3.594,luas_panen_ha,lr,forecast
+2020,Papar,Kacang Tanah,8.7,produksi_ton,aktual,aktual
+2021,Papar,Kacang Tanah,7.97,produksi_ton,aktual,aktual
+2022,Papar,Kacang Tanah,7.59,produksi_ton,aktual,aktual
+2023,Papar,Kacang Tanah,8.05,produksi_ton,aktual,aktual
+2024,Papar,Kacang Tanah,7.9,produksi_ton,aktual,aktual
+2025,Papar,Kacang Tanah,6.78,produksi_ton,aktual,aktual
+2026,Papar,Kacang Tanah,6.897,produksi_ton,ets,forecast
+2027,Papar,Kacang Tanah,6.63,produksi_ton,ets,forecast
+2020,Papar,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2021,Papar,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2022,Papar,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2023,Papar,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2024,Papar,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2025,Papar,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2026,Papar,Kedelai,0.02,luas_panen_ha,ets,forecast
+2027,Papar,Kedelai,0.02,luas_panen_ha,ets,forecast
+2020,Papar,Kedelai,0.02,produksi_ton,aktual,aktual
+2021,Papar,Kedelai,0.02,produksi_ton,aktual,aktual
+2022,Papar,Kedelai,0.02,produksi_ton,aktual,aktual
+2023,Papar,Kedelai,0.02,produksi_ton,aktual,aktual
+2024,Papar,Kedelai,0.02,produksi_ton,aktual,aktual
+2025,Papar,Kedelai,0.02,produksi_ton,aktual,aktual
+2026,Papar,Kedelai,0.02,produksi_ton,ets,forecast
+2027,Papar,Kedelai,0.02,produksi_ton,ets,forecast
+2020,Papar,Ketela Pohon,4.99,luas_panen_ha,aktual,aktual
+2021,Papar,Ketela Pohon,5.25,luas_panen_ha,aktual,aktual
+2022,Papar,Ketela Pohon,4.97,luas_panen_ha,aktual,aktual
+2023,Papar,Ketela Pohon,5.11,luas_panen_ha,aktual,aktual
+2024,Papar,Ketela Pohon,5.55,luas_panen_ha,aktual,aktual
+2025,Papar,Ketela Pohon,5.24,luas_panen_ha,aktual,aktual
+2026,Papar,Ketela Pohon,5.392,luas_panen_ha,arima,forecast
+2027,Papar,Ketela Pohon,5.317,luas_panen_ha,arima,forecast
+2020,Papar,Ketela Pohon,137.76,produksi_ton,aktual,aktual
+2021,Papar,Ketela Pohon,152.04,produksi_ton,aktual,aktual
+2022,Papar,Ketela Pohon,149.23,produksi_ton,aktual,aktual
+2023,Papar,Ketela Pohon,151.78,produksi_ton,aktual,aktual
+2024,Papar,Ketela Pohon,162.35,produksi_ton,aktual,aktual
+2025,Papar,Ketela Pohon,149.39,produksi_ton,aktual,aktual
+2026,Papar,Ketela Pohon,157.717,produksi_ton,arima,forecast
+2027,Papar,Ketela Pohon,152.367,produksi_ton,arima,forecast
+2020,Papar,Padi,1188.68,luas_panen_ha,aktual,aktual
+2021,Papar,Padi,1359.28,luas_panen_ha,aktual,aktual
+2022,Papar,Padi,1373.78,luas_panen_ha,aktual,aktual
+2023,Papar,Padi,1227.71,luas_panen_ha,aktual,aktual
+2024,Papar,Padi,1161.56,luas_panen_ha,aktual,aktual
+2025,Papar,Padi,1330.18,luas_panen_ha,aktual,aktual
+2026,Papar,Padi,1270.359,luas_panen_ha,lr,forecast
+2027,Papar,Padi,1269.452,luas_panen_ha,lr,forecast
+2020,Papar,Padi,6746.06,produksi_ton,aktual,aktual
+2021,Papar,Padi,7722.03,produksi_ton,aktual,aktual
+2022,Papar,Padi,7961.9,produksi_ton,aktual,aktual
+2023,Papar,Padi,6907.65,produksi_ton,aktual,aktual
+2024,Papar,Padi,6839.9,produksi_ton,aktual,aktual
+2025,Papar,Padi,7714.06,produksi_ton,aktual,aktual
+2026,Papar,Padi,7429.203,produksi_ton,lr,forecast
+2027,Papar,Padi,7461.756,produksi_ton,lr,forecast
+2020,Papar,Ubi Jalar,5.45,luas_panen_ha,aktual,aktual
+2021,Papar,Ubi Jalar,5.43,luas_panen_ha,aktual,aktual
+2022,Papar,Ubi Jalar,4.85,luas_panen_ha,aktual,aktual
+2023,Papar,Ubi Jalar,4.99,luas_panen_ha,aktual,aktual
+2024,Papar,Ubi Jalar,4.91,luas_panen_ha,aktual,aktual
+2025,Papar,Ubi Jalar,4.33,luas_panen_ha,aktual,aktual
+2026,Papar,Ubi Jalar,4.291,luas_panen_ha,ets,forecast
+2027,Papar,Ubi Jalar,4.091,luas_panen_ha,ets,forecast
+2020,Papar,Ubi Jalar,169.58,produksi_ton,aktual,aktual
+2021,Papar,Ubi Jalar,169.53,produksi_ton,aktual,aktual
+2022,Papar,Ubi Jalar,148.79,produksi_ton,aktual,aktual
+2023,Papar,Ubi Jalar,147.14,produksi_ton,aktual,aktual
+2024,Papar,Ubi Jalar,143.65,produksi_ton,aktual,aktual
+2025,Papar,Ubi Jalar,127.12,produksi_ton,aktual,aktual
+2026,Papar,Ubi Jalar,121.809,produksi_ton,ets,forecast
+2027,Papar,Ubi Jalar,113.478,produksi_ton,ets,forecast
+2020,Pare,Kacang Tanah,5.5,luas_panen_ha,aktual,aktual
+2021,Pare,Kacang Tanah,6.03,luas_panen_ha,aktual,aktual
+2022,Pare,Kacang Tanah,6.99,luas_panen_ha,aktual,aktual
+2023,Pare,Kacang Tanah,7.33,luas_panen_ha,aktual,aktual
+2024,Pare,Kacang Tanah,7.43,luas_panen_ha,aktual,aktual
+2025,Pare,Kacang Tanah,6.86,luas_panen_ha,aktual,aktual
+2026,Pare,Kacang Tanah,6.523,luas_panen_ha,arima,forecast
+2027,Pare,Kacang Tanah,6.323,luas_panen_ha,arima,forecast
+2020,Pare,Kacang Tanah,9.55,produksi_ton,aktual,aktual
+2021,Pare,Kacang Tanah,10.6,produksi_ton,aktual,aktual
+2022,Pare,Kacang Tanah,11.72,produksi_ton,aktual,aktual
+2023,Pare,Kacang Tanah,12.68,produksi_ton,aktual,aktual
+2024,Pare,Kacang Tanah,12.77,produksi_ton,aktual,aktual
+2025,Pare,Kacang Tanah,12.14,produksi_ton,aktual,aktual
+2026,Pare,Kacang Tanah,11.649,produksi_ton,arima,forecast
+2027,Pare,Kacang Tanah,11.266,produksi_ton,arima,forecast
+2020,Pare,Kedelai,0.03,luas_panen_ha,aktual,aktual
+2021,Pare,Kedelai,0.03,luas_panen_ha,aktual,aktual
+2022,Pare,Kedelai,0.03,luas_panen_ha,aktual,aktual
+2023,Pare,Kedelai,0.03,luas_panen_ha,aktual,aktual
+2024,Pare,Kedelai,0.03,luas_panen_ha,aktual,aktual
+2025,Pare,Kedelai,0.03,luas_panen_ha,aktual,aktual
+2026,Pare,Kedelai,0.03,luas_panen_ha,ets,forecast
+2027,Pare,Kedelai,0.03,luas_panen_ha,ets,forecast
+2020,Pare,Kedelai,0.04,produksi_ton,aktual,aktual
+2021,Pare,Kedelai,0.04,produksi_ton,aktual,aktual
+2022,Pare,Kedelai,0.04,produksi_ton,aktual,aktual
+2023,Pare,Kedelai,0.04,produksi_ton,aktual,aktual
+2024,Pare,Kedelai,0.04,produksi_ton,aktual,aktual
+2025,Pare,Kedelai,0.04,produksi_ton,aktual,aktual
+2026,Pare,Kedelai,0.04,produksi_ton,ets,forecast
+2027,Pare,Kedelai,0.04,produksi_ton,ets,forecast
+2020,Pare,Ketela Pohon,10.17,luas_panen_ha,aktual,aktual
+2021,Pare,Ketela Pohon,8.92,luas_panen_ha,aktual,aktual
+2022,Pare,Ketela Pohon,9.45,luas_panen_ha,aktual,aktual
+2023,Pare,Ketela Pohon,8.41,luas_panen_ha,aktual,aktual
+2024,Pare,Ketela Pohon,9.71,luas_panen_ha,aktual,aktual
+2025,Pare,Ketela Pohon,9.39,luas_panen_ha,aktual,aktual
+2026,Pare,Ketela Pohon,9.085,luas_panen_ha,ets,forecast
+2027,Pare,Ketela Pohon,9.011,luas_panen_ha,ets,forecast
+2020,Pare,Ketela Pohon,276.76,produksi_ton,aktual,aktual
+2021,Pare,Ketela Pohon,250.27,produksi_ton,aktual,aktual
+2022,Pare,Ketela Pohon,267.64,produksi_ton,aktual,aktual
+2023,Pare,Ketela Pohon,238.34,produksi_ton,aktual,aktual
+2024,Pare,Ketela Pohon,286.46,produksi_ton,aktual,aktual
+2025,Pare,Ketela Pohon,267.6,produksi_ton,aktual,aktual
+2026,Pare,Ketela Pohon,267.859,produksi_ton,ets,forecast
+2027,Pare,Ketela Pohon,268.815,produksi_ton,ets,forecast
+2020,Pare,Padi,1060.13,luas_panen_ha,aktual,aktual
+2021,Pare,Padi,1035.24,luas_panen_ha,aktual,aktual
+2022,Pare,Padi,962.4,luas_panen_ha,aktual,aktual
+2023,Pare,Padi,975.2,luas_panen_ha,aktual,aktual
+2024,Pare,Padi,1014.06,luas_panen_ha,aktual,aktual
+2025,Pare,Padi,1182.73,luas_panen_ha,aktual,aktual
+2026,Pare,Padi,1269.671,luas_panen_ha,arima,forecast
+2027,Pare,Padi,1314.485,luas_panen_ha,arima,forecast
+2020,Pare,Padi,5970.93,produksi_ton,aktual,aktual
+2021,Pare,Padi,5826.97,produksi_ton,aktual,aktual
+2022,Pare,Padi,5418.47,produksi_ton,aktual,aktual
+2023,Pare,Padi,5503.19,produksi_ton,aktual,aktual
+2024,Pare,Padi,5822.07,produksi_ton,aktual,aktual
+2025,Pare,Padi,6858.94,produksi_ton,aktual,aktual
+2026,Pare,Padi,6964.026,produksi_ton,arima,forecast
+2027,Pare,Padi,6974.676,produksi_ton,arima,forecast
+2020,Pare,Ubi Jalar,5.02,luas_panen_ha,aktual,aktual
+2021,Pare,Ubi Jalar,5.21,luas_panen_ha,aktual,aktual
+2022,Pare,Ubi Jalar,4.98,luas_panen_ha,aktual,aktual
+2023,Pare,Ubi Jalar,5.81,luas_panen_ha,aktual,aktual
+2024,Pare,Ubi Jalar,6.78,luas_panen_ha,aktual,aktual
+2025,Pare,Ubi Jalar,7.75,luas_panen_ha,aktual,aktual
+2026,Pare,Ubi Jalar,8.415,luas_panen_ha,arima,forecast
+2027,Pare,Ubi Jalar,8.872,luas_panen_ha,arima,forecast
+2020,Pare,Ubi Jalar,154.94,produksi_ton,aktual,aktual
+2021,Pare,Ubi Jalar,157.89,produksi_ton,aktual,aktual
+2022,Pare,Ubi Jalar,146.86,produksi_ton,aktual,aktual
+2023,Pare,Ubi Jalar,177.38,produksi_ton,aktual,aktual
+2024,Pare,Ubi Jalar,199.4,produksi_ton,aktual,aktual
+2025,Pare,Ubi Jalar,227.72,produksi_ton,aktual,aktual
+2026,Pare,Ubi Jalar,240.833,produksi_ton,arima,forecast
+2027,Pare,Ubi Jalar,246.905,produksi_ton,arima,forecast
+2020,Plemahan,Kacang Tanah,1.4,luas_panen_ha,aktual,aktual
+2021,Plemahan,Kacang Tanah,1.36,luas_panen_ha,aktual,aktual
+2022,Plemahan,Kacang Tanah,1.21,luas_panen_ha,aktual,aktual
+2023,Plemahan,Kacang Tanah,1.31,luas_panen_ha,aktual,aktual
+2024,Plemahan,Kacang Tanah,1.36,luas_panen_ha,aktual,aktual
+2025,Plemahan,Kacang Tanah,1.58,luas_panen_ha,aktual,aktual
+2026,Plemahan,Kacang Tanah,1.61,luas_panen_ha,arima,forecast
+2027,Plemahan,Kacang Tanah,1.614,luas_panen_ha,arima,forecast
+2020,Plemahan,Kacang Tanah,2.24,produksi_ton,aktual,aktual
+2021,Plemahan,Kacang Tanah,2.24,produksi_ton,aktual,aktual
+2022,Plemahan,Kacang Tanah,2.04,produksi_ton,aktual,aktual
+2023,Plemahan,Kacang Tanah,2.2,produksi_ton,aktual,aktual
+2024,Plemahan,Kacang Tanah,2.41,produksi_ton,aktual,aktual
+2025,Plemahan,Kacang Tanah,2.79,produksi_ton,aktual,aktual
+2026,Plemahan,Kacang Tanah,2.98,produksi_ton,arima,forecast
+2027,Plemahan,Kacang Tanah,3.074,produksi_ton,arima,forecast
+2020,Plemahan,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2021,Plemahan,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2022,Plemahan,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2023,Plemahan,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2024,Plemahan,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2025,Plemahan,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2026,Plemahan,Kedelai,0.01,luas_panen_ha,ets,forecast
+2027,Plemahan,Kedelai,0.01,luas_panen_ha,ets,forecast
+2020,Plemahan,Kedelai,0.01,produksi_ton,aktual,aktual
+2021,Plemahan,Kedelai,0.01,produksi_ton,aktual,aktual
+2022,Plemahan,Kedelai,0.01,produksi_ton,aktual,aktual
+2023,Plemahan,Kedelai,0.01,produksi_ton,aktual,aktual
+2024,Plemahan,Kedelai,0.01,produksi_ton,aktual,aktual
+2025,Plemahan,Kedelai,0.01,produksi_ton,aktual,aktual
+2026,Plemahan,Kedelai,0.01,produksi_ton,ets,forecast
+2027,Plemahan,Kedelai,0.01,produksi_ton,ets,forecast
+2020,Plemahan,Ketela Pohon,2.32,luas_panen_ha,aktual,aktual
+2021,Plemahan,Ketela Pohon,2.55,luas_panen_ha,aktual,aktual
+2022,Plemahan,Ketela Pohon,2.33,luas_panen_ha,aktual,aktual
+2023,Plemahan,Ketela Pohon,2.64,luas_panen_ha,aktual,aktual
+2024,Plemahan,Ketela Pohon,2.42,luas_panen_ha,aktual,aktual
+2025,Plemahan,Ketela Pohon,2.16,luas_panen_ha,aktual,aktual
+2026,Plemahan,Ketela Pohon,2.315,luas_panen_ha,ets,forecast
+2027,Plemahan,Ketela Pohon,2.29,luas_panen_ha,ets,forecast
+2020,Plemahan,Ketela Pohon,67.56,produksi_ton,aktual,aktual
+2021,Plemahan,Ketela Pohon,75.45,produksi_ton,aktual,aktual
+2022,Plemahan,Ketela Pohon,66.37,produksi_ton,aktual,aktual
+2023,Plemahan,Ketela Pohon,73.89,produksi_ton,aktual,aktual
+2024,Plemahan,Ketela Pohon,69.93,produksi_ton,aktual,aktual
+2025,Plemahan,Ketela Pohon,61.54,produksi_ton,aktual,aktual
+2026,Plemahan,Ketela Pohon,65.209,produksi_ton,ets,forecast
+2027,Plemahan,Ketela Pohon,64.091,produksi_ton,ets,forecast
+2020,Plemahan,Padi,2755.48,luas_panen_ha,aktual,aktual
+2021,Plemahan,Padi,2738.24,luas_panen_ha,aktual,aktual
+2022,Plemahan,Padi,2639.26,luas_panen_ha,aktual,aktual
+2023,Plemahan,Padi,2873.03,luas_panen_ha,aktual,aktual
+2024,Plemahan,Padi,2695.25,luas_panen_ha,aktual,aktual
+2025,Plemahan,Padi,2484.19,luas_panen_ha,aktual,aktual
+2026,Plemahan,Padi,2573.643,luas_panen_ha,ets,forecast
+2027,Plemahan,Padi,2538.304,luas_panen_ha,ets,forecast
+2020,Plemahan,Padi,15400.78,produksi_ton,aktual,aktual
+2021,Plemahan,Padi,15693.72,produksi_ton,aktual,aktual
+2022,Plemahan,Padi,15316.21,produksi_ton,aktual,aktual
+2023,Plemahan,Padi,16609.94,produksi_ton,aktual,aktual
+2024,Plemahan,Padi,16075.86,produksi_ton,aktual,aktual
+2025,Plemahan,Padi,14406.48,produksi_ton,aktual,aktual
+2026,Plemahan,Padi,14356.215,produksi_ton,arima,forecast
+2027,Plemahan,Padi,14354.702,produksi_ton,arima,forecast
+2020,Plemahan,Ubi Jalar,1.34,luas_panen_ha,aktual,aktual
+2021,Plemahan,Ubi Jalar,1.55,luas_panen_ha,aktual,aktual
+2022,Plemahan,Ubi Jalar,1.36,luas_panen_ha,aktual,aktual
+2023,Plemahan,Ubi Jalar,1.59,luas_panen_ha,aktual,aktual
+2024,Plemahan,Ubi Jalar,1.75,luas_panen_ha,aktual,aktual
+2025,Plemahan,Ubi Jalar,1.78,luas_panen_ha,aktual,aktual
+2026,Plemahan,Ubi Jalar,1.865,luas_panen_ha,ets,forecast
+2027,Plemahan,Ubi Jalar,1.951,luas_panen_ha,ets,forecast
+2020,Plemahan,Ubi Jalar,37.89,produksi_ton,aktual,aktual
+2021,Plemahan,Ubi Jalar,42.79,produksi_ton,aktual,aktual
+2022,Plemahan,Ubi Jalar,39.39,produksi_ton,aktual,aktual
+2023,Plemahan,Ubi Jalar,45.25,produksi_ton,aktual,aktual
+2024,Plemahan,Ubi Jalar,49.81,produksi_ton,aktual,aktual
+2025,Plemahan,Ubi Jalar,52.37,produksi_ton,aktual,aktual
+2026,Plemahan,Ubi Jalar,54.515,produksi_ton,ets,forecast
+2027,Plemahan,Ubi Jalar,57.353,produksi_ton,ets,forecast
+2020,Plosoklaten,Kacang Tanah,22.62,luas_panen_ha,aktual,aktual
+2021,Plosoklaten,Kacang Tanah,26.36,luas_panen_ha,aktual,aktual
+2022,Plosoklaten,Kacang Tanah,23.84,luas_panen_ha,aktual,aktual
+2023,Plosoklaten,Kacang Tanah,22.71,luas_panen_ha,aktual,aktual
+2024,Plosoklaten,Kacang Tanah,20.61,luas_panen_ha,aktual,aktual
+2025,Plosoklaten,Kacang Tanah,24.16,luas_panen_ha,aktual,aktual
+2026,Plosoklaten,Kacang Tanah,22.155,luas_panen_ha,arima,forecast
+2027,Plosoklaten,Kacang Tanah,23.287,luas_panen_ha,arima,forecast
+2020,Plosoklaten,Kacang Tanah,42.39,produksi_ton,aktual,aktual
+2021,Plosoklaten,Kacang Tanah,50.26,produksi_ton,aktual,aktual
+2022,Plosoklaten,Kacang Tanah,44.04,produksi_ton,aktual,aktual
+2023,Plosoklaten,Kacang Tanah,40.33,produksi_ton,aktual,aktual
+2024,Plosoklaten,Kacang Tanah,37.44,produksi_ton,aktual,aktual
+2025,Plosoklaten,Kacang Tanah,42.78,produksi_ton,aktual,aktual
+2026,Plosoklaten,Kacang Tanah,41.001,produksi_ton,arima,forecast
+2027,Plosoklaten,Kacang Tanah,41.594,produksi_ton,arima,forecast
+2020,Plosoklaten,Kedelai,0.14,luas_panen_ha,aktual,aktual
+2021,Plosoklaten,Kedelai,0.13,luas_panen_ha,aktual,aktual
+2022,Plosoklaten,Kedelai,0.12,luas_panen_ha,aktual,aktual
+2023,Plosoklaten,Kedelai,0.11,luas_panen_ha,aktual,aktual
+2024,Plosoklaten,Kedelai,0.1,luas_panen_ha,aktual,aktual
+2025,Plosoklaten,Kedelai,0.1,luas_panen_ha,aktual,aktual
+2026,Plosoklaten,Kedelai,0.1,luas_panen_ha,arima,forecast
+2027,Plosoklaten,Kedelai,0.1,luas_panen_ha,arima,forecast
+2020,Plosoklaten,Kedelai,0.19,produksi_ton,aktual,aktual
+2021,Plosoklaten,Kedelai,0.17,produksi_ton,aktual,aktual
+2022,Plosoklaten,Kedelai,0.16,produksi_ton,aktual,aktual
+2023,Plosoklaten,Kedelai,0.15,produksi_ton,aktual,aktual
+2024,Plosoklaten,Kedelai,0.14,produksi_ton,aktual,aktual
+2025,Plosoklaten,Kedelai,0.13,produksi_ton,aktual,aktual
+2026,Plosoklaten,Kedelai,0.121,produksi_ton,arima,forecast
+2027,Plosoklaten,Kedelai,0.112,produksi_ton,arima,forecast
+2020,Plosoklaten,Ketela Pohon,25.19,luas_panen_ha,aktual,aktual
+2021,Plosoklaten,Ketela Pohon,25.5,luas_panen_ha,aktual,aktual
+2022,Plosoklaten,Ketela Pohon,29.17,luas_panen_ha,aktual,aktual
+2023,Plosoklaten,Ketela Pohon,30.89,luas_panen_ha,aktual,aktual
+2024,Plosoklaten,Ketela Pohon,28.59,luas_panen_ha,aktual,aktual
+2025,Plosoklaten,Ketela Pohon,33.1,luas_panen_ha,aktual,aktual
+2026,Plosoklaten,Ketela Pohon,33.794,luas_panen_ha,ets,forecast
+2027,Plosoklaten,Ketela Pohon,35.238,luas_panen_ha,ets,forecast
+2020,Plosoklaten,Ketela Pohon,729.36,produksi_ton,aktual,aktual
+2021,Plosoklaten,Ketela Pohon,708.57,produksi_ton,aktual,aktual
+2022,Plosoklaten,Ketela Pohon,797.58,produksi_ton,aktual,aktual
+2023,Plosoklaten,Ketela Pohon,846.95,produksi_ton,aktual,aktual
+2024,Plosoklaten,Ketela Pohon,809.89,produksi_ton,aktual,aktual
+2025,Plosoklaten,Ketela Pohon,942.87,produksi_ton,aktual,aktual
+2026,Plosoklaten,Ketela Pohon,947.958,produksi_ton,ets,forecast
+2027,Plosoklaten,Ketela Pohon,988.555,produksi_ton,ets,forecast
+2020,Plosoklaten,Padi,2042.22,luas_panen_ha,aktual,aktual
+2021,Plosoklaten,Padi,1785.04,luas_panen_ha,aktual,aktual
+2022,Plosoklaten,Padi,1609.14,luas_panen_ha,aktual,aktual
+2023,Plosoklaten,Padi,1574.72,luas_panen_ha,aktual,aktual
+2024,Plosoklaten,Padi,1471.71,luas_panen_ha,aktual,aktual
+2025,Plosoklaten,Padi,1670.88,luas_panen_ha,aktual,aktual
+2026,Plosoklaten,Padi,1725.406,luas_panen_ha,arima,forecast
+2027,Plosoklaten,Padi,1740.334,luas_panen_ha,arima,forecast
+2020,Plosoklaten,Padi,11544.37,produksi_ton,aktual,aktual
+2021,Plosoklaten,Padi,10001.88,produksi_ton,aktual,aktual
+2022,Plosoklaten,Padi,9071.97,produksi_ton,aktual,aktual
+2023,Plosoklaten,Padi,9217.98,produksi_ton,aktual,aktual
+2024,Plosoklaten,Padi,8958.43,produksi_ton,aktual,aktual
+2025,Plosoklaten,Padi,9689.83,produksi_ton,aktual,aktual
+2026,Plosoklaten,Padi,9507.077,produksi_ton,arima,forecast
+2027,Plosoklaten,Padi,9552.741,produksi_ton,arima,forecast
+2020,Plosoklaten,Ubi Jalar,32.09,luas_panen_ha,aktual,aktual
+2021,Plosoklaten,Ubi Jalar,32.43,luas_panen_ha,aktual,aktual
+2022,Plosoklaten,Ubi Jalar,34.64,luas_panen_ha,aktual,aktual
+2023,Plosoklaten,Ubi Jalar,33.83,luas_panen_ha,aktual,aktual
+2024,Plosoklaten,Ubi Jalar,31.18,luas_panen_ha,aktual,aktual
+2025,Plosoklaten,Ubi Jalar,27.3,luas_panen_ha,aktual,aktual
+2026,Plosoklaten,Ubi Jalar,24.912,luas_panen_ha,arima,forecast
+2027,Plosoklaten,Ubi Jalar,23.443,luas_panen_ha,arima,forecast
+2020,Plosoklaten,Ubi Jalar,873.83,produksi_ton,aktual,aktual
+2021,Plosoklaten,Ubi Jalar,897.77,produksi_ton,aktual,aktual
+2022,Plosoklaten,Ubi Jalar,1005.39,produksi_ton,aktual,aktual
+2023,Plosoklaten,Ubi Jalar,1008.85,produksi_ton,aktual,aktual
+2024,Plosoklaten,Ubi Jalar,950.06,produksi_ton,aktual,aktual
+2025,Plosoklaten,Ubi Jalar,802.37,produksi_ton,aktual,aktual
+2026,Plosoklaten,Ubi Jalar,728.184,produksi_ton,arima,forecast
+2027,Plosoklaten,Ubi Jalar,690.919,produksi_ton,arima,forecast
+2020,Puncu,Kacang Tanah,84.09,luas_panen_ha,aktual,aktual
+2021,Puncu,Kacang Tanah,73.32,luas_panen_ha,aktual,aktual
+2022,Puncu,Kacang Tanah,65.95,luas_panen_ha,aktual,aktual
+2023,Puncu,Kacang Tanah,68.56,luas_panen_ha,aktual,aktual
+2024,Puncu,Kacang Tanah,61.71,luas_panen_ha,aktual,aktual
+2025,Puncu,Kacang Tanah,54.34,luas_panen_ha,aktual,aktual
+2026,Puncu,Kacang Tanah,49.898,luas_panen_ha,ets,forecast
+2027,Puncu,Kacang Tanah,44.727,luas_panen_ha,ets,forecast
+2020,Puncu,Kacang Tanah,130.95,produksi_ton,aktual,aktual
+2021,Puncu,Kacang Tanah,116.85,produksi_ton,aktual,aktual
+2022,Puncu,Kacang Tanah,108.43,produksi_ton,aktual,aktual
+2023,Puncu,Kacang Tanah,113.33,produksi_ton,aktual,aktual
+2024,Puncu,Kacang Tanah,105.11,produksi_ton,aktual,aktual
+2025,Puncu,Kacang Tanah,96.22,produksi_ton,aktual,aktual
+2026,Puncu,Kacang Tanah,91.418,produksi_ton,ets,forecast
+2027,Puncu,Kacang Tanah,85.59,produksi_ton,ets,forecast
+2020,Puncu,Kedelai,0.26,luas_panen_ha,aktual,aktual
+2021,Puncu,Kedelai,0.25,luas_panen_ha,aktual,aktual
+2022,Puncu,Kedelai,0.23,luas_panen_ha,aktual,aktual
+2023,Puncu,Kedelai,0.22,luas_panen_ha,aktual,aktual
+2024,Puncu,Kedelai,0.24,luas_panen_ha,aktual,aktual
+2025,Puncu,Kedelai,0.22,luas_panen_ha,aktual,aktual
+2026,Puncu,Kedelai,0.213,luas_panen_ha,lr,forecast
+2027,Puncu,Kedelai,0.206,luas_panen_ha,lr,forecast
+2020,Puncu,Kedelai,0.32,produksi_ton,aktual,aktual
+2021,Puncu,Kedelai,0.3,produksi_ton,aktual,aktual
+2022,Puncu,Kedelai,0.29,produksi_ton,aktual,aktual
+2023,Puncu,Kedelai,0.28,produksi_ton,aktual,aktual
+2024,Puncu,Kedelai,0.31,produksi_ton,aktual,aktual
+2025,Puncu,Kedelai,0.29,produksi_ton,aktual,aktual
+2026,Puncu,Kedelai,0.285,produksi_ton,lr,forecast
+2027,Puncu,Kedelai,0.282,produksi_ton,lr,forecast
+2020,Puncu,Ketela Pohon,76.45,luas_panen_ha,aktual,aktual
+2021,Puncu,Ketela Pohon,74.71,luas_panen_ha,aktual,aktual
+2022,Puncu,Ketela Pohon,80.3,luas_panen_ha,aktual,aktual
+2023,Puncu,Ketela Pohon,72.5,luas_panen_ha,aktual,aktual
+2024,Puncu,Ketela Pohon,64.6,luas_panen_ha,aktual,aktual
+2025,Puncu,Ketela Pohon,74.45,luas_panen_ha,aktual,aktual
+2026,Puncu,Ketela Pohon,69.022,luas_panen_ha,ets,forecast
+2027,Puncu,Ketela Pohon,67.647,luas_panen_ha,ets,forecast
+2020,Puncu,Ketela Pohon,2230.16,produksi_ton,aktual,aktual
+2021,Puncu,Ketela Pohon,2259.56,produksi_ton,aktual,aktual
+2022,Puncu,Ketela Pohon,2322.1,produksi_ton,aktual,aktual
+2023,Puncu,Ketela Pohon,2029.76,produksi_ton,aktual,aktual
+2024,Puncu,Ketela Pohon,1801.84,produksi_ton,aktual,aktual
+2025,Puncu,Ketela Pohon,2120.94,produksi_ton,aktual,aktual
+2026,Puncu,Ketela Pohon,1906.233,produksi_ton,lr,forecast
+2027,Puncu,Ketela Pohon,1843.045,produksi_ton,lr,forecast
+2020,Puncu,Padi,608.0,luas_panen_ha,aktual,aktual
+2021,Puncu,Padi,611.05,luas_panen_ha,aktual,aktual
+2022,Puncu,Padi,657.53,luas_panen_ha,aktual,aktual
+2023,Puncu,Padi,591.53,luas_panen_ha,aktual,aktual
+2024,Puncu,Padi,565.6,luas_panen_ha,aktual,aktual
+2025,Puncu,Padi,578.17,luas_panen_ha,aktual,aktual
+2026,Puncu,Padi,566.83,luas_panen_ha,ets,forecast
+2027,Puncu,Padi,556.787,luas_panen_ha,ets,forecast
+2020,Puncu,Padi,3548.67,produksi_ton,aktual,aktual
+2021,Puncu,Padi,3565.65,produksi_ton,aktual,aktual
+2022,Puncu,Padi,3680.27,produksi_ton,aktual,aktual
+2023,Puncu,Padi,3431.25,produksi_ton,aktual,aktual
+2024,Puncu,Padi,3307.86,produksi_ton,aktual,aktual
+2025,Puncu,Padi,3352.96,produksi_ton,aktual,aktual
+2026,Puncu,Padi,3281.016,produksi_ton,ets,forecast
+2027,Puncu,Padi,3223.847,produksi_ton,ets,forecast
+2020,Puncu,Ubi Jalar,87.39,luas_panen_ha,aktual,aktual
+2021,Puncu,Ubi Jalar,79.91,luas_panen_ha,aktual,aktual
+2022,Puncu,Ubi Jalar,77.69,luas_panen_ha,aktual,aktual
+2023,Puncu,Ubi Jalar,71.1,luas_panen_ha,aktual,aktual
+2024,Puncu,Ubi Jalar,63.53,luas_panen_ha,aktual,aktual
+2025,Puncu,Ubi Jalar,61.41,luas_panen_ha,aktual,aktual
+2026,Puncu,Ubi Jalar,54.942,luas_panen_ha,ets,forecast
+2027,Puncu,Ubi Jalar,49.639,luas_panen_ha,ets,forecast
+2020,Puncu,Ubi Jalar,2737.06,produksi_ton,aktual,aktual
+2021,Puncu,Ubi Jalar,2490.01,produksi_ton,aktual,aktual
+2022,Puncu,Ubi Jalar,2343.67,produksi_ton,aktual,aktual
+2023,Puncu,Ubi Jalar,2232.67,produksi_ton,aktual,aktual
+2024,Puncu,Ubi Jalar,1947.32,produksi_ton,aktual,aktual
+2025,Puncu,Ubi Jalar,1804.9,produksi_ton,aktual,aktual
+2026,Puncu,Ubi Jalar,1619.285,produksi_ton,ets,forecast
+2027,Puncu,Ubi Jalar,1436.431,produksi_ton,ets,forecast
+2020,Purwoasri,Kacang Tanah,8.29,luas_panen_ha,aktual,aktual
+2021,Purwoasri,Kacang Tanah,8.13,luas_panen_ha,aktual,aktual
+2022,Purwoasri,Kacang Tanah,7.7,luas_panen_ha,aktual,aktual
+2023,Purwoasri,Kacang Tanah,0.0,luas_panen_ha,aktual,aktual
+2024,Purwoasri,Kacang Tanah,0.0,luas_panen_ha,aktual,aktual
+2025,Purwoasri,Kacang Tanah,0.0,luas_panen_ha,aktual,aktual
+2026,Purwoasri,Kacang Tanah,0.0,luas_panen_ha,ets,forecast
+2027,Purwoasri,Kacang Tanah,0.0,luas_panen_ha,ets,forecast
+2020,Purwoasri,Kacang Tanah,14.65,produksi_ton,aktual,aktual
+2021,Purwoasri,Kacang Tanah,14.54,produksi_ton,aktual,aktual
+2022,Purwoasri,Kacang Tanah,14.16,produksi_ton,aktual,aktual
+2023,Purwoasri,Kacang Tanah,0.0,produksi_ton,aktual,aktual
+2024,Purwoasri,Kacang Tanah,0.0,produksi_ton,aktual,aktual
+2025,Purwoasri,Kacang Tanah,0.0,produksi_ton,aktual,aktual
+2026,Purwoasri,Kacang Tanah,0.0,produksi_ton,ets,forecast
+2027,Purwoasri,Kacang Tanah,0.0,produksi_ton,ets,forecast
+2020,Purwoasri,Kedelai,6.15,luas_panen_ha,aktual,aktual
+2021,Purwoasri,Kedelai,6.42,luas_panen_ha,aktual,aktual
+2022,Purwoasri,Kedelai,5.78,luas_panen_ha,aktual,aktual
+2023,Purwoasri,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2024,Purwoasri,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2025,Purwoasri,Kedelai,0.0,luas_panen_ha,aktual,aktual
+2026,Purwoasri,Kedelai,0.0,luas_panen_ha,ets,forecast
+2027,Purwoasri,Kedelai,0.0,luas_panen_ha,ets,forecast
+2020,Purwoasri,Kedelai,8.52,produksi_ton,aktual,aktual
+2021,Purwoasri,Kedelai,8.53,produksi_ton,aktual,aktual
+2022,Purwoasri,Kedelai,7.41,produksi_ton,aktual,aktual
+2023,Purwoasri,Kedelai,0.0,produksi_ton,aktual,aktual
+2024,Purwoasri,Kedelai,0.0,produksi_ton,aktual,aktual
+2025,Purwoasri,Kedelai,0.0,produksi_ton,aktual,aktual
+2026,Purwoasri,Kedelai,0.0,produksi_ton,ets,forecast
+2027,Purwoasri,Kedelai,0.0,produksi_ton,ets,forecast
+2020,Purwoasri,Ketela Pohon,5.02,luas_panen_ha,aktual,aktual
+2021,Purwoasri,Ketela Pohon,4.47,luas_panen_ha,aktual,aktual
+2022,Purwoasri,Ketela Pohon,0.0,luas_panen_ha,aktual,aktual
+2023,Purwoasri,Ketela Pohon,0.0,luas_panen_ha,aktual,aktual
+2024,Purwoasri,Ketela Pohon,0.0,luas_panen_ha,aktual,aktual
+2025,Purwoasri,Ketela Pohon,0.0,luas_panen_ha,aktual,aktual
+2026,Purwoasri,Ketela Pohon,0.0,luas_panen_ha,ets,forecast
+2027,Purwoasri,Ketela Pohon,0.0,luas_panen_ha,ets,forecast
+2020,Purwoasri,Ketela Pohon,144.15,produksi_ton,aktual,aktual
+2021,Purwoasri,Ketela Pohon,124.46,produksi_ton,aktual,aktual
+2022,Purwoasri,Ketela Pohon,0.0,produksi_ton,aktual,aktual
+2023,Purwoasri,Ketela Pohon,0.0,produksi_ton,aktual,aktual
+2024,Purwoasri,Ketela Pohon,0.0,produksi_ton,aktual,aktual
+2025,Purwoasri,Ketela Pohon,0.0,produksi_ton,aktual,aktual
+2026,Purwoasri,Ketela Pohon,0.0,produksi_ton,ets,forecast
+2027,Purwoasri,Ketela Pohon,0.0,produksi_ton,ets,forecast
+2020,Purwoasri,Padi,2184.99,luas_panen_ha,aktual,aktual
+2021,Purwoasri,Padi,2055.49,luas_panen_ha,aktual,aktual
+2022,Purwoasri,Padi,2015.04,luas_panen_ha,aktual,aktual
+2023,Purwoasri,Padi,1771.71,luas_panen_ha,aktual,aktual
+2024,Purwoasri,Padi,1857.24,luas_panen_ha,aktual,aktual
+2025,Purwoasri,Padi,2155.92,luas_panen_ha,aktual,aktual
+2026,Purwoasri,Padi,2185.013,luas_panen_ha,arima,forecast
+2027,Purwoasri,Padi,2187.847,luas_panen_ha,arima,forecast
+2020,Purwoasri,Padi,13740.51,produksi_ton,aktual,aktual
+2021,Purwoasri,Padi,12886.76,produksi_ton,aktual,aktual
+2022,Purwoasri,Padi,12147.8,produksi_ton,aktual,aktual
+2023,Purwoasri,Padi,10199.86,produksi_ton,aktual,aktual
+2024,Purwoasri,Padi,11053.79,produksi_ton,aktual,aktual
+2025,Purwoasri,Padi,12502.72,produksi_ton,aktual,aktual
+2026,Purwoasri,Padi,12400.065,produksi_ton,arima,forecast
+2027,Purwoasri,Padi,12407.338,produksi_ton,arima,forecast
+2020,Purwoasri,Ubi Jalar,0.0,luas_panen_ha,aktual,aktual
+2021,Purwoasri,Ubi Jalar,0.0,luas_panen_ha,aktual,aktual
+2022,Purwoasri,Ubi Jalar,0.0,luas_panen_ha,aktual,aktual
+2023,Purwoasri,Ubi Jalar,0.0,luas_panen_ha,aktual,aktual
+2024,Purwoasri,Ubi Jalar,0.0,luas_panen_ha,aktual,aktual
+2025,Purwoasri,Ubi Jalar,0.0,luas_panen_ha,aktual,aktual
+2026,Purwoasri,Ubi Jalar,0.0,luas_panen_ha,ets,forecast
+2027,Purwoasri,Ubi Jalar,0.0,luas_panen_ha,ets,forecast
+2020,Purwoasri,Ubi Jalar,0.0,produksi_ton,aktual,aktual
+2021,Purwoasri,Ubi Jalar,0.0,produksi_ton,aktual,aktual
+2022,Purwoasri,Ubi Jalar,0.0,produksi_ton,aktual,aktual
+2023,Purwoasri,Ubi Jalar,0.0,produksi_ton,aktual,aktual
+2024,Purwoasri,Ubi Jalar,0.0,produksi_ton,aktual,aktual
+2025,Purwoasri,Ubi Jalar,0.0,produksi_ton,aktual,aktual
+2026,Purwoasri,Ubi Jalar,0.0,produksi_ton,ets,forecast
+2027,Purwoasri,Ubi Jalar,0.0,produksi_ton,ets,forecast
+2020,Ringinrejo,Kacang Tanah,7.5,luas_panen_ha,aktual,aktual
+2021,Ringinrejo,Kacang Tanah,6.9,luas_panen_ha,aktual,aktual
+2022,Ringinrejo,Kacang Tanah,6.19,luas_panen_ha,aktual,aktual
+2023,Ringinrejo,Kacang Tanah,5.39,luas_panen_ha,aktual,aktual
+2024,Ringinrejo,Kacang Tanah,6.12,luas_panen_ha,aktual,aktual
+2025,Ringinrejo,Kacang Tanah,5.76,luas_panen_ha,aktual,aktual
+2026,Ringinrejo,Kacang Tanah,5.735,luas_panen_ha,arima,forecast
+2027,Ringinrejo,Kacang Tanah,5.733,luas_panen_ha,arima,forecast
+2020,Ringinrejo,Kacang Tanah,13.45,produksi_ton,aktual,aktual
+2021,Ringinrejo,Kacang Tanah,12.93,produksi_ton,aktual,aktual
+2022,Ringinrejo,Kacang Tanah,11.72,produksi_ton,aktual,aktual
+2023,Ringinrejo,Kacang Tanah,10.27,produksi_ton,aktual,aktual
+2024,Ringinrejo,Kacang Tanah,11.21,produksi_ton,aktual,aktual
+2025,Ringinrejo,Kacang Tanah,10.19,produksi_ton,aktual,aktual
+2026,Ringinrejo,Kacang Tanah,9.337,produksi_ton,ets,forecast
+2027,Ringinrejo,Kacang Tanah,8.683,produksi_ton,ets,forecast
+2020,Ringinrejo,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2021,Ringinrejo,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2022,Ringinrejo,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2023,Ringinrejo,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2024,Ringinrejo,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2025,Ringinrejo,Kedelai,0.02,luas_panen_ha,aktual,aktual
+2026,Ringinrejo,Kedelai,0.02,luas_panen_ha,ets,forecast
+2027,Ringinrejo,Kedelai,0.02,luas_panen_ha,ets,forecast
+2020,Ringinrejo,Kedelai,0.03,produksi_ton,aktual,aktual
+2021,Ringinrejo,Kedelai,0.03,produksi_ton,aktual,aktual
+2022,Ringinrejo,Kedelai,0.03,produksi_ton,aktual,aktual
+2023,Ringinrejo,Kedelai,0.03,produksi_ton,aktual,aktual
+2024,Ringinrejo,Kedelai,0.03,produksi_ton,aktual,aktual
+2025,Ringinrejo,Kedelai,0.03,produksi_ton,aktual,aktual
+2026,Ringinrejo,Kedelai,0.03,produksi_ton,ets,forecast
+2027,Ringinrejo,Kedelai,0.03,produksi_ton,ets,forecast
+2020,Ringinrejo,Ketela Pohon,7.01,luas_panen_ha,aktual,aktual
+2021,Ringinrejo,Ketela Pohon,6.32,luas_panen_ha,aktual,aktual
+2022,Ringinrejo,Ketela Pohon,7.09,luas_panen_ha,aktual,aktual
+2023,Ringinrejo,Ketela Pohon,7.63,luas_panen_ha,aktual,aktual
+2024,Ringinrejo,Ketela Pohon,8.8,luas_panen_ha,aktual,aktual
+2025,Ringinrejo,Ketela Pohon,7.89,luas_panen_ha,aktual,aktual
+2026,Ringinrejo,Ketela Pohon,8.695,luas_panen_ha,lr,forecast
+2027,Ringinrejo,Ketela Pohon,9.048,luas_panen_ha,lr,forecast
+2020,Ringinrejo,Ketela Pohon,210.99,produksi_ton,aktual,aktual
+2021,Ringinrejo,Ketela Pohon,186.9,produksi_ton,aktual,aktual
+2022,Ringinrejo,Ketela Pohon,209.09,produksi_ton,aktual,aktual
+2023,Ringinrejo,Ketela Pohon,218.58,produksi_ton,aktual,aktual
+2024,Ringinrejo,Ketela Pohon,245.45,produksi_ton,aktual,aktual
+2025,Ringinrejo,Ketela Pohon,224.68,produksi_ton,aktual,aktual
+2026,Ringinrejo,Ketela Pohon,232.061,produksi_ton,arima,forecast
+2027,Ringinrejo,Ketela Pohon,229.438,produksi_ton,arima,forecast
+2020,Ringinrejo,Padi,1371.46,luas_panen_ha,aktual,aktual
+2021,Ringinrejo,Padi,1234.74,luas_panen_ha,aktual,aktual
+2022,Ringinrejo,Padi,1079.84,luas_panen_ha,aktual,aktual
+2023,Ringinrejo,Padi,1143.33,luas_panen_ha,aktual,aktual
+2024,Ringinrejo,Padi,1177.83,luas_panen_ha,aktual,aktual
+2025,Ringinrejo,Padi,1233.95,luas_panen_ha,aktual,aktual
+2026,Ringinrejo,Padi,1253.64,luas_panen_ha,arima,forecast
+2027,Ringinrejo,Padi,1260.548,luas_panen_ha,arima,forecast
+2020,Ringinrejo,Padi,7704.39,produksi_ton,aktual,aktual
+2021,Ringinrejo,Padi,6974.59,produksi_ton,aktual,aktual
+2022,Ringinrejo,Padi,6368.66,produksi_ton,aktual,aktual
+2023,Ringinrejo,Padi,6466.87,produksi_ton,aktual,aktual
+2024,Ringinrejo,Padi,6722.63,produksi_ton,aktual,aktual
+2025,Ringinrejo,Padi,7155.99,produksi_ton,aktual,aktual
+2026,Ringinrejo,Padi,7396.128,produksi_ton,ets,forecast
+2027,Ringinrejo,Padi,7648.732,produksi_ton,ets,forecast
+2020,Ringinrejo,Ubi Jalar,7.47,luas_panen_ha,aktual,aktual
+2021,Ringinrejo,Ubi Jalar,6.83,luas_panen_ha,aktual,aktual
+2022,Ringinrejo,Ubi Jalar,6.37,luas_panen_ha,aktual,aktual
+2023,Ringinrejo,Ubi Jalar,6.69,luas_panen_ha,aktual,aktual
+2024,Ringinrejo,Ubi Jalar,6.12,luas_panen_ha,aktual,aktual
+2025,Ringinrejo,Ubi Jalar,6.51,luas_panen_ha,aktual,aktual
+2026,Ringinrejo,Ubi Jalar,6.396,luas_panen_ha,arima,forecast
+2027,Ringinrejo,Ubi Jalar,6.429,luas_panen_ha,arima,forecast
+2020,Ringinrejo,Ubi Jalar,222.41,produksi_ton,aktual,aktual
+2021,Ringinrejo,Ubi Jalar,200.61,produksi_ton,aktual,aktual
+2022,Ringinrejo,Ubi Jalar,180.25,produksi_ton,aktual,aktual
+2023,Ringinrejo,Ubi Jalar,185.89,produksi_ton,aktual,aktual
+2024,Ringinrejo,Ubi Jalar,173.8,produksi_ton,aktual,aktual
+2025,Ringinrejo,Ubi Jalar,191.2,produksi_ton,aktual,aktual
+2026,Ringinrejo,Ubi Jalar,192.186,produksi_ton,arima,forecast
+2027,Ringinrejo,Ubi Jalar,192.242,produksi_ton,arima,forecast
+2020,Semen,Kacang Tanah,49.74,luas_panen_ha,aktual,aktual
+2021,Semen,Kacang Tanah,53.47,luas_panen_ha,aktual,aktual
+2022,Semen,Kacang Tanah,57.85,luas_panen_ha,aktual,aktual
+2023,Semen,Kacang Tanah,59.34,luas_panen_ha,aktual,aktual
+2024,Semen,Kacang Tanah,52.5,luas_panen_ha,aktual,aktual
+2025,Semen,Kacang Tanah,57.87,luas_panen_ha,aktual,aktual
+2026,Semen,Kacang Tanah,59.051,luas_panen_ha,lr,forecast
+2027,Semen,Kacang Tanah,60.172,luas_panen_ha,lr,forecast
+2020,Semen,Kacang Tanah,85.86,produksi_ton,aktual,aktual
+2021,Semen,Kacang Tanah,94.49,produksi_ton,aktual,aktual
+2022,Semen,Kacang Tanah,100.05,produksi_ton,aktual,aktual
+2023,Semen,Kacang Tanah,104.03,produksi_ton,aktual,aktual
+2024,Semen,Kacang Tanah,96.45,produksi_ton,aktual,aktual
+2025,Semen,Kacang Tanah,102.47,produksi_ton,aktual,aktual
+2026,Semen,Kacang Tanah,106.516,produksi_ton,lr,forecast
+2027,Semen,Kacang Tanah,109.171,produksi_ton,lr,forecast
+2020,Semen,Kedelai,0.17,luas_panen_ha,aktual,aktual
+2021,Semen,Kedelai,0.2,luas_panen_ha,aktual,aktual
+2022,Semen,Kedelai,0.22,luas_panen_ha,aktual,aktual
+2023,Semen,Kedelai,0.23,luas_panen_ha,aktual,aktual
+2024,Semen,Kedelai,0.25,luas_panen_ha,aktual,aktual
+2025,Semen,Kedelai,0.23,luas_panen_ha,aktual,aktual
+2026,Semen,Kedelai,0.221,luas_panen_ha,arima,forecast
+2027,Semen,Kedelai,0.217,luas_panen_ha,arima,forecast
+2020,Semen,Kedelai,0.22,produksi_ton,aktual,aktual
+2021,Semen,Kedelai,0.26,produksi_ton,aktual,aktual
+2022,Semen,Kedelai,0.29,produksi_ton,aktual,aktual
+2023,Semen,Kedelai,0.31,produksi_ton,aktual,aktual
+2024,Semen,Kedelai,0.34,produksi_ton,aktual,aktual
+2025,Semen,Kedelai,0.3,produksi_ton,aktual,aktual
+2026,Semen,Kedelai,0.334,produksi_ton,ets,forecast
+2027,Semen,Kedelai,0.34,produksi_ton,ets,forecast
+2020,Semen,Ketela Pohon,86.96,luas_panen_ha,aktual,aktual
+2021,Semen,Ketela Pohon,80.98,luas_panen_ha,aktual,aktual
+2022,Semen,Ketela Pohon,72.92,luas_panen_ha,aktual,aktual
+2023,Semen,Ketela Pohon,76.11,luas_panen_ha,aktual,aktual
+2024,Semen,Ketela Pohon,87.38,luas_panen_ha,aktual,aktual
+2025,Semen,Ketela Pohon,79.28,luas_panen_ha,aktual,aktual
+2026,Semen,Ketela Pohon,79.004,luas_panen_ha,lr,forecast
+2027,Semen,Ketela Pohon,78.547,luas_panen_ha,lr,forecast
+2020,Semen,Ketela Pohon,2925.95,produksi_ton,aktual,aktual
+2021,Semen,Ketela Pohon,2658.73,produksi_ton,aktual,aktual
+2022,Semen,Ketela Pohon,2325.77,produksi_ton,aktual,aktual
+2023,Semen,Ketela Pohon,2332.23,produksi_ton,aktual,aktual
+2024,Semen,Ketela Pohon,2591.02,produksi_ton,aktual,aktual
+2025,Semen,Ketela Pohon,2258.59,produksi_ton,aktual,aktual
+2026,Semen,Ketela Pohon,2162.035,produksi_ton,lr,forecast
+2027,Semen,Ketela Pohon,2061.078,produksi_ton,lr,forecast
+2020,Semen,Padi,987.46,luas_panen_ha,aktual,aktual
+2021,Semen,Padi,962.65,luas_panen_ha,aktual,aktual
+2022,Semen,Padi,1097.89,luas_panen_ha,aktual,aktual
+2023,Semen,Padi,1214.24,luas_panen_ha,aktual,aktual
+2024,Semen,Padi,1137.14,luas_panen_ha,aktual,aktual
+2025,Semen,Padi,1079.51,luas_panen_ha,aktual,aktual
+2026,Semen,Padi,1069.922,luas_panen_ha,arima,forecast
+2027,Semen,Padi,1068.327,luas_panen_ha,arima,forecast
+2020,Semen,Padi,5677.83,produksi_ton,aktual,aktual
+2021,Semen,Padi,5631.67,produksi_ton,aktual,aktual
+2022,Semen,Padi,6367.86,produksi_ton,aktual,aktual
+2023,Semen,Padi,7370.91,produksi_ton,aktual,aktual
+2024,Semen,Padi,6847.46,produksi_ton,aktual,aktual
+2025,Semen,Padi,6260.36,produksi_ton,aktual,aktual
+2026,Semen,Padi,6211.924,produksi_ton,arima,forecast
+2027,Semen,Padi,6207.928,produksi_ton,arima,forecast
+2020,Semen,Ubi Jalar,66.75,luas_panen_ha,aktual,aktual
+2021,Semen,Ubi Jalar,61.58,luas_panen_ha,aktual,aktual
+2022,Semen,Ubi Jalar,67.95,luas_panen_ha,aktual,aktual
+2023,Semen,Ubi Jalar,76.81,luas_panen_ha,aktual,aktual
+2024,Semen,Ubi Jalar,73.35,luas_panen_ha,aktual,aktual
+2025,Semen,Ubi Jalar,65.4,luas_panen_ha,aktual,aktual
+2026,Semen,Ubi Jalar,64.477,luas_panen_ha,arima,forecast
+2027,Semen,Ubi Jalar,64.37,luas_panen_ha,arima,forecast
+2020,Semen,Ubi Jalar,2130.83,produksi_ton,aktual,aktual
+2021,Semen,Ubi Jalar,1922.8,produksi_ton,aktual,aktual
+2022,Semen,Ubi Jalar,2069.48,produksi_ton,aktual,aktual
+2023,Semen,Ubi Jalar,2296.28,produksi_ton,aktual,aktual
+2024,Semen,Ubi Jalar,2199.37,produksi_ton,aktual,aktual
+2025,Semen,Ubi Jalar,1922.03,produksi_ton,aktual,aktual
+2026,Semen,Ubi Jalar,1942.695,produksi_ton,arima,forecast
+2027,Semen,Ubi Jalar,1941.156,produksi_ton,arima,forecast
+2020,Tarokan,Kacang Tanah,23.5,luas_panen_ha,aktual,aktual
+2021,Tarokan,Kacang Tanah,23.12,luas_panen_ha,aktual,aktual
+2022,Tarokan,Kacang Tanah,24.41,luas_panen_ha,aktual,aktual
+2023,Tarokan,Kacang Tanah,23.47,luas_panen_ha,aktual,aktual
+2024,Tarokan,Kacang Tanah,21.39,luas_panen_ha,aktual,aktual
+2025,Tarokan,Kacang Tanah,21.94,luas_panen_ha,aktual,aktual
+2026,Tarokan,Kacang Tanah,21.579,luas_panen_ha,ets,forecast
+2027,Tarokan,Kacang Tanah,21.181,luas_panen_ha,ets,forecast
+2020,Tarokan,Kacang Tanah,41.57,produksi_ton,aktual,aktual
+2021,Tarokan,Kacang Tanah,39.66,produksi_ton,aktual,aktual
+2022,Tarokan,Kacang Tanah,42.54,produksi_ton,aktual,aktual
+2023,Tarokan,Kacang Tanah,39.26,produksi_ton,aktual,aktual
+2024,Tarokan,Kacang Tanah,36.53,produksi_ton,aktual,aktual
+2025,Tarokan,Kacang Tanah,38.84,produksi_ton,aktual,aktual
+2026,Tarokan,Kacang Tanah,37.991,produksi_ton,arima,forecast
+2027,Tarokan,Kacang Tanah,38.303,produksi_ton,arima,forecast
+2020,Tarokan,Kedelai,0.09,luas_panen_ha,aktual,aktual
+2021,Tarokan,Kedelai,0.08,luas_panen_ha,aktual,aktual
+2022,Tarokan,Kedelai,0.09,luas_panen_ha,aktual,aktual
+2023,Tarokan,Kedelai,0.08,luas_panen_ha,aktual,aktual
+2024,Tarokan,Kedelai,0.08,luas_panen_ha,aktual,aktual
+2025,Tarokan,Kedelai,0.09,luas_panen_ha,aktual,aktual
+2026,Tarokan,Kedelai,0.083,luas_panen_ha,arima,forecast
+2027,Tarokan,Kedelai,0.088,luas_panen_ha,arima,forecast
+2020,Tarokan,Kedelai,0.12,produksi_ton,aktual,aktual
+2021,Tarokan,Kedelai,0.11,produksi_ton,aktual,aktual
+2022,Tarokan,Kedelai,0.12,produksi_ton,aktual,aktual
+2023,Tarokan,Kedelai,0.1,produksi_ton,aktual,aktual
+2024,Tarokan,Kedelai,0.1,produksi_ton,aktual,aktual
+2025,Tarokan,Kedelai,0.12,produksi_ton,aktual,aktual
+2026,Tarokan,Kedelai,0.112,produksi_ton,arima,forecast
+2027,Tarokan,Kedelai,0.115,produksi_ton,arima,forecast
+2020,Tarokan,Ketela Pohon,46.4,luas_panen_ha,aktual,aktual
+2021,Tarokan,Ketela Pohon,43.48,luas_panen_ha,aktual,aktual
+2022,Tarokan,Ketela Pohon,37.97,luas_panen_ha,aktual,aktual
+2023,Tarokan,Ketela Pohon,37.45,luas_panen_ha,aktual,aktual
+2024,Tarokan,Ketela Pohon,32.89,luas_panen_ha,aktual,aktual
+2025,Tarokan,Ketela Pohon,30.06,luas_panen_ha,aktual,aktual
+2026,Tarokan,Ketela Pohon,26.643,luas_panen_ha,ets,forecast
+2027,Tarokan,Ketela Pohon,23.386,luas_panen_ha,ets,forecast
+2020,Tarokan,Ketela Pohon,1210.78,produksi_ton,aktual,aktual
+2021,Tarokan,Ketela Pohon,1165.48,produksi_ton,aktual,aktual
+2022,Tarokan,Ketela Pohon,1038.71,produksi_ton,aktual,aktual
+2023,Tarokan,Ketela Pohon,1016.62,produksi_ton,aktual,aktual
+2024,Tarokan,Ketela Pohon,930.9,produksi_ton,aktual,aktual
+2025,Tarokan,Ketela Pohon,856.23,produksi_ton,aktual,aktual
+2026,Tarokan,Ketela Pohon,786.595,produksi_ton,ets,forecast
+2027,Tarokan,Ketela Pohon,715.207,produksi_ton,ets,forecast
+2020,Tarokan,Padi,770.39,luas_panen_ha,aktual,aktual
+2021,Tarokan,Padi,689.35,luas_panen_ha,aktual,aktual
+2022,Tarokan,Padi,759.84,luas_panen_ha,aktual,aktual
+2023,Tarokan,Padi,713.4,luas_panen_ha,aktual,aktual
+2024,Tarokan,Padi,659.09,luas_panen_ha,aktual,aktual
+2025,Tarokan,Padi,685.27,luas_panen_ha,aktual,aktual
+2026,Tarokan,Padi,669.838,luas_panen_ha,arima,forecast
+2027,Tarokan,Padi,678.935,luas_panen_ha,arima,forecast
+2020,Tarokan,Padi,4173.68,produksi_ton,aktual,aktual
+2021,Tarokan,Padi,3915.22,produksi_ton,aktual,aktual
+2022,Tarokan,Padi,4353.59,produksi_ton,aktual,aktual
+2023,Tarokan,Padi,4137.51,produksi_ton,aktual,aktual
+2024,Tarokan,Padi,3787.94,produksi_ton,aktual,aktual
+2025,Tarokan,Padi,3974.05,produksi_ton,aktual,aktual
+2026,Tarokan,Padi,3885.326,produksi_ton,arima,forecast
+2027,Tarokan,Padi,3927.623,produksi_ton,arima,forecast
+2020,Tarokan,Ubi Jalar,26.94,luas_panen_ha,aktual,aktual
+2021,Tarokan,Ubi Jalar,24.64,luas_panen_ha,aktual,aktual
+2022,Tarokan,Ubi Jalar,23.62,luas_panen_ha,aktual,aktual
+2023,Tarokan,Ubi Jalar,24.54,luas_panen_ha,aktual,aktual
+2024,Tarokan,Ubi Jalar,24.97,luas_panen_ha,aktual,aktual
+2025,Tarokan,Ubi Jalar,24.79,luas_panen_ha,aktual,aktual
+2026,Tarokan,Ubi Jalar,24.705,luas_panen_ha,arima,forecast
+2027,Tarokan,Ubi Jalar,24.666,luas_panen_ha,arima,forecast
+2020,Tarokan,Ubi Jalar,729.32,produksi_ton,aktual,aktual
+2021,Tarokan,Ubi Jalar,684.25,produksi_ton,aktual,aktual
+2022,Tarokan,Ubi Jalar,673.27,produksi_ton,aktual,aktual
+2023,Tarokan,Ubi Jalar,718.45,produksi_ton,aktual,aktual
+2024,Tarokan,Ubi Jalar,698.01,produksi_ton,aktual,aktual
+2025,Tarokan,Ubi Jalar,728.64,produksi_ton,aktual,aktual
+2026,Tarokan,Ubi Jalar,715.641,produksi_ton,arima,forecast
+2027,Tarokan,Ubi Jalar,721.158,produksi_ton,arima,forecast
+2020,Wates,Kacang Tanah,2.8,luas_panen_ha,aktual,aktual
+2021,Wates,Kacang Tanah,2.86,luas_panen_ha,aktual,aktual
+2022,Wates,Kacang Tanah,2.78,luas_panen_ha,aktual,aktual
+2023,Wates,Kacang Tanah,2.66,luas_panen_ha,aktual,aktual
+2024,Wates,Kacang Tanah,2.55,luas_panen_ha,aktual,aktual
+2025,Wates,Kacang Tanah,2.5,luas_panen_ha,aktual,aktual
+2026,Wates,Kacang Tanah,2.471,luas_panen_ha,arima,forecast
+2027,Wates,Kacang Tanah,2.453,luas_panen_ha,arima,forecast
+2020,Wates,Kacang Tanah,4.93,produksi_ton,aktual,aktual
+2021,Wates,Kacang Tanah,4.89,produksi_ton,aktual,aktual
+2022,Wates,Kacang Tanah,4.9,produksi_ton,aktual,aktual
+2023,Wates,Kacang Tanah,4.81,produksi_ton,aktual,aktual
+2024,Wates,Kacang Tanah,4.54,produksi_ton,aktual,aktual
+2025,Wates,Kacang Tanah,4.43,produksi_ton,aktual,aktual
+2026,Wates,Kacang Tanah,4.371,produksi_ton,arima,forecast
+2027,Wates,Kacang Tanah,4.34,produksi_ton,arima,forecast
+2020,Wates,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2021,Wates,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2022,Wates,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2023,Wates,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2024,Wates,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2025,Wates,Kedelai,0.01,luas_panen_ha,aktual,aktual
+2026,Wates,Kedelai,0.01,luas_panen_ha,ets,forecast
+2027,Wates,Kedelai,0.01,luas_panen_ha,ets,forecast
+2020,Wates,Kedelai,0.01,produksi_ton,aktual,aktual
+2021,Wates,Kedelai,0.01,produksi_ton,aktual,aktual
+2022,Wates,Kedelai,0.01,produksi_ton,aktual,aktual
+2023,Wates,Kedelai,0.01,produksi_ton,aktual,aktual
+2024,Wates,Kedelai,0.01,produksi_ton,aktual,aktual
+2025,Wates,Kedelai,0.01,produksi_ton,aktual,aktual
+2026,Wates,Kedelai,0.01,produksi_ton,ets,forecast
+2027,Wates,Kedelai,0.01,produksi_ton,ets,forecast
+2020,Wates,Ketela Pohon,2.35,luas_panen_ha,aktual,aktual
+2021,Wates,Ketela Pohon,2.41,luas_panen_ha,aktual,aktual
+2022,Wates,Ketela Pohon,2.79,luas_panen_ha,aktual,aktual
+2023,Wates,Ketela Pohon,2.82,luas_panen_ha,aktual,aktual
+2024,Wates,Ketela Pohon,3.15,luas_panen_ha,aktual,aktual
+2025,Wates,Ketela Pohon,3.42,luas_panen_ha,aktual,aktual
+2026,Wates,Ketela Pohon,3.583,luas_panen_ha,lr,forecast
+2027,Wates,Ketela Pohon,3.8,luas_panen_ha,lr,forecast
+2020,Wates,Ketela Pohon,71.63,produksi_ton,aktual,aktual
+2021,Wates,Ketela Pohon,72.6,produksi_ton,aktual,aktual
+2022,Wates,Ketela Pohon,81.41,produksi_ton,aktual,aktual
+2023,Wates,Ketela Pohon,84.52,produksi_ton,aktual,aktual
+2024,Wates,Ketela Pohon,93.51,produksi_ton,aktual,aktual
+2025,Wates,Ketela Pohon,97.57,produksi_ton,aktual,aktual
+2026,Wates,Ketela Pohon,103.094,produksi_ton,ets,forecast
+2027,Wates,Ketela Pohon,108.681,produksi_ton,ets,forecast
+2020,Wates,Padi,2116.05,luas_panen_ha,aktual,aktual
+2021,Wates,Padi,2121.13,luas_panen_ha,aktual,aktual
+2022,Wates,Padi,2310.09,luas_panen_ha,aktual,aktual
+2023,Wates,Padi,2457.01,luas_panen_ha,aktual,aktual
+2024,Wates,Padi,2405.17,luas_panen_ha,aktual,aktual
+2025,Wates,Padi,2615.35,luas_panen_ha,aktual,aktual
+2026,Wates,Padi,2687.021,luas_panen_ha,ets,forecast
+2027,Wates,Padi,2786.893,luas_panen_ha,ets,forecast
+2020,Wates,Padi,11641.82,produksi_ton,aktual,aktual
+2021,Wates,Padi,11550.2,produksi_ton,aktual,aktual
+2022,Wates,Padi,13011.96,produksi_ton,aktual,aktual
+2023,Wates,Padi,13728.08,produksi_ton,aktual,aktual
+2024,Wates,Padi,13696.95,produksi_ton,aktual,aktual
+2025,Wates,Padi,15167.09,produksi_ton,aktual,aktual
+2026,Wates,Padi,15610.955,produksi_ton,lr,forecast
+2027,Wates,Padi,16319.033,produksi_ton,lr,forecast
+2020,Wates,Ubi Jalar,2.42,luas_panen_ha,aktual,aktual
+2021,Wates,Ubi Jalar,2.8,luas_panen_ha,aktual,aktual
+2022,Wates,Ubi Jalar,2.99,luas_panen_ha,aktual,aktual
+2023,Wates,Ubi Jalar,2.83,luas_panen_ha,aktual,aktual
+2024,Wates,Ubi Jalar,3.11,luas_panen_ha,aktual,aktual
+2025,Wates,Ubi Jalar,2.83,luas_panen_ha,aktual,aktual
+2026,Wates,Ubi Jalar,2.936,luas_panen_ha,arima,forecast
+2027,Wates,Ubi Jalar,2.896,luas_panen_ha,arima,forecast
+2020,Wates,Ubi Jalar,72.89,produksi_ton,aktual,aktual
+2021,Wates,Ubi Jalar,80.34,produksi_ton,aktual,aktual
+2022,Wates,Ubi Jalar,89.38,produksi_ton,aktual,aktual
+2023,Wates,Ubi Jalar,85.9,produksi_ton,aktual,aktual
+2024,Wates,Ubi Jalar,91.41,produksi_ton,aktual,aktual
+2025,Wates,Ubi Jalar,83.03,produksi_ton,aktual,aktual
+2026,Wates,Ubi Jalar,84.445,produksi_ton,arima,forecast
+2027,Wates,Ubi Jalar,84.206,produksi_ton,arima,forecast
