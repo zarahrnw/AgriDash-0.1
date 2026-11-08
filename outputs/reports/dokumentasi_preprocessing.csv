@@ -1,0 +1,12 @@
+langkah,detail,jumlah_terdampak
+Baca data,Semua kolom dibaca sebagai teks (encoding utf-8-sig) agar '-' dan '...' terdeteksi,6408.0
+Konversi numerik,'-' dan '...' diubah menjadi NaN; jenis penanda disimpan di kolom *_status; nilai asli tidak diubah/diimputasi,933.0
+Standardisasi kolom,Nama kolom -> snake_case; komoditas -> kunci huruf kecil (mis. 'Laos/Lengkuas' -> 'laos'); kecamatan -> Title Case,
+Baris total kabupaten,Baris 'Kediri' dipisah (kec_total) dan tidak dipakai sebagai kecamatan; dipakai untuk rekonsiliasi,96.0
+Duplikasi,Tidak ada duplikat baris/kunci (lihat inspeksi); tidak ada yang dihapus,0.0
+Missing values,TIDAK diimputasi: pola kosong terkonsentrasi di tahun terbaru (bukan acak); imputasi akan menciptakan data semu dan berisiko memakai informasi masa depan,899.0
+Tahun tidak lengkap,Tahun [2025] ditandai tahun_lengkap=False dan dikeluarkan dari dataset model,416.0
+Outlier,"Hanya ditandai (IQR log, MAD z-score); tidak dihapus/winsorize karena skala antarkomoditas berbeda jauh dan penyebabnya belum terverifikasi",5.0
+Fitur turunan,produktivitas = produksi/luas; lag1 dan YoY dihitung dari tahun sebelumnya saja,
+Satuan,"Luas berunit m2 (kecuali mahkota_dewa, mengkudu, jeruk_nipis = pohon); produksi seluruhnya kg",
+Koreksi satuan,Luas Serai di file kecamatan berlabel 'Pohon'; dikoreksi menjadi m2 berdasarkan konfirmasi pemberi data (sesuai file agregat),156.0
