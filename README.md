@@ -4,35 +4,20 @@
 **Project:** AgriDash  
 **Repository:** [AgriDash-0.1](https://github.com/zarahrnw/AgriDash-0.1)
 
-AgriDash merupakan sistem informasi pertanian dan ketahanan pangan untuk Kabupaten Kediri yang dikembangkan sebagai bagian dari program hilirisasi SINERGI. Sistem ini dirancang untuk membantu Dinas Ketahanan Pangan dan Pertanian (DKPP/Dispertabun) memantau produksi pertanian, harga pangan, kondisi cuaca, dan ketahanan pangan secara terintegrasi.
+AgriDash merupakan sistem informasi pertanian dan ketahanan pangan untuk Kabupaten Kediri yang dikembangkan sebagai bagian dari program hilirisasi SINERGI. Sistem ini dirancang untuk membantu Dinas Ketahanan Pangan dan Pertanian (DKPP/Dispertabun) dalam memantau produksi pertanian, harga pangan, kondisi cuaca, serta ketahanan pangan secara terintegrasi.
 
-AgriDash menyediakan dukungan analisis data, prediksi, serta sistem peringatan dini (*Early Warning System*) untuk membantu proses pemantauan dan pengambilan keputusan.
+AgriDash menyediakan dukungan analisis data, pemodelan prediktif, dan sistem peringatan dini (*Early Warning System*) untuk mendukung proses pemantauan dan pengambilan keputusan berbasis data.
 
 ## Fitur Utama
 
-1. **Dashboard Eksekutif**  
-   Menampilkan indikator kinerja utama (KPI), peringatan, tren, dan *insight* untuk mendukung pengambilan keputusan.
-
-2. **Monitoring Wilayah**  
-   Menyajikan data produksi, luas panen, dan produktivitas pertanian berdasarkan kecamatan.
-
-3. **Monitoring Harga Pangan**  
-   Mendukung pemantauan harga pangan dan analisis tren harga. Fitur ini masih dalam pengembangan.
-
-4. **Cuaca dan Risiko**  
-   Mengintegrasikan data cuaca dari API BMKG untuk mendukung pemantauan kondisi cuaca dan risiko pertanian.
-
-5. **Prediksi dan Early Warning System**  
-   Menyediakan dukungan API untuk integrasi model *machine learning* dan sistem peringatan dini.
-
-6. **Ketahanan Pangan**  
-   Mendukung pemantauan indeks dan status ketahanan pangan.
-
-7. **Insight dan Rekomendasi**  
-   Menyediakan *insight* analitis dan rekomendasi komoditas untuk mendukung perencanaan pertanian.
-
-8. **Data Center**  
-   Mendukung pengunggahan data CSV dan Excel melalui API dengan autentikasi sesuai hak akses pengguna.
+1. **Dashboard Eksekutif** — Menampilkan indikator kinerja utama (KPI), peringatan, tren, dan *insight* terkait sektor pertanian dan ketahanan pangan.
+2. **Monitoring Wilayah** — Menyajikan data produksi, luas panen, dan produktivitas pertanian berdasarkan kecamatan.
+3. **Monitoring Harga Pangan** — Mengintegrasikan API Badan Pangan Nasional (Bapanas) untuk memperoleh informasi harga pangan wilayah Jawa Timur.
+4. **Informasi Cuaca dan Risiko** — Mengintegrasikan data cuaca dari API BMKG secara *real-time* serta menyediakan analisis risiko pertanian.
+5. **Prediksi dan Early Warning System** — Menyediakan layanan simulasi prediksi produksi dan informasi peringatan dini.
+6. **Analitik Machine Learning** — Menerapkan K-Means, Agglomerative Clustering, PCA (*Principal Component Analysis*), *Forecasting*, dan rekomendasi komoditas.
+7. **Monitoring Ketahanan Pangan** — Mendukung pemantauan indeks dan status ketahanan pangan.
+8. **Data Center** — Menyediakan fitur unggah data CSV/Excel dengan autentikasi berbasis JWT.
 
 ## Tech Stack
 
@@ -41,37 +26,38 @@ AgriDash menyediakan dukungan analisis data, prediksi, serta sistem peringatan d
 | Backend | FastAPI, Python 3.11 |
 | Database | Supabase (PostgreSQL) |
 | ORM | SQLAlchemy |
-| Autentikasi | OAuth2, JWT |
+| Authentication | OAuth2, JWT |
 | Password Hashing | Passlib, Bcrypt |
-| Data Processing | Pandas |
-| External API | BMKG |
-| Testing | Pytest |
-| Testing Database | SQLite in-memory |
+| Data Processing | Pandas, NumPy |
+| Machine Learning | Scikit-learn, StandardScaler, PCA |
+| External API | BMKG, API Indonesia |
+| Testing Framework | Pytest |
+| Testing Database | SQLite (In-Memory) |
 
 ## Struktur Folder
 
 ```text
 AgriDash-0.1/
-├── api/            # Backend API dan endpoint
+├── api/            # Backend API dan endpoint (main.py)
 ├── app/            # Frontend dan antarmuka pengguna
 ├── data/           # Dataset raw, derived, dan external
 ├── docs/           # Dokumentasi proyek
 ├── lib/            # Shared library
 ├── models/         # Model machine learning dan konfigurasi
 ├── notebooks/      # Eksplorasi data dan eksperimen model
+├── output/         # Hasil pemodelan ML (clustering, PCA, dll.)
+├── outputs/        # Laporan analisis
 ├── public/         # Aset statis frontend
 ├── src/            # Pipeline ETL, ML, dan utilitas bersama
-└── tests/          # Unit test dan integration test
+└── tests/          # Unit test dan integration test (Pytest)
 ```
-
-*Catatan: Struktur di atas merupakan gambaran direktori proyek. Pastikan nama folder dan lokasi modul sesuai dengan struktur aktual repositori.*
 
 ## Pembagian Tugas Tim
 
 | Role | Penanggung Jawab | Fokus Pengembangan |
 |---|---|---|
 | Data Engineer | Zarah | `data/`, `src/etl/` |
-| ML Engineer | Zerlina | `models/`, `src/ml/`, `notebooks/` |
+| ML Engineer | Zerlina | `models/`, `src/ml/`, `notebooks/`, `output/` |
 | Backend/API Developer | Linda | `api/`, `src/utils/` |
 | Frontend/UI Developer | Dhini | `app/`, `public/` |
 
@@ -82,7 +68,7 @@ Sebelum menjalankan proyek, pastikan perangkat telah memiliki:
 - Python 3.11
 - Git
 - Akses ke database Supabase PostgreSQL
-- Dependency proyek yang tercantum dalam `requirements.txt`
+- Seluruh dependency yang tercantum dalam `requirements.txt`
 
 ## Instalasi dan Konfigurasi Lokal
 
@@ -93,23 +79,23 @@ git clone https://github.com/zarahrnw/AgriDash-0.1.git
 cd AgriDash-0.1
 ```
 
-### 2. Buat Virtual Environment
+### 2. Membuat Virtual Environment
 
-Jalankan perintah berikut pada Windows:
+**Windows (PowerShell):**
 
 ```powershell
 python -m venv venv
 venv\Scripts\activate
 ```
 
-Pada macOS atau Linux:
+**macOS/Linux:**
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### 3. Instal Dependency
+### 3. Instalasi Dependencies
 
 ```bash
 python -m pip install -r requirements.txt
@@ -117,100 +103,88 @@ python -m pip install -r requirements.txt
 
 ### 4. Konfigurasi Environment Variables
 
-Buat file `.env` di direktori utama proyek, sejajar dengan `README.md`.
-
-Isi file `.env` dengan konfigurasi berikut:
+Buat file `.env` pada direktori utama proyek dengan konfigurasi berikut:
 
 ```env
 DATABASE_URL="postgresql://..."
-SECRET_KEY="ganti_dengan_kunci_rahasia"
+SECRET_KEY="ganti_dengan_kunci_rahasia_panjang"
 ALGORITHM="HS256"
+API_INDONESIA_KEY="aip_live_xxxxxxxxxxxxxxxxxxxxx"
 ```
 
-Keterangan:
+**Keterangan:**
 
-- `DATABASE_URL`: Connection string untuk menghubungkan aplikasi dengan database Supabase PostgreSQL.
-- `SECRET_KEY`: Kunci rahasia yang digunakan untuk proses penandatanganan token JWT.
-- `ALGORITHM`: Algoritma yang digunakan untuk penandatanganan token JWT.
+| Variabel | Deskripsi |
+|---|---|
+| `DATABASE_URL` | Connection string database Supabase PostgreSQL. Disarankan menggunakan Session Pooler. |
+| `SECRET_KEY` | Kunci rahasia untuk autentikasi JWT. |
+| `ALGORITHM` | Algoritma yang digunakan untuk proses signing JWT. |
+| `API_INDONESIA_KEY` | API Key dari [API Indonesia](https://apiindonesia.id) untuk mengakses data harga pangan. |
 
-**Penting:**
-- Ganti nilai contoh dengan konfigurasi yang sesuai dengan lingkungan pengembangan.
-- Mintalah connection string database kepada pengelola proyek.
+**Catatan keamanan:**
 - Jangan mengunggah file `.env` yang berisi kredensial asli ke GitHub.
-- Pastikan nama variabel sesuai dengan yang dibaca oleh kode backend.
+- Pastikan `.env` tercantum dalam `.gitignore`.
+- Gunakan `.env.example` sebagai template konfigurasi tanpa kredensial asli.
 
-Untuk memudahkan konfigurasi anggota tim, sediakan file `.env.example` yang berisi nama variabel dan nilai placeholder tanpa kredensial asli.
-
-### 5. Jalankan Backend
-
-Jika entry point aplikasi berada di `api/main.py`, jalankan:
+### 5. Menjalankan Backend
 
 ```bash
 uvicorn api.main:app --reload
 ```
 
-Secara default, aplikasi dapat diakses melalui:
+Backend dapat diakses melalui:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-Pastikan perintah tersebut sesuai dengan lokasi objek `app` pada kode aktual.
-
-### 6. Jalankan Automated Testing
+### 6. Menjalankan Automated Testing
 
 ```bash
 python -m pytest -v
 ```
 
-Perintah ini menjalankan pengujian yang tersedia di direktori `tests/`.
-
 ## Dokumentasi API
 
-AgriDash menggunakan FastAPI yang menyediakan dokumentasi API interaktif melalui Swagger UI.
+AgriDash menggunakan FastAPI untuk menyediakan dokumentasi endpoint secara otomatis.
 
-Setelah backend berhasil dijalankan, buka:
-
-**Swagger UI:** http://127.0.0.1:8000/docs
-
-Dokumentasi alternatif tersedia melalui:
-
-**ReDoc:** http://127.0.0.1:8000/redoc
+| Dokumentasi | URL |
+|---|---|
+| Swagger UI | `http://127.0.0.1:8000/docs` |
+| ReDoc | `http://127.0.0.1:8000/redoc` |
 
 ### Endpoint Utama
 
-Berikut adalah endpoint yang direncanakan sebagai akses utama layanan API. Ketersediaan dan metode HTTP perlu disesuaikan dengan implementasi aktual.
-
-| Modul | Endpoint | Kegunaan |
-|---|---|---|
-| Autentikasi | `POST /api/v1/auth/register` | Registrasi pengguna |
-| Autentikasi | `POST /api/v1/auth/login` | Login pengguna |
-| Tanaman Pangan | `GET /api/v1/tanaman-pangan` | Mengakses data tanaman pangan |
-| Cuaca dan EWS | `GET /api/v1/ews-cuaca/{kode_wilayah}` | Mengakses informasi cuaca dan peringatan dini |
-| Data Center | `POST /api/v1/tanaman-pangan/upload` | Mengunggah data tanaman pangan |
-| Prediksi | `POST /api/v1/prediksi` | Mengakses layanan prediksi |
-
-Beberapa endpoint mungkin memerlukan autentikasi dan otorisasi tertentu. Periksa dokumentasi Swagger UI untuk mengetahui parameter, skema request dan response, serta persyaratan akses masing-masing endpoint.
+| Modul | Method | Endpoint | Kegunaan |
+|---|---|---|---|
+| Autentikasi | POST | `/api/v1/auth/register` | Registrasi pengguna |
+| Autentikasi | POST | `/api/v1/auth/login` | Login pengguna |
+| Tanaman Pangan | GET | `/api/v1/tanaman-pangan` | Mengakses data tanaman pangan |
+| Cuaca dan EWS | GET | `/api/v1/ews-cuaca/{kode_wilayah}` | Informasi cuaca dan peringatan dini |
+| Data Center | POST | `/api/v1/tanaman-pangan/upload` | Unggah data dengan token Admin |
+| Harga Pangan | GET | `/api/v1/harga-pangan` | Mengakses data harga pangan Bapanas |
+| Prediksi | POST | `/api/v1/prediksi` | Simulasi prediksi produksi |
+| ML Clustering | GET | `/api/v1/model/clustering` | Mengakses hasil analisis clustering |
+| ML PCA | GET | `/api/v1/model/pca` | Mengakses hasil analisis PCA |
+| ML Forecasting | GET | `/api/v1/model/forecasting` | Mengakses hasil analisis time series |
+| Dashboard | GET | `/api/v1/dashboard-eksekutif` | Mengakses ringkasan data dashboard |
 
 ## Sumber Data
 
 | Data | Sumber |
 |---|---|
-| Hortikultura, perkebunan, peternakan, dan perikanan | BPS Kabupaten Kediri, publikasi *Kabupaten Kediri Dalam Angka* |
+| Hortikultura, perkebunan, peternakan, dan perikanan | BPS Kabupaten Kediri |
 | Tanaman pangan | Estimasi berbasis proporsi luas sawah per kecamatan |
 | Cuaca | API BMKG |
-| Harga pangan | Siskaperbapo Jawa Timur |
+| Harga pangan | API Indonesia (Badan Pangan Nasional) |
 | Ketahanan pangan | Badan Pangan Nasional (Bapanas) |
-
-Untuk informasi mengenai metode pembagian estimasi tanaman pangan, lihat notebook `notebooks/Pembagian Tanaman Pangan.ipynb`, apabila file tersebut tersedia pada repositori.
 
 ## Status Pengembangan
 
+**Versi:** 0.1.0  
 **Status:** Dalam pengembangan aktif.
 
-Pengembangan mencakup backend API, integrasi database, pengolahan data, integrasi sumber data eksternal, serta dukungan layanan analitik dan prediksi.
-
-Fitur yang telah selesai, sedang dikembangkan, atau belum diimplementasikan perlu dikonfirmasi melalui kode sumber dan hasil pengujian terbaru.
+Pengembangan mencakup integrasi Backend API, database, pengolahan data, serta implementasi model Machine Learning.
 
 ## Kontributor
 
@@ -223,4 +197,4 @@ Fitur yang telah selesai, sedang dikembangkan, atau belum diimplementasikan perl
 
 ---
 
-Dikembangkan sebagai bagian dari program hilirisasi SINERGI untuk mendukung analisis data pertanian dan ketahanan pangan Kabupaten Kediri.
+AgriDash dikembangkan sebagai bagian dari program hilirisasi SINERGI untuk mendukung analisis data pertanian dan ketahanan pangan Kabupaten Kediri.
