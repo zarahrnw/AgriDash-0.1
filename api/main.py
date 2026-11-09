@@ -45,7 +45,7 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-SECRET_KEY = os.getenv("SECRET_KEY", "agr idash-secret-key-change-this")
+SECRET_KEY = os.getenv("SECRET_KEY", "agri-dash-secret-key-change-this")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = int(
     os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "1440")
@@ -89,7 +89,7 @@ CSV_FILES = {
 app = FastAPI(
     title="AgriDash API",
     description="API data pertanian dan ketahanan pangan Kabupaten Kediri",
-    version="0.2.0"
+    version="0.1.0"
 )
 
 app.add_middleware(
@@ -514,7 +514,7 @@ def get_rekap_kecamatan():
 
 
 # =========================================================
-# 11. DATA TANAMAN PANGAN
+# 11. DATA TANAMAN PANGAN (DIPERBAIKI UNTUK POSTGRESQL)
 # =========================================================
 
 @app.get("/api/v1/tanaman-pangan")
@@ -524,43 +524,28 @@ def get_tanaman_pangan(
     limit: int = Query(50, ge=1, le=500),
     sort_by: str = Query("produksi_ton")
 ):
-
-    allowed_sort = [
-        "produksi_ton",
-        "luas_panen_ha",
-        "produktivitas_kuintal_ha"
-    ]
-
+    allowed_sort = ["produksi_ton", "luas_panen_ha", "produktivitas_kuintal_ha"]
     if sort_by not in allowed_sort:
-        raise HTTPException(
-            status_code=400,
-            detail="Kolom pengurutan tidak diizinkan."
-        )
+        raise HTTPException(status_code=400, detail="Kolom pengurutan tidak diizinkan.")
 
-    query = """
-        SELECT *
-        FROM tanaman_pangan
-        WHERE
-            (:kecamatan IS NULL OR kecamatan = :kecamatan)
-            AND
-            (:tanaman IS NULL OR tanaman = :tanaman)
-        ORDER BY
-    """
+    # Bangun query secara dinamis (Aman untuk PostgreSQL)
+    query_str = "SELECT * FROM tanaman_pangan WHERE 1=1"
+    params = {}
 
-    query += sort_by + " DESC LIMIT :limit"
+    if kecamatan:
+        query_str += " AND LOWER(kecamatan) = LOWER(:kecamatan)"
+        params["kecamatan"] = kecamatan
+    
+    if tanaman:
+        query_str += " AND LOWER(tanaman) = LOWER(:tanaman)"
+        params["tanaman"] = tanaman
+
+    query_str += f" ORDER BY {sort_by} DESC LIMIT :limit"
+    params["limit"] = limit
 
     engine = get_engine()
-
     with engine.connect() as conn:
-
-        result = conn.execute(
-            text(query),
-            {
-                "kecamatan": kecamatan,
-                "tanaman": tanaman,
-                "limit": limit
-            }
-        ).mappings().all()
+        result = conn.execute(text(query_str), params).mappings().all()
 
     return {
         "total": len(result),
@@ -1343,7 +1328,7 @@ def root():
 
     return {
         "application": "AgriDash API",
-        "version": "0.2.0",
+        "version": "0.1.0",
         "description": (
             "API monitoring, pemodelan, dan "
             "ketahanan pangan Kabupaten Kediri."
