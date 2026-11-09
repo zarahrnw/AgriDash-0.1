@@ -1,0 +1,18 @@
+# Virtual Environment
+venv/
+.venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment & Secrets
+.env
+PASSWORD.MD
+
+# File sementara
+setup_test.py
+
+# IDE
+.vscode/

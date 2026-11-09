@@ -1,4 +1,3 @@
-
 import os
 import io
 import random
@@ -227,22 +226,10 @@ def get_current_admin(
 
 
 # =========================================================
-# 5. PYDANTIC MODELS
-# =========================================================
-
-# UserCreate dan PrediksiRequest didefinisikan di atas.
-
-
-# =========================================================
-# 6. HELPER CSV
+# 5. HELPER CSV
 # =========================================================
 
 def read_agri_csv(file_path: Path):
-    """
-    Membaca file CSV lokal.
-    File tidak perlu diunggah ulang melalui frontend.
-    """
-
     if not file_path.exists():
         raise HTTPException(
             status_code=404,
@@ -265,11 +252,6 @@ def read_agri_csv(file_path: Path):
 
 
 def dataframe_records(df: pd.DataFrame):
-    """
-    Mengubah DataFrame menjadi format JSON.
-    Nilai NaN diubah menjadi None.
-    """
-
     clean_df = df.astype(object).where(
         pd.notna(df),
         None
@@ -281,10 +263,6 @@ def dataframe_records(df: pd.DataFrame):
 
 
 def find_column(df: pd.DataFrame, candidates: list):
-    """
-    Mencari nama kolom berdasarkan beberapa kemungkinan.
-    """
-
     normalized = {
         str(col).lower().strip().replace(" ", "_"): col
         for col in df.columns
@@ -339,7 +317,7 @@ def get_kecamatan_column(df):
 
 
 # =========================================================
-# 7. HEALTH CHECK
+# 6. HEALTH CHECK
 # =========================================================
 
 @app.get("/health")
@@ -365,7 +343,7 @@ def health_check():
 
 
 # =========================================================
-# 8. AUTH REGISTER
+# 7. AUTH REGISTER
 # =========================================================
 
 @app.post("/api/v1/auth/register")
@@ -399,7 +377,7 @@ def register_user(user: UserCreate):
                 text("""
                     INSERT INTO users (
                         username,
-                        password,
+                        password_hash,
                         role
                     )
                     VALUES (
@@ -431,7 +409,7 @@ def register_user(user: UserCreate):
 
 
 # =========================================================
-# 9. AUTH LOGIN
+# 8. AUTH LOGIN
 # =========================================================
 
 @app.post("/api/v1/auth/login")
@@ -445,7 +423,7 @@ def login(
 
         user = conn.execute(
             text("""
-                SELECT id, username, password, role
+                SELECT id, username, password_hash as password, role
                 FROM users
                 WHERE username = :username
             """),
@@ -481,7 +459,7 @@ def login(
 
 
 # =========================================================
-# 10. MASTER KECAMATAN
+# 9. MASTER KECAMATAN
 # =========================================================
 
 @app.get("/api/v1/kecamatan")
@@ -506,7 +484,7 @@ def get_kecamatan():
 
 
 # =========================================================
-# 11. REKAP KECAMATAN
+# 10. REKAP KECAMATAN
 # =========================================================
 
 @app.get("/api/v1/rekap-kecamatan")
@@ -536,7 +514,7 @@ def get_rekap_kecamatan():
 
 
 # =========================================================
-# 12. DATA TANAMAN PANGAN
+# 11. DATA TANAMAN PANGAN
 # =========================================================
 
 @app.get("/api/v1/tanaman-pangan")
@@ -591,7 +569,7 @@ def get_tanaman_pangan(
 
 
 # =========================================================
-# 13. RINGKASAN TANAMAN PANGAN
+# 12. RINGKASAN TANAMAN PANGAN
 # =========================================================
 
 @app.get("/api/v1/tanaman-pangan/ringkasan")
@@ -618,7 +596,7 @@ def get_ringkasan_tanaman():
 
 
 # =========================================================
-# 14. UPLOAD DATA TANAMAN PANGAN
+# 13. UPLOAD DATA TANAMAN PANGAN
 # =========================================================
 
 @app.post("/api/v1/tanaman-pangan/upload")
@@ -719,21 +697,19 @@ def upload_tanaman_pangan(
                 text("""
                     INSERT INTO audit_trail (
                         username,
-                        aktivitas,
-                        waktu
+                        action,
+                        details
                     )
                     VALUES (
                         :username,
-                        :aktivitas,
-                        :waktu
+                        :action,
+                        :details
                     )
                 """),
                 {
                     "username": current_user["username"],
-                    "aktivitas": (
-                        f"Upload data tanaman pangan: {file.filename}"
-                    ),
-                    "waktu": datetime.now()
+                    "action": "Upload Data Tanaman Pangan",
+                    "details": f"Mengunggah file: {file.filename}"
                 }
             )
 
@@ -750,7 +726,7 @@ def upload_tanaman_pangan(
 
 
 # =========================================================
-# 15. CUACA BMKG
+# 14. CUACA BMKG
 # =========================================================
 
 def fetch_bmkg(kode_kecamatan: str):
@@ -809,7 +785,7 @@ def get_cuaca(kode_kecamatan: str):
 
 
 # =========================================================
-# 16. EARLY WARNING SYSTEM CUACA
+# 15. EARLY WARNING SYSTEM CUACA
 # =========================================================
 
 @app.get("/api/v1/ews-cuaca/{kode_kecamatan}")
@@ -866,7 +842,7 @@ def get_ews_cuaca(kode_kecamatan: str):
 
 
 # =========================================================
-# 17. PREDIKSI PRODUKSI
+# 16. PREDIKSI PRODUKSI
 # =========================================================
 
 @app.post("/api/v1/prediksi")
@@ -904,8 +880,6 @@ def prediksi_produksi(request: PrediksiRequest):
 
     produksi_awal = float(result["produksi"])
 
-    # Simulasi lama dipertahankan.
-    # Endpoint ini bukan hasil model forecasting CSV.
     faktor_pertumbuhan = (
         1 + (0.05 * request.bulan_ke_depan)
     )
@@ -929,7 +903,7 @@ def prediksi_produksi(request: PrediksiRequest):
 
 
 # =========================================================
-# 18. HARGA PANGAN
+# 17. HARGA PANGAN
 # =========================================================
 
 @app.get("/api/v1/harga-pangan")
@@ -951,8 +925,10 @@ def get_harga_pangan():
     }
 
     params = {
-        "province": "Jawa Timur",
-        "level": "consumer"
+        "tingkat": "konsumen",
+        "wilayah": "provinsi",
+        "provinsi": "jawa timur",
+        "limit": 100
     }
 
     try:
@@ -975,7 +951,7 @@ def get_harga_pangan():
 
 
 # =========================================================
-# 19. AUDIT TRAIL
+# 18. AUDIT TRAIL
 # =========================================================
 
 @app.get("/api/v1/audit-trail")
@@ -991,7 +967,7 @@ def get_audit_trail(
             text("""
                 SELECT *
                 FROM audit_trail
-                ORDER BY waktu DESC
+                ORDER BY timestamp DESC
                 LIMIT 50
             """)
         ).mappings().all()
@@ -1003,7 +979,7 @@ def get_audit_trail(
 
 
 # =========================================================
-# 20. DASHBOARD EKSEKUTIF
+# 19. DASHBOARD EKSEKUTIF
 # =========================================================
 
 @app.get("/api/v1/dashboard-eksekutif")
@@ -1047,7 +1023,7 @@ def dashboard_eksekutif():
 
 
 # =========================================================
-# 21. HASIL CLUSTERING
+# 20. HASIL CLUSTERING
 # =========================================================
 
 @app.get("/api/v1/model/clustering")
@@ -1070,7 +1046,7 @@ def get_clustering():
 
 
 # =========================================================
-# 22. PCA CLUSTERING
+# 21. PCA CLUSTERING
 # =========================================================
 
 @app.get("/api/v1/model/pca")
@@ -1093,7 +1069,6 @@ def get_pca():
         include=[np.number]
     ).copy()
 
-    # Hilangkan kolom ID atau nomor urut.
     numeric_df = numeric_df.loc[
         :,
         [
@@ -1182,7 +1157,7 @@ def get_pca():
 
 
 # =========================================================
-# 23. HEATMAP KECAMATAN
+# 22. HEATMAP KECAMATAN
 # =========================================================
 
 @app.get("/api/v1/model/heatmap-kecamatan")
@@ -1216,7 +1191,7 @@ def get_heatmap_kecamatan():
 
 
 # =========================================================
-# 24. REKOMENDASI KOMODITAS
+# 23. REKOMENDASI KOMODITAS
 # =========================================================
 
 @app.get("/api/v1/model/rekomendasi")
@@ -1234,7 +1209,7 @@ def get_rekomendasi():
 
 
 # =========================================================
-# 25. FORECASTING
+# 24. FORECASTING
 # =========================================================
 
 @app.get("/api/v1/model/forecasting")
@@ -1252,7 +1227,7 @@ def get_forecasting():
 
 
 # =========================================================
-# 26. PERBANDINGAN MODEL
+# 25. PERBANDINGAN MODEL
 # =========================================================
 
 @app.get("/api/v1/model/comparison")
@@ -1270,7 +1245,7 @@ def get_model_comparison():
 
 
 # =========================================================
-# 27. DATA CENTER
+# 26. DATA CENTER
 # =========================================================
 
 @app.get("/api/v1/data-center")
@@ -1314,7 +1289,7 @@ def get_data_center():
 
 
 # =========================================================
-# 28. DOWNLOAD DATA CENTER
+# 27. DOWNLOAD DATA CENTER
 # =========================================================
 
 @app.get(
@@ -1360,7 +1335,7 @@ def download_data_center(
 
 
 # =========================================================
-# 29. ROOT
+# 28. ROOT
 # =========================================================
 
 @app.get("/")
