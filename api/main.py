@@ -1,31 +1,96 @@
+
 import os
 import io
 import random
-import requests
-import pandas as pd
-from typing import Optional
+from pathlib import Path
 from datetime import datetime, timedelta
+from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Query, UploadFile, File, Depends, status
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from sqlalchemy import create_engine, text
+import requests
+import numpy as np
+import pandas as pd
+
 from dotenv import load_dotenv
+from fastapi import (
+    FastAPI,
+    HTTPException,
+    Query,
+    UploadFile,
+    File,
+    Depends,
+    status
+)
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 
-# Library Autentikasi
+from fastapi.security import (
+    OAuth2PasswordBearer,
+    OAuth2PasswordRequestForm
+)
+
+from pydantic import BaseModel
+from sqlalchemy import create_engine, text
+
 from passlib.context import CryptContext
 from jose import JWTError, jwt
-from pydantic import BaseModel
 
-# ==========================================
-# KONFIGURASI AWAL & DATABASE
-# ==========================================
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+
+
+# =========================================================
+# 1. ENVIRONMENT & KONFIGURASI
+# =========================================================
+
 load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+SECRET_KEY = os.getenv("SECRET_KEY", "agr idash-secret-key-change-this")
+ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = int(
+    os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "1440")
+)
+
+API_INDONESIA_KEY = os.getenv("API_INDONESIA_KEY")
+
+BMKG_BASE_URL = (
+    "https://api.bmkg.go.id/publik/prakiraan-cuaca"
+)
+
+# Lokasi root project.
+BASE_DIR = Path(__file__).resolve().parent
+
+# Mendukung struktur:
+# AgriDash/
+#   backend/main.py
+#   output/
+#   outputs/
+if (
+    not (BASE_DIR / "output").exists()
+    and (BASE_DIR.parent / "output").exists()
+):
+    BASE_DIR = BASE_DIR.parent
+
+DATA_DIR = BASE_DIR / "output" / "tanaman_pangan"
+REPORT_DIR = BASE_DIR / "outputs" / "reports"
+
+CSV_FILES = {
+    "clustering": DATA_DIR / "output_clustering_pangan.csv",
+    "rekomendasi": DATA_DIR / "output_rekomendasi_pangan.csv",
+    "timeseries": DATA_DIR / "output_timeseries_pangan.csv",
+    "model_comparison": DATA_DIR / "output_model_comparison.csv",
+}
+
+
+# =========================================================
+# 2. FASTAPI APPLICATION
+# =========================================================
 
 app = FastAPI(
     title="AgriDash API",
     description="API data pertanian dan ketahanan pangan Kabupaten Kediri",
-    version="0.1.0",
+    version="0.2.0"
 )
 
 app.add_middleware(
@@ -36,28 +101,38 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-if not DATABASE_URL:
-    raise ValueError("DATABASE_URL tidak ditemukan di file .env")
+
+# =========================================================
+# 3. DATABASE CONFIGURATION
+# =========================================================
 
 def get_engine():
-    return create_engine(DATABASE_URL)
+    if not DATABASE_URL:
+        raise HTTPException(
+            status_code=500,
+            detail="DATABASE_URL belum dikonfigurasi."
+        )
+
+    return create_engine(
+        DATABASE_URL,
+        pool_pre_ping=True
+    )
 
 
-# ==========================================
-# KONFIGURASI KEAMANAN (JWT)
-# ==========================================
-SECRET_KEY = os.getenv("SECRET_KEY", "fallback_secret")
-ALGORITHM = os.getenv("ALGORITHM", "HS256")
-ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24
+# =========================================================
+# 4. AUTHENTICATION & JWT
+# =========================================================
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login")
+pwd_context = CryptContext(
+    schemes=["bcrypt"],
+    deprecated="auto"
+)
+
+oauth2_scheme = OAuth2PasswordBearer(
+    tokenUrl="/api/v1/auth/login"
+)
 
 
-# ==========================================
-# SCHEMA PYDANTIC
-# ==========================================
 class UserCreate(BaseModel):
     username: str
     password: str
@@ -70,11 +145,11 @@ class PrediksiRequest(BaseModel):
     bulan_ke_depan: int = 1
 
 
-# ==========================================
-# FUNGSI BANTUAN
-# ==========================================
 def verify_password(plain_password, hashed_password):
-    return pwd_context.verify(plain_password, hashed_password)
+    return pwd_context.verify(
+        plain_password,
+        hashed_password
+    )
 
 
 def get_password_hash(password):
@@ -83,540 +158,1221 @@ def get_password_hash(password):
 
 def create_access_token(data: dict):
     to_encode = data.copy()
-    expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    to_encode.update({"exp": expire})
-    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
+    expire = datetime.utcnow() + timedelta(
+        minutes=ACCESS_TOKEN_EXPIRE_MINUTES
+    )
+
+    to_encode.update({
+        "exp": expire
+    })
+
+    return jwt.encode(
+        to_encode,
+        SECRET_KEY,
+        algorithm=ALGORITHM
+    )
 
 
-def get_current_admin(token: str = Depends(oauth2_scheme)):
+def get_current_user(token: str = Depends(oauth2_scheme)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
-        detail="Token tidak valid atau sudah kedaluwarsa",
-        headers={"WWW-Authenticate": "Bearer"},
+        detail="Token tidak valid atau sudah kedaluwarsa.",
+        headers={"WWW-Authenticate": "Bearer"}
     )
+
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username: str = payload.get("sub")
+        payload = jwt.decode(
+            token,
+            SECRET_KEY,
+            algorithms=[ALGORITHM]
+        )
+
+        username = payload.get("sub")
+
         if username is None:
             raise credentials_exception
+
     except JWTError:
         raise credentials_exception
 
-    with get_engine().connect() as conn:
+    engine = get_engine()
+
+    with engine.connect() as conn:
         result = conn.execute(
-            text("SELECT * FROM users WHERE username = :username"),
+            text("""
+                SELECT id, username, role
+                FROM users
+                WHERE username = :username
+            """),
             {"username": username}
-        ).fetchone()
-        if not result:
-            raise credentials_exception
-    return dict(result._mapping)
+        ).mappings().first()
+
+    if not result:
+        raise credentials_exception
+
+    return dict(result)
 
 
-# ==========================================
-# ENDPOINT SYSTEM & AUTENTIKASI
-# ==========================================
-@app.get("/health", tags=["System"])
+def get_current_admin(
+    current_user: dict = Depends(get_current_user)
+):
+    if current_user.get("role") not in ["admin", "super_admin"]:
+        raise HTTPException(
+            status_code=403,
+            detail="Akses hanya untuk admin."
+        )
+
+    return current_user
+
+
+# =========================================================
+# 5. PYDANTIC MODELS
+# =========================================================
+
+# UserCreate dan PrediksiRequest didefinisikan di atas.
+
+
+# =========================================================
+# 6. HELPER CSV
+# =========================================================
+
+def read_agri_csv(file_path: Path):
+    """
+    Membaca file CSV lokal.
+    File tidak perlu diunggah ulang melalui frontend.
+    """
+
+    if not file_path.exists():
+        raise HTTPException(
+            status_code=404,
+            detail=f"File tidak ditemukan: {file_path.name}"
+        )
+
+    try:
+        df = pd.read_csv(
+            file_path,
+            encoding="utf-8-sig"
+        )
+
+        return df
+
+    except Exception as error:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Gagal membaca {file_path.name}: {str(error)}"
+        )
+
+
+def dataframe_records(df: pd.DataFrame):
+    """
+    Mengubah DataFrame menjadi format JSON.
+    Nilai NaN diubah menjadi None.
+    """
+
+    clean_df = df.astype(object).where(
+        pd.notna(df),
+        None
+    )
+
+    return clean_df.to_dict(
+        orient="records"
+    )
+
+
+def find_column(df: pd.DataFrame, candidates: list):
+    """
+    Mencari nama kolom berdasarkan beberapa kemungkinan.
+    """
+
+    normalized = {
+        str(col).lower().strip().replace(" ", "_"): col
+        for col in df.columns
+    }
+
+    for candidate in candidates:
+        key = (
+            candidate.lower()
+            .strip()
+            .replace(" ", "_")
+        )
+
+        if key in normalized:
+            return normalized[key]
+
+    return None
+
+
+def safe_float(value):
+    try:
+        if pd.isna(value):
+            return None
+
+        return float(value)
+
+    except (TypeError, ValueError):
+        return None
+
+
+def get_cluster_column(df):
+    return find_column(
+        df,
+        [
+            "cluster",
+            "cluster_label",
+            "klaster",
+            "label_cluster",
+            "cluster_kmeans"
+        ]
+    )
+
+
+def get_kecamatan_column(df):
+    return find_column(
+        df,
+        [
+            "kecamatan",
+            "nama_kecamatan",
+            "wilayah"
+        ]
+    )
+
+
+# =========================================================
+# 7. HEALTH CHECK
+# =========================================================
+
+@app.get("/health")
 def health_check():
+
     try:
-        with get_engine().connect() as conn:
+        engine = get_engine()
+
+        with engine.connect() as conn:
             conn.execute(text("SELECT 1"))
-        return {"status": "ok", "service": "AgriDash API", "database": "connected"}
-    except Exception as e:
-        return {"status": "error", "service": "AgriDash API", "database": str(e)}
+
+        return {
+            "status": "healthy",
+            "database": "connected",
+            "timestamp": datetime.now().isoformat()
+        }
+
+    except Exception as error:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Database error: {str(error)}"
+        )
 
 
-@app.post("/api/v1/auth/register", tags=["Authentication"])
+# =========================================================
+# 8. AUTH REGISTER
+# =========================================================
+
+@app.post("/api/v1/auth/register")
 def register_user(user: UserCreate):
-    hashed_password = get_password_hash(user.password)
+
+    engine = get_engine()
+
+    hashed_password = get_password_hash(
+        user.password
+    )
+
     try:
-        with get_engine().begin() as conn:
+        with engine.begin() as conn:
+
             existing = conn.execute(
-                text("SELECT id FROM users WHERE username = :username"),
+                text("""
+                    SELECT id
+                    FROM users
+                    WHERE username = :username
+                """),
                 {"username": user.username}
-            ).fetchone()
-            
+            ).first()
+
             if existing:
-                raise HTTPException(status_code=400, detail="Username sudah terdaftar")
-
-            conn.execute(
-                text("INSERT INTO users (username, password_hash, role) VALUES (:u, :p, :r)"),
-                {"u": user.username, "p": hashed_password, "r": user.role}
-            )
-        return {"status": "success", "message": "User berhasil didaftarkan."}
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.post("/api/v1/auth/login", tags=["Authentication"])
-def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
-    try:
-        with get_engine().connect() as conn:
-            user = conn.execute(
-                text("SELECT * FROM users WHERE username = :username"),
-                {"username": form_data.username}
-            ).fetchone()
-
-            if not user or not verify_password(form_data.password, user.password_hash):
                 raise HTTPException(
-                    status_code=status.HTTP_401_UNAUTHORIZED,
-                    detail="Username atau password salah",
-                    headers={"WWW-Authenticate": "Bearer"},
+                    status_code=400,
+                    detail="Username sudah digunakan."
                 )
 
-            access_token = create_access_token(data={"sub": user.username, "role": user.role})
-            return {"access_token": access_token, "token_type": "bearer"}
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-# ==========================================
-# ENDPOINT DATA TANAMAN PANGAN
-# ==========================================
-@app.get("/api/v1/kecamatan", tags=["Master Data"])
-def get_daftar_kecamatan():
-    try:
-        with get_engine().connect() as conn:
-            result = conn.execute(text("SELECT kecamatan FROM master_kecamatan ORDER BY kecamatan ASC"))
-            kecamatan_list = [row[0] for row in result]
-        return {"total": len(kecamatan_list), "data": kecamatan_list}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.get("/api/v1/rekap-kecamatan", tags=["Tanaman Pangan"])
-def get_rekap_kecamatan():
-    try:
-        with get_engine().connect() as conn:
-            query = text("""
-                SELECT kecamatan, SUM(produksi_ton) as total_produksi, SUM(luas_panen_ha) as total_luas
-                FROM tanaman_pangan GROUP BY kecamatan ORDER BY total_produksi DESC
-            """)
-            result = conn.execute(query)
-            data = [{
-                "kecamatan": row.kecamatan, 
-                "produksi_ton": round(row.total_produksi or 0, 2), 
-                "luas_panen_ha": round(row.total_luas or 0, 2)
-            } for row in result]
-        return {"total_kecamatan": len(data), "data": data}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.get("/api/v1/tanaman-pangan", tags=["Tanaman Pangan"])
-def get_tanaman_pangan(
-    kecamatan: Optional[str] = Query(default=None),
-    tanaman: Optional[str] = Query(default=None),
-    limit: int = Query(default=50),
-    sort_by: str = Query(default="produksi_ton"),
-):
-    try:
-        with get_engine().connect() as conn:
-            query_str = "SELECT * FROM tanaman_pangan WHERE 1=1"
-            params = {}
-            
-            if kecamatan:
-                query_str += " AND LOWER(kecamatan) = LOWER(:kecamatan)"
-                params["kecamatan"] = kecamatan
-            if tanaman:
-                query_str += " AND LOWER(tanaman) = LOWER(:tanaman)"
-                params["tanaman"] = tanaman
-
-            if sort_by not in ["produksi_ton", "luas_panen_ha", "produktivitas_kuintal_ha"]:
-                sort_by = "produksi_ton"
-
-            query_str += f" ORDER BY {sort_by} DESC LIMIT :limit"
-            params["limit"] = limit
-            
-            result = conn.execute(text(query_str), params)
-            rows = [dict(row._mapping) for row in result]
-            
-        return {
-            "total_data_ditampilkan": len(rows),
-            "filters": {"kecamatan": kecamatan, "tanaman": tanaman, "sort_by": sort_by},
-            "data": rows
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.get("/api/v1/tanaman-pangan/ringkasan", tags=["Tanaman Pangan"])
-def get_ringkasan_tanaman_pangan():
-    try:
-        with get_engine().connect() as conn:
-            result_sum = conn.execute(text("""
-                SELECT SUM(produksi_ton) as total_prod, SUM(luas_panen_ha) as total_luas FROM tanaman_pangan
-            """)).fetchone()
-            
-            result_count = conn.execute(text("""
-                SELECT COUNT(DISTINCT kecamatan) as jml_kec, COUNT(DISTINCT tanaman) as jml_tanaman FROM tanaman_pangan
-            """)).fetchone()
-            
-        return {
-            "total_produksi_ton": round(result_sum.total_prod or 0, 2),
-            "total_luas_panen_ha": round(result_sum.total_luas or 0, 2),
-            "jumlah_kecamatan": result_count.jml_kec,
-            "jumlah_jenis_tanaman": result_count.jml_tanaman,
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-# ==========================================
-# FITUR DATA CENTER: UPLOAD CSV (DENGAN AUDIT TRAIL)
-# ==========================================
-@app.post("/api/v1/tanaman-pangan/upload", tags=["Data Center"])
-async def upload_tanaman_pangan(
-    file: UploadFile = File(...),
-    current_admin: dict = Depends(get_current_admin)
-):
-    if not file.filename.endswith(('.csv', '.xlsx')):
-        raise HTTPException(status_code=400, detail="Format file harus CSV atau Excel (.xlsx)")
-
-    try:
-        contents = await file.read()
-        df = pd.read_csv(io.BytesIO(contents)) if file.filename.endswith('.csv') else pd.read_excel(io.BytesIO(contents))
-
-        required_columns = ['kecamatan', 'tanaman', 'luas_panen_ha', 'produksi_ton', 'produktivitas_kuintal_ha']
-        for col in required_columns:
-            if col not in df.columns:
-                raise HTTPException(status_code=400, detail=f"Kolom '{col}' tidak ditemukan di file.")
-
-        df = df.replace({pd.NA: None, float('nan'): None})
-        data_to_insert = df.to_dict(orient='records')
-
-        with get_engine().begin() as conn:
-            conn.execute(text("TRUNCATE TABLE tanaman_pangan RESTART IDENTITY"))
             conn.execute(
                 text("""
-                    INSERT INTO tanaman_pangan (kecamatan, tanaman, luas_panen_ha, produksi_ton, produktivitas_kuintal_ha)
-                    VALUES (:kecamatan, :tanaman, :luas_panen_ha, :produksi_ton, :produktivitas_kuintal_ha)
-                """),
-                data_to_insert
-            )
-            
-            # --- AUDIT TRAIL ---
-            conn.execute(
-                text("""
-                    INSERT INTO audit_trail (username, action, details)
-                    VALUES (:username, :action, :details)
+                    INSERT INTO users (
+                        username,
+                        password,
+                        role
+                    )
+                    VALUES (
+                        :username,
+                        :password,
+                        :role
+                    )
                 """),
                 {
-                    "username": current_admin['username'],
-                    "action": "Upload Data CSV",
-                    "details": f"Berhasil upload {len(df)} baris data tanaman pangan."
+                    "username": user.username,
+                    "password": hashed_password,
+                    "role": user.role
                 }
             )
 
         return {
-            "status": "success",
-            "message": f"Berhasil mengganti data lama dengan {len(df)} baris data baru secara instan oleh Admin: {current_admin['username']}",
+            "message": "Registrasi berhasil.",
+            "username": user.username
         }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Gagal memproses file: {str(e)}")
+
+    except HTTPException:
+        raise
+
+    except Exception as error:
+        raise HTTPException(
+            status_code=500,
+            detail=str(error)
+        )
 
 
-# ==========================================
-# FITUR CUACA BMKG & EWS
-# ==========================================
-@app.get("/api/v1/cuaca/{kode_kecamatan}", tags=["Cuaca & Risiko"])
-def get_cuaca_bmkg(kode_kecamatan: str):
-    try:
-        url = f"https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4={kode_kecamatan}"
-        response = requests.get(url, timeout=10)
+# =========================================================
+# 9. AUTH LOGIN
+# =========================================================
 
-        if response.status_code != 200:
-            raise HTTPException(status_code=404, detail="Data cuaca tidak ditemukan di BMKG.")
+@app.post("/api/v1/auth/login")
+def login(
+    form_data: OAuth2PasswordRequestForm = Depends()
+):
 
-        data_bmkg = response.json()
-        if not data_bmkg.get("data"):
-            raise HTTPException(status_code=404, detail="Data cuaca kosong.")
+    engine = get_engine()
 
-        cuaca_hari_ini = data_bmkg["data"][0]["cuaca"][0]
-        prakiraan_pertama = cuaca_hari_ini[0] if cuaca_hari_ini else {}
+    with engine.connect() as conn:
 
-        return {
-            "status": "success",
-            "lokasi": data_bmkg["data"][0]["lokasi"],
-            "prakiraan_terdekat": {
-                "waktu_lokal": prakiraan_pertama.get("local_datetime"),
-                "suhu_celsius": prakiraan_pertama.get("t"),
-                "kelembapan_persen": prakiraan_pertama.get("hu"),
-                "curah_hujan_mm": prakiraan_pertama.get("tp"),
-                "kondisi_cuaca": prakiraan_pertama.get("weather_desc"),
-                "kecepatan_angin_km_jam": prakiraan_pertama.get("ws")
-            }
-        }
-    except requests.exceptions.Timeout:
-        raise HTTPException(status_code=504, detail="Koneksi ke server BMKG timeout.")
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        user = conn.execute(
+            text("""
+                SELECT id, username, password, role
+                FROM users
+                WHERE username = :username
+            """),
+            {"username": form_data.username}
+        ).mappings().first()
 
+    if not user:
+        raise HTTPException(
+            status_code=401,
+            detail="Username atau password salah."
+        )
 
-@app.get("/api/v1/ews-cuaca/{kode_kecamatan}", tags=["Cuaca & Risiko"])
-def get_ews_cuaca(kode_kecamatan: str):
-    try:
-        url = f"https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4={kode_kecamatan}"
-        response = requests.get(url, timeout=10)
+    if not verify_password(
+        form_data.password,
+        user["password"]
+    ):
+        raise HTTPException(
+            status_code=401,
+            detail="Username atau password salah."
+        )
 
-        if response.status_code != 200:
-            raise HTTPException(status_code=404, detail="Data cuaca tidak ditemukan.")
+    access_token = create_access_token({
+        "sub": user["username"],
+        "role": user["role"]
+    })
 
-        data_bmkg = response.json()
-        if not data_bmkg.get("data"):
-            raise HTTPException(status_code=404, detail="Data cuaca kosong.")
-
-        prakiraan = data_bmkg["data"][0]["cuaca"][0][0] if data_bmkg["data"][0]["cuaca"][0] else {}
-
-        suhu = prakiraan.get("t", 0)
-        kelembapan = prakiraan.get("hu", 0)
-        curah_hujan = prakiraan.get("tp", 0)
-        kondisi = prakiraan.get("weather_desc", "")
-
-        status_ews = "AMAN"
-        pesan_ews = "Kondisi cuaca normal untuk aktivitas pertanian."
-        rekomendasi = "Lanjutkan aktivitas pertanian seperti biasa."
-
-        if curah_hujan > 50.0:
-            status_ews = "BAHAYA"
-            pesan_ews = f"Curah hujan sangat tinggi ({curah_hujan} mm)."
-            rekomendasi = "Tunda pemupukan dan segera lakukan pengecekan drainase."
-        elif kelembapan > 80 and curah_hujan > 10.0:
-            status_ews = "WASPADA"
-            pesan_ews = f"Kelembapan tinggi ({kelembapan}%) disertai hujan."
-            rekomendasi = "Waspadai serangan jamur dan hama. Pastikan sirkulasi udara baik."
-        elif suhu > 34.0:
-            status_ews = "WASPADA"
-            pesan_ews = f"Suhu udara sangat panas ({suhu}°C)."
-            rekomendasi = "Lakukan penyiraman tambahan untuk menjaga kelembapan tanah."
-
-        return {
-            "status_sistem": "success",
-            "lokasi": {
-                "kecamatan": data_bmkg["data"][0]["lokasi"].get("kecamatan"),
-                "desa": data_bmkg["data"][0]["lokasi"].get("desa")
-            },
-            "parameter_cuaca": {
-                "suhu": suhu, "kelembapan": kelembapan,
-                "curah_hujan": curah_hujan, "kondisi": kondisi
-            },
-            "analisis_ews": {
-                "status": status_ews, "pesan": pesan_ews, "rekomendasi": rekomendasi
-            }
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    return {
+        "access_token": access_token,
+        "token_type": "bearer",
+        "username": user["username"],
+        "role": user["role"]
+    }
 
 
-# ==========================================
-# FITUR PREDIKSI ML (SIMULASI)
-# ==========================================
-@app.post("/api/v1/prediksi", tags=["Prediksi & EWS"])
-def prediksi_produksi(request: PrediksiRequest):
-    try:
-        with get_engine().connect() as conn:
-            query = text("""
-                SELECT SUM(produksi_ton) as total_produksi 
-                FROM tanaman_pangan 
-                WHERE LOWER(kecamatan) = LOWER(:kecamatan) AND LOWER(tanaman) = LOWER(:tanaman)
+# =========================================================
+# 10. MASTER KECAMATAN
+# =========================================================
+
+@app.get("/api/v1/kecamatan")
+def get_kecamatan():
+
+    engine = get_engine()
+
+    with engine.connect() as conn:
+
+        result = conn.execute(
+            text("""
+                SELECT DISTINCT kecamatan
+                FROM master_kecamatan
+                ORDER BY kecamatan
             """)
-            result = conn.execute(query, {"kecamatan": request.kecamatan, "tanaman": request.tanaman}).fetchone()
-            total_produksi_sekarang = result.total_produksi or 0
+        ).mappings().all()
 
-        if total_produksi_sekarang == 0:
-            raise HTTPException(status_code=404, detail="Data historis tidak ditemukan.")
+    return {
+        "total": len(result),
+        "data": [dict(row) for row in result]
+    }
 
-        tren_kenaikan = 0.05 * request.bulan_ke_depan 
-        fluktuasi = random.uniform(-0.02, 0.02)
-        persentase_perubahan = tren_kenaikan + fluktuasi
-        nilai_prediksi = total_produksi_sekarang * (1 + persentase_perubahan)
 
-        if persentase_perubahan < 0:
-            status_ews = "WASPADA (Potensi Penurunan)"
-            rekomendasi = "Tinjau kembali alokasi pupuk dan waspada cuaca ekstrem."
+# =========================================================
+# 11. REKAP KECAMATAN
+# =========================================================
+
+@app.get("/api/v1/rekap-kecamatan")
+def get_rekap_kecamatan():
+
+    engine = get_engine()
+
+    with engine.connect() as conn:
+
+        result = conn.execute(
+            text("""
+                SELECT
+                    kecamatan,
+                    SUM(luas_panen_ha) AS total_luas_panen,
+                    SUM(produksi_ton) AS total_produksi,
+                    AVG(produktivitas_kuintal_ha) AS rata_produktivitas
+                FROM tanaman_pangan
+                GROUP BY kecamatan
+                ORDER BY total_produksi DESC
+            """)
+        ).mappings().all()
+
+    return {
+        "total": len(result),
+        "data": [dict(row) for row in result]
+    }
+
+
+# =========================================================
+# 12. DATA TANAMAN PANGAN
+# =========================================================
+
+@app.get("/api/v1/tanaman-pangan")
+def get_tanaman_pangan(
+    kecamatan: Optional[str] = None,
+    tanaman: Optional[str] = None,
+    limit: int = Query(50, ge=1, le=500),
+    sort_by: str = Query("produksi_ton")
+):
+
+    allowed_sort = [
+        "produksi_ton",
+        "luas_panen_ha",
+        "produktivitas_kuintal_ha"
+    ]
+
+    if sort_by not in allowed_sort:
+        raise HTTPException(
+            status_code=400,
+            detail="Kolom pengurutan tidak diizinkan."
+        )
+
+    query = """
+        SELECT *
+        FROM tanaman_pangan
+        WHERE
+            (:kecamatan IS NULL OR kecamatan = :kecamatan)
+            AND
+            (:tanaman IS NULL OR tanaman = :tanaman)
+        ORDER BY
+    """
+
+    query += sort_by + " DESC LIMIT :limit"
+
+    engine = get_engine()
+
+    with engine.connect() as conn:
+
+        result = conn.execute(
+            text(query),
+            {
+                "kecamatan": kecamatan,
+                "tanaman": tanaman,
+                "limit": limit
+            }
+        ).mappings().all()
+
+    return {
+        "total": len(result),
+        "data": [dict(row) for row in result]
+    }
+
+
+# =========================================================
+# 13. RINGKASAN TANAMAN PANGAN
+# =========================================================
+
+@app.get("/api/v1/tanaman-pangan/ringkasan")
+def get_ringkasan_tanaman():
+
+    engine = get_engine()
+
+    with engine.connect() as conn:
+
+        result = conn.execute(
+            text("""
+                SELECT
+                    COUNT(*) AS total_data,
+                    COUNT(DISTINCT kecamatan) AS total_kecamatan,
+                    COUNT(DISTINCT tanaman) AS total_komoditas,
+                    SUM(luas_panen_ha) AS total_luas_panen,
+                    SUM(produksi_ton) AS total_produksi,
+                    AVG(produktivitas_kuintal_ha) AS rata_produktivitas
+                FROM tanaman_pangan
+            """)
+        ).mappings().first()
+
+    return dict(result) if result else {}
+
+
+# =========================================================
+# 14. UPLOAD DATA TANAMAN PANGAN
+# =========================================================
+
+@app.post("/api/v1/tanaman-pangan/upload")
+def upload_tanaman_pangan(
+    file: UploadFile = File(...),
+    current_user: dict = Depends(get_current_admin)
+):
+
+    filename = file.filename.lower()
+
+    if not filename.endswith((".csv", ".xlsx", ".xls")):
+        raise HTTPException(
+            status_code=400,
+            detail="Format file harus CSV atau Excel."
+        )
+
+    try:
+        content = file.file.read()
+
+        if filename.endswith(".csv"):
+            df = pd.read_csv(
+                io.BytesIO(content),
+                encoding="utf-8-sig"
+            )
         else:
-            status_ews = "AMAN (Potensi Kenaikan)"
-            rekomendasi = "Pertahankan kondisi saat ini dan optimalkan panen."
+            df = pd.read_excel(
+                io.BytesIO(content)
+            )
+
+    except Exception as error:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Gagal membaca file: {str(error)}"
+        )
+
+    required_columns = [
+        "kecamatan",
+        "tanaman",
+        "luas_panen_ha",
+        "produksi_ton",
+        "produktivitas_kuintal_ha"
+    ]
+
+    missing = [
+        col for col in required_columns
+        if col not in df.columns
+    ]
+
+    if missing:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Kolom tidak ditemukan: {missing}"
+        )
+
+    df = df[required_columns].copy()
+
+    df = df.replace({np.nan: None})
+
+    engine = get_engine()
+
+    try:
+        with engine.begin() as conn:
+
+            conn.execute(
+                text("TRUNCATE TABLE tanaman_pangan")
+            )
+
+            for _, row in df.iterrows():
+
+                conn.execute(
+                    text("""
+                        INSERT INTO tanaman_pangan (
+                            kecamatan,
+                            tanaman,
+                            luas_panen_ha,
+                            produksi_ton,
+                            produktivitas_kuintal_ha
+                        )
+                        VALUES (
+                            :kecamatan,
+                            :tanaman,
+                            :luas_panen_ha,
+                            :produksi_ton,
+                            :produktivitas_kuintal_ha
+                        )
+                    """),
+                    {
+                        "kecamatan": row["kecamatan"],
+                        "tanaman": row["tanaman"],
+                        "luas_panen_ha": row["luas_panen_ha"],
+                        "produksi_ton": row["produksi_ton"],
+                        "produktivitas_kuintal_ha":
+                            row["produktivitas_kuintal_ha"]
+                    }
+                )
+
+            conn.execute(
+                text("""
+                    INSERT INTO audit_trail (
+                        username,
+                        aktivitas,
+                        waktu
+                    )
+                    VALUES (
+                        :username,
+                        :aktivitas,
+                        :waktu
+                    )
+                """),
+                {
+                    "username": current_user["username"],
+                    "aktivitas": (
+                        f"Upload data tanaman pangan: {file.filename}"
+                    ),
+                    "waktu": datetime.now()
+                }
+            )
 
         return {
-            "status_sistem": "success",
-            "parameter": {
+            "message": "Upload berhasil.",
+            "total_data": len(df)
+        }
+
+    except Exception as error:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Gagal menyimpan data: {str(error)}"
+        )
+
+
+# =========================================================
+# 15. CUACA BMKG
+# =========================================================
+
+def fetch_bmkg(kode_kecamatan: str):
+
+    try:
+        response = requests.get(
+            BMKG_BASE_URL,
+            params={"adm4": kode_kecamatan},
+            timeout=20
+        )
+
+        response.raise_for_status()
+
+        return response.json()
+
+    except requests.RequestException as error:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Gagal mengambil data BMKG: {str(error)}"
+        )
+
+
+def extract_bmkg_forecast(data):
+
+    forecasts = []
+
+    for item in data.get("data", []):
+
+        for cuaca in item.get("cuaca", []):
+
+            for forecast in cuaca:
+
+                forecasts.append(forecast)
+
+    return forecasts
+
+
+@app.get("/api/v1/cuaca/{kode_kecamatan}")
+def get_cuaca(kode_kecamatan: str):
+
+    data = fetch_bmkg(kode_kecamatan)
+    forecasts = extract_bmkg_forecast(data)
+
+    if not forecasts:
+        raise HTTPException(
+            status_code=404,
+            detail="Data prakiraan cuaca tidak tersedia."
+        )
+
+    current = forecasts[0]
+
+    return {
+        "lokasi": data.get("lokasi", {}),
+        "cuaca": current
+    }
+
+
+# =========================================================
+# 16. EARLY WARNING SYSTEM CUACA
+# =========================================================
+
+@app.get("/api/v1/ews-cuaca/{kode_kecamatan}")
+def get_ews_cuaca(kode_kecamatan: str):
+
+    data = fetch_bmkg(kode_kecamatan)
+    forecasts = extract_bmkg_forecast(data)
+
+    if not forecasts:
+        raise HTTPException(
+            status_code=404,
+            detail="Data cuaca tidak tersedia."
+        )
+
+    current = forecasts[0]
+
+    rainfall = safe_float(
+        current.get("tp")
+    ) or 0
+
+    humidity = safe_float(
+        current.get("hu")
+    ) or 0
+
+    temperature = safe_float(
+        current.get("t")
+    ) or 0
+
+    status_ews = "AMAN"
+    message = "Kondisi cuaca relatif aman."
+
+    if rainfall > 50:
+        status_ews = "BAHAYA"
+        message = "Curah hujan tinggi. Waspadai potensi genangan."
+
+    elif humidity > 80 and rainfall > 10:
+        status_ews = "WASPADA"
+        message = "Kelembapan dan curah hujan cukup tinggi."
+
+    elif temperature > 34:
+        status_ews = "WASPADA"
+        message = "Suhu tinggi. Perhatikan kebutuhan air tanaman."
+
+    return {
+        "status": status_ews,
+        "pesan": message,
+        "parameter": {
+            "curah_hujan": rainfall,
+            "kelembapan": humidity,
+            "suhu": temperature
+        },
+        "waktu": current.get("local_datetime")
+    }
+
+
+# =========================================================
+# 17. PREDIKSI PRODUKSI
+# =========================================================
+
+@app.post("/api/v1/prediksi")
+def prediksi_produksi(request: PrediksiRequest):
+
+    if request.bulan_ke_depan < 1:
+        raise HTTPException(
+            status_code=400,
+            detail="Bulan prediksi minimal 1."
+        )
+
+    engine = get_engine()
+
+    with engine.connect() as conn:
+
+        result = conn.execute(
+            text("""
+                SELECT
+                    SUM(produksi_ton) AS produksi
+                FROM tanaman_pangan
+                WHERE kecamatan = :kecamatan
+                AND tanaman = :tanaman
+            """),
+            {
                 "kecamatan": request.kecamatan,
-                "tanaman": request.tanaman,
-                "bulan_ke_depan": request.bulan_ke_depan
-            },
-            "hasil_prediksi": {
-                "produksi_saat_ini_ton": round(total_produksi_sekarang, 2),
-                "prediksi_produksi_ton": round(nilai_prediksi, 2),
-                "persentase_perubahan": f"{round(persentase_perubahan * 100, 2)}%",
-                "status": status_ews,
-                "rekomendasi": rekomendasi
-            },
-            "catatan_ml": "Hasil ini masih berupa simulasi backend. Model ML (Prophet/ARIMA) akan diintegrasikan di sini."
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+                "tanaman": request.tanaman
+            }
+        ).mappings().first()
+
+    if not result or result["produksi"] is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Data produksi tidak ditemukan."
+        )
+
+    produksi_awal = float(result["produksi"])
+
+    # Simulasi lama dipertahankan.
+    # Endpoint ini bukan hasil model forecasting CSV.
+    faktor_pertumbuhan = (
+        1 + (0.05 * request.bulan_ke_depan)
+    )
+
+    fluktuasi = random.uniform(-0.02, 0.02)
+
+    hasil_prediksi = (
+        produksi_awal
+        * faktor_pertumbuhan
+        * (1 + fluktuasi)
+    )
+
+    return {
+        "kecamatan": request.kecamatan,
+        "tanaman": request.tanaman,
+        "produksi_awal": round(produksi_awal, 2),
+        "bulan_ke_depan": request.bulan_ke_depan,
+        "prediksi_produksi": round(hasil_prediksi, 2),
+        "keterangan": "Simulasi backend, bukan hasil model ML."
+    }
 
 
-# ==========================================
-# FITUR HARGA PANGAN (API INDONESIA - JAWA TIMUR)
-# ==========================================
-@app.get("/api/v1/harga-pangan", tags=["Harga Pangan"])
-async def get_harga_pangan():
-    api_key = os.getenv("API_INDONESIA_KEY")
-    if not api_key:
-        raise HTTPException(status_code=500, detail="API Key untuk API Indonesia belum diatur di file .env")
+# =========================================================
+# 18. HARGA PANGAN
+# =========================================================
 
-    url = "https://use.apiindonesia.id/api/v1/harga-pangan/harga"
-    params = {"tingkat": "konsumen", "wilayah": "provinsi", "provinsi": "jawa timur", "limit": 100}
-    headers = {"x-api-key": api_key}
+@app.get("/api/v1/harga-pangan")
+def get_harga_pangan():
+
+    if not API_INDONESIA_KEY:
+        raise HTTPException(
+            status_code=503,
+            detail="API_INDONESIA_KEY belum dikonfigurasi."
+        )
+
+    url = (
+        "https://use.apiindonesia.id/api/v1/"
+        "harga-pangan/harga"
+    )
+
+    headers = {
+        "x-api-key": API_INDONESIA_KEY
+    }
+
+    params = {
+        "province": "Jawa Timur",
+        "level": "consumer"
+    }
 
     try:
-        response = requests.get(url, headers=headers, params=params, timeout=15)
-        if response.status_code != 200:
-            raise HTTPException(status_code=response.status_code, detail=f"Gagal mengambil data dari API Indonesia: {response.text}")
+        response = requests.get(
+            url,
+            headers=headers,
+            params=params,
+            timeout=20
+        )
 
-        data = response.json()
-        raw_data = data.get("data") or data.get("results") or data.get("harga") or [] if isinstance(data, dict) else data
-        if not isinstance(raw_data, list):
-            raise ValueError("Format respons API tidak dikenali.")
+        response.raise_for_status()
 
-        kata_kunci_pangan = ['Beras', 'Gula', 'Minyak', 'Daging', 'Telur', 'Jagung', 'Garam', 'Tepung', 'Kedelai', 'Cabe', 'Bawang', 'Kacang', 'Kentang', 'Tomat', 'Wortel']
-        data_harga = []
-        for item in raw_data:
-            nama_komoditas = item.get("komoditas", "") or item.get("nama_komoditas", "")
-            if any(kata in nama_komoditas for kata in kata_kunci_pangan):
-                harga = item.get("harga") or item.get("nilai") or item.get("harga_rata_rata") or 0
-                data_harga.append({
-                    "komoditas": nama_komoditas,
-                    "satuan": item.get("satuan", "kg"),
-                    "harga": int(harga) if harga else 0,
-                    "periode": item.get("periode") or item.get("bulan") or item.get("tanggal", ""),
-                    "wilayah": item.get("provinsi", "Jawa Timur")
-                })
+        return response.json()
 
-        if not data_harga:
-            raise ValueError("Tidak ada data komoditas pangan untuk Jawa Timur.")
-
-        return {
-            "status_sistem": "success",
-            "sumber": "API Indonesia (BPN) - Provinsi Jawa Timur",
-            "catatan": "Data bersifat bulanan, bukan harga harian.",
-            "total_data": len(data_harga),
-            "data": data_harga
-        }
-
-    except Exception as e:
-        data_fallback = [
-            {"komoditas": "Beras Medium", "satuan": "kg", "harga": 13026, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Gula Kristal Putih", "satuan": "kg", "harga": 17494, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Minyak Goreng Curah", "satuan": "kg", "harga": 20715, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Daging Sapi Paha Belakang", "satuan": "kg", "harga": 133987, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Daging Ayam Ras", "satuan": "kg", "harga": 36438, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Telur Ayam Ras", "satuan": "kg", "harga": 24034, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Jagung Pipilan Kering", "satuan": "kg", "harga": 7934, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Cabe Merah Keriting", "satuan": "kg", "harga": 47800, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Cabe Rawit Merah", "satuan": "kg", "harga": 58774, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Bawang Merah", "satuan": "kg", "harga": 27517, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Bawang Putih", "satuan": "kg", "harga": 28473, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Kentang", "satuan": "kg", "harga": 15076, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Tomat", "satuan": "kg", "harga": 9156, "periode": "2026-01", "wilayah": "Jawa Timur"},
-            {"komoditas": "Wortel", "satuan": "kg", "harga": 14067, "periode": "2026-01", "wilayah": "Jawa Timur"}
-        ]
-        return {
-            "status_sistem": "success",
-            "sumber": "Fallback Data (Harga Pangan Jawa Timur)",
-            "catatan": "API Indonesia gagal diakses, menggunakan data cadangan.",
-            "total_data": len(data_fallback),
-            "data": data_fallback
-        }
+    except requests.RequestException as error:
+        raise HTTPException(
+            status_code=502,
+            detail=f"Gagal mengambil harga pangan: {str(error)}"
+        )
 
 
-# ==========================================
-# FITUR AUDIT TRAIL (BACA LOG)
-# ==========================================
-@app.get("/api/v1/audit-trail", tags=["Audit Trail"])
-def get_audit_trail(current_admin: dict = Depends(get_current_admin)):
-    """
-    Mengambil riwayat aktivitas (log) dari database.
-    Endpoint ini dilindungi (hanya Admin yang bisa lihat).
-    """
-    try:
-        with get_engine().connect() as conn:
-            query = text("""
-                SELECT id, username, action, details, timestamp 
-                FROM audit_trail 
-                ORDER BY timestamp DESC 
+# =========================================================
+# 19. AUDIT TRAIL
+# =========================================================
+
+@app.get("/api/v1/audit-trail")
+def get_audit_trail(
+    current_user: dict = Depends(get_current_admin)
+):
+
+    engine = get_engine()
+
+    with engine.connect() as conn:
+
+        result = conn.execute(
+            text("""
+                SELECT *
+                FROM audit_trail
+                ORDER BY waktu DESC
                 LIMIT 50
             """)
-            result = conn.execute(query)
-            
-            data_log = [{
-                "id": row.id,
-                "username": row.username,
-                "action": row.action,
-                "details": row.details,
-                "timestamp": str(row.timestamp)
-            } for row in result]
+        ).mappings().all()
 
-        return {
-            "status_sistem": "success",
-            "total_data": len(data_log),
-            "data": data_log
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    return {
+        "total": len(result),
+        "data": [dict(row) for row in result]
+    }
 
 
-# ==========================================
-# FITUR EXECUTIVE SUMMARY (1x TEMBAK DASHBOARD)
-# ==========================================
-@app.get("/api/v1/dashboard-eksekutif", tags=["Dashboard"])
-def get_dashboard_eksekutif():
-    """
-    Menggabungkan semua data penting untuk Dashboard dalam 1x request.
-    """
-    try:
-        with get_engine().connect() as conn:
-            # 1. Ringkasan Angka
-            ringkasan = conn.execute(text("""
-                SELECT SUM(produksi_ton) as total_prod, SUM(luas_panen_ha) as total_luas,
-                       COUNT(DISTINCT kecamatan) as jml_kec, COUNT(DISTINCT tanaman) as jml_tanaman
+# =========================================================
+# 20. DASHBOARD EKSEKUTIF
+# =========================================================
+
+@app.get("/api/v1/dashboard-eksekutif")
+def dashboard_eksekutif():
+
+    engine = get_engine()
+
+    with engine.connect() as conn:
+
+        summary = conn.execute(
+            text("""
+                SELECT
+                    COUNT(*) AS total_data,
+                    COUNT(DISTINCT kecamatan) AS total_kecamatan,
+                    COUNT(DISTINCT tanaman) AS total_komoditas,
+                    SUM(luas_panen_ha) AS total_luas_panen,
+                    SUM(produksi_ton) AS total_produksi,
+                    AVG(produktivitas_kuintal_ha) AS rata_produktivitas
                 FROM tanaman_pangan
-            """)).fetchone()
-            
-            # 2. Top 5 Kecamatan (Berdasarkan Produksi)
-            top5 = conn.execute(text("""
-                SELECT kecamatan, SUM(produksi_ton) as total_produksi
-                FROM tanaman_pangan GROUP BY kecamatan ORDER BY total_produksi DESC LIMIT 5
-            """)).fetchall()
-            
-            top5_data = [{"kecamatan": row.kecamatan, "produksi_ton": round(row.total_produksi or 0, 2)} for row in top5]
+            """)
+        ).mappings().first()
 
-        # 3. Ambil Cuaca (Contoh untuk Kecamatan Mojo)
-        try:
-            cuaca_res = requests.get("https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4=35.06.01.2001", timeout=5)
-            cuaca_data = cuaca_res.json()["data"][0]["cuaca"][0][0] if cuaca_res.status_code == 200 else {}
-        except:
-            cuaca_data = {}
+        top_kecamatan = conn.execute(
+            text("""
+                SELECT
+                    kecamatan,
+                    SUM(produksi_ton) AS total_produksi
+                FROM tanaman_pangan
+                GROUP BY kecamatan
+                ORDER BY total_produksi DESC
+                LIMIT 5
+            """)
+        ).mappings().all()
 
-        return {
-            "status_sistem": "success",
-            "data_ringkasan": {
-                "total_produksi_ton": round(ringkasan.total_prod or 0, 2),
-                "total_luas_panen_ha": round(ringkasan.total_luas or 0, 2),
-                "jumlah_kecamatan": ringkasan.jml_kec,
-                "jumlah_jenis_tanaman": ringkasan.jml_tanaman,
-            },
-            "top_5_kecamatan": top5_data,
-            "cuaca_terkini": {
-                "suhu": cuaca_data.get("t"),
-                "kondisi": cuaca_data.get("weather_desc")
-            },
-            "catatan": "Data ini diambil dari database dan API BMKG secara real-time."
-        }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    return {
+        "ringkasan": dict(summary) if summary else {},
+        "top_kecamatan": [
+            dict(row) for row in top_kecamatan
+        ]
+    }
+
+
+# =========================================================
+# 21. HASIL CLUSTERING
+# =========================================================
+
+@app.get("/api/v1/model/clustering")
+def get_clustering():
+
+    df = read_agri_csv(
+        CSV_FILES["clustering"]
+    )
+
+    kecamatan_col = get_kecamatan_column(df)
+    cluster_col = get_cluster_column(df)
+
+    return {
+        "total_data": len(df),
+        "columns": list(df.columns),
+        "kecamatan_column": kecamatan_col,
+        "cluster_column": cluster_col,
+        "data": dataframe_records(df)
+    }
+
+
+# =========================================================
+# 22. PCA CLUSTERING
+# =========================================================
+
+@app.get("/api/v1/model/pca")
+def get_pca():
+
+    df = read_agri_csv(
+        CSV_FILES["clustering"]
+    )
+
+    if len(df) < 2:
+        raise HTTPException(
+            status_code=400,
+            detail="Data tidak cukup untuk PCA."
+        )
+
+    cluster_col = get_cluster_column(df)
+    kecamatan_col = get_kecamatan_column(df)
+
+    numeric_df = df.select_dtypes(
+        include=[np.number]
+    ).copy()
+
+    # Hilangkan kolom ID atau nomor urut.
+    numeric_df = numeric_df.loc[
+        :,
+        [
+            col for col in numeric_df.columns
+            if str(col).lower() not in [
+                "id",
+                "no",
+                "nomor"
+            ]
+        ]
+    ]
+
+    numeric_df = numeric_df.replace(
+        [np.inf, -np.inf],
+        np.nan
+    )
+
+    numeric_df = numeric_df.dropna(
+        axis=1,
+        how="all"
+    )
+
+    if numeric_df.shape[1] == 0:
+        raise HTTPException(
+            status_code=400,
+            detail="Tidak ditemukan fitur numerik."
+        )
+
+    numeric_df = numeric_df.fillna(
+        numeric_df.median()
+    )
+
+    if numeric_df.shape[1] < 2:
+        raise HTTPException(
+            status_code=400,
+            detail="PCA membutuhkan minimal dua fitur numerik."
+        )
+
+    scaler = StandardScaler()
+
+    scaled_data = scaler.fit_transform(
+        numeric_df
+    )
+
+    pca = PCA(n_components=2)
+
+    coordinates = pca.fit_transform(
+        scaled_data
+    )
+
+    output = []
+
+    for i, (x, y) in enumerate(coordinates):
+
+        cluster = (
+            str(df.iloc[i][cluster_col])
+            if cluster_col and pd.notna(
+                df.iloc[i][cluster_col]
+            )
+            else "Tidak diketahui"
+        )
+
+        kecamatan = (
+            str(df.iloc[i][kecamatan_col])
+            if kecamatan_col and pd.notna(
+                df.iloc[i][kecamatan_col]
+            )
+            else f"Data {i + 1}"
+        )
+
+        output.append({
+            "kecamatan": kecamatan,
+            "cluster": cluster,
+            "pca_1": round(float(x), 4),
+            "pca_2": round(float(y), 4)
+        })
+
+    return {
+        "explained_variance": [
+            round(float(value), 4)
+            for value in pca.explained_variance_ratio_
+        ],
+        "total_data": len(output),
+        "data": output
+    }
+
+
+# =========================================================
+# 23. HEATMAP KECAMATAN
+# =========================================================
+
+@app.get("/api/v1/model/heatmap-kecamatan")
+def get_heatmap_kecamatan():
+
+    df = read_agri_csv(
+        CSV_FILES["clustering"]
+    )
+
+    kecamatan_col = get_kecamatan_column(df)
+    cluster_col = get_cluster_column(df)
+
+    if not kecamatan_col:
+        raise HTTPException(
+            status_code=400,
+            detail="Kolom kecamatan tidak ditemukan."
+        )
+
+    numeric_cols = list(
+        df.select_dtypes(
+            include=[np.number]
+        ).columns
+    )
+
+    return {
+        "kecamatan_column": kecamatan_col,
+        "cluster_column": cluster_col,
+        "numeric_columns": numeric_cols,
+        "data": dataframe_records(df)
+    }
+
+
+# =========================================================
+# 24. REKOMENDASI KOMODITAS
+# =========================================================
+
+@app.get("/api/v1/model/rekomendasi")
+def get_rekomendasi():
+
+    df = read_agri_csv(
+        CSV_FILES["rekomendasi"]
+    )
+
+    return {
+        "total_rekomendasi": len(df),
+        "columns": list(df.columns),
+        "data": dataframe_records(df)
+    }
+
+
+# =========================================================
+# 25. FORECASTING
+# =========================================================
+
+@app.get("/api/v1/model/forecasting")
+def get_forecasting():
+
+    df = read_agri_csv(
+        CSV_FILES["timeseries"]
+    )
+
+    return {
+        "total_data": len(df),
+        "columns": list(df.columns),
+        "data": dataframe_records(df)
+    }
+
+
+# =========================================================
+# 26. PERBANDINGAN MODEL
+# =========================================================
+
+@app.get("/api/v1/model/comparison")
+def get_model_comparison():
+
+    df = read_agri_csv(
+        CSV_FILES["model_comparison"]
+    )
+
+    return {
+        "total_model": len(df),
+        "columns": list(df.columns),
+        "data": dataframe_records(df)
+    }
+
+
+# =========================================================
+# 27. DATA CENTER
+# =========================================================
+
+@app.get("/api/v1/data-center")
+def get_data_center():
+
+    files = []
+
+    folders = [
+        ("Dataset Pemodelan", DATA_DIR),
+        ("Laporan Analisis", REPORT_DIR)
+    ]
+
+    for category, folder in folders:
+
+        if not folder.exists():
+            continue
+
+        for file_path in sorted(
+            folder.glob("*.csv")
+        ):
+
+            files.append({
+                "nama": file_path.name,
+                "kategori": category,
+                "ukuran_kb": round(
+                    file_path.stat().st_size / 1024,
+                    2
+                ),
+                "endpoint": (
+                    "/api/v1/data-center/download/"
+                    + category.replace(" ", "_").lower()
+                    + "/"
+                    + file_path.name
+                )
+            })
+
+    return {
+        "total_file": len(files),
+        "data": files
+    }
+
+
+# =========================================================
+# 28. DOWNLOAD DATA CENTER
+# =========================================================
+
+@app.get(
+    "/api/v1/data-center/download/{category}/{filename}"
+)
+def download_data_center(
+    category: str,
+    filename: str
+):
+
+    allowed_folders = {
+        "dataset_pemodelan": DATA_DIR,
+        "laporan_analisis": REPORT_DIR
+    }
+
+    folder = allowed_folders.get(category)
+
+    if not folder:
+        raise HTTPException(
+            status_code=404,
+            detail="Kategori tidak ditemukan."
+        )
+
+    file_path = (
+        folder / filename
+    ).resolve()
+
+    if (
+        file_path.parent != folder.resolve()
+        or file_path.suffix.lower() != ".csv"
+        or not file_path.exists()
+    ):
+        raise HTTPException(
+            status_code=404,
+            detail="File tidak ditemukan."
+        )
+
+    return FileResponse(
+        path=file_path,
+        filename=file_path.name,
+        media_type="text/csv"
+    )
+
+
+# =========================================================
+# 29. ROOT
+# =========================================================
+
+@app.get("/")
+def root():
+
+    return {
+        "application": "AgriDash API",
+        "version": "0.2.0",
+        "description": (
+            "API monitoring, pemodelan, dan "
+            "ketahanan pangan Kabupaten Kediri."
+        ),
+        "documentation": "/docs",
+        "status": "running"
+    }
