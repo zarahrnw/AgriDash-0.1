@@ -2379,3 +2379,896 @@ td {
     }
 
 }
+
+/* =========================================
+   PETA DAN STATUS WILAYAH
+========================================= */
+
+.agri-monitoring-extra {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.agri-monitoring-extra > .card {
+    min-width: 0;
+}
+
+#kediriMap {
+    width: 100%;
+    height: 430px;
+    border-radius: 16px;
+    z-index: 1;
+}
+
+#statusWilayahList {
+    max-height: 430px;
+    overflow-y: auto;
+}
+
+.map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 16px;
+    font-size: 12px;
+    color: #475569;
+}
+
+.map-legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.section-description {
+    font-size: 13px;
+    color: #64748b;
+    margin: 8px 0 16px;
+}
+
+@media (max-width: 900px) {
+    .agri-monitoring-extra {
+        grid-template-columns: 1fr;
+    }
+}
+
+#kediriMap {
+    display: block;
+    width: 100%;
+    height: 430px !important;
+    min-height: 430px;
+    position: relative;
+    z-index: 1;
+    background-color: #edf2e8;
+}
+
+/* ========================================
+   DASHBOARD - PETA STATUS WILAYAH
+======================================== */
+
+#dashboardKediriMap {
+    width: 100%;
+    height: 290px;
+    min-height: 290px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+    position: relative;
+    z-index: 1;
+}
+
+#kediriMap {
+    width: 100%;
+    height: 430px;
+    min-height: 430px;
+    border-radius: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.status-card {
+    min-width: 0;
+}
+
+.status-card .map-legend {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+    font-size: 11px;
+}
+
+.map-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.map-legend i {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    border-radius: 3px;
+}
+
+.dashboard-cluster-summary {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+
+/* =====================================================
+   AGRIDASH DASHBOARD - LAYOUT FIX
+===================================================== */
+
+/* Dashboard card tetap sejajar */
+.main-grid {
+    align-items: stretch;
+}
+
+.main-grid > .card {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Grafik produksi mengisi ruang card */
+.trend-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 540px;
+}
+
+.trend-card .chart-container {
+    position: relative;
+    flex: 1;
+    min-height: 360px;
+    width: 100%;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.trend-card .chart-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Peta Dashboard */
+.status-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+#dashboardKediriMap {
+    display: block;
+    width: 100%;
+    height: 360px;
+    min-height: 360px;
+    position: relative;
+    z-index: 1;
+    border-radius: 14px;
+    background: #eef3f8;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+#dashboardKediriMap .leaflet-container {
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard-cluster-summary {
+    margin-top: 14px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Legenda merah - ungu - biru */
+.status-card .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.status-card .map-legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #475569;
+}
+
+.status-card .map-legend i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+/* Komoditas Utama */
+#dashboardKomoditas {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding-top: 8px;
+}
+
+.agri-commodity-item {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    width: 100%;
+}
+
+.agri-commodity-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+}
+
+.agri-commodity-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #173d2c;
+}
+
+.agri-commodity-pct {
+    font-size: 13px;
+    font-weight: 700;
+    color: #265322;
+    white-space: nowrap;
+}
+
+.agri-commodity-track {
+    width: 100%;
+    height: 9px;
+    border-radius: 999px;
+    background: #eaf0e6;
+    overflow: hidden;
+}
+
+.agri-commodity-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+/* Responsive */
+@media (max-width: 1050px) {
+    .trend-card {
+        min-height: 450px;
+    }
+
+    #dashboardKediriMap {
+        height: 320px;
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 650px) {
+    .trend-card {
+        min-height: 390px;
+    }
+
+    .trend-card .chart-container {
+        min-height: 290px;
+    }
+
+    #dashboardKediriMap {
+        height: 300px;
+        min-height: 300px;
+    }
+}
+
+
+/* ==========================================
+   MONITORING WILAYAH - LAYOUT FIX
+========================================== */
+
+.agri-monitoring-extra {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 20px;
+    margin: 20px 0;
+    align-items: stretch;
+}
+
+.agri-monitoring-extra > .card,
+.monitoring-bottom-grid > .card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* PETA KEDIRI */
+#kediriMap {
+    display: block;
+    width: 100%;
+    height: 440px !important;
+    min-height: 440px;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #edf2f7;
+    z-index: 1;
+}
+
+/* STATUS WILAYAH */
+#statusWilayahList {
+    max-height: 440px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+/* LEGENDA */
+.monitoring-map-card .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 16px;
+    font-size: 12px;
+}
+
+.monitoring-map-card .map-legend span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.monitoring-map-card .map-legend i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+/* HEATMAP DAN REKAP */
+.monitoring-bottom-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: stretch;
+}
+
+/* BATASI TINGGI AGAR TIDAK MENIMPA PCA */
+.monitoring-heatmap-scroll,
+.monitoring-rekap-scroll {
+    width: 100%;
+    max-height: 420px;
+    overflow: auto;
+    position: relative;
+}
+
+/* HEATMAP */
+#heatmapKecamatan {
+    width: max-content;
+    min-width: 100%;
+    max-width: none;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible;
+}
+
+#heatmapKecamatan .table-responsive {
+    width: max-content;
+    min-width: 100%;
+    max-height: none;
+    overflow: visible;
+}
+
+#heatmapKecamatan table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+#heatmapKecamatan th,
+#heatmapKecamatan td {
+    padding: 12px;
+    white-space: nowrap;
+}
+
+#heatmapKecamatan thead th {
+    position: sticky;
+    top: 0;
+    background: #f0f5ed;
+    z-index: 2;
+}
+
+/* REKAP KECAMATAN */
+.monitoring-rekap-scroll table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.monitoring-rekap-scroll th,
+.monitoring-rekap-scroll td {
+    padding: 12px 10px;
+    white-space: nowrap;
+}
+
+.monitoring-rekap-scroll thead th {
+    position: sticky;
+    top: 0;
+    background: #f0f5ed;
+    z-index: 2;
+}
+
+/* PCA */
+.monitoring-pca-card {
+    margin-top: 20px;
+    clear: both;
+}
+
+.monitoring-pca-card .chart-container {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    min-height: 360px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .agri-monitoring-extra,
+    .monitoring-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    #kediriMap {
+        height: 340px !important;
+        min-height: 340px;
+    }
+
+    .monitoring-heatmap-scroll,
+    .monitoring-rekap-scroll {
+        max-height: 350px;
+    }
+}
+
+
+/* =====================================================
+   KETAHANAN PANGAN - DASHBOARD IMPROVEMENT
+===================================================== */
+
+/* KPI lebih ringkas */
+.ketahanan-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.ketahanan-stats .stat-card {
+    min-height: 125px;
+    height: auto;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ketahanan-stats .stat-label {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.ketahanan-stats h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #173d2c;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.ketahanan-stats .comparison {
+    margin-top: 8px;
+    color: #64748b;
+    font-size: 11px;
+}
+
+/* Grafik distribusi cluster */
+#clusterDistributionChart {
+    max-height: 320px;
+}
+
+#ketahanan .two-column > .card {
+    min-width: 0;
+}
+
+#ketahanan .chart-container {
+    height: 340px;
+    position: relative;
+}
+
+/* Karakteristik cluster */
+#clusterDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 2px 4px 4px 0;
+}
+
+.cluster-info-card {
+    border: 1px solid #e6ece3;
+    border-radius: 14px;
+    padding: 16px;
+    background: #fafcf9;
+}
+
+.cluster-info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.cluster-info-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #173d2c;
+    font-size: 14px;
+}
+
+.cluster-color-dot {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.cluster-count-badge {
+    background: #e9f1e5;
+    color: #265322;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.cluster-info-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.cluster-info-stats > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #eef1eb;
+}
+
+.cluster-info-stats small {
+    font-size: 10px;
+    color: #64748b;
+}
+
+.cluster-info-stats strong {
+    font-size: 16px;
+    color: #173d2c;
+}
+
+.cluster-info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cluster-info-details p {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.cluster-info-details p span {
+    color: #64748b;
+}
+
+.cluster-info-details p strong {
+    color: #173d2c;
+    text-align: right;
+}
+
+/* Daftar kecamatan anggota */
+.cluster-members {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #e6ece3;
+}
+
+.cluster-members summary {
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: #2878c8;
+}
+
+.cluster-members p {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.8;
+    margin: 10px 0 0;
+}
+
+/* Tabel hasil clustering */
+#ketahanan .table-responsive {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+#tabelCluster td {
+    padding: 14px 12px;
+    vertical-align: middle;
+    font-size: 12px;
+    border-bottom: 1px solid #edf1eb;
+}
+
+.cluster-id-pill {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    color: #265322;
+    background: #e9f1e5;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ketahanan-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .ketahanan-stats .stat-card {
+        min-height: 110px;
+    }
+
+    #ketahanan .two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .cluster-info-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   AGRIDASH INTERACTIVE CALENDAR
+========================================= */
+
+.agri-date-wrap {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+.agri-date-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px 18px;
+    background: #fff;
+    color: #173d2c;
+    border: 1px solid #dfe8da;
+    border-radius: 999px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.agri-date-btn:hover {
+    border-color: #60982c;
+    background: #f8fbf6;
+}
+
+.agri-date-btn > i:first-child {
+    color: #265322;
+    font-size: 15px;
+}
+
+.date-chevron {
+    font-size: 10px;
+    color: #64748b;
+}
+
+/* Popup */
+.calendar-pop {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 332px;
+    padding: 20px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #e4eae0;
+    box-shadow: 0 16px 45px rgba(0,0,0,0.12);
+    z-index: 9999;
+    box-sizing: border-box;
+}
+
+.calendar-pop.open {
+    display: block;
+}
+
+/* Header bulan */
+.cal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    color: #173d2c;
+    font-size: 14px;
+}
+
+.cal-nav {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #f1f5ed;
+    color: #265322;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.cal-nav:hover:not(:disabled) {
+    background: #dcead3;
+}
+
+.cal-nav:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Kalender */
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 5px;
+}
+
+.cal-week {
+    margin-bottom: 10px;
+}
+
+.cal-week span {
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.cal-day,
+.cal-empty {
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+.cal-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #334155;
+    font: 500 12px "Poppins", sans-serif;
+    cursor: pointer;
+}
+
+.cal-day:hover:not(:disabled) {
+    background: #e4f0db;
+    color: #265322;
+}
+
+.cal-day.is-today {
+    border: 1px solid #60982c;
+    color: #265322;
+}
+
+.cal-day.is-selected {
+    background: #60982c;
+    color: white;
+    font-weight: 700;
+}
+
+.cal-day:disabled {
+    color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+/* Pilihan cepat */
+.cal-quick {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    border-top: 1px solid #eef1eb;
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.cal-quick button {
+    border: 1px solid #e1e9db;
+    background: #f7faf5;
+    color: #265322;
+    border-radius: 9px;
+    padding: 9px;
+    cursor: pointer;
+    font: 500 11px "Poppins", sans-serif;
+}
+
+.cal-quick button:hover {
+    background: #e4f0db;
+}
+
+/* Keterangan tanggal */
+.date-notice {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #f1f5ed;
+    border: 1px solid #dce9d4;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #265322;
+    margin: 12px 0 18px;
+}
+
+.date-notice[hidden] {
+    display: none !important;
+}
+
+.date-notice button {
+    margin-left: auto;
+    border: none;
+    background: #60982c;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font: 500 11px "Poppins", sans-serif;
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .calendar-pop {
+        width: min(320px, calc(100vw - 32px));
+    }
+
+    .agri-date-btn {
+        padding: 10px 12px;
+        font-size: 11px;
+    }
+}
+

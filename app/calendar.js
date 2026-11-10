@@ -173,8 +173,17 @@
         const quick = e.target.closest('[data-ago]');
         if (quick) {
             const d = new Date(today);
-            d.setDate(d.getDate() - parseInt(quick.dataset.ago, 10));
-            selectDate(d);
+
+            d.setDate(
+                d.getDate() - parseInt(quick.dataset.ago, 10)
+            );
+
+            // Pastikan tanggal tidak melewati batas minimum
+            if (d < minDate) {
+                selectDate(minDate);
+            } else {
+                selectDate(d);
+            }
         }
     });
 

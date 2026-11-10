@@ -1,33 +1,69 @@
 
-/* =========================================================
-   AGRIDASH - MAIN JAVASCRIPT
-   Integrasi Frontend dengan FastAPI Backend
-========================================================= */
+/* ==========================================================
+   AGRIDASH V0.5 - FULL SCRIPT.JS
+   Kabupaten Kediri
+   Frontend: HTML, CSS, JavaScript
+   Backend : FastAPI + CSV / Excel
+   Map     : Leaflet + GeoJSON
+========================================================== */
 
 const API_BASE_URL = "http://127.0.0.1:8000";
-
-/* =========================================================
-   1. GLOBAL VARIABLES
-========================================================= */
+const GEOJSON_URL = "./aset/kediri_kecamatan.geojson";
+const DEFAULT_ADM4 = "";
 
 const chartInstances = {};
 
 let clusteringData = [];
-let pcaData = [];
-let heatmapData = [];
 let recommendationData = [];
 let forecastingData = [];
 let monitoringData = [];
-
+let statusWilayahData = [];
+let dashboardRows = [];
+let dashboardMetric = "produksi";
 let selectedForecastCommodity = "";
 
+let kediriMapInstance = null;
+let dashboardMapInstance = null;
+let dashboardGeoJsonLayer = null;
+let dashboardMapPromise = null;
+let kediriGeoJsonLayer = null;
+let kediriMapLoading = false;
 
-/* =========================================================
-   2. HELPER FUNCTIONS
-========================================================= */
+const CHART_COLORS = [
+    "#265322", "#60982c", "#8ab45b",
+    "#ffcc00", "#b5ce8c", "#d6a900"
+];
 
-// Format angka Indonesia
+const METRICS = {
+    produksi: {
+        key: "produksi_ton",
+        label: "Indikator Produksi Rata-rata (Ton)",
+        avg: false
+    },
+    luas: {
+        key: "luas_panen_ha",
+        label: "Indikator Luas Panen Rata-rata (Ha)",
+        avg: false
+    },
+    produktivitas: {
+        key: "produktivitas_kuintal_ha",
+        label: "Produktivitas (Ku/Ha)",
+        avg: true
+    }
+};
+
+
+/* ==========================================================
+   1. HELPER FUNCTIONS
+========================================================== */
+
 function formatNumber(value, decimals = 2) {
+    if (
+        value === null ||
+        value === undefined ||
+        value === ""
+    ) return "—";
+
     const number = Number(value);
 
     if (!Number.isFinite(number)) return "—";
@@ -37,18 +73,22 @@ function formatNumber(value, decimals = 2) {
     });
 }
 
+function formatCurrency(value) {
+    const number = Number(value);
 
-// Format angka dengan satuan
-function formatValue(value, unit = "", decimals = 2) {
-    if (value === null || value === undefined || value === "") {
-        return "—";
-    }
+    if (
+        value === null ||
+        value === undefined ||
+        !Number.isFinite(number)
+    ) return "—";
 
-    return `${formatNumber(value, decimals)} ${unit}`.trim();
+    return number.toLocaleString("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+    });
 }
 
-
-// Menghindari HTML injection ketika menampilkan data dari API
 function escapeHTML(value) {
     return String(value ?? "")
         .replace(/&/g, "&amp;")
@@ -58,8 +98,6 @@ function escapeHTML(value) {
         .replace(/'/g, "&#039;");
 }
 
-
-// Normalisasi nama kolom
 function normalizeKey(value) {
     return String(value ?? "")
         .toLowerCase()
@@ -67,64 +105,89 @@ function normalizeKey(value) {
         .replace(/[\s-]+/g, "_");
 }
 
+function normalizeRegionName(value) {
+    return String(value ?? "")
+        .normalize("NFKC")
+        .toLowerCase()
+        .trim()
+        .replace(/^(kecamatan|kec\.?)\s+/i, "")
+        .replace(/\s+/g, " ");
+}
 
-// Mencari nama kolom dari beberapa kemungkinan
 function findKey(row, candidates) {
     if (!row || typeof row !== "object") return null;
 
     const keys = Object.keys(row);
 
     for (const candidate of candidates) {
-        const found = keys.find(
+        const match = keys.find(
             key => normalizeKey(key) === normalizeKey(candidate)
         );
 
-        if (found) return found;
+        if (match) return match;
     }
 
     return null;
 }
 
-
-// Mengambil nilai berdasarkan kemungkinan nama kolom
 function getValue(row, candidates, fallback = null) {
     const key = findKey(row, candidates);
-
     return key ? row[key] : fallback;
 }
 
-
-// Mengubah nilai menjadi angka
 function toNumber(value) {
-    if (value === null || value === undefined || value === "") {
-        return null;
-    }
+    if (
+        value === null ||
+        value === undefined ||
+        value === ""
+    ) return null;
 
-    const result = Number(
+    const number = Number(
         String(value).replace(",", ".")
     );
 
-    return Number.isFinite(result) ? result : null;
+    return Number.isFinite(number) ? number : null;
 }
 
-
-// Mengambil array data dari respons API
 function getRecords(response) {
     if (Array.isArray(response)) return response;
 
-    if (Array.isArray(response?.data)) {
-        return response.data;
+    if (!response || typeof response !== "object") {
+        return [];
     }
 
-    if (Array.isArray(response?.records)) {
-        return response.records;
+    const keys = [
+        "data", "records", "results",
+        "items", "rows", "predictions", "hasil"
+    ];
+
+    for (const key of keys) {
+        if (Array.isArray(response[key])) {
+            return response[key];
+        }
     }
 
     return [];
 }
 
+function findFirstArray(value, depth = 0) {
+    if (Array.isArray(value)) return value;
 
-// Menampilkan pesan pada elemen HTML
+    if (
+        !value ||
+        typeof value !== "object" ||
+        depth > 5
+    ) return [];
+
+    for (const item of Object.values(value)) {
+        const result = findFirstArray(item, depth + 1);
+
+        if (result.length) return result;
+    }
+
+    return [];
+}
+
 function setText(id, value) {
     const element = document.getElementById(id);
 
@@ -133,19 +196,17 @@ function setText(id, value) {
     }
 }
 
-
-// Menampilkan pesan status
 function setStatus(id, message, isError = false) {
     const element = document.getElementById(id);
 
     if (!element) return;
 
     element.textContent = message;
-    element.style.color = isError ? "#b91c1c" : "#265322";
+    element.style.color = isError
+        ? "#b91c1c"
+        : "#265322";
 }
 
-
-// Membuat pesan loading untuk tabel
 function setTableLoading(id, colspan = 4) {
     const element = document.getElementById(id);
 
@@ -153,15 +214,13 @@ function setTableLoading(id, colspan = 4) {
 
     element.innerHTML = `
         <tr>
-            <td colspan="${colspan}" style="text-align:center;">
+            <td colspan="${colspan}" style="text-align:center">
                 Memuat data...
             </td>
         </tr>
     `;
 }
 
-
-// Menampilkan pesan kosong pada tabel
 function setTableEmpty(id, message, colspan = 4) {
     const element = document.getElementById(id);
 
@@ -169,30 +228,39 @@ function setTableEmpty(id, message, colspan = 4) {
 
     element.innerHTML = `
         <tr>
-            <td colspan="${colspan}" style="text-align:center;">
+            <td colspan="${colspan}" style="text-align:center">
                 ${escapeHTML(message)}
             </td>
         </tr>
     `;
 }
 
-
-// Helper fetch API
 async function apiFetch(endpoint, options = {}) {
-    const response = await fetch(
-        `${API_BASE_URL}${endpoint}`,
-        options
-    );
+    let response;
+
+    try {
+        response = await fetch(
+            `${API_BASE_URL}${endpoint}`,
+            options
+        );
+    } catch (error) {
+        throw new Error(
+            "Tidak dapat terhubung ke backend FastAPI."
+        );
+    }
 
     if (!response.ok) {
         let message = `HTTP ${response.status}`;
 
         try {
-            const errorData = await response.json();
-            message = errorData.detail || message;
-        } catch (_) {
-            // Gunakan pesan HTTP jika respons bukan JSON
-        }
+            const data = await response.json();
+
+            if (data.detail) {
+                message = typeof data.detail === "string"
+                    ? data.detail
+                    : JSON.stringify(data.detail);
+            }
+        } catch (_) {}
 
         throw new Error(message);
     }
@@ -200,31 +268,34 @@ async function apiFetch(endpoint, options = {}) {
     return response.json();
 }
 
-
-// Menghancurkan chart lama sebelum membuat chart baru
-function destroyChart(chartId) {
-    if (chartInstances[chartId]) {
-        chartInstances[chartId].destroy();
-        delete chartInstances[chartId];
+function destroyChart(id) {
+    if (chartInstances[id]) {
+        chartInstances[id].destroy();
+        delete chartInstances[id];
     }
 }
 
+function createChart(id, config) {
+    const canvas = document.getElementById(id);
 
-// Membuat chart Chart.js
-function createChart(chartId, config) {
-    const canvas = document.getElementById(chartId);
+    if (!canvas) return null;
 
-    if (!canvas || typeof Chart === "undefined") return null;
+    if (typeof Chart === "undefined") {
+        console.warn("Chart.js belum dimuat.");
+        return null;
+    }
 
-    destroyChart(chartId);
+    destroyChart(id);
 
-    chartInstances[chartId] = new Chart(canvas, config);
-
-    return chartInstances[chartId];
+    try {
+        chartInstances[id] = new Chart(canvas, config);
+        return chartInstances[id];
+    } catch (error) {
+        console.error("Chart error:", error);
+        return null;
+    }
 }
 
-
-// Konfigurasi umum Chart.js
 function chartFont() {
     return {
         family: "Poppins",
@@ -232,44 +303,31 @@ function chartFont() {
     };
 }
 
-
 function chartLegend() {
     return {
         position: "bottom",
         labels: {
             usePointStyle: true,
-            pointStyle: "circle",
             padding: 18,
             font: chartFont()
         }
     };
 }
 
-
 function chartScales() {
     return {
         x: {
-            grid: {
-                display: false
-            },
-            ticks: {
-                font: chartFont()
-            }
+            grid: { display: false },
+            ticks: { font: chartFont() }
         },
         y: {
             beginAtZero: true,
-            grid: {
-                color: "#edf1eb"
-            },
-            ticks: {
-                font: chartFont()
-            }
+            grid: { color: "#edf1eb" },
+            ticks: { font: chartFont() }
         }
     };
 }
 
-
-// Mengambil token login jika tersedia
 function getAuthToken() {
     return (
         localStorage.getItem("access_token") ||
@@ -279,13 +337,17 @@ function getAuthToken() {
     );
 }
 
+function setCurrentDate() {
+    // calendar.js bertanggung jawab atas tanggal topbar.
+    // Fungsi dipertahankan agar pemanggilan lama tidak error.
+}
 
-/* =========================================================
-   3. PAGE NAVIGATION
-========================================================= */
 
-function showPage(pageId, clickedButton) {
+/* ==========================================================
+   2. NAVIGATION
+========================================================== */
 
+function showPage(pageId, clickedButton = null) {
     document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active-page");
     });
@@ -298,6 +360,14 @@ function showPage(pageId, clickedButton) {
 
     document.querySelectorAll(".menu-item").forEach(menu => {
         menu.classList.remove("active");
+
+        if (
+            !clickedButton &&
+            (menu.getAttribute("onclick") || "")
+                .includes(`'${pageId}'`)
+        ) {
+            menu.classList.add("active");
+        }
     });
 
     if (clickedButton) {
@@ -309,20 +379,34 @@ function showPage(pageId, clickedButton) {
         behavior: "smooth"
     });
 
-    // Muat ulang data sesuai halaman yang dibuka
     switch (pageId) {
         case "dashboard":
             loadDashboard();
             break;
 
         case "monitoring":
-            loadMonitoringData();
-            loadPCA();
+            loadMonitoring();
             loadHeatmap();
+            loadPCA();
+
+            loadStatusWilayah().then(async () => {
+                await loadKediriMap();
+
+                if (kediriMapInstance) {
+                    requestAnimationFrame(() => {
+                        kediriMapInstance.invalidateSize();
+                    });
+                }
+            });
+
             break;
 
         case "harga":
             loadPriceData();
+            break;
+
+        case "cuaca":
+            loadDashboardWeather();
             break;
 
         case "prediksi":
@@ -346,60 +430,54 @@ function showPage(pageId, clickedButton) {
 }
 
 
-/* =========================================================
-   4. DASHBOARD SUMMARY
-========================================================= */
+/* ==========================================================
+   3. DASHBOARD SUMMARY
+========================================================== */
 
 async function loadDashboardSummary() {
-
     try {
         const data = await apiFetch(
             "/api/v1/tanaman-pangan/ringkasan"
         );
 
-        const totalProduksi = toNumber(data.total_produksi);
-        const totalLuasPanen = toNumber(data.total_luas_panen);
-        const produktivitas = toNumber(data.rata_produktivitas);
-
         setText(
             "totalProduksi",
-            totalProduksi !== null
-                ? formatNumber(totalProduksi, 2)
-                : "—"
+            formatNumber(data.total_produksi)
         );
 
         setText(
             "totalLuasPanen",
-            totalLuasPanen !== null
-                ? formatNumber(totalLuasPanen, 2)
-                : "—"
+            formatNumber(data.total_luas_panen)
         );
 
         setText(
             "totalProduktivitas",
-            produktivitas !== null
-                ? formatNumber(produktivitas, 2)
-                : "—"
+            formatNumber(data.rata_produktivitas)
         );
 
-        // Tidak ada data historis pembanding pada endpoint ringkasan.
-        setText("growthProduksi", "Data historis belum tersedia");
-        setText("growthLuasPanen", "Data historis belum tersedia");
-        setText("growthProduktivitas", "Data historis belum tersedia");
+        setText(
+            "growthProduksi",
+            "Agregasi rata-rata komoditas"
+        );
+
+        setText(
+            "growthLuasPanen",
+            "Agregasi rata-rata komoditas"
+        );
+
+        setText(
+            "growthProduktivitas",
+            "Rata-rata produktivitas"
+        );
 
         setStatus(
             "statusAPI",
-            "Data berhasil dimuat dari backend."
+            `Data berhasil dimuat (${data.total_data} baris).`
         );
 
         return data;
-
     } catch (error) {
-        console.error("Dashboard summary:", error);
-
-        setText("totalProduksi", "—");
-        setText("totalLuasPanen", "—");
-        setText("totalProduktivitas", "—");
+        console.error("Dashboard:", error);
 
         setStatus(
             "statusAPI",
@@ -411,86 +489,53 @@ async function loadDashboardSummary() {
     }
 }
 
+async function loadDashboard() {
+    setCurrentDate();
 
-/* =========================================================
-   5. DASHBOARD PRODUCTION CHART
-========================================================= */
+    await Promise.allSettled([
+        loadDashboardSummary(),
+        loadProductionChart(),
+        loadTop5Kecamatan(),
+        loadDashboardCommodity(),
+        loadDashboardClusterSummary(),
+        loadDashboardWarning(),
+        loadPriceData(),
+        loadDashboardWeather(),
+        loadDashboardMap()
+    ]);
+}
+
+
+/* ==========================================================
+   4. DASHBOARD PRODUCTION CHART
+========================================================== */
+
+function changeDashboardChart(metric, button) {
+    if (!METRICS[metric]) return;
+
+    dashboardMetric = metric;
+
+    document.querySelectorAll(".trend-card .tab")
+        .forEach(tab => tab.classList.remove("active"));
+
+    if (button) button.classList.add("active");
+
+    renderProductionChart();
+}
 
 async function loadProductionChart() {
-
-    const canvas = document.getElementById("productionChart");
-
-    if (!canvas) return;
+    if (!document.getElementById("productionChart")) {
+        return;
+    }
 
     try {
         const response = await apiFetch(
-            "/api/v1/tanaman-pangan?limit=500&sort_by=produksi_ton"
+            "/api/v1/tanaman-pangan?limit=500"
         );
 
-        const rows = getRecords(response);
+        dashboardRows = getRecords(response);
 
-        if (!rows.length) {
-            destroyChart("productionChart");
-            return;
-        }
-
-        const grouped = {};
-
-        rows.forEach(row => {
-            const commodity = getValue(
-                row,
-                ["tanaman", "komoditas", "nama_tanaman"],
-                "Lainnya"
-            );
-
-            const production = toNumber(
-                getValue(row, ["produksi_ton", "produksi"])
-            );
-
-            if (production === null) return;
-
-            grouped[commodity] = (grouped[commodity] || 0) + production;
-        });
-
-        const labels = Object.keys(grouped);
-
-        const values = labels.map(label => grouped[label]);
-
-        if (!labels.length) {
-            destroyChart("productionChart");
-            return;
-        }
-
-        createChart("productionChart", {
-            type: "bar",
-            data: {
-                labels,
-                datasets: [{
-                    label: "Produksi (Ton)",
-                    data: values,
-                    backgroundColor: [
-                        "#265322",
-                        "#60982c",
-                        "#8ab45b",
-                        "#ffcc00",
-                        "#b5ce8c",
-                        "#d6a900"
-                    ],
-                    borderRadius: 6
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                scales: chartScales()
-            }
-        });
-
+        renderProductionChart();
     } catch (error) {
         console.error("Production chart:", error);
         destroyChart("productionChart");
@@ -498,13 +543,100 @@ async function loadProductionChart() {
 }
 
 
-/* =========================================================
-   6. DASHBOARD TOP 5 KECAMATAN
-========================================================= */
+function renderProductionChart() {
+    const metric = METRICS[dashboardMetric];
+    const grouped = {};
+
+    dashboardRows.forEach(row => {
+        const name = row.tanaman || "Lainnya";
+        const value = toNumber(row[metric.key]);
+
+        if (value === null) return;
+
+        if (!grouped[name]) {
+            grouped[name] = { sum: 0, count: 0 };
+        }
+
+        grouped[name].sum += value;
+        grouped[name].count++;
+    });
+
+    const sorted = Object.entries(grouped)
+        .map(([name, value]) => ({
+            name,
+            value: metric.avg
+                ? value.sum / value.count
+                : value.sum
+        }))
+        .sort((a, b) => b.value - a.value);
+
+    if (!sorted.length) {
+        destroyChart("productionChart");
+        return;
+    }
+
+    createChart("productionChart", {
+        type: "bar",
+        data: {
+            labels: sorted.map(item => item.name),
+            datasets: [{
+                label: metric.label,
+                data: sorted.map(item => item.value),
+                backgroundColor: [
+                    "#265322", "#60982c", "#8ab45b",
+                    "#d6a900", "#b5ce8c"
+                ],
+                borderRadius: 7,
+                barThickness: 30,
+                maxBarThickness: 36
+            }]
+        },
+        options: {
+            indexAxis: "y",
+            responsive: true,
+            maintainAspectRatio: false,
+            resizeDelay: 100,
+            layout: {
+                padding: { top: 8, right: 12, bottom: 12 }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: context =>
+                            `${formatNumber(context.parsed.x)}`
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    grid: { color: "#edf1eb" },
+                    ticks: {
+                        font: { family: "Poppins", size: 11 }
+                    }
+                },
+                y: {
+                    grid: { display: false },
+                    ticks: {
+                        font: { family: "Poppins", size: 12 }
+                    }
+                }
+            }
+        }
+    });
+}
+
+
+
+/* ==========================================================
+   5. TOP 5 KECAMATAN
+========================================================== */
 
 async function loadTop5Kecamatan() {
-
-    const container = document.getElementById("top5Kecamatan");
+    const container = document.getElementById(
+        "top5Kecamatan"
+    );
 
     if (!container) return;
 
@@ -513,79 +645,38 @@ async function loadTop5Kecamatan() {
             "/api/v1/rekap-kecamatan"
         );
 
-        const rows = getRecords(response);
+        const rows = getRecords(response)
+            .sort(
+                (a, b) =>
+                    Number(b.total_produksi || 0) -
+                    Number(a.total_produksi || 0)
+            )
+            .slice(0, 5);
 
-        if (!rows.length) {
-            container.innerHTML = "<p>Data kecamatan belum tersedia.</p>";
-            return;
-        }
-
-        const sortedRows = [...rows].sort((a, b) => {
-            const valueA = toNumber(
-                getValue(a, ["total_produksi", "produksi_ton"])
-            ) || 0;
-
-            const valueB = toNumber(
-                getValue(b, ["total_produksi", "produksi_ton"])
-            ) || 0;
-
-            return valueB - valueA;
-        });
-
-        const top5 = sortedRows.slice(0, 5);
-
-        container.innerHTML = "";
-
-        top5.forEach((item, index) => {
-
-            const name = getValue(
-                item,
-                ["kecamatan", "nama_kecamatan"],
-                "Tidak diketahui"
-            );
-
-            const production = toNumber(
-                getValue(item, ["total_produksi", "produksi_ton"])
-            );
-
-            const row = document.createElement("div");
-            row.className = "rank-row";
-
-            const rank = document.createElement("div");
-            rank.className = "rank-number";
-            rank.textContent = index + 1;
-
-            const nameSpan = document.createElement("span");
-            nameSpan.textContent = name;
-
-            const value = document.createElement("strong");
-            value.textContent = production !== null
-                ? `${formatNumber(production, 2)} ton`
-                : "—";
-
-            row.append(rank, nameSpan, value);
-            container.appendChild(row);
-        });
-
+        container.innerHTML = rows.map((item, index) => `
+            <div class="rank-row">
+                <div class="rank-number">${index + 1}</div>
+                <span>${escapeHTML(item.kecamatan)}</span>
+                <strong>
+                    ${formatNumber(item.total_produksi)} ton
+                </strong>
+            </div>
+        `).join("");
     } catch (error) {
-        console.error("Top 5 kecamatan:", error);
-
-        container.innerHTML = `
-            <p style="color:#b91c1c;">
-                Gagal memuat data kecamatan.
-            </p>
-        `;
+        container.textContent = error.message;
     }
 }
 
 
-/* =========================================================
-   7. DASHBOARD COMMODITY SUMMARY
-========================================================= */
+/* ==========================================================
+   6. KOMODITAS SUMMARY
+========================================================== */
+
 
 async function loadDashboardCommodity() {
-
-    const container = document.getElementById("dashboardKomoditas");
+    const container = document.getElementById(
+        "dashboardKomoditas"
+    );
 
     if (!container) return;
 
@@ -595,24 +686,11 @@ async function loadDashboardCommodity() {
         );
 
         const rows = getRecords(response);
-
-        if (!rows.length) {
-            container.innerHTML = "<p>Data komoditas belum tersedia.</p>";
-            return;
-        }
-
         const grouped = {};
 
         rows.forEach(row => {
-            const name = getValue(
-                row,
-                ["tanaman", "komoditas"],
-                "Lainnya"
-            );
-
-            const production = toNumber(
-                getValue(row, ["produksi_ton"])
-            ) || 0;
+            const name = row.tanaman || "Lainnya";
+            const production = Number(row.produksi_ton) || 0;
 
             grouped[name] = (grouped[name] || 0) + production;
         });
@@ -625,23 +703,37 @@ async function loadDashboardCommodity() {
         const sorted = Object.entries(grouped)
             .sort((a, b) => b[1] - a[1]);
 
-        container.innerHTML = sorted.map(([name, value]) => {
+        const colors = [
+            "#265322",
+            "#60982c",
+            "#8ab45b",
+            "#d6a900",
+            "#b5ce8c"
+        ];
 
+        container.innerHTML = sorted.map(([name, value], index) => {
             const percentage = total > 0
                 ? (value / total) * 100
                 : 0;
 
             return `
-                <div class="commodity-row">
-                    <div class="commodity-info">
-                        <span>${escapeHTML(name)}</span>
-                        <strong>${formatNumber(percentage, 1)}%</strong>
+                <div class="agri-commodity-item">
+                    <div class="agri-commodity-info">
+                        <span class="agri-commodity-name">
+                            ${escapeHTML(name)}
+                        </span>
+                        <strong class="agri-commodity-pct">
+                            ${formatNumber(percentage, 1)}%
+                        </strong>
                     </div>
 
-                    <div class="progress-bar">
+                    <div class="agri-commodity-track">
                         <div
-                            class="progress-fill"
-                            style="width:${percentage}%"
+                            class="agri-commodity-fill"
+                            style="
+                                width:${percentage.toFixed(2)}%;
+                                background:${colors[index % colors.length]};
+                            "
                         ></div>
                     </div>
                 </div>
@@ -649,19 +741,12 @@ async function loadDashboardCommodity() {
         }).join("");
 
     } catch (error) {
-        console.error("Dashboard commodity:", error);
-
-        container.innerHTML = "<p>Gagal memuat data komoditas.</p>";
+        container.textContent =
+            `Gagal memuat komoditas: ${error.message}`;
     }
 }
 
-
-/* =========================================================
-   8. DASHBOARD CLUSTER SUMMARY
-========================================================= */
-
 async function loadDashboardClusterSummary() {
-
     const container = document.getElementById(
         "dashboardClusterSummary"
     );
@@ -670,174 +755,243 @@ async function loadDashboardClusterSummary() {
 
     try {
         const response = await apiFetch(
-            "/api/v1/model/clustering"
+            "/api/v1/monitoring/ringkasan-status"
         );
-
-        const rows = getRecords(response);
-
-        const clusterColumn = response.cluster_column;
-
-        if (!rows.length || !clusterColumn) {
-            container.textContent =
-                "Hasil clustering belum tersedia.";
-            return;
-        }
-
-        const clusters = {};
-
-        rows.forEach(row => {
-            const cluster = row[clusterColumn] ?? "Tidak diketahui";
-
-            clusters[cluster] = (clusters[cluster] || 0) + 1;
-        });
 
         container.innerHTML = `
             <p>
-                Terdapat <strong>${Object.keys(clusters).length}</strong>
-                kelompok hasil clustering dari
-                <strong>${rows.length}</strong> data.
+                ${response.total_kecamatan} kecamatan,
+                ${response.jumlah_potensi_tinggi} potensi tinggi,
+                ${response.jumlah_potensi_sedang} potensi sedang,
+                ${response.jumlah_potensi_rendah} potensi rendah.
             </p>
         `;
-
     } catch (error) {
-        console.error("Dashboard cluster summary:", error);
-
         container.textContent =
-            "Data clustering belum dapat ditampilkan.";
+            "Ringkasan clustering belum tersedia.";
     }
 }
 
-
-/* =========================================================
-   9. DASHBOARD WARNING SUMMARY
-========================================================= */
-
 async function loadDashboardWarning() {
-
-    // Backend belum menyediakan endpoint agregasi EWS seluruh kecamatan.
     setText("jumlahWilayahWarning", "—");
-    setText("statusWilayahWarning", "Data EWS belum tersedia");
+
+    setText(
+        "statusWilayahWarning",
+        "Data EWS belum tersedia"
+    );
 }
 
 
-/* =========================================================
-   10. DASHBOARD LOAD ALL
-========================================================= */
+/* ==========================================================
+   7. STATUS WILAYAH
+========================================================== */
 
-async function loadDashboard() {
+function getStatusColor(status) {
+    const text = String(status || "").toLowerCase();
 
-    await Promise.allSettled([
-        loadDashboardSummary(),
-        loadProductionChart(),
-        loadTop5Kecamatan(),
-        loadDashboardCommodity(),
-        loadDashboardClusterSummary(),
-        loadDashboardWarning()
-    ]);
+    if (text.includes("tinggi")) return "#2878C8";
+    if (text.includes("sedang")) return "#9066B5";
+    if (text.includes("rendah")) return "#D95363";
+
+    return "#E5E7EB";
+}
+
+function getStatusTextColor(status) {
+    const text = String(status || "").toLowerCase();
+
+    return (
+        text.includes("tinggi") ||
+        text.includes("sedang") ||
+        text.includes("rendah")
+    ) ? "#FFFFFF" : "#374151";
+}
+
+function getSelectedKecamatan() {
+    return document.getElementById(
+        "filterKecamatan"
+    )?.value || "";
+}
+
+function findStatusWilayah(name) {
+    const key = normalizeRegionName(name);
+
+    return statusWilayahData.find(
+        item =>
+            normalizeRegionName(item.kecamatan) === key
+    ) || null;
+}
+
+async function loadStatusWilayah() {
+    try {
+        const response = await apiFetch(
+            "/api/v1/monitoring/status-wilayah"
+        );
+
+        statusWilayahData = getRecords(response);
+
+        renderStatusWilayahList(statusWilayahData);
+
+        return statusWilayahData;
+    } catch (error) {
+        console.error("Status wilayah:", error);
+
+        const container = document.getElementById(
+            "statusWilayahList"
+        );
+
+        if (container) {
+            container.textContent =
+                `Gagal memuat status: ${error.message}`;
+        }
+
+        return [];
+    }
+}
+
+function renderStatusWilayahList(rows) {
+    const container = document.getElementById(
+        "statusWilayahList"
+    );
+
+    if (!container) return;
+
+    const selected = normalizeRegionName(
+        getSelectedKecamatan()
+    );
+
+    const filtered = rows.filter(item =>
+        !selected ||
+        normalizeRegionName(item.kecamatan) === selected
+    );
+
+    if (!filtered.length) {
+        container.textContent =
+            "Data status wilayah belum tersedia.";
+        return;
+    }
+
+    const order = {
+        "Potensi Tinggi": 0,
+        "Potensi Sedang": 1,
+        "Potensi Rendah": 2
+    };
+
+    const sorted = [...filtered].sort(
+        (a, b) =>
+            (order[a.status_wilayah] ?? 3) -
+            (order[b.status_wilayah] ?? 3) ||
+            a.kecamatan.localeCompare(b.kecamatan)
+    );
+
+    container.innerHTML = `
+        <p style="font-size:12px;color:#64748b">
+            ${sorted.length} kecamatan
+        </p>
+
+        ${sorted.map(item => `
+            <div class="agri-status-row">
+                <span>${escapeHTML(item.kecamatan)}</span>
+
+                <span
+                    class="agri-status-pill"
+                    style="
+                        background:${getStatusColor(item.status_wilayah)};
+                        color:${getStatusTextColor(item.status_wilayah)};
+                    "
+                >
+                    ${escapeHTML(item.status_wilayah)}
+                </span>
+            </div>
+        `).join("")}
+    `;
 }
 
 
-/* =========================================================
-   11. MONITORING WILAYAH
-========================================================= */
+/* ==========================================================
+   8. MONITORING WILAYAH
+========================================================== */
 
 async function loadMonitoringData(filterKecamatan = "") {
-
-    const table = document.getElementById("tabelMonitoring");
+    const table = document.getElementById(
+        "tabelMonitoring"
+    );
 
     if (!table) return;
 
-    setTableLoading("tabelMonitoring", 4);
+    setTableLoading("tabelMonitoring");
 
     try {
         const response = await apiFetch(
-            "/api/v1/rekap-kecamatan"
+            "/api/v1/monitoring/status-wilayah"
         );
 
         monitoringData = getRecords(response);
+        statusWilayahData = monitoringData;
 
-        let rows = [...monitoringData];
+        const selected = normalizeRegionName(
+            filterKecamatan
+        );
 
-        if (filterKecamatan) {
-            rows = rows.filter(item => {
-                const name = getValue(
-                    item,
-                    ["kecamatan", "nama_kecamatan"],
-                    ""
-                );
-
-                return String(name).toLowerCase() ===
-                    filterKecamatan.toLowerCase();
-            });
-        }
+        const rows = monitoringData
+            .filter(item =>
+                !selected ||
+                normalizeRegionName(item.kecamatan) === selected
+            )
+            .sort(
+                (a, b) =>
+                    (Number(b.total_produksi) || 0) -
+                    (Number(a.total_produksi) || 0)
+            );
 
         if (!rows.length) {
             setTableEmpty(
                 "tabelMonitoring",
-                "Belum ada data untuk kecamatan ini.",
-                4
+                "Data kecamatan tidak ditemukan."
             );
             return;
         }
 
-        table.innerHTML = rows.map(item => {
+        table.innerHTML = rows.map(item => `
+            <tr>
+                <td>${escapeHTML(item.kecamatan)}</td>
+                <td>${formatNumber(item.total_produksi)}</td>
+                <td>${formatNumber(item.total_luas_panen)}</td>
+                <td>
+                    <span
+                        class="agri-status-pill"
+                        style="
+                            background:${getStatusColor(item.status_wilayah)};
+                            color:${getStatusTextColor(item.status_wilayah)};
+                        "
+                    >
+                        ${escapeHTML(item.status_wilayah)}
+                    </span>
+                </td>
+            </tr>
+        `).join("");
 
-            const name = getValue(
-                item,
-                ["kecamatan", "nama_kecamatan"],
-                "—"
-            );
-
-            const production = toNumber(
-                getValue(item, ["total_produksi", "produksi_ton"])
-            );
-
-            const area = toNumber(
-                getValue(item, ["total_luas_panen", "luas_panen_ha"])
-            );
-
-            const productivity = toNumber(
-                getValue(item, [
-                    "rata_produktivitas",
-                    "produktivitas_kuintal_ha"
-                ])
-            );
-
-            return `
-                <tr>
-                    <td>${escapeHTML(name)}</td>
-                    <td>${formatNumber(production)}</td>
-                    <td>${formatNumber(area)}</td>
-                    <td>
-                        <span class="status normal">
-                            ${productivity !== null
-                                ? `${formatNumber(productivity)} ku/ha`
-                                : "Data tersedia"}
-                        </span>
-                    </td>
-                </tr>
-            `;
-        }).join("");
-
+        renderStatusWilayahList(monitoringData);
+        highlightKediriSelection(filterKecamatan);
     } catch (error) {
         console.error("Monitoring:", error);
 
         setTableEmpty(
             "tabelMonitoring",
-            `Gagal memuat data: ${error.message}`,
-            4
+            `Gagal memuat monitoring: ${error.message}`
         );
     }
 }
 
-
-/* =========================================================
-   12. FILTER KECAMATAN
-========================================================= */
+function loadMonitoring() {
+    return loadMonitoringData(
+        getSelectedKecamatan()
+    );
+}
 
 async function loadFilterKecamatan() {
-
-    const dropdown = document.getElementById("filterKecamatan");
+    const dropdown = document.getElementById(
+        "filterKecamatan"
+    );
 
     if (!dropdown) return;
 
@@ -847,306 +1001,829 @@ async function loadFilterKecamatan() {
         );
 
         const rows = getRecords(response);
+        const previous = dropdown.value;
 
         dropdown.innerHTML = `
             <option value="">Semua Kecamatan</option>
         `;
 
         rows.forEach(item => {
-
-            // Endpoint mengembalikan objek { kecamatan: "..." }
             const name = typeof item === "string"
                 ? item
-                : getValue(item, ["kecamatan", "nama_kecamatan"]);
+                : item.kecamatan;
 
             if (!name) return;
 
             const option = document.createElement("option");
-
             option.value = name;
             option.textContent = name;
 
             dropdown.appendChild(option);
         });
 
+        if ([...dropdown.options].some(
+            option => option.value === previous
+        )) {
+            dropdown.value = previous;
+        }
     } catch (error) {
         console.error("Filter kecamatan:", error);
     }
 }
 
 
-function setupFilterButton() {
+/* ==========================================================
+   9. PETA KABUPATEN KEDIRI
+========================================================== */
 
-    const button = document.querySelector(
-        ".filter-card .green-button"
+function getGeoKecamatanName(feature) {
+    const props = feature?.properties || {};
+
+    const candidates = [
+        "WADMKC",
+        "wadmkc",
+        "KECAMATAN",
+        "kecamatan",
+        "NAMOBJ",
+        "namobj",
+        "NAMKEC",
+        "namkec",
+        "nama_kecamatan",
+        "name",
+        "NAME"
+    ];
+
+    for (const key of candidates) {
+        if (
+            props[key] !== undefined &&
+            props[key] !== null &&
+            String(props[key]).trim()
+        ) {
+            return String(props[key]).trim();
+        }
+    }
+
+    return "Tidak diketahui";
+}
+
+function highlightKediriSelection(selectedName = "") {
+    if (!kediriGeoJsonLayer) return;
+
+    const selected = normalizeRegionName(selectedName);
+
+    kediriGeoJsonLayer.eachLayer(layer => {
+        const name = getGeoKecamatanName(layer.feature);
+        const item = findStatusWilayah(name);
+
+        const active = selected &&
+            normalizeRegionName(name) === selected;
+
+        layer.setStyle({
+            color: active ? "#f59e0b" : "#ffffff",
+            weight: active ? 3.5 : 1.5,
+            fillColor: getStatusColor(
+                item?.status_wilayah
+            ),
+            fillOpacity: active ? 0.95 : 0.8
+        });
+
+        if (active) layer.bringToFront();
+    });
+}
+
+async function loadKediriMap() {
+    const container = document.getElementById(
+        "kediriMap"
     );
 
-    const dropdown = document.getElementById(
-        "filterKecamatan"
-    );
+    if (!container) return;
 
-    if (!button || !dropdown || button.dataset.listenerAdded) {
+    if (typeof L === "undefined") {
+        container.textContent =
+            "Leaflet belum dimuat. Periksa index.html.";
         return;
     }
 
-    button.addEventListener("click", () => {
-        loadMonitoringData(dropdown.value);
-    });
+    if (kediriMapLoading) return;
 
-    button.dataset.listenerAdded = "true";
-}
-
-
-/* =========================================================
-   13. PCA CLUSTERING VISUALIZATION
-========================================================= */
-
-async function loadPCA() {
-
-    const canvas = document.getElementById("pcaChart");
-
-    if (!canvas) return;
+    kediriMapLoading = true;
 
     try {
-        const response = await apiFetch(
-            "/api/v1/model/pca"
-        );
-
-        pcaData = getRecords(response);
-
-        if (!pcaData.length) {
-            destroyChart("pcaChart");
-            setText("pcaClusterSummary", "Data PCA belum tersedia.");
-            return;
+        if (!statusWilayahData.length) {
+            await loadStatusWilayah();
         }
 
-        const clusterGroups = {};
+        const response = await fetch(GEOJSON_URL);
 
-        pcaData.forEach(item => {
+        if (!response.ok) {
+            throw new Error(
+                "GeoJSON Kediri belum ditemukan di " +
+                GEOJSON_URL
+            );
+        }
 
-            const cluster = item.cluster ?? "Tidak diketahui";
+        const geojson = await response.json();
 
-            if (!clusterGroups[cluster]) {
-                clusterGroups[cluster] = [];
-            }
+        if (
+            !geojson ||
+            !["Feature", "FeatureCollection"]
+                .includes(geojson.type)
+        ) {
+            throw new Error(
+                "Format GeoJSON tidak valid."
+            );
+        }
 
-            clusterGroups[cluster].push({
-                x: toNumber(item.pca_1),
-                y: toNumber(item.pca_2),
-                kecamatan: item.kecamatan
-            });
-        });
+        if (!kediriMapInstance) {
+            kediriMapInstance = L.map(
+                "kediriMap",
+                { scrollWheelZoom: false }
+            ).setView([-7.82, 112.02], 10);
 
-        const palette = [
-            "#265322",
-            "#ffcc00",
-            "#60982c",
-            "#8ab45b",
-            "#d97706",
-            "#64748b",
-            "#7c3aed"
-        ];
-
-        const datasets = Object.entries(clusterGroups).map(
-            ([cluster, points], index) => ({
-                label: `Cluster ${cluster}`,
-                data: points.filter(
-                    point => point.x !== null && point.y !== null
-                ),
-                backgroundColor: palette[index % palette.length],
-                pointRadius: 6,
-                pointHoverRadius: 8
-            })
-        );
-
-        createChart("pcaChart", {
-            type: "scatter",
-            data: {
-                datasets
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: chartLegend(),
-                    tooltip: {
-                        callbacks: {
-                            label: context => {
-                                const point = context.raw;
-
-                                return `${point.kecamatan}: (${formatNumber(point.x, 3)}, ${formatNumber(point.y, 3)})`;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: "Principal Component 1"
-                        },
-                        grid: {
-                            color: "#edf1eb"
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: "Principal Component 2"
-                        },
-                        grid: {
-                            color: "#edf1eb"
-                        }
-                    }
+            L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+                    maxZoom: 19,
+                    attribution: "&copy; OpenStreetMap contributors"
                 }
+            ).addTo(kediriMapInstance);
+        }
+
+        if (kediriGeoJsonLayer) {
+            kediriMapInstance.removeLayer(
+                kediriGeoJsonLayer
+            );
+        }
+
+        kediriGeoJsonLayer = L.geoJSON(geojson, {
+            style(feature) {
+                const name = getGeoKecamatanName(feature);
+                const item = findStatusWilayah(name);
+
+                return {
+                    color: "#ffffff",
+                    weight: 1.5,
+                    fillColor: getStatusColor(
+                        item?.status_wilayah
+                    ),
+                    fillOpacity: 0.8
+                };
+            },
+
+            onEachFeature(feature, layer) {
+                const name = getGeoKecamatanName(feature);
+                const item = findStatusWilayah(name);
+
+                layer.bindPopup(`
+                    <div style="min-width:210px;line-height:1.8">
+                        <strong>${escapeHTML(name)}</strong>
+                        <br>
+
+                        <b>Status:</b>
+                        ${escapeHTML(
+                            item?.status_wilayah ||
+                            "Belum Dikategorikan"
+                        )}
+                        <br>
+
+                        <b>Indikator Produksi:</b>
+                        ${formatNumber(item?.total_produksi)} ton
+                        <br>
+
+                        <b>Indikator Luas:</b>
+                        ${formatNumber(item?.total_luas_panen)} ha
+                        <br>
+
+                        <b>Produktivitas:</b>
+                        ${formatNumber(
+                            item?.rata_produktivitas
+                        )} ku/ha
+                    </div>
+                `);
+
+                layer.on("mouseover", () => {
+                    layer.setStyle({
+                        weight: 3,
+                        fillOpacity: 0.95
+                    });
+                });
+
+                layer.on("mouseout", () => {
+                    highlightKediriSelection(
+                        getSelectedKecamatan()
+                    );
+                });
+
+                layer.on("click", () => {
+                    const dropdown = document.getElementById(
+                        "filterKecamatan"
+                    );
+
+                    if (!dropdown) return;
+
+                    const option = [...dropdown.options].find(
+                        opt =>
+                            normalizeRegionName(opt.value) ===
+                            normalizeRegionName(name)
+                    );
+
+                    if (option) {
+                        dropdown.value = option.value;
+                        loadMonitoring();
+                    }
+                });
             }
-        });
+        }).addTo(kediriMapInstance);
 
-        const variance = Array.isArray(response.explained_variance)
-            ? response.explained_variance
-            : [];
+        const bounds = kediriGeoJsonLayer.getBounds();
 
-        const varianceText = variance.length
-            ? ` | Variansi PC1: ${formatNumber(variance[0] * 100, 2)}%, PC2: ${formatNumber((variance[1] || 0) * 100, 2)}%`
-            : "";
+        if (bounds.isValid()) {
+            kediriMapInstance.fitBounds(bounds, {
+                padding: [12, 12]
+            });
+        }
 
-        setText(
-            "pcaClusterSummary",
-            `${pcaData.length} data | ${Object.keys(clusterGroups).length} cluster${varianceText}`
+        highlightKediriSelection(
+            getSelectedKecamatan()
         );
+
+        requestAnimationFrame(() => {
+            kediriMapInstance.invalidateSize();
+        });
 
     } catch (error) {
-        console.error("PCA:", error);
+        console.error("Peta Kediri:", error);
 
-        destroyChart("pcaChart");
-
-        setText(
-            "pcaClusterSummary",
-            `PCA belum dapat dimuat: ${error.message}`
-        );
+        if (!kediriMapInstance) {
+            container.textContent =
+                `Gagal memuat peta: ${error.message}`;
+        }
+    } finally {
+        kediriMapLoading = false;
     }
 }
 
+/* ==================================================
+   PETA STATUS WILAYAH - DASHBOARD
+================================================== */
 
-/* =========================================================
-   14. HEATMAP KECAMATAN
-========================================================= */
+async function loadDashboardMap() {
+    const container = document.getElementById("dashboardKediriMap");
+
+    if (!container) {
+        console.error("Container dashboardKediriMap tidak ditemukan.");
+        return;
+    }
+
+    if (typeof L === "undefined") {
+        container.textContent = "Gagal menampilkan peta: Leaflet belum dimuat.";
+        return;
+    }
+
+    if (dashboardMapPromise) return dashboardMapPromise;
+
+    dashboardMapPromise = (async () => {
+        try {
+            const [statusResponse, geoResponse] = await Promise.all([
+                apiFetch("/api/v1/monitoring/status-wilayah"),
+                fetch(GEOJSON_URL)
+            ]);
+
+            if (!geoResponse.ok) {
+                throw new Error(
+                    `File GeoJSON tidak ditemukan (HTTP ${geoResponse.status}). ` +
+                    `Periksa path: ${GEOJSON_URL}`
+                );
+            }
+
+            const geojson = await geoResponse.json();
+            const rows = getRecords(statusResponse);
+
+            if (!["FeatureCollection", "Feature"].includes(geojson?.type)) {
+                throw new Error("Isi file bukan GeoJSON yang valid.");
+            }
+
+            const statusMap = new Map();
+
+            rows.forEach(item => {
+                statusMap.set(
+                    normalizeRegionName(item.kecamatan),
+                    item
+                );
+            });
+
+            if (!dashboardMapInstance) {
+                dashboardMapInstance = L.map(container, {
+                    zoomControl: true,
+                    scrollWheelZoom: false
+                });
+
+                L.tileLayer(
+                    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    {
+                        maxZoom: 19,
+                        attribution: "&copy; OpenStreetMap contributors"
+                    }
+                ).addTo(dashboardMapInstance);
+            }
+
+            if (dashboardGeoJsonLayer) {
+                dashboardMapInstance.removeLayer(dashboardGeoJsonLayer);
+            }
+
+            dashboardGeoJsonLayer = L.geoJSON(geojson, {
+                style(feature) {
+                    const name = getGeoKecamatanName(feature);
+                    const item = statusMap.get(normalizeRegionName(name));
+
+                    return {
+                        color: "#ffffff",
+                        weight: 1.2,
+                        fillColor: getStatusColor(item?.status_wilayah),
+                        fillOpacity: 0.85
+                    };
+                },
+
+                onEachFeature(feature, layer) {
+                    const name = getGeoKecamatanName(feature);
+                    const item = statusMap.get(normalizeRegionName(name));
+
+                    layer.bindPopup(`
+                        <div style="line-height:1.8;min-width:180px">
+                            <strong>Kecamatan ${escapeHTML(name)}</strong>
+                            <br>
+                            Status: ${escapeHTML(
+                                item?.status_wilayah || "Belum Ada Data"
+                            )}
+                            <br>
+                            Indikator Produksi:
+                            ${formatNumber(item?.total_produksi)} ton
+                            <br>
+                            Indikator Luas:
+                            ${formatNumber(item?.total_luas_panen)} ha
+                        </div>
+                    `);
+
+                    layer.on("mouseover", () => {
+                        layer.setStyle({
+                            color: "#334155",
+                            weight: 2.5,
+                            fillOpacity: 1
+                        });
+                    });
+
+                    layer.on("mouseout", () => {
+                        dashboardGeoJsonLayer.resetStyle(layer);
+                    });
+                }
+            }).addTo(dashboardMapInstance);
+
+            const bounds = dashboardGeoJsonLayer.getBounds();
+
+            if (!bounds.isValid()) {
+                throw new Error(
+                    "GeoJSON tidak memiliki koordinat poligon yang valid."
+                );
+            }
+
+            dashboardMapInstance.fitBounds(bounds, {
+                padding: [12, 12]
+            });
+
+            requestAnimationFrame(() => {
+                dashboardMapInstance.invalidateSize();
+                dashboardMapInstance.fitBounds(bounds, {
+                    padding: [12, 12]
+                });
+            });
+
+            console.log("Peta Dashboard berhasil dimuat:", {
+                features: dashboardGeoJsonLayer.getLayers().length,
+                statusWilayah: rows.length
+            });
+
+        } catch (error) {
+            console.error("Error Peta Dashboard:", error);
+
+            if (dashboardMapInstance) {
+                dashboardMapInstance.remove();
+                dashboardMapInstance = null;
+                dashboardGeoJsonLayer = null;
+            }
+
+            container.innerHTML = `
+                <div style="
+                    padding:18px;
+                    font-size:13px;
+                    color:#b91c1c;
+                    background:#fff1f2;
+                    border-radius:12px;
+                ">
+                    ${escapeHTML(error.message)}
+                </div>
+            `;
+        }
+    })();
+
+    try {
+        await dashboardMapPromise;
+    } finally {
+        dashboardMapPromise = null;
+    }
+}
+
+/* ==========================================================
+   10. HEATMAP KECAMATAN
+========================================================== */
+
+/* ==========================================================
+   HEATMAP PRODUKSI KOMODITAS
+   Warna: Merah - Ungu - Biru
+========================================================== */
 
 async function loadHeatmap() {
-
     const container = document.getElementById(
         "heatmapKecamatan"
     );
 
     if (!container) return;
 
-    container.innerHTML = "<p>Memuat heatmap...</p>";
+    container.innerHTML = "<p>Memuat heatmap produksi...</p>";
 
     try {
         const response = await apiFetch(
             "/api/v1/model/heatmap-kecamatan"
         );
 
-        heatmapData = getRecords(response);
+        const allRows = getRecords(response);
+        const kecamatanCol = response.kecamatan_column;
 
-        if (!heatmapData.length) {
+        // Kolom komoditas yang benar-benar ada
+        const commodities = [
+            "Kacang Tanah",
+            "Kedelai",
+            "Ketela Pohon",
+            "Padi",
+            "Ubi Jalar"
+        ].filter(col =>
+            allRows.some(row =>
+                Object.prototype.hasOwnProperty.call(row, col)
+            )
+        );
+
+        if (!allRows.length || !kecamatanCol || !commodities.length) {
             container.innerHTML =
-                "<p>Data heatmap belum tersedia.</p>";
+                "<p>Data heatmap produksi belum tersedia.</p>";
             return;
         }
 
-        const kecamatanColumn = response.kecamatan_column;
-        const numericColumns = response.numeric_columns || [];
+        // Mengikuti filter kecamatan
+        const selectedKecamatan = document.getElementById(
+            "filterKecamatan"
+        )?.value || "";
 
-        if (!kecamatanColumn || !numericColumns.length) {
-            container.innerHTML =
-                "<p>Kolom numerik untuk heatmap belum tersedia.</p>";
-            return;
-        }
+        const selectedKomoditas = document.getElementById(
+            "filterKomoditas"
+        )?.value || "";
 
-        const selectedColumns = numericColumns.slice(0, 5);
+        const visibleColumns = selectedKomoditas &&
+            commodities.includes(selectedKomoditas)
+                ? [selectedKomoditas]
+                : commodities;
 
-        // Hitung nilai maksimum tiap kolom untuk normalisasi warna.
-        const maxValues = {};
+        const rows = allRows.filter(row =>
+            !selectedKecamatan ||
+            normalizeRegionName(row[kecamatanCol]) ===
+            normalizeRegionName(selectedKecamatan)
+        );
 
-        selectedColumns.forEach(column => {
-            maxValues[column] = Math.max(
-                ...heatmapData.map(row =>
-                    toNumber(row[column]) || 0
-                ),
-                1
-            );
+        // Hitung min/max dari keseluruhan kecamatan,
+        // agar warna konsisten meskipun filter berubah.
+        const stats = {};
+
+        visibleColumns.forEach(col => {
+            const values = allRows
+                .map(row => toNumber(row[col]))
+                .filter(value => value !== null);
+
+            stats[col] = {
+                min: Math.min(...values),
+                max: Math.max(...values)
+            };
         });
 
-        let html = `
+        function interpolateColor(colorA, colorB, ratio) {
+            const t = Math.max(0, Math.min(1, ratio));
+
+            const a = colorA.match(/\w\w/g).map(
+                x => parseInt(x, 16)
+            );
+
+            const b = colorB.match(/\w\w/g).map(
+                x => parseInt(x, 16)
+            );
+
+            const result = a.map((value, i) =>
+                Math.round(value + (b[i] - value) * t)
+            );
+
+            return `rgb(${result.join(",")})`;
+        }
+
+        function getHeatmapColor(value, min, max) {
+            if (value === null) return "#E5E7EB";
+
+            if (max === min) return "#9066B5";
+
+            const normalized = (value - min) / (max - min);
+
+            if (normalized <= 0.5) {
+                return interpolateColor(
+                    "D95363",
+                    "9066B5",
+                    normalized * 2
+                );
+            }
+
+            return interpolateColor(
+                "9066B5",
+                "2878C8",
+                (normalized - 0.5) * 2
+            );
+        }
+
+        function getContrastColor(value, min, max) {
+            if (value === null) return "#374151";
+            return "#FFFFFF";
+        }
+
+        if (!rows.length) {
+            container.innerHTML =
+                "<p>Data kecamatan yang dipilih tidak ditemukan.</p>";
+            return;
+        }
+
+        const tableRows = rows.map(row => `
+            <tr>
+                <td class="heatmap-kecamatan-name">
+                    ${escapeHTML(row[kecamatanCol])}
+                </td>
+
+                ${visibleColumns.map(col => {
+                    const value = toNumber(row[col]);
+
+                    const min = stats[col].min;
+                    const max = stats[col].max;
+
+                    const color = getHeatmapColor(
+                        value, min, max
+                    );
+
+                    const textColor = getContrastColor(
+                        value, min, max
+                    );
+
+                    return `
+                        <td
+                            class="heatmap-value-cell"
+                            style="
+                                background:${color};
+                                color:${textColor};
+                            "
+                            title="${escapeHTML(col)}: ${formatNumber(value)}"
+                        >
+                            ${formatNumber(value)}
+                        </td>
+                    `;
+                }).join("")}
+            </tr>
+        `).join("");
+
+        container.innerHTML = `
+            <div class="heatmap-explanation">
+                <span>Perbandingan produksi rata-rata antar-kecamatan</span>
+
+                <div class="heatmap-color-legend">
+                    <span>Rendah</span>
+                    <div class="heatmap-gradient"></div>
+                    <span>Tinggi</span>
+                </div>
+            </div>
+
             <div class="table-responsive">
                 <table class="heatmap-table">
                     <thead>
                         <tr>
                             <th>Kecamatan</th>
-                            ${selectedColumns.map(column => `
-                                <th>${escapeHTML(column)}</th>
+                            ${visibleColumns.map(col => `
+                                <th>${escapeHTML(col)}</th>
                             `).join("")}
                         </tr>
                     </thead>
+
                     <tbody>
-        `;
-
-        heatmapData.forEach(row => {
-
-            html += `
-                <tr>
-                    <td>${escapeHTML(row[kecamatanColumn])}</td>
-            `;
-
-            selectedColumns.forEach(column => {
-
-                const value = toNumber(row[column]);
-                const normalized = value !== null
-                    ? Math.max(0, Math.min(1, value / maxValues[column]))
-                    : 0;
-
-                const opacity = 0.12 + (normalized * 0.72);
-
-                html += `
-                    <td style="
-                        background-color:rgba(96,152,44,${opacity});
-                        text-align:center;
-                    ">
-                        ${value !== null ? formatNumber(value) : "—"}
-                    </td>
-                `;
-            });
-
-            html += "</tr>";
-        });
-
-        html += `
+                        ${tableRows}
                     </tbody>
                 </table>
             </div>
-        `;
 
-        container.innerHTML = html;
+            <p class="heatmap-note">
+                Warna dihitung relatif terhadap rentang produksi
+                tiap komoditas. Merah menunjukkan nilai relatif
+                rendah, ungu sedang, dan biru relatif tinggi.
+            </p>
+        `;
 
     } catch (error) {
         console.error("Heatmap:", error);
 
         container.innerHTML = `
-            <p style="color:#b91c1c;">
-                Gagal memuat heatmap: ${escapeHTML(error.message)}
+            <p style="color:#b91c1c">
+                Gagal memuat heatmap:
+                ${escapeHTML(error.message)}
             </p>
         `;
     }
 }
 
 
-/* =========================================================
-   15. CLUSTERING - KETAHANAN PANGAN
-========================================================= */
+/* ==========================================================
+   11. PCA CLUSTERING
+========================================================== */
+
+async function loadPCA() {
+    if (!document.getElementById("pcaChart")) return;
+
+    try {
+        const response = await apiFetch(
+            "/api/v1/model/pca"
+        );
+
+        const rows = getRecords(response);
+
+        if (!rows.length) return;
+
+        const groups = {};
+
+        rows.forEach(row => {
+            const cluster = row.cluster ?? "Unknown";
+
+            if (!groups[cluster]) groups[cluster] = [];
+
+            groups[cluster].push({
+                x: Number(row.pca_1),
+                y: Number(row.pca_2),
+                kecamatan: row.kecamatan
+            });
+        });
+
+        const datasets = Object.entries(groups)
+            .map(([cluster, points], index) => ({
+                label: `Cluster ${cluster}`,
+                data: points,
+                backgroundColor:
+                    CHART_COLORS[index % CHART_COLORS.length],
+                pointRadius: 6
+            }));
+
+        createChart("pcaChart", {
+            type: "scatter",
+            data: { datasets },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: chartLegend()
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: "Principal Component 1"
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: "Principal Component 2"
+                        }
+                    }
+                }
+            }
+        });
+
+        setText(
+            "pcaClusterSummary",
+            `${rows.length} kecamatan | ` +
+            `${Object.keys(groups).length} cluster`
+        );
+    } catch (error) {
+        console.error("PCA:", error);
+
+        setText(
+            "pcaClusterSummary",
+            `Gagal memuat PCA: ${error.message}`
+        );
+    }
+}
+
+
+/* ==========================================================
+   KETAHANAN PANGAN - CLUSTERING INFORMATION
+========================================================== */
+
+const CLUSTER_COLORS = [
+    "#2878C8",
+    "#9066B5",
+    "#D95363",
+    "#E5A624"
+];
+
+const CLUSTER_COMMODITIES = [
+    "Kacang Tanah",
+    "Kedelai",
+    "Ketela Pohon",
+    "Padi",
+    "Ubi Jalar"
+];
+
+function getClusterDetails(rows, clusterCol) {
+    const groups = {};
+
+    rows.forEach(row => {
+        const id = String(row[clusterCol] ?? "Tidak diketahui");
+
+        if (!groups[id]) groups[id] = [];
+        groups[id].push(row);
+    });
+
+    return Object.entries(groups)
+        .sort((a, b) => a[0].localeCompare(b[0], "id", {
+            numeric: true
+        }))
+        .map(([id, members]) => {
+
+            // Label status dari model, bukan asumsi berdasarkan ID
+            const labels = [
+                ...new Set(
+                    members
+                        .map(row => row.label_cluster)
+                        .filter(Boolean)
+                )
+            ];
+
+            // Rata-rata total produksi kelompok
+            const productionValues = members
+                .map(row => toNumber(row.total_produksi_mean))
+                .filter(value => value !== null);
+
+            const averageProduction = productionValues.length
+                ? productionValues.reduce((a, b) => a + b, 0)
+                  / productionValues.length
+                : null;
+
+            // Rata-rata produksi masing-masing komoditas
+            const commodityScores = CLUSTER_COMMODITIES.map(name => {
+                const values = members
+                    .map(row => toNumber(row[name]))
+                    .filter(value => value !== null);
+
+                return {
+                    name,
+                    mean: values.length
+                        ? values.reduce((a, b) => a + b, 0)
+                          / values.length
+                        : null
+                };
+            });
+
+            const dominant = commodityScores
+                .filter(item => item.mean !== null)
+                .sort((a, b) => b.mean - a.mean)[0];
+
+            return {
+                id,
+                members,
+                count: members.length,
+                percentage: rows.length
+                    ? members.length / rows.length * 100
+                    : 0,
+                label: labels.length === 1
+                    ? labels[0]
+                    : labels.length > 1
+                        ? "Label bervariasi"
+                        : "Belum Dikategorikan",
+                averageProduction,
+                dominantCommodity: dominant?.name || "Tidak tersedia",
+                kecamatan: members
+                    .map(row => row.kecamatan)
+                    .filter(Boolean)
+                    .sort((a, b) => a.localeCompare(b, "id"))
+            };
+        });
+}
 
 async function loadClustering() {
-
     setTableLoading("tabelCluster", 5);
 
     try {
@@ -1165,63 +1842,72 @@ async function loadClustering() {
             return;
         }
 
-        const clusterColumn = response.cluster_column;
-        const kecamatanColumn = response.kecamatan_column;
+        const clusterCol =
+            response.cluster_column || "cluster_id";
 
-        const clusterGroups = {};
+        const details = getClusterDetails(
+            clusteringData,
+            clusterCol
+        );
 
-        clusteringData.forEach(row => {
+        // KPI
+        setText("jumlahCluster", details.length);
+        setText("jumlahKecamatanCluster", clusteringData.length);
+        setText("metodeClustering", "K-Means");
 
-            const cluster = clusterColumn
-                ? row[clusterColumn] ?? "Tidak diketahui"
-                : "Tidak diketahui";
+        // Visualisasi
+        renderClusterDistribution(details);
+        renderClusterDescription(details);
 
-            clusterGroups[cluster] =
-                (clusterGroups[cluster] || 0) + 1;
+        // Tabel hasil clustering
+        const tableRows = clusteringData.map(row => {
+            const commodity = CLUSTER_COMMODITIES
+                .map(name => ({
+                    name,
+                    value: toNumber(row[name])
+                }))
+                .filter(item => item.value !== null)
+                .sort((a, b) => b.value - a.value)[0];
+
+            return {
+                kecamatan: row.kecamatan,
+                cluster: row[clusterCol],
+                status: row.label_cluster || "—",
+                komoditas: commodity?.name || "—",
+                produksi: toNumber(row.total_produksi_mean)
+            };
         });
-
-        setText(
-            "jumlahCluster",
-            Object.keys(clusterGroups).length
-        );
-
-        setText(
-            "jumlahKecamatanCluster",
-            clusteringData.length
-        );
-
-        setText(
-            "metodeClustering",
-            "Hasil clustering dari dataset"
-        );
-
-        renderClusterDistribution(clusterGroups);
-        renderClusterDescription(clusterGroups);
-
-        const headers = Object.keys(clusteringData[0]);
-
-        const displayHeaders = headers.slice(0, 5);
 
         const table = document.getElementById("tabelCluster");
 
         if (table) {
-            table.innerHTML = clusteringData.map(row => `
+            const head = table.closest("table")
+                ?.querySelector("thead tr");
+
+            if (head) {
+                head.innerHTML = `
+                    <th>Kecamatan</th>
+                    <th>Cluster</th>
+                    <th>Kategori Potensi</th>
+                    <th>Komoditas Dominan</th>
+                    <th>Rerata Produksi (Ton)</th>
+                `;
+            }
+
+            table.innerHTML = tableRows.map(row => `
                 <tr>
-                    ${displayHeaders.map(header => `
-                        <td>${escapeHTML(row[header] ?? "—")}</td>
-                    `).join("")}
+                    <td>
+                        <strong>${escapeHTML(row.kecamatan)}</strong>
+                    </td>
+                    <td>
+                        <span class="cluster-id-pill">
+                            Cluster ${escapeHTML(row.cluster)}
+                        </span>
+                    </td>
+                    <td>${escapeHTML(row.status)}</td>
+                    <td>${escapeHTML(row.komoditas)}</td>
+                    <td>${formatNumber(row.produksi)}</td>
                 </tr>
-            `).join("");
-        }
-
-        // Perbarui judul tabel jika struktur HTML menyediakan thead.
-        const tableHead = document.querySelector(
-            "#tabelCluster"
-        )?.closest("table")?.querySelector("thead tr");
-
-        if (tableHead) {
-            tableHead.innerHTML = displayHeaders.map(header => `
-                <th>${escapeHTML(header)}</th>
             `).join("");
         }
 
@@ -1233,81 +1919,196 @@ async function loadClustering() {
             `Gagal memuat clustering: ${error.message}`,
             5
         );
-
-        setText("jumlahCluster", "—");
-        setText("jumlahKecamatanCluster", "—");
-        setText("metodeClustering", "Data tidak tersedia");
     }
 }
 
 
-function renderClusterDistribution(clusterGroups) {
+/* ==========================================================
+   DISTRIBUSI CLUSTER
+========================================================== */
 
-    const canvas = document.getElementById(
-        "clusterDistributionChart"
+function renderClusterDistribution(details) {
+    const labels = details.map(
+        item => `Cluster ${item.id}`
     );
 
-    if (!canvas) return;
-
-    const labels = Object.keys(clusterGroups);
-
-    const values = Object.values(clusterGroups);
+    const values = details.map(item => item.count);
 
     createChart("clusterDistributionChart", {
         type: "doughnut",
         data: {
-            labels: labels.map(label => `Cluster ${label}`),
+            labels,
             datasets: [{
                 data: values,
-                backgroundColor: [
-                    "#265322",
-                    "#60982c",
-                    "#ffcc00",
-                    "#8ab45b",
-                    "#d97706",
-                    "#64748b"
-                ],
-                borderWidth: 2,
-                borderColor: "#ffffff"
+                backgroundColor: CLUSTER_COLORS,
+                borderColor: "#FFFFFF",
+                borderWidth: 3,
+                hoverOffset: 8
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            cutout: "68%",
             plugins: {
-                legend: chartLegend()
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        usePointStyle: true,
+                        padding: 18,
+                        font: {
+                            family: "Poppins",
+                            size: 12
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: context => {
+                            const item = details[context.dataIndex];
+
+                            return [
+                                `${item.count} kecamatan`,
+                                `${formatNumber(item.percentage, 1)}% dari wilayah`,
+                                `Potensi: ${item.label}`
+                            ];
+                        }
+                    }
+                }
             }
         }
     });
 }
 
 
-function renderClusterDescription(clusterGroups) {
+/* ==========================================================
+   KARAKTERISTIK SETIAP CLUSTER
+========================================================== */
 
+function renderClusterDescription(details) {
     const container = document.getElementById(
         "clusterDescription"
     );
 
     if (!container) return;
 
-    container.innerHTML = Object.entries(clusterGroups)
-        .map(([cluster, total]) => `
-            <div class="cluster-description-item">
-                <strong>Cluster ${escapeHTML(cluster)}</strong>
-                <span>${formatNumber(total, 0)} data</span>
+    container.innerHTML = details.map((item, index) => `
+        <div class="cluster-info-card">
+
+            <div class="cluster-info-header">
+                <div class="cluster-info-title">
+                    <span
+                        class="cluster-color-dot"
+                        style="background:${CLUSTER_COLORS[index % CLUSTER_COLORS.length]}"
+                    ></span>
+
+                    <strong>Cluster ${escapeHTML(item.id)}</strong>
+                </div>
+
+                <span class="cluster-count-badge">
+                    ${item.count} kecamatan
+                </span>
             </div>
-        `)
-        .join("");
+
+            <div class="cluster-info-stats">
+                <div>
+                    <small>Proporsi Wilayah</small>
+                    <strong>${formatNumber(item.percentage, 1)}%</strong>
+                </div>
+
+                <div>
+                    <small>Rerata Total Produksi</small>
+                    <strong>
+                        ${formatNumber(item.averageProduction)} ton
+                    </strong>
+                </div>
+            </div>
+
+            <div class="cluster-info-details">
+                <p>
+                    <span>Kategori Model</span>
+                    <strong>${escapeHTML(item.label)}</strong>
+                </p>
+
+                <p>
+                    <span>Produksi Dominan</span>
+                    <strong>${escapeHTML(item.dominantCommodity)}</strong>
+                </p>
+            </div>
+
+            <details class="cluster-members">
+                <summary>Lihat kecamatan anggota</summary>
+
+                <p>
+                    ${item.kecamatan
+                        .map(name => escapeHTML(name))
+                        .join(", ")}
+                </p>
+            </details>
+
+        </div>
+    `).join("");
 }
 
 
-/* =========================================================
-   16. REKOMENDASI KOMODITAS
-========================================================= */
+
+/* ==========================================================
+   13. GENERIC TABLE
+========================================================== */
+
+function renderGenericTable(id, rows, headers = []) {
+    const table = document.getElementById(id);
+
+    if (!table) return;
+
+    if (!rows.length) {
+        setTableEmpty(
+            id,
+            "Data belum tersedia.",
+            headers.length || 4
+        );
+        return;
+    }
+
+    if (!headers.length) {
+        headers = Object.keys(rows[0]);
+    }
+
+    const head = table.closest("table")
+        ?.querySelector("thead tr");
+
+    if (head) {
+        head.innerHTML = headers.map(header => `
+            <th>${escapeHTML(header)}</th>
+        `).join("");
+    }
+
+    table.innerHTML = rows.map(row => `
+        <tr>
+            ${headers.map(header => {
+                const value = row[header];
+
+                return `
+                    <td>
+                        ${escapeHTML(
+                            typeof value === "number"
+                                ? formatNumber(value)
+                                : value ?? "—"
+                        )}
+                    </td>
+                `;
+            }).join("")}
+        </tr>
+    `).join("");
+}
+
+
+/* ==========================================================
+   14. REKOMENDASI KOMODITAS
+========================================================== */
 
 async function loadRecommendations() {
-
-    setTableLoading("tabelRekomendasi", 4);
+    setTableLoading("tabelRekomendasi");
 
     try {
         const response = await apiFetch(
@@ -1319,74 +2120,37 @@ async function loadRecommendations() {
         if (!recommendationData.length) {
             setTableEmpty(
                 "tabelRekomendasi",
-                "Data rekomendasi belum tersedia.",
-                4
+                "Rekomendasi belum tersedia."
             );
             return;
         }
 
-        const table = document.getElementById(
-            "tabelRekomendasi"
+        renderGenericTable(
+            "tabelRekomendasi",
+            recommendationData,
+            [
+                "kecamatan",
+                "tanaman",
+                "rank",
+                "skor_rekomendasi"
+            ]
         );
-
-        if (!table) return;
-
-        const headers = Object.keys(recommendationData[0]);
-
-        const displayHeaders = headers.slice(0, 4);
-
-        table.innerHTML = recommendationData.map(row => `
-            <tr>
-                ${displayHeaders.map(header => {
-                    const value = row[header];
-
-                    return `
-                        <td>${escapeHTML(
-                            value === null || value === undefined
-                                ? "—"
-                                : typeof value === "number"
-                                    ? formatNumber(value)
-                                    : value
-                        )}</td>
-                    `;
-                }).join("")}
-            </tr>
-        `).join("");
-
-        const tableHead = table.closest("table")?.querySelector("thead tr");
-
-        if (tableHead) {
-            tableHead.innerHTML = displayHeaders.map(header => `
-                <th>${escapeHTML(header)}</th>
-            `).join("");
-        }
-
     } catch (error) {
         console.error("Rekomendasi:", error);
 
         setTableEmpty(
             "tabelRekomendasi",
-            `Gagal memuat rekomendasi: ${error.message}`,
-            4
+            error.message
         );
     }
 }
 
 
-/* =========================================================
-   17. MODEL COMPARISON
-========================================================= */
+/* ==========================================================
+   15. MODEL COMPARISON
+========================================================== */
 
 async function loadModelComparison() {
-
-    const container = document.getElementById(
-        "tabelPerbandinganModel"
-    );
-
-    if (!container) return;
-
-    setTableLoading("tabelPerbandinganModel", 4);
-
     try {
         const response = await apiFetch(
             "/api/v1/model/comparison"
@@ -1394,68 +2158,35 @@ async function loadModelComparison() {
 
         const rows = getRecords(response);
 
-        if (!rows.length) {
-            setTableEmpty(
-                "tabelPerbandinganModel",
-                "Data perbandingan model belum tersedia.",
-                4
-            );
-            return;
-        }
-
-        const headers = Object.keys(rows[0]).slice(0, 4);
-
-        container.innerHTML = rows.map(row => `
-            <tr>
-                ${headers.map(header => `
-                    <td>${escapeHTML(
-                        typeof row[header] === "number"
-                            ? formatNumber(row[header])
-                            : row[header] ?? "—"
-                    )}</td>
-                `).join("")}
-            </tr>
-        `).join("");
-
-        const tableHead = container.closest("table")
-            ?.querySelector("thead tr");
-
-        if (tableHead) {
-            tableHead.innerHTML = headers.map(header => `
-                <th>${escapeHTML(header)}</th>
-            `).join("");
-        }
-
+        renderGenericTable(
+            "tabelPerbandinganModel",
+            rows,
+            [
+                "kecamatan",
+                "tanaman",
+                "target",
+                "best_model"
+            ]
+        );
     } catch (error) {
         console.error("Model comparison:", error);
 
         setTableEmpty(
             "tabelPerbandinganModel",
-            `Data perbandingan belum tersedia: ${error.message}`,
-            4
+            error.message
         );
     }
 }
 
 
-/* =========================================================
-   18. FORECASTING
-========================================================= */
+/* ==========================================================
+   16. FORECASTING
+   CSV:
+   Tahun, kecamatan, tanaman, nilai,
+   target, model_digunakan, tipe
+========================================================== */
 
 async function loadForecasting() {
-
-    const canvas = document.getElementById(
-        "forecastingChart"
-    );
-
-    const oldCanvas = document.getElementById(
-        "predictionChart"
-    );
-
-    const targetCanvas = canvas || oldCanvas;
-
-    if (!targetCanvas) return;
-
     try {
         const response = await apiFetch(
             "/api/v1/model/forecasting"
@@ -1464,223 +2195,273 @@ async function loadForecasting() {
         forecastingData = getRecords(response);
 
         if (!forecastingData.length) {
-            destroyChart(targetCanvas.id);
-
             setText(
                 "forecastingSummary",
                 "Data forecasting belum tersedia."
             );
-
             return;
         }
 
         populateForecastCommodity();
-
-        renderForecastChart(
-            selectedForecastCommodity ||
-            document.getElementById("forecastKomoditas")?.value ||
-            ""
-        );
-
+        renderForecastChart();
     } catch (error) {
         console.error("Forecasting:", error);
 
-        destroyChart(targetCanvas.id);
-
         setText(
             "forecastingSummary",
-            `Gagal memuat forecasting: ${error.message}`
+            error.message
         );
-
-        const riskList = document.getElementById("riskList");
-
-        if (riskList) {
-            riskList.innerHTML =
-                "<p>Data risiko belum tersedia.</p>";
-        }
     }
 }
 
-
 function getForecastColumns() {
-
     if (!forecastingData.length) return {};
 
-    const sample = forecastingData[0];
+    const row = forecastingData[0];
 
     return {
-        commodity: findKey(sample, [
-            "tanaman",
-            "komoditas",
-            "nama_tanaman"
+        commodity: findKey(row, [
+            "tanaman", "komoditas"
         ]),
-
-        date: findKey(sample, [
-            "tanggal",
-            "periode",
-            "bulan",
-            "date",
-            "year_month",
-            "tahun_bulan"
+        kecamatan: findKey(row, [
+            "kecamatan", "wilayah"
         ]),
-
-        actual: findKey(sample, [
-            "aktual",
-            "produksi_aktual",
-            "produksi_ton",
-            "produksi",
-            "y",
-            "actual"
+        date: findKey(row, [
+            "Tahun", "tahun", "periode", "tanggal"
         ]),
-
-        forecast: findKey(sample, [
-            "prediksi",
-            "forecast",
-            "hasil_prediksi",
-            "prediksi_produksi",
-            "forecast_value"
+        value: findKey(row, [
+            "nilai", "value"
         ]),
-
-        lower: findKey(sample, [
-            "lower",
-            "batas_bawah",
-            "lower_bound"
+        type: findKey(row, [
+            "tipe", "type"
         ]),
-
-        upper: findKey(sample, [
-            "upper",
-            "batas_atas",
-            "upper_bound"
+        target: findKey(row, [
+            "target"
+        ]),
+        actual: findKey(row, [
+            "aktual", "actual"
+        ]),
+        forecast: findKey(row, [
+            "prediksi", "forecast"
         ])
     };
 }
 
-
 function populateForecastCommodity() {
-
     const dropdown = document.getElementById(
         "forecastKomoditas"
     );
 
-    if (!dropdown || !forecastingData.length) return;
+    if (!dropdown) return;
 
-    const columns = getForecastColumns();
+    const cols = getForecastColumns();
 
-    if (!columns.commodity) return;
+    if (!cols.commodity) return;
 
     const commodities = [
         ...new Set(
-            forecastingData
-                .map(row => row[columns.commodity])
-                .filter(Boolean)
+            forecastingData.map(
+                row => row[cols.commodity]
+            ).filter(Boolean)
         )
-    ];
+    ].sort();
 
-    const currentValue = dropdown.value;
+    const previous = dropdown.value;
 
     dropdown.innerHTML = `
         <option value="">Semua Komoditas</option>
-        ${commodities.map(name => `
-            <option value="${escapeHTML(name)}">
-                ${escapeHTML(name)}
+        ${commodities.map(item => `
+            <option value="${escapeHTML(item)}">
+                ${escapeHTML(item)}
             </option>
         `).join("")}
     `;
 
-    if (commodities.includes(currentValue)) {
-        dropdown.value = currentValue;
+    if (commodities.includes(previous)) {
+        dropdown.value = previous;
     }
-
-    selectedForecastCommodity = dropdown.value;
 }
 
-
 function renderForecastChart(commodity = "") {
-
-    const canvas = document.getElementById("forecastingChart") ||
+    const canvas =
+        document.getElementById("forecastingChart") ||
         document.getElementById("predictionChart");
 
-    if (!canvas) return;
+    if (!canvas || !forecastingData.length) return;
 
-    const columns = getForecastColumns();
+    const cols = getForecastColumns();
 
-    if (!columns.date || (!columns.actual && !columns.forecast)) {
-        destroyChart(canvas.id);
-
+    if (!cols.date) {
         setText(
             "forecastingSummary",
-            "Kolom periode dan nilai aktual/prediksi tidak ditemukan pada dataset forecasting."
+            "Kolom tahun tidak ditemukan."
         );
-
         return;
     }
 
     let rows = [...forecastingData];
 
-    if (commodity && columns.commodity) {
+    const selectedCommodity =
+        commodity ||
+        document.getElementById("forecastKomoditas")?.value ||
+        "";
+
+    if (selectedCommodity && cols.commodity) {
         rows = rows.filter(
-            row => String(row[columns.commodity]) === String(commodity)
+            row => String(row[cols.commodity]) ===
+                selectedCommodity
         );
     }
 
-    rows.sort((a, b) => {
-        return String(a[columns.date]).localeCompare(
-            String(b[columns.date])
+    // Hindari mencampur produksi, luas, dan
+    // produktivitas dalam satu grafik.
+    if (cols.target) {
+        const available = [
+            ...new Set(
+                rows.map(row =>
+                    String(row[cols.target] || "")
+                        .trim()
+                        .toLowerCase()
+                )
+            )
+        ];
+
+        const targetProduksi = [
+            "produksi_ton",
+            "produksi",
+            "jumlah_produksi"
+        ].find(target => available.includes(target));
+
+        if (!targetProduksi) {
+            destroyChart(canvas.id);
+
+            setText(
+                "forecastingSummary",
+                "Data prediksi produksi tidak tersedia. " +
+                "Dataset hanya memuat target: " +
+                available.join(", ")
+            );
+
+            const riskContainer = document.getElementById("riskList");
+
+            if (riskContainer) {
+                riskContainer.textContent =
+                    "Indikator perubahan produksi belum dapat dihitung.";
+            }
+
+            return;
+        }
+
+        rows = rows.filter(row =>
+            String(row[cols.target] || "")
+                .trim()
+                .toLowerCase() === targetProduksi
         );
+    }
+
+    // Agregasi data per tahun.
+    const grouped = {};
+
+    rows.forEach(row => {
+        const year = String(row[cols.date] ?? "");
+
+        if (!year) return;
+
+        if (!grouped[year]) {
+            grouped[year] = {
+                actual: 0,
+                forecast: 0,
+                actualCount: 0,
+                forecastCount: 0
+            };
+        }
+
+        if (cols.value && cols.type) {
+            const value = toNumber(row[cols.value]);
+            const type = String(
+                row[cols.type] || ""
+            ).toLowerCase();
+
+            if (value === null) return;
+
+            if (
+                type.includes("aktual") ||
+                type.includes("actual")
+            ) {
+                grouped[year].actual += value;
+                grouped[year].actualCount++;
+            } else if (
+                type.includes("prediksi") ||
+                type.includes("forecast")
+            ) {
+                grouped[year].forecast += value;
+                grouped[year].forecastCount++;
+            }
+        } else {
+            const actual = cols.actual
+                ? toNumber(row[cols.actual])
+                : null;
+
+            const pred = cols.forecast
+                ? toNumber(row[cols.forecast])
+                : null;
+
+            if (actual !== null) {
+                grouped[year].actual += actual;
+                grouped[year].actualCount++;
+            }
+
+            if (pred !== null) {
+                grouped[year].forecast += pred;
+                grouped[year].forecastCount++;
+            }
+        }
     });
 
-    const labels = rows.map(row => row[columns.date]);
+    const labels = Object.keys(grouped).sort(
+        (a, b) => Number(a) - Number(b)
+    );
 
-    const actualValues = columns.actual
-        ? rows.map(row => toNumber(row[columns.actual]))
-        : rows.map(() => null);
+    const actualValues = labels.map(year =>
+        grouped[year].actualCount
+            ? grouped[year].actual
+            : null
+    );
 
-    const forecastValues = columns.forecast
-        ? rows.map(row => toNumber(row[columns.forecast]))
-        : rows.map(() => null);
-
-    const datasets = [];
-
-    if (columns.actual) {
-        datasets.push({
-            label: "Aktual",
-            data: actualValues,
-            borderColor: "#265322",
-            backgroundColor: "rgba(38,83,34,0.08)",
-            borderWidth: 3,
-            pointRadius: 3,
-            tension: 0.3,
-            spanGaps: false
-        });
-    }
-
-    if (columns.forecast) {
-        datasets.push({
-            label: "Prediksi",
-            data: forecastValues,
-            borderColor: "#ffcc00",
-            backgroundColor: "rgba(255,204,0,0.08)",
-            borderWidth: 3,
-            borderDash: [7, 5],
-            pointRadius: 3,
-            tension: 0.3,
-            spanGaps: false
-        });
-    }
+    const forecastValues = labels.map(year =>
+        grouped[year].forecastCount
+            ? grouped[year].forecast
+            : null
+    );
 
     createChart(canvas.id, {
         type: "line",
         data: {
             labels,
-            datasets
+            datasets: [
+                {
+                    label: "Aktual",
+                    data: actualValues,
+                    borderColor: "#265322",
+                    backgroundColor: "rgba(38,83,34,0.1)",
+                    borderWidth: 3,
+                    tension: 0.3,
+                    pointRadius: 4
+                },
+                {
+                    label: "Prediksi",
+                    data: forecastValues,
+                    borderColor: "#d6a900",
+                    borderDash: [6, 4],
+                    borderWidth: 3,
+                    tension: 0.3,
+                    pointRadius: 4
+                }
+            ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            interaction: {
-                intersect: false,
-                mode: "index"
-            },
             plugins: {
                 legend: chartLegend()
             },
@@ -1688,72 +2469,284 @@ function renderForecastChart(commodity = "") {
         }
     });
 
-    const actualCount = actualValues.filter(
-        value => value !== null
-    ).length;
-
-    const forecastCount = forecastValues.filter(
-        value => value !== null
-    ).length;
-
     setText(
         "forecastingSummary",
-        `${rows.length} data | ${actualCount} data aktual | ${forecastCount} data prediksi`
+        `${rows.length} data forecasting | ` +
+        `${labels.length} periode`
     );
 
-    renderForecastRisk(rows, columns);
+    renderForecastRisk(rows, cols);
 }
 
 
-function renderForecastRisk(rows, columns) {
+/* ==========================================================
+   ANALISIS PERUBAHAN PRODUKSI
+   Berbasis data Aktual dan Forecasting
+========================================================== */
 
+function renderForecastRisk(rows, cols) {
     const container = document.getElementById("riskList");
 
     if (!container) return;
 
-    const hasRiskColumns = columns.lower || columns.upper;
+    const targetRows = rows.filter(row => {
+        const target = String(
+            cols.target ? row[cols.target] : ""
+        ).trim().toLowerCase();
 
-    if (!hasRiskColumns) {
+        return [
+            "produksi_ton",
+            "produksi",
+            "jumlah_produksi"
+        ].includes(target);
+    });
+
+    if (!targetRows.length || !cols.value || !cols.type) {
         container.innerHTML = `
-            <p>
-                Dataset tidak menyediakan kolom batas risiko.
-            </p>
+            <div class="risk-empty">
+                <strong>Analisis belum tersedia</strong>
+                <p>
+                    Dibutuhkan data aktual dan prediksi
+                    dengan target produksi yang sama.
+                </p>
+            </div>
         `;
         return;
     }
 
-    container.innerHTML = rows.slice(-5).map(row => {
+    const actualByYear = {};
+    const forecastByYear = {};
 
-        const lower = columns.lower
-            ? toNumber(row[columns.lower])
-            : null;
+    targetRows.forEach(row => {
+        const year = Number(row[cols.date]);
+        const value = toNumber(row[cols.value]);
+        const type = String(
+            row[cols.type] || ""
+        ).trim().toLowerCase();
 
-        const upper = columns.upper
-            ? toNumber(row[columns.upper])
-            : null;
+        if (!Number.isInteger(year) || value === null) return;
 
-        return `
-            <div class="risk-item">
-                <strong>${escapeHTML(row[columns.date])}</strong>
-                <span>
-                    Batas bawah: ${formatNumber(lower)}
-                    |
-                    Batas atas: ${formatNumber(upper)}
-                </span>
+        if (
+            type.includes("aktual") ||
+            type.includes("actual")
+        ) {
+            actualByYear[year] =
+                (actualByYear[year] || 0) + value;
+        }
+
+        if (
+            type.includes("prediksi") ||
+            type.includes("forecast")
+        ) {
+            forecastByYear[year] =
+                (forecastByYear[year] || 0) + value;
+        }
+    });
+
+    const actualYears = Object.keys(actualByYear)
+        .map(Number)
+        .sort((a, b) => b - a);
+
+    const lastActualYear = actualYears[0];
+
+    const forecastYears = Object.keys(forecastByYear)
+        .map(Number)
+        .filter(year => year > lastActualYear)
+        .sort((a, b) => a - b);
+
+    const nextForecastYear = forecastYears[0];
+
+    if (
+        lastActualYear === undefined ||
+        nextForecastYear === undefined
+    ) {
+        container.innerHTML = `
+            <div class="risk-empty">
+                <strong>Perbandingan belum tersedia</strong>
+                <p>
+                    Data membutuhkan minimal satu periode aktual
+                    dan satu periode prediksi setelahnya.
+                </p>
             </div>
         `;
-    }).join("");
+        return;
+    }
+
+    const actualValue = actualByYear[lastActualYear];
+    const forecastValue = forecastByYear[nextForecastYear];
+
+    let percentage = null;
+
+    if (actualValue !== 0) {
+        percentage = (
+            (forecastValue - actualValue) /
+            Math.abs(actualValue)
+        ) * 100;
+    }
+
+    const isDecrease = percentage !== null && percentage < 0;
+    const isIncrease = percentage !== null && percentage > 0;
+
+    let statusLabel = "Produksi Relatif Stabil";
+    let statusClass = "risk-stable";
+    let statusIcon = "fa-minus";
+
+    if (isDecrease) {
+        statusLabel = "Prediksi Produksi Menurun";
+        statusClass = "risk-decrease";
+        statusIcon = "fa-arrow-trend-down";
+    } else if (isIncrease) {
+        statusLabel = "Prediksi Produksi Meningkat";
+        statusClass = "risk-increase";
+        statusIcon = "fa-arrow-trend-up";
+    }
+
+    // Perbandingan kecamatan: hanya kecamatan yang
+    // memiliki data aktual dan prediksi yang bisa
+    // dibandingkan secara berpasangan.
+    const kecamatanData = {};
+
+    if (cols.kecamatan) {
+        targetRows.forEach(row => {
+            const name = String(
+                row[cols.kecamatan] || ""
+            ).trim();
+
+            const year = Number(row[cols.date]);
+            const value = toNumber(row[cols.value]);
+            const type = String(
+                row[cols.type] || ""
+            ).toLowerCase();
+
+            if (!name || value === null) return;
+
+            if (!kecamatanData[name]) {
+                kecamatanData[name] = {
+                    actual: null,
+                    forecast: null
+                };
+            }
+
+            if (
+                year === lastActualYear &&
+                (type.includes("aktual") ||
+                 type.includes("actual"))
+            ) {
+                kecamatanData[name].actual =
+                    (kecamatanData[name].actual || 0) + value;
+            }
+
+            if (
+                year === nextForecastYear &&
+                (type.includes("prediksi") ||
+                 type.includes("forecast"))
+            ) {
+                kecamatanData[name].forecast =
+                    (kecamatanData[name].forecast || 0) + value;
+            }
+        });
+    }
+
+    const comparableRegions = Object.entries(kecamatanData)
+        .filter(([_, data]) =>
+            data.actual !== null &&
+            data.forecast !== null
+        );
+
+    const decreasedRegions = comparableRegions
+        .filter(([_, data]) =>
+            data.forecast < data.actual
+        );
+
+    const changeText = percentage === null
+        ? "Tidak dapat dihitung"
+        : `${percentage > 0 ? "+" : ""}${formatNumber(percentage)}%`;
+
+    const insight = isDecrease
+        ? "Hasil model memperkirakan penurunan produksi dibandingkan periode aktual terakhir. Perlu ditinjau bersama data cuaca, luas panen, dan kondisi pertanian setempat."
+        : isIncrease
+            ? "Hasil model memperkirakan peningkatan produksi dibandingkan periode aktual terakhir. Prediksi tetap perlu dipantau karena dapat berbeda dari realisasi."
+            : "Hasil prediksi relatif tidak berubah dari periode aktual terakhir, atau perubahan belum dapat dihitung.";
+
+    container.innerHTML = `
+        <div class="risk-analysis">
+
+            <div class="risk-indicator ${statusClass}">
+                <i class="fa-solid ${statusIcon}"></i>
+
+                <div>
+                    <small>Status Perubahan Produksi</small>
+                    <strong>${statusLabel}</strong>
+                </div>
+            </div>
+
+            <div class="risk-metric-grid">
+
+                <div class="risk-metric">
+                    <small>Aktual ${lastActualYear}</small>
+                    <strong>
+                        ${formatNumber(actualValue)}
+                    </strong>
+                    <span>ton</span>
+                </div>
+
+                <div class="risk-metric">
+                    <small>Prediksi ${nextForecastYear}</small>
+                    <strong>
+                        ${formatNumber(forecastValue)}
+                    </strong>
+                    <span>ton</span>
+                </div>
+
+            </div>
+
+            <div class="risk-change">
+                <span>Perubahan Prediksi</span>
+
+                <strong class="${statusClass}">
+                    ${changeText}
+                </strong>
+            </div>
+
+            ${comparableRegions.length ? `
+                <div class="risk-regions">
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        <strong>${decreasedRegions.length}</strong>
+                        dari ${comparableRegions.length}
+                        kecamatan yang dapat dibandingkan
+                        diprediksi mengalami penurunan.
+                    </span>
+                </div>
+            ` : ""}
+
+            <div class="risk-insight">
+                <strong>Interpretasi</strong>
+                <p>${insight}</p>
+            </div>
+
+            <p class="risk-disclaimer">
+                Indikator ini menunjukkan perubahan hasil
+                forecasting, bukan peringatan dini resmi.
+                Angka hanya dapat dibandingkan secara
+                langsung jika cakupan kecamatan dan target
+                kedua periode setara.
+            </p>
+
+        </div>
+    `;
 }
 
 
-// Ketika komoditas forecasting dipilih
 function setupForecastFilter() {
-
     const dropdown = document.getElementById(
         "forecastKomoditas"
     );
 
-    if (!dropdown || dropdown.dataset.listenerAdded) return;
+    if (!dropdown || dropdown.dataset.listenerAdded) {
+        return;
+    }
 
     dropdown.addEventListener("change", () => {
         selectedForecastCommodity = dropdown.value;
@@ -1764,240 +2757,155 @@ function setupForecastFilter() {
 }
 
 
-// Tombol muat ulang forecasting
-function loadForecastingFiltered() {
-    const dropdown = document.getElementById("forecastKomoditas");
+/* ==========================================================
+   17. HARGA PANGAN
+========================================================== */
 
-    renderForecastChart(dropdown?.value || "");
+function getPriceValue(row) {
+    return toNumber(getValue(row, [
+        "harga",
+        "price",
+        "harga_konsumen",
+        "harga_rata_rata",
+        "value"
+    ]));
 }
 
-
-/* =========================================================
-   19. HARGA PANGAN
-========================================================= */
+function getPriceName(row) {
+    return getValue(row, [
+        "komoditas",
+        "nama_komoditas",
+        "name",
+        "commodity"
+    ], "—");
+}
 
 async function loadPriceData() {
-
     try {
         const response = await apiFetch(
             "/api/v1/harga-pangan"
         );
 
-        const rows = extractPriceRecords(response);
+        const allRows = findFirstArray(response);
 
-        if (!rows.length) {
-            setPriceTableMessage(
-                "Data harga belum tersedia."
+        if (!allRows.length) {
+            setTableEmpty(
+                "tabelHarga",
+                "Data harga pangan belum tersedia.",
+                5
             );
-            destroyChart("priceChart");
             return;
+        }
+
+        const highest = [...allRows].sort(
+            (a, b) =>
+                (getPriceValue(b) || 0) -
+                (getPriceValue(a) || 0)
+        )[0];
+
+        setText(
+            "hargaTertinggiNama",
+            getPriceName(highest)
+        );
+
+        setText(
+            "hargaTertinggiNilai",
+            formatCurrency(getPriceValue(highest))
+        );
+
+        const filter = document.getElementById(
+            "filterHargaKomoditas"
+        )?.value || "";
+
+        const rows = allRows.filter(
+            row =>
+                !filter ||
+                String(getPriceName(row))
+                    .toLowerCase()
+                    .includes(filter.toLowerCase())
+        );
+
+        const summary = document.getElementById(
+            "hargaSummary"
+        );
+
+        if (summary) {
+            summary.innerHTML = `
+                <p>
+                    ${rows.length} data harga tersedia.
+                </p>
+            `;
         }
 
         renderPriceTable(rows);
         renderPriceChart(rows);
-
-        const highest = [...rows]
-            .sort((a, b) => {
-                const priceA = getPriceValue(a);
-                const priceB = getPriceValue(b);
-
-                return (priceB || 0) - (priceA || 0);
-            })[0];
-
-        if (highest) {
-            setText(
-                "hargaTertinggiNama",
-                getValue(highest, [
-                    "komoditas",
-                    "nama_komoditas",
-                    "name",
-                    "commodity"
-                ], "—")
-            );
-
-            setText(
-                "hargaTertinggiNilai",
-                formatCurrency(getPriceValue(highest))
-            );
-        }
-
     } catch (error) {
         console.error("Harga pangan:", error);
 
-        setPriceTableMessage(
-            `Gagal memuat harga pangan: ${error.message}`
+        setText("hargaTertinggiNama", "—");
+        setText("hargaTertinggiNilai", "—");
+        setText(
+            "hargaTertinggiPeriode",
+            "Data harga belum tersedia"
         );
 
-        destroyChart("priceChart");
+        setTableEmpty(
+            "tabelHarga",
+            error.message,
+            5
+        );
     }
 }
 
-
-function extractPriceRecords(response) {
-
-    if (Array.isArray(response)) return response;
-
-    if (Array.isArray(response?.data)) return response.data;
-
-    if (Array.isArray(response?.data?.data)) {
-        return response.data.data;
-    }
-
-    if (Array.isArray(response?.result)) {
-        return response.result;
-    }
-
-    if (Array.isArray(response?.results)) {
-        return response.results;
-    }
-
-    return [];
+function loadHarga() {
+    return loadPriceData();
 }
-
-
-function getPriceValue(row) {
-
-    return toNumber(
-        getValue(row, [
-            "harga",
-            "price",
-            "harga_konsumen",
-            "harga_rata_rata",
-            "value"
-        ])
-    );
-}
-
-
-function formatCurrency(value) {
-
-    if (value === null || value === undefined) return "—";
-
-    return Number(value).toLocaleString("id-ID", {
-        style: "currency",
-        currency: "IDR",
-        maximumFractionDigits: 0
-    });
-}
-
-
-function setPriceTableMessage(message) {
-
-    const table = document.getElementById("tabelHarga");
-
-    if (!table) return;
-
-    table.innerHTML = `
-        <tr>
-            <td colspan="5">${escapeHTML(message)}</td>
-        </tr>
-    `;
-}
-
 
 function renderPriceTable(rows) {
-
-    const table = document.getElementById("tabelHarga");
+    const table = document.getElementById(
+        "tabelHarga"
+    );
 
     if (!table) return;
 
-    table.innerHTML = rows.map(row => {
-
-        const commodity = getValue(row, [
-            "komoditas",
-            "nama_komoditas",
-            "name",
-            "commodity"
-        ], "—");
-
-        const price = getPriceValue(row);
-
-        const unit = getValue(row, [
-            "satuan",
-            "unit"
-        ], "—");
-
-        const location = getValue(row, [
-            "wilayah",
-            "kabupaten",
-            "kota",
-            "location"
-        ], "—");
-
-        const date = getValue(row, [
-            "tanggal",
-            "date",
-            "periode"
-        ], "—");
-
-        return `
-            <tr>
-                <td>${escapeHTML(commodity)}</td>
-                <td>${formatCurrency(price)}</td>
-                <td>${escapeHTML(unit)}</td>
-                <td>${escapeHTML(location)}</td>
-                <td>${escapeHTML(date)}</td>
-            </tr>
-        `;
-    }).join("");
+    table.innerHTML = rows.map(row => `
+        <tr>
+            <td>${escapeHTML(getPriceName(row))}</td>
+            <td>${formatCurrency(getPriceValue(row))}</td>
+            <td>${escapeHTML(getValue(row, ["satuan", "unit"], "—"))}</td>
+            <td>${escapeHTML(getValue(row, ["wilayah", "provinsi"], "—"))}</td>
+            <td>${escapeHTML(getValue(row, ["tanggal", "periode"], "—"))}</td>
+        </tr>
+    `).join("");
 }
 
-
 function renderPriceChart(rows) {
-
-    const canvas = document.getElementById("priceChart");
-
-    if (!canvas) return;
-
     const grouped = {};
 
     rows.forEach(row => {
-
-        const commodity = getValue(row, [
-            "komoditas",
-            "nama_komoditas",
-            "name",
-            "commodity"
-        ], "Lainnya");
-
+        const name = getPriceName(row);
         const price = getPriceValue(row);
 
         if (price === null) return;
 
-        grouped[commodity] = price;
+        grouped[name] = price;
     });
-
-    const labels = Object.keys(grouped);
-
-    if (!labels.length) {
-        destroyChart("priceChart");
-        return;
-    }
 
     createChart("priceChart", {
         type: "bar",
         data: {
-            labels,
+            labels: Object.keys(grouped),
             datasets: [{
-                label: "Harga Pangan (Rp)",
-                data: labels.map(label => grouped[label]),
-                backgroundColor: [
-                    "#265322",
-                    "#60982c",
-                    "#ffcc00",
-                    "#8ab45b",
-                    "#d6a900"
-                ],
-                borderRadius: 6
+                label: "Harga Pangan",
+                data: Object.values(grouped),
+                backgroundColor: CHART_COLORS
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: {
-                    display: false
-                }
+                legend: { display: false }
             },
             scales: chartScales()
         }
@@ -2005,15 +2913,152 @@ function renderPriceChart(rows) {
 }
 
 
-/* =========================================================
-   20. DATA CENTER
-========================================================= */
+/* ==========================================================
+   18. CUACA BMKG
+========================================================== */
+
+async function loadDashboardWeather() {
+    if (!DEFAULT_ADM4) {
+        setText(
+            "dashboardWeather",
+            "Kode wilayah BMKG belum diisi"
+        );
+
+        setText(
+            "weatherDescription",
+            "Kode wilayah BMKG belum dikonfigurasi."
+        );
+
+        return;
+    }
+
+    try {
+        const response = await apiFetch(
+            `/api/v1/cuaca/${encodeURIComponent(DEFAULT_ADM4)}`
+        );
+
+        const weather = response.cuaca || {};
+
+        const temperature =
+            weather.t !== undefined
+                ? `${weather.t}°C`
+                : "—";
+
+        setText("dashboardTemperature", temperature);
+
+        setText(
+            "dashboardWeather",
+            weather.weather_desc || "—"
+        );
+
+        setText("weatherTemperature", temperature);
+        setText(
+            "weatherDescription",
+            weather.weather_desc || "—"
+        );
+
+        setText(
+            "weatherHumidity",
+            weather.hu !== undefined
+                ? `${weather.hu}%`
+                : "—"
+        );
+
+        setText(
+            "weatherWind",
+            weather.ws !== undefined
+                ? `${weather.ws} km/j`
+                : "—"
+        );
+
+        setText(
+            "weatherRain",
+            weather.tp !== undefined
+                ? `${weather.tp} mm`
+                : "—"
+        );
+
+        renderWeatherForecast(
+            response.prakiraan || []
+        );
+
+        loadWeatherWarning(DEFAULT_ADM4);
+    } catch (error) {
+        console.error("Weather:", error);
+
+        setText(
+            "dashboardWeather",
+            "Data cuaca gagal dimuat"
+        );
+    }
+}
+
+function renderWeatherForecast(items) {
+    const container = document.getElementById(
+        "weatherForecast"
+    );
+
+    if (!container) return;
+
+    container.innerHTML = items.slice(0, 5)
+        .map(item => `
+            <div>
+                <strong>
+                    ${escapeHTML(item.local_datetime || "—")}
+                </strong>
+                <span>${escapeHTML(item.t ?? "—")}°C</span>
+                <small>
+                    ${escapeHTML(item.weather_desc || "")}
+                </small>
+            </div>
+        `).join("");
+}
+
+async function loadWeatherWarning(kode) {
+    if (!kode) return;
+
+    try {
+        const response = await apiFetch(
+            `/api/v1/ews-cuaca/${encodeURIComponent(kode)}`
+        );
+
+        setText(
+            "weatherWarningStatus",
+            response.status
+        );
+
+        setText(
+            "weatherWarningMessage",
+            response.pesan
+        );
+
+        const container = document.getElementById(
+            "weatherRiskList"
+        );
+
+        if (container) {
+            container.innerHTML = `
+                <div class="risk-item">
+                    <strong>
+                        ${escapeHTML(response.status)}
+                    </strong>
+                    <span>
+                        ${escapeHTML(response.pesan)}
+                    </span>
+                </div>
+            `;
+        }
+    } catch (error) {
+        console.error("Weather warning:", error);
+    }
+}
+
+
+/* ==========================================================
+   19. DATA CENTER
+========================================================== */
 
 async function loadDataCenter() {
-
-    setTableLoading("tabelDataset", 4);
-    setTableLoading("tabelHasilModel", 4);
-
     try {
         const response = await apiFetch(
             "/api/v1/data-center"
@@ -2021,70 +3066,53 @@ async function loadDataCenter() {
 
         const files = getRecords(response);
 
-        if (!files.length) {
-            setTableEmpty(
-                "tabelDataset",
-                "Belum ada file dataset atau laporan.",
-                4
-            );
-
-            setTableEmpty(
-                "tabelHasilModel",
-                "Belum ada file hasil pemodelan.",
-                4
-            );
-
-            renderReportList([]);
-            return;
-        }
-
-        const datasets = files.filter(file =>
-            String(file.kategori).toLowerCase().includes("dataset")
+        const datasets = files.filter(
+            file => String(file.kategori)
+                .toLowerCase()
+                .includes("dataset")
         );
 
-        const modelFiles = datasets.filter(file =>
-            /clustering|rekomendasi|timeseries|comparison/i.test(file.nama)
+        const models = datasets.filter(
+            file => /clustering|rekomendasi|timeseries|comparison/i
+                .test(file.nama)
         );
 
-        const reports = files.filter(file =>
-            String(file.kategori).toLowerCase().includes("laporan")
+        const reports = files.filter(
+            file => String(file.kategori)
+                .toLowerCase()
+                .includes("laporan")
         );
 
-        renderDataCenterTable("tabelDataset", datasets);
-        renderDataCenterTable("tabelHasilModel", modelFiles);
+        renderDataCenterTable(
+            "tabelDataset",
+            datasets
+        );
+
+        renderDataCenterTable(
+            "tabelHasilModel",
+            models
+        );
+
         renderReportList(reports);
-
     } catch (error) {
         console.error("Data Center:", error);
 
         setTableEmpty(
             "tabelDataset",
-            `Gagal memuat data: ${error.message}`,
-            4
+            error.message
         );
-
-        setTableEmpty(
-            "tabelHasilModel",
-            `Gagal memuat data: ${error.message}`,
-            4
-        );
-
-        renderReportList([]);
     }
 }
 
-
-function renderDataCenterTable(tableId, files) {
-
-    const table = document.getElementById(tableId);
+function renderDataCenterTable(id, files) {
+    const table = document.getElementById(id);
 
     if (!table) return;
 
     if (!files.length) {
         setTableEmpty(
-            tableId,
-            "Tidak ada file pada kategori ini.",
-            4
+            id,
+            "Belum ada file dataset."
         );
         return;
     }
@@ -2098,9 +3126,9 @@ function renderDataCenterTable(tableId, files) {
                 <button
                     type="button"
                     class="green-button"
-                    onclick="downloadDataCenter('${escapeHTML(file.endpoint)}')"
+                    data-endpoint="${escapeHTML(file.endpoint)}"
+                    onclick="downloadDataCenter(this.dataset.endpoint)"
                 >
-                    <i class="fas fa-download"></i>
                     Download
                 </button>
             </td>
@@ -2108,20 +3136,12 @@ function renderDataCenterTable(tableId, files) {
     `).join("");
 }
 
-
 function renderReportList(files) {
-
     const container = document.getElementById(
         "daftarLaporan"
     );
 
     if (!container) return;
-
-    if (!files.length) {
-        container.innerHTML =
-            "<p>Belum ada laporan CSV.</p>";
-        return;
-    }
 
     container.innerHTML = files.map(file => `
         <div class="report-item">
@@ -2129,11 +3149,10 @@ function renderReportList(files) {
                 <strong>${escapeHTML(file.nama)}</strong>
                 <p>${formatNumber(file.ukuran_kb)} KB</p>
             </div>
-
             <button
-                type="button"
                 class="green-button"
-                onclick="downloadDataCenter('${escapeHTML(file.endpoint)}')"
+                data-endpoint="${escapeHTML(file.endpoint)}"
+                onclick="downloadDataCenter(this.dataset.endpoint)"
             >
                 Download
             </button>
@@ -2141,98 +3160,117 @@ function renderReportList(files) {
     `).join("");
 }
 
-
-/* =========================================================
-   21. DOWNLOAD FILE DATA CENTER
-========================================================= */
-
 function downloadDataCenter(endpoint) {
-
-    if (!endpoint) {
-        alert("Endpoint download tidak tersedia.");
-        return;
-    }
+    if (!endpoint) return;
 
     const url = endpoint.startsWith("http")
         ? endpoint
-        : `${API_BASE_URL}${endpoint}`;
+        : API_BASE_URL + endpoint;
 
     window.open(url, "_blank");
 }
 
-
-// Download laporan berdasarkan nama kategori
 function downloadReport(category) {
-
-    const reportFiles = {
+    const files = {
         produksi: "output_clustering_pangan.csv",
         harga: "output_rekomendasi_pangan.csv",
         cuaca: "output_timeseries_pangan.csv"
     };
 
-    const filename = reportFiles[category];
+    const file = files[category];
 
-    if (!filename) {
+    if (!file) {
         alert("Jenis laporan tidak ditemukan.");
         return;
     }
 
-    const endpoint =
-        `/api/v1/data-center/download/dataset_pemodelan/${filename}`;
-
-    downloadDataCenter(endpoint);
+    downloadDataCenter(
+        "/api/v1/data-center/download/dataset_pemodelan/" +
+        file
+    );
 }
 
 
-/* =========================================================
-   22. UPLOAD DATASET
-========================================================= */
+/* ==========================================================
+   20. LOGIN ADMIN
+========================================================== */
 
-async function uploadDatasetFile(button) {
+async function loginAdmin() {
+    const username = prompt("Username:");
 
-    const input = document.getElementById("uploadDataset");
+    if (!username) return;
 
-    if (!input || !input.files || !input.files.length) {
-        alert("Pilih file CSV atau Excel terlebih dahulu.");
-        return;
+    const password = prompt("Password:");
+
+    if (!password) return;
+
+    try {
+        const result = await apiFetch(
+            "/api/v1/auth/login",
+            {
+                method: "POST",
+                body: new URLSearchParams({
+                    username,
+                    password
+                })
+            }
+        );
+
+        localStorage.setItem(
+            "access_token",
+            result.access_token
+        );
+
+        alert(
+            `Login berhasil sebagai ${result.username}`
+        );
+
+        loadAuditTrail();
+    } catch (error) {
+        alert(`Login gagal: ${error.message}`);
     }
+}
 
-    const file = input.files[0];
 
-    const allowedExtensions = [".csv", ".xlsx", ".xls"];
+/* ==========================================================
+   21. UPLOAD DATASET
+========================================================== */
 
-    const extension = file.name.substring(
-        file.name.lastIndexOf(".")
-    ).toLowerCase();
+async function uploadDatasetFile() {
+    const input = document.getElementById(
+        "uploadDataset"
+    );
 
-    if (!allowedExtensions.includes(extension)) {
-        alert("Format file harus CSV atau Excel.");
+    if (!input?.files?.length) {
+        alert("Pilih file terlebih dahulu.");
         return;
     }
 
     const token = getAuthToken();
 
     if (!token) {
-        alert(
-            "Token login tidak ditemukan. Silakan login sebagai admin terlebih dahulu."
-        );
+        alert("Silakan login sebagai admin.");
         return;
     }
 
-    const formData = new FormData();
+    const file = input.files[0];
 
+    const confirmed = confirm(
+        "Dataset upload akan mengganti sumber data utama " +
+        "yang aktif, tetapi tidak menghapus file modeling asli. " +
+        "Lanjutkan?"
+    );
+
+    if (!confirmed) return;
+
+    const formData = new FormData();
     formData.append("file", file);
 
-    const originalText = button?.textContent;
-
-    if (button) {
-        button.disabled = true;
-        button.textContent = "Mengunggah...";
-    }
+    input.disabled = true;
 
     try {
-        const response = await fetch(
-            `${API_BASE_URL}/api/v1/tanaman-pangan/upload`,
+        const result = await apiFetch(
+            "/api/v1/tanaman-pangan/upload",
             {
                 method: "POST",
                 headers: {
@@ -2242,64 +3280,44 @@ async function uploadDatasetFile(button) {
             }
         );
 
-        if (!response.ok) {
-            let message = `HTTP ${response.status}`;
-
-            try {
-                const errorData = await response.json();
-                message = errorData.detail || message;
-            } catch (_) {}
-
-            throw new Error(message);
-        }
-
-        const result = await response.json();
-
         alert(
-            `${result.message}\nTotal data: ${result.total_data}`
+            `${result.message}\nTotal: ${result.total_data}`
         );
 
-        input.value = "";
-
         await Promise.allSettled([
-            loadDashboard(),
-            loadMonitoringData(),
-            loadDataCenter()
-        ]);
-
+        loadDashboard(),
+        loadMonitoring(),
+        loadStatusWilayah(),
+        loadFilterKecamatan(),
+        loadDataCenter()
+    ]);
     } catch (error) {
-        console.error("Upload dataset:", error);
-
         alert(`Upload gagal: ${error.message}`);
-
     } finally {
-        if (button) {
-            button.disabled = false;
-            button.textContent = originalText || "Upload Dataset";
-        }
+        input.disabled = false;
+        input.value = "";
     }
 }
 
 
-/* =========================================================
-   23. AUDIT TRAIL
-========================================================= */
+/* ==========================================================
+   22. AUDIT TRAIL
+========================================================== */
 
 async function loadAuditTrail() {
-
-    const table = document.getElementById("tabelAudit");
+    const table = document.getElementById(
+        "tabelAudit"
+    );
 
     if (!table) return;
-
-    setTableLoading("tabelAudit", 4);
 
     const token = getAuthToken();
 
     if (!token) {
         setTableEmpty(
             "tabelAudit",
-            "Silakan login sebagai admin untuk melihat audit trail.",
-            4
+            "Login untuk melihat audit trail.",
+            5
         );
         return;
     }
@@ -2316,200 +3334,173 @@ async function loadAuditTrail() {
 
         const rows = getRecords(response);
 
-        if (!rows.length) {
-            setTableEmpty(
-                "tabelAudit",
-                "Belum ada aktivitas tercatat.",
-                4
-            );
-            return;
-        }
-
         table.innerHTML = rows.map(row => `
             <tr>
-                <td>${escapeHTML(row.username ?? "—")}</td>
-                <td>${escapeHTML(row.aktivitas ?? "—")}</td>
-                <td>${escapeHTML(row.waktu ?? "—")}</td>
+                <td>${escapeHTML(row.waktu)}</td>
+                <td>${escapeHTML(row.username)}</td>
+                <td>${escapeHTML(row.aktivitas)}</td>
+                <td>${escapeHTML(row.details)}</td>
                 <td>
-                    <span class="status normal">Tercatat</span>
+                    <span class="status normal">
+                        Tercatat
+                    </span>
                 </td>
             </tr>
         `).join("");
-
     } catch (error) {
-        console.error("Audit trail:", error);
-
         setTableEmpty(
             "tabelAudit",
-            `Gagal memuat audit trail: ${error.message}`,
-            4
+            error.message,
+            5
         );
     }
 }
 
 
-/* =========================================================
-   24. CUACA DAN EARLY WARNING SYSTEM
-========================================================= */
+/* ==========================================================
+   23. CSS TAMBAHAN PETA DAN STATUS
+========================================================== */
 
-// Backend membutuhkan kode wilayah BMKG (adm4).
-// Karena belum ada pemetaan kode kecamatan pada frontend,
-// fungsi ini menerima kode wilayah melalui parameter.
+function injectMonitoringMapStyles() {
+    if (document.getElementById(
+        "agridash-monitoring-style"
+    )) return;
 
-async function loadWeather(kodeKecamatan) {
+    const style = document.createElement("style");
 
-    if (!kodeKecamatan) {
-        console.warn(
-            "Kode wilayah BMKG belum tersedia."
-        );
+    style.id = "agridash-monitoring-style";
+
+    style.textContent = `
+        #kediriMap {
+            width: 100%;
+            height: 430px;
+            min-height: 330px;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #edf2e8;
+        }
+
+        #statusWilayahList {
+            max-height: 430px;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+
+        .agri-status-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 4px;
+            border-bottom: 1px solid #edf1eb;
+            font-size: 13px;
+        }
+
+        .agri-status-pill {
+            display: inline-block;
+            padding: 6px 11px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .agri-monitoring-extra {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .agri-monitoring-extra > .card {
+            min-width: 0;
+        }
+
+        @media (max-width: 900px) {
+            .agri-monitoring-extra {
+                grid-template-columns: 1fr;
+            }
+        }
+    `;
+
+    document.head.appendChild(style);
+}
+
+
+/* ==========================================================
+   24. INITIALIZATION
+========================================================== */
+
+function setupFilterButton() {
+    const dropdown = document.getElementById(
+        "filterKecamatan"
+    );
+
+    if (!dropdown || dropdown.dataset.listenerAdded) {
         return;
     }
 
-    try {
-        const response = await apiFetch(
-            `/api/v1/cuaca/${encodeURIComponent(kodeKecamatan)}`
-        );
-
-        const weather = response.cuaca || {};
-
-        setText(
-            "weatherTemperature",
-            weather.t !== undefined
-                ? `${weather.t}°C`
-                : "—"
-        );
-
-        setText(
-            "weatherHumidity",
-            weather.hu !== undefined
-                ? `${weather.hu}%`
-                : "—"
-        );
-
-        setText(
-            "weatherCondition",
-            weather.weather_desc || weather.weather || "—"
-        );
-
-    } catch (error) {
-        console.error("Weather:", error);
-    }
-}
-
-
-async function loadWeatherWarning(kodeKecamatan) {
-
-    if (!kodeKecamatan) return;
-
-    try {
-        const response = await apiFetch(
-            `/api/v1/ews-cuaca/${encodeURIComponent(kodeKecamatan)}`
-        );
-
-        setText(
-            "weatherWarningStatus",
-            response.status || "—"
-        );
-
-        setText(
-            "weatherWarningMessage",
-            response.pesan || "—"
-        );
-
-    } catch (error) {
-        console.error("Weather warning:", error);
-    }
-}
-
-
-/* =========================================================
-   25. MANUAL FORECASTING FILTER
-========================================================= */
-
-function loadForecastingByCommodity() {
-
-    const dropdown = document.getElementById(
-        "forecastKomoditas"
+    dropdown.addEventListener(
+        "change",
+        loadMonitoring
     );
 
-    if (!dropdown) return;
-
-    selectedForecastCommodity = dropdown.value;
-
-    renderForecastChart(selectedForecastCommodity);
+    dropdown.dataset.listenerAdded = "true";
 }
 
-
-/* =========================================================
-   26. SETUP EVENT LISTENERS
-========================================================= */
-
-function setupUploadButton() {
-
-    const button = document.getElementById(
-        "btnUploadDataset"
+async function initializeAgriDash() {
+    console.log(
+        "AgriDash initialized | API:",
+        API_BASE_URL
     );
 
-    if (!button || button.dataset.listenerAdded) return;
+    setCurrentDate();
+    injectMonitoringMapStyles();
+    setupFilterButton();
+    setupForecastFilter();
 
-    button.addEventListener("click", function() {
-        uploadDatasetFile(this);
-    });
-
-    button.dataset.listenerAdded = "true";
-}
-
-
-function setupRefreshButton() {
-
-    const button = document.getElementById(
-        "btnRefreshDataCenter"
-    );
-
-    if (!button || button.dataset.listenerAdded) return;
-
-    button.addEventListener("click", loadDataCenter);
-
-    button.dataset.listenerAdded = "true";
-}
-
-
-/* =========================================================
-   27. INITIALIZE APPLICATION
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", async function() {
-
-    console.log("AgriDash frontend initialized.");
-
-    // Dashboard
-    await loadDashboard();
-
-    // Monitoring
     await Promise.allSettled([
-        loadMonitoringData(),
+        loadDashboard(),
         loadFilterKecamatan(),
+        loadStatusWilayah(),
+        loadMonitoringData(),
+        loadHeatmap(),
         loadPCA(),
-        loadHeatmap()
-    ]);
-
-    // Ketahanan Pangan
-    await Promise.allSettled([
         loadClustering(),
         loadRecommendations(),
-        loadModelComparison()
+        loadModelComparison(),
+        loadForecasting(),
+        loadDataCenter()
     ]);
 
-    // Forecasting
-    setupForecastFilter();
-    await loadForecasting();
+    console.log("AgriDash initialization completed.");
+}
 
-    // Data Center
-    await loadDataCenter();
+if (document.readyState === "loading") {
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeAgriDash,
+        { once: true }
+    );
+} else {
+    initializeAgriDash();
+}
 
-    // Event listeners
-    setupFilterButton();
-    setupUploadButton();
-    setupRefreshButton();
+document.addEventListener("agri:datechange", function (event) {
+    const selectedDate = event.detail.date;
 
+    const year = selectedDate.getFullYear();
+    const month = String(
+        selectedDate.getMonth() + 1
+    ).padStart(2, "0");
+    const day = String(
+        selectedDate.getDate()
+    ).padStart(2, "0");
+
+    window.AGRI_DATE_FILTER = `${year}-${month}-${day}`;
+
+    console.log(
+        "Tanggal AgriDash dipilih:",
+        window.AGRI_DATE_FILTER
+    );
 });

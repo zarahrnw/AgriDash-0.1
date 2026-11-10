@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agri Dash V.01 - Kabupaten Kediri</title>
+    <title>Agri Dash V.01</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -71,9 +71,6 @@
                 <i class="fa-solid fa-users"></i><span>Role & User Management</span>
             </button>
 
-            <button class="menu-item" onclick="showPage('integration', this)">
-                <i class="fa-solid fa-link"></i><span>Integrasi e-Tani / SIP</span>
-            </button>
         </div>
 
         <div class="sidebar-footer">
@@ -95,11 +92,19 @@
                 <input type="text" id="globalSearch" placeholder="Cari komoditas, kecamatan, atau informasi...">
             </div>
 
-            <div class="top-actions">
-                <div class="date-picker">
+            <div class="agri-date-wrap" id="dateWrap">
+
+                <!-- Tombol kalender -->
+                <button type="button" class="agri-date-btn" id="dateBtn">
                     <i class="fa-regular fa-calendar"></i>
-                    <span id="currentDate">Memuat tanggal...</span>
-                </div>
+                    <span id="dateLabel">Memuat tanggal...</span>
+                    <i class="fa-solid fa-chevron-down date-chevron"></i>
+                </button>
+
+                <!-- Popup kalender -->
+                <div class="calendar-pop" id="calendarPop"></div>
+
+            </div>
 
                 <div class="notification">
                     <i class="fa-regular fa-bell"></i>
@@ -114,8 +119,21 @@
                     </div>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
-            </div>
         </header>
+
+        <!-- INFORMASI TANGGAL YANG DIPILIH -->
+        <div id="dateNotice" class="date-notice" hidden>
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+                Tanggal dipilih:
+                <strong id="noticeDate"></strong>
+            </span>
+
+            <button type="button" id="backToToday">
+                Kembali ke Hari Ini
+            </button>
+        </div>
 
         <!-- DASHBOARD -->
         <section id="dashboard" class="page active-page">
@@ -165,7 +183,7 @@
                 <div class="stat-card">
                     <div class="stat-icon green"><i class="fa-solid fa-chart-column"></i></div>
                     <span class="stat-label">Produktivitas</span>
-                    <h2><span id="totalProduktivitas">Memuat...</span><small> ton/ha</small></h2>
+                    <h2><span id="totalProduktivitas">Memuat...</span><span class="stat-unit">Kuintal/Ha</span></h2>
                     <div class="stat-growth" id="growthProduktivitas">--</div>
                     <small class="comparison">Produksi per luas panen</small>
                 </div>
@@ -193,10 +211,10 @@
                 <div class="card trend-card">
                     <div class="card-header">
                         <div>
-                            <h3>Tren Produksi</h3>
-                            <small>Perkembangan produksi berdasarkan periode</small>
+                            <h3>Perbandingan Komoditas</h3>
+                            <small>Perbandingan indikator pertanian berdasarkan komoditas</small>
                         </div>
-                        <select id="dashboardTrendFilter">
+                        <select id="dashboardTrendFilter" style="display:none;">
                             <option value="6">6 Bulan Terakhir</option>
                             <option value="12">1 Tahun</option>
                         </select>
@@ -213,15 +231,48 @@
                     </div>
                 </div>
 
+                <!-- STATUS WILAYAH DASHBOARD -->
                 <div class="card status-card">
+
                     <div class="card-header">
-                        <h3>Status Wilayah</h3>
-                        <a href="#" onclick="showPage('monitoring');return false;">Lihat Detail →</a>
+                        <div>
+                            <h3>Peta Status Wilayah</h3>
+                            <small>Potensi pertanian Kabupaten Kediri</small>
+                        </div>
+
+                        <a href="#"
+                        onclick="showPage('monitoring');return false;">
+                            Lihat Detail →
+                        </a>
                     </div>
 
-                    <div id="dashboardClusterSummary" class="map-container">
-                        <p>Memuat ringkasan hasil clustering...</p>
+                    <!-- PETA INTERAKTIF -->
+                    <div id="dashboardKediriMap"></div>
+
+                    <!-- LEGENDA WARNA -->
+                    <div class="map-legend">
+                        <span>
+                            <i style="background:#D95363;"></i>
+                            Rendah
+                        </span>
+
+                        <span>
+                            <i style="background:#9066B5;"></i>
+                            Sedang
+                        </span>
+
+                        <span>
+                            <i style="background:#2878C8;"></i>
+                            Tinggi
+                        </span>
                     </div>
+
+                    <!-- RINGKASAN CLUSTER -->
+                    <div id="dashboardClusterSummary"
+                        class="dashboard-cluster-summary">
+                        Memuat status wilayah...
+                    </div>
+
                 </div>
 
                 <div class="card warning-list-card">
@@ -260,14 +311,20 @@
         </section>
 
         <!-- MONITORING WILAYAH -->
+        
+        <!-- =========================================
+            MONITORING WILAYAH
+        ========================================= -->
         <section id="monitoring" class="page">
+
             <div class="page-title">
                 <div>
                     <h1>Monitoring Wilayah</h1>
-                    <p>Pantau kondisi pertanian berdasarkan kecamatan dan komoditas.</p>
+                    <p>Pantau potensi pertanian berdasarkan kecamatan dan komoditas.</p>
                 </div>
             </div>
 
+            <!-- FILTER -->
             <div class="filter-card">
                 <select id="filterKecamatan">
                     <option value="">Semua Kecamatan</option>
@@ -276,25 +333,91 @@
                 <select id="filterKomoditas">
                     <option value="">Semua Komoditas</option>
                     <option value="Padi">Padi</option>
-                    <option value="Jagung">Jagung</option>
+                    <option value="Kacang Tanah">Kacang Tanah</option>
                     <option value="Kedelai">Kedelai</option>
-                    <option value="Cabai">Cabai</option>
+                    <option value="Ketela Pohon">Ketela Pohon</option>
+                    <option value="Ubi Jalar">Ubi Jalar</option>
                 </select>
 
                 <select id="filterTahun">
                     <option value="">Semua Tahun</option>
                 </select>
 
-                <button class="green-button" onclick="loadMonitoring()">Terapkan</button>
+                <button
+                    class="green-button"
+                    onclick="loadMonitoring()"
+                >
+                    Terapkan
+                </button>
             </div>
 
-            <div class="two-column">
-                <div class="card large-map">
+            <!-- PETA DAN STATUS WILAYAH -->
+            <div class="agri-monitoring-extra">
+
+                <div class="card monitoring-map-card">
                     <div class="card-header">
-                        <h3>Peta Kondisi Pertanian</h3>
+                        <div>
+                            <h3>Peta Potensi Pertanian Kabupaten Kediri</h3>
+                            <small>
+                                Distribusi status berdasarkan clustering K-Means
+                            </small>
+                        </div>
                     </div>
-                    <div class="large-map-area" id="heatmapKecamatan">
-                        <p>Memuat heatmap kecamatan...</p>
+
+                    <div id="kediriMap"></div>
+
+                    <div class="map-legend">
+                        <span>
+                            <i style="background:#D95363"></i>
+                            Potensi Rendah
+                        </span>
+                        <span>
+                            <i style="background:#9066B5"></i>
+                            Potensi Sedang
+                        </span>
+                        <span>
+                            <i style="background:#2878C8"></i>
+                            Potensi Tinggi
+                        </span>
+                        <span>
+                            <i style="background:#E5E7EB"></i>
+                            Belum Ada Data
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card monitoring-status-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Status Wilayah</h3>
+                            <small>Kategori potensi setiap kecamatan</small>
+                        </div>
+                    </div>
+
+                    <div id="statusWilayahList">
+                        Memuat status wilayah...
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- HEATMAP DAN REKAP -->
+            <div class="monitoring-bottom-grid">
+
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Heatmap Produksi Komoditas</h3>
+                            <small>
+                                Perbandingan rata-rata produksi setiap kecamatan
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="monitoring-heatmap-scroll">
+                        <div id="heatmapKecamatan">
+                            <p>Memuat heatmap kecamatan...</p>
+                        </div>
                     </div>
                 </div>
 
@@ -302,7 +425,8 @@
                     <div class="card-header">
                         <h3>Rekap Kecamatan</h3>
                     </div>
-                    <div class="table-responsive">
+
+                    <div class="monitoring-rekap-scroll">
                         <table>
                             <thead>
                                 <tr>
@@ -312,29 +436,42 @@
                                     <th>Status</th>
                                 </tr>
                             </thead>
+
                             <tbody id="tabelMonitoring">
-                                <tr><td colspan="4">Memuat data...</td></tr>
+                                <tr>
+                                    <td colspan="4">
+                                        Memuat data kecamatan...
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+
             </div>
 
-            <div class="card" style="margin-top:20px;">
+            <!-- PCA CLUSTERING -->
+            <div class="card monitoring-pca-card">
                 <div class="card-header">
                     <div>
                         <h3>Visualisasi PCA Clustering</h3>
-                        <small>Pengelompokan wilayah berdasarkan karakteristik pertanian</small>
+                        <small>
+                            Pengelompokan kecamatan berdasarkan karakteristik pertanian
+                        </small>
                     </div>
                 </div>
+
                 <div class="chart-container">
                     <canvas id="pcaChart"></canvas>
                 </div>
+
                 <div id="pcaClusterSummary">
-                    <p>Memuat hasil PCA...</p>
+                    Memuat hasil PCA...
                 </div>
             </div>
+
         </section>
+
 
         <!-- HARGA PANGAN -->
         <section id="harga" class="page">
@@ -421,7 +558,7 @@
             </div>
 
             <div class="filter-card">
-                <select id="forecastKomoditas" onchange="loadForecasting()">
+                <select id="forecastKomoditas">
                     <option value="">Pilih Komoditas</option>
                     <option value="Padi">Padi</option>
                     <option value="Jagung">Jagung</option>
@@ -466,7 +603,7 @@
                 </button>
             </div>
 
-            <div class="stats-grid">
+            <div class="stats-grid ketahanan-stats">
                 <div class="stat-card">
                     <span class="stat-label">Jumlah Cluster</span>
                     <h2 id="jumlahCluster">--</h2>
@@ -477,7 +614,10 @@
                 </div>
                 <div class="stat-card">
                     <span class="stat-label">Metode Clustering</span>
-                    <h2 id="metodeClustering">--</h2>
+                    <h2 id="metodeClustering">K-Means</h2>
+                    <small class="comparison">
+                        Pengelompokan berdasarkan karakteristik produksi
+                    </small>
                 </div>
             </div>
 
@@ -495,6 +635,23 @@
                         <p>Memuat karakteristik cluster...</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="card cluster-insight-card" style="margin-bottom:20px;">
+                <h3>Interpretasi Hasil Clustering</h3>
+
+                <p style="font-size:13px;line-height:1.8;color:#475569;margin-top:10px;">
+                    Analisis K-Means mengelompokkan kecamatan berdasarkan
+                    kemiripan karakteristik produksi komoditas pangan.
+                    Setiap cluster menggambarkan kelompok wilayah dengan
+                    pola pertanian yang relatif serupa.
+
+                    Perbedaan antarkelompok dapat diamati melalui
+                    jumlah kecamatan, rata-rata produksi, dan komoditas
+                    yang dominan. Hasil ini membantu mengidentifikasi
+                    karakteristik pertanian wilayah sebagai bahan
+                    pertimbangan perencanaan dan pengembangan komoditas.
+                </p>
             </div>
 
             <div class="card" style="margin-top:20px;">
@@ -535,6 +692,36 @@
                     </table>
                 </div>
             </div>
+            <!-- PERBANDINGAN MODEL -->
+             <div class="card" style="margin-top: 20px;">
+                <div class="card-header">
+                    <div>
+                        <h3>Perbandingan Performa Model</h3>
+                        <small>
+                            Evaluasi performa model pemodelan pertanian
+                        </small>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama Model</th>
+                                <th>Metode</th>
+                                <th>Nilai Evaluasi</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelPerbandinganModel">
+                <tr>
+                    <td colspan="4" style="text-align: center;">
+                        Memuat hasil evaluasi model...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
         </section>
 
         <!-- DATA CENTER -->
@@ -695,41 +882,14 @@
             </div>
         </section>
 
-        <!-- INTEGRATION -->
-        <section id="integration" class="page">
-            <div class="page-title">
-                <div>
-                    <h1>Integrasi e-Tani / SIP</h1>
-                    <p>Monitoring koneksi dan sinkronisasi sistem eksternal.</p>
-                </div>
-            </div>
-
-            <div class="integration-grid">
-                <div class="integration-card">
-                    <div class="integration-logo">🌾</div>
-                    <h3>e-Tani</h3>
-                    <span class="connected">● Menunggu konfigurasi</span>
-                    <p>Integrasi data pertanian dan komoditas.</p>
-                    <button class="outline-button" onclick="alert('Endpoint integrasi e-Tani belum dikonfigurasi.')">
-                        Sinkronisasi
-                    </button>
-                </div>
-
-                <div class="integration-card">
-                    <div class="integration-logo">🔗</div>
-                    <h3>SIP</h3>
-                    <span class="connected">● Menunggu konfigurasi</span>
-                    <p>Integrasi data sistem pertanian terkait.</p>
-                    <button class="outline-button" onclick="alert('Endpoint integrasi SIP belum dikonfigurasi.')">
-                        Sinkronisasi
-                    </button>
-                </div>
-            </div>
-        </section>
-
     </main>
 </div>
 
+
+<!-- LEAFLET JAVASCRIPT -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- KALENDER INTERAKTIF -->
+<script src="calendar.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
