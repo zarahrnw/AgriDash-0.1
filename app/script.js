@@ -9,7 +9,7 @@
 
 const API_BASE_URL = "http://127.0.0.1:8000";
 const GEOJSON_URL = "./aset/kediri_kecamatan.geojson";
-const DEFAULT_ADM4 = "";
+const DEFAULT_ADM4 = "35.06.01.2001";
 
 const chartInstances = {};
 

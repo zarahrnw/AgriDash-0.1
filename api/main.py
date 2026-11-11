@@ -37,7 +37,8 @@ from sklearn.decomposition import PCA
 API_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = API_DIR.parent
 
-load_dotenv(API_DIR / ".env")
+# Memuat .env dari ROOT folder (folder utama proyek)
+load_dotenv(PROJECT_DIR / ".env")
 
 SECRET_KEY = os.getenv(
     "SECRET_KEY",
@@ -66,22 +67,6 @@ if SECRET_KEY == "agri-dash-secret-key-change-this":
 # =========================================================
 # 2. KONFIGURASI DATASET
 # =========================================================
-
-# Struktur project:
-#
-# AgriDash-0.1/
-# ├── api/
-# │   ├── main.py
-# │   └── .env
-# ├── output/
-# │   └── tanaman_pangan/
-# │       ├── output_clustering_pangan.csv
-# │       ├── output_rekomendasi_all_scores.csv
-# │       ├── output_rekomendasi_pangan.csv
-# │       ├── output_timeseries_pangan.csv
-# │       └── output_model_comparison.csv
-# └── outputs/
-#     └── reports/
 
 DATA_DIR = PROJECT_DIR / "output" / "tanaman_pangan"
 
@@ -146,7 +131,7 @@ app = FastAPI(
         "API Monitoring Pertanian dan Ketahanan Pangan "
         "Kabupaten Kediri Berbasis CSV/Excel"
     ),
-    version="0.5.0"
+    version="0.1.0"
 )
 
 app.add_middleware(
@@ -227,7 +212,6 @@ def read_dataset(path):
         read_csv_excel(path)
     )
 
-    # Mapping kolom hasil modeling ke format frontend
     mapping = {
         "prod_mean": "produksi_ton",
         "luas_mean": "luas_panen_ha",
@@ -374,11 +358,6 @@ def aggregate_summary(df):
 # =========================================================
 
 def get_status_color_label(label):
-    """
-    Status diambil dari label hasil clustering.
-    Tidak menghitung threshold buatan.
-    """
-
     text = normalize_text(label)
 
     if "tinggi" in text:
@@ -407,13 +386,6 @@ def get_status_color(status_label):
 
 
 def load_cluster_status():
-    """
-    Mengambil status kecamatan dari
-    output_clustering_pangan.csv.
-
-    Prioritas label_cluster (K-Means).
-    """
-
     df = normalize_columns(
         read_agri_csv(CSV_FILES["clustering"])
     )
@@ -461,8 +433,6 @@ def load_cluster_status():
         .map(normalize_text)
     )
 
-    # Setiap kecamatan seharusnya memiliki
-    # satu label hasil clustering.
     konflik = (
         result.groupby("kecamatan_key")
         ["status_wilayah"]
@@ -491,16 +461,6 @@ def load_cluster_status():
 
 
 def build_status_wilayah():
-    """
-    Menggabungkan:
-    1. Rekap pertanian per kecamatan
-    2. Status clustering per kecamatan
-
-    Angka produksi/luas dari all_scores
-    adalah agregasi nilai rata-rata, bukan
-    total produksi aktual seluruh periode.
-    """
-
     df = load_tanaman()
 
     df = df.dropna(
@@ -601,7 +561,19 @@ class PrediksiRequest(BaseModel):
 
 def read_users():
     if not USERS_FILE.exists():
-        return []
+        # Jika file belum ada, buat default admin
+        default_admin = {
+            "id": 1,
+            "username": "admin",
+            "password_hash": pwd_context.hash("admin123"),
+            "role": "super_admin"
+        }
+        AUTH_DIR.mkdir(parents=True, exist_ok=True)
+        USERS_FILE.write_text(
+            json.dumps([default_admin], indent=2), 
+            encoding="utf-8"
+        )
+        return [default_admin]
 
     try:
         users = json.loads(
@@ -1149,23 +1121,11 @@ def upload_tanaman_pangan(
 
 
 # =========================================================
-# 14. MONITORING STATUS WILAYAH - BARU
+# 14. MONITORING STATUS WILAYAH
 # =========================================================
 
 @app.get("/api/v1/monitoring/status-wilayah")
 def get_status_wilayah():
-    """
-    Endpoint utama untuk peta Kediri.
-
-    Memberikan status tiap kecamatan
-    berdasarkan label_cluster.
-
-    Catatan:
-    total_produksi dan total_luas_panen
-    dari all_scores adalah agregasi mean,
-    bukan total aktual seluruh periode.
-    """
-
     rows = build_status_wilayah()
 
     counts = {
@@ -1187,45 +1147,19 @@ def get_status_wilayah():
         "sumber_indikator": (
             active_master_file().name
         ),
-        "catatan_indikator": (
-            "Jika menggunakan all_scores, produksi "
-            "dan luas adalah agregasi nilai rata-rata "
-            "per kecamatan-komoditas."
-        ),
         "ringkasan_status": counts,
         "legenda": [
-            {
-                "status": "Potensi Tinggi",
-                "warna": "#265322"
-            },
-            {
-                "status": "Potensi Sedang",
-                "warna": "#60982c"
-            },
-            {
-                "status": "Potensi Rendah",
-                "warna": "#dfe8d5"
-            },
-            {
-                "status": "Belum Dikategorikan",
-                "warna": "#e5e7eb"
-            }
+            {"status": "Potensi Tinggi", "warna": "#265322"},
+            {"status": "Potensi Sedang", "warna": "#60982c"},
+            {"status": "Potensi Rendah", "warna": "#dfe8d5"},
+            {"status": "Belum Dikategorikan", "warna": "#e5e7eb"}
         ],
         "data": rows
     }
 
 
-# =========================================================
-# 15. DETAIL STATUS PER KECAMATAN - BARU
-# =========================================================
-
-@app.get(
-    "/api/v1/monitoring/status-wilayah/"
-    "{nama_kecamatan}"
-)
-def get_detail_status_wilayah(
-    nama_kecamatan: str
-):
+@app.get("/api/v1/monitoring/status-wilayah/{nama_kecamatan}")
+def get_detail_status_wilayah(nama_kecamatan: str):
     rows = build_status_wilayah()
 
     selected = next(
@@ -1243,9 +1177,7 @@ def get_detail_status_wilayah(
             detail="Kecamatan tidak ditemukan."
         )
 
-    # Detail data per komoditas
     df = load_tanaman()
-
     df = df[
         df["kecamatan"].map(normalize_text)
         == normalize_text(nama_kecamatan)
@@ -1253,26 +1185,14 @@ def get_detail_status_wilayah(
 
     return {
         "kecamatan": selected["kecamatan"],
-        "status_wilayah": (
-            selected["status_wilayah"]
-        ),
+        "status_wilayah": selected["status_wilayah"],
         "warna": selected["warna"],
-        "total_produksi": (
-            selected["total_produksi"]
-        ),
-        "total_luas_panen": (
-            selected["total_luas_panen"]
-        ),
-        "rata_produktivitas": (
-            selected["rata_produktivitas"]
-        ),
+        "total_produksi": selected["total_produksi"],
+        "total_luas_panen": selected["total_luas_panen"],
+        "rata_produktivitas": selected["rata_produktivitas"],
         "komoditas": dataframe_records(df)
     }
 
-
-# =========================================================
-# 16. RINGKASAN STATUS WILAYAH - BARU
-# =========================================================
 
 @app.get("/api/v1/monitoring/ringkasan-status")
 def get_ringkasan_status():
@@ -1299,7 +1219,7 @@ def get_ringkasan_status():
 
 
 # =========================================================
-# 17. CUACA BMKG
+# 15. CUACA BMKG
 # =========================================================
 
 def fetch_bmkg(kode_kecamatan):
@@ -1334,7 +1254,6 @@ def extract_bmkg_forecast(data):
 @app.get("/api/v1/cuaca/{kode_kecamatan}")
 def get_cuaca(kode_kecamatan: str):
     data = fetch_bmkg(kode_kecamatan)
-
     forecasts = extract_bmkg_forecast(data)
 
     if not forecasts:
@@ -1351,13 +1270,12 @@ def get_cuaca(kode_kecamatan: str):
 
 
 # =========================================================
-# 18. EARLY WARNING SYSTEM CUACA
+# 16. EARLY WARNING SYSTEM CUACA
 # =========================================================
 
 @app.get("/api/v1/ews-cuaca/{kode_kecamatan}")
 def get_ews_cuaca(kode_kecamatan: str):
     data = fetch_bmkg(kode_kecamatan)
-
     forecasts = extract_bmkg_forecast(data)
 
     if not forecasts:
@@ -1368,17 +1286,9 @@ def get_ews_cuaca(kode_kecamatan: str):
 
     current = forecasts[0]
 
-    rainfall = safe_float(
-        current.get("tp")
-    ) or 0
-
-    humidity = safe_float(
-        current.get("hu")
-    ) or 0
-
-    temperature = safe_float(
-        current.get("t")
-    ) or 0
+    rainfall = safe_float(current.get("tp")) or 0
+    humidity = safe_float(current.get("hu")) or 0
+    temperature = safe_float(current.get("t")) or 0
 
     status_ews = "AMAN"
     message = "Kondisi cuaca relatif aman."
@@ -1386,11 +1296,9 @@ def get_ews_cuaca(kode_kecamatan: str):
     if rainfall > 50:
         status_ews = "BAHAYA"
         message = "Curah hujan tinggi. Waspadai genangan."
-
     elif humidity > 80 and rainfall > 10:
         status_ews = "WASPADA"
         message = "Kelembapan dan curah hujan tinggi."
-
     elif temperature > 34:
         status_ews = "WASPADA"
         message = "Suhu tinggi. Perhatikan kebutuhan air."
@@ -1408,7 +1316,7 @@ def get_ews_cuaca(kode_kecamatan: str):
 
 
 # =========================================================
-# 19. SIMULASI PREDIKSI PRODUKSI
+# 17. SIMULASI PREDIKSI PRODUKSI
 # =========================================================
 
 @app.post("/api/v1/prediksi")
@@ -1461,7 +1369,7 @@ def prediksi_produksi(request: PrediksiRequest):
 
 
 # =========================================================
-# 20. HARGA PANGAN
+# 18. HARGA PANGAN
 # =========================================================
 
 @app.get("/api/v1/harga-pangan")
@@ -1509,7 +1417,7 @@ def get_harga_pangan():
 
 
 # =========================================================
-# 21. AUDIT TRAIL
+# 19. AUDIT TRAIL
 # =========================================================
 
 @app.get("/api/v1/audit-trail")
@@ -1540,7 +1448,7 @@ def get_audit_trail(
 
 
 # =========================================================
-# 22. DASHBOARD EKSEKUTIF
+# 20. DASHBOARD EKSEKUTIF
 # =========================================================
 
 @app.get("/api/v1/dashboard-eksekutif")
@@ -1578,7 +1486,7 @@ def dashboard_eksekutif():
 
 
 # =========================================================
-# 23. HASIL CLUSTERING
+# 21. HASIL CLUSTERING
 # =========================================================
 
 @app.get("/api/v1/model/clustering")
@@ -1597,7 +1505,7 @@ def get_clustering():
 
 
 # =========================================================
-# 24. PCA
+# 22. PCA
 # =========================================================
 
 @app.get("/api/v1/model/pca")
@@ -1706,7 +1614,7 @@ def get_pca():
 
 
 # =========================================================
-# 25. HEATMAP KECAMATAN
+# 23. HEATMAP KECAMATAN
 # =========================================================
 
 @app.get("/api/v1/model/heatmap-kecamatan")
@@ -1745,7 +1653,7 @@ def get_heatmap_kecamatan():
 
 
 # =========================================================
-# 26. REKOMENDASI KOMODITAS
+# 24. REKOMENDASI KOMODITAS
 # =========================================================
 
 @app.get("/api/v1/model/rekomendasi")
@@ -1775,7 +1683,7 @@ def get_rekomendasi_all_scores():
 
 
 # =========================================================
-# 27. FORECASTING
+# 25. FORECASTING
 # =========================================================
 
 @app.get("/api/v1/model/forecasting")
@@ -1792,7 +1700,7 @@ def get_forecasting():
 
 
 # =========================================================
-# 28. PERBANDINGAN MODEL
+# 26. PERBANDINGAN MODEL
 # =========================================================
 
 @app.get("/api/v1/model/comparison")
@@ -1809,7 +1717,7 @@ def get_model_comparison():
 
 
 # =========================================================
-# 29. DATA CENTER
+# 27. DATA CENTER
 # =========================================================
 
 @app.get("/api/v1/data-center")
@@ -1860,7 +1768,7 @@ def get_data_center():
 
 
 # =========================================================
-# 30. DOWNLOAD DATA CENTER
+# 28. DOWNLOAD DATA CENTER
 # =========================================================
 
 @app.get(
@@ -1907,14 +1815,14 @@ def download_data_center(
 
 
 # =========================================================
-# 31. ROOT ENDPOINT
+# 29. ROOT ENDPOINT
 # =========================================================
 
 @app.get("/")
 def root():
     return {
         "application": "AgriDash API",
-        "version": "0.5.0",
+        "version": "0.1.0",
         "storage": "CSV / Excel",
         "database_required": False,
         "master_dataset": active_master_file().name,
