@@ -4482,7 +4482,7 @@ function renderDashboardBioCommodities(rows) {
             b.count - a.count ||
             a.name.localeCompare(b.name, "id")
         )
-        .slice(0, 3);
+        .slice(0, 5);
 
     if (!sorted.length) {
         container.textContent =
@@ -4703,4 +4703,169 @@ async function loadBiofarmakaHeatmap() {
         console.error("Heatmap Biofarmaka:", error);
         container.textContent = error.message;
     }
+}
+
+
+/* ==========================================
+   DASHBOARD - SUSUNAN INFORMASI BARU
+========================================== */
+
+function organizeDashboardLayout() {
+    const dashboard = document.getElementById("dashboard");
+    if (!dashboard || dashboard.dataset.layoutOrganized === "true") {
+        return;
+    }
+
+    const stats = dashboard.querySelector(".stats-grid");
+    const trend = dashboard.querySelector(".trend-card");
+    const status = dashboard.querySelector(".status-card");
+    const warning = dashboard.querySelector(".warning-list-card");
+    const bio = dashboard.querySelector(".dash-bio-section");
+
+    // Cari card berdasarkan judul agar ID JavaScript tetap aman
+    const cards = [...dashboard.querySelectorAll(".card")];
+
+    function findCard(keywords) {
+        return cards.find(card => {
+            const heading = card.querySelector(
+                ".card-header h3, .card-header h2"
+            );
+
+            const title = (heading?.textContent || "")
+                .toLowerCase()
+                .replace(/\s+/g, " ")
+                .trim();
+
+            return keywords.some(word => title.includes(word));
+        });
+    }
+
+    const topKecamatan = findCard([
+        "top 5 kecamatan",
+        "kecamatan tertinggi"
+    ]);
+
+    const commodity = findCard([
+        "komoditas utama"
+    ]);
+
+    // Buat pembungkus untuk masing-masing bagian
+    function createSection(title, description, className) {
+        const section = document.createElement("div");
+        section.className = `dashboard-organized-section ${className}`;
+
+        const heading = document.createElement("div");
+        heading.className = "dashboard-section-heading";
+
+        const h2 = document.createElement("h2");
+        h2.textContent = title;
+
+        const p = document.createElement("p");
+        p.textContent = description;
+
+        heading.append(h2, p);
+        section.appendChild(heading);
+
+        return section;
+    }
+
+    const panganSection = createSection(
+        "Analisis Tanaman Pangan",
+        "Produksi komoditas dan potensi wilayah Kabupaten Kediri",
+        "dashboard-pangan-section"
+    );
+
+    const panganMain = document.createElement("div");
+    panganMain.className = "dashboard-analysis-grid";
+
+    const panganRanking = document.createElement("div");
+    panganRanking.className = "dashboard-insight-grid";
+
+    if (trend) panganMain.appendChild(trend);
+    if (status) panganMain.appendChild(status);
+
+    if (topKecamatan) panganRanking.appendChild(topKecamatan);
+    if (commodity) panganRanking.appendChild(commodity);
+
+    if (panganMain.children.length) {
+        panganSection.appendChild(panganMain);
+    }
+
+    if (panganRanking.children.length) {
+        panganSection.appendChild(panganRanking);
+    }
+
+    const warningSection = createSection(
+        "Pemantauan & Peringatan Cuaca",
+        "Informasi kondisi cuaca dan indikator kewaspadaan wilayah",
+        "dashboard-weather-section"
+    );
+
+    const warningGrid = document.createElement("div");
+    warningGrid.className = "dashboard-warning-grid";
+
+    if (warning) warningGrid.appendChild(warning);
+
+    if (warningGrid.children.length) {
+        warningSection.appendChild(warningGrid);
+    }
+
+    // Tempatkan section baru setelah KPI ringkasan
+    const anchor = stats || dashboard.querySelector(".dashboard-header");
+
+    if (!anchor) return;
+
+    const organizedContent = document.createElement("div");
+    organizedContent.className = "dashboard-organized-content";
+
+    if (panganMain.children.length || panganRanking.children.length) {
+        organizedContent.appendChild(panganSection);
+    }
+
+    // Biofarmaka tetap memakai section dan ID yang sudah ada
+    if (bio) {
+        organizedContent.appendChild(bio);
+    }
+
+    if (warningGrid.children.length) {
+        organizedContent.appendChild(warningSection);
+    }
+
+    anchor.after(organizedContent);
+
+    // Hapus wrapper lama hanya jika benar-benar kosong
+    dashboard.querySelectorAll(".main-grid, .bottom-grid")
+        .forEach(grid => {
+            if (!grid.children.length) grid.remove();
+        });
+
+    dashboard.dataset.layoutOrganized = "true";
+
+    // Sesuaikan ukuran Chart.js setelah perubahan layout
+    requestAnimationFrame(() => {
+        const canvas = trend?.querySelector("canvas");
+        if (canvas && typeof Chart !== "undefined") {
+            Chart.getChart(canvas)?.resize();
+        }
+
+        // Refresh Leaflet jika peta sudah dibuat
+        const mapElement = document.getElementById(
+            "dashboardKediriMap"
+        );
+
+        if (mapElement && mapElement._leaflet_map) {
+            mapElement._leaflet_map.invalidateSize();
+        }
+    });
+}
+
+// Jalankan setelah struktur HTML tersedia
+if (document.readyState === "loading") {
+    document.addEventListener(
+        "DOMContentLoaded",
+        organizeDashboardLayout,
+        { once: true }
+    );
+} else {
+    organizeDashboardLayout();
 }
