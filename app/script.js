@@ -411,15 +411,18 @@ function showPage(pageId, clickedButton = null) {
 
         case "prediksi":
             loadForecasting();
+            loadBiofarmakaOverview();
             break;
 
         case "ketahanan":
             loadClustering();
             loadRecommendations();
+            loadBiofarmakaOverview();
             break;
 
         case "data":
             loadDataCenter();
+            loadBiofarmakaOverview();
             break;
 
         case "audit":
@@ -500,7 +503,8 @@ async function loadDashboard() {
         loadDashboardWarning(),
         loadPriceData(),
         loadDashboardWeather(),
-        loadDashboardMap()
+        loadDashboardMap(),
+        loadDashboardBiofarmaka()
     ]);
 }
 
@@ -988,9 +992,6 @@ async function loadDashboardWarning() {
             "Gagal memuat indikator cuaca: " + error.message;
     }
 }
-
-
-
 
 /* ==========================================================
    7. STATUS WILAYAH
@@ -1652,6 +1653,12 @@ async function loadDashboardMap() {
 ========================================================== */
 
 async function loadHeatmap() {
+    if (
+        document.getElementById("heatmapCategory")?.value
+        === "biofarmaka"
+    ) {
+        return loadBiofarmakaHeatmap();
+    }
     const container = document.getElementById(
         "heatmapKecamatan"
     );
@@ -3859,3 +3866,841 @@ document.addEventListener("agri:datechange", function (event) {
         window.AGRI_DATE_FILTER
     );
 });
+
+
+/* ============================================
+   BIOFARMAKA - DATA CENTER
+============================================ */
+
+let biofarmakaData = null;
+
+async function loadBiofarmakaOverview() {
+    try {
+        biofarmakaData = await apiFetch(
+            "/api/v1/biofarmaka/overview"
+        );
+
+        renderBiofarmakaOverview(biofarmakaData);
+
+    } catch (error) {
+        console.error("Biofarmaka:", error);
+
+        const target = document.getElementById("bioFileList");
+
+        if (target) {
+            target.textContent =
+                "Gagal memuat laporan biofarmaka: " + error.message;
+        }
+    }
+}
+
+function bioNum(value, decimals = 0) {
+    const n = Number(value);
+
+    if (value == null || value === "" || !Number.isFinite(n)) {
+        return "—";
+    }
+
+    return n.toLocaleString("id-ID", {
+        maximumFractionDigits: decimals
+    });
+}
+
+function renderBiofarmakaOverview(data) {
+    const stats = data.statistik || {};
+    const clusters = data.klaster || [];
+
+    const total = Number(stats.tahun?.count) || 0;
+    const totalKecamatan = Number(stats.kecamatan?.unique) || 0;
+    const totalKomoditas = Number(stats.komoditas?.unique) || 0;
+    const completeProduction = Number(stats.produksi?.count) || 0;
+
+    setText("bioTotalData", bioNum(total));
+    setText(
+        "bioKecamatan",
+        bioNum(totalKecamatan || data.total_kecamatan_klaster)
+    );
+    setText("bioKomoditas", bioNum(totalKomoditas));
+
+    setText(
+        "bioKelengkapan",
+        total
+            ? `${bioNum(completeProduction / total * 100, 1)}%`
+            : "—"
+    );
+
+    renderBioCompleteness(stats, total);
+    renderBioClusters(clusters);
+    renderBioBacktest(data.backtest || []);
+    renderBioFileList(data.laporan || {});
+
+    ["bioLevelFilter", "bioTargetFilter", "bioYearFilter"]
+        .forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.onchange = () =>
+                    renderBioBacktest(data.backtest || []);
+            }
+        });
+}
+
+function renderBioCompleteness(stats, total) {
+    const container = document.getElementById(
+        "bioCompleteness"
+    );
+
+    if (!container) return;
+
+    if (!total) {
+        container.textContent =
+            "Statistik deskriptif belum tersedia.";
+        return;
+    }
+
+    const fields = [
+        ["Produksi", "produksi"],
+        ["Luas", "luas"],
+        ["Produktivitas", "produktivitas"]
+    ];
+
+    container.innerHTML = fields.map(([label, key]) => {
+        const count = Number(stats[key]?.count) || 0;
+        const percent = Math.min(
+            100,
+            count / total * 100
+        );
+
+        return `
+            <div class="bio-progress-item">
+                <div class="bio-progress-label">
+                    <span>${label}</span>
+                    <strong>${bioNum(percent, 1)}%</strong>
+                </div>
+
+                <div class="bio-progress-track">
+                    <div
+                        class="bio-progress-fill"
+                        style="width:${percent}%">
+                    </div>
+                </div>
+
+                <small>
+                    ${bioNum(count)} dari
+                    ${bioNum(total)} observasi
+                </small>
+            </div>
+        `;
+    }).join("");
+}
+
+function renderBioClusters(rows) {
+    const table = document.getElementById(
+        "bioClusterTable"
+    );
+
+    const summary = document.getElementById(
+        "bioClusterInfo"
+    );
+
+    if (!rows.length) {
+        if (table) {
+            table.innerHTML = `
+                <tr>
+                    <td colspan="4">
+                        Data klaster belum tersedia.
+                    </td>
+                </tr>
+            `;
+        }
+
+        destroyChart("bioClusterChart");
+        return;
+    }
+
+    const grouped = {};
+
+    rows.forEach(row => {
+        const cluster = String(
+            row.klaster ?? row.klaster_kmeans ?? "Tidak diketahui"
+        );
+
+        grouped[cluster] = (grouped[cluster] || 0) + 1;
+    });
+
+    const entries = Object.entries(grouped)
+        .sort((a, b) =>
+            a[0].localeCompare(b[0], "id", { numeric: true })
+        );
+
+    createChart("bioClusterChart", {
+        type: "doughnut",
+        data: {
+            labels: entries.map(([id]) => `Klaster ${id}`),
+            datasets: [{
+                data: entries.map(([, count]) => count),
+                backgroundColor: [
+                    "#60982c",
+                    "#9066b5",
+                    "#2878c8",
+                    "#e5a624"
+                ],
+                borderWidth: 3,
+                borderColor: "#ffffff"
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: "68%",
+            plugins: {
+                legend: {
+                    position: "bottom",
+                    labels: {
+                        usePointStyle: true,
+                        font: {
+                            family: "Poppins",
+                            size: 11
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    if (summary) {
+        summary.innerHTML = entries.map(([id, count]) => `
+            <div class="bio-cluster-summary-row">
+                <span>Klaster ${escapeHTML(id)}</span>
+                <strong>${count} kecamatan</strong>
+            </div>
+        `).join("");
+    }
+
+    if (!table) return;
+
+    const sorted = [...rows].sort(
+        (a, b) =>
+            (Number(b.produksi_rata2_kg_per_tahun) || 0) -
+            (Number(a.produksi_rata2_kg_per_tahun) || 0)
+    );
+
+    table.innerHTML = sorted.map(row => `
+        <tr>
+            <td>
+                <strong>${escapeHTML(row.kecamatan || "—")}</strong>
+            </td>
+
+            <td>
+                <span class="bio-cluster-pill">
+                    ${escapeHTML(row.klaster ?? "—")}
+                </span>
+            </td>
+
+            <td>
+                ${bioNum(row.produksi_rata2_kg_per_tahun, 1)}
+            </td>
+
+            <td class="bio-commodity-text">
+                ${escapeHTML(
+                    String(row.top3_komoditas || "—")
+                        .replaceAll("_", " ")
+                )}
+            </td>
+        </tr>
+    `).join("");
+}
+
+
+function renderBioBacktest(rows) {
+
+    const level = document.getElementById(
+        "bioLevelFilter"
+    )?.value || "kabupaten";
+
+    const target = document.getElementById(
+        "bioTargetFilter"
+    )?.value || "produksi";
+
+    const year = document.getElementById(
+        "bioYearFilter"
+    )?.value || "2023";
+
+    const best = document.getElementById(
+        "bioBestModel"
+    );
+
+    const canvas = document.getElementById(
+        "bioForecastEvaluationChart"
+    );
+
+    if (!canvas) return;
+
+    // FILTER DATA
+    const filtered = rows.filter(row =>
+        String(row.level || "").toLowerCase() === level &&
+        String(row.target || "").toLowerCase() === target &&
+        String(row.uji_tahun) === year &&
+        row["WAPE_%"] != null &&
+        Number.isFinite(Number(row["WAPE_%"]))
+    );
+
+    // URUTKAN DARI WAPE TERENDAH
+    filtered.sort(
+        (a, b) =>
+            Number(a["WAPE_%"]) -
+            Number(b["WAPE_%"])
+    );
+
+    if (!filtered.length) {
+        destroyChart("bioForecastEvaluationChart");
+
+        if (best) {
+            best.textContent =
+                "Data evaluasi belum tersedia.";
+        }
+
+        return;
+    }
+
+    // MODEL TERBAIK
+    const bestModel = filtered[0];
+
+    if (best) {
+        best.innerHTML = `
+            <div class="bio-best-summary">
+                <span>Model dengan WAPE Terendah</span>
+                <strong>
+                    ${escapeHTML(bestModel.model)}
+                </strong>
+                <span>
+                    WAPE:
+                    <b>${bioNum(bestModel["WAPE_%"], 3)}%</b>
+                </span>
+            </div>
+        `;
+    }
+
+    // LABEL MODEL
+    const labels = filtered.map(
+        row => row.model
+    );
+
+    // NILAI WAPE
+    const values = filtered.map(
+        row => Number(row["WAPE_%"])
+    );
+
+    // HIJAU UNTUK MODEL TERBAIK
+    const colors = filtered.map((row, index) =>
+        index === 0 ? "#60982C" : "#B6C9AE"
+    );
+
+    // GRAFIK HORIZONTAL
+    createChart("bioForecastEvaluationChart", {
+        type: "bar",
+
+        data: {
+            labels,
+
+            datasets: [{
+                label: "WAPE (%)",
+                data: values,
+                backgroundColor: colors,
+                borderRadius: 7,
+                maxBarThickness: 38,
+                barPercentage: 0.7,
+                categoryPercentage: 0.8
+            }]
+        },
+
+        options: {
+            indexAxis: "y",
+            responsive: true,
+            maintainAspectRatio: false,
+
+            layout: {
+                padding: {
+                    top: 8,
+                    right: 18,
+                    bottom: 8
+                }
+            },
+
+            plugins: {
+                legend: {
+                    display: false
+                },
+
+                tooltip: {
+                    callbacks: {
+                        label: context => {
+                            const item = filtered[
+                                context.dataIndex
+                            ];
+
+                            return [
+                                `WAPE: ${bioNum(item["WAPE_%"], 3)}%`,
+                                `MAE: ${bioNum(item.MAE, 2)}`,
+                                `MdAPE: ${bioNum(item["MdAPE_%"], 3)}%`
+                            ];
+                        }
+                    }
+                }
+            },
+
+            scales: {
+                x: {
+                    beginAtZero: true,
+
+                    grid: {
+                        color: "#edf1e9"
+                    },
+
+                    ticks: {
+                        callback: value => value + "%",
+                        font: {
+                            family: "Poppins",
+                            size: 11
+                        }
+                    },
+
+                    title: {
+                        display: true,
+                        text: "WAPE (%)"
+                    }
+                },
+
+                y: {
+                    grid: {
+                        display: false
+                    },
+
+                    ticks: {
+                        autoSkip: false,
+                        font: {
+                            family: "Poppins",
+                            size: 11
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+
+function renderBioFileList(files) {
+    const container = document.getElementById(
+        "bioFileList"
+    );
+
+    if (!container) return;
+
+    const labels = {
+        backtest: "Evaluasi Forecasting",
+        preprocessing: "Dokumentasi Preprocessing",
+        evaluasi_klaster: "Evaluasi Klaster",
+        klaster: "Klaster Kecamatan",
+        konflik_satuan: "Konflik Satuan",
+        inspeksi: "Inspeksi Dataset",
+        statistik: "Statistik Deskriptif",
+        statistik_komoditas: "Statistik per Komoditas"
+    };
+
+    container.innerHTML = Object.entries(files)
+        .map(([key, file]) => {
+
+            const name = file.filename || "";
+            const available = file.available === true;
+
+            // Link download dari endpoint Data Center yang sudah ada
+            const url = `${API_BASE_URL}/api/v1/data-center/download/laporan_analisis/${encodeURIComponent(name)}`;
+
+            return `
+                <div class="bio-file-item">
+                    <div class="bio-file-icon">
+                        <i class="fa-solid fa-file-csv"></i>
+                    </div>
+
+                    <div class="bio-file-info">
+                        <strong>
+                            ${escapeHTML(labels[key] || key)}
+                        </strong>
+                        <small>${escapeHTML(name)}</small>
+                    </div>
+
+                    ${available
+                        ? `<a href="${url}"
+                               target="_blank"
+                               rel="noopener">
+                               Unduh
+                           </a>`
+                        : `<span class="bio-file-missing">
+                               Tidak tersedia
+                           </span>`
+                    }
+                </div>
+            `;
+        }).join("");
+}
+
+
+/* ==========================================
+   DASHBOARD - POTENSI BIOFARMAKA
+========================================== */
+
+async function loadDashboardBiofarmaka() {
+    const section = document.querySelector(".dash-bio-section");
+
+    if (!section) return;
+
+    try {
+        const response = await apiFetch(
+            "/api/v1/biofarmaka/overview"
+        );
+
+        const stats = response.statistik || {};
+        const clusters = Array.isArray(response.klaster)
+            ? response.klaster
+            : [];
+
+        // ======================================
+        // 1. KPI BIOFARMAKA
+        // ======================================
+
+        const totalObservations = Number(
+            stats.tahun?.count
+        ) || 0;
+
+        const totalCommodities = Number(
+            stats.komoditas?.unique
+        ) || 0;
+
+        const completeProduction = Number(
+            stats.produksi?.count
+        ) || 0;
+
+        const completeness = totalObservations > 0
+            ? completeProduction / totalObservations * 100
+            : null;
+
+        setText(
+            "dashboardBioObservations",
+            totalObservations
+                ? formatNumber(totalObservations, 0)
+                : "—"
+        );
+
+        setText(
+            "dashboardBioTotalCommodities",
+            totalCommodities || "—"
+        );
+
+        setText(
+            "dashboardBioCompleteness",
+            completeness !== null
+                ? `${formatNumber(completeness, 1)}%`
+                : "—"
+        );
+
+        // ======================================
+        // 2. KOMODITAS PALING SERING DOMINAN
+        // ======================================
+
+        renderDashboardBioCommodities(clusters);
+
+        // ======================================
+        // 3. TOP 5 KECAMATAN
+        // ======================================
+
+        renderDashboardBioTopRegions(clusters);
+
+    } catch (error) {
+        console.error("Dashboard Biofarmaka:", error);
+
+        const commodities = document.getElementById(
+            "dashboardBioCommodities"
+        );
+
+        const regions = document.getElementById(
+            "dashboardBioTopRegions"
+        );
+
+        if (commodities) {
+            commodities.textContent =
+                "Gagal memuat komoditas: " + error.message;
+        }
+
+        if (regions) {
+            regions.textContent =
+                "Gagal memuat kecamatan: " + error.message;
+        }
+    }
+}
+
+
+/* ==========================================
+   TOP 3 KOMODITAS BIOFARMAKA
+========================================== */
+
+function renderDashboardBioCommodities(rows) {
+    const container = document.getElementById(
+        "dashboardBioCommodities"
+    );
+
+    if (!container) return;
+
+    const counts = {};
+
+    rows.forEach(row => {
+        const raw = String(row.top3_komoditas || "");
+
+        const commodities = [
+            ...new Set(
+                raw.split(",")
+                    .map(item => item.trim().replace(/_/g, " "))
+                    .filter(Boolean)
+            )
+        ];
+
+        commodities.forEach(name => {
+            const key = name.toLowerCase();
+
+            if (!counts[key]) {
+                counts[key] = {
+                    name: key.replace(/\b\w/g, c => c.toUpperCase()),
+                    count: 0
+                };
+            }
+
+            counts[key].count += 1;
+        });
+    });
+
+    const sorted = Object.values(counts)
+        .sort((a, b) =>
+            b.count - a.count ||
+            a.name.localeCompare(b.name, "id")
+        )
+        .slice(0, 3);
+
+    if (!sorted.length) {
+        container.textContent =
+            "Data komoditas biofarmaka belum tersedia.";
+        return;
+    }
+
+    const maxCount = sorted[0].count || 1;
+
+    container.innerHTML = sorted.map((item, index) => {
+        const percent = item.count / maxCount * 100;
+
+        return `
+            <div class="dash-bio-commodity-item">
+
+                <div class="dash-bio-commodity-head">
+                    <div class="dash-bio-commodity-name">
+                        <span class="dash-bio-rank">
+                            ${index + 1}
+                        </span>
+
+                        <strong>${escapeHTML(item.name)}</strong>
+                    </div>
+
+                    <span class="dash-bio-count">
+                        ${item.count} kecamatan
+                    </span>
+                </div>
+
+                <div class="dash-bio-progress">
+                    <div
+                        class="dash-bio-progress-fill"
+                        style="width:${percent.toFixed(2)}%">
+                    </div>
+                </div>
+
+            </div>
+        `;
+    }).join("");
+}
+
+
+/* ==========================================
+   TOP 5 KECAMATAN BIOFARMAKA
+========================================== */
+
+function renderDashboardBioTopRegions(rows) {
+    const container = document.getElementById(
+        "dashboardBioTopRegions"
+    );
+
+    if (!container) return;
+
+    const sorted = rows
+        .map(row => ({
+            kecamatan: row.kecamatan,
+            produksi: toNumber(
+                row.produksi_rata2_kg_per_tahun
+            )
+        }))
+        .filter(row =>
+            row.kecamatan &&
+            row.produksi !== null
+        )
+        .sort((a, b) => b.produksi - a.produksi)
+        .slice(0, 5);
+
+    if (!sorted.length) {
+        container.textContent =
+            "Data produksi biofarmaka belum tersedia.";
+        return;
+    }
+
+    const maxProduction = sorted[0].produksi || 1;
+
+    container.innerHTML = sorted.map((item, index) => {
+        const percent = item.produksi / maxProduction * 100;
+
+        return `
+            <div class="dash-bio-region-item">
+
+                <div class="dash-bio-region-head">
+                    <div class="dash-bio-region-name">
+                        <span class="dash-bio-rank">
+                            ${index + 1}
+                        </span>
+
+                        <strong>
+                            ${escapeHTML(item.kecamatan)}
+                        </strong>
+                    </div>
+
+                    <span class="dash-bio-region-value">
+                        ${formatNumber(item.produksi, 0)} kg
+                    </span>
+                </div>
+
+                <div class="dash-bio-progress">
+                    <div
+                        class="dash-bio-progress-fill"
+                        style="width:${percent.toFixed(2)}%">
+                    </div>
+                </div>
+
+            </div>
+        `;
+    }).join("");
+}
+
+
+async function loadBiofarmakaHeatmap() {
+    const container = document.getElementById("heatmapKecamatan");
+    if (!container) return;
+
+    container.innerHTML = "<p>Memuat heatmap biofarmaka...</p>";
+
+    try {
+        const response = await apiFetch(
+            "/api/v1/biofarmaka/overview"
+        );
+
+        const allRows = response.klaster || [];
+
+        const values = allRows
+            .map(row => toNumber(row.produksi_rata2_kg_per_tahun))
+            .filter(value => value !== null);
+
+        if (!values.length) {
+            container.textContent = "Data biofarmaka tidak tersedia.";
+            return;
+        }
+
+        const min = Math.min(...values);
+        const max = Math.max(...values);
+
+        const selected = document.getElementById(
+            "filterKecamatan"
+        )?.value || "";
+
+        const rows = allRows.filter(row =>
+            !selected ||
+            normalizeRegionName(row.kecamatan) ===
+            normalizeRegionName(selected)
+        );
+
+        function colorFor(value) {
+            if (value === null) return "#E5E7EB";
+            if (max === min) return "#9066B5";
+
+            const t = (value - min) / (max - min);
+
+            const stops = t <= 0.5
+                ? [[217, 83, 99], [144, 102, 181], t * 2]
+                : [[144, 102, 181], [40, 120, 200], (t - 0.5) * 2];
+
+            const [a, b, ratio] = stops;
+
+            const rgb = a.map((v, i) =>
+                Math.round(v + (b[i] - v) * ratio)
+            );
+
+            return `rgb(${rgb.join(",")})`;
+        }
+
+        container.innerHTML = `
+            <div class="bio-heatmap-scroll">
+                <table class="heatmap-table">
+                    <thead>
+                        <tr>
+                            <th>Kecamatan</th>
+                            <th>Produksi Rata-rata (kg/tahun)</th>
+                            <th>Top 3 Komoditas</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        ${rows.map(row => {
+                            const value = toNumber(
+                                row.produksi_rata2_kg_per_tahun
+                            );
+
+                            return `
+                                <tr>
+                                    <td>${escapeHTML(row.kecamatan)}</td>
+
+                                    <td
+                                        style="
+                                            background:${colorFor(value)};
+                                            color:white;
+                                            font-weight:600;
+                                            text-align:center;
+                                        "
+                                    >
+                                        ${formatNumber(value, 0)}
+                                    </td>
+
+                                    <td>
+                                        ${escapeHTML(
+                                            String(row.top3_komoditas || "—")
+                                                .replaceAll("_", " ")
+                                        )}
+                                    </td>
+                                </tr>
+                            `;
+                        }).join("")}
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="heatmap-note">
+                Warna menunjukkan intensitas relatif produksi
+                biofarmaka rata-rata per kecamatan.
+                Merah = rendah, ungu = sedang, biru = tinggi.
+            </p>
+        `;
+
+    } catch (error) {
+        console.error("Heatmap Biofarmaka:", error);
+        container.textContent = error.message;
+    }
+}

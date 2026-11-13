@@ -308,6 +308,120 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ==========================================
+                DASHBOARD - POTENSI BIOFARMAKA
+            ========================================== -->
+
+            <div class="dash-bio-section">
+
+                <!-- HEADER -->
+                <div class="dash-bio-heading">
+                    <div>
+                        <h2>Potensi Biofarmaka</h2>
+                        <p>
+                            Ringkasan komoditas unggulan dan potensi
+                            produksi biofarmaka Kabupaten Kediri.
+                        </p>
+                    </div>
+
+                    <span class="dash-bio-period">2020–2025</span>
+                </div>
+
+                <!-- KONTEN UTAMA -->
+                <div class="dash-bio-grid">
+
+                    <!-- KOMODITAS DOMINAN -->
+                    <div class="card dash-bio-card">
+
+                        <div class="dash-bio-card-header">
+                            <div>
+                                <h3>Komoditas Utama Biofarmaka</h3>
+                                <small>
+                                    Komoditas yang paling sering masuk
+                                    Top 3 kecamatan
+                                </small>
+                            </div>
+
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+
+                        <div id="dashboardBioCommodities"
+                            class="dash-bio-commodity-list">
+                            Memuat komoditas biofarmaka...
+                        </div>
+
+                    </div>
+
+                    <!-- TOP 5 KECAMATAN -->
+                    <div class="card dash-bio-card">
+
+                        <div class="dash-bio-card-header">
+                            <div>
+                                <h3>Top 5 Kecamatan Biofarmaka</h3>
+                                <small>
+                                    Produksi rata-rata tahunan tertinggi
+                                </small>
+                            </div>
+
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+
+                        <div id="dashboardBioTopRegions"
+                            class="dash-bio-region-list">
+                            Memuat kecamatan...
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- KPI RINGKAS -->
+                <div class="dash-bio-stats">
+
+                    <div class="dash-bio-stat">
+                        <div class="dash-bio-stat-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div>
+                            <span>Observasi</span>
+                            <strong id="dashboardBioObservations">—</strong>
+                        </div>
+                    </div>
+
+                    <div class="dash-bio-stat">
+                        <div class="dash-bio-stat-icon">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+
+                        <div>
+                            <span>Komoditas Biofarmaka</span>
+                            <strong id="dashboardBioTotalCommodities">—</strong>
+                        </div>
+                    </div>
+
+                    <div class="dash-bio-stat">
+                        <div class="dash-bio-stat-icon">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+
+                        <div>
+                            <span>Kelengkapan Produksi</span>
+                            <strong id="dashboardBioCompleteness">—</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="dash-bio-footnote">
+                    Sumber: Analisis biofarmaka 2020–2025.
+                    Produksi kecamatan menggunakan rata-rata tahunan;
+                    komoditas dominan dihitung berdasarkan frekuensi
+                    kemunculan dalam Top 3, bukan total produksi.
+                </p>
+
+            </div>
         </section>
 
         <!-- MONITORING WILAYAH -->
@@ -401,10 +515,12 @@
 
             </div>
 
-            <!-- HEATMAP DAN REKAP -->
+            <!-- HEATMAP DAN REKAP KECAMATAN -->
             <div class="monitoring-bottom-grid">
 
-                <div class="card">
+                <!-- KOLOM KIRI: HEATMAP -->
+                <div class="card monitoring-heatmap-card">
+
                     <div class="card-header">
                         <div>
                             <h3>Heatmap Produksi Komoditas</h3>
@@ -414,14 +530,28 @@
                         </div>
                     </div>
 
+                    <div class="heatmap-category-filter">
+                        <label for="heatmapCategory">
+                            Kategori Komoditas
+                        </label>
+
+                        <select id="heatmapCategory" onchange="loadHeatmap()">
+                            <option value="pangan">Tanaman Pangan</option>
+                            <option value="biofarmaka">Biofarmaka</option>
+                        </select>
+                    </div>
+
                     <div class="monitoring-heatmap-scroll">
                         <div id="heatmapKecamatan">
                             <p>Memuat heatmap kecamatan...</p>
                         </div>
                     </div>
+
                 </div>
 
-                <div class="card">
+                <!-- KOLOM KANAN: REKAP KECAMATAN -->
+                <div class="card monitoring-rekap-card">
+
                     <div class="card-header">
                         <h3>Rekap Kecamatan</h3>
                     </div>
@@ -446,9 +576,11 @@
                             </tbody>
                         </table>
                     </div>
+
                 </div>
 
             </div>
+
 
             <!-- PCA CLUSTERING -->
             <div class="card monitoring-pca-card">
@@ -662,6 +794,53 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- EVALUASI FORECASTING BIOFARMAKA -->
+            <div class="card bio-card" style="margin-top:20px;">
+
+                <div class="bio-card-head">
+                    <h3>Evaluasi Forecasting Biofarmaka</h3>
+                    <small>
+                        Perbandingan tingkat kesalahan prediksi
+                        berdasarkan WAPE (%).
+                    </small>
+                </div>
+
+                <div class="bio-filter-row">
+                    <select id="bioLevelFilter">
+                        <option value="kabupaten" selected>Kabupaten</option>
+                        <option value="kecamatan">Kecamatan</option>
+                    </select>
+
+                    <select id="bioTargetFilter">
+                        <option value="produksi" selected>Produksi</option>
+                        <option value="luas">Luas Panen</option>
+                    </select>
+
+                    <select id="bioYearFilter">
+                        <option value="2023" selected>2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+
+                <!-- RINGKASAN MODEL TERBAIK -->
+                <div id="bioBestModel" class="bio-best-model">
+                    Memuat evaluasi...
+                </div>
+
+                <!-- GRAFIK -->
+                <div class="bio-forecast-chart-wrap">
+                    <canvas id="bioForecastEvaluationChart"></canvas>
+                </div>
+
+                <p class="bio-forecast-note">
+                    Grafik menunjukkan nilai WAPE (%).
+                    Semakin rendah nilainya, semakin kecil
+                    tingkat kesalahan prediksi.
+                </p>
+
+            </div>
+
         </section>
 
         <!-- KETAHANAN PANGAN -->
@@ -765,6 +944,93 @@
                     </table>
                 </div>
             </div>
+
+            <!-- ==========================================
+                ANALISIS CLUSTERING BIOFARMAKA
+            ========================================== -->
+            <div class="bio-ketahanan-section">
+
+                <div class="bio-ketahanan-heading">
+                    <div>
+                        <h2>Analisis Klaster Biofarmaka</h2>
+                        <p>
+                            Pengelompokan wilayah berdasarkan
+                            karakteristik produksi tanaman biofarmaka
+                            di Kabupaten Kediri.
+                        </p>
+                    </div>
+
+                    <span class="bio-period">2020–2025</span>
+                </div>
+
+                <div class="bio-ketahanan-grid">
+
+                    <!-- DISTRIBUSI KLASTER -->
+                    <div class="card bio-card bio-distribution-card">
+
+                        <div class="bio-card-head">
+                            <h3>Distribusi Klaster</h3>
+                            <small>
+                                Proporsi kecamatan berdasarkan
+                                hasil klasterisasi biofarmaka
+                            </small>
+                        </div>
+
+                        <div class="bio-chart-wrap">
+                            <canvas id="bioClusterChart"></canvas>
+                        </div>
+
+                        <div id="bioClusterInfo">
+                            Memuat distribusi klaster...
+                        </div>
+
+                    </div>
+
+                    <!-- POTENSI PER KECAMATAN -->
+                    <div class="card bio-card bio-potential-card">
+
+                        <div class="bio-card-head">
+                            <h3>Potensi Biofarmaka per Kecamatan</h3>
+                            <small>
+                                Produksi rata-rata tahunan dan
+                                komoditas dominan setiap kecamatan
+                            </small>
+                        </div>
+
+                        <div class="bio-table-scroll bio-potential-scroll">
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Kecamatan</th>
+                                        <th>Klaster</th>
+                                        <th>Rerata Produksi (kg/tahun)</th>
+                                        <th>Top 3 Komoditas</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="bioClusterTable">
+                                    <tr>
+                                        <td colspan="4">
+                                            Memuat potensi biofarmaka...
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <p class="bio-table-caption">
+                            Data diurutkan berdasarkan produksi
+                            rata-rata tahunan tertinggi.
+                            Scroll tabel untuk melihat seluruh kecamatan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
         </section>
 
         <!-- DATA CENTER -->
@@ -832,6 +1098,84 @@
                     <p>Memuat daftar laporan...</p>
                 </div>
             </div>
+
+            <!-- ========================================
+                ANALISIS BIOFARMAKA
+            ======================================== -->
+            <div class="bio-section">
+
+                <div class="bio-section-heading">
+                    <div>
+                        <h2>Analisis Biofarmaka</h2>
+                        <p>
+                            Ringkasan statistik, potensi wilayah,
+                            dan evaluasi forecasting biofarmaka.
+                        </p>
+                    </div>
+
+                    <span class="bio-period">2020–2025</span>
+                </div>
+
+                <!-- KPI -->
+                <div class="bio-kpi-grid">
+
+                    <div class="bio-kpi">
+                        <span>Observasi</span>
+                        <strong id="bioTotalData">—</strong>
+                        <small>Data keseluruhan</small>
+                    </div>
+
+                    <div class="bio-kpi">
+                        <span>Kecamatan</span>
+                        <strong id="bioKecamatan">—</strong>
+                        <small>Wilayah teranalisis</small>
+                    </div>
+
+                    <div class="bio-kpi">
+                        <span>Komoditas</span>
+                        <strong id="bioKomoditas">—</strong>
+                        <small>Jenis biofarmaka</small>
+                    </div>
+
+                    <div class="bio-kpi">
+                        <span>Kelengkapan Produksi</span>
+                        <strong id="bioKelengkapan">—</strong>
+                        <small>Nilai produksi tersedia</small>
+                    </div>
+
+                </div>
+
+                <!-- KELENGKAPAN DATA BIOFARMAKA -->
+                <div class="card bio-card">
+
+                    <div class="bio-card-head">
+                        <h3>Kelengkapan Data</h3>
+                        <small>Persentase data tersedia</small>
+                    </div>
+
+                    <div id="bioCompleteness">
+                        Memuat statistik...
+                    </div>
+
+                </div>
+
+                <!-- SELURUH LAPORAN -->
+                <div class="card bio-card">
+
+                    <div class="bio-card-head">
+                        <h3>Dokumen Analisis Biofarmaka</h3>
+                        <small>
+                            Delapan laporan hasil analisis
+                        </small>
+                    </div>
+
+                    <div id="bioFileList" class="bio-file-list">
+                        Memuat daftar laporan...
+                    </div>
+                </div>
+
+            </div>
+
         </section>
 
         <!-- EXPORT / REPORTING -->

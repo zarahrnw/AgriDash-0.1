@@ -1841,3 +1841,82 @@ def root():
         "health": "/health",
         "status": "running"
     }
+
+
+# =========================================================
+# BIOFARMAKA - DASHBOARD OVERVIEW
+# Sumber: outputs/reports/
+# =========================================================
+
+@app.get("/api/v1/biofarmaka/overview")
+def get_biofarmaka_overview():
+
+    report_files = {
+        "backtest": "backtest_forecast_biofarmaka.csv",
+        "preprocessing": "dokumentasi_preprocessing.csv",
+        "evaluasi_klaster": "evaluasi_klaster_biofarmaka.csv",
+        "klaster": "klaster_kecamatan_biofarmaka.csv",
+        "konflik_satuan": "konflik_satuan.csv",
+        "inspeksi": "ringkasan_inspeksi_dataset.csv",
+        "statistik": "statistik_deskriptif_keseluruhan.csv",
+        "statistik_komoditas": "statistik_deskriptif_per_komoditas.csv"
+    }
+
+    def baca_laporan(filename):
+        path = REPORT_DIR / filename
+
+        if not path.is_file():
+            return None
+
+        df = read_csv_excel(path)
+
+        # Konversi NaN dan Inf agar valid sebagai JSON
+        df = df.replace([np.inf, -np.inf], np.nan)
+        df = df.astype(object).where(pd.notna(df), None)
+
+        return {
+            "total": len(df),
+            "columns": list(df.columns),
+            "data": df.to_dict(orient="records")
+        }
+
+    laporan = {}
+
+    for key, filename in report_files.items():
+        laporan[key] = {
+            "filename": filename,
+            "available": (REPORT_DIR / filename).is_file()
+        }
+
+    statistik = baca_laporan(report_files["statistik"])
+    klaster = baca_laporan(report_files["klaster"])
+    backtest = baca_laporan(report_files["backtest"])
+
+    # Kolom pertama statistik adalah nama indikator
+    statistik_rows = {}
+
+    if statistik and statistik["data"]:
+        first_col = statistik["columns"][0]
+
+        for row in statistik["data"]:
+            indikator = row.get(first_col)
+
+            if indikator is not None:
+                statistik_rows[str(indikator)] = row
+
+    # Data klaster
+    klaster_rows = klaster["data"] if klaster else []
+
+    return {
+        "sumber": "outputs/reports",
+        "laporan": laporan,
+        "statistik": statistik_rows,
+        "klaster": klaster_rows,
+        "backtest": backtest["data"] if backtest else [],
+        "backtest_columns": backtest["columns"] if backtest else [],
+        "total_kecamatan_klaster": len({
+            str(row.get("kecamatan"))
+            for row in klaster_rows
+            if row.get("kecamatan")
+        })
+    }
