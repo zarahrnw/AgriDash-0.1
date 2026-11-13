@@ -200,7 +200,7 @@
 
                 <div class="stat-card warning-card">
                     <div class="stat-icon red"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                    <span class="stat-label">Wilayah Perlu Perhatian</span>
+                    <span class="stat-label">Wilayah Prioritas Evaluasi Pertanian</span>
                     <h2><span id="jumlahWilayahWarning">--</span><small> kecamatan</small></h2>
                     <div class="warning-text" id="statusWilayahWarning">Menunggu hasil analisis</div>
                 </div>
@@ -497,52 +497,125 @@
                     <h3>Perkembangan Harga Komoditas</h3>
                     <select id="filterHargaKomoditas" onchange="loadHarga()">
                         <option value="">Semua Komoditas</option>
-                        <option value="Padi">Padi</option>
                         <option value="Jagung">Jagung</option>
                         <option value="Cabai">Cabai</option>
                         <option value="Bawang Merah">Bawang Merah</option>
                     </select>
                 </div>
-                <canvas id="priceChart"></canvas>
+                <div class="price-chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
             </div>
         </section>
 
         <!-- CUACA & RISIKO -->
         <section id="cuaca" class="page">
+
             <div class="page-title">
                 <div>
                     <h1>Cuaca & Risiko</h1>
-                    <p>Informasi cuaca dan risiko yang berkaitan dengan pertanian.</p>
+                    <p>Informasi prakiraan cuaca dan indikator risiko
+                    pertanian berdasarkan data BMKG.</p>
                 </div>
             </div>
 
-            <div class="weather-grid">
-                <div class="weather-big card">
-                    <span>📍 Kabupaten Kediri</span>
-                    <h1 id="weatherTemperature">--°C</h1>
-                    <h3 id="weatherDescription">Data cuaca belum tersedia</h3>
+            <div class="agri-weather-layout">
 
-                    <div class="weather-details">
-                        <div>💧 <span>Kelembapan <strong id="weatherHumidity">--</strong></span></div>
-                        <div>💨 <span>Angin <strong id="weatherWind">--</strong></span></div>
-                        <div>🌧️ <span>Curah Hujan <strong id="weatherRain">--</strong></span></div>
+                <!-- KONDISI CUACA UTAMA -->
+                <div class="card agri-weather-current">
+
+                    <div class="agri-weather-eyebrow">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span id="weatherLocation">Desa Bulu, Semen, Kediri</span>
+                    </div>
+
+                    <div class="agri-weather-hero">
+                        <div>
+                            <div class="agri-weather-temperature"
+                                id="weatherTemperature">--°C</div>
+                            <h3 id="weatherDescription">
+                                Memuat kondisi cuaca...
+                            </h3>
+                            <p id="weatherUpdated">
+                                Memuat waktu prakiraan...
+                            </p>
+                        </div>
+
+                        <div id="weatherHeroIcon"
+                            class="agri-weather-hero-icon">
+                            <i class="fa-solid fa-cloud-sun"></i>
+                        </div>
+                    </div>
+
+                    <div class="agri-weather-metrics">
+
+                        <div class="agri-weather-metric">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span>Kelembapan</span>
+                            <strong id="weatherHumidity">--</strong>
+                        </div>
+
+                        <div class="agri-weather-metric">
+                            <i class="fa-solid fa-wind"></i>
+                            <span>Kecepatan Angin</span>
+                            <strong id="weatherWind">--</strong>
+                        </div>
+
+                        <div class="agri-weather-metric">
+                            <i class="fa-solid fa-cloud-rain"></i>
+                            <span>Curah Hujan</span>
+                            <strong id="weatherRain">--</strong>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header"><h3>Prakiraan Cuaca</h3></div>
-                    <div class="forecast" id="weatherForecast">
-                        <p>Memuat prakiraan cuaca...</p>
+                <!-- PRAKIRAAN CUACA -->
+                <div class="card agri-weather-forecast-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h3>Prakiraan Cuaca</h3>
+                            <small>Perubahan cuaca berdasarkan waktu</small>
+                        </div>
+                        <span class="agri-weather-source">BMKG</span>
                     </div>
+
+                    <div id="weatherForecast"
+                        class="agri-forecast-list">
+                        <p>Memuat prakiraan...</p>
+                    </div>
+
+                    <p class="agri-weather-footnote">
+                        Prakiraan mengikuti waktu lokal WIB dan
+                        dapat berubah sesuai pembaruan BMKG.
+                    </p>
                 </div>
             </div>
 
-            <div class="card" style="margin-top:20px;">
-                <div class="card-header"><h3>Risiko Pertanian</h3></div>
+            <!-- RISIKO PERTANIAN -->
+            <div class="card agri-weather-risk-card">
+
+                <div class="card-header">
+                    <div>
+                        <h3>Indikator Risiko Cuaca</h3>
+                        <small>
+                            Evaluasi sederhana terhadap parameter
+                            cuaca yang berkaitan dengan pertanian
+                        </small>
+                    </div>
+                </div>
+
                 <div id="weatherRiskList">
-                    <p>Data risiko belum tersedia.</p>
+                    <p>Memuat informasi risiko...</p>
                 </div>
+
+                <p class="agri-weather-footnote">
+                    Indikator ini dihasilkan dari aturan sederhana
+                    pada sistem AgriDash, bukan peringatan dini resmi BMKG.
+                </p>
             </div>
+
         </section>
 
         <!-- PREDIKSI & EWS -->
@@ -656,7 +729,7 @@
 
             <div class="card" style="margin-top:20px;">
                 <div class="card-header"><h3>Hasil Clustering Kecamatan</h3></div>
-                <div class="table-responsive">
+                <div class="table-responsive ketahanan-table-scroll">
                     <table>
                         <thead>
                             <tr>
@@ -676,7 +749,7 @@
 
             <div class="card" style="margin-top:20px;">
                 <div class="card-header"><h3>Rekomendasi Komoditas</h3></div>
-                <div class="table-responsive">
+                <div class="table-responsive ketahanan-table-scroll">
                     <table>
                         <thead>
                             <tr>
@@ -692,36 +765,6 @@
                     </table>
                 </div>
             </div>
-            <!-- PERBANDINGAN MODEL -->
-             <div class="card" style="margin-top: 20px;">
-                <div class="card-header">
-                    <div>
-                        <h3>Perbandingan Performa Model</h3>
-                        <small>
-                            Evaluasi performa model pemodelan pertanian
-                        </small>
-                    </div>
-                </div>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nama Model</th>
-                                <th>Metode</th>
-                                <th>Nilai Evaluasi</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabelPerbandinganModel">
-                <tr>
-                    <td colspan="4" style="text-align: center;">
-                        Memuat hasil evaluasi model...
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
         </section>
 
         <!-- DATA CENTER -->

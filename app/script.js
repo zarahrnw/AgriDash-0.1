@@ -416,7 +416,6 @@ function showPage(pageId, clickedButton = null) {
         case "ketahanan":
             loadClustering();
             loadRecommendations();
-            loadModelComparison();
             break;
 
         case "data":
@@ -772,14 +771,225 @@ async function loadDashboardClusterSummary() {
     }
 }
 
-async function loadDashboardWarning() {
-    setText("jumlahWilayahWarning", "—");
 
-    setText(
-        "statusWilayahWarning",
-        "Data EWS belum tersedia"
+
+async function loadDashboardWarning() {
+
+    // ==========================================
+    // 1. WILAYAH PERLU PERHATIAN (CLUSTERING)
+    // ==========================================
+    try {
+        const response = await apiFetch(
+            "/api/v1/monitoring/status-wilayah"
+        );
+
+        const rows = getRecords(response);
+
+        const wilayahRendah = rows.filter(row =>
+            String(row.status_wilayah || "")
+                .toLowerCase()
+                .includes("rendah")
+        );
+
+        setText(
+            "jumlahWilayahWarning",
+            wilayahRendah.length
+        );
+
+        const statusElement = document.getElementById(
+            "statusWilayahWarning"
+        );
+
+        if (statusElement) {
+            if (wilayahRendah.length) {
+                const names = wilayahRendah
+                    .map(row => row.kecamatan)
+                    .filter(Boolean);
+
+                statusElement.innerHTML = `
+                    <strong style="color:#D95363;">
+                        ${wilayahRendah.length} kecamatan
+                        berpotensi rendah
+                    </strong>
+                    <div style="
+                        font-size:11px;
+                        color:#64748b;
+                        line-height:1.6;
+                        margin-top:6px;
+                    ">
+                        ${names.map(escapeHTML).join(", ")}
+                    </div>
+                `;
+            } else {
+                statusElement.textContent =
+                    "Tidak ada wilayah berkategori potensi rendah.";
+            }
+        }
+
+    } catch (error) {
+        console.error("Status wilayah:", error);
+
+        setText("jumlahWilayahWarning", "—");
+        setText(
+            "statusWilayahWarning",
+            "Data status wilayah belum tersedia."
+        );
+    }
+
+    // ==========================================
+    // 2. EARLY WARNING - API BMKG
+    // ==========================================
+    const container = document.getElementById(
+        "dashboardWarnings"
     );
+
+    if (!container) return;
+
+    if (!DEFAULT_ADM4) {
+        container.textContent =
+            "Kode wilayah BMKG belum dikonfigurasi.";
+        return;
+    }
+
+    try {
+        const response = await apiFetch(
+            `/api/v1/ews-cuaca/${encodeURIComponent(DEFAULT_ADM4)}`
+        );
+
+        const status = String(
+            response.status || "TIDAK TERSEDIA"
+        ).toUpperCase();
+
+        const config = {
+            AMAN: {
+                color: "#265322",
+                background: "#F0F7E9",
+                icon: "fa-shield-halved",
+                title: "Kondisi Relatif Aman"
+            },
+            WASPADA: {
+                color: "#B7791F",
+                background: "#FFF7E6",
+                icon: "fa-triangle-exclamation",
+                title: "Perlu Kewaspadaan"
+            },
+            BAHAYA: {
+                color: "#D95363",
+                background: "#FFF0F0",
+                icon: "fa-circle-exclamation",
+                title: "Perlu Perhatian Tinggi"
+            }
+        };
+
+        const selected = config[status] || {
+            color: "#64748B",
+            background: "#F1F5F9",
+            icon: "fa-circle-info",
+            title: "Status Tidak Tersedia"
+        };
+
+        const params = response.parameter || {};
+
+        container.innerHTML = `
+            <div style="
+                background:${selected.background};
+                padding:18px;
+                border-radius:14px;
+            ">
+
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    gap:12px;
+                    margin-bottom:12px;
+                ">
+                    <i class="fa-solid ${selected.icon}"
+                       style="
+                           color:${selected.color};
+                           font-size:24px;
+                       ">
+                    </i>
+
+                    <div>
+                        <strong style="
+                            color:${selected.color};
+                            font-size:15px;
+                        ">
+                            ${escapeHTML(status)}
+                        </strong>
+
+                        <div style="
+                            font-size:11px;
+                            color:#64748b;
+                        ">
+                            ${selected.title}
+                        </div>
+                    </div>
+                </div>
+
+                <p style="
+                    font-size:12px;
+                    line-height:1.7;
+                    color:#475569;
+                    margin:0 0 14px;
+                ">
+                    ${escapeHTML(
+                        response.pesan ||
+                        "Informasi kondisi cuaca belum tersedia."
+                    )}
+                </p>
+
+                <div style="
+                    display:grid;
+                    grid-template-columns:repeat(3,minmax(0,1fr));
+                    gap:8px;
+                ">
+
+                    <div>
+                        <small>Curah Hujan</small>
+                        <strong style="display:block;">
+                            ${formatNumber(params.curah_hujan, 1)} mm
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Kelembapan</small>
+                        <strong style="display:block;">
+                            ${formatNumber(params.kelembapan, 1)}%
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>Suhu</small>
+                        <strong style="display:block;">
+                            ${formatNumber(params.suhu, 1)}°C
+                        </strong>
+                    </div>
+
+                </div>
+            </div>
+
+            <p style="
+                font-size:10px;
+                color:#94a3b8;
+                line-height:1.6;
+                margin-top:10px;
+            ">
+                Indikator berdasarkan prakiraan cuaca BMKG
+                untuk wilayah ADM4 yang dipilih.
+                Bukan peringatan dini resmi BMKG.
+            </p>
+        `;
+
+    } catch (error) {
+        console.error("Dashboard EWS:", error);
+
+        container.textContent =
+            "Gagal memuat indikator cuaca: " + error.message;
+    }
 }
+
+
 
 
 /* ==========================================================
@@ -2841,6 +3051,22 @@ async function loadPriceData() {
         renderPriceChart(rows);
     } catch (error) {
         console.error("Harga pangan:", error);
+        const summary = document.getElementById("hargaSummary");
+
+        if (summary) {
+            summary.innerHTML = `
+                <div style="
+                    padding: 15px;
+                    color: #b91c1c;
+                    background: #fff1f2;
+                    border-radius: 10px;
+                    font-size: 12px;
+                ">
+                    <strong>Gagal memuat harga pangan</strong>
+                    <p>${escapeHTML(error.message)}</p>
+                </div>
+            `;
+        }
 
         setText("hargaTertinggiNama", "—");
         setText("hargaTertinggiNilai", "—");
@@ -2904,10 +3130,22 @@ function renderPriceChart(rows) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+
             plugins: {
-                legend: { display: false }
+                legend: {
+                    position: "bottom"
+                }
             },
-            scales: chartScales()
+
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: value =>
+                            "Rp " + Number(value).toLocaleString("id-ID")
+                    }
+                }
+            }
         }
     });
 }
@@ -2917,18 +3155,53 @@ function renderPriceChart(rows) {
    18. CUACA BMKG
 ========================================================== */
 
+
+/* ==========================================
+   CUACA BMKG - AGRIDASH
+========================================== */
+
+function getWeatherIcon(description = "") {
+    const text = String(description).toLowerCase();
+
+    if (text.includes("petir")) return "fa-cloud-bolt";
+    if (text.includes("hujan")) return "fa-cloud-rain";
+    if (text.includes("kabut") || text.includes("kabur")) return "fa-smog";
+    if (text.includes("cerah berawan")) return "fa-cloud-sun";
+    if (text.includes("cerah")) return "fa-sun";
+    if (text.includes("berawan")) return "fa-cloud";
+
+    return "fa-cloud-sun";
+}
+
+function formatWeatherDate(value) {
+    if (!value) return "—";
+
+    const match = String(value).match(
+        /^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/
+    );
+
+    if (!match) return String(value);
+
+    const [, year, month, day, hour, minute] = match;
+
+    const date = new Date(
+        Number(year),
+        Number(month) - 1,
+        Number(day)
+    );
+
+    const formattedDate = date.toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "short"
+    });
+
+    return `${formattedDate} · ${hour}.${minute} WIB`;
+}
+
 async function loadDashboardWeather() {
     if (!DEFAULT_ADM4) {
-        setText(
-            "dashboardWeather",
-            "Kode wilayah BMKG belum diisi"
-        );
-
-        setText(
-            "weatherDescription",
-            "Kode wilayah BMKG belum dikonfigurasi."
-        );
-
+        setText("dashboardWeather", "Kode wilayah BMKG belum diisi");
+        setText("weatherDescription", "Kode wilayah belum dikonfigurasi");
         return;
     }
 
@@ -2938,81 +3211,162 @@ async function loadDashboardWeather() {
         );
 
         const weather = response.cuaca || {};
+        const lokasi = response.lokasi || {};
 
-        const temperature =
-            weather.t !== undefined
-                ? `${weather.t}°C`
-                : "—";
+        const temperature = weather.t != null
+            ? `${formatNumber(weather.t, 1)}°C`
+            : "—";
 
+        // CUACA MINI DASHBOARD
         setText("dashboardTemperature", temperature);
-
         setText(
             "dashboardWeather",
-            weather.weather_desc || "—"
+            weather.weather_desc || "Tidak tersedia"
         );
 
+        // CUACA UTAMA
         setText("weatherTemperature", temperature);
         setText(
             "weatherDescription",
-            weather.weather_desc || "—"
+            weather.weather_desc || "Tidak tersedia"
         );
 
+        // LOKASI BMKG
+        const locationText = [
+            lokasi.desa,
+            lokasi.kecamatan,
+            lokasi.kotkab
+        ].filter(Boolean).join(", ");
+
+        setText(
+            "weatherLocation",
+            locationText || "Kabupaten Kediri"
+        );
+
+        // WAKTU PRAKIRAAN
+        setText(
+            "weatherUpdated",
+            `Prakiraan: ${formatWeatherDate(weather.local_datetime)}`
+        );
+
+        // PARAMETER CUACA
         setText(
             "weatherHumidity",
-            weather.hu !== undefined
-                ? `${weather.hu}%`
-                : "—"
+            weather.hu != null ? `${weather.hu}%` : "—"
         );
 
         setText(
             "weatherWind",
-            weather.ws !== undefined
-                ? `${weather.ws} km/j`
+            weather.ws != null
+                ? `${formatNumber(weather.ws, 1)} km/j`
                 : "—"
         );
 
         setText(
             "weatherRain",
-            weather.tp !== undefined
-                ? `${weather.tp} mm`
+            weather.tp != null
+                ? `${formatNumber(weather.tp, 1)} mm`
                 : "—"
         );
 
-        renderWeatherForecast(
-            response.prakiraan || []
-        );
+        // IKON CUACA
+        const heroIcon = document.getElementById("weatherHeroIcon");
 
-        loadWeatherWarning(DEFAULT_ADM4);
+        if (heroIcon) {
+            heroIcon.innerHTML = `
+                <i class="fa-solid ${
+                    getWeatherIcon(weather.weather_desc)
+                }"></i>
+            `;
+        }
+
+        // PRAKIRAAN CUACA
+        renderWeatherForecast(response.prakiraan || []);
+
+        // INDIKATOR RISIKO
+        await loadWeatherWarning(DEFAULT_ADM4);
+
     } catch (error) {
         console.error("Weather:", error);
 
-        setText(
-            "dashboardWeather",
-            "Data cuaca gagal dimuat"
-        );
+        setText("dashboardWeather", "Data cuaca gagal dimuat");
+        setText("weatherDescription", "Gagal memuat cuaca");
+
+        const container = document.getElementById("weatherForecast");
+
+        if (container) {
+            container.textContent = `Gagal memuat prakiraan: ${error.message}`;
+        }
     }
 }
 
 function renderWeatherForecast(items) {
-    const container = document.getElementById(
-        "weatherForecast"
-    );
+    const container = document.getElementById("weatherForecast");
 
     if (!container) return;
 
-    container.innerHTML = items.slice(0, 5)
-        .map(item => `
-            <div>
-                <strong>
-                    ${escapeHTML(item.local_datetime || "—")}
+    if (!Array.isArray(items) || !items.length) {
+        container.innerHTML = "<p>Prakiraan cuaca belum tersedia.</p>";
+        return;
+    }
+
+    const visible = items.slice(0, 8);
+
+    container.innerHTML = visible.map(item => {
+        const icon = getWeatherIcon(item.weather_desc);
+
+        const temperature = item.t != null
+            ? `${escapeHTML(item.t)}°C`
+            : "—";
+
+        const humidity = item.hu != null
+            ? `${escapeHTML(item.hu)}%`
+            : "—";
+
+        const rainfall = item.tp != null
+            ? `${formatNumber(item.tp, 1)} mm`
+            : "—";
+
+        return `
+            <div class="agri-forecast-item">
+
+                <span class="agri-forecast-time">
+                    ${escapeHTML(
+                        formatWeatherDate(item.local_datetime)
+                    )}
+                </span>
+
+                <div class="agri-forecast-icon">
+                    <i class="fa-solid ${icon}"></i>
+                </div>
+
+                <strong class="agri-forecast-temp">
+                    ${temperature}
                 </strong>
-                <span>${escapeHTML(item.t ?? "—")}°C</span>
-                <small>
-                    ${escapeHTML(item.weather_desc || "")}
-                </small>
+
+                <span class="agri-forecast-desc">
+                    ${escapeHTML(
+                        item.weather_desc || "Tidak tersedia"
+                    )}
+                </span>
+
+                <div class="agri-forecast-extra">
+                    <span>
+                        <i class="fa-solid fa-droplet"></i>
+                        ${humidity}
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-cloud-rain"></i>
+                        ${rainfall}
+                    </span>
+                </div>
+
             </div>
-        `).join("");
+        `;
+    }).join("");
 }
+
 
 async function loadWeatherWarning(kode) {
     if (!kode) return;
@@ -3289,6 +3643,7 @@ async function uploadDatasetFile() {
         loadMonitoring(),
         loadStatusWilayah(),
         loadFilterKecamatan(),
+        loadDashboardWarning(),
         loadDataCenter()
     ]);
     } catch (error) {
