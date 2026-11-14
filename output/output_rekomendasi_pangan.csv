@@ -1,0 +1,79 @@
+kecamatan,tanaman,rank,skor_potensi,prod_mean,produktivitas_mean,growth_rate
+Badas,Ketela Pohon,1,0.5586,26.5683,299.2233,0.0019
+Badas,Kacang Tanah,2,0.5239,1.4867,17.65,-0.0419
+Badas,Padi,3,0.4527,9369.145,55.8383,0.014
+Banyakan,Kacang Tanah,1,0.7873,82.67,18.2767,-0.0073
+Banyakan,Ketela Pohon,2,0.7072,1590.89,269.625,0.0215
+Banyakan,Ubi Jalar,3,0.6654,1653.035,313.39,-0.0182
+Gampengrejo,Kacang Tanah,1,0.5283,2.005,17.69,-0.038
+Gampengrejo,Ketela Pohon,2,0.5096,40.6783,264.59,0.0513
+Gampengrejo,Padi,3,0.4498,2081.1217,58.5733,0.0687
+Grogol,Ketela Pohon,1,0.61,371.3167,302.5717,0.008
+Grogol,Kacang Tanah,2,0.578,17.1917,17.4933,0.01
+Grogol,Kedelai,3,0.3528,0.0517,12.8517,-0.0166
+Gurah,Padi,1,0.7041,11859.2917,60.0783,-0.0196
+Gurah,Kacang Tanah,2,0.5632,6.5133,17.76,0.0209
+Gurah,Ketela Pohon,3,0.5418,198.9483,289.29,-0.0765
+Kandangan,Kacang Tanah,1,0.5892,27.2217,17.7,-0.0668
+Kandangan,Ketela Pohon,2,0.5799,558.5183,281.5383,-0.0501
+Kandangan,Padi,3,0.5642,9719.6717,60.02,-0.0765
+Kandat,Ketela Pohon,1,0.5805,392.7233,278.2,0.0565
+Kandat,Kacang Tanah,2,0.5461,15.7867,16.38,0.0678
+Kandat,Padi,3,0.4117,7614.4883,55.4033,0.0401
+Kayenkidul,Kacang Tanah,1,0.5445,6.355,17.8533,-0.0464
+Kayenkidul,Ketela Pohon,2,0.5319,145.36,280.6683,-0.0275
+Kayenkidul,Padi,3,0.5047,7564.5533,56.265,0.0786
+Kepung,Ketela Pohon,1,0.8464,2398.5383,288.1717,0.0328
+Kepung,Ubi Jalar,2,0.799,1904.7567,318.0333,0.0267
+Kepung,Kacang Tanah,3,0.7908,91.82,17.3317,0.0474
+Kras,Ketela Pohon,1,0.5556,188.4367,279.3883,0.0517
+Kras,Kacang Tanah,2,0.5492,8.025,17.0217,0.0601
+Kras,Padi,3,0.547,10686.735,57.1833,0.0025
+Kunjang,Padi,1,0.585,8199.5417,59.1217,0.0108
+Kunjang,Kacang Tanah,2,0.553,4.2583,17.3983,0.055
+Kunjang,Ketela Pohon,3,0.5138,115.255,274.2517,-0.0371
+Mojo,Kacang Tanah,1,0.943,145.5367,18.1133,-0.0433
+Mojo,Ketela Pohon,2,0.938,3188.6917,290.095,-0.0129
+Mojo,Ubi Jalar,3,0.6134,2827.9833,291.7867,-0.0335
+Ngadiluwih,Padi,1,0.5603,5213.5867,61.2117,-0.0242
+Ngadiluwih,Kacang Tanah,2,0.5567,15.1117,16.5283,0.0866
+Ngadiluwih,Ketela Pohon,3,0.5562,322.3417,267.735,0.0713
+Ngancar,Ketela Pohon,1,0.7838,2170.5417,276.2267,-0.0127
+Ngancar,Kacang Tanah,2,0.7599,77.6833,17.3967,0.0643
+Ngancar,Ubi Jalar,3,0.4803,1558.7833,288.5617,0.0307
+Ngasem,Ketela Pohon,1,0.5356,56.8533,288.1917,-0.0232
+Ngasem,Kacang Tanah,2,0.5135,2.11,16.8167,0.0282
+Ngasem,Kedelai,3,0.2944,0.01,10.08,0.0
+Pagu,Kacang Tanah,1,0.5578,2.1783,18.2033,-0.0159
+Pagu,Ketela Pohon,2,0.5475,53.0733,293.9417,-0.0164
+Pagu,Padi,3,0.31,6044.485,55.13,0.0083
+Papar,Ketela Pohon,1,0.5616,150.425,290.145,0.0174
+Papar,Kacang Tanah,2,0.5348,7.8317,17.4317,-0.0341
+Papar,Padi,3,0.4632,7315.2667,57.4433,0.0045
+Pare,Kacang Tanah,1,0.568,11.5767,17.31,0.0504
+Pare,Ketela Pohon,2,0.5597,264.5117,283.225,0.0036
+Pare,Ubi Jalar,3,0.4536,177.365,299.97,0.0836
+Plemahan,Padi,1,0.7139,15583.8317,57.78,-0.0046
+Plemahan,Ketela Pohon,2,0.5382,69.1233,287.7517,-0.0162
+Plemahan,Kacang Tanah,3,0.5228,2.32,16.9133,0.0421
+Plosoklaten,Kacang Tanah,1,0.6721,42.8733,18.32,-0.0268
+Plosoklaten,Ketela Pohon,2,0.6354,805.87,280.5217,0.0504
+Plosoklaten,Padi,3,0.4977,9747.41,57.7233,-0.0359
+Puncu,Ketela Pohon,1,0.7952,2127.3933,287.8433,-0.0297
+Puncu,Kacang Tanah,2,0.7797,111.815,16.5367,-0.0521
+Puncu,Ubi Jalar,3,0.6145,2259.2717,306.8183,-0.0809
+Purwoasri,Padi,1,0.6987,12088.5733,60.1583,-0.0322
+Purwoasri,Kedelai,2,0.5551,4.0767,6.66,-0.5298
+Purwoasri,Kacang Tanah,3,0.0159,7.225,8.9917,-0.5182
+Ringinrejo,Kacang Tanah,1,0.5809,11.6283,18.445,-0.0563
+Ringinrejo,Ketela Pohon,2,0.5744,215.9483,290.3067,0.0336
+Ringinrejo,Padi,3,0.415,6898.855,57.2133,-0.0141
+Semen,Ketela Pohon,1,0.8859,2515.3817,311.9283,-0.0401
+Semen,Kacang Tanah,2,0.8122,97.225,17.64,0.0273
+Semen,Ubi Jalar,3,0.67,2090.1317,304.7817,0.0002
+Tarokan,Kacang Tanah,1,0.6227,39.7333,17.2967,-0.0189
+Tarokan,Ketela Pohon,2,0.6209,1036.4533,273.64,-0.0689
+Tarokan,Kedelai,3,0.3611,0.1117,12.9467,-0.0128
+Wates,Padi,1,0.6294,13132.6833,56.1017,0.0539
+Wates,Ketela Pohon,2,0.5782,83.54,296.76,0.0669
+Wates,Kacang Tanah,3,0.5396,4.75,17.6517,-0.0219

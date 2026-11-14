@@ -1,0 +1,261 @@
+tahun,kecamatan,tanaman,tahun_basis,aktual_basis,prediksi,produksi_lower,produksi_upper,delta_pct,volatilitas,status,risk_level,dalam_interval
+2026,Badas,Kacang Tanah,2025,1.32,1.32,1.204,1.502,0.0,0.0851,Stabil,Normal,True
+2027,Badas,Kacang Tanah,2025,1.32,1.32,1.124,1.564,0.0,0.0851,Stabil,Normal,True
+2026,Badas,Kedelai,2025,0.0,0.0,0.0,0.0,,0.568,Basis kecil,Tidak dinilai,
+2027,Badas,Kedelai,2025,0.0,0.0,0.0,0.0,,0.568,Basis kecil,Tidak dinilai,
+2026,Badas,Ketela Pohon,2025,29.15,29.15,25.898,32.677,0.0,0.0819,Stabil,Normal,True
+2027,Badas,Ketela Pohon,2025,29.15,29.15,24.674,33.992,0.0,0.0819,Stabil,Normal,True
+2026,Badas,Padi,2025,9815.85,9815.445,8820.065,11075.614,-0.0,0.0579,Stabil,Normal,True
+2027,Badas,Padi,2025,9815.85,9815.445,8223.576,11838.478,-0.0,0.0579,Stabil,Normal,True
+2026,Badas,Ubi Jalar,2025,24.8,24.8,22.294,27.816,0.0,0.0533,Stabil,Normal,True
+2027,Badas,Ubi Jalar,2025,24.8,24.8,21.429,29.444,0.0,0.0533,Stabil,Normal,True
+2026,Banyakan,Kacang Tanah,2025,83.42,83.432,76.077,94.922,0.0001,0.0765,Stabil,Normal,True
+2027,Banyakan,Kacang Tanah,2025,83.42,83.432,71.053,98.863,0.0001,0.0765,Stabil,Normal,True
+2026,Banyakan,Kedelai,2025,0.25,0.242,0.225,0.271,,0.0548,Basis kecil,Tidak dinilai,
+2027,Banyakan,Kedelai,2025,0.25,0.234,0.212,0.277,,0.0548,Basis kecil,Tidak dinilai,
+2026,Banyakan,Ketela Pohon,2025,1838.77,1838.771,1633.671,2061.273,0.0,0.1315,Stabil,Normal,True
+2027,Banyakan,Ketela Pohon,2025,1838.77,1838.771,1556.462,2144.242,0.0,0.1315,Stabil,Normal,True
+2026,Banyakan,Padi,2025,4536.62,4536.442,4076.403,5118.859,-0.0,0.0379,Stabil,Normal,True
+2027,Banyakan,Padi,2025,4536.62,4536.442,3800.722,5471.434,-0.0,0.0379,Stabil,Normal,True
+2026,Banyakan,Ubi Jalar,2025,1564.77,1564.777,1406.638,1755.082,0.0,0.0661,Stabil,Normal,True
+2027,Banyakan,Ubi Jalar,2025,1564.77,1564.777,1352.073,1857.797,0.0,0.0661,Stabil,Normal,True
+2026,Gampengrejo,Kacang Tanah,2025,1.97,1.97,1.797,2.242,0.0,0.0733,Stabil,Normal,True
+2027,Gampengrejo,Kacang Tanah,2025,1.97,1.97,1.678,2.335,0.0,0.0733,Stabil,Normal,True
+2026,Gampengrejo,Kedelai,2025,0.01,0.0,0.0,0.0,,0.5249,Basis kecil,Tidak dinilai,
+2027,Gampengrejo,Kedelai,2025,0.01,0.0,0.0,0.0,,0.5249,Basis kecil,Tidak dinilai,
+2026,Gampengrejo,Ketela Pohon,2025,43.32,43.32,38.488,48.562,0.0,0.0842,Stabil,Normal,True
+2027,Gampengrejo,Ketela Pohon,2025,43.32,43.32,36.669,50.517,0.0,0.0842,Stabil,Normal,True
+2026,Gampengrejo,Padi,2025,2452.84,2452.745,2204.013,2767.644,-0.0,0.057,Stabil,Normal,True
+2027,Gampengrejo,Padi,2025,2452.84,2452.745,2054.959,2958.273,-0.0,0.057,Stabil,Normal,True
+2026,Gampengrejo,Ubi Jalar,2025,36.86,36.86,33.135,41.343,0.0,0.0493,Stabil,Normal,True
+2027,Gampengrejo,Ubi Jalar,2025,36.86,36.86,31.85,43.762,0.0,0.0493,Stabil,Normal,True
+2026,Grogol,Kacang Tanah,2025,18.35,18.348,16.73,20.874,-0.0001,0.0848,Stabil,Normal,True
+2027,Grogol,Kacang Tanah,2025,18.35,18.348,15.625,21.741,-0.0001,0.0848,Stabil,Normal,True
+2026,Grogol,Kedelai,2025,0.05,0.05,0.047,0.056,,0.1162,Basis kecil,Tidak dinilai,
+2027,Grogol,Kedelai,2025,0.05,0.05,0.045,0.059,,0.1162,Basis kecil,Tidak dinilai,
+2026,Grogol,Ketela Pohon,2025,404.43,404.43,359.319,453.368,0.0,0.0602,Stabil,Normal,True
+2027,Grogol,Ketela Pohon,2025,404.43,404.43,342.337,471.617,0.0,0.0602,Stabil,Normal,True
+2026,Grogol,Padi,2025,4919.18,4918.944,4420.116,5550.469,-0.0,0.0837,Stabil,Normal,True
+2027,Grogol,Padi,2025,4919.18,4918.944,4121.189,5932.773,-0.0,0.0837,Stabil,Normal,True
+2026,Grogol,Ubi Jalar,2025,344.17,344.169,309.386,386.026,-0.0,0.0502,Stabil,Normal,True
+2027,Grogol,Ubi Jalar,2025,344.17,344.169,297.385,408.618,-0.0,0.0502,Stabil,Normal,True
+2026,Gurah,Kacang Tanah,2025,7.02,7.021,6.402,7.988,0.0001,0.0374,Stabil,Normal,True
+2027,Gurah,Kacang Tanah,2025,7.02,7.021,5.979,8.32,0.0001,0.0374,Stabil,Normal,True
+2026,Gurah,Kedelai,2025,0.02,0.02,0.019,0.022,,0.0,Basis kecil,Tidak dinilai,
+2027,Gurah,Kedelai,2025,0.02,0.02,0.018,0.024,,0.0,Basis kecil,Tidak dinilai,
+2026,Gurah,Ketela Pohon,2025,154.65,154.652,137.402,173.366,0.0,0.046,Stabil,Normal,True
+2027,Gurah,Ketela Pohon,2025,154.65,154.652,130.908,180.344,0.0,0.046,Stabil,Normal,True
+2026,Gurah,Padi,2025,10225.41,10224.971,9188.061,11537.717,-0.0,0.1355,Stabil,Normal,True
+2027,Gurah,Padi,2025,10225.41,10224.971,8566.685,12332.41,-0.0,0.1355,Stabil,Normal,True
+2026,Gurah,Ubi Jalar,2025,131.6,131.6,118.3,147.605,0.0,0.072,Stabil,Normal,True
+2027,Gurah,Ubi Jalar,2025,131.6,131.6,113.711,156.243,0.0,0.072,Stabil,Normal,True
+2026,Kandangan,Kacang Tanah,2025,21.91,21.907,19.976,24.924,-0.0001,0.0837,Stabil,Normal,True
+2027,Kandangan,Kacang Tanah,2025,21.91,21.907,18.657,25.959,-0.0001,0.0837,Stabil,Normal,True
+2026,Kandangan,Kedelai,2025,0.07,0.076,0.07,0.085,,0.1389,Basis kecil,Tidak dinilai,
+2027,Kandangan,Kedelai,2025,0.07,0.081,0.073,0.096,,0.1389,Basis kecil,Tidak dinilai,
+2026,Kandangan,Ketela Pohon,2025,482.97,482.973,429.101,541.416,0.0,0.0489,Stabil,Normal,True
+2027,Kandangan,Ketela Pohon,2025,482.97,482.973,408.822,563.208,0.0,0.0489,Stabil,Normal,True
+2026,Kandangan,Padi,2025,8056.11,8055.739,7238.81,9089.985,-0.0,0.0333,Stabil,Normal,True
+2027,Kandangan,Padi,2025,8056.11,8055.739,6749.259,9716.084,-0.0,0.0333,Stabil,Normal,True
+2026,Kandangan,Ubi Jalar,2025,411.0,410.998,369.462,460.983,-0.0,0.1079,Stabil,Normal,True
+2027,Kandangan,Ubi Jalar,2025,411.0,410.998,355.13,487.962,-0.0,0.1079,Stabil,Normal,True
+2026,Kandat,Kacang Tanah,2025,19.25,19.251,17.554,21.902,0.0001,0.0563,Stabil,Normal,True
+2027,Kandat,Kacang Tanah,2025,19.25,19.251,16.395,22.811,0.0001,0.0563,Stabil,Normal,True
+2026,Kandat,Kedelai,2025,0.06,0.06,0.056,0.067,,0.0,Basis kecil,Tidak dinilai,
+2027,Kandat,Kedelai,2025,0.06,0.06,0.054,0.071,,0.0,Basis kecil,Tidak dinilai,
+2026,Kandat,Ketela Pohon,2025,424.27,424.276,376.951,475.615,0.0,0.1445,Stabil,Normal,True
+2027,Kandat,Ketela Pohon,2025,424.27,424.276,359.136,494.76,0.0,0.1445,Stabil,Normal,True
+2026,Kandat,Padi,2025,8929.23,8928.836,8023.367,10075.176,-0.0,0.0882,Stabil,Normal,True
+2027,Kandat,Padi,2025,8929.23,8928.836,7480.758,10769.133,-0.0,0.0882,Stabil,Normal,True
+2026,Kandat,Ubi Jalar,2025,361.05,361.056,324.567,404.967,0.0,0.0514,Stabil,Normal,True
+2027,Kandat,Ubi Jalar,2025,361.05,361.056,311.976,428.667,0.0,0.0514,Stabil,Normal,True
+2026,Kayenkidul,Kacang Tanah,2025,6.19,6.192,5.646,7.044,0.0003,0.1085,Stabil,Normal,True
+2027,Kayenkidul,Kacang Tanah,2025,6.19,6.192,5.273,7.337,0.0003,0.1085,Stabil,Normal,True
+2026,Kayenkidul,Kedelai,2025,0.02,0.02,0.019,0.022,,0.0,Basis kecil,Tidak dinilai,
+2027,Kayenkidul,Kedelai,2025,0.02,0.02,0.018,0.024,,0.0,Basis kecil,Tidak dinilai,
+2026,Kayenkidul,Ketela Pohon,2025,136.43,136.429,121.211,152.937,-0.0,0.0697,Stabil,Normal,True
+2027,Kayenkidul,Ketela Pohon,2025,136.43,136.429,115.483,159.093,-0.0,0.0697,Stabil,Normal,True
+2026,Kayenkidul,Padi,2025,8632.19,8631.812,7756.463,9740.018,-0.0,0.1143,Stabil,Normal,True
+2027,Kayenkidul,Padi,2025,8632.19,8631.812,7231.904,10410.889,-0.0,0.1143,Stabil,Normal,True
+2026,Kayenkidul,Ubi Jalar,2025,116.1,116.098,104.365,130.218,-0.0,0.0347,Stabil,Normal,True
+2027,Kayenkidul,Ubi Jalar,2025,116.1,116.098,100.317,137.839,-0.0,0.0347,Stabil,Normal,True
+2026,Kepung,Kacang Tanah,2025,106.58,106.596,97.2,121.276,0.0002,0.0412,Stabil,Normal,True
+2027,Kepung,Kacang Tanah,2025,106.58,106.596,90.781,126.312,0.0002,0.0412,Stabil,Normal,True
+2026,Kepung,Kedelai,2025,0.32,0.333,0.31,0.373,,0.1003,Basis kecil,Tidak dinilai,
+2027,Kepung,Kedelai,2025,0.32,0.347,0.314,0.41,,0.1003,Basis kecil,Tidak dinilai,
+2026,Kepung,Ketela Pohon,2025,2349.27,2349.24,2087.201,2633.511,-0.0,0.0937,Stabil,Normal,True
+2027,Kepung,Ketela Pohon,2025,2349.27,2349.24,1988.558,2739.514,-0.0,0.0937,Stabil,Normal,True
+2026,Kepung,Padi,2025,10603.46,10603.008,9527.761,11964.288,-0.0,0.0747,Stabil,Normal,True
+2027,Kepung,Padi,2025,10603.46,10603.008,8883.412,12788.362,-0.0,0.0747,Stabil,Normal,True
+2026,Kepung,Ubi Jalar,2025,1999.2,1999.198,1797.155,2242.336,-0.0,0.0682,Stabil,Normal,True
+2027,Kepung,Ubi Jalar,2025,1999.2,1999.198,1727.441,2373.567,-0.0,0.0682,Stabil,Normal,True
+2026,Kras,Kacang Tanah,2025,9.42,9.422,8.591,10.719,0.0002,0.0913,Stabil,Normal,True
+2027,Kras,Kacang Tanah,2025,9.42,9.422,8.024,11.164,0.0002,0.0913,Stabil,Normal,True
+2026,Kras,Kedelai,2025,0.03,0.03,0.028,0.034,,0.2,Basis kecil,Tidak dinilai,
+2027,Kras,Kedelai,2025,0.03,0.03,0.027,0.035,,0.2,Basis kecil,Tidak dinilai,
+2026,Kras,Ketela Pohon,2025,207.68,207.678,184.513,232.808,-0.0,0.0271,Stabil,Normal,True
+2027,Kras,Ketela Pohon,2025,207.68,207.678,175.793,242.178,-0.0,0.0271,Stabil,Normal,True
+2026,Kras,Padi,2025,9860.86,9860.446,8860.502,11126.392,-0.0,0.1056,Stabil,Normal,True
+2027,Kras,Padi,2025,9860.86,9860.446,8261.279,11892.753,-0.0,0.1056,Stabil,Normal,True
+2026,Kras,Ubi Jalar,2025,176.73,176.73,158.869,198.224,0.0,0.0419,Stabil,Normal,True
+2027,Kras,Ubi Jalar,2025,176.73,176.73,152.707,209.824,0.0,0.0419,Stabil,Normal,True
+2026,Kunjang,Kacang Tanah,2025,4.63,4.63,4.222,5.268,0.0,0.0715,Stabil,Normal,True
+2027,Kunjang,Kacang Tanah,2025,4.63,4.63,3.943,5.487,0.0,0.0715,Stabil,Normal,True
+2026,Kunjang,Kedelai,2025,0.01,0.01,0.009,0.011,,0.0,Basis kecil,Tidak dinilai,
+2027,Kunjang,Kedelai,2025,0.01,0.01,0.009,0.012,,0.0,Basis kecil,Tidak dinilai,
+2026,Kunjang,Ketela Pohon,2025,102.02,102.019,90.64,114.364,-0.0,0.0406,Stabil,Normal,True
+2027,Kunjang,Ketela Pohon,2025,102.02,102.019,86.356,118.967,-0.0,0.0406,Stabil,Normal,True
+2026,Kunjang,Padi,2025,8456.66,8456.276,7598.729,9541.946,-0.0,0.0792,Stabil,Normal,True
+2027,Kunjang,Padi,2025,8456.66,8456.276,7084.837,10199.174,-0.0,0.0792,Stabil,Normal,True
+2026,Kunjang,Ubi Jalar,2025,86.82,86.821,78.047,97.381,0.0,0.0997,Stabil,Normal,True
+2027,Kunjang,Ubi Jalar,2025,86.82,86.821,75.02,103.08,0.0,0.0997,Stabil,Normal,True
+2026,Mojo,Kacang Tanah,2025,135.38,135.411,123.474,154.059,0.0002,0.0704,Stabil,Normal,True
+2027,Mojo,Kacang Tanah,2025,135.38,135.411,115.32,160.456,0.0002,0.0704,Stabil,Normal,True
+2026,Mojo,Kedelai,2025,0.4,0.413,0.384,0.463,,0.0748,Basis kecil,Tidak dinilai,
+2027,Mojo,Kedelai,2025,0.4,0.427,0.386,0.504,,0.0748,Basis kecil,Tidak dinilai,
+2026,Mojo,Ketela Pohon,2025,2984.06,2984.013,2651.17,3345.095,-0.0,0.0656,Stabil,Normal,True
+2027,Mojo,Ketela Pohon,2025,2984.06,2984.013,2525.874,3479.74,-0.0,0.0656,Stabil,Normal,True
+2026,Mojo,Padi,2025,4167.57,4167.393,3744.78,4702.43,-0.0,0.0599,Stabil,Normal,True
+2027,Mojo,Padi,2025,4167.57,4167.393,3491.526,5026.323,-0.0,0.0599,Stabil,Normal,True
+2026,Mojo,Ubi Jalar,2025,2539.4,2539.417,2282.779,2848.256,0.0,0.0549,Stabil,Normal,True
+2027,Mojo,Ubi Jalar,2025,2539.4,2539.417,2194.227,3014.948,0.0,0.0549,Stabil,Normal,True
+2026,Ngadiluwih,Kacang Tanah,2025,18.07,18.072,16.479,20.56,0.0001,0.1308,Stabil,Normal,True
+2027,Ngadiluwih,Kacang Tanah,2025,18.07,18.072,15.39,21.414,0.0001,0.1308,Stabil,Normal,True
+2026,Ngadiluwih,Kedelai,2025,0.05,0.05,0.047,0.056,,0.1715,Basis kecil,Tidak dinilai,
+2027,Ngadiluwih,Kedelai,2025,0.05,0.05,0.045,0.059,,0.1715,Basis kecil,Tidak dinilai,
+2026,Ngadiluwih,Ketela Pohon,2025,398.36,398.36,353.926,446.564,0.0,0.0857,Stabil,Normal,True
+2027,Ngadiluwih,Ketela Pohon,2025,398.36,398.36,337.199,464.539,0.0,0.0857,Stabil,Normal,True
+2026,Ngadiluwih,Padi,2025,5220.72,5220.492,4691.084,5890.731,-0.0,0.0867,Stabil,Normal,True
+2027,Ngadiluwih,Padi,2025,5220.72,5220.492,4373.832,6296.472,-0.0,0.0867,Stabil,Normal,True
+2026,Ngadiluwih,Ubi Jalar,2025,339.0,338.999,304.739,380.227,-0.0,0.0567,Stabil,Normal,True
+2027,Ngadiluwih,Ubi Jalar,2025,339.0,338.999,292.918,402.48,-0.0,0.0567,Stabil,Normal,True
+2026,Ngancar,Kacang Tanah,2025,89.02,88.996,81.15,101.252,-0.0003,0.0956,Stabil,Normal,True
+2027,Ngancar,Kacang Tanah,2025,89.02,88.996,75.792,105.456,-0.0003,0.0956,Stabil,Normal,True
+2026,Ngancar,Kedelai,2025,0.26,0.247,0.23,0.277,,0.0833,Basis kecil,Tidak dinilai,
+2027,Ngancar,Kedelai,2025,0.26,0.234,0.212,0.277,,0.0833,Basis kecil,Tidak dinilai,
+2026,Ngancar,Ketela Pohon,2025,1962.25,1962.253,1743.379,2199.697,0.0,0.0566,Stabil,Normal,True
+2027,Ngancar,Ketela Pohon,2025,1962.25,1962.253,1660.986,2288.238,0.0,0.0566,Stabil,Normal,True
+2026,Ngancar,Padi,2025,6786.93,6786.628,6098.399,7657.938,-0.0,0.1219,Stabil,Normal,True
+2027,Ngancar,Padi,2025,6786.93,6786.628,5685.972,8185.4,-0.0,0.1219,Stabil,Normal,True
+2026,Ngancar,Ubi Jalar,2025,1669.85,1669.826,1501.07,1872.907,-0.0,0.0913,Stabil,Normal,True
+2027,Ngancar,Ubi Jalar,2025,1669.85,1669.826,1442.842,1982.518,-0.0,0.0913,Stabil,Normal,True
+2026,Ngasem,Kacang Tanah,2025,2.35,2.35,2.143,2.674,0.0,0.0744,Stabil,Normal,True
+2027,Ngasem,Kacang Tanah,2025,2.35,2.35,2.001,2.785,0.0,0.0744,Stabil,Normal,True
+2026,Ngasem,Kedelai,2025,0.01,0.01,0.009,0.011,,0.0,Basis kecil,Tidak dinilai,
+2027,Ngasem,Kedelai,2025,0.01,0.01,0.009,0.012,,0.0,Basis kecil,Tidak dinilai,
+2026,Ngasem,Ketela Pohon,2025,51.82,51.821,46.041,58.091,0.0,0.0374,Stabil,Normal,True
+2027,Ngasem,Ketela Pohon,2025,51.82,51.821,43.865,60.43,0.0,0.0374,Stabil,Normal,True
+2026,Ngasem,Padi,2025,2236.81,2236.732,2009.906,2523.898,-0.0,0.044,Stabil,Normal,True
+2027,Ngasem,Padi,2025,2236.81,2236.732,1873.979,2697.739,-0.0,0.044,Stabil,Normal,True
+2026,Ngasem,Ubi Jalar,2025,44.1,44.1,39.643,49.463,0.0,0.1182,Stabil,Normal,True
+2027,Ngasem,Ubi Jalar,2025,44.1,44.1,38.105,52.358,0.0,0.1182,Stabil,Normal,True
+2026,Pagu,Kacang Tanah,2025,2.19,2.189,1.996,2.491,-0.0005,0.0764,Stabil,Normal,True
+2027,Pagu,Kacang Tanah,2025,2.19,2.189,1.865,2.594,-0.0005,0.0764,Stabil,Normal,True
+2026,Pagu,Kedelai,2025,0.01,0.0,0.0,0.0,,0.0,Basis kecil,Tidak dinilai,
+2027,Pagu,Kedelai,2025,0.01,0.0,0.0,0.0,,0.0,Basis kecil,Tidak dinilai,
+2026,Pagu,Ketela Pohon,2025,48.18,48.18,42.806,54.01,0.0,0.0603,Stabil,Normal,True
+2027,Pagu,Ketela Pohon,2025,48.18,48.18,40.783,56.184,0.0,0.0603,Stabil,Normal,True
+2026,Pagu,Padi,2025,6341.37,6341.091,5698.043,7155.2,-0.0,0.0875,Stabil,Normal,True
+2027,Pagu,Padi,2025,6341.37,6341.091,5312.692,7648.034,-0.0,0.0875,Stabil,Normal,True
+2026,Pagu,Ubi Jalar,2025,41.0,40.999,36.856,45.986,-0.0,0.0654,Stabil,Normal,True
+2027,Pagu,Ubi Jalar,2025,41.0,40.999,35.426,48.677,-0.0,0.0654,Stabil,Normal,True
+2026,Papar,Kacang Tanah,2025,6.78,6.779,6.181,7.713,-0.0001,0.0674,Stabil,Normal,True
+2027,Papar,Kacang Tanah,2025,6.78,6.779,5.773,8.033,-0.0001,0.0674,Stabil,Normal,True
+2026,Papar,Kedelai,2025,0.02,0.02,0.019,0.022,,0.0,Basis kecil,Tidak dinilai,
+2027,Papar,Kedelai,2025,0.02,0.02,0.018,0.024,,0.0,Basis kecil,Tidak dinilai,
+2026,Papar,Ketela Pohon,2025,149.39,149.392,132.729,167.47,0.0,0.0647,Stabil,Normal,True
+2027,Papar,Ketela Pohon,2025,149.39,149.392,126.456,174.211,0.0,0.0647,Stabil,Normal,True
+2026,Papar,Padi,2025,7714.06,7713.714,6931.469,8704.049,-0.0,0.1007,Stabil,Normal,True
+2027,Papar,Padi,2025,7714.06,7713.714,6462.704,9303.565,-0.0,0.1007,Stabil,Normal,True
+2026,Papar,Ubi Jalar,2025,127.12,127.12,114.273,142.58,0.0,0.053,Stabil,Normal,True
+2027,Papar,Ubi Jalar,2025,127.12,127.12,109.84,150.925,0.0,0.053,Stabil,Normal,True
+2026,Pare,Kacang Tanah,2025,12.14,12.142,11.072,13.814,0.0002,0.0623,Stabil,Normal,True
+2027,Pare,Kacang Tanah,2025,12.14,12.142,10.341,14.388,0.0002,0.0623,Stabil,Normal,True
+2026,Pare,Kedelai,2025,0.04,0.04,0.037,0.045,,0.0,Basis kecil,Tidak dinilai,
+2027,Pare,Kedelai,2025,0.04,0.04,0.036,0.047,,0.0,Basis kecil,Tidak dinilai,
+2026,Pare,Ketela Pohon,2025,267.6,267.596,237.748,299.977,-0.0,0.1192,Stabil,Normal,True
+2027,Pare,Ketela Pohon,2025,267.6,267.596,226.512,312.051,-0.0,0.1192,Stabil,Normal,True
+2026,Pare,Padi,2025,6858.94,6858.651,6163.118,7739.208,-0.0,0.0847,Stabil,Normal,True
+2027,Pare,Padi,2025,6858.94,6858.651,5746.315,8272.268,-0.0,0.0847,Stabil,Normal,True
+2026,Pare,Ubi Jalar,2025,227.72,227.718,204.705,255.413,-0.0,0.0982,Stabil,Normal,True
+2027,Pare,Ubi Jalar,2025,227.72,227.718,196.764,270.361,-0.0,0.0982,Stabil,Normal,True
+2026,Plemahan,Kacang Tanah,2025,2.79,2.79,2.544,3.175,0.0,0.0853,Stabil,Normal,True
+2027,Plemahan,Kacang Tanah,2025,2.79,2.79,2.376,3.306,0.0,0.0853,Stabil,Normal,True
+2026,Plemahan,Kedelai,2025,0.01,0.01,0.009,0.011,,0.0,Basis kecil,Tidak dinilai,
+2027,Plemahan,Kedelai,2025,0.01,0.01,0.009,0.012,,0.0,Basis kecil,Tidak dinilai,
+2026,Plemahan,Ketela Pohon,2025,61.54,61.541,54.676,68.987,0.0,0.1072,Stabil,Normal,True
+2027,Plemahan,Ketela Pohon,2025,61.54,61.541,52.092,71.764,0.0,0.1072,Stabil,Normal,True
+2026,Plemahan,Padi,2025,14406.48,14405.818,12944.93,16255.327,-0.0,0.0621,Stabil,Normal,True
+2027,Plemahan,Padi,2025,14406.48,14405.818,12069.482,17374.959,-0.0,0.0621,Stabil,Normal,True
+2026,Plemahan,Ubi Jalar,2025,52.37,52.369,47.077,58.738,-0.0,0.0817,Stabil,Normal,True
+2027,Plemahan,Ubi Jalar,2025,52.37,52.369,45.251,62.176,-0.0,0.0817,Stabil,Normal,True
+2026,Plosoklaten,Kacang Tanah,2025,42.78,42.787,39.015,48.68,0.0002,0.128,Stabil,Normal,True
+2027,Plosoklaten,Kacang Tanah,2025,42.78,42.787,36.439,50.701,0.0002,0.128,Stabil,Normal,True
+2026,Plosoklaten,Kedelai,2025,0.13,0.12,0.111,0.134,,0.0167,Basis kecil,Tidak dinilai,
+2027,Plosoklaten,Kedelai,2025,0.13,0.109,0.099,0.129,,0.0167,Basis kecil,Tidak dinilai,
+2026,Plosoklaten,Ketela Pohon,2025,942.87,942.854,837.686,1056.944,-0.0,0.0821,Stabil,Normal,True
+2027,Plosoklaten,Ketela Pohon,2025,942.87,942.854,798.096,1099.487,-0.0,0.0821,Stabil,Normal,True
+2026,Plosoklaten,Padi,2025,9689.83,9689.433,8706.832,10933.423,-0.0,0.0765,Stabil,Normal,True
+2027,Plosoklaten,Padi,2025,9689.83,9689.433,8118.001,11686.494,-0.0,0.0765,Stabil,Normal,True
+2026,Plosoklaten,Ubi Jalar,2025,802.37,802.374,721.285,899.958,0.0,0.0915,Stabil,Normal,True
+2027,Plosoklaten,Ubi Jalar,2025,802.37,802.374,693.305,952.627,0.0,0.0915,Stabil,Normal,True
+2026,Puncu,Kacang Tanah,2025,96.22,96.236,87.752,109.489,0.0002,0.0533,Stabil,Normal,True
+2027,Puncu,Kacang Tanah,2025,96.22,96.236,81.958,114.036,0.0002,0.0533,Stabil,Normal,True
+2026,Puncu,Kedelai,2025,0.29,0.279,0.26,0.313,,0.0637,Basis kecil,Tidak dinilai,
+2027,Puncu,Kedelai,2025,0.29,0.269,0.243,0.318,,0.0637,Basis kecil,Tidak dinilai,
+2026,Puncu,Ketela Pohon,2025,2120.94,2120.932,1884.358,2377.576,-0.0,0.1102,Stabil,Normal,True
+2027,Puncu,Ketela Pohon,2025,2120.94,2120.932,1795.302,2473.277,-0.0,0.1102,Stabil,Normal,True
+2026,Puncu,Padi,2025,3352.96,3352.808,3012.801,3783.262,-0.0,0.0362,Stabil,Normal,True
+2027,Puncu,Padi,2025,3352.96,3352.808,2809.049,4043.845,-0.0,0.0362,Stabil,Normal,True
+2026,Puncu,Ubi Jalar,2025,1804.9,1804.901,1622.495,2024.41,0.0,0.0281,Stabil,Normal,True
+2027,Puncu,Ubi Jalar,2025,1804.9,1804.901,1559.556,2142.887,0.0,0.0281,Stabil,Normal,True
+2026,Purwoasri,Kacang Tanah,2025,0.0,0.0,0.0,0.0,,0.4635,Basis kecil,Tidak dinilai,
+2027,Purwoasri,Kacang Tanah,2025,0.0,0.0,0.0,0.0,,0.4635,Basis kecil,Tidak dinilai,
+2026,Purwoasri,Kedelai,2025,0.0,0.0,0.0,0.0,,0.444,Basis kecil,Tidak dinilai,
+2027,Purwoasri,Kedelai,2025,0.0,0.0,0.0,0.0,,0.444,Basis kecil,Tidak dinilai,
+2026,Purwoasri,Ketela Pohon,2025,0.0,0.0,0.0,0.0,,0.4317,Basis kecil,Tidak dinilai,
+2027,Purwoasri,Ketela Pohon,2025,0.0,0.0,0.0,0.0,,0.4317,Basis kecil,Tidak dinilai,
+2026,Purwoasri,Padi,2025,12502.72,12502.18,11234.339,14107.289,-0.0,0.106,Stabil,Normal,True
+2027,Purwoasri,Padi,2025,12502.72,12502.18,10474.577,15078.968,-0.0,0.106,Stabil,Normal,True
+2026,Purwoasri,Ubi Jalar,2025,0.0,0.0,0.0,0.0,,0.0,Basis kecil,Tidak dinilai,
+2027,Purwoasri,Ubi Jalar,2025,0.0,0.0,0.0,0.0,,0.0,Basis kecil,Tidak dinilai,
+2026,Ringinrejo,Kacang Tanah,2025,10.19,10.189,9.291,11.593,-0.0001,0.0764,Stabil,Normal,True
+2027,Ringinrejo,Kacang Tanah,2025,10.19,10.189,8.678,12.074,-0.0001,0.0764,Stabil,Normal,True
+2026,Ringinrejo,Kedelai,2025,0.03,0.03,0.028,0.034,,0.0,Basis kecil,Tidak dinilai,
+2027,Ringinrejo,Kedelai,2025,0.03,0.03,0.027,0.035,,0.0,Basis kecil,Tidak dinilai,
+2026,Ringinrejo,Ketela Pohon,2025,224.68,224.684,199.622,251.871,0.0,0.0999,Stabil,Normal,True
+2027,Ringinrejo,Ketela Pohon,2025,224.68,224.684,190.188,262.01,0.0,0.0999,Stabil,Normal,True
+2026,Ringinrejo,Padi,2025,7155.99,7155.676,6430.022,8074.367,-0.0,0.0659,Stabil,Normal,True
+2027,Ringinrejo,Padi,2025,7155.99,7155.676,5995.169,8630.511,-0.0,0.0659,Stabil,Normal,True
+2026,Ringinrejo,Ubi Jalar,2025,191.2,191.199,171.876,214.452,-0.0,0.0795,Stabil,Normal,True
+2027,Ringinrejo,Ubi Jalar,2025,191.2,191.199,165.209,227.003,-0.0,0.0795,Stabil,Normal,True
+2026,Semen,Kacang Tanah,2025,102.47,102.488,93.453,116.602,0.0002,0.0587,Stabil,Normal,True
+2027,Semen,Kacang Tanah,2025,102.47,102.488,87.282,121.443,0.0002,0.0587,Stabil,Normal,True
+2026,Semen,Kedelai,2025,0.3,0.316,0.294,0.354,,0.1005,Basis kecil,Tidak dinilai,
+2027,Semen,Kedelai,2025,0.3,0.331,0.3,0.391,,0.1005,Basis kecil,Tidak dinilai,
+2026,Semen,Ketela Pohon,2025,2258.59,2258.608,2006.678,2531.912,0.0,0.0918,Stabil,Normal,True
+2027,Semen,Ketela Pohon,2025,2258.59,2258.608,1911.841,2633.825,0.0,0.0918,Stabil,Normal,True
+2026,Semen,Padi,2025,6260.36,6260.078,5625.247,7063.787,-0.0,0.1013,Stabil,Normal,True
+2027,Semen,Padi,2025,6260.36,6260.078,5244.819,7550.325,-0.0,0.1013,Stabil,Normal,True
+2026,Semen,Ubi Jalar,2025,1922.03,1922.041,1727.796,2155.795,0.0,0.0936,Stabil,Normal,True
+2027,Semen,Ubi Jalar,2025,1922.03,1922.041,1660.773,2281.962,0.0,0.0936,Stabil,Normal,True
+2026,Tarokan,Kacang Tanah,2025,38.84,38.834,35.41,44.182,-0.0002,0.0656,Stabil,Normal,True
+2027,Tarokan,Kacang Tanah,2025,38.84,38.834,33.072,46.016,-0.0002,0.0656,Stabil,Normal,True
+2026,Tarokan,Kedelai,2025,0.12,0.12,0.112,0.134,,0.1286,Basis kecil,Tidak dinilai,
+2027,Tarokan,Kedelai,2025,0.12,0.12,0.109,0.142,,0.1286,Basis kecil,Tidak dinilai,
+2026,Tarokan,Ketela Pohon,2025,856.23,856.229,760.723,959.837,-0.0,0.0322,Stabil,Normal,True
+2027,Tarokan,Ketela Pohon,2025,856.23,856.229,724.771,998.472,-0.0,0.0322,Stabil,Normal,True
+2026,Tarokan,Padi,2025,3974.05,3973.881,3570.891,4484.073,-0.0,0.075,Stabil,Normal,True
+2027,Tarokan,Padi,2025,3974.05,3973.881,3329.397,4792.926,-0.0,0.075,Stabil,Normal,True
+2026,Tarokan,Ubi Jalar,2025,728.64,728.628,654.991,817.242,-0.0,0.0476,Stabil,Normal,True
+2027,Tarokan,Ubi Jalar,2025,728.64,728.628,629.583,865.07,-0.0,0.0476,Stabil,Normal,True
+2026,Wates,Kacang Tanah,2025,4.43,4.43,4.039,5.04,0.0,0.0197,Stabil,Normal,True
+2027,Wates,Kacang Tanah,2025,4.43,4.43,3.773,5.249,0.0,0.0197,Stabil,Normal,True
+2026,Wates,Kedelai,2025,0.01,0.01,0.009,0.011,,0.0,Basis kecil,Tidak dinilai,
+2027,Wates,Kedelai,2025,0.01,0.01,0.009,0.012,,0.0,Basis kecil,Tidak dinilai,
+2026,Wates,Ketela Pohon,2025,97.57,97.569,86.686,109.376,-0.0,0.0418,Stabil,Normal,True
+2027,Wates,Ketela Pohon,2025,97.57,97.569,82.589,113.778,-0.0,0.0418,Stabil,Normal,True
+2026,Wates,Padi,2025,15167.09,15166.415,13628.395,17113.574,-0.0,0.0549,Stabil,Normal,True
+2027,Wates,Padi,2025,15167.09,15166.415,12706.726,18292.32,-0.0,0.0549,Stabil,Normal,True
+2026,Wates,Ubi Jalar,2025,83.03,83.029,74.638,93.127,-0.0,0.0809,Stabil,Normal,True
+2027,Wates,Ubi Jalar,2025,83.03,83.029,71.743,98.577,-0.0,0.0809,Stabil,Normal,True

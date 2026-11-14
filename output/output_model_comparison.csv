@@ -1,0 +1,11 @@
+tanaman,target,model,wape,wape_naive,perbaikan_vs_naive
+Kacang Tanah,luas_panen_ha,naive,0.093181470723131,0.093181470723131,0.0
+Kedelai,luas_panen_ha,drift,1.2304591657903963,1.2754994742376446,0.0353
+Ketela Pohon,luas_panen_ha,naive,0.09006182887128907,0.09006182887128907,0.0
+Padi,luas_panen_ha,naive,0.08332068831079228,0.08332068831079228,0.0
+Ubi Jalar,luas_panen_ha,naive,0.08235987042308823,0.08235987042308823,0.0
+Kacang Tanah,produktivitas_kuintal_ha,naive,0.028908850453716366,0.028908850453716366,0.0
+Kedelai,produktivitas_kuintal_ha,naive,0.030319931454807075,0.030319931454807075,0.0
+Ketela Pohon,produktivitas_kuintal_ha,naive,0.0320255509035296,0.0320255509035296,0.0
+Padi,produktivitas_kuintal_ha,naive,0.02635218826884072,0.02635218826884072,0.0
+Ubi Jalar,produktivitas_kuintal_ha,naive,0.028190879868541612,0.028190879868541612,0.0

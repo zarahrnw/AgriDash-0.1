@@ -1,0 +1,1041 @@
+tahun,kecamatan,tanaman,luas_panen_ha,produktivitas_kuintal_ha,produksi_ton,produksi_lower,produksi_upper,model_luas,model_prod_v,tipe
+2020,Badas,Kacang Tanah,0.96,17.88,1.71,,,aktual,aktual,aktual
+2021,Badas,Kacang Tanah,0.85,17.16,1.46,,,aktual,aktual,aktual
+2022,Badas,Kacang Tanah,0.88,17.94,1.58,,,aktual,aktual,aktual
+2023,Badas,Kacang Tanah,0.79,17.77,1.41,,,aktual,aktual,aktual
+2024,Badas,Kacang Tanah,0.82,17.55,1.44,,,aktual,aktual,aktual
+2025,Badas,Kacang Tanah,0.75,17.6,1.32,,,aktual,aktual,aktual
+2026,Badas,Kacang Tanah,0.75,17.6,1.32,1.204,1.502,naive,naive,forecast
+2027,Badas,Kacang Tanah,0.75,17.6,1.32,1.124,1.564,naive,naive,forecast
+2020,Badas,Kedelai,5.92,12.92,7.65,,,aktual,aktual,aktual
+2021,Badas,Kedelai,6.94,12.52,8.69,,,aktual,aktual,aktual
+2022,Badas,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2023,Badas,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2024,Badas,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2025,Badas,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2026,Badas,Kedelai,0.0,12.52,0.0,0.0,0.0,drift,naive,forecast
+2027,Badas,Kedelai,0.0,12.52,0.0,0.0,0.0,drift,naive,forecast
+2020,Badas,Ketela Pohon,0.91,312.12,28.41,,,aktual,aktual,aktual
+2021,Badas,Ketela Pohon,0.88,306.28,27.04,,,aktual,aktual,aktual
+2022,Badas,Ketela Pohon,0.79,301.53,23.89,,,aktual,aktual,aktual
+2023,Badas,Ketela Pohon,0.85,293.46,24.86,,,aktual,aktual,aktual
+2024,Badas,Ketela Pohon,0.88,296.17,26.06,,,aktual,aktual,aktual
+2025,Badas,Ketela Pohon,1.02,285.78,29.15,,,aktual,aktual,aktual
+2026,Badas,Ketela Pohon,1.02,285.78,29.15,25.898,32.677,naive,naive,forecast
+2027,Badas,Ketela Pohon,1.02,285.78,29.15,24.674,33.992,naive,naive,forecast
+2020,Badas,Padi,1616.92,55.22,8929.25,,,aktual,aktual,aktual
+2021,Badas,Padi,1681.62,57.22,9622.62,,,aktual,aktual,aktual
+2022,Badas,Padi,1610.42,55.1,8872.76,,,aktual,aktual,aktual
+2023,Badas,Padi,1750.83,54.37,9519.52,,,aktual,aktual,aktual
+2024,Badas,Padi,1714.95,55.13,9454.87,,,aktual,aktual,aktual
+2025,Badas,Padi,1692.61,57.99,9815.85,,,aktual,aktual,aktual
+2026,Badas,Padi,1692.61,57.99,9815.445,8820.065,11075.614,naive,naive,forecast
+2027,Badas,Padi,1692.61,57.99,9815.445,8223.576,11838.478,naive,naive,forecast
+2020,Badas,Ubi Jalar,0.89,258.63,23.12,,,aktual,aktual,aktual
+2021,Badas,Ubi Jalar,0.91,266.85,24.41,,,aktual,aktual,aktual
+2022,Badas,Ubi Jalar,0.92,276.93,25.49,,,aktual,aktual,aktual
+2023,Badas,Ubi Jalar,1.01,270.67,27.38,,,aktual,aktual,aktual
+2024,Badas,Ubi Jalar,0.91,281.96,25.78,,,aktual,aktual,aktual
+2025,Badas,Ubi Jalar,0.84,295.24,24.8,,,aktual,aktual,aktual
+2026,Badas,Ubi Jalar,0.84,295.24,24.8,22.294,27.816,naive,naive,forecast
+2027,Badas,Ubi Jalar,0.84,295.24,24.8,21.429,29.444,naive,naive,forecast
+2020,Banyakan,Kacang Tanah,45.59,19.48,88.83,,,aktual,aktual,aktual
+2021,Banyakan,Kacang Tanah,40.93,18.85,77.16,,,aktual,aktual,aktual
+2022,Banyakan,Kacang Tanah,45.16,18.71,84.51,,,aktual,aktual,aktual
+2023,Banyakan,Kacang Tanah,46.04,17.84,82.13,,,aktual,aktual,aktual
+2024,Banyakan,Kacang Tanah,46.86,17.07,79.97,,,aktual,aktual,aktual
+2025,Banyakan,Kacang Tanah,47.11,17.71,83.42,,,aktual,aktual,aktual
+2026,Banyakan,Kacang Tanah,47.11,17.71,83.432,76.077,94.922,naive,naive,forecast
+2027,Banyakan,Kacang Tanah,47.11,17.71,83.432,71.053,98.863,naive,naive,forecast
+2020,Banyakan,Kedelai,0.22,11.95,0.26,,,aktual,aktual,aktual
+2021,Banyakan,Kedelai,0.2,12.31,0.24,,,aktual,aktual,aktual
+2022,Banyakan,Kedelai,0.18,12.82,0.23,,,aktual,aktual,aktual
+2023,Banyakan,Kedelai,0.19,13.09,0.25,,,aktual,aktual,aktual
+2024,Banyakan,Kedelai,0.2,12.68,0.25,,,aktual,aktual,aktual
+2025,Banyakan,Kedelai,0.19,13.16,0.25,,,aktual,aktual,aktual
+2026,Banyakan,Kedelai,0.184,13.16,0.242,0.225,0.271,drift,naive,forecast
+2027,Banyakan,Kedelai,0.178,13.16,0.234,0.212,0.277,drift,naive,forecast
+2020,Banyakan,Ketela Pohon,60.85,260.59,1585.74,,,aktual,aktual,aktual
+2021,Banyakan,Ketela Pohon,54.94,267.25,1468.15,,,aktual,aktual,aktual
+2022,Banyakan,Ketela Pohon,61.79,272.76,1685.35,,,aktual,aktual,aktual
+2023,Banyakan,Ketela Pohon,55.21,260.79,1439.73,,,aktual,aktual,aktual
+2024,Banyakan,Ketela Pohon,56.27,271.5,1527.6,,,aktual,aktual,aktual
+2025,Banyakan,Ketela Pohon,64.55,284.86,1838.77,,,aktual,aktual,aktual
+2026,Banyakan,Ketela Pohon,64.55,284.86,1838.771,1633.671,2061.273,naive,naive,forecast
+2027,Banyakan,Ketela Pohon,64.55,284.86,1838.771,1556.462,2144.242,naive,naive,forecast
+2020,Banyakan,Padi,829.62,54.13,4490.35,,,aktual,aktual,aktual
+2021,Banyakan,Padi,924.26,52.23,4827.13,,,aktual,aktual,aktual
+2022,Banyakan,Padi,915.48,52.81,4834.52,,,aktual,aktual,aktual
+2023,Banyakan,Padi,891.62,53.73,4790.86,,,aktual,aktual,aktual
+2024,Banyakan,Padi,825.13,56.15,4633.49,,,aktual,aktual,aktual
+2025,Banyakan,Padi,782.28,57.99,4536.62,,,aktual,aktual,aktual
+2026,Banyakan,Padi,782.28,57.99,4536.442,4076.403,5118.859,naive,naive,forecast
+2027,Banyakan,Padi,782.28,57.99,4536.442,3800.722,5471.434,naive,naive,forecast
+2020,Banyakan,Ubi Jalar,55.22,322.61,1781.33,,,aktual,aktual,aktual
+2021,Banyakan,Ubi Jalar,51.76,322.14,1667.51,,,aktual,aktual,aktual
+2022,Banyakan,Ubi Jalar,48.2,323.2,1557.72,,,aktual,aktual,aktual
+2023,Banyakan,Ubi Jalar,55.08,313.09,1724.41,,,aktual,aktual,aktual
+2024,Banyakan,Ubi Jalar,53.13,305.39,1622.47,,,aktual,aktual,aktual
+2025,Banyakan,Ubi Jalar,53.24,293.91,1564.77,,,aktual,aktual,aktual
+2026,Banyakan,Ubi Jalar,53.24,293.91,1564.777,1406.638,1755.082,naive,naive,forecast
+2027,Banyakan,Ubi Jalar,53.24,293.91,1564.777,1352.073,1857.797,naive,naive,forecast
+2020,Gampengrejo,Kacang Tanah,1.34,17.72,2.38,,,aktual,aktual,aktual
+2021,Gampengrejo,Kacang Tanah,1.19,17.21,2.04,,,aktual,aktual,aktual
+2022,Gampengrejo,Kacang Tanah,1.07,17.79,1.9,,,aktual,aktual,aktual
+2023,Gampengrejo,Kacang Tanah,1.08,17.65,1.91,,,aktual,aktual,aktual
+2024,Gampengrejo,Kacang Tanah,1.01,18.02,1.83,,,aktual,aktual,aktual
+2025,Gampengrejo,Kacang Tanah,1.11,17.75,1.97,,,aktual,aktual,aktual
+2026,Gampengrejo,Kacang Tanah,1.11,17.75,1.97,1.797,2.242,naive,naive,forecast
+2027,Gampengrejo,Kacang Tanah,1.11,17.75,1.97,1.678,2.335,naive,naive,forecast
+2020,Gampengrejo,Kedelai,4.67,13.34,6.23,,,aktual,aktual,aktual
+2021,Gampengrejo,Kedelai,4.69,13.93,6.54,,,aktual,aktual,aktual
+2022,Gampengrejo,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2023,Gampengrejo,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2024,Gampengrejo,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2025,Gampengrejo,Kedelai,0.0,0.0,0.01,,,aktual,aktual,aktual
+2026,Gampengrejo,Kedelai,0.0,13.93,0.0,0.0,0.0,drift,naive,forecast
+2027,Gampengrejo,Kedelai,0.0,13.93,0.0,0.0,0.0,drift,naive,forecast
+2020,Gampengrejo,Ketela Pohon,1.4,258.37,36.13,,,aktual,aktual,aktual
+2021,Gampengrejo,Ketela Pohon,1.5,246.62,37.04,,,aktual,aktual,aktual
+2022,Gampengrejo,Ketela Pohon,1.47,253.46,37.19,,,aktual,aktual,aktual
+2023,Gampengrejo,Ketela Pohon,1.62,265.34,42.86,,,aktual,aktual,aktual
+2024,Gampengrejo,Ketela Pohon,1.71,278.75,47.53,,,aktual,aktual,aktual
+2025,Gampengrejo,Ketela Pohon,1.52,285.0,43.32,,,aktual,aktual,aktual
+2026,Gampengrejo,Ketela Pohon,1.52,285.0,43.32,38.488,48.562,naive,naive,forecast
+2027,Gampengrejo,Ketela Pohon,1.52,285.0,43.32,36.669,50.517,naive,naive,forecast
+2020,Gampengrejo,Padi,305.79,58.25,1781.2,,,aktual,aktual,aktual
+2021,Gampengrejo,Padi,323.42,58.9,1904.99,,,aktual,aktual,aktual
+2022,Gampengrejo,Padi,311.05,60.55,1883.47,,,aktual,aktual,aktual
+2023,Gampengrejo,Padi,358.32,57.88,2074.06,,,aktual,aktual,aktual
+2024,Gampengrejo,Padi,413.06,57.87,2390.17,,,aktual,aktual,aktual
+2025,Gampengrejo,Padi,422.96,57.99,2452.84,,,aktual,aktual,aktual
+2026,Gampengrejo,Padi,422.96,57.99,2452.745,2204.013,2767.644,naive,naive,forecast
+2027,Gampengrejo,Padi,422.96,57.99,2452.745,2054.959,2958.273,naive,naive,forecast
+2020,Gampengrejo,Ubi Jalar,1.42,268.45,38.24,,,aktual,aktual,aktual
+2021,Gampengrejo,Ubi Jalar,1.4,277.01,38.69,,,aktual,aktual,aktual
+2022,Gampengrejo,Ubi Jalar,1.35,283.11,38.15,,,aktual,aktual,aktual
+2023,Gampengrejo,Ubi Jalar,1.2,286.88,34.47,,,aktual,aktual,aktual
+2024,Gampengrejo,Ubi Jalar,1.21,289.68,35.18,,,aktual,aktual,aktual
+2025,Gampengrejo,Ubi Jalar,1.25,294.88,36.86,,,aktual,aktual,aktual
+2026,Gampengrejo,Ubi Jalar,1.25,294.88,36.86,33.135,41.343,naive,naive,forecast
+2027,Gampengrejo,Ubi Jalar,1.25,294.88,36.86,31.85,43.762,naive,naive,forecast
+2020,Grogol,Kacang Tanah,9.83,17.73,17.42,,,aktual,aktual,aktual
+2021,Grogol,Kacang Tanah,9.67,17.42,16.84,,,aktual,aktual,aktual
+2022,Grogol,Kacang Tanah,9.4,16.95,15.94,,,aktual,aktual,aktual
+2023,Grogol,Kacang Tanah,10.27,17.5,17.98,,,aktual,aktual,aktual
+2024,Grogol,Kacang Tanah,9.42,17.65,16.62,,,aktual,aktual,aktual
+2025,Grogol,Kacang Tanah,10.36,17.71,18.35,,,aktual,aktual,aktual
+2026,Grogol,Kacang Tanah,10.36,17.71,18.348,16.73,20.874,naive,naive,forecast
+2027,Grogol,Kacang Tanah,10.36,17.71,18.348,15.625,21.741,naive,naive,forecast
+2020,Grogol,Kedelai,0.04,12.68,0.05,,,aktual,aktual,aktual
+2021,Grogol,Kedelai,0.04,12.94,0.06,,,aktual,aktual,aktual
+2022,Grogol,Kedelai,0.04,13.56,0.05,,,aktual,aktual,aktual
+2023,Grogol,Kedelai,0.04,12.96,0.05,,,aktual,aktual,aktual
+2024,Grogol,Kedelai,0.04,12.47,0.05,,,aktual,aktual,aktual
+2025,Grogol,Kedelai,0.04,12.5,0.05,,,aktual,aktual,aktual
+2026,Grogol,Kedelai,0.04,12.5,0.05,0.047,0.056,drift,naive,forecast
+2027,Grogol,Kedelai,0.04,12.5,0.05,0.045,0.059,drift,naive,forecast
+2020,Grogol,Ketela Pohon,12.24,315.46,386.17,,,aktual,aktual,aktual
+2021,Grogol,Ketela Pohon,11.68,306.27,357.75,,,aktual,aktual,aktual
+2022,Grogol,Ketela Pohon,11.68,308.76,360.49,,,aktual,aktual,aktual
+2023,Grogol,Ketela Pohon,11.66,304.82,355.31,,,aktual,aktual,aktual
+2024,Grogol,Ketela Pohon,12.32,295.31,363.75,,,aktual,aktual,aktual
+2025,Grogol,Ketela Pohon,14.2,284.81,404.43,,,aktual,aktual,aktual
+2026,Grogol,Ketela Pohon,14.2,284.81,404.43,359.319,453.368,naive,naive,forecast
+2027,Grogol,Ketela Pohon,14.2,284.81,404.43,342.337,471.617,naive,naive,forecast
+2020,Grogol,Padi,916.06,54.28,4972.1,,,aktual,aktual,aktual
+2021,Grogol,Padi,924.85,56.79,5251.75,,,aktual,aktual,aktual
+2022,Grogol,Padi,1027.73,56.94,5852.18,,,aktual,aktual,aktual
+2023,Grogol,Padi,935.73,56.45,5282.24,,,aktual,aktual,aktual
+2024,Grogol,Padi,818.77,58.53,4792.55,,,aktual,aktual,aktual
+2025,Grogol,Padi,848.24,57.99,4919.18,,,aktual,aktual,aktual
+2026,Grogol,Padi,848.24,57.99,4918.944,4420.116,5550.469,naive,naive,forecast
+2027,Grogol,Padi,848.24,57.99,4918.944,4121.189,5932.773,naive,naive,forecast
+2020,Grogol,Ubi Jalar,10.87,292.68,318.06,,,aktual,aktual,aktual
+2021,Grogol,Ubi Jalar,11.14,293.48,326.92,,,aktual,aktual,aktual
+2022,Grogol,Ubi Jalar,10.97,305.75,335.45,,,aktual,aktual,aktual
+2023,Grogol,Ubi Jalar,10.36,299.48,310.39,,,aktual,aktual,aktual
+2024,Grogol,Ubi Jalar,11.47,292.19,335.08,,,aktual,aktual,aktual
+2025,Grogol,Ubi Jalar,11.71,293.91,344.17,,,aktual,aktual,aktual
+2026,Grogol,Ubi Jalar,11.71,293.91,344.169,309.386,386.026,naive,naive,forecast
+2027,Grogol,Ubi Jalar,11.71,293.91,344.169,297.385,408.618,naive,naive,forecast
+2020,Gurah,Kacang Tanah,3.47,18.43,6.4,,,aktual,aktual,aktual
+2021,Gurah,Kacang Tanah,3.59,17.71,6.35,,,aktual,aktual,aktual
+2022,Gurah,Kacang Tanah,3.59,17.01,6.11,,,aktual,aktual,aktual
+2023,Gurah,Kacang Tanah,3.59,17.77,6.39,,,aktual,aktual,aktual
+2024,Gurah,Kacang Tanah,3.8,17.91,6.81,,,aktual,aktual,aktual
+2025,Gurah,Kacang Tanah,3.96,17.73,7.02,,,aktual,aktual,aktual
+2026,Gurah,Kacang Tanah,3.96,17.73,7.021,6.402,7.988,naive,naive,forecast
+2027,Gurah,Kacang Tanah,3.96,17.73,7.021,5.979,8.32,naive,naive,forecast
+2020,Gurah,Kedelai,0.02,9.54,0.02,,,aktual,aktual,aktual
+2021,Gurah,Kedelai,0.02,9.78,0.02,,,aktual,aktual,aktual
+2022,Gurah,Kedelai,0.02,9.72,0.02,,,aktual,aktual,aktual
+2023,Gurah,Kedelai,0.02,9.48,0.02,,,aktual,aktual,aktual
+2024,Gurah,Kedelai,0.02,9.89,0.02,,,aktual,aktual,aktual
+2025,Gurah,Kedelai,0.02,10.0,0.02,,,aktual,aktual,aktual
+2026,Gurah,Kedelai,0.02,10.0,0.02,0.019,0.022,drift,naive,forecast
+2027,Gurah,Kedelai,0.02,10.0,0.02,0.018,0.024,drift,naive,forecast
+2020,Gurah,Ketela Pohon,7.61,296.25,225.38,,,aktual,aktual,aktual
+2021,Gurah,Ketela Pohon,7.67,296.2,227.11,,,aktual,aktual,aktual
+2022,Gurah,Ketela Pohon,7.5,288.4,216.29,,,aktual,aktual,aktual
+2023,Gurah,Ketela Pohon,6.88,284.72,196.0,,,aktual,aktual,aktual
+2024,Gurah,Ketela Pohon,6.11,285.36,174.26,,,aktual,aktual,aktual
+2025,Gurah,Ketela Pohon,5.43,284.81,154.65,,,aktual,aktual,aktual
+2026,Gurah,Ketela Pohon,5.43,284.81,154.652,137.402,173.366,naive,naive,forecast
+2027,Gurah,Ketela Pohon,5.43,284.81,154.652,130.908,180.344,naive,naive,forecast
+2020,Gurah,Padi,1875.32,59.53,11163.25,,,aktual,aktual,aktual
+2021,Gurah,Padi,2184.34,61.96,13533.5,,,aktual,aktual,aktual
+2022,Gurah,Padi,1924.66,60.83,11708.23,,,aktual,aktual,aktual
+2023,Gurah,Padi,2074.67,59.54,12352.52,,,aktual,aktual,aktual
+2024,Gurah,Padi,2007.93,60.62,12172.84,,,aktual,aktual,aktual
+2025,Gurah,Padi,1763.23,57.99,10225.41,,,aktual,aktual,aktual
+2026,Gurah,Padi,1763.23,57.99,10224.971,9188.061,11537.717,naive,naive,forecast
+2027,Gurah,Padi,1763.23,57.99,10224.971,8566.685,12332.41,naive,naive,forecast
+2020,Gurah,Ubi Jalar,4.01,274.14,109.93,,,aktual,aktual,aktual
+2021,Gurah,Ubi Jalar,3.65,273.88,99.89,,,aktual,aktual,aktual
+2022,Gurah,Ubi Jalar,3.85,269.16,103.67,,,aktual,aktual,aktual
+2023,Gurah,Ubi Jalar,3.83,281.95,107.93,,,aktual,aktual,aktual
+2024,Gurah,Ubi Jalar,4.0,294.51,117.73,,,aktual,aktual,aktual
+2025,Gurah,Ubi Jalar,4.48,293.75,131.6,,,aktual,aktual,aktual
+2026,Gurah,Ubi Jalar,4.48,293.75,131.6,118.3,147.605,naive,naive,forecast
+2027,Gurah,Ubi Jalar,4.48,293.75,131.6,113.711,156.243,naive,naive,forecast
+2020,Kandangan,Kacang Tanah,17.1,17.73,30.33,,,aktual,aktual,aktual
+2021,Kandangan,Kacang Tanah,18.21,17.74,32.3,,,aktual,aktual,aktual
+2022,Kandangan,Kacang Tanah,15.9,17.22,27.39,,,aktual,aktual,aktual
+2023,Kandangan,Kacang Tanah,14.64,17.57,25.72,,,aktual,aktual,aktual
+2024,Kandangan,Kacang Tanah,14.09,18.23,25.68,,,aktual,aktual,aktual
+2025,Kandangan,Kacang Tanah,12.37,17.71,21.91,,,aktual,aktual,aktual
+2026,Kandangan,Kacang Tanah,12.37,17.71,21.907,19.976,24.924,naive,naive,forecast
+2027,Kandangan,Kacang Tanah,12.37,17.71,21.907,18.657,25.959,naive,naive,forecast
+2020,Kandangan,Kedelai,0.03,12.78,0.04,,,aktual,aktual,aktual
+2021,Kandangan,Kedelai,0.03,13.31,0.05,,,aktual,aktual,aktual
+2022,Kandangan,Kedelai,0.04,13.41,0.06,,,aktual,aktual,aktual
+2023,Kandangan,Kedelai,0.05,13.59,0.07,,,aktual,aktual,aktual
+2024,Kandangan,Kedelai,0.05,13.33,0.06,,,aktual,aktual,aktual
+2025,Kandangan,Kedelai,0.05,14.0,0.07,,,aktual,aktual,aktual
+2026,Kandangan,Kedelai,0.054,14.0,0.076,0.07,0.085,drift,naive,forecast
+2027,Kandangan,Kedelai,0.058,14.0,0.081,0.073,0.096,drift,naive,forecast
+2020,Kandangan,Ketela Pohon,22.09,293.53,648.37,,,aktual,aktual,aktual
+2021,Kandangan,Ketela Pohon,20.16,281.69,567.77,,,aktual,aktual,aktual
+2022,Kandangan,Ketela Pohon,21.28,272.15,579.07,,,aktual,aktual,aktual
+2023,Kandangan,Ketela Pohon,20.02,272.13,544.75,,,aktual,aktual,aktual
+2024,Kandangan,Ketela Pohon,18.55,284.79,528.18,,,aktual,aktual,aktual
+2025,Kandangan,Ketela Pohon,16.95,284.94,482.97,,,aktual,aktual,aktual
+2026,Kandangan,Ketela Pohon,16.95,284.94,482.973,429.101,541.416,naive,naive,forecast
+2027,Kandangan,Ketela Pohon,16.95,284.94,482.973,408.822,563.208,naive,naive,forecast
+2020,Kandangan,Padi,1876.71,62.41,11712.89,,,aktual,aktual,aktual
+2021,Kandangan,Padi,1755.2,63.2,11093.14,,,aktual,aktual,aktual
+2022,Kandangan,Padi,1599.32,60.82,9727.66,,,aktual,aktual,aktual
+2023,Kandangan,Padi,1517.25,59.08,8964.56,,,aktual,aktual,aktual
+2024,Kandangan,Padi,1547.86,56.62,8763.67,,,aktual,aktual,aktual
+2025,Kandangan,Padi,1389.16,57.99,8056.11,,,aktual,aktual,aktual
+2026,Kandangan,Padi,1389.16,57.99,8055.739,7238.81,9089.985,naive,naive,forecast
+2027,Kandangan,Padi,1389.16,57.99,8055.739,6749.259,9716.084,naive,naive,forecast
+2020,Kandangan,Ubi Jalar,14.09,285.61,402.51,,,aktual,aktual,aktual
+2021,Kandangan,Ubi Jalar,15.0,300.33,450.59,,,aktual,aktual,aktual
+2022,Kandangan,Ubi Jalar,13.72,294.41,403.81,,,aktual,aktual,aktual
+2023,Kandangan,Ubi Jalar,12.59,281.85,354.83,,,aktual,aktual,aktual
+2024,Kandangan,Ubi Jalar,13.85,291.12,403.12,,,aktual,aktual,aktual
+2025,Kandangan,Ubi Jalar,13.99,293.78,411.0,,,aktual,aktual,aktual
+2026,Kandangan,Ubi Jalar,13.99,293.78,410.998,369.462,460.983,naive,naive,forecast
+2027,Kandangan,Ubi Jalar,13.99,293.78,410.998,355.13,487.962,naive,naive,forecast
+2020,Kandat,Kacang Tanah,8.89,15.7,13.95,,,aktual,aktual,aktual
+2021,Kandat,Kacang Tanah,8.82,15.42,13.6,,,aktual,aktual,aktual
+2022,Kandat,Kacang Tanah,9.36,15.94,14.92,,,aktual,aktual,aktual
+2023,Kandat,Kacang Tanah,9.68,16.68,16.15,,,aktual,aktual,aktual
+2024,Kandat,Kacang Tanah,10.02,16.83,16.85,,,aktual,aktual,aktual
+2025,Kandat,Kacang Tanah,10.87,17.71,19.25,,,aktual,aktual,aktual
+2026,Kandat,Kacang Tanah,10.87,17.71,19.251,17.554,21.902,naive,naive,forecast
+2027,Kandat,Kacang Tanah,10.87,17.71,19.251,16.395,22.811,naive,naive,forecast
+2020,Kandat,Kedelai,0.04,14.66,0.06,,,aktual,aktual,aktual
+2021,Kandat,Kedelai,0.04,15.11,0.06,,,aktual,aktual,aktual
+2022,Kandat,Kedelai,0.04,15.71,0.06,,,aktual,aktual,aktual
+2023,Kandat,Kedelai,0.04,15.04,0.06,,,aktual,aktual,aktual
+2024,Kandat,Kedelai,0.04,15.46,0.06,,,aktual,aktual,aktual
+2025,Kandat,Kedelai,0.04,15.0,0.06,,,aktual,aktual,aktual
+2026,Kandat,Kedelai,0.04,15.0,0.06,0.056,0.067,drift,naive,forecast
+2027,Kandat,Kedelai,0.04,15.0,0.06,0.054,0.071,drift,naive,forecast
+2020,Kandat,Ketela Pohon,12.27,263.34,323.22,,,aktual,aktual,aktual
+2021,Kandat,Ketela Pohon,14.35,274.87,394.31,,,aktual,aktual,aktual
+2022,Kandat,Ketela Pohon,12.49,282.46,352.84,,,aktual,aktual,aktual
+2023,Kandat,Ketela Pohon,14.15,275.15,389.25,,,aktual,aktual,aktual
+2024,Kandat,Ketela Pohon,16.38,288.44,472.45,,,aktual,aktual,aktual
+2025,Kandat,Ketela Pohon,14.89,284.94,424.27,,,aktual,aktual,aktual
+2026,Kandat,Ketela Pohon,14.89,284.94,424.276,376.951,475.615,naive,naive,forecast
+2027,Kandat,Ketela Pohon,14.89,284.94,424.276,359.136,494.76,naive,naive,forecast
+2020,Kandat,Padi,1342.01,52.7,7072.26,,,aktual,aktual,aktual
+2021,Kandat,Padi,1396.01,54.24,7572.42,,,aktual,aktual,aktual
+2022,Kandat,Padi,1253.39,56.76,7114.35,,,aktual,aktual,aktual
+2023,Kandat,Padi,1262.73,54.49,6880.38,,,aktual,aktual,aktual
+2024,Kandat,Padi,1443.39,56.24,8118.29,,,aktual,aktual,aktual
+2025,Kandat,Padi,1539.72,57.99,8929.23,,,aktual,aktual,aktual
+2026,Kandat,Padi,1539.72,57.99,8928.836,8023.367,10075.176,naive,naive,forecast
+2027,Kandat,Padi,1539.72,57.99,8928.836,7480.758,10769.133,naive,naive,forecast
+2020,Kandat,Ubi Jalar,14.85,313.69,465.75,,,aktual,aktual,aktual
+2021,Kandat,Ubi Jalar,14.68,300.72,441.46,,,aktual,aktual,aktual
+2022,Kandat,Ubi Jalar,12.89,302.12,389.36,,,aktual,aktual,aktual
+2023,Kandat,Ubi Jalar,13.8,293.82,405.53,,,aktual,aktual,aktual
+2024,Kandat,Ubi Jalar,13.02,296.47,386.01,,,aktual,aktual,aktual
+2025,Kandat,Ubi Jalar,12.29,293.78,361.05,,,aktual,aktual,aktual
+2026,Kandat,Ubi Jalar,12.29,293.78,361.056,324.567,404.967,naive,naive,forecast
+2027,Kandat,Ubi Jalar,12.29,293.78,361.056,311.976,428.667,naive,naive,forecast
+2020,Kayenkidul,Kacang Tanah,3.77,18.45,6.96,,,aktual,aktual,aktual
+2021,Kayenkidul,Kacang Tanah,4.14,17.8,7.36,,,aktual,aktual,aktual
+2022,Kayenkidul,Kacang Tanah,3.69,17.26,6.36,,,aktual,aktual,aktual
+2023,Kayenkidul,Kacang Tanah,3.27,18.07,5.91,,,aktual,aktual,aktual
+2024,Kayenkidul,Kacang Tanah,3.0,17.85,5.35,,,aktual,aktual,aktual
+2025,Kayenkidul,Kacang Tanah,3.5,17.69,6.19,,,aktual,aktual,aktual
+2026,Kayenkidul,Kacang Tanah,3.5,17.69,6.192,5.646,7.044,naive,naive,forecast
+2027,Kayenkidul,Kacang Tanah,3.5,17.69,6.192,5.273,7.337,naive,naive,forecast
+2020,Kayenkidul,Kedelai,0.01,19.89,0.02,,,aktual,aktual,aktual
+2021,Kayenkidul,Kedelai,0.01,19.33,0.02,,,aktual,aktual,aktual
+2022,Kayenkidul,Kedelai,0.01,20.18,0.02,,,aktual,aktual,aktual
+2023,Kayenkidul,Kedelai,0.01,19.25,0.02,,,aktual,aktual,aktual
+2024,Kayenkidul,Kedelai,0.01,19.31,0.02,,,aktual,aktual,aktual
+2025,Kayenkidul,Kedelai,0.01,20.0,0.02,,,aktual,aktual,aktual
+2026,Kayenkidul,Kedelai,0.01,20.0,0.02,0.019,0.022,drift,naive,forecast
+2027,Kayenkidul,Kedelai,0.01,20.0,0.02,0.018,0.024,drift,naive,forecast
+2020,Kayenkidul,Ketela Pohon,5.8,282.48,163.8,,,aktual,aktual,aktual
+2021,Kayenkidul,Ketela Pohon,5.46,270.24,147.55,,,aktual,aktual,aktual
+2022,Kayenkidul,Ketela Pohon,5.2,270.73,140.89,,,aktual,aktual,aktual
+2023,Kayenkidul,Ketela Pohon,4.77,283.23,135.06,,,aktual,aktual,aktual
+2024,Kayenkidul,Ketela Pohon,5.07,292.51,148.43,,,aktual,aktual,aktual
+2025,Kayenkidul,Ketela Pohon,4.79,284.82,136.43,,,aktual,aktual,aktual
+2026,Kayenkidul,Ketela Pohon,4.79,284.82,136.429,121.211,152.937,naive,naive,forecast
+2027,Kayenkidul,Ketela Pohon,4.79,284.82,136.429,115.483,159.093,naive,naive,forecast
+2020,Kayenkidul,Padi,1193.01,53.91,6431.09,,,aktual,aktual,aktual
+2021,Kayenkidul,Padi,1155.26,52.77,6096.2,,,aktual,aktual,aktual
+2022,Kayenkidul,Padi,1321.41,55.22,7296.41,,,aktual,aktual,aktual
+2023,Kayenkidul,Padi,1331.58,57.88,7706.65,,,aktual,aktual,aktual
+2024,Kayenkidul,Padi,1542.19,59.82,9224.78,,,aktual,aktual,aktual
+2025,Kayenkidul,Padi,1488.5,57.99,8632.19,,,aktual,aktual,aktual
+2026,Kayenkidul,Padi,1488.5,57.99,8631.812,7756.463,9740.018,naive,naive,forecast
+2027,Kayenkidul,Padi,1488.5,57.99,8631.812,7231.904,10410.889,naive,naive,forecast
+2020,Kayenkidul,Ubi Jalar,4.31,300.9,129.81,,,aktual,aktual,aktual
+2021,Kayenkidul,Ubi Jalar,4.17,294.58,122.84,,,aktual,aktual,aktual
+2022,Kayenkidul,Ubi Jalar,3.99,295.24,117.76,,,aktual,aktual,aktual
+2023,Kayenkidul,Ubi Jalar,3.84,292.2,112.06,,,aktual,aktual,aktual
+2024,Kayenkidul,Ubi Jalar,4.13,281.78,116.24,,,aktual,aktual,aktual
+2025,Kayenkidul,Ubi Jalar,3.95,293.92,116.1,,,aktual,aktual,aktual
+2026,Kayenkidul,Ubi Jalar,3.95,293.92,116.098,104.365,130.218,naive,naive,forecast
+2027,Kayenkidul,Ubi Jalar,3.95,293.92,116.098,100.317,137.839,naive,naive,forecast
+2020,Kepung,Kacang Tanah,50.87,16.58,84.32,,,aktual,aktual,aktual
+2021,Kepung,Kacang Tanah,50.23,17.24,86.57,,,aktual,aktual,aktual
+2022,Kepung,Kacang Tanah,48.39,17.53,84.85,,,aktual,aktual,aktual
+2023,Kepung,Kacang Tanah,52.09,17.29,90.08,,,aktual,aktual,aktual
+2024,Kepung,Kacang Tanah,55.86,17.64,98.52,,,aktual,aktual,aktual
+2025,Kepung,Kacang Tanah,60.19,17.71,106.58,,,aktual,aktual,aktual
+2026,Kepung,Kacang Tanah,60.19,17.71,106.596,97.2,121.276,naive,naive,forecast
+2027,Kepung,Kacang Tanah,60.19,17.71,106.596,90.781,126.312,naive,naive,forecast
+2020,Kepung,Kedelai,0.19,12.5,0.23,,,aktual,aktual,aktual
+2021,Kepung,Kedelai,0.21,12.22,0.26,,,aktual,aktual,aktual
+2022,Kepung,Kedelai,0.2,12.22,0.24,,,aktual,aktual,aktual
+2023,Kepung,Kedelai,0.23,12.8,0.29,,,aktual,aktual,aktual
+2024,Kepung,Kedelai,0.23,12.7,0.29,,,aktual,aktual,aktual
+2025,Kepung,Kedelai,0.24,13.33,0.32,,,aktual,aktual,aktual
+2026,Kepung,Kedelai,0.25,13.33,0.333,0.31,0.373,drift,naive,forecast
+2027,Kepung,Kedelai,0.26,13.33,0.347,0.314,0.41,drift,naive,forecast
+2020,Kepung,Ketela Pohon,78.59,277.53,2181.17,,,aktual,aktual,aktual
+2021,Kepung,Ketela Pohon,75.16,285.83,2148.22,,,aktual,aktual,aktual
+2022,Kepung,Ketela Pohon,81.3,297.75,2420.6,,,aktual,aktual,aktual
+2023,Kepung,Ketela Pohon,88.54,287.74,2547.55,,,aktual,aktual,aktual
+2024,Kepung,Ketela Pohon,92.93,295.32,2744.42,,,aktual,aktual,aktual
+2025,Kepung,Ketela Pohon,82.47,284.86,2349.27,,,aktual,aktual,aktual
+2026,Kepung,Ketela Pohon,82.47,284.86,2349.24,2087.201,2633.511,naive,naive,forecast
+2027,Kepung,Ketela Pohon,82.47,284.86,2349.24,1988.558,2739.514,naive,naive,forecast
+2020,Kepung,Padi,1654.97,54.1,8952.86,,,aktual,aktual,aktual
+2021,Kepung,Padi,1716.62,56.65,9725.32,,,aktual,aktual,aktual
+2022,Kepung,Padi,1582.03,56.27,8902.25,,,aktual,aktual,aktual
+2023,Kepung,Padi,1482.35,59.18,8772.46,,,aktual,aktual,aktual
+2024,Kepung,Padi,1611.21,59.32,9558.2,,,aktual,aktual,aktual
+2025,Kepung,Padi,1828.42,57.99,10603.46,,,aktual,aktual,aktual
+2026,Kepung,Padi,1828.42,57.99,10603.008,9527.761,11964.288,naive,naive,forecast
+2027,Kepung,Padi,1828.42,57.99,10603.008,8883.412,12788.362,naive,naive,forecast
+2020,Kepung,Ubi Jalar,54.28,330.92,1796.21,,,aktual,aktual,aktual
+2021,Kepung,Ubi Jalar,52.04,329.76,1716.19,,,aktual,aktual,aktual
+2022,Kepung,Ubi Jalar,58.13,332.99,1935.77,,,aktual,aktual,aktual
+2023,Kepung,Ubi Jalar,64.56,317.29,2048.46,,,aktual,aktual,aktual
+2024,Kepung,Ubi Jalar,63.71,303.37,1932.71,,,aktual,aktual,aktual
+2025,Kepung,Ubi Jalar,68.03,293.87,1999.2,,,aktual,aktual,aktual
+2026,Kepung,Ubi Jalar,68.03,293.87,1999.198,1797.155,2242.336,naive,naive,forecast
+2027,Kepung,Ubi Jalar,68.03,293.87,1999.198,1727.441,2373.567,naive,naive,forecast
+2020,Kras,Kacang Tanah,3.99,16.06,6.4,,,aktual,aktual,aktual
+2021,Kras,Kacang Tanah,4.41,16.8,7.41,,,aktual,aktual,aktual
+2022,Kras,Kacang Tanah,5.03,16.89,8.5,,,aktual,aktual,aktual
+2023,Kras,Kacang Tanah,4.94,16.94,8.37,,,aktual,aktual,aktual
+2024,Kras,Kacang Tanah,4.54,17.73,8.05,,,aktual,aktual,aktual
+2025,Kras,Kacang Tanah,5.32,17.71,9.42,,,aktual,aktual,aktual
+2026,Kras,Kacang Tanah,5.32,17.71,9.422,8.591,10.719,naive,naive,forecast
+2027,Kras,Kacang Tanah,5.32,17.71,9.422,8.024,11.164,naive,naive,forecast
+2020,Kras,Kedelai,0.02,13.33,0.02,,,aktual,aktual,aktual
+2021,Kras,Kedelai,0.02,13.17,0.02,,,aktual,aktual,aktual
+2022,Kras,Kedelai,0.02,13.64,0.03,,,aktual,aktual,aktual
+2023,Kras,Kedelai,0.02,14.1,0.03,,,aktual,aktual,aktual
+2024,Kras,Kedelai,0.02,14.46,0.03,,,aktual,aktual,aktual
+2025,Kras,Kedelai,0.02,15.0,0.03,,,aktual,aktual,aktual
+2026,Kras,Kedelai,0.02,15.0,0.03,0.028,0.034,drift,naive,forecast
+2027,Kras,Kedelai,0.02,15.0,0.03,0.027,0.035,drift,naive,forecast
+2020,Kras,Ketela Pohon,5.62,292.29,164.18,,,aktual,aktual,aktual
+2021,Kras,Ketela Pohon,6.01,284.77,171.08,,,aktual,aktual,aktual
+2022,Kras,Ketela Pohon,6.64,275.15,182.78,,,aktual,aktual,aktual
+2023,Kras,Ketela Pohon,7.43,266.04,197.65,,,aktual,aktual,aktual
+2024,Kras,Ketela Pohon,7.59,273.2,207.25,,,aktual,aktual,aktual
+2025,Kras,Ketela Pohon,7.29,284.88,207.68,,,aktual,aktual,aktual
+2026,Kras,Ketela Pohon,7.29,284.88,207.678,184.513,232.808,naive,naive,forecast
+2027,Kras,Ketela Pohon,7.29,284.88,207.678,175.793,242.178,naive,naive,forecast
+2020,Kras,Padi,1883.53,56.94,10725.49,,,aktual,aktual,aktual
+2021,Kras,Padi,1717.37,55.73,9571.65,,,aktual,aktual,aktual
+2022,Kras,Padi,1921.57,57.68,11083.76,,,aktual,aktual,aktual
+2023,Kras,Padi,2044.0,57.67,11788.18,,,aktual,aktual,aktual
+2024,Kras,Padi,1942.49,57.09,11090.47,,,aktual,aktual,aktual
+2025,Kras,Padi,1700.37,57.99,9860.86,,,aktual,aktual,aktual
+2026,Kras,Padi,1700.37,57.99,9860.446,8860.502,11126.392,naive,naive,forecast
+2027,Kras,Padi,1700.37,57.99,9860.446,8261.279,11892.753,naive,naive,forecast
+2020,Kras,Ubi Jalar,5.18,311.34,161.2,,,aktual,aktual,aktual
+2021,Kras,Ubi Jalar,4.98,318.84,158.76,,,aktual,aktual,aktual
+2022,Kras,Ubi Jalar,5.51,306.7,168.95,,,aktual,aktual,aktual
+2023,Kras,Ubi Jalar,6.19,293.66,181.91,,,aktual,aktual,aktual
+2024,Kras,Ubi Jalar,6.09,294.47,179.45,,,aktual,aktual,aktual
+2025,Kras,Ubi Jalar,6.01,294.06,176.73,,,aktual,aktual,aktual
+2026,Kras,Ubi Jalar,6.01,294.06,176.73,158.869,198.224,naive,naive,forecast
+2027,Kras,Ubi Jalar,6.01,294.06,176.73,152.707,209.824,naive,naive,forecast
+2020,Kunjang,Kacang Tanah,2.08,17.77,3.7,,,aktual,aktual,aktual
+2021,Kunjang,Kacang Tanah,2.27,17.24,3.92,,,aktual,aktual,aktual
+2022,Kunjang,Kacang Tanah,2.34,16.69,3.91,,,aktual,aktual,aktual
+2023,Kunjang,Kacang Tanah,2.59,17.3,4.48,,,aktual,aktual,aktual
+2024,Kunjang,Kacang Tanah,2.78,17.65,4.91,,,aktual,aktual,aktual
+2025,Kunjang,Kacang Tanah,2.61,17.74,4.63,,,aktual,aktual,aktual
+2026,Kunjang,Kacang Tanah,2.61,17.74,4.63,4.222,5.268,naive,naive,forecast
+2027,Kunjang,Kacang Tanah,2.61,17.74,4.63,3.943,5.487,naive,naive,forecast
+2020,Kunjang,Kedelai,0.01,11.33,0.01,,,aktual,aktual,aktual
+2021,Kunjang,Kedelai,0.01,10.96,0.01,,,aktual,aktual,aktual
+2022,Kunjang,Kedelai,0.01,10.56,0.01,,,aktual,aktual,aktual
+2023,Kunjang,Kedelai,0.01,10.71,0.01,,,aktual,aktual,aktual
+2024,Kunjang,Kedelai,0.01,10.23,0.01,,,aktual,aktual,aktual
+2025,Kunjang,Kedelai,0.01,10.0,0.01,,,aktual,aktual,aktual
+2026,Kunjang,Kedelai,0.01,10.0,0.01,0.009,0.011,drift,naive,forecast
+2027,Kunjang,Kedelai,0.01,10.0,0.01,0.009,0.012,drift,naive,forecast
+2020,Kunjang,Ketela Pohon,4.62,261.79,121.03,,,aktual,aktual,aktual
+2021,Kunjang,Ketela Pohon,4.72,259.12,122.3,,,aktual,aktual,aktual
+2022,Kunjang,Ketela Pohon,4.51,271.62,122.54,,,aktual,aktual,aktual
+2023,Kunjang,Ketela Pohon,4.2,280.8,117.99,,,aktual,aktual,aktual
+2024,Kunjang,Ketela Pohon,3.68,287.21,105.65,,,aktual,aktual,aktual
+2025,Kunjang,Ketela Pohon,3.58,284.97,102.02,,,aktual,aktual,aktual
+2026,Kunjang,Ketela Pohon,3.58,284.97,102.019,90.64,114.364,naive,naive,forecast
+2027,Kunjang,Ketela Pohon,3.58,284.97,102.019,86.356,118.967,naive,naive,forecast
+2020,Kunjang,Padi,1449.12,59.45,8615.09,,,aktual,aktual,aktual
+2021,Kunjang,Padi,1337.4,57.3,7663.44,,,aktual,aktual,aktual
+2022,Kunjang,Padi,1253.29,59.27,7428.12,,,aktual,aktual,aktual
+2023,Kunjang,Padi,1387.51,60.49,8393.55,,,aktual,aktual,aktual
+2024,Kunjang,Padi,1434.65,60.23,8640.39,,,aktual,aktual,aktual
+2025,Kunjang,Padi,1458.23,57.99,8456.66,,,aktual,aktual,aktual
+2026,Kunjang,Padi,1458.23,57.99,8456.276,7598.729,9541.946,naive,naive,forecast
+2027,Kunjang,Padi,1458.23,57.99,8456.276,7084.837,10199.174,naive,naive,forecast
+2020,Kunjang,Ubi Jalar,3.42,271.7,92.8,,,aktual,aktual,aktual
+2021,Kunjang,Ubi Jalar,3.06,281.96,86.33,,,aktual,aktual,aktual
+2022,Kunjang,Ubi Jalar,2.89,287.3,82.94,,,aktual,aktual,aktual
+2023,Kunjang,Ubi Jalar,2.95,295.92,87.21,,,aktual,aktual,aktual
+2024,Kunjang,Ubi Jalar,3.39,296.34,100.37,,,aktual,aktual,aktual
+2025,Kunjang,Ubi Jalar,2.95,294.31,86.82,,,aktual,aktual,aktual
+2026,Kunjang,Ubi Jalar,2.95,294.31,86.821,78.047,97.381,naive,naive,forecast
+2027,Kunjang,Ubi Jalar,2.95,294.31,86.821,75.02,103.08,naive,naive,forecast
+2020,Mojo,Kacang Tanah,86.55,17.86,154.58,,,aktual,aktual,aktual
+2021,Mojo,Kacang Tanah,87.55,18.73,163.97,,,aktual,aktual,aktual
+2022,Mojo,Kacang Tanah,85.65,17.92,153.46,,,aktual,aktual,aktual
+2023,Mojo,Kacang Tanah,77.2,17.92,138.38,,,aktual,aktual,aktual
+2024,Mojo,Kacang Tanah,68.73,18.54,127.45,,,aktual,aktual,aktual
+2025,Mojo,Kacang Tanah,76.46,17.71,135.38,,,aktual,aktual,aktual
+2026,Mojo,Kacang Tanah,76.46,17.71,135.411,123.474,154.059,naive,naive,forecast
+2027,Mojo,Kacang Tanah,76.46,17.71,135.411,115.32,160.456,naive,naive,forecast
+2020,Mojo,Kedelai,0.25,13.07,0.32,,,aktual,aktual,aktual
+2021,Mojo,Kedelai,0.28,13.21,0.37,,,aktual,aktual,aktual
+2022,Mojo,Kedelai,0.28,12.82,0.36,,,aktual,aktual,aktual
+2023,Mojo,Kedelai,0.28,12.36,0.35,,,aktual,aktual,aktual
+2024,Mojo,Kedelai,0.31,12.69,0.39,,,aktual,aktual,aktual
+2025,Mojo,Kedelai,0.3,13.33,0.4,,,aktual,aktual,aktual
+2026,Mojo,Kedelai,0.31,13.33,0.413,0.384,0.463,drift,naive,forecast
+2027,Mojo,Kedelai,0.32,13.33,0.427,0.386,0.504,drift,naive,forecast
+2020,Mojo,Ketela Pohon,105.47,289.22,3050.45,,,aktual,aktual,aktual
+2021,Mojo,Ketela Pohon,122.38,280.61,3434.07,,,aktual,aktual,aktual
+2022,Mojo,Ketela Pohon,114.21,290.27,3315.11,,,aktual,aktual,aktual
+2023,Mojo,Ketela Pohon,109.43,298.82,3270.11,,,aktual,aktual,aktual
+2024,Mojo,Ketela Pohon,103.73,296.78,3078.35,,,aktual,aktual,aktual
+2025,Mojo,Ketela Pohon,104.75,284.87,2984.06,,,aktual,aktual,aktual
+2026,Mojo,Ketela Pohon,104.75,284.87,2984.013,2651.17,3345.095,naive,naive,forecast
+2027,Mojo,Ketela Pohon,104.75,284.87,2984.013,2525.874,3479.74,naive,naive,forecast
+2020,Mojo,Padi,848.51,59.84,5077.45,,,aktual,aktual,aktual
+2021,Mojo,Padi,829.47,59.02,4895.77,,,aktual,aktual,aktual
+2022,Mojo,Padi,890.95,58.73,5232.24,,,aktual,aktual,aktual
+2023,Mojo,Padi,858.08,56.82,4875.24,,,aktual,aktual,aktual
+2024,Mojo,Padi,761.03,56.82,4323.99,,,aktual,aktual,aktual
+2025,Mojo,Padi,718.64,57.99,4167.57,,,aktual,aktual,aktual
+2026,Mojo,Padi,718.64,57.99,4167.393,3744.78,4702.43,naive,naive,forecast
+2027,Mojo,Padi,718.64,57.99,4167.393,3491.526,5026.323,naive,naive,forecast
+2020,Mojo,Ubi Jalar,105.81,285.68,3022.9,,,aktual,aktual,aktual
+2021,Mojo,Ubi Jalar,96.04,298.79,2869.72,,,aktual,aktual,aktual
+2022,Mojo,Ubi Jalar,106.46,288.96,3076.1,,,aktual,aktual,aktual
+2023,Mojo,Ubi Jalar,95.85,291.8,2796.85,,,aktual,aktual,aktual
+2024,Mojo,Ubi Jalar,91.32,291.61,2662.93,,,aktual,aktual,aktual
+2025,Mojo,Ubi Jalar,86.41,293.88,2539.4,,,aktual,aktual,aktual
+2026,Mojo,Ubi Jalar,86.41,293.88,2539.417,2282.779,2848.256,naive,naive,forecast
+2027,Mojo,Ubi Jalar,86.41,293.88,2539.417,2194.227,3014.948,naive,naive,forecast
+2020,Ngadiluwih,Kacang Tanah,8.23,16.45,13.53,,,aktual,aktual,aktual
+2021,Ngadiluwih,Kacang Tanah,7.34,16.32,11.97,,,aktual,aktual,aktual
+2022,Ngadiluwih,Kacang Tanah,8.21,15.68,12.87,,,aktual,aktual,aktual
+2023,Ngadiluwih,Kacang Tanah,9.51,16.2,15.41,,,aktual,aktual,aktual
+2024,Ngadiluwih,Kacang Tanah,11.19,16.82,18.82,,,aktual,aktual,aktual
+2025,Ngadiluwih,Kacang Tanah,10.21,17.7,18.07,,,aktual,aktual,aktual
+2026,Ngadiluwih,Kacang Tanah,10.21,17.7,18.072,16.479,20.56,naive,naive,forecast
+2027,Ngadiluwih,Kacang Tanah,10.21,17.7,18.072,15.39,21.414,naive,naive,forecast
+2020,Ngadiluwih,Kedelai,0.04,10.71,0.04,,,aktual,aktual,aktual
+2021,Ngadiluwih,Kedelai,0.04,11.17,0.05,,,aktual,aktual,aktual
+2022,Ngadiluwih,Kedelai,0.04,11.02,0.04,,,aktual,aktual,aktual
+2023,Ngadiluwih,Kedelai,0.04,11.3,0.05,,,aktual,aktual,aktual
+2024,Ngadiluwih,Kedelai,0.04,11.88,0.05,,,aktual,aktual,aktual
+2025,Ngadiluwih,Kedelai,0.04,12.5,0.05,,,aktual,aktual,aktual
+2026,Ngadiluwih,Kedelai,0.04,12.5,0.05,0.047,0.056,drift,naive,forecast
+2027,Ngadiluwih,Kedelai,0.04,12.5,0.05,0.045,0.059,drift,naive,forecast
+2020,Ngadiluwih,Ketela Pohon,10.99,253.15,278.17,,,aktual,aktual,aktual
+2021,Ngadiluwih,Ketela Pohon,10.54,261.05,275.02,,,aktual,aktual,aktual
+2022,Ngadiluwih,Ketela Pohon,11.65,265.09,308.83,,,aktual,aktual,aktual
+2023,Ngadiluwih,Ketela Pohon,12.86,265.7,341.58,,,aktual,aktual,aktual
+2024,Ngadiluwih,Ketela Pohon,12.01,276.47,332.09,,,aktual,aktual,aktual
+2025,Ngadiluwih,Ketela Pohon,13.98,284.95,398.36,,,aktual,aktual,aktual
+2026,Ngadiluwih,Ketela Pohon,13.98,284.95,398.36,353.926,446.564,naive,naive,forecast
+2027,Ngadiluwih,Ketela Pohon,13.98,284.95,398.36,337.199,464.539,naive,naive,forecast
+2020,Ngadiluwih,Padi,873.61,61.64,5385.01,,,aktual,aktual,aktual
+2021,Ngadiluwih,Padi,871.96,64.13,5591.8,,,aktual,aktual,aktual
+2022,Ngadiluwih,Padi,869.85,63.57,5529.66,,,aktual,aktual,aktual
+2023,Ngadiluwih,Padi,818.08,60.81,4974.82,,,aktual,aktual,aktual
+2024,Ngadiluwih,Padi,774.43,59.13,4579.51,,,aktual,aktual,aktual
+2025,Ngadiluwih,Padi,900.24,57.99,5220.72,,,aktual,aktual,aktual
+2026,Ngadiluwih,Padi,900.24,57.99,5220.492,4691.084,5890.731,naive,naive,forecast
+2027,Ngadiluwih,Padi,900.24,57.99,5220.492,4373.832,6296.472,naive,naive,forecast
+2020,Ngadiluwih,Ubi Jalar,13.9,305.31,424.28,,,aktual,aktual,aktual
+2021,Ngadiluwih,Ubi Jalar,12.5,302.93,378.53,,,aktual,aktual,aktual
+2022,Ngadiluwih,Ubi Jalar,13.24,295.91,391.87,,,aktual,aktual,aktual
+2023,Ngadiluwih,Ubi Jalar,11.86,296.2,351.42,,,aktual,aktual,aktual
+2024,Ngadiluwih,Ubi Jalar,11.67,289.49,337.95,,,aktual,aktual,aktual
+2025,Ngadiluwih,Ubi Jalar,11.54,293.76,339.0,,,aktual,aktual,aktual
+2026,Ngadiluwih,Ubi Jalar,11.54,293.76,338.999,304.739,380.227,naive,naive,forecast
+2027,Ngadiluwih,Ubi Jalar,11.54,293.76,338.999,292.918,402.48,naive,naive,forecast
+2020,Ngancar,Kacang Tanah,41.11,17.12,70.39,,,aktual,aktual,aktual
+2021,Ngancar,Kacang Tanah,38.15,16.52,63.04,,,aktual,aktual,aktual
+2022,Ngancar,Kacang Tanah,43.32,17.21,74.56,,,aktual,aktual,aktual
+2023,Ngancar,Kacang Tanah,45.39,17.84,80.99,,,aktual,aktual,aktual
+2024,Ngancar,Kacang Tanah,48.97,17.99,88.1,,,aktual,aktual,aktual
+2025,Ngancar,Kacang Tanah,50.28,17.7,89.02,,,aktual,aktual,aktual
+2026,Ngancar,Kacang Tanah,50.28,17.7,88.996,81.15,101.252,naive,naive,forecast
+2027,Ngancar,Kacang Tanah,50.28,17.7,88.996,75.792,105.456,naive,naive,forecast
+2020,Ngancar,Kedelai,0.25,12.28,0.31,,,aktual,aktual,aktual
+2021,Ngancar,Kedelai,0.23,12.22,0.28,,,aktual,aktual,aktual
+2022,Ngancar,Kedelai,0.22,12.36,0.27,,,aktual,aktual,aktual
+2023,Ngancar,Kedelai,0.2,12.76,0.25,,,aktual,aktual,aktual
+2024,Ngancar,Kedelai,0.18,12.94,0.23,,,aktual,aktual,aktual
+2025,Ngancar,Kedelai,0.2,13.0,0.26,,,aktual,aktual,aktual
+2026,Ngancar,Kedelai,0.19,13.0,0.247,0.23,0.277,drift,naive,forecast
+2027,Ngancar,Kedelai,0.18,13.0,0.234,0.212,0.277,drift,naive,forecast
+2020,Ngancar,Ketela Pohon,82.47,265.73,2191.53,,,aktual,aktual,aktual
+2021,Ngancar,Ketela Pohon,82.86,265.37,2198.93,,,aktual,aktual,aktual
+2022,Ngancar,Ketela Pohon,81.78,269.58,2204.74,,,aktual,aktual,aktual
+2023,Ngancar,Ketela Pohon,77.77,283.54,2205.24,,,aktual,aktual,aktual
+2024,Ngancar,Ketela Pohon,78.42,288.26,2260.56,,,aktual,aktual,aktual
+2025,Ngancar,Ketela Pohon,68.88,284.88,1962.25,,,aktual,aktual,aktual
+2026,Ngancar,Ketela Pohon,68.88,284.88,1962.253,1743.379,2199.697,naive,naive,forecast
+2027,Ngancar,Ketela Pohon,68.88,284.88,1962.253,1660.986,2288.238,naive,naive,forecast
+2020,Ngancar,Padi,1131.14,56.46,6386.02,,,aktual,aktual,aktual
+2021,Ngancar,Padi,1296.23,58.43,7574.2,,,aktual,aktual,aktual
+2022,Ngancar,Padi,1452.66,56.42,8196.58,,,aktual,aktual,aktual
+2023,Ngancar,Padi,1507.5,58.27,8784.48,,,aktual,aktual,aktual
+2024,Ngancar,Padi,1326.41,57.23,7590.62,,,aktual,aktual,aktual
+2025,Ngancar,Padi,1170.31,57.99,6786.93,,,aktual,aktual,aktual
+2026,Ngancar,Padi,1170.31,57.99,6786.628,6098.399,7657.938,naive,naive,forecast
+2027,Ngancar,Padi,1170.31,57.99,6786.628,5685.972,8185.4,naive,naive,forecast
+2020,Ngancar,Ubi Jalar,47.34,293.37,1388.77,,,aktual,aktual,aktual
+2021,Ngancar,Ubi Jalar,55.51,283.45,1573.36,,,aktual,aktual,aktual
+2022,Ngancar,Ubi Jalar,52.43,277.88,1456.83,,,aktual,aktual,aktual
+2023,Ngancar,Ubi Jalar,57.62,290.46,1673.67,,,aktual,aktual,aktual
+2024,Ngancar,Ubi Jalar,54.4,292.33,1590.22,,,aktual,aktual,aktual
+2025,Ngancar,Ubi Jalar,56.82,293.88,1669.85,,,aktual,aktual,aktual
+2026,Ngancar,Ubi Jalar,56.82,293.88,1669.826,1501.07,1872.907,naive,naive,forecast
+2027,Ngancar,Ubi Jalar,56.82,293.88,1669.826,1442.842,1982.518,naive,naive,forecast
+2020,Ngasem,Kacang Tanah,1.32,15.75,2.08,,,aktual,aktual,aktual
+2021,Ngasem,Kacang Tanah,1.21,16.13,1.95,,,aktual,aktual,aktual
+2022,Ngasem,Kacang Tanah,1.24,16.71,2.08,,,aktual,aktual,aktual
+2023,Ngasem,Kacang Tanah,1.14,17.28,1.97,,,aktual,aktual,aktual
+2024,Ngasem,Kacang Tanah,1.29,17.36,2.23,,,aktual,aktual,aktual
+2025,Ngasem,Kacang Tanah,1.33,17.67,2.35,,,aktual,aktual,aktual
+2026,Ngasem,Kacang Tanah,1.33,17.67,2.35,2.143,2.674,naive,naive,forecast
+2027,Ngasem,Kacang Tanah,1.33,17.67,2.35,2.001,2.785,naive,naive,forecast
+2020,Ngasem,Kedelai,0.01,9.87,0.01,,,aktual,aktual,aktual
+2021,Ngasem,Kedelai,0.01,10.06,0.01,,,aktual,aktual,aktual
+2022,Ngasem,Kedelai,0.01,9.97,0.01,,,aktual,aktual,aktual
+2023,Ngasem,Kedelai,0.01,10.16,0.01,,,aktual,aktual,aktual
+2024,Ngasem,Kedelai,0.01,10.42,0.01,,,aktual,aktual,aktual
+2025,Ngasem,Kedelai,0.01,10.0,0.01,,,aktual,aktual,aktual
+2026,Ngasem,Kedelai,0.01,10.0,0.01,0.009,0.011,drift,naive,forecast
+2027,Ngasem,Kedelai,0.01,10.0,0.01,0.009,0.012,drift,naive,forecast
+2020,Ngasem,Ketela Pohon,2.06,279.87,57.66,,,aktual,aktual,aktual
+2021,Ngasem,Ketela Pohon,2.14,280.84,60.06,,,aktual,aktual,aktual
+2022,Ngasem,Ketela Pohon,2.04,288.33,58.72,,,aktual,aktual,aktual
+2023,Ngasem,Ketela Pohon,1.93,303.05,58.37,,,aktual,aktual,aktual
+2024,Ngasem,Ketela Pohon,1.86,292.33,54.49,,,aktual,aktual,aktual
+2025,Ngasem,Ketela Pohon,1.82,284.73,51.82,,,aktual,aktual,aktual
+2026,Ngasem,Ketela Pohon,1.82,284.73,51.821,46.041,58.091,naive,naive,forecast
+2027,Ngasem,Ketela Pohon,1.82,284.73,51.821,43.865,60.43,naive,naive,forecast
+2020,Ngasem,Padi,376.62,50.74,1911.14,,,aktual,aktual,aktual
+2021,Ngasem,Padi,374.02,50.22,1878.32,,,aktual,aktual,aktual
+2022,Ngasem,Padi,402.75,51.75,2084.4,,,aktual,aktual,aktual
+2023,Ngasem,Padi,399.96,54.18,2167.16,,,aktual,aktual,aktual
+2024,Ngasem,Padi,397.97,56.32,2241.37,,,aktual,aktual,aktual
+2025,Ngasem,Padi,385.71,57.99,2236.81,,,aktual,aktual,aktual
+2026,Ngasem,Padi,385.71,57.99,2236.732,2009.906,2523.898,naive,naive,forecast
+2027,Ngasem,Padi,385.71,57.99,2236.732,1873.979,2697.739,naive,naive,forecast
+2020,Ngasem,Ubi Jalar,1.67,285.55,47.55,,,aktual,aktual,aktual
+2021,Ngasem,Ubi Jalar,1.48,282.95,41.95,,,aktual,aktual,aktual
+2022,Ngasem,Ubi Jalar,1.67,294.44,49.06,,,aktual,aktual,aktual
+2023,Ngasem,Ubi Jalar,1.6,292.21,46.67,,,aktual,aktual,aktual
+2024,Ngasem,Ubi Jalar,1.66,305.74,50.8,,,aktual,aktual,aktual
+2025,Ngasem,Ubi Jalar,1.5,294.0,44.1,,,aktual,aktual,aktual
+2026,Ngasem,Ubi Jalar,1.5,294.0,44.1,39.643,49.463,naive,naive,forecast
+2027,Ngasem,Ubi Jalar,1.5,294.0,44.1,38.105,52.358,naive,naive,forecast
+2020,Pagu,Kacang Tanah,1.2,18.54,2.22,,,aktual,aktual,aktual
+2021,Pagu,Kacang Tanah,1.27,18.35,2.34,,,aktual,aktual,aktual
+2022,Pagu,Kacang Tanah,1.22,18.61,2.27,,,aktual,aktual,aktual
+2023,Pagu,Kacang Tanah,1.09,17.88,1.96,,,aktual,aktual,aktual
+2024,Pagu,Kacang Tanah,1.16,18.04,2.09,,,aktual,aktual,aktual
+2025,Pagu,Kacang Tanah,1.23,17.8,2.19,,,aktual,aktual,aktual
+2026,Pagu,Kacang Tanah,1.23,17.8,2.189,1.996,2.491,naive,naive,forecast
+2027,Pagu,Kacang Tanah,1.23,17.8,2.189,1.865,2.594,naive,naive,forecast
+2020,Pagu,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2021,Pagu,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2022,Pagu,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2023,Pagu,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2024,Pagu,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2025,Pagu,Kedelai,0.0,0.0,0.01,,,aktual,aktual,aktual
+2026,Pagu,Kedelai,0.0,0.0,0.0,0.0,0.0,drift,naive,forecast
+2027,Pagu,Kedelai,0.0,0.0,0.0,0.0,0.0,drift,naive,forecast
+2020,Pagu,Ketela Pohon,1.74,303.18,52.84,,,aktual,aktual,aktual
+2021,Pagu,Ketela Pohon,1.82,291.34,53.09,,,aktual,aktual,aktual
+2022,Pagu,Ketela Pohon,1.99,285.64,56.72,,,aktual,aktual,aktual
+2023,Pagu,Ketela Pohon,1.9,299.41,56.99,,,aktual,aktual,aktual
+2024,Pagu,Ketela Pohon,1.69,298.99,50.62,,,aktual,aktual,aktual
+2025,Pagu,Ketela Pohon,1.69,285.09,48.18,,,aktual,aktual,aktual
+2026,Pagu,Ketela Pohon,1.69,285.09,48.18,42.806,54.01,naive,naive,forecast
+2027,Pagu,Ketela Pohon,1.69,285.09,48.18,40.783,56.184,naive,naive,forecast
+2020,Pagu,Padi,1061.62,53.26,5654.42,,,aktual,aktual,aktual
+2021,Pagu,Padi,1192.96,55.02,6563.84,,,aktual,aktual,aktual
+2022,Pagu,Padi,1118.73,52.8,5906.59,,,aktual,aktual,aktual
+2023,Pagu,Padi,1036.55,55.38,5740.45,,,aktual,aktual,aktual
+2024,Pagu,Padi,1075.9,56.33,6060.24,,,aktual,aktual,aktual
+2025,Pagu,Padi,1093.48,57.99,6341.37,,,aktual,aktual,aktual
+2026,Pagu,Padi,1093.48,57.99,6341.091,5698.043,7155.2,naive,naive,forecast
+2027,Pagu,Padi,1093.48,57.99,6341.091,5312.692,7648.034,naive,naive,forecast
+2020,Pagu,Ubi Jalar,1.27,272.68,34.71,,,aktual,aktual,aktual
+2021,Pagu,Ubi Jalar,1.3,267.52,34.72,,,aktual,aktual,aktual
+2022,Pagu,Ubi Jalar,1.29,280.94,36.29,,,aktual,aktual,aktual
+2023,Pagu,Ubi Jalar,1.2,288.36,34.74,,,aktual,aktual,aktual
+2024,Pagu,Ubi Jalar,1.22,292.07,35.56,,,aktual,aktual,aktual
+2025,Pagu,Ubi Jalar,1.39,294.96,41.0,,,aktual,aktual,aktual
+2026,Pagu,Ubi Jalar,1.39,294.96,40.999,36.856,45.986,naive,naive,forecast
+2027,Pagu,Ubi Jalar,1.39,294.96,40.999,35.426,48.677,naive,naive,forecast
+2020,Papar,Kacang Tanah,5.1,17.05,8.7,,,aktual,aktual,aktual
+2021,Papar,Kacang Tanah,4.57,17.46,7.97,,,aktual,aktual,aktual
+2022,Papar,Kacang Tanah,4.56,16.64,7.59,,,aktual,aktual,aktual
+2023,Papar,Kacang Tanah,4.6,17.51,8.05,,,aktual,aktual,aktual
+2024,Papar,Kacang Tanah,4.33,18.23,7.9,,,aktual,aktual,aktual
+2025,Papar,Kacang Tanah,3.83,17.7,6.78,,,aktual,aktual,aktual
+2026,Papar,Kacang Tanah,3.83,17.7,6.779,6.181,7.713,naive,naive,forecast
+2027,Papar,Kacang Tanah,3.83,17.7,6.779,5.773,8.033,naive,naive,forecast
+2020,Papar,Kedelai,0.02,10.95,0.02,,,aktual,aktual,aktual
+2021,Papar,Kedelai,0.02,11.5,0.02,,,aktual,aktual,aktual
+2022,Papar,Kedelai,0.02,11.14,0.02,,,aktual,aktual,aktual
+2023,Papar,Kedelai,0.02,10.76,0.02,,,aktual,aktual,aktual
+2024,Papar,Kedelai,0.02,10.25,0.02,,,aktual,aktual,aktual
+2025,Papar,Kedelai,0.02,10.0,0.02,,,aktual,aktual,aktual
+2026,Papar,Kedelai,0.02,10.0,0.02,0.019,0.022,drift,naive,forecast
+2027,Papar,Kedelai,0.02,10.0,0.02,0.018,0.024,drift,naive,forecast
+2020,Papar,Ketela Pohon,4.99,276.03,137.76,,,aktual,aktual,aktual
+2021,Papar,Ketela Pohon,5.25,289.85,152.04,,,aktual,aktual,aktual
+2022,Papar,Ketela Pohon,4.97,300.51,149.23,,,aktual,aktual,aktual
+2023,Papar,Ketela Pohon,5.11,296.78,151.78,,,aktual,aktual,aktual
+2024,Papar,Ketela Pohon,5.55,292.6,162.35,,,aktual,aktual,aktual
+2025,Papar,Ketela Pohon,5.24,285.1,149.39,,,aktual,aktual,aktual
+2026,Papar,Ketela Pohon,5.24,285.1,149.392,132.729,167.47,naive,naive,forecast
+2027,Papar,Ketela Pohon,5.24,285.1,149.392,126.456,174.211,naive,naive,forecast
+2020,Papar,Padi,1188.68,56.75,6746.06,,,aktual,aktual,aktual
+2021,Papar,Padi,1359.28,56.81,7722.03,,,aktual,aktual,aktual
+2022,Papar,Padi,1373.78,57.96,7961.9,,,aktual,aktual,aktual
+2023,Papar,Padi,1227.71,56.26,6907.65,,,aktual,aktual,aktual
+2024,Papar,Padi,1161.56,58.89,6839.9,,,aktual,aktual,aktual
+2025,Papar,Padi,1330.18,57.99,7714.06,,,aktual,aktual,aktual
+2026,Papar,Padi,1330.18,57.99,7713.714,6931.469,8704.049,naive,naive,forecast
+2027,Papar,Padi,1330.18,57.99,7713.714,6462.704,9303.565,naive,naive,forecast
+2020,Papar,Ubi Jalar,5.45,311.15,169.58,,,aktual,aktual,aktual
+2021,Papar,Ubi Jalar,5.43,312.46,169.53,,,aktual,aktual,aktual
+2022,Papar,Ubi Jalar,4.85,306.98,148.79,,,aktual,aktual,aktual
+2023,Papar,Ubi Jalar,4.99,294.77,147.14,,,aktual,aktual,aktual
+2024,Papar,Ubi Jalar,4.91,292.75,143.65,,,aktual,aktual,aktual
+2025,Papar,Ubi Jalar,4.33,293.58,127.12,,,aktual,aktual,aktual
+2026,Papar,Ubi Jalar,4.33,293.58,127.12,114.273,142.58,naive,naive,forecast
+2027,Papar,Ubi Jalar,4.33,293.58,127.12,109.84,150.925,naive,naive,forecast
+2020,Pare,Kacang Tanah,5.5,17.35,9.55,,,aktual,aktual,aktual
+2021,Pare,Kacang Tanah,6.03,17.57,10.6,,,aktual,aktual,aktual
+2022,Pare,Kacang Tanah,6.99,16.77,11.72,,,aktual,aktual,aktual
+2023,Pare,Kacang Tanah,7.33,17.28,12.68,,,aktual,aktual,aktual
+2024,Pare,Kacang Tanah,7.43,17.19,12.77,,,aktual,aktual,aktual
+2025,Pare,Kacang Tanah,6.86,17.7,12.14,,,aktual,aktual,aktual
+2026,Pare,Kacang Tanah,6.86,17.7,12.142,11.072,13.814,naive,naive,forecast
+2027,Pare,Kacang Tanah,6.86,17.7,12.142,10.341,14.388,naive,naive,forecast
+2020,Pare,Kedelai,0.03,14.45,0.04,,,aktual,aktual,aktual
+2021,Pare,Kedelai,0.03,14.01,0.04,,,aktual,aktual,aktual
+2022,Pare,Kedelai,0.03,13.39,0.04,,,aktual,aktual,aktual
+2023,Pare,Kedelai,0.03,13.42,0.04,,,aktual,aktual,aktual
+2024,Pare,Kedelai,0.03,13.49,0.04,,,aktual,aktual,aktual
+2025,Pare,Kedelai,0.03,13.33,0.04,,,aktual,aktual,aktual
+2026,Pare,Kedelai,0.03,13.33,0.04,0.037,0.045,drift,naive,forecast
+2027,Pare,Kedelai,0.03,13.33,0.04,0.036,0.047,drift,naive,forecast
+2020,Pare,Ketela Pohon,10.17,272.2,276.76,,,aktual,aktual,aktual
+2021,Pare,Ketela Pohon,8.92,280.69,250.27,,,aktual,aktual,aktual
+2022,Pare,Ketela Pohon,9.45,283.24,267.64,,,aktual,aktual,aktual
+2023,Pare,Ketela Pohon,8.41,283.33,238.34,,,aktual,aktual,aktual
+2024,Pare,Ketela Pohon,9.71,294.91,286.46,,,aktual,aktual,aktual
+2025,Pare,Ketela Pohon,9.39,284.98,267.6,,,aktual,aktual,aktual
+2026,Pare,Ketela Pohon,9.39,284.98,267.596,237.748,299.977,naive,naive,forecast
+2027,Pare,Ketela Pohon,9.39,284.98,267.596,226.512,312.051,naive,naive,forecast
+2020,Pare,Padi,1060.13,56.32,5970.93,,,aktual,aktual,aktual
+2021,Pare,Padi,1035.24,56.29,5826.97,,,aktual,aktual,aktual
+2022,Pare,Padi,962.4,56.3,5418.47,,,aktual,aktual,aktual
+2023,Pare,Padi,975.2,56.43,5503.19,,,aktual,aktual,aktual
+2024,Pare,Padi,1014.06,57.41,5822.07,,,aktual,aktual,aktual
+2025,Pare,Padi,1182.73,57.99,6858.94,,,aktual,aktual,aktual
+2026,Pare,Padi,1182.73,57.99,6858.651,6163.118,7739.208,naive,naive,forecast
+2027,Pare,Padi,1182.73,57.99,6858.651,5746.315,8272.268,naive,naive,forecast
+2020,Pare,Ubi Jalar,5.02,308.43,154.94,,,aktual,aktual,aktual
+2021,Pare,Ubi Jalar,5.21,303.33,157.89,,,aktual,aktual,aktual
+2022,Pare,Ubi Jalar,4.98,294.92,146.86,,,aktual,aktual,aktual
+2023,Pare,Ubi Jalar,5.81,305.17,177.38,,,aktual,aktual,aktual
+2024,Pare,Ubi Jalar,6.78,294.14,199.4,,,aktual,aktual,aktual
+2025,Pare,Ubi Jalar,7.75,293.83,227.72,,,aktual,aktual,aktual
+2026,Pare,Ubi Jalar,7.75,293.83,227.718,204.705,255.413,naive,naive,forecast
+2027,Pare,Ubi Jalar,7.75,293.83,227.718,196.764,270.361,naive,naive,forecast
+2020,Plemahan,Kacang Tanah,1.4,16.0,2.24,,,aktual,aktual,aktual
+2021,Plemahan,Kacang Tanah,1.36,16.5,2.24,,,aktual,aktual,aktual
+2022,Plemahan,Kacang Tanah,1.21,16.82,2.04,,,aktual,aktual,aktual
+2023,Plemahan,Kacang Tanah,1.31,16.83,2.2,,,aktual,aktual,aktual
+2024,Plemahan,Kacang Tanah,1.36,17.67,2.41,,,aktual,aktual,aktual
+2025,Plemahan,Kacang Tanah,1.58,17.66,2.79,,,aktual,aktual,aktual
+2026,Plemahan,Kacang Tanah,1.58,17.66,2.79,2.544,3.175,naive,naive,forecast
+2027,Plemahan,Kacang Tanah,1.58,17.66,2.79,2.376,3.306,naive,naive,forecast
+2020,Plemahan,Kedelai,0.01,9.56,0.01,,,aktual,aktual,aktual
+2021,Plemahan,Kedelai,0.01,9.25,0.01,,,aktual,aktual,aktual
+2022,Plemahan,Kedelai,0.01,9.62,0.01,,,aktual,aktual,aktual
+2023,Plemahan,Kedelai,0.01,9.57,0.01,,,aktual,aktual,aktual
+2024,Plemahan,Kedelai,0.01,9.65,0.01,,,aktual,aktual,aktual
+2025,Plemahan,Kedelai,0.01,10.0,0.01,,,aktual,aktual,aktual
+2026,Plemahan,Kedelai,0.01,10.0,0.01,0.009,0.011,drift,naive,forecast
+2027,Plemahan,Kedelai,0.01,10.0,0.01,0.009,0.012,drift,naive,forecast
+2020,Plemahan,Ketela Pohon,2.32,291.11,67.56,,,aktual,aktual,aktual
+2021,Plemahan,Ketela Pohon,2.55,295.64,75.45,,,aktual,aktual,aktual
+2022,Plemahan,Ketela Pohon,2.33,285.43,66.37,,,aktual,aktual,aktual
+2023,Plemahan,Ketela Pohon,2.64,280.37,73.89,,,aktual,aktual,aktual
+2024,Plemahan,Ketela Pohon,2.42,289.05,69.93,,,aktual,aktual,aktual
+2025,Plemahan,Ketela Pohon,2.16,284.91,61.54,,,aktual,aktual,aktual
+2026,Plemahan,Ketela Pohon,2.16,284.91,61.541,54.676,68.987,naive,naive,forecast
+2027,Plemahan,Ketela Pohon,2.16,284.91,61.541,52.092,71.764,naive,naive,forecast
+2020,Plemahan,Padi,2755.48,55.89,15400.78,,,aktual,aktual,aktual
+2021,Plemahan,Padi,2738.24,57.31,15693.72,,,aktual,aktual,aktual
+2022,Plemahan,Padi,2639.26,58.03,15316.21,,,aktual,aktual,aktual
+2023,Plemahan,Padi,2873.03,57.81,16609.94,,,aktual,aktual,aktual
+2024,Plemahan,Padi,2695.25,59.65,16075.86,,,aktual,aktual,aktual
+2025,Plemahan,Padi,2484.19,57.99,14406.48,,,aktual,aktual,aktual
+2026,Plemahan,Padi,2484.19,57.99,14405.818,12944.93,16255.327,naive,naive,forecast
+2027,Plemahan,Padi,2484.19,57.99,14405.818,12069.482,17374.959,naive,naive,forecast
+2020,Plemahan,Ubi Jalar,1.34,281.99,37.89,,,aktual,aktual,aktual
+2021,Plemahan,Ubi Jalar,1.55,276.08,42.79,,,aktual,aktual,aktual
+2022,Plemahan,Ubi Jalar,1.36,289.35,39.39,,,aktual,aktual,aktual
+2023,Plemahan,Ubi Jalar,1.59,284.0,45.25,,,aktual,aktual,aktual
+2024,Plemahan,Ubi Jalar,1.75,284.3,49.81,,,aktual,aktual,aktual
+2025,Plemahan,Ubi Jalar,1.78,294.21,52.37,,,aktual,aktual,aktual
+2026,Plemahan,Ubi Jalar,1.78,294.21,52.369,47.077,58.738,naive,naive,forecast
+2027,Plemahan,Ubi Jalar,1.78,294.21,52.369,45.251,62.176,naive,naive,forecast
+2020,Plosoklaten,Kacang Tanah,22.62,18.74,42.39,,,aktual,aktual,aktual
+2021,Plosoklaten,Kacang Tanah,26.36,19.07,50.26,,,aktual,aktual,aktual
+2022,Plosoklaten,Kacang Tanah,23.84,18.47,44.04,,,aktual,aktual,aktual
+2023,Plosoklaten,Kacang Tanah,22.71,17.76,40.33,,,aktual,aktual,aktual
+2024,Plosoklaten,Kacang Tanah,20.61,18.17,37.44,,,aktual,aktual,aktual
+2025,Plosoklaten,Kacang Tanah,24.16,17.71,42.78,,,aktual,aktual,aktual
+2026,Plosoklaten,Kacang Tanah,24.16,17.71,42.787,39.015,48.68,naive,naive,forecast
+2027,Plosoklaten,Kacang Tanah,24.16,17.71,42.787,36.439,50.701,naive,naive,forecast
+2020,Plosoklaten,Kedelai,0.14,12.86,0.19,,,aktual,aktual,aktual
+2021,Plosoklaten,Kedelai,0.13,12.69,0.17,,,aktual,aktual,aktual
+2022,Plosoklaten,Kedelai,0.12,13.3,0.16,,,aktual,aktual,aktual
+2023,Plosoklaten,Kedelai,0.11,13.4,0.15,,,aktual,aktual,aktual
+2024,Plosoklaten,Kedelai,0.1,13.34,0.14,,,aktual,aktual,aktual
+2025,Plosoklaten,Kedelai,0.1,13.0,0.13,,,aktual,aktual,aktual
+2026,Plosoklaten,Kedelai,0.092,13.0,0.12,0.111,0.134,drift,naive,forecast
+2027,Plosoklaten,Kedelai,0.084,13.0,0.109,0.099,0.129,drift,naive,forecast
+2020,Plosoklaten,Ketela Pohon,25.19,289.49,729.36,,,aktual,aktual,aktual
+2021,Plosoklaten,Ketela Pohon,25.5,277.83,708.57,,,aktual,aktual,aktual
+2022,Plosoklaten,Ketela Pohon,29.17,273.46,797.58,,,aktual,aktual,aktual
+2023,Plosoklaten,Ketela Pohon,30.89,274.22,846.95,,,aktual,aktual,aktual
+2024,Plosoklaten,Ketela Pohon,28.59,283.28,809.89,,,aktual,aktual,aktual
+2025,Plosoklaten,Ketela Pohon,33.1,284.85,942.87,,,aktual,aktual,aktual
+2026,Plosoklaten,Ketela Pohon,33.1,284.85,942.854,837.686,1056.944,naive,naive,forecast
+2027,Plosoklaten,Ketela Pohon,33.1,284.85,942.854,798.096,1099.487,naive,naive,forecast
+2020,Plosoklaten,Padi,2042.22,56.53,11544.37,,,aktual,aktual,aktual
+2021,Plosoklaten,Padi,1785.04,56.03,10001.88,,,aktual,aktual,aktual
+2022,Plosoklaten,Padi,1609.14,56.38,9071.97,,,aktual,aktual,aktual
+2023,Plosoklaten,Padi,1574.72,58.54,9217.98,,,aktual,aktual,aktual
+2024,Plosoklaten,Padi,1471.71,60.87,8958.43,,,aktual,aktual,aktual
+2025,Plosoklaten,Padi,1670.88,57.99,9689.83,,,aktual,aktual,aktual
+2026,Plosoklaten,Padi,1670.88,57.99,9689.433,8706.832,10933.423,naive,naive,forecast
+2027,Plosoklaten,Padi,1670.88,57.99,9689.433,8118.001,11686.494,naive,naive,forecast
+2020,Plosoklaten,Ubi Jalar,32.09,272.28,873.83,,,aktual,aktual,aktual
+2021,Plosoklaten,Ubi Jalar,32.43,276.83,897.77,,,aktual,aktual,aktual
+2022,Plosoklaten,Ubi Jalar,34.64,290.22,1005.39,,,aktual,aktual,aktual
+2023,Plosoklaten,Ubi Jalar,33.83,298.18,1008.85,,,aktual,aktual,aktual
+2024,Plosoklaten,Ubi Jalar,31.18,304.69,950.06,,,aktual,aktual,aktual
+2025,Plosoklaten,Ubi Jalar,27.3,293.91,802.37,,,aktual,aktual,aktual
+2026,Plosoklaten,Ubi Jalar,27.3,293.91,802.374,721.285,899.958,naive,naive,forecast
+2027,Plosoklaten,Ubi Jalar,27.3,293.91,802.374,693.305,952.627,naive,naive,forecast
+2020,Puncu,Kacang Tanah,84.09,15.57,130.95,,,aktual,aktual,aktual
+2021,Puncu,Kacang Tanah,73.32,15.94,116.85,,,aktual,aktual,aktual
+2022,Puncu,Kacang Tanah,65.95,16.44,108.43,,,aktual,aktual,aktual
+2023,Puncu,Kacang Tanah,68.56,16.53,113.33,,,aktual,aktual,aktual
+2024,Puncu,Kacang Tanah,61.71,17.03,105.11,,,aktual,aktual,aktual
+2025,Puncu,Kacang Tanah,54.34,17.71,96.22,,,aktual,aktual,aktual
+2026,Puncu,Kacang Tanah,54.34,17.71,96.236,87.752,109.489,naive,naive,forecast
+2027,Puncu,Kacang Tanah,54.34,17.71,96.236,81.958,114.036,naive,naive,forecast
+2020,Puncu,Kedelai,0.26,12.06,0.32,,,aktual,aktual,aktual
+2021,Puncu,Kedelai,0.25,11.88,0.3,,,aktual,aktual,aktual
+2022,Puncu,Kedelai,0.23,12.46,0.29,,,aktual,aktual,aktual
+2023,Puncu,Kedelai,0.22,12.48,0.28,,,aktual,aktual,aktual
+2024,Puncu,Kedelai,0.24,13.08,0.31,,,aktual,aktual,aktual
+2025,Puncu,Kedelai,0.22,13.18,0.29,,,aktual,aktual,aktual
+2026,Puncu,Kedelai,0.212,13.18,0.279,0.26,0.313,drift,naive,forecast
+2027,Puncu,Kedelai,0.204,13.18,0.269,0.243,0.318,drift,naive,forecast
+2020,Puncu,Ketela Pohon,76.45,291.7,2230.16,,,aktual,aktual,aktual
+2021,Puncu,Ketela Pohon,74.71,302.43,2259.56,,,aktual,aktual,aktual
+2022,Puncu,Ketela Pohon,80.3,289.17,2322.1,,,aktual,aktual,aktual
+2023,Puncu,Ketela Pohon,72.5,279.97,2029.76,,,aktual,aktual,aktual
+2024,Puncu,Ketela Pohon,64.6,278.91,1801.84,,,aktual,aktual,aktual
+2025,Puncu,Ketela Pohon,74.45,284.88,2120.94,,,aktual,aktual,aktual
+2026,Puncu,Ketela Pohon,74.45,284.88,2120.932,1884.358,2377.576,naive,naive,forecast
+2027,Puncu,Ketela Pohon,74.45,284.88,2120.932,1795.302,2473.277,naive,naive,forecast
+2020,Puncu,Padi,608.0,58.37,3548.67,,,aktual,aktual,aktual
+2021,Puncu,Padi,611.05,58.35,3565.65,,,aktual,aktual,aktual
+2022,Puncu,Padi,657.53,55.97,3680.27,,,aktual,aktual,aktual
+2023,Puncu,Padi,591.53,58.01,3431.25,,,aktual,aktual,aktual
+2024,Puncu,Padi,565.6,58.48,3307.86,,,aktual,aktual,aktual
+2025,Puncu,Padi,578.17,57.99,3352.96,,,aktual,aktual,aktual
+2026,Puncu,Padi,578.17,57.99,3352.808,3012.801,3783.262,naive,naive,forecast
+2027,Puncu,Padi,578.17,57.99,3352.808,2809.049,4043.845,naive,naive,forecast
+2020,Puncu,Ubi Jalar,87.39,313.2,2737.06,,,aktual,aktual,aktual
+2021,Puncu,Ubi Jalar,79.91,311.61,2490.01,,,aktual,aktual,aktual
+2022,Puncu,Ubi Jalar,77.69,301.68,2343.67,,,aktual,aktual,aktual
+2023,Puncu,Ubi Jalar,71.1,314.01,2232.67,,,aktual,aktual,aktual
+2024,Puncu,Ubi Jalar,63.53,306.5,1947.32,,,aktual,aktual,aktual
+2025,Puncu,Ubi Jalar,61.41,293.91,1804.9,,,aktual,aktual,aktual
+2026,Puncu,Ubi Jalar,61.41,293.91,1804.901,1622.495,2024.41,naive,naive,forecast
+2027,Puncu,Ubi Jalar,61.41,293.91,1804.901,1559.556,2142.887,naive,naive,forecast
+2020,Purwoasri,Kacang Tanah,8.29,17.66,14.65,,,aktual,aktual,aktual
+2021,Purwoasri,Kacang Tanah,8.13,17.89,14.54,,,aktual,aktual,aktual
+2022,Purwoasri,Kacang Tanah,7.7,18.4,14.16,,,aktual,aktual,aktual
+2023,Purwoasri,Kacang Tanah,0.0,0.0,0.0,,,aktual,aktual,aktual
+2024,Purwoasri,Kacang Tanah,0.0,0.0,0.0,,,aktual,aktual,aktual
+2025,Purwoasri,Kacang Tanah,0.0,0.0,0.0,,,aktual,aktual,aktual
+2026,Purwoasri,Kacang Tanah,0.0,18.4,0.0,0.0,0.0,naive,naive,forecast
+2027,Purwoasri,Kacang Tanah,0.0,18.4,0.0,0.0,0.0,naive,naive,forecast
+2020,Purwoasri,Kedelai,6.15,13.85,8.52,,,aktual,aktual,aktual
+2021,Purwoasri,Kedelai,6.42,13.29,8.53,,,aktual,aktual,aktual
+2022,Purwoasri,Kedelai,5.78,12.82,7.41,,,aktual,aktual,aktual
+2023,Purwoasri,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2024,Purwoasri,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2025,Purwoasri,Kedelai,0.0,0.0,0.0,,,aktual,aktual,aktual
+2026,Purwoasri,Kedelai,0.0,12.82,0.0,0.0,0.0,drift,naive,forecast
+2027,Purwoasri,Kedelai,0.0,12.82,0.0,0.0,0.0,drift,naive,forecast
+2020,Purwoasri,Ketela Pohon,5.02,287.16,144.15,,,aktual,aktual,aktual
+2021,Purwoasri,Ketela Pohon,4.47,278.44,124.46,,,aktual,aktual,aktual
+2022,Purwoasri,Ketela Pohon,0.0,0.0,0.0,,,aktual,aktual,aktual
+2023,Purwoasri,Ketela Pohon,0.0,0.0,0.0,,,aktual,aktual,aktual
+2024,Purwoasri,Ketela Pohon,0.0,0.0,0.0,,,aktual,aktual,aktual
+2025,Purwoasri,Ketela Pohon,0.0,0.0,0.0,,,aktual,aktual,aktual
+2026,Purwoasri,Ketela Pohon,0.0,278.44,0.0,0.0,0.0,naive,naive,forecast
+2027,Purwoasri,Ketela Pohon,0.0,278.44,0.0,0.0,0.0,naive,naive,forecast
+2020,Purwoasri,Padi,2184.99,62.89,13740.51,,,aktual,aktual,aktual
+2021,Purwoasri,Padi,2055.49,62.69,12886.76,,,aktual,aktual,aktual
+2022,Purwoasri,Padi,2015.04,60.29,12147.8,,,aktual,aktual,aktual
+2023,Purwoasri,Padi,1771.71,57.57,10199.86,,,aktual,aktual,aktual
+2024,Purwoasri,Padi,1857.24,59.52,11053.79,,,aktual,aktual,aktual
+2025,Purwoasri,Padi,2155.92,57.99,12502.72,,,aktual,aktual,aktual
+2026,Purwoasri,Padi,2155.92,57.99,12502.18,11234.339,14107.289,naive,naive,forecast
+2027,Purwoasri,Padi,2155.92,57.99,12502.18,10474.577,15078.968,naive,naive,forecast
+2020,Purwoasri,Ubi Jalar,0.0,0.0,0.0,,,aktual,aktual,aktual
+2021,Purwoasri,Ubi Jalar,0.0,0.0,0.0,,,aktual,aktual,aktual
+2022,Purwoasri,Ubi Jalar,0.0,0.0,0.0,,,aktual,aktual,aktual
+2023,Purwoasri,Ubi Jalar,0.0,0.0,0.0,,,aktual,aktual,aktual
+2024,Purwoasri,Ubi Jalar,0.0,0.0,0.0,,,aktual,aktual,aktual
+2025,Purwoasri,Ubi Jalar,0.0,0.0,0.0,,,aktual,aktual,aktual
+2026,Purwoasri,Ubi Jalar,0.0,0.0,0.0,0.0,0.0,naive,naive,forecast
+2027,Purwoasri,Ubi Jalar,0.0,0.0,0.0,0.0,0.0,naive,naive,forecast
+2020,Ringinrejo,Kacang Tanah,7.5,17.94,13.45,,,aktual,aktual,aktual
+2021,Ringinrejo,Kacang Tanah,6.9,18.74,12.93,,,aktual,aktual,aktual
+2022,Ringinrejo,Kacang Tanah,6.19,18.92,11.72,,,aktual,aktual,aktual
+2023,Ringinrejo,Kacang Tanah,5.39,19.07,10.27,,,aktual,aktual,aktual
+2024,Ringinrejo,Kacang Tanah,6.12,18.31,11.21,,,aktual,aktual,aktual
+2025,Ringinrejo,Kacang Tanah,5.76,17.69,10.19,,,aktual,aktual,aktual
+2026,Ringinrejo,Kacang Tanah,5.76,17.69,10.189,9.291,11.593,naive,naive,forecast
+2027,Ringinrejo,Kacang Tanah,5.76,17.69,10.189,8.678,12.074,naive,naive,forecast
+2020,Ringinrejo,Kedelai,0.02,13.38,0.03,,,aktual,aktual,aktual
+2021,Ringinrejo,Kedelai,0.02,13.44,0.03,,,aktual,aktual,aktual
+2022,Ringinrejo,Kedelai,0.02,13.94,0.03,,,aktual,aktual,aktual
+2023,Ringinrejo,Kedelai,0.02,14.56,0.03,,,aktual,aktual,aktual
+2024,Ringinrejo,Kedelai,0.02,14.48,0.03,,,aktual,aktual,aktual
+2025,Ringinrejo,Kedelai,0.02,15.0,0.03,,,aktual,aktual,aktual
+2026,Ringinrejo,Kedelai,0.02,15.0,0.03,0.028,0.034,drift,naive,forecast
+2027,Ringinrejo,Kedelai,0.02,15.0,0.03,0.027,0.035,drift,naive,forecast
+2020,Ringinrejo,Ketela Pohon,7.01,301.01,210.99,,,aktual,aktual,aktual
+2021,Ringinrejo,Ketela Pohon,6.32,295.88,186.9,,,aktual,aktual,aktual
+2022,Ringinrejo,Ketela Pohon,7.09,294.76,209.09,,,aktual,aktual,aktual
+2023,Ringinrejo,Ketela Pohon,7.63,286.53,218.58,,,aktual,aktual,aktual
+2024,Ringinrejo,Ketela Pohon,8.8,278.89,245.45,,,aktual,aktual,aktual
+2025,Ringinrejo,Ketela Pohon,7.89,284.77,224.68,,,aktual,aktual,aktual
+2026,Ringinrejo,Ketela Pohon,7.89,284.77,224.684,199.622,251.871,naive,naive,forecast
+2027,Ringinrejo,Ketela Pohon,7.89,284.77,224.684,190.188,262.01,naive,naive,forecast
+2020,Ringinrejo,Padi,1371.46,56.18,7704.39,,,aktual,aktual,aktual
+2021,Ringinrejo,Padi,1234.74,56.49,6974.59,,,aktual,aktual,aktual
+2022,Ringinrejo,Padi,1079.84,58.98,6368.66,,,aktual,aktual,aktual
+2023,Ringinrejo,Padi,1143.33,56.56,6466.87,,,aktual,aktual,aktual
+2024,Ringinrejo,Padi,1177.83,57.08,6722.63,,,aktual,aktual,aktual
+2025,Ringinrejo,Padi,1233.95,57.99,7155.99,,,aktual,aktual,aktual
+2026,Ringinrejo,Padi,1233.95,57.99,7155.676,6430.022,8074.367,naive,naive,forecast
+2027,Ringinrejo,Padi,1233.95,57.99,7155.676,5995.169,8630.511,naive,naive,forecast
+2020,Ringinrejo,Ubi Jalar,7.47,297.92,222.41,,,aktual,aktual,aktual
+2021,Ringinrejo,Ubi Jalar,6.83,293.89,200.61,,,aktual,aktual,aktual
+2022,Ringinrejo,Ubi Jalar,6.37,282.99,180.25,,,aktual,aktual,aktual
+2023,Ringinrejo,Ubi Jalar,6.69,277.98,185.89,,,aktual,aktual,aktual
+2024,Ringinrejo,Ubi Jalar,6.12,284.16,173.8,,,aktual,aktual,aktual
+2025,Ringinrejo,Ubi Jalar,6.51,293.7,191.2,,,aktual,aktual,aktual
+2026,Ringinrejo,Ubi Jalar,6.51,293.7,191.199,171.876,214.452,naive,naive,forecast
+2027,Ringinrejo,Ubi Jalar,6.51,293.7,191.199,165.209,227.003,naive,naive,forecast
+2020,Semen,Kacang Tanah,49.74,17.26,85.86,,,aktual,aktual,aktual
+2021,Semen,Kacang Tanah,53.47,17.67,94.49,,,aktual,aktual,aktual
+2022,Semen,Kacang Tanah,57.85,17.3,100.05,,,aktual,aktual,aktual
+2023,Semen,Kacang Tanah,59.34,17.53,104.03,,,aktual,aktual,aktual
+2024,Semen,Kacang Tanah,52.5,18.37,96.45,,,aktual,aktual,aktual
+2025,Semen,Kacang Tanah,57.87,17.71,102.47,,,aktual,aktual,aktual
+2026,Semen,Kacang Tanah,57.87,17.71,102.488,93.453,116.602,naive,naive,forecast
+2027,Semen,Kacang Tanah,57.87,17.71,102.488,87.282,121.443,naive,naive,forecast
+2020,Semen,Kedelai,0.17,12.69,0.22,,,aktual,aktual,aktual
+2021,Semen,Kedelai,0.2,13.29,0.26,,,aktual,aktual,aktual
+2022,Semen,Kedelai,0.22,13.19,0.29,,,aktual,aktual,aktual
+2023,Semen,Kedelai,0.23,13.64,0.31,,,aktual,aktual,aktual
+2024,Semen,Kedelai,0.25,13.56,0.34,,,aktual,aktual,aktual
+2025,Semen,Kedelai,0.23,13.04,0.3,,,aktual,aktual,aktual
+2026,Semen,Kedelai,0.242,13.04,0.316,0.294,0.354,drift,naive,forecast
+2027,Semen,Kedelai,0.254,13.04,0.331,0.3,0.391,drift,naive,forecast
+2020,Semen,Ketela Pohon,86.96,336.47,2925.95,,,aktual,aktual,aktual
+2021,Semen,Ketela Pohon,80.98,328.33,2658.73,,,aktual,aktual,aktual
+2022,Semen,Ketela Pohon,72.92,318.94,2325.77,,,aktual,aktual,aktual
+2023,Semen,Ketela Pohon,76.11,306.43,2332.23,,,aktual,aktual,aktual
+2024,Semen,Ketela Pohon,87.38,296.51,2591.02,,,aktual,aktual,aktual
+2025,Semen,Ketela Pohon,79.28,284.89,2258.59,,,aktual,aktual,aktual
+2026,Semen,Ketela Pohon,79.28,284.89,2258.608,2006.678,2531.912,naive,naive,forecast
+2027,Semen,Ketela Pohon,79.28,284.89,2258.608,1911.841,2633.825,naive,naive,forecast
+2020,Semen,Padi,987.46,57.5,5677.83,,,aktual,aktual,aktual
+2021,Semen,Padi,962.65,58.5,5631.67,,,aktual,aktual,aktual
+2022,Semen,Padi,1097.89,58.0,6367.86,,,aktual,aktual,aktual
+2023,Semen,Padi,1214.24,60.7,7370.91,,,aktual,aktual,aktual
+2024,Semen,Padi,1137.14,60.22,6847.46,,,aktual,aktual,aktual
+2025,Semen,Padi,1079.51,57.99,6260.36,,,aktual,aktual,aktual
+2026,Semen,Padi,1079.51,57.99,6260.078,5625.247,7063.787,naive,naive,forecast
+2027,Semen,Padi,1079.51,57.99,6260.078,5244.819,7550.325,naive,naive,forecast
+2020,Semen,Ubi Jalar,66.75,319.24,2130.83,,,aktual,aktual,aktual
+2021,Semen,Ubi Jalar,61.58,312.25,1922.8,,,aktual,aktual,aktual
+2022,Semen,Ubi Jalar,67.95,304.54,2069.48,,,aktual,aktual,aktual
+2023,Semen,Ubi Jalar,76.81,298.94,2296.28,,,aktual,aktual,aktual
+2024,Semen,Ubi Jalar,73.35,299.83,2199.37,,,aktual,aktual,aktual
+2025,Semen,Ubi Jalar,65.4,293.89,1922.03,,,aktual,aktual,aktual
+2026,Semen,Ubi Jalar,65.4,293.89,1922.041,1727.796,2155.795,naive,naive,forecast
+2027,Semen,Ubi Jalar,65.4,293.89,1922.041,1660.773,2281.962,naive,naive,forecast
+2020,Tarokan,Kacang Tanah,23.5,17.69,41.57,,,aktual,aktual,aktual
+2021,Tarokan,Kacang Tanah,23.12,17.15,39.66,,,aktual,aktual,aktual
+2022,Tarokan,Kacang Tanah,24.41,17.43,42.54,,,aktual,aktual,aktual
+2023,Tarokan,Kacang Tanah,23.47,16.73,39.26,,,aktual,aktual,aktual
+2024,Tarokan,Kacang Tanah,21.39,17.08,36.53,,,aktual,aktual,aktual
+2025,Tarokan,Kacang Tanah,21.94,17.7,38.84,,,aktual,aktual,aktual
+2026,Tarokan,Kacang Tanah,21.94,17.7,38.834,35.41,44.182,naive,naive,forecast
+2027,Tarokan,Kacang Tanah,21.94,17.7,38.834,33.072,46.016,naive,naive,forecast
+2020,Tarokan,Kedelai,0.09,13.08,0.12,,,aktual,aktual,aktual
+2021,Tarokan,Kedelai,0.08,13.0,0.11,,,aktual,aktual,aktual
+2022,Tarokan,Kedelai,0.09,12.91,0.12,,,aktual,aktual,aktual
+2023,Tarokan,Kedelai,0.08,12.59,0.1,,,aktual,aktual,aktual
+2024,Tarokan,Kedelai,0.08,12.77,0.1,,,aktual,aktual,aktual
+2025,Tarokan,Kedelai,0.09,13.33,0.12,,,aktual,aktual,aktual
+2026,Tarokan,Kedelai,0.09,13.33,0.12,0.112,0.134,drift,naive,forecast
+2027,Tarokan,Kedelai,0.09,13.33,0.12,0.109,0.142,drift,naive,forecast
+2020,Tarokan,Ketela Pohon,46.4,260.96,1210.78,,,aktual,aktual,aktual
+2021,Tarokan,Ketela Pohon,43.48,268.02,1165.48,,,aktual,aktual,aktual
+2022,Tarokan,Ketela Pohon,37.97,273.56,1038.71,,,aktual,aktual,aktual
+2023,Tarokan,Ketela Pohon,37.45,271.43,1016.62,,,aktual,aktual,aktual
+2024,Tarokan,Ketela Pohon,32.89,283.03,930.9,,,aktual,aktual,aktual
+2025,Tarokan,Ketela Pohon,30.06,284.84,856.23,,,aktual,aktual,aktual
+2026,Tarokan,Ketela Pohon,30.06,284.84,856.229,760.723,959.837,naive,naive,forecast
+2027,Tarokan,Ketela Pohon,30.06,284.84,856.229,724.771,998.472,naive,naive,forecast
+2020,Tarokan,Padi,770.39,54.18,4173.68,,,aktual,aktual,aktual
+2021,Tarokan,Padi,689.35,56.8,3915.22,,,aktual,aktual,aktual
+2022,Tarokan,Padi,759.84,57.3,4353.59,,,aktual,aktual,aktual
+2023,Tarokan,Padi,713.4,58.0,4137.51,,,aktual,aktual,aktual
+2024,Tarokan,Padi,659.09,57.47,3787.94,,,aktual,aktual,aktual
+2025,Tarokan,Padi,685.27,57.99,3974.05,,,aktual,aktual,aktual
+2026,Tarokan,Padi,685.27,57.99,3973.881,3570.891,4484.073,naive,naive,forecast
+2027,Tarokan,Padi,685.27,57.99,3973.881,3329.397,4792.926,naive,naive,forecast
+2020,Tarokan,Ubi Jalar,26.94,270.69,729.32,,,aktual,aktual,aktual
+2021,Tarokan,Ubi Jalar,24.64,277.66,684.25,,,aktual,aktual,aktual
+2022,Tarokan,Ubi Jalar,23.62,284.99,673.27,,,aktual,aktual,aktual
+2023,Tarokan,Ubi Jalar,24.54,292.8,718.45,,,aktual,aktual,aktual
+2024,Tarokan,Ubi Jalar,24.97,279.53,698.01,,,aktual,aktual,aktual
+2025,Tarokan,Ubi Jalar,24.79,293.92,728.64,,,aktual,aktual,aktual
+2026,Tarokan,Ubi Jalar,24.79,293.92,728.628,654.991,817.242,naive,naive,forecast
+2027,Tarokan,Ubi Jalar,24.79,293.92,728.628,629.583,865.07,naive,naive,forecast
+2020,Wates,Kacang Tanah,2.8,17.56,4.93,,,aktual,aktual,aktual
+2021,Wates,Kacang Tanah,2.86,17.09,4.89,,,aktual,aktual,aktual
+2022,Wates,Kacang Tanah,2.78,17.63,4.9,,,aktual,aktual,aktual
+2023,Wates,Kacang Tanah,2.66,18.1,4.81,,,aktual,aktual,aktual
+2024,Wates,Kacang Tanah,2.55,17.81,4.54,,,aktual,aktual,aktual
+2025,Wates,Kacang Tanah,2.5,17.72,4.43,,,aktual,aktual,aktual
+2026,Wates,Kacang Tanah,2.5,17.72,4.43,4.039,5.04,naive,naive,forecast
+2027,Wates,Kacang Tanah,2.5,17.72,4.43,3.773,5.249,naive,naive,forecast
+2020,Wates,Kedelai,0.01,9.58,0.01,,,aktual,aktual,aktual
+2021,Wates,Kedelai,0.01,9.27,0.01,,,aktual,aktual,aktual
+2022,Wates,Kedelai,0.01,9.4,0.01,,,aktual,aktual,aktual
+2023,Wates,Kedelai,0.01,9.39,0.01,,,aktual,aktual,aktual
+2024,Wates,Kedelai,0.01,9.84,0.01,,,aktual,aktual,aktual
+2025,Wates,Kedelai,0.01,10.0,0.01,,,aktual,aktual,aktual
+2026,Wates,Kedelai,0.01,10.0,0.01,0.009,0.011,drift,naive,forecast
+2027,Wates,Kedelai,0.01,10.0,0.01,0.009,0.012,drift,naive,forecast
+2020,Wates,Ketela Pohon,2.35,305.24,71.63,,,aktual,aktual,aktual
+2021,Wates,Ketela Pohon,2.41,301.07,72.6,,,aktual,aktual,aktual
+2022,Wates,Ketela Pohon,2.79,292.0,81.41,,,aktual,aktual,aktual
+2023,Wates,Ketela Pohon,2.82,300.09,84.52,,,aktual,aktual,aktual
+2024,Wates,Ketela Pohon,3.15,296.87,93.51,,,aktual,aktual,aktual
+2025,Wates,Ketela Pohon,3.42,285.29,97.57,,,aktual,aktual,aktual
+2026,Wates,Ketela Pohon,3.42,285.29,97.569,86.686,109.376,naive,naive,forecast
+2027,Wates,Ketela Pohon,3.42,285.29,97.569,82.589,113.778,naive,naive,forecast
+2020,Wates,Padi,2116.05,55.02,11641.82,,,aktual,aktual,aktual
+2021,Wates,Padi,2121.13,54.45,11550.2,,,aktual,aktual,aktual
+2022,Wates,Padi,2310.09,56.33,13011.96,,,aktual,aktual,aktual
+2023,Wates,Padi,2457.01,55.87,13728.08,,,aktual,aktual,aktual
+2024,Wates,Padi,2405.17,56.95,13696.95,,,aktual,aktual,aktual
+2025,Wates,Padi,2615.35,57.99,15167.09,,,aktual,aktual,aktual
+2026,Wates,Padi,2615.35,57.99,15166.415,13628.395,17113.574,naive,naive,forecast
+2027,Wates,Padi,2615.35,57.99,15166.415,12706.726,18292.32,naive,naive,forecast
+2020,Wates,Ubi Jalar,2.42,300.78,72.89,,,aktual,aktual,aktual
+2021,Wates,Ubi Jalar,2.8,286.95,80.34,,,aktual,aktual,aktual
+2022,Wates,Ubi Jalar,2.99,298.73,89.38,,,aktual,aktual,aktual
+2023,Wates,Ubi Jalar,2.83,303.96,85.9,,,aktual,aktual,aktual
+2024,Wates,Ubi Jalar,3.11,294.27,91.41,,,aktual,aktual,aktual
+2025,Wates,Ubi Jalar,2.83,293.39,83.03,,,aktual,aktual,aktual
+2026,Wates,Ubi Jalar,2.83,293.39,83.029,74.638,93.127,naive,naive,forecast
+2027,Wates,Ubi Jalar,2.83,293.39,83.029,71.743,98.577,naive,naive,forecast

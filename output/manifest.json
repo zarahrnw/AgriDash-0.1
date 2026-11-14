@@ -1,0 +1,251 @@
+{
+  "meta": {
+    "model_version": "2.0.0",
+    "run_id": "20261114T155633Z",
+    "created_utc": "2026-11-14T15:56:33+00:00",
+    "data_sha256": "1f77ce45313d87eed39475e017f7198b28a4dd3f0c2196f8b55b852db0e21868",
+    "tahun_data": [
+      2020,
+      2025
+    ],
+    "tahun_forecast": [
+      2026,
+      2027
+    ],
+    "n_kecamatan": 26,
+    "tanaman": [
+      "Kacang Tanah",
+      "Kedelai",
+      "Ketela Pohon",
+      "Padi",
+      "Ubi Jalar"
+    ],
+    "n_cluster": 3,
+    "interval_level": 0.8,
+    "bobot_skor": {
+      "produksi": 0.4,
+      "produktivitas": 0.4,
+      "trend": 0.2
+    },
+    "libs": {
+      "python": "3.12.5",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "sklearn": "1.6.1",
+      "statsmodels": "0.14.4",
+      "scipy": "1.15.2"
+    }
+  },
+  "files": [
+    {
+      "file": "agridash_model_bundle.pkl",
+      "size_kb": 122.4,
+      "sha256": "d8fdaafbb5e5bf4fe10a902b7a5d6024d65a6252806537521a80f5342f0e3866"
+    },
+    {
+      "file": "cluster_01_elbow_evaluation.png",
+      "size_kb": 101.1,
+      "sha256": "7575d797726bd536d93e093925c9600db6d6d0c52083cc02969de7772d112871"
+    },
+    {
+      "file": "cluster_02_dendrogram.png",
+      "size_kb": 90.9,
+      "sha256": "78ade8e42a3f96debd19c17e7c932ee3cb383c90d4b1130fb7ffd2544db93acc"
+    },
+    {
+      "file": "cluster_03_pca_2d.png",
+      "size_kb": 114.3,
+      "sha256": "91b504f92effd5a090b3380dc6ed5a838cb9c57bbf2083abc4622a13aa7fe230"
+    },
+    {
+      "file": "eda_01_produksi_per_tanaman.png",
+      "size_kb": 80.8,
+      "sha256": "8547756e3dcdf665bcd6838d8981d685a07d9fa74b1fd283f73a747c208661d6"
+    },
+    {
+      "file": "eda_02_trend_tahunan.png",
+      "size_kb": 113.6,
+      "sha256": "6761670ab291c2baa9a8393bef8fbaa474eb4acf9fe940eb5fc46b8f8d7c8ac1"
+    },
+    {
+      "file": "eda_03_heatmap_kecamatan.png",
+      "size_kb": 207.4,
+      "sha256": "2dc9f33f598c20999c48b13b0272070f1e66d91ede51d305dc974d9b49de6cfa"
+    },
+    {
+      "file": "eda_04_top_kecamatan.png",
+      "size_kb": 112.7,
+      "sha256": "bae6c1be35bf11b743c650bf1c026442d740da6166e74df020de7ca79118e682"
+    },
+    {
+      "file": "manifest.json",
+      "size_kb": 7.8,
+      "sha256": "8d40d63e945869a0b118fb583fcfe3839eaf48d924bb5a6cb347310dc3c57917"
+    },
+    {
+      "file": "output_clustering_pangan.csv",
+      "size_kb": 1.4,
+      "sha256": "a8a206bdf348676241f77b2ee3b550e9d5dd4d9143c968348c6a5f8ac8be0a95"
+    },
+    {
+      "file": "output_dashboard_summary.csv",
+      "size_kb": 3.6,
+      "sha256": "b84665232595a4de2633c34a4eaefcf2740f9011071d11068f32ced8b43d9e82"
+    },
+    {
+      "file": "output_ews_kecamatan.csv",
+      "size_kb": 22.6,
+      "sha256": "cb4fc0708cebfd4b1107407930488e4c710e799dc4429bf27bc6fe0e3b50fe63"
+    },
+    {
+      "file": "output_model_comparison.csv",
+      "size_kb": 0.8,
+      "sha256": "41620948f92c43caee14c79c71bba0c8cab55b52d5713bde2cdd43cf749e043d"
+    },
+    {
+      "file": "output_rekomendasi_all_scores.csv",
+      "size_kb": 7.1,
+      "sha256": "0aae111b38a79c0a0d8cd22e9caaab3d4d0c6a3e6ff922195e28a25a93ae996c"
+    },
+    {
+      "file": "output_rekomendasi_pangan.csv",
+      "size_kb": 4.0,
+      "sha256": "eec16c57f61967d4f48fc3ad2b4dbae13f94e05fbc3eee75765539c7dc0d09dc"
+    },
+    {
+      "file": "output_timeseries_pangan.csv",
+      "size_kb": 69.5,
+      "sha256": "3c97a24001cfa114d5244e27f795959025c4e4b1cf146a1dcc5fdbea8c9185f5"
+    },
+    {
+      "file": "rek_01_heatmap_skor.png",
+      "size_kb": 265.5,
+      "sha256": "34729770167a46f9a18c21811dec4773508f22e5af1f92995271438bfc1bbd67"
+    },
+    {
+      "file": "rek_02_distribusi_unggulan.png",
+      "size_kb": 44.4,
+      "sha256": "1aade74157322163c2f93b99c562d8fd509b9a6905fcebe69dba56082641ac20"
+    },
+    {
+      "file": "cluster_01_elbow_evaluation.png",
+      "size_kb": 112.2,
+      "sha256": "803e2ca397334391fbbfb3bdd3d86d40523f1d8508218d249fa59802701de68d"
+    },
+    {
+      "file": "cluster_02_dendrogram.png",
+      "size_kb": 95.1,
+      "sha256": "db3c4e8e615c89b93e4b0cdfc69bf066248a8d094995bba82140ea06bbfdfdd6"
+    },
+    {
+      "file": "cluster_03_pca_2d.png",
+      "size_kb": 112.0,
+      "sha256": "cdcde77b0b38cb9b05e4103a41fa01ae2c2336c26c3eac218d4aef3349ab8648"
+    },
+    {
+      "file": "eda_01_produksi_per_tanaman.png",
+      "size_kb": 9.1,
+      "sha256": "d73e3ac91fbd74045de6c1e381d8e996b87f85bf474eb8a095529bcf2db2f19b"
+    },
+    {
+      "file": "eda_02_trend_tahunan.png",
+      "size_kb": 113.6,
+      "sha256": "6761670ab291c2baa9a8393bef8fbaa474eb4acf9fe940eb5fc46b8f8d7c8ac1"
+    },
+    {
+      "file": "eda_03_heatmap_kecamatan.png",
+      "size_kb": 207.4,
+      "sha256": "2dc9f33f598c20999c48b13b0272070f1e66d91ede51d305dc974d9b49de6cfa"
+    },
+    {
+      "file": "eda_04_top_kecamatan.png",
+      "size_kb": 112.7,
+      "sha256": "bae6c1be35bf11b743c650bf1c026442d740da6166e74df020de7ca79118e682"
+    },
+    {
+      "file": "output_clustering_pangan.csv",
+      "size_kb": 3.5,
+      "sha256": "7cc575bae6b8d528b09e11789ce09153e560aceda5264ef2fe64fd891cbb7ed9"
+    },
+    {
+      "file": "output_model_comparison.csv",
+      "size_kb": 25.1,
+      "sha256": "a84461d1e1230afb94fc53fd4af4a1fb3043393416f7e390ab0692407aeaa5ff"
+    },
+    {
+      "file": "output_rekomendasi_all_scores.csv",
+      "size_kb": 7.0,
+      "sha256": "69d69810a01ab81455051a4b16b6c0652323d754af7796e54f52a33949fa0a14"
+    },
+    {
+      "file": "output_rekomendasi_pangan.csv",
+      "size_kb": 4.0,
+      "sha256": "47fb8f18fc4748f13cc01e512f1c790e9303ab7d533b20221fbd3df3f5656061"
+    },
+    {
+      "file": "output_timeseries_pangan.csv",
+      "size_kb": 116.5,
+      "sha256": "60fcfd098450fdfcfc0d116ea4ed0acc7fad6c00a780aee3ace3bce7570082b2"
+    },
+    {
+      "file": "rek_01_heatmap_skor.png",
+      "size_kb": 263.4,
+      "sha256": "404bba0715baa48b3e4774782f192828143b607e05aae790eebd5d0c4d81a117"
+    },
+    {
+      "file": "rek_02_distribusi_unggulan.png",
+      "size_kb": 50.8,
+      "sha256": "887ab4d6b43f20426ef07b1df0b6f02fb114dee0e8294359aaa6f394b2daa37d"
+    },
+    {
+      "file": "ts_01_model_comparison_mape.png",
+      "size_kb": 53.6,
+      "sha256": "adce727c77d75eba1f38c933b9210f60bb6c16d2f5eb160fe63b4fbd99ff5f9e"
+    },
+    {
+      "file": "ts_02_sample_forecast_padi.png",
+      "size_kb": 194.9,
+      "sha256": "5f2dcd09ca6afa6e66106bbfb13fb614f1ef670b0bbbcdec830868d917b37129"
+    },
+    {
+      "file": "ts_01_model_comparison_wape.png",
+      "size_kb": 65.3,
+      "sha256": "7f7e5bf0df315b0f1b52de73c1db3a8d517b4682fda422a382c23286614a9bca"
+    },
+    {
+      "file": "ts_02_sample_forecast_padi.png",
+      "size_kb": 182.1,
+      "sha256": "49011c7377f50032b62a2b578a0e987341e87f1923ff1543703c682fa2f62851"
+    },
+    {
+      "file": "ts_03_forecast_semua_tanaman.png",
+      "size_kb": 247.0,
+      "sha256": "bae1d14e0fb6af114e24782c33903bf8022cfb3d2d001eee393493bd43271966"
+    },
+    {
+      "file": "ts_forecast_kacang_tanah.png",
+      "size_kb": 63.3,
+      "sha256": "bed4314c6c169adca9b92a966e18f761f5b67698426fbc09a4c48cb99351f1b3"
+    },
+    {
+      "file": "ts_forecast_kedelai.png",
+      "size_kb": 56.6,
+      "sha256": "90161e4ad758a1f62952b0b7ccc98b25cd2016bf3f9352d11f2262f868196a11"
+    },
+    {
+      "file": "ts_forecast_ketela_pohon.png",
+      "size_kb": 67.6,
+      "sha256": "1b892e0d05fab9e158c68756cadbe93ad10925e7c0d3f7ece2ea3d7697473848"
+    },
+    {
+      "file": "ts_forecast_padi.png",
+      "size_kb": 70.0,
+      "sha256": "013de59ed66efd48cd202fd43edb6dc7e4f3743559c10acc52159a96e8d01d15"
+    },
+    {
+      "file": "ts_forecast_ubi_jalar.png",
+      "size_kb": 72.5,
+      "sha256": "d7a5f194fe74610bc61b50cd566aaed3ab12db90698e3ad918a6f6ee63117086"
+    }
+  ]
+}
