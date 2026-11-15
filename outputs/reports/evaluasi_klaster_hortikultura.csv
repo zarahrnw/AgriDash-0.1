@@ -1,0 +1,11 @@
+metode,k,silhouette,davies_bouldin,klaster_terkecil,ukuran
+KMeans,2,0.118,2.355,7,"[7, 19]"
+Agglomerative,2,0.118,2.355,7,"[19, 7]"
+KMeans,3,0.108,1.762,1,"[7, 18, 1]"
+Agglomerative,3,0.108,2.08,2,"[7, 17, 2]"
+KMeans,4,0.032,2.573,3,"[8, 4, 11, 3]"
+Agglomerative,4,0.102,1.855,2,"[17, 5, 2, 2]"
+KMeans,5,0.038,2.086,2,"[4, 5, 13, 2, 2]"
+Agglomerative,5,0.061,1.947,2,"[5, 13, 2, 2, 4]"
+KMeans,6,0.029,2.057,2,"[5, 6, 2, 4, 2, 7]"
+Agglomerative,6,0.068,1.768,2,"[13, 2, 2, 3, 4, 2]"

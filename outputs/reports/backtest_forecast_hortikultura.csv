@@ -1,0 +1,49 @@
+level,target,uji_tahun,n_latih_tahun,model,n_seri,MAE,WAPE_%,MdAPE_%
+kabupaten,produksi,2023,3,naive (tahun lalu),42,3007190.476,17.422,6.192
+kabupaten,produksi,2023,3,ETS sederhana,42,2854243.126,16.536,5.769
+kabupaten,produksi,2023,3,ETS tren teredam,42,4368716.197,25.31,10.018
+kabupaten,produksi,2023,3,regresi linear,42,4410787.143,25.554,10.88
+kabupaten,produksi,2024,4,naive (tahun lalu),42,3474854.048,16.85,8.557
+kabupaten,produksi,2024,4,ETS sederhana,42,1926778.4,9.343,7.538
+kabupaten,produksi,2024,4,ETS tren teredam,42,5079228.559,24.629,6.155
+kabupaten,produksi,2024,4,regresi linear,42,2416330.298,11.717,7.0
+kabupaten,produksi,2025,5,naive (tahun lalu),42,541851.024,2.67,5.14
+kabupaten,produksi,2025,5,ETS sederhana,42,878614.145,4.33,6.016
+kabupaten,produksi,2025,5,ETS tren teredam,42,929815.469,4.582,5.361
+kabupaten,produksi,2025,5,regresi linear,42,1030595.738,5.079,4.787
+kecamatan,produksi,2023,3,naive (tahun lalu),358,407924.33,20.423,10.152
+kecamatan,produksi,2023,3,ETS sederhana,358,372522.171,18.651,9.784
+kecamatan,produksi,2023,3,ETS tren teredam,358,567171.781,28.396,12.235
+kecamatan,produksi,2023,3,regresi linear,358,572016.881,28.639,13.255
+kecamatan,produksi,2024,4,naive (tahun lalu),358,430985.084,18.011,11.035
+kecamatan,produksi,2024,4,ETS sederhana,358,247341.887,10.336,9.665
+kecamatan,produksi,2024,4,ETS tren teredam,358,627992.201,26.244,10.647
+kecamatan,produksi,2024,4,regresi linear,358,331839.853,13.868,10.82
+kecamatan,produksi,2025,5,naive (tahun lalu),358,104380.059,4.43,8.985
+kecamatan,produksi,2025,5,ETS sederhana,358,147078.193,6.242,7.509
+kecamatan,produksi,2025,5,ETS tren teredam,358,120485.21,5.113,7.7
+kecamatan,produksi,2025,5,regresi linear,358,175161.729,7.434,8.182
+kabupaten,luas,2023,3,naive (tahun lalu),42,63.695,8.706,6.89
+kabupaten,luas,2023,3,ETS sederhana,42,57.073,7.801,6.872
+kabupaten,luas,2023,3,ETS tren teredam,42,92.692,12.67,10.645
+kabupaten,luas,2023,3,regresi linear,42,97.112,13.274,11.461
+kabupaten,luas,2024,4,naive (tahun lalu),42,78.86,9.916,8.718
+kabupaten,luas,2024,4,ETS sederhana,42,76.361,9.602,8.685
+kabupaten,luas,2024,4,ETS tren teredam,42,69.751,8.771,7.131
+kabupaten,luas,2024,4,regresi linear,42,53.957,6.785,7.129
+kabupaten,luas,2025,5,naive (tahun lalu),42,39.396,4.979,4.824
+kabupaten,luas,2025,5,ETS sederhana,42,32.637,4.125,6.164
+kabupaten,luas,2025,5,ETS tren teredam,42,52.134,6.589,6.605
+kabupaten,luas,2025,5,regresi linear,42,47.924,6.057,6.484
+kecamatan,luas,2023,3,naive (tahun lalu),358,12.804,15.369,14.16
+kecamatan,luas,2023,3,ETS sederhana,358,12.046,14.46,12.311
+kecamatan,luas,2023,3,ETS tren teredam,358,16.66,19.998,16.395
+kecamatan,luas,2023,3,regresi linear,358,17.267,20.728,16.667
+kecamatan,luas,2024,4,naive (tahun lalu),358,12.675,14.069,13.356
+kecamatan,luas,2024,4,ETS sederhana,358,9.983,11.081,12.368
+kecamatan,luas,2024,4,ETS tren teredam,358,13.293,14.755,12.995
+kecamatan,luas,2024,4,regresi linear,358,11.004,12.215,12.5
+kecamatan,luas,2025,5,naive (tahun lalu),358,7.848,8.721,8.957
+kecamatan,luas,2025,5,ETS sederhana,358,6.904,7.672,8.333
+kecamatan,luas,2025,5,ETS tren teredam,358,9.884,10.983,10.947
+kecamatan,luas,2025,5,regresi linear,358,9.257,10.287,10.22

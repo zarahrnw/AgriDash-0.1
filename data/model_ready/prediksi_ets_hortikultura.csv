@@ -1,0 +1,1601 @@
+level,target,komoditas,tahun,prediksi,aktual_terakhir,perubahan_vs_terakhir_%,galat_backtest_WAPE_%,kecamatan,kelompok,unit
+kabupaten,produksi,Alpukat,2026,22817091.999,22817092.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Alpukat,2027,22817091.999,22817092.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Bawang Daun,2026,4426399.993,4426400.0,-0.0,10.07,,sayur,kg
+kabupaten,produksi,Bawang Daun,2027,4426399.993,4426400.0,-0.0,10.07,,sayur,kg
+kabupaten,produksi,Bawang Merah,2026,8116652.742,8360200.0,-2.913,10.07,,sayur,kg
+kabupaten,produksi,Bawang Merah,2027,8116652.742,8360200.0,-2.913,10.07,,sayur,kg
+kabupaten,produksi,Bayam,2026,470012.868,439000.0,7.064,10.07,,sayur,kg
+kabupaten,produksi,Bayam,2027,470012.868,439000.0,7.064,10.07,,sayur,kg
+kabupaten,produksi,Belimbing,2026,4295399.912,4485712.0,-4.243,10.07,,buah,kg
+kabupaten,produksi,Belimbing,2027,4295399.912,4485712.0,-4.243,10.07,,buah,kg
+kabupaten,produksi,Buah Naga,2026,555439.361,512200.0,8.442,10.07,,buah,kg
+kabupaten,produksi,Buah Naga,2027,555439.361,512200.0,8.442,10.07,,buah,kg
+kabupaten,produksi,Buncis,2026,2024394.042,2094000.0,-3.324,10.07,,sayur,kg
+kabupaten,produksi,Buncis,2027,2024394.042,2094000.0,-3.324,10.07,,sayur,kg
+kabupaten,produksi,Cabai Besar/TW/Teropong,2026,13964807.925,13743950.0,1.607,10.07,,sayur,kg
+kabupaten,produksi,Cabai Besar/TW/Teropong,2027,13964807.925,13743950.0,1.607,10.07,,sayur,kg
+kabupaten,produksi,Cabai Keriting,2026,5483430.0,5483430.0,-0.0,10.07,,sayur,kg
+kabupaten,produksi,Cabai Keriting,2027,5483430.0,5483430.0,-0.0,10.07,,sayur,kg
+kabupaten,produksi,Cabai Rawit,2026,109470944.263,109561361.0,-0.083,10.07,,sayur,kg
+kabupaten,produksi,Cabai Rawit,2027,109470944.263,109561361.0,-0.083,10.07,,sayur,kg
+kabupaten,produksi,Duku/Langsat/Kokosan,2026,9884.159,4300.0,129.864,10.07,,buah,kg
+kabupaten,produksi,Duku/Langsat/Kokosan,2027,9884.159,4300.0,129.864,10.07,,buah,kg
+kabupaten,produksi,Durian,2026,19073498.569,20230648.0,-5.72,10.07,,buah,kg
+kabupaten,produksi,Durian,2027,19073498.569,20230648.0,-5.72,10.07,,buah,kg
+kabupaten,produksi,Jambu Air,2026,1984637.861,2176293.0,-8.806,10.07,,buah,kg
+kabupaten,produksi,Jambu Air,2027,1984637.861,2176293.0,-8.806,10.07,,buah,kg
+kabupaten,produksi,Jambu Biji,2026,1485400.3,1628751.0,-8.801,10.07,,buah,kg
+kabupaten,produksi,Jambu Biji,2027,1485400.3,1628751.0,-8.801,10.07,,buah,kg
+kabupaten,produksi,Jamur Tiram,2026,699775.606,702960.0,-0.453,10.07,,sayur,kg
+kabupaten,produksi,Jamur Tiram,2027,699775.606,702960.0,-0.453,10.07,,sayur,kg
+kabupaten,produksi,Jengkol,2026,23477.492,11550.0,103.268,10.07,,buah,kg
+kabupaten,produksi,Jengkol,2027,23477.492,11550.0,103.268,10.07,,buah,kg
+kabupaten,produksi,Jeruk Besar,2026,7444.998,4025.0,84.969,10.07,,buah,kg
+kabupaten,produksi,Jeruk Besar,2027,7444.998,4025.0,84.969,10.07,,buah,kg
+kabupaten,produksi,Jeruk Lemon,2026,533086.0,533086.0,0.0,10.07,,buah,kg
+kabupaten,produksi,Jeruk Lemon,2027,533086.0,533086.0,0.0,10.07,,buah,kg
+kabupaten,produksi,Jeruk Siam/Keprok,2026,11409025.381,11226750.0,1.624,10.07,,buah,kg
+kabupaten,produksi,Jeruk Siam/Keprok,2027,11409025.381,11226750.0,1.624,10.07,,buah,kg
+kabupaten,produksi,Kacang Panjang,2026,4418827.461,4780645.0,-7.568,10.07,,sayur,kg
+kabupaten,produksi,Kacang Panjang,2027,4418827.461,4780645.0,-7.568,10.07,,sayur,kg
+kabupaten,produksi,Kangkung,2026,462367.921,453300.0,2.0,10.07,,sayur,kg
+kabupaten,produksi,Kangkung,2027,462367.921,453300.0,2.0,10.07,,sayur,kg
+kabupaten,produksi,Kembang Kol,2026,2361149.999,2361150.0,-0.0,10.07,,sayur,kg
+kabupaten,produksi,Kembang Kol,2027,2361149.999,2361150.0,-0.0,10.07,,sayur,kg
+kabupaten,produksi,Ketimun,2026,6495553.548,6810930.0,-4.63,10.07,,sayur,kg
+kabupaten,produksi,Ketimun,2027,6495553.548,6810930.0,-4.63,10.07,,sayur,kg
+kabupaten,produksi,Lengkeng,2026,722451.324,778189.0,-7.162,10.07,,buah,kg
+kabupaten,produksi,Lengkeng,2027,722451.324,778189.0,-7.162,10.07,,buah,kg
+kabupaten,produksi,Mangga,2026,83464204.028,83476171.0,-0.014,10.07,,buah,kg
+kabupaten,produksi,Mangga,2027,83464204.028,83476171.0,-0.014,10.07,,buah,kg
+kabupaten,produksi,Manggis,2026,651299.026,653700.0,-0.367,10.07,,buah,kg
+kabupaten,produksi,Manggis,2027,651299.026,653700.0,-0.367,10.07,,buah,kg
+kabupaten,produksi,Melinjo,2026,5947684.601,6394211.0,-6.983,10.07,,buah,kg
+kabupaten,produksi,Melinjo,2027,5947684.601,6394211.0,-6.983,10.07,,buah,kg
+kabupaten,produksi,Melon,2026,935492.973,934900.0,0.063,10.07,,sayur,kg
+kabupaten,produksi,Melon,2027,935492.973,934900.0,0.063,10.07,,sayur,kg
+kabupaten,produksi,Nangka/Cempedak,2026,4705039.0,4705039.0,0.0,10.07,,buah,kg
+kabupaten,produksi,Nangka/Cempedak,2027,4705039.0,4705039.0,0.0,10.07,,buah,kg
+kabupaten,produksi,Nenas,2026,403947982.401,424894623.0,-4.93,10.07,,buah,kg
+kabupaten,produksi,Nenas,2027,403947982.401,424894623.0,-4.93,10.07,,buah,kg
+kabupaten,produksi,Pepaya,2026,5744649.345,5916400.0,-2.903,10.07,,buah,kg
+kabupaten,produksi,Pepaya,2027,5744649.345,5916400.0,-2.903,10.07,,buah,kg
+kabupaten,produksi,Petai,2026,3304356.998,3304357.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Petai,2027,3304356.998,3304357.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Petsai/Sawi,2026,3413781.176,3413875.0,-0.003,10.07,,sayur,kg
+kabupaten,produksi,Petsai/Sawi,2027,3413781.176,3413875.0,-0.003,10.07,,sayur,kg
+kabupaten,produksi,Pisang,2026,61935799.588,62222284.0,-0.46,10.07,,buah,kg
+kabupaten,produksi,Pisang,2027,61935799.588,62222284.0,-0.46,10.07,,buah,kg
+kabupaten,produksi,Rambutan,2026,6010519.036,5957350.0,0.892,10.07,,buah,kg
+kabupaten,produksi,Rambutan,2027,6010519.036,5957350.0,0.892,10.07,,buah,kg
+kabupaten,produksi,Salak,2026,252452.613,239660.0,5.338,10.07,,buah,kg
+kabupaten,produksi,Salak,2027,252452.613,239660.0,5.338,10.07,,buah,kg
+kabupaten,produksi,Sawo,2026,1570400.999,1570401.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Sawo,2027,1570400.999,1570401.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Semangka,2026,1670924.086,1743200.0,-4.146,10.07,,sayur,kg
+kabupaten,produksi,Semangka,2027,1670924.086,1743200.0,-4.146,10.07,,sayur,kg
+kabupaten,produksi,Sirsak,2026,4382012.0,4382012.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Sirsak,2027,4382012.0,4382012.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Sukun,2026,451975.0,451975.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Sukun,2027,451975.0,451975.0,-0.0,10.07,,buah,kg
+kabupaten,produksi,Terung,2026,10028427.034,10823544.0,-7.346,10.07,,sayur,kg
+kabupaten,produksi,Terung,2027,10028427.034,10823544.0,-7.346,10.07,,sayur,kg
+kabupaten,produksi,Tomat,2026,7017208.932,7599935.0,-7.668,10.07,,sayur,kg
+kabupaten,produksi,Tomat,2027,7017208.932,7599935.0,-7.668,10.07,,sayur,kg
+kecamatan,produksi,Bawang Merah,2026,1936082.3,1957600.0,-1.099,11.74,Badas,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,1936082.3,1957600.0,-1.099,11.74,Badas,sayur,kg
+kecamatan,produksi,Durian,2026,63973.411,68880.0,-7.123,11.74,Badas,buah,kg
+kecamatan,produksi,Durian,2027,63973.411,68880.0,-7.123,11.74,Badas,buah,kg
+kecamatan,produksi,Jambu Air,2026,25453.322,27800.0,-8.441,11.74,Badas,buah,kg
+kecamatan,produksi,Jambu Air,2027,25453.322,27800.0,-8.441,11.74,Badas,buah,kg
+kecamatan,produksi,Jambu Biji,2026,121936.9,128320.0,-4.974,11.74,Badas,buah,kg
+kecamatan,produksi,Jambu Biji,2027,121936.9,128320.0,-4.974,11.74,Badas,buah,kg
+kecamatan,produksi,Mangga,2026,2569135.1,2581600.0,-0.483,11.74,Badas,buah,kg
+kecamatan,produksi,Mangga,2027,2569135.1,2581600.0,-0.483,11.74,Badas,buah,kg
+kecamatan,produksi,Melinjo,2026,3343744.6,3628580.0,-7.85,11.74,Badas,buah,kg
+kecamatan,produksi,Melinjo,2027,3343744.6,3628580.0,-7.85,11.74,Badas,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,909125.606,1023340.0,-11.161,11.74,Badas,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,909125.606,1023340.0,-11.161,11.74,Badas,buah,kg
+kecamatan,produksi,Pepaya,2026,123319.71,132000.0,-6.576,11.74,Badas,buah,kg
+kecamatan,produksi,Pepaya,2027,123319.71,132000.0,-6.576,11.74,Badas,buah,kg
+kecamatan,produksi,Petai,2026,57564.137,62000.0,-7.155,11.74,Badas,buah,kg
+kecamatan,produksi,Petai,2027,57564.137,62000.0,-7.155,11.74,Badas,buah,kg
+kecamatan,produksi,Petsai/Sawi,2026,835470.763,926500.0,-9.825,11.74,Badas,sayur,kg
+kecamatan,produksi,Petsai/Sawi,2027,835470.763,926500.0,-9.825,11.74,Badas,sayur,kg
+kecamatan,produksi,Rambutan,2026,861111.227,850000.0,1.307,11.74,Badas,buah,kg
+kecamatan,produksi,Rambutan,2027,861111.227,850000.0,1.307,11.74,Badas,buah,kg
+kecamatan,produksi,Sawo,2026,431015.551,468992.0,-8.097,11.74,Badas,buah,kg
+kecamatan,produksi,Sawo,2027,431015.551,468992.0,-8.097,11.74,Badas,buah,kg
+kecamatan,produksi,Sirsak,2026,131960.734,142125.0,-7.152,11.74,Badas,buah,kg
+kecamatan,produksi,Sirsak,2027,131960.734,142125.0,-7.152,11.74,Badas,buah,kg
+kecamatan,produksi,Sukun,2026,42487.521,43225.0,-1.706,11.74,Badas,buah,kg
+kecamatan,produksi,Sukun,2027,42487.521,43225.0,-1.706,11.74,Badas,buah,kg
+kecamatan,produksi,Alpukat,2026,468484.813,489500.0,-4.293,11.74,Banyakan,buah,kg
+kecamatan,produksi,Alpukat,2027,468484.813,489500.0,-4.293,11.74,Banyakan,buah,kg
+kecamatan,produksi,Bawang Merah,2026,17320.835,19000.0,-8.838,11.74,Banyakan,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,17320.835,19000.0,-8.838,11.74,Banyakan,sayur,kg
+kecamatan,produksi,Durian,2026,231988.312,255000.0,-9.024,11.74,Banyakan,buah,kg
+kecamatan,produksi,Durian,2027,231988.312,255000.0,-9.024,11.74,Banyakan,buah,kg
+kecamatan,produksi,Jambu Biji,2026,12875.0,13700.0,-6.022,11.74,Banyakan,buah,kg
+kecamatan,produksi,Jambu Biji,2027,12875.0,13700.0,-6.022,11.74,Banyakan,buah,kg
+kecamatan,produksi,Jamur Tiram,2026,260100.0,260100.0,0.0,11.74,Banyakan,sayur,kg
+kecamatan,produksi,Jamur Tiram,2027,260100.0,260100.0,0.0,11.74,Banyakan,sayur,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2026,1043873.524,1125500.0,-7.252,11.74,Banyakan,buah,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2027,1043873.524,1125500.0,-7.252,11.74,Banyakan,buah,kg
+kecamatan,produksi,Mangga,2026,28002663.979,29000000.0,-3.439,11.74,Banyakan,buah,kg
+kecamatan,produksi,Mangga,2027,28002663.979,29000000.0,-3.439,11.74,Banyakan,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,326958.75,351700.0,-7.035,11.74,Banyakan,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,326958.75,351700.0,-7.035,11.74,Banyakan,buah,kg
+kecamatan,produksi,Pepaya,2026,158300.0,158300.0,-0.0,11.74,Banyakan,buah,kg
+kecamatan,produksi,Pepaya,2027,158300.0,158300.0,-0.0,11.74,Banyakan,buah,kg
+kecamatan,produksi,Petai,2026,1215137.448,1215000.0,0.011,11.74,Banyakan,buah,kg
+kecamatan,produksi,Petai,2027,1215137.448,1215000.0,0.011,11.74,Banyakan,buah,kg
+kecamatan,produksi,Pisang,2026,908185.684,950000.0,-4.402,11.74,Banyakan,buah,kg
+kecamatan,produksi,Pisang,2027,908185.684,950000.0,-4.402,11.74,Banyakan,buah,kg
+kecamatan,produksi,Sawo,2026,102500.0,102500.0,-0.0,11.74,Banyakan,buah,kg
+kecamatan,produksi,Sawo,2027,102500.0,102500.0,-0.0,11.74,Banyakan,buah,kg
+kecamatan,produksi,Sirsak,2026,50256.645,53200.0,-5.533,11.74,Banyakan,buah,kg
+kecamatan,produksi,Sirsak,2027,50256.645,53200.0,-5.533,11.74,Banyakan,buah,kg
+kecamatan,produksi,Terung,2026,10855.827,11000.0,-1.311,11.74,Banyakan,sayur,kg
+kecamatan,produksi,Terung,2027,10855.827,11000.0,-1.311,11.74,Banyakan,sayur,kg
+kecamatan,produksi,Bawang Merah,2026,163890.095,178800.0,-8.339,11.74,Gampengrejo,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,163890.095,178800.0,-8.339,11.74,Gampengrejo,sayur,kg
+kecamatan,produksi,Belimbing,2026,39995.799,39600.0,0.999,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Belimbing,2027,39995.799,39600.0,0.999,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Jambu Air,2026,45535.834,49200.0,-7.447,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Jambu Air,2027,45535.834,49200.0,-7.447,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Jambu Biji,2026,17049.999,18750.0,-9.067,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Jambu Biji,2027,17049.999,18750.0,-9.067,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Jamur Tiram,2026,66438.542,70130.0,-5.264,11.74,Gampengrejo,sayur,kg
+kecamatan,produksi,Jamur Tiram,2027,66438.542,70130.0,-5.264,11.74,Gampengrejo,sayur,kg
+kecamatan,produksi,Mangga,2026,491449.656,505000.0,-2.683,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Mangga,2027,491449.656,505000.0,-2.683,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,19146.67,21000.0,-8.825,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,19146.67,21000.0,-8.825,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Rambutan,2026,82166.807,85400.0,-3.786,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Rambutan,2027,82166.807,85400.0,-3.786,11.74,Gampengrejo,buah,kg
+kecamatan,produksi,Alpukat,2026,1730570.829,1730000.0,0.033,11.74,Grogol,buah,kg
+kecamatan,produksi,Alpukat,2027,1730570.829,1730000.0,0.033,11.74,Grogol,buah,kg
+kecamatan,produksi,Belimbing,2026,18159.995,19400.0,-6.392,11.74,Grogol,buah,kg
+kecamatan,produksi,Belimbing,2027,18159.995,19400.0,-6.392,11.74,Grogol,buah,kg
+kecamatan,produksi,Jamur Tiram,2026,114949.871,123600.0,-6.998,11.74,Grogol,sayur,kg
+kecamatan,produksi,Jamur Tiram,2027,114949.871,123600.0,-6.998,11.74,Grogol,sayur,kg
+kecamatan,produksi,Mangga,2026,18350403.533,18300000.0,0.275,11.74,Grogol,buah,kg
+kecamatan,produksi,Mangga,2027,18350403.533,18300000.0,0.275,11.74,Grogol,buah,kg
+kecamatan,produksi,Pisang,2026,2308302.398,2670992.0,-13.579,11.74,Grogol,buah,kg
+kecamatan,produksi,Pisang,2027,2308302.398,2670992.0,-13.579,11.74,Grogol,buah,kg
+kecamatan,produksi,Bayam,2026,96921.649,102000.0,-4.979,11.74,Gurah,sayur,kg
+kecamatan,produksi,Bayam,2027,96921.649,102000.0,-4.979,11.74,Gurah,sayur,kg
+kecamatan,produksi,Belimbing,2026,489926.681,478600.0,2.367,11.74,Gurah,buah,kg
+kecamatan,produksi,Belimbing,2027,489926.681,478600.0,2.367,11.74,Gurah,buah,kg
+kecamatan,produksi,Cabai Rawit,2026,7812824.166,7676700.0,1.773,11.74,Gurah,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,7812824.166,7676700.0,1.773,11.74,Gurah,sayur,kg
+kecamatan,produksi,Jambu Air,2026,188700.0,188700.0,0.0,11.74,Gurah,buah,kg
+kecamatan,produksi,Jambu Air,2027,188700.0,188700.0,0.0,11.74,Gurah,buah,kg
+kecamatan,produksi,Jambu Biji,2026,420569.287,462700.0,-9.105,11.74,Gurah,buah,kg
+kecamatan,produksi,Jambu Biji,2027,420569.287,462700.0,-9.105,11.74,Gurah,buah,kg
+kecamatan,produksi,Jeruk Besar,2026,3330.089,3400.0,-2.056,11.74,Gurah,buah,kg
+kecamatan,produksi,Jeruk Besar,2027,3330.089,3400.0,-2.056,11.74,Gurah,buah,kg
+kecamatan,produksi,Mangga,2026,442927.452,477780.0,-7.295,11.74,Gurah,buah,kg
+kecamatan,produksi,Mangga,2027,442927.452,477780.0,-7.295,11.74,Gurah,buah,kg
+kecamatan,produksi,Melinjo,2026,203063.427,218000.0,-6.852,11.74,Gurah,buah,kg
+kecamatan,produksi,Melinjo,2027,203063.427,218000.0,-6.852,11.74,Gurah,buah,kg
+kecamatan,produksi,Pepaya,2026,464301.829,475500.0,-2.355,11.74,Gurah,buah,kg
+kecamatan,produksi,Pepaya,2027,464301.829,475500.0,-2.355,11.74,Gurah,buah,kg
+kecamatan,produksi,Rambutan,2026,35000.0,35000.0,0.0,11.74,Gurah,buah,kg
+kecamatan,produksi,Rambutan,2027,35000.0,35000.0,0.0,11.74,Gurah,buah,kg
+kecamatan,produksi,Sawo,2026,308912.317,332300.0,-7.038,11.74,Gurah,buah,kg
+kecamatan,produksi,Sawo,2027,308912.317,332300.0,-7.038,11.74,Gurah,buah,kg
+kecamatan,produksi,Semangka,2026,14096.667,15400.0,-8.463,11.74,Gurah,sayur,kg
+kecamatan,produksi,Semangka,2027,14096.667,15400.0,-8.463,11.74,Gurah,sayur,kg
+kecamatan,produksi,Terung,2026,398020.279,399100.0,-0.271,11.74,Gurah,sayur,kg
+kecamatan,produksi,Terung,2027,398020.279,399100.0,-0.271,11.74,Gurah,sayur,kg
+kecamatan,produksi,Bawang Daun,2026,60974.386,61400.0,-0.693,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Bawang Daun,2027,60974.386,61400.0,-0.693,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Buncis,2026,187177.394,181800.0,2.958,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Buncis,2027,187177.394,181800.0,2.958,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,15673.333,17400.0,-9.923,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,15673.333,17400.0,-9.923,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Durian,2026,2137553.775,2118483.0,0.9,11.74,Kandangan,buah,kg
+kecamatan,produksi,Durian,2027,2137553.775,2118483.0,0.9,11.74,Kandangan,buah,kg
+kecamatan,produksi,Ketimun,2026,322800.0,322800.0,-0.0,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Ketimun,2027,322800.0,322800.0,-0.0,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Mangga,2026,835793.29,864643.0,-3.337,11.74,Kandangan,buah,kg
+kecamatan,produksi,Mangga,2027,835793.29,864643.0,-3.337,11.74,Kandangan,buah,kg
+kecamatan,produksi,Manggis,2026,550636.308,565400.0,-2.611,11.74,Kandangan,buah,kg
+kecamatan,produksi,Manggis,2027,550636.308,565400.0,-2.611,11.74,Kandangan,buah,kg
+kecamatan,produksi,Melinjo,2026,99959.033,113654.0,-12.05,11.74,Kandangan,buah,kg
+kecamatan,produksi,Melinjo,2027,99959.033,113654.0,-12.05,11.74,Kandangan,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,548819.239,570617.0,-3.82,11.74,Kandangan,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,548819.239,570617.0,-3.82,11.74,Kandangan,buah,kg
+kecamatan,produksi,Petai,2026,54023.798,57143.0,-5.459,11.74,Kandangan,buah,kg
+kecamatan,produksi,Petai,2027,54023.798,57143.0,-5.459,11.74,Kandangan,buah,kg
+kecamatan,produksi,Pisang,2026,17113495.355,17945743.0,-4.638,11.74,Kandangan,buah,kg
+kecamatan,produksi,Pisang,2027,17113495.355,17945743.0,-4.638,11.74,Kandangan,buah,kg
+kecamatan,produksi,Rambutan,2026,488855.189,536825.0,-8.936,11.74,Kandangan,buah,kg
+kecamatan,produksi,Rambutan,2027,488855.189,536825.0,-8.936,11.74,Kandangan,buah,kg
+kecamatan,produksi,Sirsak,2026,96683.788,101478.0,-4.724,11.74,Kandangan,buah,kg
+kecamatan,produksi,Sirsak,2027,96683.788,101478.0,-4.724,11.74,Kandangan,buah,kg
+kecamatan,produksi,Terung,2026,308247.724,328900.0,-6.279,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Terung,2027,308247.724,328900.0,-6.279,11.74,Kandangan,sayur,kg
+kecamatan,produksi,Alpukat,2026,305742.763,324000.0,-5.635,11.74,Kandat,buah,kg
+kecamatan,produksi,Alpukat,2027,305742.763,324000.0,-5.635,11.74,Kandat,buah,kg
+kecamatan,produksi,Bawang Daun,2026,79312.341,90900.0,-12.748,11.74,Kandat,sayur,kg
+kecamatan,produksi,Bawang Daun,2027,79312.341,90900.0,-12.748,11.74,Kandat,sayur,kg
+kecamatan,produksi,Belimbing,2026,28280.002,30820.0,-8.241,11.74,Kandat,buah,kg
+kecamatan,produksi,Belimbing,2027,28280.002,30820.0,-8.241,11.74,Kandat,buah,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2026,100324.75,112200.0,-10.584,11.74,Kandat,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2027,100324.75,112200.0,-10.584,11.74,Kandat,sayur,kg
+kecamatan,produksi,Cabai Keriting,2026,132001.426,143200.0,-7.82,11.74,Kandat,sayur,kg
+kecamatan,produksi,Cabai Keriting,2027,132001.426,143200.0,-7.82,11.74,Kandat,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,2548700.003,2548700.0,0.0,11.74,Kandat,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,2548700.003,2548700.0,0.0,11.74,Kandat,sayur,kg
+kecamatan,produksi,Jeruk Lemon,2026,55716.685,60000.0,-7.139,11.74,Kandat,buah,kg
+kecamatan,produksi,Jeruk Lemon,2027,55716.685,60000.0,-7.139,11.74,Kandat,buah,kg
+kecamatan,produksi,Ketimun,2026,230646.701,260500.0,-11.46,11.74,Kandat,sayur,kg
+kecamatan,produksi,Ketimun,2027,230646.701,260500.0,-11.46,11.74,Kandat,sayur,kg
+kecamatan,produksi,Melon,2026,679876.648,713500.0,-4.712,11.74,Kandat,sayur,kg
+kecamatan,produksi,Melon,2027,679876.648,713500.0,-4.712,11.74,Kandat,sayur,kg
+kecamatan,produksi,Nangka/Cempedak,2026,77580.0,77580.0,-0.0,11.74,Kandat,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,77580.0,77580.0,-0.0,11.74,Kandat,buah,kg
+kecamatan,produksi,Nenas,2026,2491591.933,2572000.0,-3.126,11.74,Kandat,buah,kg
+kecamatan,produksi,Nenas,2027,2491591.933,2572000.0,-3.126,11.74,Kandat,buah,kg
+kecamatan,produksi,Pepaya,2026,823882.734,832500.0,-1.035,11.74,Kandat,buah,kg
+kecamatan,produksi,Pepaya,2027,823882.734,832500.0,-1.035,11.74,Kandat,buah,kg
+kecamatan,produksi,Pisang,2026,10538653.361,11115160.0,-5.187,11.74,Kandat,buah,kg
+kecamatan,produksi,Pisang,2027,10538653.361,11115160.0,-5.187,11.74,Kandat,buah,kg
+kecamatan,produksi,Rambutan,2026,425251.546,450000.0,-5.5,11.74,Kandat,buah,kg
+kecamatan,produksi,Rambutan,2027,425251.546,450000.0,-5.5,11.74,Kandat,buah,kg
+kecamatan,produksi,Semangka,2026,621664.569,678000.0,-8.309,11.74,Kandat,sayur,kg
+kecamatan,produksi,Semangka,2027,621664.569,678000.0,-8.309,11.74,Kandat,sayur,kg
+kecamatan,produksi,Terung,2026,30000.0,30000.0,0.0,11.74,Kandat,sayur,kg
+kecamatan,produksi,Terung,2027,30000.0,30000.0,0.0,11.74,Kandat,sayur,kg
+kecamatan,produksi,Belimbing,2026,43686.661,45600.0,-4.196,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Belimbing,2027,43686.661,45600.0,-4.196,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Cabai Rawit,2026,5263639.542,5757500.0,-8.578,11.74,Kayen Kidul,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,5263639.542,5757500.0,-8.578,11.74,Kayen Kidul,sayur,kg
+kecamatan,produksi,Jeruk Lemon,2026,5093.333,5260.0,-3.169,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Jeruk Lemon,2027,5093.333,5260.0,-3.169,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Kangkung,2026,183399.906,203100.0,-9.7,11.74,Kayen Kidul,sayur,kg
+kecamatan,produksi,Kangkung,2027,183399.906,203100.0,-9.7,11.74,Kayen Kidul,sayur,kg
+kecamatan,produksi,Lengkeng,2026,152321.144,166000.0,-8.24,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Lengkeng,2027,152321.144,166000.0,-8.24,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,35749.999,36900.0,-3.117,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,35749.999,36900.0,-3.117,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Petai,2026,2401.667,2400.0,0.069,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Petai,2027,2401.667,2400.0,0.069,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Sawo,2026,31771.981,32000.0,-0.713,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Sawo,2027,31771.981,32000.0,-0.713,11.74,Kayen Kidul,buah,kg
+kecamatan,produksi,Alpukat,2026,6041161.997,5975000.0,1.107,11.74,Kepung,buah,kg
+kecamatan,produksi,Alpukat,2027,6041161.997,5975000.0,1.107,11.74,Kepung,buah,kg
+kecamatan,produksi,Bawang Daun,2026,4139099.992,4139100.0,-0.0,11.74,Kepung,sayur,kg
+kecamatan,produksi,Bawang Daun,2027,4139099.992,4139100.0,-0.0,11.74,Kepung,sayur,kg
+kecamatan,produksi,Bawang Merah,2026,1154200.0,1154200.0,-0.0,11.74,Kepung,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,1154200.0,1154200.0,-0.0,11.74,Kepung,sayur,kg
+kecamatan,produksi,Buncis,2026,207019.434,210700.0,-1.747,11.74,Kepung,sayur,kg
+kecamatan,produksi,Buncis,2027,207019.434,210700.0,-1.747,11.74,Kepung,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2026,6154525.942,6366100.0,-3.323,11.74,Kepung,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2027,6154525.942,6366100.0,-3.323,11.74,Kepung,sayur,kg
+kecamatan,produksi,Cabai Keriting,2026,277100.0,277100.0,-0.0,11.74,Kepung,sayur,kg
+kecamatan,produksi,Cabai Keriting,2027,277100.0,277100.0,-0.0,11.74,Kepung,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,18859667.153,19678000.0,-4.159,11.74,Kepung,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,18859667.153,19678000.0,-4.159,11.74,Kepung,sayur,kg
+kecamatan,produksi,Durian,2026,3295000.004,3295000.0,0.0,11.74,Kepung,buah,kg
+kecamatan,produksi,Durian,2027,3295000.004,3295000.0,0.0,11.74,Kepung,buah,kg
+kecamatan,produksi,Jambu Biji,2026,8191.753,7900.0,3.693,11.74,Kepung,buah,kg
+kecamatan,produksi,Jambu Biji,2027,8191.753,7900.0,3.693,11.74,Kepung,buah,kg
+kecamatan,produksi,Kacang Panjang,2026,415732.686,474500.0,-12.385,11.74,Kepung,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,415732.686,474500.0,-12.385,11.74,Kepung,sayur,kg
+kecamatan,produksi,Kembang Kol,2026,291800.0,291800.0,0.0,11.74,Kepung,sayur,kg
+kecamatan,produksi,Kembang Kol,2027,291800.0,291800.0,0.0,11.74,Kepung,sayur,kg
+kecamatan,produksi,Ketimun,2026,580490.499,580300.0,0.033,11.74,Kepung,sayur,kg
+kecamatan,produksi,Ketimun,2027,580490.499,580300.0,0.033,11.74,Kepung,sayur,kg
+kecamatan,produksi,Petai,2026,247983.135,275000.0,-9.824,11.74,Kepung,buah,kg
+kecamatan,produksi,Petai,2027,247983.135,275000.0,-9.824,11.74,Kepung,buah,kg
+kecamatan,produksi,Petsai/Sawi,2026,506994.216,557500.0,-9.059,11.74,Kepung,sayur,kg
+kecamatan,produksi,Petsai/Sawi,2027,506994.216,557500.0,-9.059,11.74,Kepung,sayur,kg
+kecamatan,produksi,Pisang,2026,1478504.399,1458500.0,1.372,11.74,Kepung,buah,kg
+kecamatan,produksi,Pisang,2027,1478504.399,1458500.0,1.372,11.74,Kepung,buah,kg
+kecamatan,produksi,Rambutan,2026,208999.999,209000.0,-0.0,11.74,Kepung,buah,kg
+kecamatan,produksi,Rambutan,2027,208999.999,209000.0,-0.0,11.74,Kepung,buah,kg
+kecamatan,produksi,Tomat,2026,1128372.103,1240800.0,-9.061,11.74,Kepung,sayur,kg
+kecamatan,produksi,Tomat,2027,1128372.103,1240800.0,-9.061,11.74,Kepung,sayur,kg
+kecamatan,produksi,Alpukat,2026,349601.447,354000.0,-1.243,11.74,Kras,buah,kg
+kecamatan,produksi,Alpukat,2027,349601.447,354000.0,-1.243,11.74,Kras,buah,kg
+kecamatan,produksi,Belimbing,2026,25550.003,26400.0,-3.22,11.74,Kras,buah,kg
+kecamatan,produksi,Belimbing,2027,25550.003,26400.0,-3.22,11.74,Kras,buah,kg
+kecamatan,produksi,Jambu Air,2026,14611.668,16000.0,-8.677,11.74,Kras,buah,kg
+kecamatan,produksi,Jambu Air,2027,14611.668,16000.0,-8.677,11.74,Kras,buah,kg
+kecamatan,produksi,Jambu Biji,2026,27365.84,27600.0,-0.848,11.74,Kras,buah,kg
+kecamatan,produksi,Jambu Biji,2027,27365.84,27600.0,-0.848,11.74,Kras,buah,kg
+kecamatan,produksi,Jeruk Lemon,2026,5720.833,5900.0,-3.037,11.74,Kras,buah,kg
+kecamatan,produksi,Jeruk Lemon,2027,5720.833,5900.0,-3.037,11.74,Kras,buah,kg
+kecamatan,produksi,Ketimun,2026,180683.341,185000.0,-2.333,11.74,Kras,sayur,kg
+kecamatan,produksi,Ketimun,2027,180683.341,185000.0,-2.333,11.74,Kras,sayur,kg
+kecamatan,produksi,Pepaya,2026,277749.859,274000.0,1.369,11.74,Kras,buah,kg
+kecamatan,produksi,Pepaya,2027,277749.859,274000.0,1.369,11.74,Kras,buah,kg
+kecamatan,produksi,Rambutan,2026,269229.849,280000.0,-3.846,11.74,Kras,buah,kg
+kecamatan,produksi,Rambutan,2027,269229.849,280000.0,-3.846,11.74,Kras,buah,kg
+kecamatan,produksi,Semangka,2026,55600.0,55600.0,-0.0,11.74,Kras,sayur,kg
+kecamatan,produksi,Semangka,2027,55600.0,55600.0,-0.0,11.74,Kras,sayur,kg
+kecamatan,produksi,Terung,2026,841199.998,841200.0,-0.0,11.74,Kras,sayur,kg
+kecamatan,produksi,Terung,2027,841199.998,841200.0,-0.0,11.74,Kras,sayur,kg
+kecamatan,produksi,Tomat,2026,227905.86,226300.0,0.71,11.74,Kras,sayur,kg
+kecamatan,produksi,Tomat,2027,227905.86,226300.0,0.71,11.74,Kras,sayur,kg
+kecamatan,produksi,Bawang Merah,2026,102383.427,108000.0,-5.201,11.74,Kunjang,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,102383.427,108000.0,-5.201,11.74,Kunjang,sayur,kg
+kecamatan,produksi,Belimbing,2026,36651.678,39040.0,-6.118,11.74,Kunjang,buah,kg
+kecamatan,produksi,Belimbing,2027,36651.678,39040.0,-6.118,11.74,Kunjang,buah,kg
+kecamatan,produksi,Jambu Air,2026,49369.959,53660.0,-7.995,11.74,Kunjang,buah,kg
+kecamatan,produksi,Jambu Air,2027,49369.959,53660.0,-7.995,11.74,Kunjang,buah,kg
+kecamatan,produksi,Jambu Biji,2026,38204.879,41400.0,-7.718,11.74,Kunjang,buah,kg
+kecamatan,produksi,Jambu Biji,2027,38204.879,41400.0,-7.718,11.74,Kunjang,buah,kg
+kecamatan,produksi,Jeruk Lemon,2026,6943.335,7600.0,-8.64,11.74,Kunjang,buah,kg
+kecamatan,produksi,Jeruk Lemon,2027,6943.335,7600.0,-8.64,11.74,Kunjang,buah,kg
+kecamatan,produksi,Ketimun,2026,314913.369,340000.0,-7.378,11.74,Kunjang,sayur,kg
+kecamatan,produksi,Ketimun,2027,314913.369,340000.0,-7.378,11.74,Kunjang,sayur,kg
+kecamatan,produksi,Mangga,2026,1040706.666,1097200.0,-5.149,11.74,Kunjang,buah,kg
+kecamatan,produksi,Mangga,2027,1040706.666,1097200.0,-5.149,11.74,Kunjang,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,160769.016,163400.0,-1.61,11.74,Kunjang,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,160769.016,163400.0,-1.61,11.74,Kunjang,buah,kg
+kecamatan,produksi,Pisang,2026,949692.47,1043000.0,-8.946,11.74,Kunjang,buah,kg
+kecamatan,produksi,Pisang,2027,949692.47,1043000.0,-8.946,11.74,Kunjang,buah,kg
+kecamatan,produksi,Rambutan,2026,255470.523,290000.0,-11.907,11.74,Kunjang,buah,kg
+kecamatan,produksi,Rambutan,2027,255470.523,290000.0,-11.907,11.74,Kunjang,buah,kg
+kecamatan,produksi,Sawo,2026,22040.003,22800.0,-3.333,11.74,Kunjang,buah,kg
+kecamatan,produksi,Sawo,2027,22040.003,22800.0,-3.333,11.74,Kunjang,buah,kg
+kecamatan,produksi,Sirsak,2026,51526.673,56600.0,-8.963,11.74,Kunjang,buah,kg
+kecamatan,produksi,Sirsak,2027,51526.673,56600.0,-8.963,11.74,Kunjang,buah,kg
+kecamatan,produksi,Alpukat,2026,2539565.014,2463200.0,3.1,11.74,Mojo,buah,kg
+kecamatan,produksi,Alpukat,2027,2539565.014,2463200.0,3.1,11.74,Mojo,buah,kg
+kecamatan,produksi,Belimbing,2026,217450.029,219500.0,-0.934,11.74,Mojo,buah,kg
+kecamatan,produksi,Belimbing,2027,217450.029,219500.0,-0.934,11.74,Mojo,buah,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2026,198060.019,207000.0,-4.319,11.74,Mojo,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2027,198060.019,207000.0,-4.319,11.74,Mojo,sayur,kg
+kecamatan,produksi,Duku/Langsat/Kokosan,2026,2776.667,2800.0,-0.833,11.74,Mojo,buah,kg
+kecamatan,produksi,Duku/Langsat/Kokosan,2027,2776.667,2800.0,-0.833,11.74,Mojo,buah,kg
+kecamatan,produksi,Durian,2026,3238274.866,3574500.0,-9.406,11.74,Mojo,buah,kg
+kecamatan,produksi,Durian,2027,3238274.866,3574500.0,-9.406,11.74,Mojo,buah,kg
+kecamatan,produksi,Jambu Air,2026,32045.821,36000.0,-10.984,11.74,Mojo,buah,kg
+kecamatan,produksi,Jambu Air,2027,32045.821,36000.0,-10.984,11.74,Mojo,buah,kg
+kecamatan,produksi,Jengkol,2026,11301.669,11550.0,-2.15,11.74,Mojo,buah,kg
+kecamatan,produksi,Jengkol,2027,11301.669,11550.0,-2.15,11.74,Mojo,buah,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2026,2870201.039,2875000.0,-0.167,11.74,Mojo,buah,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2027,2870201.039,2875000.0,-0.167,11.74,Mojo,buah,kg
+kecamatan,produksi,Lengkeng,2026,23352.515,25000.0,-6.59,11.74,Mojo,buah,kg
+kecamatan,produksi,Lengkeng,2027,23352.515,25000.0,-6.59,11.74,Mojo,buah,kg
+kecamatan,produksi,Mangga,2026,815000.0,815000.0,0.0,11.74,Mojo,buah,kg
+kecamatan,produksi,Mangga,2027,815000.0,815000.0,0.0,11.74,Mojo,buah,kg
+kecamatan,produksi,Manggis,2026,23150.013,25000.0,-7.4,11.74,Mojo,buah,kg
+kecamatan,produksi,Manggis,2027,23150.013,25000.0,-7.4,11.74,Mojo,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,13903.332,14300.0,-2.774,11.74,Mojo,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,13903.332,14300.0,-2.774,11.74,Mojo,buah,kg
+kecamatan,produksi,Pepaya,2026,168156.026,185300.0,-9.252,11.74,Mojo,buah,kg
+kecamatan,produksi,Pepaya,2027,168156.026,185300.0,-9.252,11.74,Mojo,buah,kg
+kecamatan,produksi,Petai,2026,772725.422,816600.0,-5.373,11.74,Mojo,buah,kg
+kecamatan,produksi,Petai,2027,772725.422,816600.0,-5.373,11.74,Mojo,buah,kg
+kecamatan,produksi,Pisang,2026,1429488.424,1535660.0,-6.914,11.74,Mojo,buah,kg
+kecamatan,produksi,Pisang,2027,1429488.424,1535660.0,-6.914,11.74,Mojo,buah,kg
+kecamatan,produksi,Rambutan,2026,1596695.079,1579350.0,1.098,11.74,Mojo,buah,kg
+kecamatan,produksi,Rambutan,2027,1596695.079,1579350.0,1.098,11.74,Mojo,buah,kg
+kecamatan,produksi,Salak,2026,50296.658,52560.0,-4.306,11.74,Mojo,buah,kg
+kecamatan,produksi,Salak,2027,50296.658,52560.0,-4.306,11.74,Mojo,buah,kg
+kecamatan,produksi,Sawo,2026,23988.327,25100.0,-4.429,11.74,Mojo,buah,kg
+kecamatan,produksi,Sawo,2027,23988.327,25100.0,-4.429,11.74,Mojo,buah,kg
+kecamatan,produksi,Sirsak,2026,422433.309,436000.0,-3.112,11.74,Mojo,buah,kg
+kecamatan,produksi,Sirsak,2027,422433.309,436000.0,-3.112,11.74,Mojo,buah,kg
+kecamatan,produksi,Sukun,2026,124200.0,124200.0,-0.0,11.74,Mojo,buah,kg
+kecamatan,produksi,Sukun,2027,124200.0,124200.0,-0.0,11.74,Mojo,buah,kg
+kecamatan,produksi,Alpukat,2026,360400.0,360400.0,-0.0,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Alpukat,2027,360400.0,360400.0,-0.0,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Bayam,2026,304374.574,325000.0,-6.346,11.74,Ngadiluwih,sayur,kg
+kecamatan,produksi,Bayam,2027,304374.574,325000.0,-6.346,11.74,Ngadiluwih,sayur,kg
+kecamatan,produksi,Buah Naga,2026,222472.119,231000.0,-3.692,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Buah Naga,2027,222472.119,231000.0,-3.692,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Jambu Air,2026,88457.877,99000.0,-10.649,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Jambu Air,2027,88457.877,99000.0,-10.649,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Jambu Biji,2026,98408.326,104000.0,-5.377,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Jambu Biji,2027,98408.326,104000.0,-5.377,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Jeruk Lemon,2026,4833.335,5000.0,-3.333,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Jeruk Lemon,2027,4833.335,5000.0,-3.333,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Kangkung,2026,176575.859,175700.0,0.498,11.74,Ngadiluwih,sayur,kg
+kecamatan,produksi,Kangkung,2027,176575.859,175700.0,0.498,11.74,Ngadiluwih,sayur,kg
+kecamatan,produksi,Mangga,2026,393670.126,398550.0,-1.224,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Mangga,2027,393670.126,398550.0,-1.224,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Melinjo,2026,24982.439,25000.0,-0.07,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Melinjo,2027,24982.439,25000.0,-0.07,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Melon,2026,31343.33,33900.0,-7.542,11.74,Ngadiluwih,sayur,kg
+kecamatan,produksi,Melon,2027,31343.33,33900.0,-7.542,11.74,Ngadiluwih,sayur,kg
+kecamatan,produksi,Nangka/Cempedak,2026,184593.185,208860.0,-11.619,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,184593.185,208860.0,-11.619,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Petsai/Sawi,2026,660953.303,681900.0,-3.072,11.74,Ngadiluwih,sayur,kg
+kecamatan,produksi,Petsai/Sawi,2027,660953.303,681900.0,-3.072,11.74,Ngadiluwih,sayur,kg
+kecamatan,produksi,Pisang,2026,910010.771,958700.0,-5.079,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Pisang,2027,910010.771,958700.0,-5.079,11.74,Ngadiluwih,buah,kg
+kecamatan,produksi,Alpukat,2026,3255931.123,3258000.0,-0.064,11.74,Ngancar,buah,kg
+kecamatan,produksi,Alpukat,2027,3255931.123,3258000.0,-0.064,11.74,Ngancar,buah,kg
+kecamatan,produksi,Buncis,2026,344799.999,344800.0,-0.0,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Buncis,2027,344799.999,344800.0,-0.0,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2026,2172749.997,2172750.0,-0.0,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2027,2172749.997,2172750.0,-0.0,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Cabai Keriting,2026,1225218.201,1277200.0,-4.07,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Cabai Keriting,2027,1225218.201,1277200.0,-4.07,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,5537702.492,5710600.0,-3.028,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,5537702.492,5710600.0,-3.028,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Durian,2026,273061.356,300000.0,-8.98,11.74,Ngancar,buah,kg
+kecamatan,produksi,Durian,2027,273061.356,300000.0,-8.98,11.74,Ngancar,buah,kg
+kecamatan,produksi,Kacang Panjang,2026,638027.842,712100.0,-10.402,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,638027.842,712100.0,-10.402,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Kembang Kol,2026,472337.042,504800.0,-6.431,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Kembang Kol,2027,472337.042,504800.0,-6.431,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Ketimun,2026,1262299.999,1262300.0,-0.0,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Ketimun,2027,1262299.999,1262300.0,-0.0,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Lengkeng,2026,154861.599,155000.0,-0.089,11.74,Ngancar,buah,kg
+kecamatan,produksi,Lengkeng,2027,154861.599,155000.0,-0.089,11.74,Ngancar,buah,kg
+kecamatan,produksi,Manggis,2026,33700.004,35800.0,-5.866,11.74,Ngancar,buah,kg
+kecamatan,produksi,Manggis,2027,33700.004,35800.0,-5.866,11.74,Ngancar,buah,kg
+kecamatan,produksi,Melinjo,2026,199288.161,200000.0,-0.356,11.74,Ngancar,buah,kg
+kecamatan,produksi,Melinjo,2027,199288.161,200000.0,-0.356,11.74,Ngancar,buah,kg
+kecamatan,produksi,Nenas,2026,385851584.859,406538923.0,-5.089,11.74,Ngancar,buah,kg
+kecamatan,produksi,Nenas,2027,385851584.859,406538923.0,-5.089,11.74,Ngancar,buah,kg
+kecamatan,produksi,Pepaya,2026,146909.679,154000.0,-4.604,11.74,Ngancar,buah,kg
+kecamatan,produksi,Pepaya,2027,146909.679,154000.0,-4.604,11.74,Ngancar,buah,kg
+kecamatan,produksi,Rambutan,2026,209033.607,210000.0,-0.46,11.74,Ngancar,buah,kg
+kecamatan,produksi,Rambutan,2027,209033.607,210000.0,-0.46,11.74,Ngancar,buah,kg
+kecamatan,produksi,Salak,2026,45288.438,51000.0,-11.199,11.74,Ngancar,buah,kg
+kecamatan,produksi,Salak,2027,45288.438,51000.0,-11.199,11.74,Ngancar,buah,kg
+kecamatan,produksi,Sirsak,2026,20380.834,21000.0,-2.948,11.74,Ngancar,buah,kg
+kecamatan,produksi,Sirsak,2027,20380.834,21000.0,-2.948,11.74,Ngancar,buah,kg
+kecamatan,produksi,Sukun,2026,41200.025,45000.0,-8.444,11.74,Ngancar,buah,kg
+kecamatan,produksi,Sukun,2027,41200.025,45000.0,-8.444,11.74,Ngancar,buah,kg
+kecamatan,produksi,Terung,2026,2323563.333,2530100.0,-8.163,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Terung,2027,2323563.333,2530100.0,-8.163,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Tomat,2026,1942623.038,2142700.0,-9.338,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Tomat,2027,1942623.038,2142700.0,-9.338,11.74,Ngancar,sayur,kg
+kecamatan,produksi,Belimbing,2026,7217.0,7287.0,-0.961,11.74,Ngasem,buah,kg
+kecamatan,produksi,Belimbing,2027,7217.0,7287.0,-0.961,11.74,Ngasem,buah,kg
+kecamatan,produksi,Cabai Rawit,2026,1935934.329,1913262.0,1.185,11.74,Ngasem,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,1935934.329,1913262.0,1.185,11.74,Ngasem,sayur,kg
+kecamatan,produksi,Durian,2026,13648.343,14175.0,-3.715,11.74,Ngasem,buah,kg
+kecamatan,produksi,Durian,2027,13648.343,14175.0,-3.715,11.74,Ngasem,buah,kg
+kecamatan,produksi,Jambu Biji,2026,27299.166,29620.0,-7.835,11.74,Ngasem,buah,kg
+kecamatan,produksi,Jambu Biji,2027,27299.166,29620.0,-7.835,11.74,Ngasem,buah,kg
+kecamatan,produksi,Lengkeng,2026,42059.394,41974.0,0.203,11.74,Ngasem,buah,kg
+kecamatan,produksi,Lengkeng,2027,42059.394,41974.0,0.203,11.74,Ngasem,buah,kg
+kecamatan,produksi,Melinjo,2026,103981.046,106087.0,-1.985,11.74,Ngasem,buah,kg
+kecamatan,produksi,Melinjo,2027,103981.046,106087.0,-1.985,11.74,Ngasem,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,70916.876,71922.0,-1.398,11.74,Ngasem,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,70916.876,71922.0,-1.398,11.74,Ngasem,buah,kg
+kecamatan,produksi,Petai,2026,14899.335,15871.0,-6.122,11.74,Ngasem,buah,kg
+kecamatan,produksi,Petai,2027,14899.335,15871.0,-6.122,11.74,Ngasem,buah,kg
+kecamatan,produksi,Semangka,2026,124586.364,123200.0,1.125,11.74,Ngasem,sayur,kg
+kecamatan,produksi,Semangka,2027,124586.364,123200.0,1.125,11.74,Ngasem,sayur,kg
+kecamatan,produksi,Belimbing,2026,2845610.197,2964400.0,-4.007,11.74,Pagu,buah,kg
+kecamatan,produksi,Belimbing,2027,2845610.197,2964400.0,-4.007,11.74,Pagu,buah,kg
+kecamatan,produksi,Cabai Rawit,2026,17516059.093,17594300.0,-0.445,11.74,Pagu,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,17516059.093,17594300.0,-0.445,11.74,Pagu,sayur,kg
+kecamatan,produksi,Mangga,2026,832500.002,832500.0,0.0,11.74,Pagu,buah,kg
+kecamatan,produksi,Mangga,2027,832500.002,832500.0,0.0,11.74,Pagu,buah,kg
+kecamatan,produksi,Melinjo,2026,69481.71,76400.0,-9.055,11.74,Pagu,buah,kg
+kecamatan,produksi,Melinjo,2027,69481.71,76400.0,-9.055,11.74,Pagu,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,128525.741,130000.0,-1.134,11.74,Pagu,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,128525.741,130000.0,-1.134,11.74,Pagu,buah,kg
+kecamatan,produksi,Kacang Panjang,2026,88733.314,91400.0,-2.918,11.74,Papar,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,88733.314,91400.0,-2.918,11.74,Papar,sayur,kg
+kecamatan,produksi,Mangga,2026,350485.434,377200.0,-7.082,11.74,Papar,buah,kg
+kecamatan,produksi,Mangga,2027,350485.434,377200.0,-7.082,11.74,Papar,buah,kg
+kecamatan,produksi,Pisang,2026,801102.374,797500.0,0.452,11.74,Papar,buah,kg
+kecamatan,produksi,Pisang,2027,801102.374,797500.0,0.452,11.74,Papar,buah,kg
+kecamatan,produksi,Bawang Merah,2026,242466.611,240000.0,1.028,11.74,Pare,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,242466.611,240000.0,1.028,11.74,Pare,sayur,kg
+kecamatan,produksi,Belimbing,2026,22749.135,23720.0,-4.093,11.74,Pare,buah,kg
+kecamatan,produksi,Belimbing,2027,22749.135,23720.0,-4.093,11.74,Pare,buah,kg
+kecamatan,produksi,Buah Naga,2026,147200.0,147200.0,0.0,11.74,Pare,buah,kg
+kecamatan,produksi,Buah Naga,2027,147200.0,147200.0,0.0,11.74,Pare,buah,kg
+kecamatan,produksi,Buncis,2026,218093.66,225100.0,-3.113,11.74,Pare,sayur,kg
+kecamatan,produksi,Buncis,2027,218093.66,225100.0,-3.113,11.74,Pare,sayur,kg
+kecamatan,produksi,Cabai Keriting,2026,231600.0,231600.0,0.0,11.74,Pare,sayur,kg
+kecamatan,produksi,Cabai Keriting,2027,231600.0,231600.0,0.0,11.74,Pare,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,474899.999,474900.0,-0.0,11.74,Pare,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,474899.999,474900.0,-0.0,11.74,Pare,sayur,kg
+kecamatan,produksi,Jambu Air,2026,11214.161,11600.0,-3.326,11.74,Pare,buah,kg
+kecamatan,produksi,Jambu Air,2027,11214.161,11600.0,-3.326,11.74,Pare,buah,kg
+kecamatan,produksi,Jambu Biji,2026,36023.464,38800.0,-7.156,11.74,Pare,buah,kg
+kecamatan,produksi,Jambu Biji,2027,36023.464,38800.0,-7.156,11.74,Pare,buah,kg
+kecamatan,produksi,Kacang Panjang,2026,294649.949,324400.0,-9.171,11.74,Pare,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,294649.949,324400.0,-9.171,11.74,Pare,sayur,kg
+kecamatan,produksi,Kembang Kol,2026,425911.421,465300.0,-8.465,11.74,Pare,sayur,kg
+kecamatan,produksi,Kembang Kol,2027,425911.421,465300.0,-8.465,11.74,Pare,sayur,kg
+kecamatan,produksi,Ketimun,2026,574155.348,623200.0,-7.87,11.74,Pare,sayur,kg
+kecamatan,produksi,Ketimun,2027,574155.348,623200.0,-7.87,11.74,Pare,sayur,kg
+kecamatan,produksi,Nangka/Cempedak,2026,138256.995,155700.0,-11.203,11.74,Pare,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,138256.995,155700.0,-11.203,11.74,Pare,buah,kg
+kecamatan,produksi,Pepaya,2026,193400.615,198000.0,-2.323,11.74,Pare,buah,kg
+kecamatan,produksi,Pepaya,2027,193400.615,198000.0,-2.323,11.74,Pare,buah,kg
+kecamatan,produksi,Petsai/Sawi,2026,487197.409,533400.0,-8.662,11.74,Pare,sayur,kg
+kecamatan,produksi,Petsai/Sawi,2027,487197.409,533400.0,-8.662,11.74,Pare,sayur,kg
+kecamatan,produksi,Rambutan,2026,434339.386,451900.0,-3.886,11.74,Pare,buah,kg
+kecamatan,produksi,Rambutan,2027,434339.386,451900.0,-3.886,11.74,Pare,buah,kg
+kecamatan,produksi,Sirsak,2026,270992.265,289150.0,-6.28,11.74,Pare,buah,kg
+kecamatan,produksi,Sirsak,2027,270992.265,289150.0,-6.28,11.74,Pare,buah,kg
+kecamatan,produksi,Terung,2026,721971.21,732600.0,-1.451,11.74,Pare,sayur,kg
+kecamatan,produksi,Terung,2027,721971.21,732600.0,-1.451,11.74,Pare,sayur,kg
+kecamatan,produksi,Tomat,2026,151261.823,160600.0,-5.815,11.74,Pare,sayur,kg
+kecamatan,produksi,Tomat,2027,151261.823,160600.0,-5.815,11.74,Pare,sayur,kg
+kecamatan,produksi,Alpukat,2026,2050792.356,2202000.0,-6.867,11.74,Plemahan,buah,kg
+kecamatan,produksi,Alpukat,2027,2050792.356,2202000.0,-6.867,11.74,Plemahan,buah,kg
+kecamatan,produksi,Bawang Merah,2026,3560239.083,3660000.0,-2.726,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,3560239.083,3660000.0,-2.726,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Belimbing,2026,90753.382,98300.0,-7.677,11.74,Plemahan,buah,kg
+kecamatan,produksi,Belimbing,2027,90753.382,98300.0,-7.677,11.74,Plemahan,buah,kg
+kecamatan,produksi,Cabai Rawit,2026,790212.574,886775.0,-10.889,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,790212.574,886775.0,-10.889,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Jambu Air,2026,450549.999,450550.0,-0.0,11.74,Plemahan,buah,kg
+kecamatan,produksi,Jambu Air,2027,450549.999,450550.0,-0.0,11.74,Plemahan,buah,kg
+kecamatan,produksi,Jambu Biji,2026,355916.291,399220.0,-10.847,11.74,Plemahan,buah,kg
+kecamatan,produksi,Jambu Biji,2027,355916.291,399220.0,-10.847,11.74,Plemahan,buah,kg
+kecamatan,produksi,Kacang Panjang,2026,1090178.987,1190195.0,-8.403,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,1090178.987,1190195.0,-8.403,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Kembang Kol,2026,256766.116,257450.0,-0.266,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Kembang Kol,2027,256766.116,257450.0,-0.266,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Ketimun,2026,693699.789,727780.0,-4.683,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Ketimun,2027,693699.789,727780.0,-4.683,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Nangka/Cempedak,2026,329898.927,333700.0,-1.139,11.74,Plemahan,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,329898.927,333700.0,-1.139,11.74,Plemahan,buah,kg
+kecamatan,produksi,Petsai/Sawi,2026,179859.643,202575.0,-11.213,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Petsai/Sawi,2027,179859.643,202575.0,-11.213,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Pisang,2026,2470088.66,2612500.0,-5.451,11.74,Plemahan,buah,kg
+kecamatan,produksi,Pisang,2027,2470088.66,2612500.0,-5.451,11.74,Plemahan,buah,kg
+kecamatan,produksi,Sawo,2026,188757.952,185970.0,1.499,11.74,Plemahan,buah,kg
+kecamatan,produksi,Sawo,2027,188757.952,185970.0,1.499,11.74,Plemahan,buah,kg
+kecamatan,produksi,Sirsak,2026,40335.926,41140.0,-1.954,11.74,Plemahan,buah,kg
+kecamatan,produksi,Sirsak,2027,40335.926,41140.0,-1.954,11.74,Plemahan,buah,kg
+kecamatan,produksi,Terung,2026,1500768.529,1603344.0,-6.398,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Terung,2027,1500768.529,1603344.0,-6.398,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Tomat,2026,878235.874,979335.0,-10.323,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Tomat,2027,878235.874,979335.0,-10.323,11.74,Plemahan,sayur,kg
+kecamatan,produksi,Alpukat,2026,687500.0,687500.0,-0.0,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Alpukat,2027,687500.0,687500.0,-0.0,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Belimbing,2026,13711.659,15140.0,-9.434,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Belimbing,2027,13711.659,15140.0,-9.434,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Buncis,2026,510699.631,554900.0,-7.965,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Buncis,2027,510699.631,554900.0,-7.965,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,4586431.296,4716324.0,-2.754,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,4586431.296,4716324.0,-2.754,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Durian,2026,587103.561,593900.0,-1.144,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Durian,2027,587103.561,593900.0,-1.144,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Jambu Biji,2026,58966.56,61201.0,-3.651,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Jambu Biji,2027,58966.56,61201.0,-3.651,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Jeruk Lemon,2026,311036.189,310000.0,0.334,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Jeruk Lemon,2027,311036.189,310000.0,0.334,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Kacang Panjang,2026,627905.49,654450.0,-4.056,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,627905.49,654450.0,-4.056,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Kembang Kol,2026,664849.357,690000.0,-3.645,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Kembang Kol,2027,664849.357,690000.0,-3.645,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Ketimun,2026,1307964.902,1432450.0,-8.69,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Ketimun,2027,1307964.902,1432450.0,-8.69,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Mangga,2026,322537.403,336320.0,-4.098,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Mangga,2027,322537.403,336320.0,-4.098,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Melinjo,2026,1674857.544,1771065.0,-5.432,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Melinjo,2027,1674857.544,1771065.0,-5.432,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,203130.366,209420.0,-3.003,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,203130.366,209420.0,-3.003,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Nenas,2026,8967983.013,9015000.0,-0.522,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Nenas,2027,8967983.013,9015000.0,-0.522,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Pepaya,2026,462586.517,498000.0,-7.111,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Pepaya,2027,462586.517,498000.0,-7.111,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Petai,2026,265766.351,286100.0,-7.107,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Petai,2027,265766.351,286100.0,-7.107,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Petsai/Sawi,2026,466467.86,496500.0,-6.049,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Petsai/Sawi,2027,466467.86,496500.0,-6.049,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Rambutan,2026,287243.888,300000.0,-4.252,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Rambutan,2027,287243.888,300000.0,-4.252,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Salak,2026,130000.0,130000.0,0.0,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Salak,2027,130000.0,130000.0,0.0,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Sawo,2026,59505.656,66334.0,-10.294,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Sawo,2027,59505.656,66334.0,-10.294,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Sirsak,2026,1829782.001,1829782.0,0.0,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Sirsak,2027,1829782.001,1829782.0,0.0,11.74,Plosoklaten,buah,kg
+kecamatan,produksi,Terung,2026,1718199.999,1718200.0,-0.0,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Terung,2027,1718199.999,1718200.0,-0.0,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Tomat,2026,1419574.417,1498500.0,-5.267,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Tomat,2027,1419574.417,1498500.0,-5.267,11.74,Plosoklaten,sayur,kg
+kecamatan,produksi,Alpukat,2026,376746.457,400000.0,-5.813,11.74,Puncu,buah,kg
+kecamatan,produksi,Alpukat,2027,376746.457,400000.0,-5.813,11.74,Puncu,buah,kg
+kecamatan,produksi,Bawang Daun,2026,85333.419,92000.0,-7.246,11.74,Puncu,sayur,kg
+kecamatan,produksi,Bawang Daun,2027,85333.419,92000.0,-7.246,11.74,Puncu,sayur,kg
+kecamatan,produksi,Belimbing,2026,14663.326,15000.0,-2.244,11.74,Puncu,buah,kg
+kecamatan,produksi,Belimbing,2027,14663.326,15000.0,-2.244,11.74,Puncu,buah,kg
+kecamatan,produksi,Buncis,2026,401628.558,390500.0,2.85,11.74,Puncu,sayur,kg
+kecamatan,produksi,Buncis,2027,401628.558,390500.0,2.85,11.74,Puncu,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2026,283064.01,295100.0,-4.079,11.74,Puncu,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2027,283064.01,295100.0,-4.079,11.74,Puncu,sayur,kg
+kecamatan,produksi,Cabai Keriting,2026,467402.877,493800.0,-5.346,11.74,Puncu,sayur,kg
+kecamatan,produksi,Cabai Keriting,2027,467402.877,493800.0,-5.346,11.74,Puncu,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,26552831.768,26427800.0,0.473,11.74,Puncu,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,26552831.768,26427800.0,0.473,11.74,Puncu,sayur,kg
+kecamatan,produksi,Durian,2026,1100276.759,1150000.0,-4.324,11.74,Puncu,buah,kg
+kecamatan,produksi,Durian,2027,1100276.759,1150000.0,-4.324,11.74,Puncu,buah,kg
+kecamatan,produksi,Jambu Biji,2026,45343.466,50000.0,-9.313,11.74,Puncu,buah,kg
+kecamatan,produksi,Jambu Biji,2027,45343.466,50000.0,-9.313,11.74,Puncu,buah,kg
+kecamatan,produksi,Kacang Panjang,2026,263660.881,267800.0,-1.546,11.74,Puncu,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,263660.881,267800.0,-1.546,11.74,Puncu,sayur,kg
+kecamatan,produksi,Ketimun,2026,326988.382,343900.0,-4.918,11.74,Puncu,sayur,kg
+kecamatan,produksi,Ketimun,2027,326988.382,343900.0,-4.918,11.74,Puncu,sayur,kg
+kecamatan,produksi,Nenas,2026,2359507.819,2333700.0,1.106,11.74,Puncu,buah,kg
+kecamatan,produksi,Nenas,2027,2359507.819,2333700.0,1.106,11.74,Puncu,buah,kg
+kecamatan,produksi,Pepaya,2026,1785815.05,1938700.0,-7.886,11.74,Puncu,buah,kg
+kecamatan,produksi,Pepaya,2027,1785815.05,1938700.0,-7.886,11.74,Puncu,buah,kg
+kecamatan,produksi,Petai,2026,103000.0,103000.0,-0.0,11.74,Puncu,buah,kg
+kecamatan,produksi,Petai,2027,103000.0,103000.0,-0.0,11.74,Puncu,buah,kg
+kecamatan,produksi,Pisang,2026,10364643.927,11383000.0,-8.946,11.74,Puncu,buah,kg
+kecamatan,produksi,Pisang,2027,10364643.927,11383000.0,-8.946,11.74,Puncu,buah,kg
+kecamatan,produksi,Sirsak,2026,246449.321,245000.0,0.592,11.74,Puncu,buah,kg
+kecamatan,produksi,Sirsak,2027,246449.321,245000.0,0.592,11.74,Puncu,buah,kg
+kecamatan,produksi,Terung,2026,550616.895,550400.0,0.039,11.74,Puncu,sayur,kg
+kecamatan,produksi,Terung,2027,550616.895,550400.0,0.039,11.74,Puncu,sayur,kg
+kecamatan,produksi,Tomat,2026,464283.417,456500.0,1.705,11.74,Puncu,sayur,kg
+kecamatan,produksi,Tomat,2027,464283.417,456500.0,1.705,11.74,Puncu,sayur,kg
+kecamatan,produksi,Bawang Merah,2026,42024.095,46400.0,-9.431,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,42024.095,46400.0,-9.431,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Belimbing,2026,23865.034,26625.0,-10.366,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Belimbing,2027,23865.034,26625.0,-10.366,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Duku/Langsat/Kokosan,2026,1333.333,1500.0,-11.111,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Duku/Langsat/Kokosan,2027,1333.333,1500.0,-11.111,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Jambu Air,2026,792753.209,901500.0,-12.063,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Jambu Air,2027,792753.209,901500.0,-12.063,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Jambu Biji,2026,26842.449,28000.0,-4.134,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Jambu Biji,2027,26842.449,28000.0,-4.134,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Kangkung,2026,68849.64,74500.0,-7.584,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Kangkung,2027,68849.64,74500.0,-7.584,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Lengkeng,2026,49800.0,49800.0,0.0,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Lengkeng,2027,49800.0,49800.0,0.0,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Melon,2026,131843.197,145000.0,-9.074,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Melon,2027,131843.197,145000.0,-9.074,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Nangka/Cempedak,2026,123703.529,122700.0,0.818,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,123703.529,122700.0,0.818,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Pisang,2026,3431960.948,3371000.0,1.808,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Pisang,2027,3431960.948,3371000.0,1.808,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Rambutan,2026,500000.0,500000.0,-0.0,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Rambutan,2027,500000.0,500000.0,-0.0,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Sawo,2026,32789.998,32700.0,0.275,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Sawo,2027,32789.998,32700.0,0.275,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Semangka,2026,684495.819,730000.0,-6.233,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Semangka,2027,684495.819,730000.0,-6.233,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Sirsak,2026,61400.0,61400.0,0.0,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Sirsak,2027,61400.0,61400.0,0.0,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Sukun,2026,46016.665,48200.0,-4.53,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Sukun,2027,46016.665,48200.0,-4.53,11.74,Purwoasri,buah,kg
+kecamatan,produksi,Terung,2026,64801.817,68500.0,-5.399,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Terung,2027,64801.817,68500.0,-5.399,11.74,Purwoasri,sayur,kg
+kecamatan,produksi,Alpukat,2026,1153978.23,1227200.0,-5.967,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Alpukat,2027,1153978.23,1227200.0,-5.967,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Belimbing,2026,375156.468,391000.0,-4.052,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Belimbing,2027,375156.468,391000.0,-4.052,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Buah Naga,2026,118529.764,118000.0,0.449,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Buah Naga,2027,118529.764,118000.0,0.449,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Cabai Keriting,2026,2910099.998,2910100.0,-0.0,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Cabai Keriting,2027,2910099.998,2910100.0,-0.0,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,5552444.915,6181600.0,-10.178,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,5552444.915,6181600.0,-10.178,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Durian,2026,1177756.45,1310000.0,-10.095,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Durian,2027,1177756.45,1310000.0,-10.095,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Jambu Air,2026,110900.0,110900.0,-0.0,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Jambu Air,2027,110900.0,110900.0,-0.0,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Jambu Biji,2026,135637.604,147100.0,-7.792,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Jambu Biji,2027,135637.604,147100.0,-7.792,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Jeruk Lemon,2026,129406.66,129400.0,0.005,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Jeruk Lemon,2027,129406.66,129400.0,0.005,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2026,1816502.834,1831700.0,-0.83,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2027,1816502.834,1831700.0,-0.83,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Kacang Panjang,2026,300776.674,311600.0,-3.473,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,300776.674,311600.0,-3.473,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Ketimun,2026,347069.854,363900.0,-4.625,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Ketimun,2027,347069.854,363900.0,-4.625,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Lengkeng,2026,209954.234,239000.0,-12.153,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Lengkeng,2027,209954.234,239000.0,-12.153,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Mangga,2026,1140100.002,1140100.0,0.0,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Mangga,2027,1140100.002,1140100.0,0.0,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Manggis,2026,25016.671,27500.0,-9.03,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Manggis,2027,25016.671,27500.0,-9.03,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Melinjo,2026,92953.441,97500.0,-4.663,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Melinjo,2027,92953.441,97500.0,-4.663,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,1068570.941,1050000.0,1.769,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,1068570.941,1050000.0,1.769,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Nenas,2026,3250911.925,3523000.0,-7.723,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Nenas,2027,3250911.925,3523000.0,-7.723,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Pepaya,2026,234434.687,248800.0,-5.774,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Pepaya,2027,234434.687,248800.0,-5.774,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Petai,2026,109683.251,120700.0,-9.127,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Petai,2027,109683.251,120700.0,-9.127,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Pisang,2026,2090458.925,2304800.0,-9.3,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Pisang,2027,2090458.925,2304800.0,-9.3,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Rambutan,2026,142713.865,150000.0,-4.857,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Rambutan,2027,142713.865,150000.0,-4.857,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Semangka,2026,95783.122,102500.0,-6.553,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Semangka,2027,95783.122,102500.0,-6.553,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Sirsak,2026,193513.519,205000.0,-5.603,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Sirsak,2027,193513.519,205000.0,-5.603,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Sukun,2026,126160.78,131600.0,-4.133,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Sukun,2027,126160.78,131600.0,-4.133,11.74,Ringinrejo,buah,kg
+kecamatan,produksi,Terung,2026,529041.453,565800.0,-6.497,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Terung,2027,529041.453,565800.0,-6.497,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Tomat,2026,240433.536,270100.0,-10.984,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Tomat,2027,240433.536,270100.0,-10.984,11.74,Ringinrejo,sayur,kg
+kecamatan,produksi,Alpukat,2026,737657.622,820000.0,-10.042,11.74,Semen,buah,kg
+kecamatan,produksi,Alpukat,2027,737657.622,820000.0,-10.042,11.74,Semen,buah,kg
+kecamatan,produksi,Bawang Merah,2026,110641.332,114000.0,-2.946,11.74,Semen,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,110641.332,114000.0,-2.946,11.74,Semen,sayur,kg
+kecamatan,produksi,Buah Naga,2026,14263.335,16000.0,-10.854,11.74,Semen,buah,kg
+kecamatan,produksi,Buah Naga,2027,14263.335,16000.0,-10.854,11.74,Semen,buah,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2026,150046.508,158200.0,-5.154,11.74,Semen,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2027,150046.508,158200.0,-5.154,11.74,Semen,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,1243809.718,1317900.0,-5.622,11.74,Semen,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,1243809.718,1317900.0,-5.622,11.74,Semen,sayur,kg
+kecamatan,produksi,Durian,2026,7272264.699,7400000.0,-1.726,11.74,Semen,buah,kg
+kecamatan,produksi,Durian,2027,7272264.699,7400000.0,-1.726,11.74,Semen,buah,kg
+kecamatan,produksi,Jambu Air,2026,182000.0,182000.0,0.0,11.74,Semen,buah,kg
+kecamatan,produksi,Jambu Air,2027,182000.0,182000.0,0.0,11.74,Semen,buah,kg
+kecamatan,produksi,Jambu Biji,2026,1833.333,2000.0,-8.333,11.74,Semen,buah,kg
+kecamatan,produksi,Jambu Biji,2027,1833.333,2000.0,-8.333,11.74,Semen,buah,kg
+kecamatan,produksi,Jamur Tiram,2026,176083.441,187000.0,-5.838,11.74,Semen,sayur,kg
+kecamatan,produksi,Jamur Tiram,2027,176083.441,187000.0,-5.838,11.74,Semen,sayur,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2026,1715837.91,1805000.0,-4.94,11.74,Semen,buah,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2027,1715837.91,1805000.0,-4.94,11.74,Semen,buah,kg
+kecamatan,produksi,Lengkeng,2026,76000.0,76000.0,0.0,11.74,Semen,buah,kg
+kecamatan,produksi,Lengkeng,2027,76000.0,76000.0,0.0,11.74,Semen,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2026,31916.413,33000.0,-3.284,11.74,Semen,buah,kg
+kecamatan,produksi,Nangka/Cempedak,2027,31916.413,33000.0,-3.284,11.74,Semen,buah,kg
+kecamatan,produksi,Pepaya,2026,284000.0,284000.0,-0.0,11.74,Semen,buah,kg
+kecamatan,produksi,Pepaya,2027,284000.0,284000.0,-0.0,11.74,Semen,buah,kg
+kecamatan,produksi,Petai,2026,246100.521,270000.0,-8.852,11.74,Semen,buah,kg
+kecamatan,produksi,Petai,2027,246100.521,270000.0,-8.852,11.74,Semen,buah,kg
+kecamatan,produksi,Sawo,2026,254607.614,255000.0,-0.154,11.74,Semen,buah,kg
+kecamatan,produksi,Sawo,2027,254607.614,255000.0,-0.154,11.74,Semen,buah,kg
+kecamatan,produksi,Sirsak,2026,96801.387,101200.0,-4.346,11.74,Semen,buah,kg
+kecamatan,produksi,Sirsak,2027,96801.387,101200.0,-4.346,11.74,Semen,buah,kg
+kecamatan,produksi,Bawang Merah,2026,676444.068,722200.0,-6.336,11.74,Tarokan,sayur,kg
+kecamatan,produksi,Bawang Merah,2027,676444.068,722200.0,-6.336,11.74,Tarokan,sayur,kg
+kecamatan,produksi,Jambu Biji,2026,18744.94,18400.0,1.875,11.74,Tarokan,buah,kg
+kecamatan,produksi,Jambu Biji,2027,18744.94,18400.0,1.875,11.74,Tarokan,buah,kg
+kecamatan,produksi,Jeruk Lemon,2026,5266.668,5700.0,-7.602,11.74,Tarokan,buah,kg
+kecamatan,produksi,Jeruk Lemon,2027,5266.668,5700.0,-7.602,11.74,Tarokan,buah,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2026,3090771.269,3217800.0,-3.948,11.74,Tarokan,buah,kg
+kecamatan,produksi,Jeruk Siam/Keprok,2027,3090771.269,3217800.0,-3.948,11.74,Tarokan,buah,kg
+kecamatan,produksi,Mangga,2026,26043114.388,26168195.0,-0.478,11.74,Tarokan,buah,kg
+kecamatan,produksi,Mangga,2027,26043114.388,26168195.0,-0.478,11.74,Tarokan,buah,kg
+kecamatan,produksi,Pisang,2026,1029015.0,1029015.0,-0.0,11.74,Tarokan,buah,kg
+kecamatan,produksi,Pisang,2027,1029015.0,1029015.0,-0.0,11.74,Tarokan,buah,kg
+kecamatan,produksi,Sirsak,2026,632803.591,650900.0,-2.78,11.74,Tarokan,buah,kg
+kecamatan,produksi,Sirsak,2027,632803.591,650900.0,-2.78,11.74,Tarokan,buah,kg
+kecamatan,produksi,Tomat,2026,9938.789,9800.0,1.416,11.74,Tarokan,sayur,kg
+kecamatan,produksi,Tomat,2027,9938.789,9800.0,1.416,11.74,Tarokan,sayur,kg
+kecamatan,produksi,Alpukat,2026,1453470.151,1463400.0,-0.679,11.74,Wates,buah,kg
+kecamatan,produksi,Alpukat,2027,1453470.151,1463400.0,-0.679,11.74,Wates,buah,kg
+kecamatan,produksi,Belimbing,2026,20000.0,20000.0,0.0,11.74,Wates,buah,kg
+kecamatan,produksi,Belimbing,2027,20000.0,20000.0,0.0,11.74,Wates,buah,kg
+kecamatan,produksi,Buncis,2026,72670.009,75300.0,-3.493,11.74,Wates,sayur,kg
+kecamatan,produksi,Buncis,2027,72670.009,75300.0,-3.493,11.74,Wates,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2026,4443058.045,4362100.0,1.856,11.74,Wates,sayur,kg
+kecamatan,produksi,Cabai Besar/TW/Teropong,2027,4443058.045,4362100.0,1.856,11.74,Wates,sayur,kg
+kecamatan,produksi,Cabai Rawit,2026,7038181.779,7991800.0,-11.932,11.74,Wates,sayur,kg
+kecamatan,produksi,Cabai Rawit,2027,7038181.779,7991800.0,-11.932,11.74,Wates,sayur,kg
+kecamatan,produksi,Jambu Air,2026,2233.334,2400.0,-6.944,11.74,Wates,buah,kg
+kecamatan,produksi,Jambu Air,2027,2233.334,2400.0,-6.944,11.74,Wates,buah,kg
+kecamatan,produksi,Jamur Tiram,2026,20670.0,22500.0,-8.133,11.74,Wates,sayur,kg
+kecamatan,produksi,Jamur Tiram,2027,20670.0,22500.0,-8.133,11.74,Wates,sayur,kg
+kecamatan,produksi,Kacang Panjang,2026,266500.0,266500.0,-0.0,11.74,Wates,sayur,kg
+kecamatan,produksi,Kacang Panjang,2027,266500.0,266500.0,-0.0,11.74,Wates,sayur,kg
+kecamatan,produksi,Nenas,2026,871625.986,910000.0,-4.217,11.74,Wates,buah,kg
+kecamatan,produksi,Nenas,2027,871625.986,910000.0,-4.217,11.74,Wates,buah,kg
+kecamatan,produksi,Pepaya,2026,377499.999,377500.0,-0.0,11.74,Wates,buah,kg
+kecamatan,produksi,Pepaya,2027,377499.999,377500.0,-0.0,11.74,Wates,buah,kg
+kecamatan,produksi,Pisang,2026,899999.998,900000.0,-0.0,11.74,Wates,buah,kg
+kecamatan,produksi,Pisang,2027,899999.998,900000.0,-0.0,11.74,Wates,buah,kg
+kecamatan,produksi,Sirsak,2026,47674.984,50300.0,-5.219,11.74,Wates,buah,kg
+kecamatan,produksi,Sirsak,2027,47674.984,50300.0,-5.219,11.74,Wates,buah,kg
+kecamatan,produksi,Terung,2026,632415.722,646800.0,-2.224,11.74,Wates,sayur,kg
+kecamatan,produksi,Terung,2027,632415.722,646800.0,-2.224,11.74,Wates,sayur,kg
+kecamatan,produksi,Tomat,2026,264049.836,271800.0,-2.851,11.74,Wates,sayur,kg
+kecamatan,produksi,Tomat,2027,264049.836,271800.0,-2.851,11.74,Wates,sayur,kg
+kabupaten,luas,Alpukat,2026,1449.4,1449.4,0.0,7.18,,buah,ha
+kabupaten,luas,Alpukat,2027,1449.4,1449.4,0.0,7.18,,buah,ha
+kabupaten,luas,Bawang Daun,2026,610.5,610.5,-0.0,7.18,,sayur,ha
+kabupaten,luas,Bawang Daun,2027,610.5,610.5,-0.0,7.18,,sayur,ha
+kabupaten,luas,Bawang Merah,2026,1192.283,1205.5,-1.096,7.18,,sayur,ha
+kabupaten,luas,Bawang Merah,2027,1192.283,1205.5,-1.096,7.18,,sayur,ha
+kabupaten,luas,Bayam,2026,49.542,45.0,10.093,7.18,,sayur,ha
+kabupaten,luas,Bayam,2027,49.542,45.0,10.093,7.18,,sayur,ha
+kabupaten,luas,Belimbing,2026,236.4,244.85,-3.451,7.18,,buah,ha
+kabupaten,luas,Belimbing,2027,236.4,244.85,-3.451,7.18,,buah,ha
+kabupaten,luas,Buah Naga,2026,18.275,16.25,12.462,7.18,,buah,ha
+kabupaten,luas,Buah Naga,2027,18.275,16.25,12.462,7.18,,buah,ha
+kabupaten,luas,Buncis,2026,160.292,167.5,-4.303,7.18,,sayur,ha
+kabupaten,luas,Buncis,2027,160.292,167.5,-4.303,7.18,,sayur,ha
+kabupaten,luas,Cabai Besar/TW/Teropong,2026,920.647,912.0,0.948,7.18,,sayur,ha
+kabupaten,luas,Cabai Besar/TW/Teropong,2027,920.647,912.0,0.948,7.18,,sayur,ha
+kabupaten,luas,Cabai Keriting,2026,338.227,340.8,-0.755,7.18,,sayur,ha
+kabupaten,luas,Cabai Keriting,2027,338.227,340.8,-0.755,7.18,,sayur,ha
+kabupaten,luas,Cabai Rawit,2026,9791.708,9761.0,0.315,7.18,,sayur,ha
+kabupaten,luas,Cabai Rawit,2027,9791.708,9761.0,0.315,7.18,,sayur,ha
+kabupaten,luas,Duku/Langsat/Kokosan,2026,3.0,2.0,50.0,7.18,,buah,ha
+kabupaten,luas,Duku/Langsat/Kokosan,2027,3.0,2.0,50.0,7.18,,buah,ha
+kabupaten,luas,Durian,2026,2394.079,2375.75,0.771,7.18,,buah,ha
+kabupaten,luas,Durian,2027,2394.079,2375.75,0.771,7.18,,buah,ha
+kabupaten,luas,Jambu Air,2026,135.892,147.35,-7.776,7.18,,buah,ha
+kabupaten,luas,Jambu Air,2027,135.892,147.35,-7.776,7.18,,buah,ha
+kabupaten,luas,Jambu Biji,2026,107.767,118.9,-9.364,7.18,,buah,ha
+kabupaten,luas,Jambu Biji,2027,107.767,118.9,-9.364,7.18,,buah,ha
+kabupaten,luas,Jamur Tiram,2026,2878.0,2948.0,-2.374,7.18,,sayur,m2
+kabupaten,luas,Jamur Tiram,2027,2878.0,2948.0,-2.374,7.18,,sayur,m2
+kabupaten,luas,Jengkol,2026,3.992,2.0,99.583,7.18,,buah,ha
+kabupaten,luas,Jengkol,2027,3.992,2.0,99.583,7.18,,buah,ha
+kabupaten,luas,Jeruk Besar,2026,2.167,1.5,44.444,7.18,,buah,ha
+kabupaten,luas,Jeruk Besar,2027,2.167,1.5,44.444,7.18,,buah,ha
+kabupaten,luas,Jeruk Lemon,2026,26.0,26.0,0.0,7.18,,buah,ha
+kabupaten,luas,Jeruk Lemon,2027,26.0,26.0,0.0,7.18,,buah,ha
+kabupaten,luas,Jeruk Siam/Keprok,2026,411.037,414.7,-0.883,7.18,,buah,ha
+kabupaten,luas,Jeruk Siam/Keprok,2027,411.037,414.7,-0.883,7.18,,buah,ha
+kabupaten,luas,Kacang Panjang,2026,384.875,419.7,-8.298,7.18,,sayur,ha
+kabupaten,luas,Kacang Panjang,2027,384.875,419.7,-8.298,7.18,,sayur,ha
+kabupaten,luas,Kangkung,2026,15.408,15.0,2.722,7.18,,sayur,ha
+kabupaten,luas,Kangkung,2027,15.408,15.0,2.722,7.18,,sayur,ha
+kabupaten,luas,Kembang Kol,2026,189.149,190.0,-0.448,7.18,,sayur,ha
+kabupaten,luas,Kembang Kol,2027,189.149,190.0,-0.448,7.18,,sayur,ha
+kabupaten,luas,Ketimun,2026,314.683,330.0,-4.641,7.18,,sayur,ha
+kabupaten,luas,Ketimun,2027,314.683,330.0,-4.641,7.18,,sayur,ha
+kabupaten,luas,Lengkeng,2026,52.458,56.1,-6.491,7.18,,buah,ha
+kabupaten,luas,Lengkeng,2027,52.458,56.1,-6.491,7.18,,buah,ha
+kabupaten,luas,Mangga,2026,3050.325,3222.0,-5.328,7.18,,buah,ha
+kabupaten,luas,Mangga,2027,3050.325,3222.0,-5.328,7.18,,buah,ha
+kabupaten,luas,Manggis,2026,60.275,63.2,-4.628,7.18,,buah,ha
+kabupaten,luas,Manggis,2027,60.275,63.2,-4.628,7.18,,buah,ha
+kabupaten,luas,Melinjo,2026,461.25,513.5,-10.175,7.18,,buah,ha
+kabupaten,luas,Melinjo,2027,461.25,513.5,-10.175,7.18,,buah,ha
+kabupaten,luas,Melon,2026,52.442,52.0,0.849,7.18,,sayur,ha
+kabupaten,luas,Melon,2027,52.442,52.0,0.849,7.18,,sayur,ha
+kabupaten,luas,Nangka/Cempedak,2026,318.3,318.3,0.0,7.18,,buah,ha
+kabupaten,luas,Nangka/Cempedak,2027,318.3,318.3,0.0,7.18,,buah,ha
+kabupaten,luas,Nenas,2026,3118.841,3173.75,-1.73,7.18,,buah,ha
+kabupaten,luas,Nenas,2027,3118.841,3173.75,-1.73,7.18,,buah,ha
+kabupaten,luas,Pepaya,2026,134.741,138.6,-2.784,7.18,,buah,ha
+kabupaten,luas,Pepaya,2027,134.741,138.6,-2.784,7.18,,buah,ha
+kabupaten,luas,Petai,2026,348.424,348.85,-0.122,7.18,,buah,ha
+kabupaten,luas,Petai,2027,348.424,348.85,-0.122,7.18,,buah,ha
+kabupaten,luas,Petsai/Sawi,2026,314.9,314.0,0.287,7.18,,sayur,ha
+kabupaten,luas,Petsai/Sawi,2027,314.9,314.0,0.287,7.18,,sayur,ha
+kabupaten,luas,Pisang,2026,1707.439,1739.35,-1.835,7.18,,buah,ha
+kabupaten,luas,Pisang,2027,1707.439,1739.35,-1.835,7.18,,buah,ha
+kabupaten,luas,Rambutan,2026,294.443,292.25,0.75,7.18,,buah,ha
+kabupaten,luas,Rambutan,2027,294.443,292.25,0.75,7.18,,buah,ha
+kabupaten,luas,Salak,2026,17.4,17.05,2.053,7.18,,buah,ha
+kabupaten,luas,Salak,2027,17.4,17.05,2.053,7.18,,buah,ha
+kabupaten,luas,Sawo,2026,113.397,115.4,-1.736,7.18,,buah,ha
+kabupaten,luas,Sawo,2027,113.397,115.4,-1.736,7.18,,buah,ha
+kabupaten,luas,Semangka,2026,105.65,108.0,-2.176,7.18,,sayur,ha
+kabupaten,luas,Semangka,2027,105.65,108.0,-2.176,7.18,,sayur,ha
+kabupaten,luas,Sirsak,2026,261.2,275.15,-5.07,7.18,,buah,ha
+kabupaten,luas,Sirsak,2027,261.2,275.15,-5.07,7.18,,buah,ha
+kabupaten,luas,Sukun,2026,35.92,36.05,-0.362,7.18,,buah,ha
+kabupaten,luas,Sukun,2027,35.92,36.05,-0.362,7.18,,buah,ha
+kabupaten,luas,Terung,2026,314.858,337.0,-6.57,7.18,,sayur,ha
+kabupaten,luas,Terung,2027,314.858,337.0,-6.57,7.18,,sayur,ha
+kabupaten,luas,Tomat,2026,342.042,368.25,-7.117,7.18,,sayur,ha
+kabupaten,luas,Tomat,2027,342.042,368.25,-7.117,7.18,,sayur,ha
+kecamatan,luas,Bawang Merah,2026,378.25,371.0,1.954,11.07,Badas,sayur,ha
+kecamatan,luas,Bawang Merah,2027,378.25,371.0,1.954,11.07,Badas,sayur,ha
+kecamatan,luas,Durian,2026,7.6,8.0,-5.0,11.07,Badas,buah,ha
+kecamatan,luas,Durian,2027,7.6,8.0,-5.0,11.07,Badas,buah,ha
+kecamatan,luas,Jambu Air,2026,1.833,2.0,-8.333,11.07,Badas,buah,ha
+kecamatan,luas,Jambu Air,2027,1.833,2.0,-8.333,11.07,Badas,buah,ha
+kecamatan,luas,Jambu Biji,2026,8.833,9.0,-1.852,11.07,Badas,buah,ha
+kecamatan,luas,Jambu Biji,2027,8.833,9.0,-1.852,11.07,Badas,buah,ha
+kecamatan,luas,Mangga,2026,89.8,91.4,-1.751,11.07,Badas,buah,ha
+kecamatan,luas,Mangga,2027,89.8,91.4,-1.751,11.07,Badas,buah,ha
+kecamatan,luas,Melinjo,2026,265.333,310.0,-14.409,11.07,Badas,buah,ha
+kecamatan,luas,Melinjo,2027,265.333,310.0,-14.409,11.07,Badas,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,60.333,71.0,-15.023,11.07,Badas,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,60.333,71.0,-15.023,11.07,Badas,buah,ha
+kecamatan,luas,Pepaya,2026,2.75,3.0,-8.333,11.07,Badas,buah,ha
+kecamatan,luas,Pepaya,2027,2.75,3.0,-8.333,11.07,Badas,buah,ha
+kecamatan,luas,Petai,2026,6.6,7.6,-13.158,11.07,Badas,buah,ha
+kecamatan,luas,Petai,2027,6.6,7.6,-13.158,11.07,Badas,buah,ha
+kecamatan,luas,Petsai/Sawi,2026,89.0,89.0,-0.0,11.07,Badas,sayur,ha
+kecamatan,luas,Petsai/Sawi,2027,89.0,89.0,-0.0,11.07,Badas,sayur,ha
+kecamatan,luas,Rambutan,2026,44.0,44.0,-0.0,11.07,Badas,buah,ha
+kecamatan,luas,Rambutan,2027,44.0,44.0,-0.0,11.07,Badas,buah,ha
+kecamatan,luas,Sawo,2026,32.0,35.0,-8.571,11.07,Badas,buah,ha
+kecamatan,luas,Sawo,2027,32.0,35.0,-8.571,11.07,Badas,buah,ha
+kecamatan,luas,Sirsak,2026,8.333,9.0,-7.407,11.07,Badas,buah,ha
+kecamatan,luas,Sirsak,2027,8.333,9.0,-7.407,11.07,Badas,buah,ha
+kecamatan,luas,Sukun,2026,3.8,3.8,-0.0,11.07,Badas,buah,ha
+kecamatan,luas,Sukun,2027,3.8,3.8,-0.0,11.07,Badas,buah,ha
+kecamatan,luas,Alpukat,2026,29.867,34.0,-12.157,11.07,Banyakan,buah,ha
+kecamatan,luas,Alpukat,2027,29.867,34.0,-12.157,11.07,Banyakan,buah,ha
+kecamatan,luas,Bawang Merah,2026,5.667,6.0,-5.556,11.07,Banyakan,sayur,ha
+kecamatan,luas,Bawang Merah,2027,5.667,6.0,-5.556,11.07,Banyakan,sayur,ha
+kecamatan,luas,Durian,2026,26.733,28.0,-4.524,11.07,Banyakan,buah,ha
+kecamatan,luas,Durian,2027,26.733,28.0,-4.524,11.07,Banyakan,buah,ha
+kecamatan,luas,Jambu Biji,2026,0.908,1.25,-27.333,11.07,Banyakan,buah,ha
+kecamatan,luas,Jambu Biji,2027,0.908,1.25,-27.333,11.07,Banyakan,buah,ha
+kecamatan,luas,Jamur Tiram,2026,520.0,520.0,-0.0,11.07,Banyakan,sayur,m2
+kecamatan,luas,Jamur Tiram,2027,520.0,520.0,-0.0,11.07,Banyakan,sayur,m2
+kecamatan,luas,Jeruk Siam/Keprok,2026,36.833,39.0,-5.556,11.07,Banyakan,buah,ha
+kecamatan,luas,Jeruk Siam/Keprok,2027,36.833,39.0,-5.556,11.07,Banyakan,buah,ha
+kecamatan,luas,Mangga,2026,1026.667,1046.0,-1.848,11.07,Banyakan,buah,ha
+kecamatan,luas,Mangga,2027,1026.667,1046.0,-1.848,11.07,Banyakan,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,24.6,24.6,-0.0,11.07,Banyakan,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,24.6,24.6,-0.0,11.07,Banyakan,buah,ha
+kecamatan,luas,Pepaya,2026,3.7,4.0,-7.5,11.07,Banyakan,buah,ha
+kecamatan,luas,Pepaya,2027,3.7,4.0,-7.5,11.07,Banyakan,buah,ha
+kecamatan,luas,Petai,2026,128.0,128.0,0.0,11.07,Banyakan,buah,ha
+kecamatan,luas,Petai,2027,128.0,128.0,0.0,11.07,Banyakan,buah,ha
+kecamatan,luas,Pisang,2026,27.3,27.0,1.113,11.07,Banyakan,buah,ha
+kecamatan,luas,Pisang,2027,27.3,27.0,1.113,11.07,Banyakan,buah,ha
+kecamatan,luas,Sawo,2026,7.061,7.0,0.87,11.07,Banyakan,buah,ha
+kecamatan,luas,Sawo,2027,7.061,7.0,0.87,11.07,Banyakan,buah,ha
+kecamatan,luas,Sirsak,2026,3.083,3.0,2.778,11.07,Banyakan,buah,ha
+kecamatan,luas,Sirsak,2027,3.083,3.0,2.778,11.07,Banyakan,buah,ha
+kecamatan,luas,Terung,2026,1.125,1.0,12.5,11.07,Banyakan,sayur,ha
+kecamatan,luas,Terung,2027,1.125,1.0,12.5,11.07,Banyakan,sayur,ha
+kecamatan,luas,Bawang Merah,2026,18.667,20.0,-6.667,11.07,Gampengrejo,sayur,ha
+kecamatan,luas,Bawang Merah,2027,18.667,20.0,-6.667,11.07,Gampengrejo,sayur,ha
+kecamatan,luas,Belimbing,2026,2.083,2.0,4.167,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Belimbing,2027,2.083,2.0,4.167,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Jambu Air,2026,3.0,3.0,0.0,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Jambu Air,2027,3.0,3.0,0.0,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Jambu Biji,2026,1.133,1.0,13.333,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Jambu Biji,2027,1.133,1.0,13.333,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Jamur Tiram,2026,347.333,361.0,-3.786,11.07,Gampengrejo,sayur,m2
+kecamatan,luas,Jamur Tiram,2027,347.333,361.0,-3.786,11.07,Gampengrejo,sayur,m2
+kecamatan,luas,Mangga,2026,19.167,20.0,-4.167,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Mangga,2027,19.167,20.0,-4.167,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,1.292,1.2,7.639,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,1.292,1.2,7.639,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Rambutan,2026,5.0,5.0,0.0,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Rambutan,2027,5.0,5.0,0.0,11.07,Gampengrejo,buah,ha
+kecamatan,luas,Alpukat,2026,109.2,110.0,-0.727,11.07,Grogol,buah,ha
+kecamatan,luas,Alpukat,2027,109.2,110.0,-0.727,11.07,Grogol,buah,ha
+kecamatan,luas,Belimbing,2026,0.577,0.6,-3.829,11.07,Grogol,buah,ha
+kecamatan,luas,Belimbing,2027,0.577,0.6,-3.829,11.07,Grogol,buah,ha
+kecamatan,luas,Jamur Tiram,2026,390.833,435.0,-10.153,11.07,Grogol,sayur,m2
+kecamatan,luas,Jamur Tiram,2027,390.833,435.0,-10.153,11.07,Grogol,sayur,m2
+kecamatan,luas,Mangga,2026,736.0,736.0,-0.0,11.07,Grogol,buah,ha
+kecamatan,luas,Mangga,2027,736.0,736.0,-0.0,11.07,Grogol,buah,ha
+kecamatan,luas,Pisang,2026,66.833,81.0,-17.49,11.07,Grogol,buah,ha
+kecamatan,luas,Pisang,2027,66.833,81.0,-17.49,11.07,Grogol,buah,ha
+kecamatan,luas,Bayam,2026,6.833,7.0,-2.381,11.07,Gurah,sayur,ha
+kecamatan,luas,Bayam,2027,6.833,7.0,-2.381,11.07,Gurah,sayur,ha
+kecamatan,luas,Belimbing,2026,27.045,27.0,0.166,11.07,Gurah,buah,ha
+kecamatan,luas,Belimbing,2027,27.045,27.0,0.166,11.07,Gurah,buah,ha
+kecamatan,luas,Cabai Rawit,2026,746.333,715.0,4.382,11.07,Gurah,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,746.333,715.0,4.382,11.07,Gurah,sayur,ha
+kecamatan,luas,Jambu Air,2026,14.0,14.0,-0.0,11.07,Gurah,buah,ha
+kecamatan,luas,Jambu Air,2027,14.0,14.0,-0.0,11.07,Gurah,buah,ha
+kecamatan,luas,Jambu Biji,2026,30.567,34.0,-10.098,11.07,Gurah,buah,ha
+kecamatan,luas,Jambu Biji,2027,30.567,34.0,-10.098,11.07,Gurah,buah,ha
+kecamatan,luas,Jeruk Besar,2026,0.625,0.5,25.0,11.07,Gurah,buah,ha
+kecamatan,luas,Jeruk Besar,2027,0.625,0.5,25.0,11.07,Gurah,buah,ha
+kecamatan,luas,Mangga,2026,18.167,18.0,0.928,11.07,Gurah,buah,ha
+kecamatan,luas,Mangga,2027,18.167,18.0,0.928,11.07,Gurah,buah,ha
+kecamatan,luas,Melinjo,2026,17.0,17.0,-0.0,11.07,Gurah,buah,ha
+kecamatan,luas,Melinjo,2027,17.0,17.0,-0.0,11.07,Gurah,buah,ha
+kecamatan,luas,Pepaya,2026,9.833,10.0,-1.667,11.07,Gurah,buah,ha
+kecamatan,luas,Pepaya,2027,9.833,10.0,-1.667,11.07,Gurah,buah,ha
+kecamatan,luas,Rambutan,2026,1.98,2.0,-0.976,11.07,Gurah,buah,ha
+kecamatan,luas,Rambutan,2027,1.98,2.0,-0.976,11.07,Gurah,buah,ha
+kecamatan,luas,Sawo,2026,20.833,23.0,-9.42,11.07,Gurah,buah,ha
+kecamatan,luas,Sawo,2027,20.833,23.0,-9.42,11.07,Gurah,buah,ha
+kecamatan,luas,Semangka,2026,1.0,1.0,0.0,11.07,Gurah,sayur,ha
+kecamatan,luas,Semangka,2027,1.0,1.0,0.0,11.07,Gurah,sayur,ha
+kecamatan,luas,Terung,2026,11.583,13.0,-10.897,11.07,Gurah,sayur,ha
+kecamatan,luas,Terung,2027,11.583,13.0,-10.897,11.07,Gurah,sayur,ha
+kecamatan,luas,Bawang Daun,2026,8.983,9.0,-0.185,11.07,Kandangan,sayur,ha
+kecamatan,luas,Bawang Daun,2027,8.983,9.0,-0.185,11.07,Kandangan,sayur,ha
+kecamatan,luas,Buncis,2026,12.0,12.0,0.0,11.07,Kandangan,sayur,ha
+kecamatan,luas,Buncis,2027,12.0,12.0,0.0,11.07,Kandangan,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,2.833,3.0,-5.556,11.07,Kandangan,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,2.833,3.0,-5.556,11.07,Kandangan,sayur,ha
+kecamatan,luas,Durian,2026,269.8,269.8,-0.0,11.07,Kandangan,buah,ha
+kecamatan,luas,Durian,2027,269.8,269.8,-0.0,11.07,Kandangan,buah,ha
+kecamatan,luas,Ketimun,2026,11.5,12.0,-4.167,11.07,Kandangan,sayur,ha
+kecamatan,luas,Ketimun,2027,11.5,12.0,-4.167,11.07,Kandangan,sayur,ha
+kecamatan,luas,Mangga,2026,32.967,36.0,-8.426,11.07,Kandangan,buah,ha
+kecamatan,luas,Mangga,2027,32.967,36.0,-8.426,11.07,Kandangan,buah,ha
+kecamatan,luas,Manggis,2026,50.933,54.2,-6.027,11.07,Kandangan,buah,ha
+kecamatan,luas,Manggis,2027,50.933,54.2,-6.027,11.07,Kandangan,buah,ha
+kecamatan,luas,Melinjo,2026,7.833,9.0,-12.963,11.07,Kandangan,buah,ha
+kecamatan,luas,Melinjo,2027,7.833,9.0,-12.963,11.07,Kandangan,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,37.367,38.0,-1.667,11.07,Kandangan,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,37.367,38.0,-1.667,11.07,Kandangan,buah,ha
+kecamatan,luas,Petai,2026,6.0,7.0,-14.286,11.07,Kandangan,buah,ha
+kecamatan,luas,Petai,2027,6.0,7.0,-14.286,11.07,Kandangan,buah,ha
+kecamatan,luas,Pisang,2026,448.8,471.0,-4.713,11.07,Kandangan,buah,ha
+kecamatan,luas,Pisang,2027,448.8,471.0,-4.713,11.07,Kandangan,buah,ha
+kecamatan,luas,Rambutan,2026,23.667,25.0,-5.333,11.07,Kandangan,buah,ha
+kecamatan,luas,Rambutan,2027,23.667,25.0,-5.333,11.07,Kandangan,buah,ha
+kecamatan,luas,Sirsak,2026,6.067,6.0,1.111,11.07,Kandangan,buah,ha
+kecamatan,luas,Sirsak,2027,6.067,6.0,1.111,11.07,Kandangan,buah,ha
+kecamatan,luas,Terung,2026,11.333,12.0,-5.556,11.07,Kandangan,sayur,ha
+kecamatan,luas,Terung,2027,11.333,12.0,-5.556,11.07,Kandangan,sayur,ha
+kecamatan,luas,Alpukat,2026,19.0,20.0,-5.0,11.07,Kandat,buah,ha
+kecamatan,luas,Alpukat,2027,19.0,20.0,-5.0,11.07,Kandat,buah,ha
+kecamatan,luas,Bawang Daun,2026,9.033,10.5,-13.968,11.07,Kandat,sayur,ha
+kecamatan,luas,Bawang Daun,2027,9.033,10.5,-13.968,11.07,Kandat,sayur,ha
+kecamatan,luas,Belimbing,2026,1.708,2.0,-14.583,11.07,Kandat,buah,ha
+kecamatan,luas,Belimbing,2027,1.708,2.0,-14.583,11.07,Kandat,buah,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2026,16.25,18.0,-9.722,11.07,Kandat,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2027,16.25,18.0,-9.722,11.07,Kandat,sayur,ha
+kecamatan,luas,Cabai Keriting,2026,23.5,25.0,-6.0,11.07,Kandat,sayur,ha
+kecamatan,luas,Cabai Keriting,2027,23.5,25.0,-6.0,11.07,Kandat,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,123.0,123.0,0.0,11.07,Kandat,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,123.0,123.0,0.0,11.07,Kandat,sayur,ha
+kecamatan,luas,Jeruk Lemon,2026,2.658,2.75,-3.333,11.07,Kandat,buah,ha
+kecamatan,luas,Jeruk Lemon,2027,2.658,2.75,-3.333,11.07,Kandat,buah,ha
+kecamatan,luas,Ketimun,2026,15.867,18.0,-11.852,11.07,Kandat,sayur,ha
+kecamatan,luas,Ketimun,2027,15.867,18.0,-11.852,11.07,Kandat,sayur,ha
+kecamatan,luas,Melon,2026,35.117,37.0,-5.09,11.07,Kandat,sayur,ha
+kecamatan,luas,Melon,2027,35.117,37.0,-5.09,11.07,Kandat,sayur,ha
+kecamatan,luas,Nangka/Cempedak,2026,5.067,5.0,1.333,11.07,Kandat,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,5.067,5.0,1.333,11.07,Kandat,buah,ha
+kecamatan,luas,Nenas,2026,20.1,21.0,-4.286,11.07,Kandat,buah,ha
+kecamatan,luas,Nenas,2027,20.1,21.0,-4.286,11.07,Kandat,buah,ha
+kecamatan,luas,Pepaya,2026,17.633,18.0,-2.037,11.07,Kandat,buah,ha
+kecamatan,luas,Pepaya,2027,17.633,18.0,-2.037,11.07,Kandat,buah,ha
+kecamatan,luas,Pisang,2026,287.5,319.0,-9.875,11.07,Kandat,buah,ha
+kecamatan,luas,Pisang,2027,287.5,319.0,-9.875,11.07,Kandat,buah,ha
+kecamatan,luas,Rambutan,2026,20.9,23.0,-9.13,11.07,Kandat,buah,ha
+kecamatan,luas,Rambutan,2027,20.9,23.0,-9.13,11.07,Kandat,buah,ha
+kecamatan,luas,Semangka,2026,38.95,43.0,-9.419,11.07,Kandat,sayur,ha
+kecamatan,luas,Semangka,2027,38.95,43.0,-9.419,11.07,Kandat,sayur,ha
+kecamatan,luas,Terung,2026,1.467,1.5,-2.222,11.07,Kandat,sayur,ha
+kecamatan,luas,Terung,2027,1.467,1.5,-2.222,11.07,Kandat,sayur,ha
+kecamatan,luas,Belimbing,2026,2.375,3.0,-20.833,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Belimbing,2027,2.375,3.0,-20.833,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Cabai Rawit,2026,727.7,769.0,-5.371,11.07,Kayen Kidul,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,727.7,769.0,-5.371,11.07,Kayen Kidul,sayur,ha
+kecamatan,luas,Jeruk Lemon,2026,0.542,0.5,8.333,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Jeruk Lemon,2027,0.542,0.5,8.333,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Kangkung,2026,2.825,3.0,-5.833,11.07,Kayen Kidul,sayur,ha
+kecamatan,luas,Kangkung,2027,2.825,3.0,-5.833,11.07,Kayen Kidul,sayur,ha
+kecamatan,luas,Lengkeng,2026,11.433,13.0,-12.051,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Lengkeng,2027,11.433,13.0,-12.051,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,2.25,3.0,-25.0,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,2.25,3.0,-25.0,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Petai,2026,0.25,0.25,0.0,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Petai,2027,0.25,0.25,0.0,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Sawo,2026,2.15,2.0,7.5,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Sawo,2027,2.15,2.0,7.5,11.07,Kayen Kidul,buah,ha
+kecamatan,luas,Alpukat,2026,384.77,382.0,0.725,11.07,Kepung,buah,ha
+kecamatan,luas,Alpukat,2027,384.77,382.0,0.725,11.07,Kepung,buah,ha
+kecamatan,luas,Bawang Daun,2026,572.0,572.0,-0.0,11.07,Kepung,sayur,ha
+kecamatan,luas,Bawang Daun,2027,572.0,572.0,-0.0,11.07,Kepung,sayur,ha
+kecamatan,luas,Bawang Merah,2026,158.167,160.0,-1.146,11.07,Kepung,sayur,ha
+kecamatan,luas,Bawang Merah,2027,158.167,160.0,-1.146,11.07,Kepung,sayur,ha
+kecamatan,luas,Buncis,2026,23.833,24.0,-0.694,11.07,Kepung,sayur,ha
+kecamatan,luas,Buncis,2027,23.833,24.0,-0.694,11.07,Kepung,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2026,563.282,561.0,0.407,11.07,Kepung,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2027,563.282,561.0,0.407,11.07,Kepung,sayur,ha
+kecamatan,luas,Cabai Keriting,2026,26.8,26.8,-0.0,11.07,Kepung,sayur,ha
+kecamatan,luas,Cabai Keriting,2027,26.8,26.8,-0.0,11.07,Kepung,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,1717.0,1823.0,-5.815,11.07,Kepung,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,1717.0,1823.0,-5.815,11.07,Kepung,sayur,ha
+kecamatan,luas,Durian,2026,403.2,403.2,0.0,11.07,Kepung,buah,ha
+kecamatan,luas,Durian,2027,403.2,403.2,0.0,11.07,Kepung,buah,ha
+kecamatan,luas,Jambu Biji,2026,0.749,0.75,-0.132,11.07,Kepung,buah,ha
+kecamatan,luas,Jambu Biji,2027,0.749,0.75,-0.132,11.07,Kepung,buah,ha
+kecamatan,luas,Kacang Panjang,2026,51.617,59.7,-13.54,11.07,Kepung,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,51.617,59.7,-13.54,11.07,Kepung,sayur,ha
+kecamatan,luas,Kembang Kol,2026,26.0,26.0,-0.0,11.07,Kepung,sayur,ha
+kecamatan,luas,Kembang Kol,2027,26.0,26.0,-0.0,11.07,Kepung,sayur,ha
+kecamatan,luas,Ketimun,2026,35.75,36.0,-0.694,11.07,Kepung,sayur,ha
+kecamatan,luas,Ketimun,2027,35.75,36.0,-0.694,11.07,Kepung,sayur,ha
+kecamatan,luas,Petai,2026,26.6,28.0,-5.0,11.07,Kepung,buah,ha
+kecamatan,luas,Petai,2027,26.6,28.0,-5.0,11.07,Kepung,buah,ha
+kecamatan,luas,Petsai/Sawi,2026,46.25,52.0,-11.058,11.07,Kepung,sayur,ha
+kecamatan,luas,Petsai/Sawi,2027,46.25,52.0,-11.058,11.07,Kepung,sayur,ha
+kecamatan,luas,Pisang,2026,39.567,40.0,-1.083,11.07,Kepung,buah,ha
+kecamatan,luas,Pisang,2027,39.567,40.0,-1.083,11.07,Kepung,buah,ha
+kecamatan,luas,Rambutan,2026,10.4,10.4,-0.0,11.07,Kepung,buah,ha
+kecamatan,luas,Rambutan,2027,10.4,10.4,-0.0,11.07,Kepung,buah,ha
+kecamatan,luas,Tomat,2026,88.833,96.0,-7.465,11.07,Kepung,sayur,ha
+kecamatan,luas,Tomat,2027,88.833,96.0,-7.465,11.07,Kepung,sayur,ha
+kecamatan,luas,Alpukat,2026,22.0,22.0,0.0,11.07,Kras,buah,ha
+kecamatan,luas,Alpukat,2027,22.0,22.0,0.0,11.07,Kras,buah,ha
+kecamatan,luas,Belimbing,2026,2.0,2.0,-0.0,11.07,Kras,buah,ha
+kecamatan,luas,Belimbing,2027,2.0,2.0,-0.0,11.07,Kras,buah,ha
+kecamatan,luas,Jambu Air,2026,0.917,1.0,-8.333,11.07,Kras,buah,ha
+kecamatan,luas,Jambu Air,2027,0.917,1.0,-8.333,11.07,Kras,buah,ha
+kecamatan,luas,Jambu Biji,2026,2.067,2.75,-24.848,11.07,Kras,buah,ha
+kecamatan,luas,Jambu Biji,2027,2.067,2.75,-24.848,11.07,Kras,buah,ha
+kecamatan,luas,Jeruk Lemon,2026,0.667,1.0,-33.333,11.07,Kras,buah,ha
+kecamatan,luas,Jeruk Lemon,2027,0.667,1.0,-33.333,11.07,Kras,buah,ha
+kecamatan,luas,Ketimun,2026,4.633,5.0,-7.333,11.07,Kras,sayur,ha
+kecamatan,luas,Ketimun,2027,4.633,5.0,-7.333,11.07,Kras,sayur,ha
+kecamatan,luas,Pepaya,2026,6.333,6.0,5.556,11.07,Kras,buah,ha
+kecamatan,luas,Pepaya,2027,6.333,6.0,5.556,11.07,Kras,buah,ha
+kecamatan,luas,Rambutan,2026,15.119,15.0,0.795,11.07,Kras,buah,ha
+kecamatan,luas,Rambutan,2027,15.119,15.0,0.795,11.07,Kras,buah,ha
+kecamatan,luas,Semangka,2026,4.0,4.0,-0.0,11.07,Kras,sayur,ha
+kecamatan,luas,Semangka,2027,4.0,4.0,-0.0,11.07,Kras,sayur,ha
+kecamatan,luas,Terung,2026,10.25,12.0,-14.583,11.07,Kras,sayur,ha
+kecamatan,luas,Terung,2027,10.25,12.0,-14.583,11.07,Kras,sayur,ha
+kecamatan,luas,Tomat,2026,6.833,7.0,-2.381,11.07,Kras,sayur,ha
+kecamatan,luas,Tomat,2027,6.833,7.0,-2.381,11.07,Kras,sayur,ha
+kecamatan,luas,Bawang Merah,2026,12.75,13.5,-5.556,11.07,Kunjang,sayur,ha
+kecamatan,luas,Bawang Merah,2027,12.75,13.5,-5.556,11.07,Kunjang,sayur,ha
+kecamatan,luas,Belimbing,2026,1.867,2.0,-6.667,11.07,Kunjang,buah,ha
+kecamatan,luas,Belimbing,2027,1.867,2.0,-6.667,11.07,Kunjang,buah,ha
+kecamatan,luas,Jambu Air,2026,3.208,4.0,-19.792,11.07,Kunjang,buah,ha
+kecamatan,luas,Jambu Air,2027,3.208,4.0,-19.792,11.07,Kunjang,buah,ha
+kecamatan,luas,Jambu Biji,2026,2.625,3.0,-12.5,11.07,Kunjang,buah,ha
+kecamatan,luas,Jambu Biji,2027,2.625,3.0,-12.5,11.07,Kunjang,buah,ha
+kecamatan,luas,Jeruk Lemon,2026,0.583,0.25,133.333,11.07,Kunjang,buah,ha
+kecamatan,luas,Jeruk Lemon,2027,0.583,0.25,133.333,11.07,Kunjang,buah,ha
+kecamatan,luas,Ketimun,2026,11.167,12.0,-6.944,11.07,Kunjang,sayur,ha
+kecamatan,luas,Ketimun,2027,11.167,12.0,-6.944,11.07,Kunjang,sayur,ha
+kecamatan,luas,Mangga,2026,38.333,41.0,-6.504,11.07,Kunjang,buah,ha
+kecamatan,luas,Mangga,2027,38.333,41.0,-6.504,11.07,Kunjang,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,10.833,11.0,-1.515,11.07,Kunjang,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,10.833,11.0,-1.515,11.07,Kunjang,buah,ha
+kecamatan,luas,Pisang,2026,27.6,29.0,-4.828,11.07,Kunjang,buah,ha
+kecamatan,luas,Pisang,2027,27.6,29.0,-4.828,11.07,Kunjang,buah,ha
+kecamatan,luas,Rambutan,2026,12.333,13.0,-5.128,11.07,Kunjang,buah,ha
+kecamatan,luas,Rambutan,2027,12.333,13.0,-5.128,11.07,Kunjang,buah,ha
+kecamatan,luas,Sawo,2026,1.0,1.0,0.0,11.07,Kunjang,buah,ha
+kecamatan,luas,Sawo,2027,1.0,1.0,0.0,11.07,Kunjang,buah,ha
+kecamatan,luas,Sirsak,2026,3.267,3.0,8.889,11.07,Kunjang,buah,ha
+kecamatan,luas,Sirsak,2027,3.267,3.0,8.889,11.07,Kunjang,buah,ha
+kecamatan,luas,Alpukat,2026,164.827,163.4,0.873,11.07,Mojo,buah,ha
+kecamatan,luas,Alpukat,2027,164.827,163.4,0.873,11.07,Mojo,buah,ha
+kecamatan,luas,Belimbing,2026,12.267,11.0,11.515,11.07,Mojo,buah,ha
+kecamatan,luas,Belimbing,2027,12.267,11.0,11.515,11.07,Mojo,buah,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2026,13.783,14.0,-1.548,11.07,Mojo,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2027,13.783,14.0,-1.548,11.07,Mojo,sayur,ha
+kecamatan,luas,Duku/Langsat/Kokosan,2026,1.0,1.0,0.0,11.07,Mojo,buah,ha
+kecamatan,luas,Duku/Langsat/Kokosan,2027,1.0,1.0,0.0,11.07,Mojo,buah,ha
+kecamatan,luas,Durian,2026,373.667,395.0,-5.401,11.07,Mojo,buah,ha
+kecamatan,luas,Durian,2027,373.667,395.0,-5.401,11.07,Mojo,buah,ha
+kecamatan,luas,Jambu Air,2026,2.183,2.6,-16.026,11.07,Mojo,buah,ha
+kecamatan,luas,Jambu Air,2027,2.183,2.6,-16.026,11.07,Mojo,buah,ha
+kecamatan,luas,Jengkol,2026,2.0,2.0,0.0,11.07,Mojo,buah,ha
+kecamatan,luas,Jengkol,2027,2.0,2.0,0.0,11.07,Mojo,buah,ha
+kecamatan,luas,Jeruk Siam/Keprok,2026,103.362,113.0,-8.529,11.07,Mojo,buah,ha
+kecamatan,luas,Jeruk Siam/Keprok,2027,103.362,113.0,-8.529,11.07,Mojo,buah,ha
+kecamatan,luas,Lengkeng,2026,1.842,2.0,-7.917,11.07,Mojo,buah,ha
+kecamatan,luas,Lengkeng,2027,1.842,2.0,-7.917,11.07,Mojo,buah,ha
+kecamatan,luas,Mangga,2026,30.6,30.6,0.0,11.07,Mojo,buah,ha
+kecamatan,luas,Mangga,2027,30.6,30.6,0.0,11.07,Mojo,buah,ha
+kecamatan,luas,Manggis,2026,2.017,2.0,0.833,11.07,Mojo,buah,ha
+kecamatan,luas,Manggis,2027,2.017,2.0,0.833,11.07,Mojo,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,0.858,1.0,-14.167,11.07,Mojo,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,0.858,1.0,-14.167,11.07,Mojo,buah,ha
+kecamatan,luas,Pepaya,2026,3.867,4.2,-7.937,11.07,Mojo,buah,ha
+kecamatan,luas,Pepaya,2027,3.867,4.2,-7.937,11.07,Mojo,buah,ha
+kecamatan,luas,Petai,2026,87.567,86.0,1.822,11.07,Mojo,buah,ha
+kecamatan,luas,Petai,2027,87.567,86.0,1.822,11.07,Mojo,buah,ha
+kecamatan,luas,Pisang,2026,39.267,42.6,-7.825,11.07,Mojo,buah,ha
+kecamatan,luas,Pisang,2027,39.267,42.6,-7.825,11.07,Mojo,buah,ha
+kecamatan,luas,Rambutan,2026,74.2,74.2,0.0,11.07,Mojo,buah,ha
+kecamatan,luas,Rambutan,2027,74.2,74.2,0.0,11.07,Mojo,buah,ha
+kecamatan,luas,Salak,2026,3.333,3.0,11.111,11.07,Mojo,buah,ha
+kecamatan,luas,Salak,2027,3.333,3.0,11.111,11.07,Mojo,buah,ha
+kecamatan,luas,Sawo,2026,1.458,1.25,16.667,11.07,Mojo,buah,ha
+kecamatan,luas,Sawo,2027,1.458,1.25,16.667,11.07,Mojo,buah,ha
+kecamatan,luas,Sirsak,2026,26.567,25.4,4.593,11.07,Mojo,buah,ha
+kecamatan,luas,Sirsak,2027,26.567,25.4,4.593,11.07,Mojo,buah,ha
+kecamatan,luas,Sukun,2026,8.243,8.2,0.526,11.07,Mojo,buah,ha
+kecamatan,luas,Sukun,2027,8.243,8.2,0.526,11.07,Mojo,buah,ha
+kecamatan,luas,Alpukat,2026,24.741,25.0,-1.035,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Alpukat,2027,24.741,25.0,-1.035,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Bayam,2026,34.667,36.0,-3.704,11.07,Ngadiluwih,sayur,ha
+kecamatan,luas,Bayam,2027,34.667,36.0,-3.704,11.07,Ngadiluwih,sayur,ha
+kecamatan,luas,Buah Naga,2026,7.333,7.0,4.762,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Buah Naga,2027,7.333,7.0,4.762,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Jambu Air,2026,5.667,6.0,-5.556,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Jambu Air,2027,5.667,6.0,-5.556,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Jambu Biji,2026,7.167,7.0,2.381,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Jambu Biji,2027,7.167,7.0,2.381,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Jeruk Lemon,2026,0.583,0.75,-22.222,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Jeruk Lemon,2027,0.583,0.75,-22.222,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Kangkung,2026,10.996,11.0,-0.035,11.07,Ngadiluwih,sayur,ha
+kecamatan,luas,Kangkung,2027,10.996,11.0,-0.035,11.07,Ngadiluwih,sayur,ha
+kecamatan,luas,Mangga,2026,15.733,17.0,-7.451,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Mangga,2027,15.733,17.0,-7.451,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Melinjo,2026,2.0,2.0,-0.0,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Melinjo,2027,2.0,2.0,-0.0,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Melon,2026,2.583,3.0,-13.889,11.07,Ngadiluwih,sayur,ha
+kecamatan,luas,Melon,2027,2.583,3.0,-13.889,11.07,Ngadiluwih,sayur,ha
+kecamatan,luas,Nangka/Cempedak,2026,12.0,13.0,-7.692,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,12.0,13.0,-7.692,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Petsai/Sawi,2026,35.633,37.0,-3.694,11.07,Ngadiluwih,sayur,ha
+kecamatan,luas,Petsai/Sawi,2027,35.633,37.0,-3.694,11.07,Ngadiluwih,sayur,ha
+kecamatan,luas,Pisang,2026,24.9,25.0,-0.4,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Pisang,2027,24.9,25.0,-0.4,11.07,Ngadiluwih,buah,ha
+kecamatan,luas,Alpukat,2026,198.969,200.0,-0.516,11.07,Ngancar,buah,ha
+kecamatan,luas,Alpukat,2027,198.969,200.0,-0.516,11.07,Ngancar,buah,ha
+kecamatan,luas,Buncis,2026,21.0,21.0,-0.0,11.07,Ngancar,sayur,ha
+kecamatan,luas,Buncis,2027,21.0,21.0,-0.0,11.07,Ngancar,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2026,112.0,112.0,-0.0,11.07,Ngancar,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2027,112.0,112.0,-0.0,11.07,Ngancar,sayur,ha
+kecamatan,luas,Cabai Keriting,2026,71.5,74.0,-3.378,11.07,Ngancar,sayur,ha
+kecamatan,luas,Cabai Keriting,2027,71.5,74.0,-3.378,11.07,Ngancar,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,282.833,289.0,-2.134,11.07,Ngancar,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,282.833,289.0,-2.134,11.07,Ngancar,sayur,ha
+kecamatan,luas,Durian,2026,33.267,36.0,-7.593,11.07,Ngancar,buah,ha
+kecamatan,luas,Durian,2027,33.267,36.0,-7.593,11.07,Ngancar,buah,ha
+kecamatan,luas,Kacang Panjang,2026,42.333,48.0,-11.806,11.07,Ngancar,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,42.333,48.0,-11.806,11.07,Ngancar,sayur,ha
+kecamatan,luas,Kembang Kol,2026,40.833,44.0,-7.197,11.07,Ngancar,sayur,ha
+kecamatan,luas,Kembang Kol,2027,40.833,44.0,-7.197,11.07,Ngancar,sayur,ha
+kecamatan,luas,Ketimun,2026,37.0,37.0,-0.0,11.07,Ngancar,sayur,ha
+kecamatan,luas,Ketimun,2027,37.0,37.0,-0.0,11.07,Ngancar,sayur,ha
+kecamatan,luas,Lengkeng,2026,10.0,10.0,0.0,11.07,Ngancar,buah,ha
+kecamatan,luas,Lengkeng,2027,10.0,10.0,0.0,11.07,Ngancar,buah,ha
+kecamatan,luas,Manggis,2026,4.0,4.0,-0.0,11.07,Ngancar,buah,ha
+kecamatan,luas,Manggis,2027,4.0,4.0,-0.0,11.07,Ngancar,buah,ha
+kecamatan,luas,Melinjo,2026,16.044,16.0,0.272,11.07,Ngancar,buah,ha
+kecamatan,luas,Melinjo,2027,16.044,16.0,0.272,11.07,Ngancar,buah,ha
+kecamatan,luas,Nenas,2026,2972.433,3016.0,-1.445,11.07,Ngancar,buah,ha
+kecamatan,luas,Nenas,2027,2972.433,3016.0,-1.445,11.07,Ngancar,buah,ha
+kecamatan,luas,Pepaya,2026,3.167,3.0,5.556,11.07,Ngancar,buah,ha
+kecamatan,luas,Pepaya,2027,3.167,3.0,5.556,11.07,Ngancar,buah,ha
+kecamatan,luas,Rambutan,2026,10.5,10.0,5.0,11.07,Ngancar,buah,ha
+kecamatan,luas,Rambutan,2027,10.5,10.0,5.0,11.07,Ngancar,buah,ha
+kecamatan,luas,Salak,2026,3.8,3.8,-0.0,11.07,Ngancar,buah,ha
+kecamatan,luas,Salak,2027,3.8,3.8,-0.0,11.07,Ngancar,buah,ha
+kecamatan,luas,Sirsak,2026,1.267,1.0,26.667,11.07,Ngancar,buah,ha
+kecamatan,luas,Sirsak,2027,1.267,1.0,26.667,11.07,Ngancar,buah,ha
+kecamatan,luas,Sukun,2026,3.333,4.0,-16.667,11.07,Ngancar,buah,ha
+kecamatan,luas,Sukun,2027,3.333,4.0,-16.667,11.07,Ngancar,buah,ha
+kecamatan,luas,Terung,2026,45.817,47.0,-2.518,11.07,Ngancar,sayur,ha
+kecamatan,luas,Terung,2027,45.817,47.0,-2.518,11.07,Ngancar,sayur,ha
+kecamatan,luas,Tomat,2026,62.833,69.0,-8.937,11.07,Ngancar,sayur,ha
+kecamatan,luas,Tomat,2027,62.833,69.0,-8.937,11.07,Ngancar,sayur,ha
+kecamatan,luas,Belimbing,2026,0.583,0.5,16.667,11.07,Ngasem,buah,ha
+kecamatan,luas,Belimbing,2027,0.583,0.5,16.667,11.07,Ngasem,buah,ha
+kecamatan,luas,Cabai Rawit,2026,232.89,236.0,-1.318,11.07,Ngasem,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,232.89,236.0,-1.318,11.07,Ngasem,sayur,ha
+kecamatan,luas,Durian,2026,1.542,1.75,-11.905,11.07,Ngasem,buah,ha
+kecamatan,luas,Durian,2027,1.542,1.75,-11.905,11.07,Ngasem,buah,ha
+kecamatan,luas,Jambu Biji,2026,1.95,2.0,-2.5,11.07,Ngasem,buah,ha
+kecamatan,luas,Jambu Biji,2027,1.95,2.0,-2.5,11.07,Ngasem,buah,ha
+kecamatan,luas,Lengkeng,2026,2.642,2.6,1.603,11.07,Ngasem,buah,ha
+kecamatan,luas,Lengkeng,2027,2.642,2.6,1.603,11.07,Ngasem,buah,ha
+kecamatan,luas,Melinjo,2026,7.999,8.0,-0.01,11.07,Ngasem,buah,ha
+kecamatan,luas,Melinjo,2027,7.999,8.0,-0.01,11.07,Ngasem,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,4.667,4.0,16.667,11.07,Ngasem,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,4.667,4.0,16.667,11.07,Ngasem,buah,ha
+kecamatan,luas,Petai,2026,1.75,1.75,-0.0,11.07,Ngasem,buah,ha
+kecamatan,luas,Petai,2027,1.75,1.75,-0.0,11.07,Ngasem,buah,ha
+kecamatan,luas,Semangka,2026,6.283,6.0,4.722,11.07,Ngasem,sayur,ha
+kecamatan,luas,Semangka,2027,6.283,6.0,4.722,11.07,Ngasem,sayur,ha
+kecamatan,luas,Belimbing,2026,154.367,157.0,-1.677,11.07,Pagu,buah,ha
+kecamatan,luas,Belimbing,2027,154.367,157.0,-1.677,11.07,Pagu,buah,ha
+kecamatan,luas,Cabai Rawit,2026,2016.417,2125.0,-5.11,11.07,Pagu,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,2016.417,2125.0,-5.11,11.07,Pagu,sayur,ha
+kecamatan,luas,Mangga,2026,30.5,30.0,1.667,11.07,Pagu,buah,ha
+kecamatan,luas,Mangga,2027,30.5,30.0,1.667,11.07,Pagu,buah,ha
+kecamatan,luas,Melinjo,2026,5.333,6.0,-11.111,11.07,Pagu,buah,ha
+kecamatan,luas,Melinjo,2027,5.333,6.0,-11.111,11.07,Pagu,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,9.059,9.0,0.656,11.07,Pagu,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,9.059,9.0,0.656,11.07,Pagu,buah,ha
+kecamatan,luas,Kacang Panjang,2026,14.001,14.0,0.006,11.07,Papar,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,14.001,14.0,0.006,11.07,Papar,sayur,ha
+kecamatan,luas,Mangga,2026,13.3,14.0,-5.0,11.07,Papar,buah,ha
+kecamatan,luas,Mangga,2027,13.3,14.0,-5.0,11.07,Papar,buah,ha
+kecamatan,luas,Pisang,2026,24.0,24.0,0.0,11.07,Papar,buah,ha
+kecamatan,luas,Pisang,2027,24.0,24.0,0.0,11.07,Papar,buah,ha
+kecamatan,luas,Bawang Merah,2026,35.45,36.0,-1.528,11.07,Pare,sayur,ha
+kecamatan,luas,Bawang Merah,2027,35.45,36.0,-1.528,11.07,Pare,sayur,ha
+kecamatan,luas,Belimbing,2026,1.175,1.25,-6.0,11.07,Pare,buah,ha
+kecamatan,luas,Belimbing,2027,1.175,1.25,-6.0,11.07,Pare,buah,ha
+kecamatan,luas,Buah Naga,2026,5.0,5.0,0.0,11.07,Pare,buah,ha
+kecamatan,luas,Buah Naga,2027,5.0,5.0,0.0,11.07,Pare,buah,ha
+kecamatan,luas,Buncis,2026,13.382,14.0,-4.414,11.07,Pare,sayur,ha
+kecamatan,luas,Buncis,2027,13.382,14.0,-4.414,11.07,Pare,sayur,ha
+kecamatan,luas,Cabai Keriting,2026,27.293,27.0,1.086,11.07,Pare,sayur,ha
+kecamatan,luas,Cabai Keriting,2027,27.293,27.0,1.086,11.07,Pare,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,57.0,61.0,-6.557,11.07,Pare,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,57.0,61.0,-6.557,11.07,Pare,sayur,ha
+kecamatan,luas,Jambu Air,2026,0.708,0.25,183.333,11.07,Pare,buah,ha
+kecamatan,luas,Jambu Air,2027,0.708,0.25,183.333,11.07,Pare,buah,ha
+kecamatan,luas,Jambu Biji,2026,3.025,3.0,0.833,11.07,Pare,buah,ha
+kecamatan,luas,Jambu Biji,2027,3.025,3.0,0.833,11.07,Pare,buah,ha
+kecamatan,luas,Kacang Panjang,2026,35.917,39.0,-7.906,11.07,Pare,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,35.917,39.0,-7.906,11.07,Pare,sayur,ha
+kecamatan,luas,Kembang Kol,2026,24.983,28.0,-10.774,11.07,Pare,sayur,ha
+kecamatan,luas,Kembang Kol,2027,24.983,28.0,-10.774,11.07,Pare,sayur,ha
+kecamatan,luas,Ketimun,2026,36.25,40.0,-9.375,11.07,Pare,sayur,ha
+kecamatan,luas,Ketimun,2027,36.25,40.0,-9.375,11.07,Pare,sayur,ha
+kecamatan,luas,Nangka/Cempedak,2026,9.3,11.0,-15.455,11.07,Pare,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,9.3,11.0,-15.455,11.07,Pare,buah,ha
+kecamatan,luas,Pepaya,2026,4.333,4.0,8.333,11.07,Pare,buah,ha
+kecamatan,luas,Pepaya,2027,4.333,4.0,8.333,11.07,Pare,buah,ha
+kecamatan,luas,Petsai/Sawi,2026,54.117,60.0,-9.806,11.07,Pare,sayur,ha
+kecamatan,luas,Petsai/Sawi,2027,54.117,60.0,-9.806,11.07,Pare,sayur,ha
+kecamatan,luas,Rambutan,2026,21.672,23.0,-5.775,11.07,Pare,buah,ha
+kecamatan,luas,Rambutan,2027,21.672,23.0,-5.775,11.07,Pare,buah,ha
+kecamatan,luas,Sirsak,2026,17.991,20.0,-10.045,11.07,Pare,buah,ha
+kecamatan,luas,Sirsak,2027,17.991,20.0,-10.045,11.07,Pare,buah,ha
+kecamatan,luas,Terung,2026,34.333,34.0,0.98,11.07,Pare,sayur,ha
+kecamatan,luas,Terung,2027,34.333,34.0,0.98,11.07,Pare,sayur,ha
+kecamatan,luas,Tomat,2026,15.667,17.0,-7.843,11.07,Pare,sayur,ha
+kecamatan,luas,Tomat,2027,15.667,17.0,-7.843,11.07,Pare,sayur,ha
+kecamatan,luas,Alpukat,2026,148.6,148.6,-0.0,11.07,Plemahan,buah,ha
+kecamatan,luas,Alpukat,2027,148.6,148.6,-0.0,11.07,Plemahan,buah,ha
+kecamatan,luas,Bawang Merah,2026,431.867,435.0,-0.72,11.07,Plemahan,sayur,ha
+kecamatan,luas,Bawang Merah,2027,431.867,435.0,-0.72,11.07,Plemahan,sayur,ha
+kecamatan,luas,Belimbing,2026,5.533,5.4,2.469,11.07,Plemahan,buah,ha
+kecamatan,luas,Belimbing,2027,5.533,5.4,2.469,11.07,Plemahan,buah,ha
+kecamatan,luas,Cabai Rawit,2026,65.5,71.0,-7.746,11.07,Plemahan,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,65.5,71.0,-7.746,11.07,Plemahan,sayur,ha
+kecamatan,luas,Jambu Air,2026,29.0,29.0,0.0,11.07,Plemahan,buah,ha
+kecamatan,luas,Jambu Air,2027,29.0,29.0,0.0,11.07,Plemahan,buah,ha
+kecamatan,luas,Jambu Biji,2026,25.0,30.0,-16.667,11.07,Plemahan,buah,ha
+kecamatan,luas,Jambu Biji,2027,25.0,30.0,-16.667,11.07,Plemahan,buah,ha
+kecamatan,luas,Kacang Panjang,2026,68.495,68.0,0.728,11.07,Plemahan,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,68.495,68.0,0.728,11.07,Plemahan,sayur,ha
+kecamatan,luas,Kembang Kol,2026,34.117,33.0,3.384,11.07,Plemahan,sayur,ha
+kecamatan,luas,Kembang Kol,2027,34.117,33.0,3.384,11.07,Plemahan,sayur,ha
+kecamatan,luas,Ketimun,2026,47.667,51.0,-6.536,11.07,Plemahan,sayur,ha
+kecamatan,luas,Ketimun,2027,47.667,51.0,-6.536,11.07,Plemahan,sayur,ha
+kecamatan,luas,Nangka/Cempedak,2026,22.1,22.0,0.456,11.07,Plemahan,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,22.1,22.0,0.456,11.07,Plemahan,buah,ha
+kecamatan,luas,Petsai/Sawi,2026,33.667,36.0,-6.481,11.07,Plemahan,sayur,ha
+kecamatan,luas,Petsai/Sawi,2027,33.667,36.0,-6.481,11.07,Plemahan,sayur,ha
+kecamatan,luas,Pisang,2026,68.667,75.0,-8.444,11.07,Plemahan,buah,ha
+kecamatan,luas,Pisang,2027,68.667,75.0,-8.444,11.07,Plemahan,buah,ha
+kecamatan,luas,Sawo,2026,13.0,13.0,0.0,11.07,Plemahan,buah,ha
+kecamatan,luas,Sawo,2027,13.0,13.0,0.0,11.07,Plemahan,buah,ha
+kecamatan,luas,Sirsak,2026,2.5,3.0,-16.667,11.07,Plemahan,buah,ha
+kecamatan,luas,Sirsak,2027,2.5,3.0,-16.667,11.07,Plemahan,buah,ha
+kecamatan,luas,Terung,2026,41.783,44.5,-6.105,11.07,Plemahan,sayur,ha
+kecamatan,luas,Terung,2027,41.783,44.5,-6.105,11.07,Plemahan,sayur,ha
+kecamatan,luas,Tomat,2026,34.0,38.0,-10.526,11.07,Plemahan,sayur,ha
+kecamatan,luas,Tomat,2027,34.0,38.0,-10.526,11.07,Plemahan,sayur,ha
+kecamatan,luas,Alpukat,2026,38.333,41.0,-6.504,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Alpukat,2027,38.333,41.0,-6.504,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Belimbing,2026,0.658,0.4,64.583,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Belimbing,2027,0.658,0.4,64.583,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Buncis,2026,37.833,42.0,-9.921,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Buncis,2027,37.833,42.0,-9.921,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,602.367,607.0,-0.763,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,602.367,607.0,-0.763,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Durian,2026,69.867,66.0,5.859,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Durian,2027,69.867,66.0,5.859,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Jambu Biji,2026,4.333,4.0,8.333,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Jambu Biji,2027,4.333,4.0,8.333,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Jeruk Lemon,2026,14.0,14.0,0.0,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Jeruk Lemon,2027,14.0,14.0,0.0,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Kacang Panjang,2026,57.5,60.0,-4.167,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,57.5,60.0,-4.167,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Kembang Kol,2026,43.917,46.0,-4.529,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Kembang Kol,2027,43.917,46.0,-4.529,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Ketimun,2026,54.367,59.0,-7.853,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Ketimun,2027,54.367,59.0,-7.853,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Mangga,2026,12.633,12.0,5.278,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Mangga,2027,12.633,12.0,5.278,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Melinjo,2026,123.333,126.0,-2.116,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Melinjo,2027,123.333,126.0,-2.116,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,14.729,15.0,-1.803,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,14.729,15.0,-1.803,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Nenas,2026,68.167,79.0,-13.713,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Nenas,2027,68.167,79.0,-13.713,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Pepaya,2026,10.133,11.8,-14.124,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Pepaya,2027,10.133,11.8,-14.124,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Petai,2026,29.667,30.0,-1.111,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Petai,2027,29.667,30.0,-1.111,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Petsai/Sawi,2026,34.583,38.0,-8.991,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Petsai/Sawi,2027,34.583,38.0,-8.991,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Rambutan,2026,15.0,15.0,-0.0,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Rambutan,2027,15.0,15.0,-0.0,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Salak,2026,8.657,9.0,-3.814,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Salak,2027,8.657,9.0,-3.814,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Sawo,2026,4.5,5.0,-10.0,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Sawo,2027,4.5,5.0,-10.0,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Sirsak,2026,116.389,120.0,-3.01,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Sirsak,2027,116.389,120.0,-3.01,11.07,Plosoklaten,buah,ha
+kecamatan,luas,Terung,2026,59.0,59.0,-0.0,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Terung,2027,59.0,59.0,-0.0,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Tomat,2026,55.0,59.0,-6.78,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Tomat,2027,55.0,59.0,-6.78,11.07,Plosoklaten,sayur,ha
+kecamatan,luas,Alpukat,2026,23.933,27.2,-12.01,11.07,Puncu,buah,ha
+kecamatan,luas,Alpukat,2027,23.933,27.2,-12.01,11.07,Puncu,buah,ha
+kecamatan,luas,Bawang Daun,2026,11.95,13.0,-8.077,11.07,Puncu,sayur,ha
+kecamatan,luas,Bawang Daun,2027,11.95,13.0,-8.077,11.07,Puncu,sayur,ha
+kecamatan,luas,Belimbing,2026,0.875,1.0,-12.5,11.07,Puncu,buah,ha
+kecamatan,luas,Belimbing,2027,0.875,1.0,-12.5,11.07,Puncu,buah,ha
+kecamatan,luas,Buncis,2026,32.0,32.0,0.0,11.07,Puncu,sayur,ha
+kecamatan,luas,Buncis,2027,32.0,32.0,0.0,11.07,Puncu,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2026,28.5,29.0,-1.724,11.07,Puncu,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2027,28.5,29.0,-1.724,11.07,Puncu,sayur,ha
+kecamatan,luas,Cabai Keriting,2026,43.333,46.0,-5.797,11.07,Puncu,sayur,ha
+kecamatan,luas,Cabai Keriting,2027,43.333,46.0,-5.797,11.07,Puncu,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,2035.0,2035.0,0.0,11.07,Puncu,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,2035.0,2035.0,0.0,11.07,Puncu,sayur,ha
+kecamatan,luas,Durian,2026,126.0,129.0,-2.326,11.07,Puncu,buah,ha
+kecamatan,luas,Durian,2027,126.0,129.0,-2.326,11.07,Puncu,buah,ha
+kecamatan,luas,Jambu Biji,2026,3.175,3.4,-6.618,11.07,Puncu,buah,ha
+kecamatan,luas,Jambu Biji,2027,3.175,3.4,-6.618,11.07,Puncu,buah,ha
+kecamatan,luas,Kacang Panjang,2026,36.283,37.0,-1.937,11.07,Puncu,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,36.283,37.0,-1.937,11.07,Puncu,sayur,ha
+kecamatan,luas,Ketimun,2026,18.5,20.0,-7.5,11.07,Puncu,sayur,ha
+kecamatan,luas,Ketimun,2027,18.5,20.0,-7.5,11.07,Puncu,sayur,ha
+kecamatan,luas,Nenas,2026,19.771,20.0,-1.144,11.07,Puncu,buah,ha
+kecamatan,luas,Nenas,2027,19.771,20.0,-1.144,11.07,Puncu,buah,ha
+kecamatan,luas,Pepaya,2026,39.4,48.0,-17.917,11.07,Puncu,buah,ha
+kecamatan,luas,Pepaya,2027,39.4,48.0,-17.917,11.07,Puncu,buah,ha
+kecamatan,luas,Petai,2026,9.833,10.0,-1.667,11.07,Puncu,buah,ha
+kecamatan,luas,Petai,2027,9.833,10.0,-1.667,11.07,Puncu,buah,ha
+kecamatan,luas,Pisang,2026,312.584,340.0,-8.064,11.07,Puncu,buah,ha
+kecamatan,luas,Pisang,2027,312.584,340.0,-8.064,11.07,Puncu,buah,ha
+kecamatan,luas,Sirsak,2026,14.818,15.0,-1.216,11.07,Puncu,buah,ha
+kecamatan,luas,Sirsak,2027,14.818,15.0,-1.216,11.07,Puncu,buah,ha
+kecamatan,luas,Terung,2026,26.667,26.0,2.564,11.07,Puncu,sayur,ha
+kecamatan,luas,Terung,2027,26.667,26.0,2.564,11.07,Puncu,sayur,ha
+kecamatan,luas,Tomat,2026,29.5,29.0,1.724,11.07,Puncu,sayur,ha
+kecamatan,luas,Tomat,2027,29.5,29.0,1.724,11.07,Puncu,sayur,ha
+kecamatan,luas,Bawang Merah,2026,6.0,6.0,-0.0,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Bawang Merah,2027,6.0,6.0,-0.0,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Belimbing,2026,1.258,1.8,-30.093,11.07,Purwoasri,buah,ha
+kecamatan,luas,Belimbing,2027,1.258,1.8,-30.093,11.07,Purwoasri,buah,ha
+kecamatan,luas,Duku/Langsat/Kokosan,2026,0.741,1.0,-25.945,11.07,Purwoasri,buah,ha
+kecamatan,luas,Duku/Langsat/Kokosan,2027,0.741,1.0,-25.945,11.07,Purwoasri,buah,ha
+kecamatan,luas,Jambu Air,2026,53.833,61.0,-11.749,11.07,Purwoasri,buah,ha
+kecamatan,luas,Jambu Air,2027,53.833,61.0,-11.749,11.07,Purwoasri,buah,ha
+kecamatan,luas,Jambu Biji,2026,1.958,2.0,-2.083,11.07,Purwoasri,buah,ha
+kecamatan,luas,Jambu Biji,2027,1.958,2.0,-2.083,11.07,Purwoasri,buah,ha
+kecamatan,luas,Kangkung,2026,1.0,1.0,0.0,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Kangkung,2027,1.0,1.0,0.0,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Lengkeng,2026,4.0,4.0,0.0,11.07,Purwoasri,buah,ha
+kecamatan,luas,Lengkeng,2027,4.0,4.0,0.0,11.07,Purwoasri,buah,ha
+kecamatan,luas,Melon,2026,8.333,9.0,-7.407,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Melon,2027,8.333,9.0,-7.407,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Nangka/Cempedak,2026,8.945,9.0,-0.607,11.07,Purwoasri,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,8.945,9.0,-0.607,11.07,Purwoasri,buah,ha
+kecamatan,luas,Pisang,2026,87.1,87.0,0.115,11.07,Purwoasri,buah,ha
+kecamatan,luas,Pisang,2027,87.1,87.0,0.115,11.07,Purwoasri,buah,ha
+kecamatan,luas,Rambutan,2026,22.833,24.0,-4.861,11.07,Purwoasri,buah,ha
+kecamatan,luas,Rambutan,2027,22.833,24.0,-4.861,11.07,Purwoasri,buah,ha
+kecamatan,luas,Sawo,2026,2.4,2.4,-0.014,11.07,Purwoasri,buah,ha
+kecamatan,luas,Sawo,2027,2.4,2.4,-0.014,11.07,Purwoasri,buah,ha
+kecamatan,luas,Semangka,2026,44.0,45.0,-2.222,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Semangka,2027,44.0,45.0,-2.222,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Sirsak,2026,3.2,3.2,0.0,11.07,Purwoasri,buah,ha
+kecamatan,luas,Sirsak,2027,3.2,3.2,0.0,11.07,Purwoasri,buah,ha
+kecamatan,luas,Sukun,2026,3.592,4.0,-10.208,11.07,Purwoasri,buah,ha
+kecamatan,luas,Sukun,2027,3.592,4.0,-10.208,11.07,Purwoasri,buah,ha
+kecamatan,luas,Terung,2026,4.0,4.0,-0.0,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Terung,2027,4.0,4.0,-0.0,11.07,Purwoasri,sayur,ha
+kecamatan,luas,Alpukat,2026,72.833,71.0,2.582,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Alpukat,2027,72.833,71.0,2.582,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Belimbing,2026,23.4,23.4,-0.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Belimbing,2027,23.4,23.4,-0.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Buah Naga,2026,3.667,4.0,-8.333,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Buah Naga,2027,3.667,4.0,-8.333,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Cabai Keriting,2026,119.167,125.0,-4.667,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Cabai Keriting,2027,119.167,125.0,-4.667,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,337.0,375.0,-10.133,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,337.0,375.0,-10.133,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Durian,2026,138.5,151.0,-8.278,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Durian,2027,138.5,151.0,-8.278,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Jambu Air,2026,8.0,8.0,-0.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Jambu Air,2027,8.0,8.0,-0.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Jambu Biji,2026,9.767,10.0,-2.333,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Jambu Biji,2027,9.767,10.0,-2.333,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Jeruk Lemon,2026,6.067,6.0,1.111,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Jeruk Lemon,2027,6.067,6.0,1.111,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Jeruk Siam/Keprok,2026,62.5,64.0,-2.344,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Jeruk Siam/Keprok,2027,62.5,64.0,-2.344,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Kacang Panjang,2026,26.75,28.0,-4.464,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,26.75,28.0,-4.464,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Ketimun,2026,17.283,18.0,-3.981,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Ketimun,2027,17.283,18.0,-3.981,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Lengkeng,2026,15.067,16.0,-5.833,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Lengkeng,2027,15.067,16.0,-5.833,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Mangga,2026,41.167,41.0,0.408,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Mangga,2027,41.167,41.0,0.408,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Manggis,2026,2.375,3.0,-20.833,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Manggis,2027,2.375,3.0,-20.833,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Melinjo,2026,7.567,8.0,-5.417,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Melinjo,2027,7.567,8.0,-5.417,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,70.1,69.0,1.594,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,70.1,69.0,1.594,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Nenas,2026,28.818,29.0,-0.627,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Nenas,2027,28.818,29.0,-0.627,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Pepaya,2026,6.0,6.0,-0.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Pepaya,2027,6.0,6.0,-0.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Petai,2026,12.0,14.0,-14.286,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Petai,2027,12.0,14.0,-14.286,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Pisang,2026,57.967,63.0,-7.989,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Pisang,2027,57.967,63.0,-7.989,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Rambutan,2026,7.4,7.4,-0.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Rambutan,2027,7.4,7.4,-0.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Semangka,2026,6.667,7.0,-4.762,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Semangka,2027,6.667,7.0,-4.762,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Sirsak,2026,11.4,12.0,-5.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Sirsak,2027,11.4,12.0,-5.0,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Sukun,2026,9.967,10.8,-7.716,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Sukun,2027,9.967,10.8,-7.716,11.07,Ringinrejo,buah,ha
+kecamatan,luas,Terung,2026,21.833,24.0,-9.028,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Terung,2027,21.833,24.0,-9.028,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Tomat,2026,16.45,17.0,-3.233,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Tomat,2027,16.45,17.0,-3.233,11.07,Ringinrejo,sayur,ha
+kecamatan,luas,Alpukat,2026,45.333,48.0,-5.556,11.07,Semen,buah,ha
+kecamatan,luas,Alpukat,2027,45.333,48.0,-5.556,11.07,Semen,buah,ha
+kecamatan,luas,Bawang Merah,2026,16.633,17.0,-2.157,11.07,Semen,sayur,ha
+kecamatan,luas,Bawang Merah,2027,16.633,17.0,-2.157,11.07,Semen,sayur,ha
+kecamatan,luas,Buah Naga,2026,0.25,0.25,0.0,11.07,Semen,buah,ha
+kecamatan,luas,Buah Naga,2027,0.25,0.25,0.0,11.07,Semen,buah,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2026,6.783,7.0,-3.095,11.07,Semen,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2027,6.783,7.0,-3.095,11.07,Semen,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,98.167,101.0,-2.805,11.07,Semen,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,98.167,101.0,-2.805,11.07,Semen,sayur,ha
+kecamatan,luas,Durian,2026,886.533,870.0,1.9,11.07,Semen,buah,ha
+kecamatan,luas,Durian,2027,886.533,870.0,1.9,11.07,Semen,buah,ha
+kecamatan,luas,Jambu Air,2026,12.394,12.0,3.279,11.07,Semen,buah,ha
+kecamatan,luas,Jambu Air,2027,12.394,12.0,3.279,11.07,Semen,buah,ha
+kecamatan,luas,Jambu Biji,2026,0.708,0.25,183.333,11.07,Semen,buah,ha
+kecamatan,luas,Jambu Biji,2027,0.708,0.25,183.333,11.07,Semen,buah,ha
+kecamatan,luas,Jamur Tiram,2026,828.167,900.0,-7.981,11.07,Semen,sayur,m2
+kecamatan,luas,Jamur Tiram,2027,828.167,900.0,-7.981,11.07,Semen,sayur,m2
+kecamatan,luas,Jeruk Siam/Keprok,2026,61.0,69.0,-11.594,11.07,Semen,buah,ha
+kecamatan,luas,Jeruk Siam/Keprok,2027,61.0,69.0,-11.594,11.07,Semen,buah,ha
+kecamatan,luas,Lengkeng,2026,5.233,6.0,-12.778,11.07,Semen,buah,ha
+kecamatan,luas,Lengkeng,2027,5.233,6.0,-12.778,11.07,Semen,buah,ha
+kecamatan,luas,Nangka/Cempedak,2026,2.0,2.0,0.0,11.07,Semen,buah,ha
+kecamatan,luas,Nangka/Cempedak,2027,2.0,2.0,0.0,11.07,Semen,buah,ha
+kecamatan,luas,Pepaya,2026,6.1,7.0,-12.857,11.07,Semen,buah,ha
+kecamatan,luas,Pepaya,2027,6.1,7.0,-12.857,11.07,Semen,buah,ha
+kecamatan,luas,Petai,2026,26.767,27.0,-0.864,11.07,Semen,buah,ha
+kecamatan,luas,Petai,2027,26.767,27.0,-0.864,11.07,Semen,buah,ha
+kecamatan,luas,Sawo,2026,20.024,20.0,0.118,11.07,Semen,buah,ha
+kecamatan,luas,Sawo,2027,20.024,20.0,0.118,11.07,Semen,buah,ha
+kecamatan,luas,Sirsak,2026,6.0,6.0,-0.0,11.07,Semen,buah,ha
+kecamatan,luas,Sirsak,2027,6.0,6.0,-0.0,11.07,Semen,buah,ha
+kecamatan,luas,Bawang Merah,2026,109.167,117.0,-6.695,11.07,Tarokan,sayur,ha
+kecamatan,luas,Bawang Merah,2027,109.167,117.0,-6.695,11.07,Tarokan,sayur,ha
+kecamatan,luas,Jambu Biji,2026,1.133,1.0,13.333,11.07,Tarokan,buah,ha
+kecamatan,luas,Jambu Biji,2027,1.133,1.0,13.333,11.07,Tarokan,buah,ha
+kecamatan,luas,Jeruk Lemon,2026,0.583,0.5,16.667,11.07,Tarokan,buah,ha
+kecamatan,luas,Jeruk Lemon,2027,0.583,0.5,16.667,11.07,Tarokan,buah,ha
+kecamatan,luas,Jeruk Siam/Keprok,2026,108.167,116.0,-6.753,11.07,Tarokan,buah,ha
+kecamatan,luas,Jeruk Siam/Keprok,2027,108.167,116.0,-6.753,11.07,Tarokan,buah,ha
+kecamatan,luas,Mangga,2026,1005.833,1064.0,-5.467,11.07,Tarokan,buah,ha
+kecamatan,luas,Mangga,2027,1005.833,1064.0,-5.467,11.07,Tarokan,buah,ha
+kecamatan,luas,Pisang,2026,32.0,32.0,-0.0,11.07,Tarokan,buah,ha
+kecamatan,luas,Pisang,2027,32.0,32.0,-0.0,11.07,Tarokan,buah,ha
+kecamatan,luas,Sirsak,2026,40.033,38.0,5.351,11.07,Tarokan,buah,ha
+kecamatan,luas,Sirsak,2027,40.033,38.0,5.351,11.07,Tarokan,buah,ha
+kecamatan,luas,Tomat,2026,0.708,0.75,-5.556,11.07,Tarokan,sayur,ha
+kecamatan,luas,Tomat,2027,0.708,0.75,-5.556,11.07,Tarokan,sayur,ha
+kecamatan,luas,Alpukat,2026,90.467,90.0,0.519,11.07,Wates,buah,ha
+kecamatan,luas,Alpukat,2027,90.467,90.0,0.519,11.07,Wates,buah,ha
+kecamatan,luas,Belimbing,2026,1.208,1.0,20.833,11.07,Wates,buah,ha
+kecamatan,luas,Belimbing,2027,1.208,1.0,20.833,11.07,Wates,buah,ha
+kecamatan,luas,Buncis,2026,7.95,8.0,-0.625,11.07,Wates,sayur,ha
+kecamatan,luas,Buncis,2027,7.95,8.0,-0.625,11.07,Wates,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2026,159.417,164.0,-2.795,11.07,Wates,sayur,ha
+kecamatan,luas,Cabai Besar/TW/Teropong,2027,159.417,164.0,-2.795,11.07,Wates,sayur,ha
+kecamatan,luas,Cabai Rawit,2026,306.167,352.0,-13.021,11.07,Wates,sayur,ha
+kecamatan,luas,Cabai Rawit,2027,306.167,352.0,-13.021,11.07,Wates,sayur,ha
+kecamatan,luas,Jambu Air,2026,0.5,0.25,100.0,11.07,Wates,buah,ha
+kecamatan,luas,Jambu Air,2027,0.5,0.25,100.0,11.07,Wates,buah,ha
+kecamatan,luas,Jamur Tiram,2026,245.167,264.0,-7.134,11.07,Wates,sayur,m2
+kecamatan,luas,Jamur Tiram,2027,245.167,264.0,-7.134,11.07,Wates,sayur,m2
+kecamatan,luas,Kacang Panjang,2026,14.583,15.0,-2.778,11.07,Wates,sayur,ha
+kecamatan,luas,Kacang Panjang,2027,14.583,15.0,-2.778,11.07,Wates,sayur,ha
+kecamatan,luas,Nenas,2026,7.167,8.0,-10.417,11.07,Wates,buah,ha
+kecamatan,luas,Nenas,2027,7.167,8.0,-10.417,11.07,Wates,buah,ha
+kecamatan,luas,Pepaya,2026,8.0,8.0,0.0,11.07,Wates,buah,ha
+kecamatan,luas,Pepaya,2027,8.0,8.0,0.0,11.07,Wates,buah,ha
+kecamatan,luas,Pisang,2026,23.267,26.0,-10.513,11.07,Wates,buah,ha
+kecamatan,luas,Pisang,2027,23.267,26.0,-10.513,11.07,Wates,buah,ha
+kecamatan,luas,Sirsak,2026,3.0,3.0,0.0,11.07,Wates,buah,ha
+kecamatan,luas,Sirsak,2027,3.0,3.0,0.0,11.07,Wates,buah,ha
+kecamatan,luas,Terung,2026,22.357,23.0,-2.796,11.07,Wates,sayur,ha
+kecamatan,luas,Terung,2027,22.357,23.0,-2.796,11.07,Wates,sayur,ha
+kecamatan,luas,Tomat,2026,17.95,18.0,-0.278,11.07,Wates,sayur,ha
+kecamatan,luas,Tomat,2027,17.95,18.0,-0.278,11.07,Wates,sayur,ha

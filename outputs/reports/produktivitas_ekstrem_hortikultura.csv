@@ -1,0 +1,135 @@
+kelompok,kecamatan,komoditas,tahun,produksi,luas,unit_luas,produktivitas,tahun_lengkap,kw_per_ha,ekstrem
+buah,Badas,Belimbing,2023,3450.0,1.0,ha,3450.0,True,34.5,True
+buah,Gampengrejo,Jengkol,2022,4900.0,0.2,ha,24500.0,True,245.0,True
+buah,Gampengrejo,Lengkeng,2022,5900.0,1.0,ha,5900.0,True,59.0,True
+buah,Gampengrejo,Lengkeng,2024,4500.0,0.75,ha,6000.0,True,60.0,True
+buah,Gampengrejo,Nangka/Cempedak,2021,17100.0,1.75,ha,9771.42857142857,True,97.71428571428571,True
+buah,Gampengrejo,Pepaya,2021,4300.0,0.5,ha,8600.0,True,86.0,True
+buah,Gampengrejo,Pepaya,2022,4400.0,0.5,ha,8800.0,True,88.0,True
+buah,Gampengrejo,Pepaya,2024,4000.0,0.5,ha,8000.0,True,80.0,True
+buah,Gampengrejo,Pepaya,2025,4500.0,0.75,ha,6000.0,True,60.0,True
+buah,Gampengrejo,Sukun,2022,2800.0,1.0,ha,2800.0,True,28.0,True
+buah,Grogol,Jengkol,2021,5375.0,0.25,ha,21500.0,True,215.0,True
+buah,Grogol,Lengkeng,2020,600.0,0.75,ha,800.0,True,8.0,True
+buah,Grogol,Lengkeng,2022,600.0,1.0,ha,600.0,True,6.0,True
+buah,Grogol,Lengkeng,2024,675.0,0.5,ha,1350.0,True,13.5,True
+buah,Grogol,Lengkeng,2025,615.0,1.0,ha,615.0,True,6.15,True
+buah,Grogol,Nangka/Cempedak,2024,28285.000000000004,1.25,ha,22628.000000000004,True,226.28000000000003,True
+buah,Gurah,Lengkeng,2020,11715.0,0.25,ha,46860.0,True,468.6,True
+buah,Gurah,Salak,2022,2200.0,0.75,ha,2933.3333333333335,True,29.333333333333336,True
+buah,Gurah,Salak,2023,2000.0,0.75,ha,2666.6666666666665,True,26.666666666666664,True
+buah,Gurah,Salak,2025,2100.0,1.0,ha,2100.0,True,21.0,True
+buah,Kandangan,Belimbing,2022,1600.0,0.5,ha,3200.0,True,32.0,True
+buah,Kandat,Petai,2020,5300.0,0.25,ha,21200.0,True,212.0,True
+buah,Kayen Kidul,Jambu Biji,2023,10940.0,0.25,ha,43760.0,True,437.6,True
+buah,Kayen Kidul,Jambu Biji,2024,10880.0,0.25,ha,43520.0,True,435.2,True
+buah,Kayen Kidul,Mangga,2023,24600.0,0.25,ha,98400.0,True,984.0,True
+buah,Kayen Kidul,Petai,2020,2320.0,0.75,ha,3093.3333333333335,True,30.933333333333334,True
+buah,Kayen Kidul,Petai,2021,2300.0,0.75,ha,3066.6666666666665,True,30.666666666666664,True
+buah,Kayen Kidul,Petai,2022,2300.0,1.0,ha,2300.0,True,23.0,True
+buah,Kayen Kidul,Petai,2023,2575.0,0.75,ha,3433.3333333333335,True,34.333333333333336,True
+buah,Kepung,Jambu Biji,2021,8200.0,0.25,ha,32800.0,True,328.0,True
+buah,Kepung,Jambu Biji,2022,8000.0,0.25,ha,32000.0,True,320.0,True
+buah,Kepung,Jeruk Siam/Keprok,2021,10300.0,1.0,ha,10300.0,True,103.0,True
+buah,Kepung,Jeruk Siam/Keprok,2024,12775.0,0.25,ha,51100.0,True,511.0,True
+buah,Kepung,Sirsak,2021,550.0,1.0,ha,550.0,True,5.5,True
+buah,Kepung,Sirsak,2024,500.0,0.25,ha,2000.0,True,20.0,True
+buah,Kepung,Sirsak,2025,450.0,1.0,ha,450.0,True,4.5,True
+buah,Kepung,Sukun,2024,3000.0,0.5,ha,6000.0,True,60.0,True
+buah,Kepung,Sukun,2025,3300.0,0.5,ha,6600.0,True,66.0,True
+buah,Kras,Jambu Air,2023,12800.0,0.25,ha,51200.0,True,512.0,True
+buah,Kras,Nenas,2020,1880.0,1.0,ha,1880.0,True,18.8,True
+buah,Kras,Nenas,2021,1500.0,0.25,ha,6000.0,True,60.0,True
+buah,Kras,Nenas,2022,1914.9999999999998,0.75,ha,2553.333333333333,True,25.53333333333333,True
+buah,Kras,Nenas,2024,1800.0,1.0,ha,1800.0,True,18.0,True
+buah,Kras,Nenas,2025,2000.0,0.75,ha,2666.6666666666665,True,26.666666666666664,True
+buah,Kras,Sawo,2021,2130.0,0.5,ha,4260.0,True,42.6,True
+buah,Kras,Sawo,2023,2600.0,1.0,ha,2600.0,True,26.0,True
+buah,Kras,Sawo,2024,2530.0,0.75,ha,3373.3333333333335,True,33.733333333333334,True
+buah,Kras,Sawo,2025,2700.0,1.0,ha,2700.0,True,27.0,True
+buah,Kunjang,Durian,2022,7520.0,0.25,ha,30080.0,True,300.8,True
+buah,Kunjang,Lengkeng,2023,8700.0,0.25,ha,34800.0,True,348.0,True
+buah,Ngadiluwih,Belimbing,2020,500.0,0.5,ha,1000.0,True,10.0,True
+buah,Ngadiluwih,Belimbing,2022,500.0,0.25,ha,2000.0,True,20.0,True
+buah,Ngadiluwih,Belimbing,2023,500.0,0.25,ha,2000.0,True,20.0,True
+buah,Ngadiluwih,Belimbing,2024,500.0,1.0,ha,500.0,True,5.0,True
+buah,Ngadiluwih,Belimbing,2025,200.0,1.0,ha,200.0,True,2.0,True
+buah,Ngadiluwih,Sirsak,2020,6000.0,1.0,ha,6000.0,True,60.0,True
+buah,Ngadiluwih,Sirsak,2023,7530.0,1.0,ha,7530.0,True,75.3,True
+buah,Ngadiluwih,Sirsak,2024,7159.999999999999,0.25,ha,28639.999999999996,True,286.4,True
+buah,Ngadiluwih,Sirsak,2025,7500.0,0.25,ha,30000.0,True,300.0,True
+buah,Ngadiluwih,Sukun,2023,3100.0,0.75,ha,4133.333333333333,True,41.33333333333333,True
+buah,Ngancar,Belimbing,2022,800.0,0.5,ha,1600.0,True,16.0,True
+buah,Ngancar,Belimbing,2023,1000.0,0.25,ha,4000.0,True,40.0,True
+buah,Ngancar,Belimbing,2024,1100.0,0.25,ha,4400.0,True,44.0,True
+buah,Ngancar,Belimbing,2025,1000.0,0.25,ha,4000.0,True,40.0,True
+buah,Ngancar,Jambu Air,2023,9600.0,0.25,ha,38400.0,True,384.0,True
+buah,Ngancar,Jambu Biji,2021,2100.0,0.75,ha,2800.0,True,28.0,True
+buah,Ngancar,Jambu Biji,2023,2000.0,1.0,ha,2000.0,True,20.0,True
+buah,Ngancar,Jambu Biji,2024,2520.0,1.0,ha,2520.0,True,25.2,True
+buah,Ngancar,Jambu Biji,2025,2500.0,1.0,ha,2500.0,True,25.0,True
+buah,Ngasem,Jambu Air,2021,8550.0,0.25,ha,34200.0,True,342.0,True
+buah,Ngasem,Jambu Air,2024,9400.0,0.25,ha,37600.0,True,376.0,True
+buah,Ngasem,Pepaya,2024,11000.0,1.0,ha,11000.0,True,110.0,True
+buah,Ngasem,Sirsak,2020,13400.0,0.2,ha,67000.0,True,670.0,True
+buah,Ngasem,Sukun,2025,5250.0,0.75,ha,7000.0,True,70.0,True
+buah,Pagu,Pepaya,2020,3400.0,0.25,ha,13600.0,True,136.0,True
+buah,Pagu,Pepaya,2021,4300.0,0.75,ha,5733.333333333333,True,57.33333333333333,True
+buah,Pagu,Pepaya,2023,3900.0,0.5,ha,7800.0,True,78.0,True
+buah,Pagu,Pepaya,2024,4100.0,0.25,ha,16400.0,True,164.0,True
+buah,Pagu,Pepaya,2025,4600.0,1.0,ha,4600.0,True,46.0,True
+buah,Pagu,Sawo,2023,7300.0,0.25,ha,29200.0,True,292.0,True
+buah,Pagu,Sawo,2025,6900.0,1.0,ha,6900.0,True,69.0,True
+buah,Papar,Pepaya,2021,11900.0,0.75,ha,15866.666666666666,True,158.66666666666666,True
+buah,Papar,Pepaya,2024,12500.0,1.0,ha,12500.0,True,125.0,True
+buah,Papar,Pepaya,2025,12300.0,1.0,ha,12300.0,True,123.0,True
+buah,Papar,Rambutan,2022,12520.0,0.25,ha,50080.0,True,500.8,True
+buah,Papar,Rambutan,2025,11500.0,0.25,ha,46000.0,True,460.0,True
+buah,Papar,Salak,2022,2200.0,1.0,ha,2200.0,True,22.0,True
+buah,Pare,Jambu Air,2025,11600.0,0.25,ha,46400.0,True,464.0,True
+buah,Pare,Lengkeng,2023,4400.0,0.75,ha,5866.666666666667,True,58.66666666666667,True
+buah,Pare,Mangga,2024,12000.0,0.25,ha,48000.0,True,480.0,True
+buah,Pare,Mangga,2025,12000.0,1.0,ha,12000.0,True,120.0,True
+buah,Plemahan,Lengkeng,2021,14900.0,0.25,ha,59600.0,True,596.0,True
+buah,Plemahan,Rambutan,2020,16180.000000000002,0.5,ha,32360.000000000004,True,323.6,True
+buah,Plemahan,Rambutan,2022,15600.0,0.5,ha,31200.0,True,312.0,True
+buah,Puncu,Belimbing,2023,16000.0,0.25,ha,64000.0,True,640.0,True
+buah,Puncu,Sawo,2022,6000.0,1.0,ha,6000.0,True,60.0,True
+buah,Purwoasri,Mangga,2022,13100.0,0.25,ha,52400.0,True,524.0,True
+buah,Purwoasri,Pepaya,2022,18000.0,1.0,ha,18000.0,True,180.0,True
+buah,Purwoasri,Pepaya,2024,18600.0,1.0,ha,18600.0,True,186.0,True
+buah,Purwoasri,Petai,2024,5500.0,1.0,ha,5500.0,True,55.0,True
+buah,Semen,Jambu Biji,2021,1600.0,1.0,ha,1600.0,True,16.0,True
+buah,Semen,Jambu Biji,2022,2000.0,1.0,ha,2000.0,True,20.0,True
+buah,Semen,Jambu Biji,2023,1800.0,0.75,ha,2400.0,True,24.0,True
+buah,Semen,Jambu Biji,2024,1800.0,1.0,ha,1800.0,True,18.0,True
+buah,Semen,Pisang,2020,22520.0,1.0,ha,22520.0,True,225.2,True
+buah,Semen,Pisang,2025,31000.0,0.5,ha,62000.0,True,620.0,True
+buah,Tarokan,Jambu Air,2021,5100.0,1.0,ha,5100.0,True,51.0,True
+buah,Tarokan,Jambu Air,2024,5700.0,1.0,ha,5700.0,True,57.0,True
+buah,Tarokan,Nangka/Cempedak,2021,7000.0,0.25,ha,28000.0,True,280.0,True
+buah,Tarokan,Pepaya,2020,5300.0,0.75,ha,7066.666666666667,True,70.66666666666667,True
+buah,Tarokan,Pepaya,2021,5500.0,1.0,ha,5500.0,True,55.0,True
+buah,Tarokan,Pepaya,2022,5700.0,1.0,ha,5700.0,True,57.0,True
+buah,Tarokan,Sawo,2021,13700.0,0.25,ha,54800.0,True,548.0,True
+buah,Wates,Jambu Air,2020,1800.0,0.5,ha,3600.0,True,36.0,True
+buah,Wates,Jambu Air,2021,2100.0,0.75,ha,2800.0,True,28.0,True
+buah,Wates,Jambu Air,2022,2500.0,0.5,ha,5000.0,True,50.0,True
+buah,Wates,Jambu Air,2023,2000.0,0.5,ha,4000.0,True,40.0,True
+buah,Wates,Jambu Air,2024,2600.0,0.5,ha,5200.0,True,52.0,True
+sayur,Banyakan,Bawang Merah,2020,16925.0,6.0,ha,2820.8333333333335,True,28.208333333333336,True
+sayur,Banyakan,Bawang Merah,2021,17800.0,6.0,ha,2966.6666666666665,True,29.666666666666664,True
+sayur,Banyakan,Bawang Merah,2022,17500.0,6.0,ha,2916.6666666666665,True,29.166666666666664,True
+sayur,Banyakan,Bawang Merah,2023,16100.0,5.0,ha,3220.0,True,32.2,True
+sayur,Banyakan,Bawang Merah,2024,16600.0,5.0,ha,3320.0,True,33.2,True
+sayur,Banyakan,Bawang Merah,2025,19000.0,6.0,ha,3166.6666666666665,True,31.666666666666664,True
+sayur,Gurah,Bawang Merah,2022,5500.0,0.25,ha,22000.0,True,220.0,True
+sayur,Kepung,Bawang Putih,2020,4800.0,1.0,ha,4800.0,True,48.0,True
+sayur,Ngadiluwih,Cabai Keriting,2023,15100.0,0.25,ha,60400.0,True,604.0,True
+sayur,Ngadiluwih,Kangkung,2020,140375.0,9.0,ha,15597.222222222223,True,155.97222222222223,True
+sayur,Ngadiluwih,Kangkung,2021,143800.0,8.0,ha,17975.0,True,179.75,True
+sayur,Ngadiluwih,Kangkung,2022,176800.0,11.0,ha,16072.727272727272,True,160.72727272727272,True
+sayur,Ngadiluwih,Kangkung,2023,171800.0,10.0,ha,17180.0,True,171.8,True
+sayur,Ngadiluwih,Kangkung,2024,184800.0,12.0,ha,15400.0,True,154.0,True
+sayur,Ngadiluwih,Kangkung,2025,175700.0,11.0,ha,15972.727272727272,True,159.72727272727272,True
+sayur,Semen,Kembang Kol,2023,8300.0,0.25,ha,33200.0,True,332.0,True
