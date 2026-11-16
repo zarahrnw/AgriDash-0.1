@@ -663,17 +663,30 @@ async function loadDashboardMap() {
    6. HEATMAP & PCA
 ========================================================== */
 
-async function loadHeatmap() {
-    if (document.getElementById("heatmapCategory")?.value === "biofarmaka") return loadBiofarmakaHeatmap();
+function getHeatmapCategory() {
+    const value = normalizeKey(document.getElementById("heatmapCategory")?.value || "");
+    if (value.includes("bio")) return "biofarmaka";
+    if (value.includes("horti")) return "hortikultura";
+    return "tanaman_pangan";
+}
+
+function loadBiofarmakaHeatmap() { return loadHeatmap("biofarmaka"); }
+
+async function loadHeatmap(forceCategory) {
     const container = document.getElementById("heatmapKecamatan");
     if (!container) return;
+    const category = typeof forceCategory === "string" ? forceCategory : getHeatmapCategory();
     container.innerHTML = "<p>Memuat heatmap produksi...</p>";
     try {
-        const response = await apiFetch("/api/v1/model/heatmap-kecamatan");
+        const response = await apiFetch(`/api/v1/model/heatmap-kecamatan?kategori=${encodeURIComponent(category)}`);
         const allRows = getRecords(response);
         const kecamatanCol = response.kecamatan_column || "kecamatan";
-        const commodities = ["Kacang Tanah", "Kedelai", "Ketela Pohon", "Padi", "Ubi Jalar"].filter(col => allRows.some(row => Object.prototype.hasOwnProperty.call(row, col)));
-        if (!allRows.length || !kecamatanCol || !commodities.length) { container.innerHTML = "<p>Data heatmap produksi belum tersedia.</p>"; return; }
+        // FIX: daftar komoditas diambil dari respons backend, bukan di-hardcode
+        const commodities = Array.isArray(response.komoditas) && response.komoditas.length
+            ? response.komoditas
+            : Object.keys(allRows[0] || {}).filter(key => key !== kecamatanCol);
+        const unit = response.satuan || "ton";
+        if (!allRows.length || !commodities.length) { container.innerHTML = "<p>Data heatmap produksi belum tersedia.</p>"; return; }
 
         const selectedKecamatan = document.getElementById("filterKecamatan")?.value || "";
         const selectedKomoditas = document.getElementById("filterKomoditas")?.value || "";
@@ -682,7 +695,7 @@ async function loadHeatmap() {
         const stats = {};
         visibleColumns.forEach(col => {
             const values = allRows.map(row => toNumber(row[col])).filter(value => value !== null);
-            stats[col] = { min: Math.min(...values), max: Math.max(...values) };
+            stats[col] = values.length ? { min: Math.min(...values), max: Math.max(...values) } : { min: 0, max: 0 };
         });
 
         function interpolateColor(colorA, colorB, ratio) {
@@ -707,13 +720,13 @@ async function loadHeatmap() {
                 ${visibleColumns.map(col => {
                     const value = toNumber(row[col]);
                     const color = getHeatmapColor(value, stats[col].min, stats[col].max);
-                    return `<td class="heatmap-value-cell" style="background:${color}; color:#FFFFFF;" title="${escapeHTML(col)}: ${formatNumber(value)}">${formatNumber(value)}</td>`;
+                    return `<td class="heatmap-value-cell" style="background:${color}; color:#FFFFFF;" title="${escapeHTML(col)}: ${formatNumber(value)} ${unit}">${formatNumber(value)}</td>`;
                 }).join("")}
             </tr>
         `).join("");
 
         container.innerHTML = `
-            <div class="heatmap-explanation"><span>Perbandingan produksi rata-rata antar-kecamatan</span><div class="heatmap-color-legend"><span>Rendah</span><div class="heatmap-gradient"></div><span>Tinggi</span></div></div>
+            <div class="heatmap-explanation"><span>Perbandingan produksi rata-rata antar-kecamatan (${escapeHTML(unit)})</span><div class="heatmap-color-legend"><span>Rendah</span><div class="heatmap-gradient"></div><span>Tinggi</span></div></div>
             <div class="table-responsive"><table class="heatmap-table"><thead><tr><th>Kecamatan</th>${visibleColumns.map(col => `<th>${escapeHTML(col)}</th>`).join("")}</tr></thead><tbody>${tableRows}</tbody></table></div>
             <p class="heatmap-note">Warna dihitung relatif terhadap rentang produksi tiap komoditas. Merah menunjukkan nilai relatif rendah, ungu sedang, dan biru relatif tinggi.</p>
         `;
@@ -728,16 +741,17 @@ async function loadPCA() {
         if (!rows.length) return;
         const groups = {};
         rows.forEach(row => {
-            const cluster = row.cluster ?? "Unknown";
+            // FIX: backend mengirim pc1/pc2 (bukan pca_1/pca_2) dan id cluster di "cluster"
+            const cluster = row.cluster ?? row.cluster_id ?? row.label_cluster ?? "Unknown";
             if (!groups[cluster]) groups[cluster] = [];
-            groups[cluster].push({ x: Number(row.pca_1), y: Number(row.pca_2), kecamatan: row.kecamatan });
+            groups[cluster].push({ x: Number(row.pc1 ?? row.pca_1), y: Number(row.pc2 ?? row.pca_2), kecamatan: row.kecamatan, label: row.label_cluster });
         });
         const datasets = Object.entries(groups).map(([cluster, points], index) => ({
-            label: `Cluster ${cluster}`, data: points, backgroundColor: CHART_COLORS[index % CHART_COLORS.length], pointRadius: 6
+            label: `Cluster ${cluster}`, data: points, backgroundColor: CLUSTER_COLORS[index % CLUSTER_COLORS.length], pointRadius: 6
         }));
         createChart("pcaChart", {
             type: "scatter", data: { datasets },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: chartLegend() }, scales: { x: { title: { display: true, text: "Principal Component 1" } }, y: { title: { display: true, text: "Principal Component 2" } } } }
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: chartLegend(), tooltip: { callbacks: { label: context => { const p = context.raw; return `${p.kecamatan || "—"}${p.label ? ` (${p.label})` : ""}`; } } } }, scales: { x: { title: { display: true, text: "Principal Component 1" } }, y: { title: { display: true, text: "Principal Component 2" } } } }
         });
         setText("pcaClusterSummary", `${rows.length} kecamatan | ${Object.keys(groups).length} cluster`);
     } catch (error) { setText("pcaClusterSummary", `Gagal memuat PCA: ${error.message}`); }
@@ -751,6 +765,10 @@ async function loadPCA() {
 const CLUSTER_COLORS = ["#2878C8", "#9066B5", "#D95363", "#E5A624"];
 const CLUSTER_COMMODITIES = ["Kacang Tanah", "Kedelai", "Ketela Pohon", "Padi", "Ubi Jalar"];
 
+function clusterProduction(row) {
+    return toNumber(getValue(row, ["total_produksi_mean", "prod_mean", "produksi_mean", "total_produksi", "produksi_ton"]));
+}
+
 function getClusterDetails(rows, clusterCol) {
     const groups = {};
     rows.forEach(row => {
@@ -760,10 +778,10 @@ function getClusterDetails(rows, clusterCol) {
     });
     return Object.entries(groups).sort((a, b) => a[0].localeCompare(b[0], "id", { numeric: true })).map(([id, members]) => {
         const labels = [...new Set(members.map(row => row.label_cluster).filter(Boolean))];
-        const productionValues = members.map(row => toNumber(row.total_produksi_mean)).filter(value => value !== null);
+        const productionValues = members.map(row => clusterProduction(row)).filter(value => value !== null);
         const averageProduction = productionValues.length ? productionValues.reduce((a, b) => a + b, 0) / productionValues.length : null;
         const commodityScores = CLUSTER_COMMODITIES.map(name => {
-            const values = members.map(row => toNumber(row[name])).filter(value => value !== null);
+            const values = members.map(row => toNumber(getValue(row, [name]))).filter(value => value !== null);
             return { name, mean: values.length ? values.reduce((a, b) => a + b, 0) / values.length : null };
         });
         const dominant = commodityScores.filter(item => item.mean !== null).sort((a, b) => b.mean - a.mean)[0];
@@ -783,7 +801,7 @@ async function loadClustering() {
         const response = await apiFetch("/api/v1/model/clustering");
         clusteringData = getRecords(response);
         if (!clusteringData.length) { setTableEmpty("tabelCluster", "Data clustering belum tersedia.", 5); return; }
-        const clusterCol = response.cluster_column || "cluster_id";
+        const clusterCol = response.cluster_column || findKey(clusteringData[0], ["cluster_id", "cluster", "klaster"]) || "cluster_id";
         const details = getClusterDetails(clusteringData, clusterCol);
 
         setText("jumlahCluster", details.length);
@@ -794,8 +812,8 @@ async function loadClustering() {
         renderClusterDescription(details);
 
         const tableRows = clusteringData.map(row => {
-            const commodity = CLUSTER_COMMODITIES.map(name => ({ name, value: toNumber(row[name]) })).filter(item => item.value !== null).sort((a, b) => b.value - a.value)[0];
-            return { kecamatan: row.kecamatan, cluster: row[clusterCol], status: row.label_cluster || "—", komoditas: commodity?.name || "—", produksi: toNumber(row.total_produksi_mean) };
+            const commodity = CLUSTER_COMMODITIES.map(name => ({ name, value: toNumber(getValue(row, [name])) })).filter(item => item.value !== null).sort((a, b) => b.value - a.value)[0];
+            return { kecamatan: row.kecamatan, cluster: row[clusterCol], status: row.label_cluster || "—", komoditas: commodity?.name || "—", produksi: clusterProduction(row) };
         });
 
         const table = document.getElementById("tabelCluster");
@@ -842,6 +860,7 @@ function renderGenericTable(id, rows, headers = []) {
     const table = document.getElementById(id);
     if (!table) return;
     if (!rows.length) { setTableEmpty(id, "Data belum tersedia.", headers.length || 4); return; }
+    headers = headers.filter(header => rows.some(row => header in row));
     if (!headers.length) headers = Object.keys(rows[0]);
     const head = table.closest("table")?.querySelector("thead tr");
     if (head) head.innerHTML = headers.map(header => `<th>${escapeHTML(header)}</th>`).join("");
@@ -881,15 +900,57 @@ async function loadForecasting() {
     } catch (error) { setText("forecastingSummary", error.message); }
 }
 
+const FORECAST_FALLBACK_LAST_ACTUAL_YEAR = 2025;
+
 function getForecastColumns() {
     if (!forecastingData.length) return {};
-    const row = forecastingData[0];
+    // FIX: gabungkan key dari banyak baris, bukan hanya baris pertama
+    const probe = {};
+    forecastingData.slice(0, 50).forEach(row => Object.keys(row || {}).forEach(key => { probe[key] = null; }));
     return {
-        commodity: findKey(row, ["tanaman", "komoditas"]), kecamatan: findKey(row, ["kecamatan", "wilayah"]),
-        date: findKey(row, ["Tahun", "tahun", "periode", "tanggal"]), value: findKey(row, ["nilai", "value"]),
-        type: findKey(row, ["tipe", "type"]), target: findKey(row, ["target"]),
-        actual: findKey(row, ["aktual", "actual"]), forecast: findKey(row, ["prediksi", "forecast"])
+        commodity: findKey(probe, ["tanaman", "komoditas", "commodity"]),
+        kecamatan: findKey(probe, ["kecamatan", "wilayah"]),
+        date: findKey(probe, ["tahun", "year", "periode", "tanggal", "ds"]),
+        value: findKey(probe, ["nilai", "value", "y", "yhat", "produksi_ton", "produksi"]),
+        type: findKey(probe, ["tipe", "type", "jenis_data", "status_data", "is_forecast"]),
+        target: findKey(probe, ["target"]),
+        actual: findKey(probe, ["aktual", "actual", "y_actual", "y_true"]),
+        forecast: findKey(probe, ["prediksi", "forecast", "y_pred", "y_hat"])
     };
+}
+
+function classifyForecastType(raw, typeKey) {
+    const text = String(raw ?? "").trim().toLowerCase();
+    if (normalizeKey(typeKey) === "is_forecast") return ["true", "1", "ya", "yes"].includes(text) ? "forecast" : "actual";
+    if (/aktual|actual|histor|observ|real|latih|train/.test(text)) return "actual";
+    if (/prediksi|predict|pred|forecast|proyeksi|future|ramalan/.test(text)) return "forecast";
+    return null;
+}
+
+function extractForecastPoints(rows, cols) {
+    const points = [];
+    const wide = cols.actual && cols.forecast;
+    const long = !wide && cols.value && cols.type;
+    rows.forEach(row => {
+        const match = String(row[cols.date] ?? "").match(/\d{4}/);
+        if (!match) return;
+        const year = Number(match[0]);
+        const kecamatan = cols.kecamatan ? String(row[cols.kecamatan] ?? "").trim() : "";
+        if (wide) {
+            const actual = toNumber(row[cols.actual]);
+            const forecast = toNumber(row[cols.forecast]);
+            if (actual !== null) points.push({ year, kecamatan, kind: "actual", value: actual });
+            if (forecast !== null) points.push({ year, kecamatan, kind: "forecast", value: forecast });
+            return;
+        }
+        const value = toNumber(row[cols.value]);
+        if (value === null) return;
+        let kind;
+        if (long) kind = classifyForecastType(row[cols.type], cols.type);
+        else kind = year > FORECAST_FALLBACK_LAST_ACTUAL_YEAR ? "forecast" : "actual"; // pilihan terakhir
+        if (kind) points.push({ year, kecamatan, kind, value });
+    });
+    return points;
 }
 
 function populateForecastCommodity() {
@@ -907,11 +968,12 @@ function renderForecastChart(commodity = "") {
     const canvas = document.getElementById("forecastingChart") || document.getElementById("predictionChart");
     if (!canvas || !forecastingData.length) return;
     const cols = getForecastColumns();
-    if (!cols.date) { setText("forecastingSummary", "Kolom tahun tidak ditemukan."); return; }
+    if (!cols.date) { setText("forecastingSummary", `Kolom tahun tidak ditemukan. Kolom tersedia: ${Object.keys(forecastingData[0]).join(", ")}`); return; }
     let rows = [...forecastingData];
-    const selectedCommodity = commodity || document.getElementById("forecastKomoditas")?.value || "";
+    const selectedCommodity = (typeof commodity === "string" ? commodity : "") || document.getElementById("forecastKomoditas")?.value || "";
     if (selectedCommodity && cols.commodity) rows = rows.filter(row => String(row[cols.commodity]) === selectedCommodity);
 
+    // Filter target hanya jika kolom target memang ada; jika tidak, seluruh baris dianggap produksi.
     if (cols.target) {
         const available = [...new Set(rows.map(row => String(row[cols.target] || "").trim().toLowerCase()))];
         const targetProduksi = ["produksi_ton", "produksi", "jumlah_produksi"].find(target => available.includes(target));
@@ -925,23 +987,19 @@ function renderForecastChart(commodity = "") {
         rows = rows.filter(row => String(row[cols.target] || "").trim().toLowerCase() === targetProduksi);
     }
 
+    const points = extractForecastPoints(rows, cols);
+    if (!points.length) {
+        destroyChart(canvas.id);
+        setText("forecastingSummary", `Format data forecasting tidak dikenali. Kolom tersedia: ${Object.keys(forecastingData[0]).join(", ")}`);
+        return;
+    }
+
     const grouped = {};
-    rows.forEach(row => {
-        const year = String(row[cols.date] ?? "");
-        if (!year) return;
+    points.forEach(point => {
+        const year = String(point.year);
         if (!grouped[year]) grouped[year] = { actual: 0, forecast: 0, actualCount: 0, forecastCount: 0 };
-        if (cols.value && cols.type) {
-            const value = toNumber(row[cols.value]);
-            const type = String(row[cols.type] || "").toLowerCase();
-            if (value === null) return;
-            if (type.includes("aktual") || type.includes("actual")) { grouped[year].actual += value; grouped[year].actualCount++; }
-            else if (type.includes("prediksi") || type.includes("forecast")) { grouped[year].forecast += value; grouped[year].forecastCount++; }
-        } else {
-            const actual = cols.actual ? toNumber(row[cols.actual]) : null;
-            const pred = cols.forecast ? toNumber(row[cols.forecast]) : null;
-            if (actual !== null) { grouped[year].actual += actual; grouped[year].actualCount++; }
-            if (pred !== null) { grouped[year].forecast += pred; grouped[year].forecastCount++; }
-        }
+        grouped[year][point.kind] += point.value;
+        grouped[year][`${point.kind}Count`]++;
     });
 
     const labels = Object.keys(grouped).sort((a, b) => Number(a) - Number(b));
@@ -953,30 +1011,24 @@ function renderForecastChart(commodity = "") {
         data: {
             labels,
             datasets: [
-                { label: "Aktual", data: actualValues, borderColor: "#265322", backgroundColor: "rgba(38,83,34,0.1)", borderWidth: 3, tension: 0.3, pointRadius: 4 },
-                { label: "Prediksi", data: forecastValues, borderColor: "#d6a900", borderDash: [6, 4], borderWidth: 3, tension: 0.3, pointRadius: 4 }
+                { label: "Aktual", data: actualValues, borderColor: "#265322", backgroundColor: "rgba(38,83,34,0.1)", borderWidth: 3, tension: 0.3, pointRadius: 4, spanGaps: true },
+                { label: "Prediksi", data: forecastValues, borderColor: "#d6a900", borderDash: [6, 4], borderWidth: 3, tension: 0.3, pointRadius: 4, spanGaps: true }
             ]
         },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: chartLegend() }, scales: chartScales() }
     });
     setText("forecastingSummary", `${rows.length} data forecasting | ${labels.length} periode`);
-    renderForecastRisk(rows, cols);
+    renderForecastRisk(points);
 }
 
-function renderForecastRisk(rows, cols) {
+function renderForecastRisk(points) {
     const container = document.getElementById("riskList");
     if (!container) return;
-    const targetRows = rows.filter(row => ["produksi_ton", "produksi", "jumlah_produksi"].includes(String(cols.target ? row[cols.target] : "").trim().toLowerCase()));
-    if (!targetRows.length || !cols.value || !cols.type) { container.innerHTML = `<div class="risk-empty"><strong>Analisis belum tersedia</strong><p>Dibutuhkan data aktual dan prediksi dengan target produksi yang sama.</p></div>`; return; }
 
     const actualByYear = {}, forecastByYear = {};
-    targetRows.forEach(row => {
-        const year = Number(row[cols.date]);
-        const value = toNumber(row[cols.value]);
-        const type = String(row[cols.type] || "").trim().toLowerCase();
-        if (!Number.isInteger(year) || value === null) return;
-        if (type.includes("aktual") || type.includes("actual")) actualByYear[year] = (actualByYear[year] || 0) + value;
-        if (type.includes("prediksi") || type.includes("forecast")) forecastByYear[year] = (forecastByYear[year] || 0) + value;
+    points.forEach(point => {
+        const bucket = point.kind === "actual" ? actualByYear : forecastByYear;
+        bucket[point.year] = (bucket[point.year] || 0) + point.value;
     });
 
     const actualYears = Object.keys(actualByYear).map(Number).sort((a, b) => b - a);
@@ -998,18 +1050,12 @@ function renderForecastRisk(rows, cols) {
     else if (isIncrease) { statusLabel = "Prediksi Produksi Meningkat"; statusClass = "risk-increase"; statusIcon = "fa-arrow-trend-up"; }
 
     const kecamatanData = {};
-    if (cols.kecamatan) {
-        targetRows.forEach(row => {
-            const name = String(row[cols.kecamatan] || "").trim();
-            const year = Number(row[cols.date]);
-            const value = toNumber(row[cols.value]);
-            const type = String(row[cols.type] || "").toLowerCase();
-            if (!name || value === null) return;
-            if (!kecamatanData[name]) kecamatanData[name] = { actual: null, forecast: null };
-            if (year === lastActualYear && (type.includes("aktual") || type.includes("actual"))) kecamatanData[name].actual = (kecamatanData[name].actual || 0) + value;
-            if (year === nextForecastYear && (type.includes("prediksi") || type.includes("forecast"))) kecamatanData[name].forecast = (kecamatanData[name].forecast || 0) + value;
-        });
-    }
+    points.forEach(point => {
+        if (!point.kecamatan) return;
+        if (!kecamatanData[point.kecamatan]) kecamatanData[point.kecamatan] = { actual: null, forecast: null };
+        if (point.kind === "actual" && point.year === lastActualYear) kecamatanData[point.kecamatan].actual = (kecamatanData[point.kecamatan].actual || 0) + point.value;
+        if (point.kind === "forecast" && point.year === nextForecastYear) kecamatanData[point.kecamatan].forecast = (kecamatanData[point.kecamatan].forecast || 0) + point.value;
+    });
     const comparableRegions = Object.entries(kecamatanData).filter(([_, data]) => data.actual !== null && data.forecast !== null);
     const decreasedRegions = comparableRegions.filter(([_, data]) => data.forecast < data.actual);
     const changeText = percentage === null ? "Tidak dapat dihitung" : `${percentage > 0 ? "+" : ""}${formatNumber(percentage)}%`;
@@ -1166,26 +1212,39 @@ async function loadDataCenter() {
     try {
         const response = await apiFetch("/api/v1/data-center");
         const files = getRecords(response);
-        const datasets = files.filter(file => String(file.kategori).toLowerCase().includes("dataset"));
-        const models = datasets.filter(file => /clustering|rekomendasi|timeseries|comparison/i.test(file.nama));
-        const reports = files.filter(file => String(file.kategori).toLowerCase().includes("laporan"));
-        renderDataCenterTable("tabelDataset", datasets);
-        renderDataCenterTable("tabelHasilModel", models);
-        renderReportList(reports);
-    } catch (error) { setTableEmpty("tabelDataset", error.message); }
+        // FIX: backend sekarang mengirim kategori dataset | model | laporan
+        renderDatasetTable("tabelDataset", files.filter(file => file.kategori === "dataset"));
+        renderModelTable("tabelHasilModel", files.filter(file => file.kategori === "model"));
+        renderReportList(files.filter(file => file.kategori === "laporan"));
+    } catch (error) {
+        setTableEmpty("tabelDataset", error.message, 5);
+        setTableEmpty("tabelHasilModel", error.message, 4);
+    }
 }
 
-function renderDataCenterTable(id, files) {
+function downloadButton(file) {
+    return `<button type="button" class="green-button" data-endpoint="${escapeHTML(file.endpoint)}" onclick="downloadDataCenter(this.dataset.endpoint)">Download</button>`;
+}
+
+function renderDatasetTable(id, files) {
     const table = document.getElementById(id);
     if (!table) return;
-    if (!files.length) { setTableEmpty(id, "Belum ada file dataset."); return; }
-    table.innerHTML = files.map(file => `<tr><td>${escapeHTML(file.nama)}</td><td>${escapeHTML(file.kategori)}</td><td>${formatNumber(file.ukuran_kb)} KB</td><td><button type="button" class="green-button" data-endpoint="${escapeHTML(file.endpoint)}" onclick="downloadDataCenter(this.dataset.endpoint)">Download</button></td></tr>`).join("");
+    if (!files.length) { setTableEmpty(id, "Belum ada file dataset.", 5); return; }
+    table.innerHTML = files.map(file => `<tr><td>${escapeHTML(file.nama)}</td><td>${escapeHTML(file.jenis || file.kategori)}</td><td>${file.jumlah_record != null ? formatNumber(file.jumlah_record, 0) : "—"}</td><td>${escapeHTML(file.status || "—")}</td><td>${downloadButton(file)}</td></tr>`).join("");
+}
+
+function renderModelTable(id, files) {
+    const table = document.getElementById(id);
+    if (!table) return;
+    if (!files.length) { setTableEmpty(id, "Belum ada hasil pemodelan.", 4); return; }
+    table.innerHTML = files.map(file => `<tr><td>${escapeHTML(file.nama)}</td><td>${escapeHTML(file.jenis || "—")}</td><td>${formatNumber(file.ukuran_kb, 1)} KB</td><td>${downloadButton(file)}</td></tr>`).join("");
 }
 
 function renderReportList(files) {
     const container = document.getElementById("daftarLaporan");
     if (!container) return;
-    container.innerHTML = files.map(file => `<div class="report-item"><div><strong>${escapeHTML(file.nama)}</strong><p>${formatNumber(file.ukuran_kb)} KB</p></div><button class="green-button" data-endpoint="${escapeHTML(file.endpoint)}" onclick="downloadDataCenter(this.dataset.endpoint)">Download</button></div>`).join("");
+    if (!files.length) { container.innerHTML = "<p>Belum ada laporan CSV.</p>"; return; }
+    container.innerHTML = files.map(file => `<div class="report-item"><div><strong>${escapeHTML(file.nama)}</strong><p>${escapeHTML(file.jenis || "")} · ${formatNumber(file.ukuran_kb, 1)} KB</p></div>${downloadButton(file)}</div>`).join("");
 }
 
 function downloadDataCenter(endpoint) {
@@ -1195,10 +1254,11 @@ function downloadDataCenter(endpoint) {
 }
 
 function downloadReport(category) {
-    const files = { produksi: "output_clustering_pangan.csv", harga: "output_rekomendasi_pangan.csv", cuaca: "output_timeseries_pangan.csv" };
-    const file = files[category];
-    if (!file) { alert("Jenis laporan tidak ditemukan."); return; }
-    downloadDataCenter("/api/v1/data-center/download/dataset_pemodelan/" + file);
+    // FIX: endpoint lama (/data-center/download/dataset_pemodelan/...) tidak ada di backend
+    const files = { produksi: "clustering", harga: "rekomendasi", cuaca: "timeseries" };
+    const key = files[category];
+    if (!key) { alert("Jenis laporan tidak ditemukan."); return; }
+    downloadDataCenter(`/api/v1/download/${key}`);
 }
 
 async function loginAdmin() {
@@ -1271,10 +1331,20 @@ function setupFilterButton() {
     dropdown.dataset.listenerAdded = "true";
 }
 
+function setupHeatmapFilter() {
+    ["heatmapCategory", "filterKomoditas"].forEach(id => {
+        const element = document.getElementById(id);
+        if (!element || element.dataset.heatmapListener) return;
+        element.addEventListener("change", () => loadHeatmap());
+        element.dataset.heatmapListener = "true";
+    });
+}
+
 async function initializeAgriDash() {
     setCurrentDate();
     injectMonitoringMapStyles();
     setupFilterButton();
+    setupHeatmapFilter();
     setupForecastFilter();
     await Promise.allSettled([
         loadDashboard(), loadFilterKecamatan(), loadStatusWilayah(), loadMonitoringData(),
@@ -1306,7 +1376,7 @@ let biofarmakaData = null;
 
 async function loadBiofarmakaOverview() {
     try {
-        biofarmakaData = await apiFetch("/api/v1/hortikultura/overview");
+        biofarmakaData = await apiFetch("/api/v1/biofarmaka/overview");
         renderBiofarmakaOverview(biofarmakaData);
     } catch (error) {
         const target = document.getElementById("bioFileList");
@@ -1329,43 +1399,24 @@ function renderBiofarmakaOverview(data) {
     const totalKomoditas = Number(stats.komoditas?.unique) || 0;
     const completeProduction = Number(stats.produksi?.count) || 0;
 
-    setText("bioTotalData", bioNum(total));
-    setText("bioKecamatan", bioNum(totalKecamatan || data.total_kecamatan_klaster));
-    setText("bioKomoditas", bioNum(totalKomoditas));
-    setText("bioKelengkapan", total ? `${bioNum(completeProduction / total * 100, 1)}%` : "—");
-
-    // =====================================================================
-    // SOLUSI PINTAR: Mencari teks "Memuat..." di seluruh halaman dan menggantinya
-    // =====================================================================
-    
-    // 1. Ganti teks "Memuat komoditas biofarmaka..."
-    const elements = document.querySelectorAll('div, p, span, h3, h4');
-    elements.forEach(el => {
-        if (el.textContent && el.textContent.includes("Memuat komoditas biofarmaka...")) {
-            el.innerHTML = `
-                <ul style="padding-left: 16px; margin: 0; line-height: 1.8;">
-                    <li>Padi</li>
-                    <li>Jagung</li>
-                    <li>Kedelai</li>
-                    <li>Kacang Tanah</li>
-                    <li>Ubi Jalar</li>
-                </ul>
-            `;
-        }
-        if (el.textContent && el.textContent.includes("Memuat kecamatan...")) {
-            el.innerHTML = `
-                <ul style="padding-left: 16px; margin: 0; line-height: 1.8;">
-                    <li>Plemahan</li>
-                    <li>Kepung</li>
-                    <li>Wates</li>
-                    <li>Gurah</li>
-                    <li>Purwoasri</li>
-                </ul>
-            `;
-        }
+    // 1. KPI: semua angka berasal dari backend (tidak ada daftar hardcode lagi)
+    const completenessText = total ? `${bioNum(completeProduction / total * 100, 1)}%` : "—";
+    setText("dashboardBioObservations", bioNum(total));
+    setText("dashboardBioRegions", bioNum(totalKecamatan));
+    setText("dashboardBioTotalCommodities", bioNum(totalKomoditas));
+    setText("dashboardBioCompleteness", completenessText);
+    fillBioKpiCards({
+        "Observasi": bioNum(total),
+        "Kecamatan": bioNum(totalKecamatan),
+        "Komoditas": bioNum(totalKomoditas),
+        "Kelengkapan Produksi": completenessText
     });
-    // =====================================================================
 
+    // 2. Daftar Top 5 dari data
+    renderBioTopList("dashboardBioCommodities", data.top_komoditas || []);
+    renderBioTopList("dashboardBioTopRegions", data.top_kecamatan || []);
+
+    // 3. Render bagian lainnya (Data Center)
     renderBioCompleteness(stats, total);
     renderBioClusters(clusters);
     renderBioBacktest(data.backtest || []);
@@ -1374,6 +1425,28 @@ function renderBiofarmakaOverview(data) {
     ["bioLevelFilter", "bioTargetFilter", "bioYearFilter"].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.onchange = () => renderBioBacktest(data.backtest || []);
+    });
+}
+
+function renderBioTopList(id, items) {
+    const element = document.getElementById(id);
+    if (!element) return;
+    if (!items.length) { element.textContent = "Data belum tersedia."; return; }
+    element.innerHTML = `<ul style="padding-left: 16px; margin: 0; line-height: 1.8; color: #265322;">${items.map(item => `<li>${escapeHTML(String(item).replaceAll("_", " "))}</li>`).join("")}</ul>`;
+}
+
+// Kartu KPI di Data Center dicari lewat teks labelnya, sehingga tidak bergantung pada ID di index.html.
+function fillBioKpiCards(values) {
+    const scope = document.getElementById("data") || document;
+    Object.entries(values).forEach(([label, text]) => {
+        let valueEl = scope.querySelector(`[data-bio-kpi="${label}"]`);
+        if (!valueEl) {
+            const labelEl = [...scope.querySelectorAll("*")].find(el => el.children.length === 0 && el.textContent.trim() === label);
+            const card = labelEl?.parentElement;
+            valueEl = card && [...card.querySelectorAll("*")].find(el => el !== labelEl && el.children.length === 0 && ["—", "–", "-", ""].includes(el.textContent.trim()));
+            if (valueEl) valueEl.dataset.bioKpi = label;
+        }
+        if (valueEl) valueEl.textContent = text;
     });
 }
 
@@ -1445,7 +1518,7 @@ function renderBioBacktest(rows) {
 
     if (!filtered.length) {
         destroyChart("bioForecastEvaluationChart");
-        if (best) best.textContent = "Data evaluasi belum tersedia.";
+        if (best) best.textContent = rows.length ? "Tidak ada data evaluasi untuk kombinasi filter ini." : "Data evaluasi (WAPE) belum ada di file prediksi biofarmaka.";
         return;
     }
 
@@ -1483,12 +1556,13 @@ function renderBioFileList(files) {
         backtest: "Evaluasi Forecasting", preprocessing: "Dokumentasi Preprocessing",
         evaluasi_klaster: "Evaluasi Klaster", klaster: "Klaster Kecamatan",
         konflik_satuan: "Konflik Satuan", inspeksi: "Inspeksi Dataset",
-        statistik: "Statistik Deskriptif", statistik_komoditas: "Statistik per Komoditas"
+        statistik: "Statistik Deskriptif", statistik_komoditas: "Statistik per Komoditas",
+        prediksi: "Prediksi ETS"
     };
     container.innerHTML = Object.entries(files).map(([key, file]) => {
         const name = file.filename || "";
         const available = file.available === true;
-        const url = `${API_BASE_URL}/api/v1/data-center/download/laporan_analisis/${encodeURIComponent(name)}`;
+        const url = `${API_BASE_URL}/api/v1/download/${encodeURIComponent(file.file_key || key)}`; // FIX: endpoint yang benar
         return `
             <div class="bio-file-item">
                 <div class="bio-file-icon"><i class="fa-solid fa-file-csv"></i></div>
