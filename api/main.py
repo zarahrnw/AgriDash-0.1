@@ -68,8 +68,10 @@ if SECRET_KEY == "agri-dash-secret-key-change-this":
 # 2. KONFIGURASI DATASET
 # =========================================================
 
-DATA_DIR = PROJECT_DIR / "output" / "tanaman_pangan"
+# PERUBAHAN: Membaca file langsung dari folder output/
+DATA_DIR = PROJECT_DIR / "output"
 
+# Laporan (jika ada folder outputs/reports)
 REPORT_DIR = PROJECT_DIR / "outputs" / "reports"
 
 PRIMARY_DATA_FILE = (
@@ -561,7 +563,6 @@ class PrediksiRequest(BaseModel):
 
 def read_users():
     if not USERS_FILE.exists():
-        # Jika file belum ada, buat default admin
         default_admin = {
             "id": 1,
             "username": "admin",
@@ -1844,18 +1845,18 @@ def root():
 
 
 # =========================================================
-# BIOFARMAKA - DASHBOARD OVERVIEW
-# Sumber: outputs/reports/
+# HORTIKULTURA - DASHBOARD OVERVIEW
+# Sumber: outputs/reports/ (file hortikultura)
 # =========================================================
 
-@app.get("/api/v1/biofarmaka/overview")
-def get_biofarmaka_overview():
+@app.get("/api/v1/hortikultura/overview")
+def get_hortikultura_overview():
 
     report_files = {
-        "backtest": "backtest_forecast_biofarmaka.csv",
+        "backtest": "backtest_forecast_hortikultura.csv",
         "preprocessing": "dokumentasi_preprocessing.csv",
-        "evaluasi_klaster": "evaluasi_klaster_biofarmaka.csv",
-        "klaster": "klaster_kecamatan_biofarmaka.csv",
+        "evaluasi_klaster": "evaluasi_klaster_hortikultura.csv",
+        "klaster": "klaster_kecamatan_hortikultura.csv",
         "konflik_satuan": "konflik_satuan.csv",
         "inspeksi": "ringkasan_inspeksi_dataset.csv",
         "statistik": "statistik_deskriptif_keseluruhan.csv",
@@ -1870,7 +1871,6 @@ def get_biofarmaka_overview():
 
         df = read_csv_excel(path)
 
-        # Konversi NaN dan Inf agar valid sebagai JSON
         df = df.replace([np.inf, -np.inf], np.nan)
         df = df.astype(object).where(pd.notna(df), None)
 
@@ -1892,7 +1892,6 @@ def get_biofarmaka_overview():
     klaster = baca_laporan(report_files["klaster"])
     backtest = baca_laporan(report_files["backtest"])
 
-    # Kolom pertama statistik adalah nama indikator
     statistik_rows = {}
 
     if statistik and statistik["data"]:
@@ -1904,7 +1903,6 @@ def get_biofarmaka_overview():
             if indikator is not None:
                 statistik_rows[str(indikator)] = row
 
-    # Data klaster
     klaster_rows = klaster["data"] if klaster else []
 
     return {
