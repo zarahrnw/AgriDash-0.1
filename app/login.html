@@ -36,26 +36,13 @@
             <h2>Selamat Datang!</h2>
             <p class="subtitle">Silakan masuk untuk melanjutkan</p>
 
-            <div class="role-switch">
-                <button type="button" class="role-btn active" data-role="superadmin">
-                    <i class="fa-solid fa-user-shield"></i> Super Admin
-                </button>
-                <button type="button" class="role-btn" data-role="admin">
-                    <i class="fa-solid fa-user-gear"></i> Admin
-                </button>
-                </button>
-                <button type="button" class="role-btn" data-role="user">
-                    <i class="fa-solid fa-user"></i> User
-                </button>
-            </div>
-
-            <form id="loginForm" autocomplete="off">
+            <form id="loginForm">
 
                 <div class="form-group">
                     <label for="username">Username</label>
                     <div class="input-wrap">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" id="username" placeholder="Masukkan username" required>
+                        <input type="text" id="username" autocomplete="username" placeholder="Masukkan username" required>
                     </div>
                 </div>
 
@@ -63,26 +50,49 @@
                     <label for="password">Password</label>
                     <div class="input-wrap">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" id="password" placeholder="Masukkan password" required>
+                        <input type="password" id="password" autocomplete="current-password" placeholder="Masukkan password" required>
                         <button type="button" id="togglePassword" class="toggle-pass">
                             <i class="fa-regular fa-eye"></i>
                         </button>
                     </div>
                 </div>
 
-                <div id="errorMsg" class="error-msg"></div>
+                <div id="errorMsg" class="error-msg" role="alert" aria-live="polite"></div>
 
                 <button type="submit" class="login-btn">
                     Masuk <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </form>
 
-            <div class="demo-box">
-                <strong>Akun demo:</strong>
-                <span>Super Admin → <code>superadmin</code> / <code>super123</code></span>
-                <span>Admin → <code>admin</code> / <code>admin123</code></span>
-                <span>User → <code>user</code> / <code>user123</code></span>
-            </div>
+            <section id="passwordChangePanel" class="password-change-panel" hidden>
+                <h3>Ganti Password Awal</h3>
+                <p>Password demo harus diganti sebelum dashboard dapat diakses.</p>
+                <form id="passwordChangeForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Password saat ini</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" id="currentPassword" autocomplete="current-password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Password baru (minimal 12 karakter)</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="newPassword" autocomplete="new-password" minlength="12" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmNewPassword">Ulangi password baru</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="confirmNewPassword" autocomplete="new-password" minlength="12" required>
+                        </div>
+                    </div>
+                    <div id="passwordChangeError" class="error-msg" role="alert" aria-live="polite"></div>
+                    <button type="submit" class="login-btn">Simpan Password</button>
+                </form>
+            </section>
 
         </div>
 
@@ -90,6 +100,7 @@
 
 </div>
 
+<script src="auth.js"></script>
 <script src="login.js"></script>
 </body>
 </html>

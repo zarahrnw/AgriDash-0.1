@@ -14,12 +14,18 @@
     --border: #e3e9e0;
     --danger: #e74c3c;
     --sidebar-width: 252px;
+    --card-shadow: 0 4px 16px rgba(38, 83, 34, 0.10), 0 0 0 1px rgba(96, 152, 44, 0.12);
+    --card-shadow-hover: 0 10px 28px rgba(38, 83, 34, 0.17), 0 0 16px rgba(96, 152, 44, 0.14), 0 0 0 1px rgba(96, 152, 44, 0.24);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html.auth-pending {
+    visibility: hidden;
 }
 
 html {
@@ -90,14 +96,22 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 8px;
     margin-bottom: 45px;
 }
 
 .logo-image {
-    width: 245px;
-    max-height: auto;
+    width: 210px;
+    max-width: 100%;
+    height: auto;
     object-fit: contain;
     display: block;
+    filter: drop-shadow(0 2px 6px rgba(175, 226, 135, 0.35)) drop-shadow(0 0 10px rgba(96, 152, 44, 0.22));
+    transition: filter 275ms ease;
+}
+
+.logo-area:hover .logo-image {
+    filter: drop-shadow(0 3px 8px rgba(190, 235, 155, 0.48)) drop-shadow(0 0 14px rgba(96, 152, 44, 0.34));
 }
 
 /* =========================================================
@@ -302,6 +316,33 @@ button {
     display: flex;
     align-items: center;
     gap: 9px;
+}
+
+.topbar-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logout-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 11px;
+    border: 1px solid #d5e4ce;
+    border-radius: 10px;
+    background: #f7fbf4;
+    color: #355d2d;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    transition: background-color 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.logout-button:hover {
+    border-color: #a7c893;
+    background: #eef6e9;
+    box-shadow: 0 3px 12px rgba(96, 152, 44, 0.16);
 }
 
 .user-avatar {
@@ -534,11 +575,26 @@ button {
 
 .card {
     background: white;
-    border: 1px solid #e3e9e0;
+    border: 1px solid #e2eadd;
     border-radius: 16px;
     padding: 17px;
-    box-shadow:
-        0 5px 18px rgba(38,83,34,.035);
+}
+
+.card,
+[class*="-card"],
+[class*="-kpi"] {
+    border-color: #e2eadd;
+    box-shadow: var(--card-shadow);
+    transition: box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.card:hover,
+[class*="-card"]:hover,
+[class*="-kpi"]:hover {
+    position: relative;
+    z-index: 2;
+    border-color: #d3e2ca;
+    box-shadow: var(--card-shadow-hover);
 }
 
 .card-header {
@@ -1207,6 +1263,152 @@ td {
     background: #edf6ff;
 }
 
+#prediksi .forecast-filter-card {
+    flex-wrap: wrap;
+}
+
+#prediksi .forecast-filter-card select {
+    flex: 1 1 190px;
+    min-width: min(160px, 100%);
+    max-width: 100%;
+    background: #ffffff;
+    font-family: "Poppins", sans-serif;
+}
+
+#prediksi .forecast-main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.8fr) minmax(260px, 0.8fr);
+    gap: 18px;
+    align-items: start;
+}
+
+#prediksi .forecast-chart-card,
+#prediksi .forecast-risk-card {
+    min-width: 0;
+}
+
+#prediksi .forecasting-chart-container {
+    height: 360px;
+}
+
+#prediksi #forecastingSummary {
+    margin-top: 12px;
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+#prediksi #forecastingSummary p {
+    margin: 0;
+}
+
+#prediksi #forecastingSummary .forecast-data-note {
+    margin-top: 7px;
+    padding: 8px 10px;
+    border-left: 3px solid #d39330;
+    border-radius: 5px;
+    background: #fff8e9;
+    color: #725018;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+#prediksi .forecast-risk-points {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#prediksi .forecast-risk-point {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #edf1eb;
+}
+
+#prediksi .forecast-risk-point:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+#prediksi .forecast-risk-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+#prediksi .forecast-risk-heading strong {
+    color: #263c29;
+    font-size: 11px;
+}
+
+#prediksi .forecast-risk-point small {
+    display: block;
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+#prediksi .forecast-risk-badge {
+    flex: 0 0 auto;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+#prediksi .forecast-risk-warning {
+    background: #fff3e0;
+    color: #9a5a08;
+}
+
+#prediksi .forecast-risk-danger {
+    background: #fde8e8;
+    color: #b42318;
+}
+
+#prediksi .forecast-risk-positive {
+    background: #eaf5e5;
+    color: #356b2e;
+}
+
+#prediksi .forecast-risk-neutral {
+    background: #eef2ed;
+    color: #526357;
+}
+
+#prediksi .forecast-risk-muted {
+    background: #f1f3f5;
+    color: #64748b;
+}
+
+#prediksi .forecast-risk-footnote {
+    margin: 14px 0 0;
+    color: #94a3b8;
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+    #prediksi .forecast-main-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    #prediksi .forecasting-chart-container {
+        height: 280px;
+    }
+
+    #prediksi .forecast-filter-card select {
+        flex-basis: 100%;
+        width: 100%;
+    }
+}
+
 /* =========================================================
    REPORT
 ========================================================= */
@@ -1349,10 +1551,14 @@ td {
         padding: 12px 7px;
     }
 
+    .logo-area {
+        padding: 0 3px;
+    }
+
     .logo-image {
-        width: 50px;
-        object-fit: cover;
-        object-position: left;
+        width: 44px;
+        object-fit: contain;
+        object-position: center;
     }
 
     .menu-title,
@@ -1376,6 +1582,18 @@ td {
     }
 
     .user-info {
+        display: none;
+    }
+
+    .topbar-user-actions {
+        gap: 8px;
+    }
+
+    .logout-button {
+        padding: 9px;
+    }
+
+    .logout-button span {
         display: none;
     }
 
@@ -1599,57 +1817,6 @@ td {
     border-radius: 3px;
 }
 
-/* Komoditas Utama */
-#dashboardKomoditas {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    padding-top: 8px;
-}
-
-.agri-commodity-item {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    width: 100%;
-}
-
-.agri-commodity-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    width: 100%;
-}
-
-.agri-commodity-name {
-    font-size: 13px;
-    font-weight: 500;
-    color: #173d2c;
-}
-
-.agri-commodity-pct {
-    font-size: 13px;
-    font-weight: 700;
-    color: #265322;
-    white-space: nowrap;
-}
-
-.agri-commodity-track {
-    width: 100%;
-    height: 9px;
-    border-radius: 999px;
-    background: #eaf0e6;
-    overflow: hidden;
-}
-
-.agri-commodity-fill {
-    height: 100%;
-    border-radius: 999px;
-    transition: width 0.4s ease;
-}
-
 /* Responsive */
 @media (max-width: 1050px) {
     .trend-card {
@@ -1677,241 +1844,74 @@ td {
     }
 }
 
-/* ==========================================
-   MONITORING WILAYAH - LAYOUT FIX
-========================================== */
-
-.agri-monitoring-extra {
-    display: grid;
-    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-    gap: 20px;
-    margin: 20px 0;
-    align-items: stretch;
-}
-
-.agri-monitoring-extra > .card,
-.monitoring-bottom-grid > .card {
-    min-width: 0;
-    overflow: hidden;
-}
-
-/* PETA KEDIRI */
-#kediriMap {
-    display: block;
-    width: 100%;
-    height: 440px !important;
-    min-height: 440px;
-    position: relative;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #edf2f7;
-    z-index: 1;
-}
-
-/* STATUS WILAYAH */
-#statusWilayahList {
-    max-height: 440px;
-    overflow-y: auto;
-    padding-right: 8px;
-}
-
-/* LEGENDA */
-.monitoring-map-card .map-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 16px;
-    font-size: 12px;
-}
-
-.monitoring-map-card .map-legend span {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.monitoring-map-card .map-legend i {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-}
-
-/* HEATMAP DAN REKAP */
-.monitoring-bottom-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
-    gap: 20px;
-    margin-bottom: 20px;
-    align-items: stretch;
-}
-
-/* BATASI TINGGI AGAR TIDAK MENIMPA PCA */
-.monitoring-heatmap-scroll,
-.monitoring-rekap-scroll {
-    width: 100%;
-    max-height: 420px;
-    overflow: auto;
-    position: relative;
-}
-
-/* HEATMAP */
-#heatmapKecamatan {
-    width: max-content;
-    min-width: 100%;
-    max-width: none;
-    height: auto !important;
-    max-height: none !important;
-    overflow: visible;
-}
-
-#heatmapKecamatan .table-responsive {
-    width: max-content;
-    min-width: 100%;
-    max-height: none;
-    overflow: visible;
-}
-
-#heatmapKecamatan table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-}
-
-#heatmapKecamatan th,
-#heatmapKecamatan td {
-    padding: 12px;
-    white-space: nowrap;
-}
-
-#heatmapKecamatan thead th {
-    position: sticky;
-    top: 0;
-    background: #f0f5ed;
-    z-index: 2;
-}
-
-/* REKAP KECAMATAN */
-.monitoring-rekap-scroll table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.monitoring-rekap-scroll th,
-.monitoring-rekap-scroll td {
-    padding: 12px 10px;
-    white-space: nowrap;
-}
-
-.monitoring-rekap-scroll thead th {
-    position: sticky;
-    top: 0;
-    background: #f0f5ed;
-    z-index: 2;
-}
-
-/* PCA */
-.monitoring-pca-card {
-    margin-top: 20px;
-    clear: both;
-}
-
-.monitoring-pca-card .chart-container {
-    position: relative;
-    width: 100%;
-    height: 360px;
-    min-height: 360px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1100px) {
-    .agri-monitoring-extra,
-    .monitoring-bottom-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 650px) {
-    #kediriMap {
-        height: 340px !important;
-        min-height: 340px;
-    }
-
-    .monitoring-heatmap-scroll,
-    .monitoring-rekap-scroll {
-        max-height: 350px;
-    }
-}
-
 /* =====================================================
    KETAHANAN PANGAN - DASHBOARD IMPROVEMENT
 ===================================================== */
 
-/* KPI lebih ringkas */
-.ketahanan-stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-    margin-bottom: 22px;
+.cluster-analysis-heading {
+    margin: 18px 0 12px;
 }
 
-.ketahanan-stats .stat-card {
-    min-height: 125px;
-    height: auto;
-    padding: 22px 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.ketahanan-stats .stat-label {
-    font-size: 13px;
-    color: #64748b;
-    margin-bottom: 8px;
-}
-
-.ketahanan-stats h2 {
-    font-size: 28px;
+.cluster-analysis-heading h2 {
+    margin: 0 0 5px;
+    color: #265322;
+    font-size: 20px;
     font-weight: 700;
-    color: #173d2c;
-    line-height: 1.3;
-    margin: 0;
 }
 
-.ketahanan-stats .comparison {
-    margin-top: 8px;
+.cluster-analysis-heading p {
+    margin: 0;
     color: #64748b;
     font-size: 11px;
+    line-height: 1.6;
 }
 
-/* Grafik distribusi cluster */
-#clusterDistributionChart {
-    max-height: 320px;
-}
-
-#ketahanan .two-column > .card {
-    min-width: 0;
+.cluster-distribution-card {
+    margin-bottom: 18px;
 }
 
 #ketahanan .chart-container {
-    height: 340px;
+    height: 300px;
     position: relative;
 }
 
-/* Karakteristik cluster */
-#clusterDescription {
+.cluster-interpretation-list {
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    max-height: 450px;
+    gap: 10px;
+    max-height: 380px;
     overflow-y: auto;
     padding: 2px 4px 4px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #b8cba9 #f5f8f2;
+}
+
+.cluster-analysis-results-grid {
+    align-items: stretch;
+}
+
+.cluster-interpretation-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.cluster-interpretation-card .cluster-interpretation-list {
+    flex: 1 1 auto;
+}
+
+.cluster-analysis-results-grid .ketahanan-table-scroll,
+.cluster-analysis-results-grid .cluster-interpretation-list,
+.crop-cluster-results-grid .crop-cluster-table-scroll,
+.crop-cluster-results-grid .cluster-interpretation-list {
+    height: 380px;
+    max-height: 380px;
 }
 
 .cluster-info-card {
     border: 1px solid #e6ece3;
-    border-radius: 14px;
-    padding: 16px;
+    border-radius: 12px;
+    padding: 10px 12px;
     background: #fafcf9;
 }
 
@@ -1920,7 +1920,7 @@ td {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 }
 
 .cluster-info-title {
@@ -1948,119 +1948,358 @@ td {
     white-space: nowrap;
 }
 
-.cluster-info-stats {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin-bottom: 14px;
-}
-
-.cluster-info-stats > div {
+.cluster-interpretation-points {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    background: #ffffff;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid #eef1eb;
-}
-
-.cluster-info-stats small {
-    font-size: 10px;
-    color: #64748b;
-}
-
-.cluster-info-stats strong {
-    font-size: 16px;
-    color: #173d2c;
-}
-
-.cluster-info-details {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.cluster-info-details p {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    font-size: 12px;
-    margin: 0;
-}
-
-.cluster-info-details p span {
-    color: #64748b;
-}
-
-.cluster-info-details p strong {
-    color: #173d2c;
-    text-align: right;
-}
-
-/* Daftar kecamatan anggota */
-.cluster-members {
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid #e6ece3;
-}
-
-.cluster-members summary {
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    color: #2878c8;
-}
-
-.cluster-members p {
-    font-size: 12px;
+    gap: 6px;
+    padding-left: 17px;
     color: #475569;
-    line-height: 1.8;
-    margin: 10px 0 0;
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.potential-status-pill {
+    display: inline-flex;
+    padding: 3px 8px;
+    border-radius: 999px;
+    font-size: 9px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.potential-status-high {
+    background: #e4f0dc;
+    color: #265322;
+}
+
+.potential-status-medium {
+    background: #fff4d6;
+    color: #8a6413;
+}
+
+.potential-status-low {
+    background: #fce8e8;
+    color: #a83232;
+}
+
+.potential-status-unknown {
+    background: #eef1f4;
+    color: #64748b;
 }
 
 /* Tabel hasil clustering */
 #ketahanan .table-responsive {
     max-width: 100%;
     overflow-x: auto;
+    overflow-y: auto;
+}
+
+.ketahanan-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+    margin-top: 18px;
+}
+
+.ketahanan-results-grid > .card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin: 0;
+}
+
+.ketahanan-results-grid .ketahanan-table-scroll {
+    flex: 1 1 auto;
+    max-height: 380px;
+}
+
+.ketahanan-results-grid .recommendation-table-scroll {
+    flex: 0 0 auto;
+    max-height: 225px;
+}
+
+#recommendationTableWrapper[hidden] {
+    display: none !important;
+}
+
+#tabelCluster td,
+#tabelRekomendasi td {
+    padding: 8px 9px;
+    vertical-align: middle;
+    font-size: 10px;
+    line-height: 1.4;
+    border-bottom: 1px solid #edf1eb;
+}
+
+#tabelRekomendasi td {
+    white-space: nowrap;
+}
+
+#tabelRekomendasi td:nth-child(3) {
+    white-space: normal;
 }
 
 #tabelCluster td {
-    padding: 14px 12px;
-    vertical-align: middle;
-    font-size: 12px;
-    border-bottom: 1px solid #edf1eb;
+    white-space: nowrap;
 }
 
 .cluster-id-pill {
     display: inline-block;
-    padding: 5px 10px;
+    padding: 3px 8px;
     border-radius: 999px;
     color: #265322;
     background: #e9f1e5;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
     white-space: nowrap;
 }
 
+.potential-analysis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.potential-analysis-header > div {
+    min-width: 0;
+}
+
+.potential-analysis-header h3 {
+    margin: 0;
+    color: #265322;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.potential-analysis-header small {
+    display: block;
+    margin-top: 3px;
+    color: #64748b;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+.potential-analysis-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.potential-analysis-body {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: 16px;
+    align-items: stretch;
+}
+
+.potential-analysis-visual,
+.potential-analysis-ranking-panel {
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #edf2e9;
+    border-radius: 12px;
+    background: #fcfdfb;
+}
+
+.potential-analysis-visual h4,
+.potential-analysis-ranking-panel h4 {
+    margin: 0;
+    color: #334b35;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.potential-analysis-chart-caption {
+    min-height: 27px;
+    margin: 4px 0 8px;
+    color: #758276;
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.potential-analysis-chart-wrap {
+    position: relative;
+    height: 210px;
+    min-width: 0;
+}
+
+.potential-analysis-chart-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.potential-analysis-chart-wrap p {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: 12px;
+    color: #758276;
+    font-size: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.potential-analysis-chart-wrap p[hidden] {
+    display: none !important;
+}
+
+.recommendation-region-filter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex: 0 0 auto;
+    color: #64748b;
+    font-size: 9px;
+}
+
+.recommendation-region-filter select {
+    max-width: 145px;
+    min-width: 0;
+    padding: 6px 8px;
+    border: 1px solid #dfe8da;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #265322;
+    font-family: "Poppins", sans-serif;
+    font-size: 9px;
+}
+
+.potential-analysis-caption {
+    margin: 5px 0 10px;
+    color: #64748b;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.recommendation-ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-height: 235px;
+    margin: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #b8cba9 #f5f8f2;
+}
+
+.potential-analysis-card #recommendationTableWrapper {
+    margin-top: 16px;
+}
+
+.recommendation-ranking-item {
+    min-width: 0;
+}
+
+.recommendation-ranking-heading {
+    display: grid;
+    grid-template-columns: 23px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 4px;
+}
+
+.recommendation-ranking-number {
+    display: grid;
+    place-items: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: #eef5e9;
+    color: #265322;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.recommendation-ranking-name {
+    min-width: 0;
+    overflow: hidden;
+    color: #334155;
+    font-size: 10px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.recommendation-ranking-value {
+    color: #265322;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.recommendation-ranking-track {
+    height: 6px;
+    margin-left: 28px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e9f1e5;
+}
+
+.recommendation-ranking-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #8ab45b, #265322);
+}
+
+.recommendation-ranking-score {
+    display: block;
+    margin: 3px 0 0 28px;
+    color: #94a3b8;
+    font-size: 8px;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
-    .ketahanan-stats {
+    .potential-analysis-body {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ketahanan-results-grid {
         grid-template-columns: 1fr;
     }
 
-    .ketahanan-stats .stat-card {
-        min-height: 110px;
+    .ketahanan-results-grid .ketahanan-table-scroll,
+    .ketahanan-results-grid .recommendation-table-scroll {
+        max-height: 300px;
+        flex: 0 1 auto;
     }
 
-    #ketahanan .two-column {
-        grid-template-columns: 1fr;
+    .cluster-analysis-results-grid .ketahanan-table-scroll,
+    .cluster-analysis-results-grid .cluster-interpretation-list,
+    .crop-cluster-results-grid .crop-cluster-table-scroll,
+    .crop-cluster-results-grid .cluster-interpretation-list {
+        height: 300px;
+        max-height: 300px;
     }
 }
 
 @media (max-width: 550px) {
-    .cluster-info-stats {
-        grid-template-columns: 1fr;
+    .potential-analysis-header {
+        flex-direction: column;
+    }
+
+    .potential-analysis-filters {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .recommendation-region-filter {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .recommendation-region-filter select {
+        flex: 0 1 180px;
+        max-width: 180px;
+    }
+
+    .potential-analysis-chart-wrap {
+        height: 190px;
     }
 }
 
@@ -2650,7 +2889,7 @@ td {
 /* Batasi tinggi kedua tabel */
 #ketahanan .ketahanan-table-scroll {
     width: 100%;
-    max-height: 300px;
+    max-height: 380px;
     overflow-y: auto;
     overflow-x: auto;
     border: 1px solid #edf1e9;
@@ -2710,7 +2949,7 @@ td {
 /* Mobile */
 @media (max-width: 768px) {
     #ketahanan .ketahanan-table-scroll {
-        max-height: 260px;
+        max-height: 300px;
     }
 
     #ketahanan .ketahanan-table-scroll th,
@@ -2721,565 +2960,117 @@ td {
 }
 
 /* ==========================================
-   BIOFARMAKA - DATA CENTER
+   KETAHANAN PANGAN - BIOFARMAKA & HORTIKULTURA
 ========================================== */
 
-.bio-section {
-    margin-top: 28px;
+.crop-cluster-section {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    width: 100%;
     min-width: 0;
+    margin-top: 28px;
 }
 
-.bio-section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-}
-
-.bio-section-heading h2 {
-    font-size: 21px;
-    color: #265322;
+.crop-cluster-heading h2 {
     margin: 0 0 6px;
+    color: #265322;
+    font-size: 20px;
+    font-weight: 700;
 }
 
-.bio-section-heading p {
+.crop-cluster-heading p {
+    margin: 0;
     color: #64748b;
     font-size: 12px;
-    margin: 0;
+    line-height: 1.7;
 }
 
-.bio-period {
-    padding: 9px 14px;
-    background: #eef5e9;
-    border-radius: 30px;
-    color: #265322;
-    font-size: 11px;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-/* KPI */
-.bio-kpi-grid {
+.crop-cluster-overview-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 14px;
-}
-
-.bio-kpi {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    background: #fff;
-    border: 1px solid #e3eae0;
-    border-radius: 15px;
-    padding: 19px;
-    min-width: 0;
-}
-
-.bio-kpi span {
-    color: #64748b;
-    font-size: 11px;
-}
-
-.bio-kpi strong {
-    color: #265322;
-    font-size: 25px;
-    line-height: 1.2;
-}
-
-.bio-kpi small {
-    color: #94a3b8;
-    font-size: 10px;
-}
-
-/* CONTENT */
-.bio-two-column {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
+    align-items: stretch;
 }
 
-.bio-card {
-    padding: 22px;
+.crop-cluster-card {
     min-width: 0;
 }
 
-.bio-card-head {
-    margin-bottom: 18px;
-}
-
-.bio-card-head h3 {
-    font-size: 15px;
-    color: #173d2c;
-    margin: 0 0 5px;
-}
-
-.bio-card-head small {
-    color: #94a3b8;
-    font-size: 11px;
-}
-
-.bio-chart-wrap {
+.crop-cluster-chart-wrap {
     position: relative;
-    width: 100%;
-    height: 220px;
+    height: 280px;
+    max-height: 280px;
+    margin-top: 8px;
 }
 
-.bio-chart-wrap canvas {
+.crop-cluster-chart-wrap canvas {
     width: 100% !important;
     height: 100% !important;
 }
 
-/* DATA COMPLETENESS */
-.bio-progress-item {
-    margin-bottom: 19px;
+.crop-cluster-results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 0;
 }
 
-.bio-progress-label {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 8px;
-    font-size: 12px;
-    color: #475569;
+.crop-cluster-table-scroll {
+    flex: 1 1 auto;
+    max-height: 380px;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
-.bio-progress-label strong {
-    color: #265322;
-}
-
-.bio-progress-track {
-    width: 100%;
-    height: 10px;
-    background: #edf1e9;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.bio-progress-fill {
-    height: 100%;
-    background: #60982c;
-    border-radius: 20px;
-}
-
-.bio-progress-item small {
-    display: block;
-    font-size: 10px;
-    color: #94a3b8;
-    margin-top: 6px;
-}
-
-/* CLUSTER */
-.bio-cluster-summary-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 9px 0;
-    border-bottom: 1px solid #edf1e9;
-    color: #64748b;
-    font-size: 11px;
-}
-
-.bio-cluster-summary-row strong {
-    color: #265322;
-}
-
-.bio-cluster-pill {
-    display: inline-block;
-    background: #edf5e8;
-    color: #265322;
-    border-radius: 8px;
-    padding: 5px 11px;
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.bio-commodity-text {
-    color: #64748b;
-    text-transform: capitalize;
-}
-
-/* COMPACT SCROLL TABLE */
-.bio-table-scroll {
-    max-height: 290px;
-    overflow: auto;
-    border: 1px solid #edf1e9;
-    border-radius: 12px;
-    scrollbar-width: thin;
-}
-
-.bio-table-short {
-    max-height: 255px;
-}
-
-.bio-table-scroll table {
+.crop-cluster-table-scroll table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
 }
 
-.bio-table-scroll th {
+.crop-cluster-table-scroll thead th {
     position: sticky;
     top: 0;
     z-index: 2;
     background: #f3f7f0;
     color: #265322;
-    padding: 12px 14px;
-    font-size: 11px;
-    text-align: left;
-    white-space: nowrap;
-}
-
-.bio-table-scroll td {
-    padding: 11px 14px;
-    font-size: 11px;
-    color: #475569;
-    border-bottom: 1px solid #edf1e9;
-}
-
-.bio-table-scroll tbody tr:hover {
-    background: #f8fbf6;
-}
-
-/* FILTERS */
-.bio-filter-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 16px;
-}
-
-.bio-filter-row select {
-    flex: 1 1 150px;
-    min-width: 0;
-    border: 1px solid #dfe8da;
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px 12px;
-    font-family: "Poppins", sans-serif;
-    font-size: 11px;
-    color: #265322;
-}
-
-/* BEST MODEL */
-.bio-best-model {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    margin-bottom: 14px;
-    background: #f4f8f0;
-    color: #475569;
-    border-radius: 10px;
-    font-size: 11px;
-}
-
-.bio-best-model strong {
-    color: #265322;
-    font-size: 13px;
-}
-
-/* FILE LIST */
-.bio-file-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-}
-
-.bio-file-item {
-    display: flex;
-    align-items: center;
-    gap: 11px;
-    min-width: 0;
-    padding: 12px;
-    border: 1px solid #edf1e9;
-    border-radius: 12px;
-}
-
-.bio-file-icon {
-    width: 38px;
-    height: 38px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #edf5e8;
-    color: #60982c;
-    border-radius: 10px;
-}
-
-.bio-file-info {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.bio-file-info strong {
-    font-size: 11px;
-    color: #265322;
-}
-
-.bio-file-info small {
-    font-size: 9px;
-    color: #94a3b8;
-    overflow-wrap: anywhere;
-}
-
-.bio-file-item a {
-    flex-shrink: 0;
-    font-size: 11px;
-    font-weight: 600;
-    color: #60982c;
-    text-decoration: none;
-}
-
-.bio-file-item a:hover {
-    text-decoration: underline;
-}
-
-.bio-file-missing {
-    color: #b91c1c;
     font-size: 10px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1100px) {
-    .bio-kpi-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .bio-two-column {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 700px) {
-    .bio-kpi-grid,
-    .bio-file-list {
-        grid-template-columns: 1fr;
-    }
-
-    .bio-card {
-        padding: 15px;
-    }
-
-    .bio-section-heading {
-        align-items: flex-start;
-    }
-}
-
-/* ==========================================
-   GRAFIK EVALUASI FORECAST BIOFARMAKA
-========================================== */
-
-.bio-forecast-chart-wrap {
-    position: relative;
-    width: 100%;
-    height: 280px;
-    max-height: 280px;
-    margin-top: 18px;
-}
-
-.bio-forecast-chart-wrap canvas {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.bio-best-summary {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    font-size: 12px;
-}
-
-.bio-best-summary strong {
-    color: #265322;
-    font-size: 15px;
-}
-
-.bio-best-summary b {
-    color: #60982C;
-}
-
-.bio-forecast-note {
-    margin-top: 16px;
-    font-size: 11px;
-    line-height: 1.7;
-    color: #64748b;
-}
-
-@media (max-width: 768px) {
-    .bio-forecast-chart-wrap {
-        height: 250px;
-        max-height: 250px;
-    }
-}
-
-/* ==========================================
-   KETAHANAN PANGAN - CLUSTER BIOFARMAKA
-========================================== */
-
-.bio-ketahanan-section {
-    margin-top: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    width: 100%;
-    min-width: 0;
-}
-
-.bio-ketahanan-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-}
-
-.bio-ketahanan-heading h2 {
-    color: #265322;
-    font-size: 20px;
-    font-weight: 700;
-    margin: 0 0 6px;
-}
-
-.bio-ketahanan-heading p {
-    color: #64748b;
-    font-size: 12px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* Dua kolom */
-.bio-ketahanan-grid {
-    display: grid;
-    grid-template-columns:
-        minmax(0, 0.85fr)
-        minmax(0, 1.65fr);
-    gap: 18px;
-    align-items: stretch;
-}
-
-/* Card */
-.bio-ketahanan-grid .bio-card {
-    padding: 22px;
-    min-width: 0;
-    border-radius: 16px;
-    background: #ffffff;
-}
-
-/* Grafik donat */
-.bio-distribution-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.bio-distribution-card .bio-chart-wrap {
-    position: relative;
-    width: 100%;
-    height: 245px;
-    max-height: 245px;
-    margin: 10px auto 15px;
-}
-
-.bio-distribution-card canvas {
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.bio-distribution-card #bioClusterInfo {
-    margin-top: auto;
-}
-
-/* Tabel kecamatan */
-.bio-potential-scroll {
-    width: 100%;
-    height: 320px;
-    max-height: 320px;
-    overflow-y: auto;
-    overflow-x: auto;
-    border: 1px solid #edf1e9;
-    border-radius: 12px;
-    scrollbar-width: thin;
-}
-
-.bio-potential-scroll table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-}
-
-.bio-potential-scroll thead th {
-    position: sticky;
-    top: 0;
-    z-index: 3;
-    background: #f3f7f0;
-    color: #265322;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 12px 14px;
-    text-align: left;
     white-space: nowrap;
 }
 
-.bio-potential-scroll tbody td {
-    padding: 11px 14px;
-    font-size: 11px;
-    line-height: 1.6;
+.crop-cluster-table-scroll tbody td {
+    padding: 8px 9px;
     border-bottom: 1px solid #edf1e9;
+    font-size: 10px;
+    line-height: 1.45;
     vertical-align: middle;
 }
 
-.bio-potential-scroll tbody tr:hover {
-    background: #f8faf6;
+.crop-cluster-table-scroll td:last-child {
+    min-width: 150px;
 }
 
-.bio-potential-scroll th:first-child,
-.bio-potential-scroll td:first-child {
-    min-width: 110px;
-}
+@media (max-width: 900px) {
+    .crop-cluster-table-scroll {
+        max-height: 300px;
+    }
 
-.bio-potential-scroll th:last-child,
-.bio-potential-scroll td:last-child {
-    min-width: 160px;
-}
-
-/* Keterangan */
-.bio-table-caption {
-    margin-top: 12px;
-    color: #94a3b8;
-    font-size: 10px;
-    line-height: 1.7;
-}
-
-/* Responsive */
-@media (max-width: 1150px) {
-    .bio-ketahanan-grid {
+    .crop-cluster-results-grid {
         grid-template-columns: 1fr;
     }
 
-    .bio-distribution-card .bio-chart-wrap {
-        height: 220px;
+    .cluster-interpretation-list {
+        max-height: 300px;
     }
 }
 
-@media (max-width: 768px) {
-    .bio-ketahanan-grid .bio-card {
-        padding: 16px;
+@media (max-width: 550px) {
+    .crop-cluster-chart-wrap {
+        height: 240px;
+        max-height: 240px;
     }
 
-    .bio-potential-scroll {
-        height: 280px;
-        max-height: 280px;
-    }
-
-    .bio-ketahanan-heading {
-        align-items: flex-start;
+    .crop-cluster-table-scroll table {
+        min-width: 560px;
     }
 }
 
@@ -3307,7 +3098,7 @@ td {
 .dash-bio-heading h2 {
     margin: 0 0 5px;
     color: #265322;
-    font-size: 21px;
+    font-size: 19px;
     font-weight: 700;
 }
 
@@ -3341,159 +3132,6 @@ td {
     border-radius: 16px;
 }
 
-.dash-bio-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 22px;
-}
-
-.dash-bio-card-header h3 {
-    margin: 0 0 6px;
-    font-size: 15px;
-    color: #173d2c;
-}
-
-.dash-bio-card-header small {
-    font-size: 11px;
-    color: #94a3b8;
-    line-height: 1.5;
-}
-
-.dash-bio-card-header > i {
-    color: #60982c;
-    background: #edf5e8;
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 17px;
-}
-
-/* LIST ITEMS */
-.dash-bio-commodity-list,
-.dash-bio-region-list {
-    display: flex;
-    flex-direction: column;
-    gap: 19px;
-}
-
-.dash-bio-commodity-item,
-.dash-bio-region-item {
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-.dash-bio-commodity-head,
-.dash-bio-region-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.dash-bio-commodity-name,
-.dash-bio-region-name {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    min-width: 0;
-}
-
-.dash-bio-commodity-name strong,
-.dash-bio-region-name strong {
-    font-size: 12px;
-    font-weight: 600;
-    color: #265322;
-    overflow-wrap: anywhere;
-}
-
-.dash-bio-rank {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25px;
-    height: 25px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    background: #edf5e8;
-    color: #60982c;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.dash-bio-count,
-.dash-bio-region-value {
-    font-size: 11px;
-    color: #64748b;
-    white-space: nowrap;
-}
-
-/* PROGRESS BAR */
-.dash-bio-progress {
-    width: 100%;
-    height: 8px;
-    background: #edf1e9;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.dash-bio-progress-fill {
-    height: 100%;
-    background: #60982c;
-    border-radius: 20px;
-    transition: width 0.35s ease;
-}
-
-/* KPI RINGKAS */
-.dash-bio-stats {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
-}
-
-.dash-bio-stat {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    min-width: 0;
-    padding: 18px;
-    background: #ffffff;
-    border: 1px solid #e3eae0;
-    border-radius: 14px;
-}
-
-.dash-bio-stat-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: #edf5e8;
-    color: #60982c;
-    font-size: 17px;
-}
-
-.dash-bio-stat > div:last-child {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    min-width: 0;
-}
-
-.dash-bio-stat span {
-    font-size: 11px;
-    color: #64748b;
-}
-
-.dash-bio-stat strong {
-    font-size: 22px;
-    font-weight: 700;
-    color: #265322;
-}
-
 .dash-bio-footnote {
     margin: 0;
     color: #94a3b8;
@@ -3502,21 +3140,7 @@ td {
 }
 
 /* RESPONSIVE */
-@media (max-width: 1100px) {
-    .dash-bio-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 750px) {
-    .dash-bio-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .dash-bio-card {
-        padding: 16px;
-    }
-
     .dash-bio-heading {
         align-items: flex-start;
     }
@@ -3551,119 +3175,299 @@ td {
     font-size: 12px;
 }
 
-.bio-heatmap-scroll {
-    max-height: 330px;
-    overflow: auto;
-    border: 1px solid #edf1e9;
-    border-radius: 12px;
-}
-
-.bio-heatmap-scroll thead th {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    background: #f3f7f0;
-}
-
 /* =========================================================
-   MONITORING - FINAL LAYOUT & HEATMAP CORRECTION
-   Preserve the original pangan heatmap's horizontal scrolling;
-   biofarmaka uses exactly three columns with vertical scrolling.
+   MONITORING WILAYAH
 ========================================================= */
+
+#monitoring .agri-monitoring-extra {
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    align-items: stretch;
+}
+
+#monitoring .agri-monitoring-extra > .card,
+#monitoring .monitoring-heatmap-card,
+#monitoring .monitoring-rekap-card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+#monitoring .monitoring-map-card,
+#monitoring .monitoring-status-card,
+#monitoring .monitoring-heatmap-card,
+#monitoring .monitoring-rekap-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#monitoring .filter-card {
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+#monitoring .filter-card select {
+    flex: 1 1 180px;
+    min-width: min(150px, 100%);
+    max-width: 100%;
+}
+
+#monitoring #kediriMap {
+    display: block;
+    width: 100%;
+    height: 440px !important;
+    min-height: 440px;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #edf2e8;
+    z-index: 1;
+}
+
+#monitoring .monitoring-map-card .map-legend i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 3px;
+}
+
+#monitoring #statusWilayahList {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+    max-height: 440px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 6px;
+    scrollbar-width: thin;
+}
+
+#monitoring .agri-status-count {
+    margin: 0 0 6px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+#monitoring .agri-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+    padding: 8px 2px;
+    border-bottom: 1px solid #edf1eb;
+    font-size: 12px;
+}
+
+#monitoring .agri-status-info {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+#monitoring .agri-status-info strong {
+    color: #263c29;
+    font-size: 11px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+#monitoring .agri-status-info span {
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+#monitoring .agri-status-row .agri-status-pill {
+    flex: 0 0 auto;
+}
+
+#monitoring .monitoring-rekap-scroll .agri-status-pill {
+    display: inline-flex;
+    max-width: 100%;
+    padding: 4px 7px;
+    font-size: 9px;
+    white-space: normal;
+}
+
+#monitoring .monitoring-rekap-region {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+#monitoring .monitoring-rekap-region strong {
+    color: #263c29;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+#monitoring .monitoring-rekap-region small {
+    color: #64748b;
+    font-size: 9px;
+}
+
+#monitoring .agri-status-info,
+#monitoring .monitoring-rekap-region {
+    overflow-wrap: anywhere;
+}
+
+#monitoring .agri-status-pill {
+    display: inline-block;
+    flex: 0 1 auto;
+    max-width: 48%;
+    padding: 5px 8px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
 
 #monitoring .monitoring-bottom-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.85fr) minmax(0, 1fr);
     gap: 18px;
+    margin-bottom: 20px;
     align-items: stretch;
 }
 
 #monitoring .monitoring-heatmap-card,
 #monitoring .monitoring-rekap-card {
     width: 100%;
-    min-width: 0;
     padding: 20px;
-    overflow: hidden;
 }
 
 #monitoring .monitoring-heatmap-scroll,
 #monitoring .monitoring-rekap-scroll {
+    flex: 1 1 auto;
     width: 100%;
     min-width: 0;
-    height: 350px;
+    min-height: 0;
+}
+
+#monitoring .monitoring-heatmap-scroll {
+    overflow: visible;
+}
+
+#monitoring .monitoring-rekap-scroll {
     max-height: 350px;
     overflow-y: auto;
-    overflow-x: auto;
+    overflow-x: hidden;
     scrollbar-width: thin;
 }
 
-/* Correct the inherited max-content width ONLY for biofarmaka.
-   The previous max-content caused the last two columns to be clipped. */
-#monitoring .monitoring-heatmap-scroll:has(.bio-heatmap-scroll) {
-    overflow-x: hidden;
-}
-
-#monitoring .monitoring-heatmap-scroll:has(.bio-heatmap-scroll) #heatmapKecamatan,
-#monitoring #heatmapKecamatan:has(.bio-heatmap-scroll),
-#monitoring #heatmapKecamatan:has(.bio-heatmap-scroll) .table-responsive {
-    display: block;
+#monitoring #heatmapKecamatan {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 0;
     max-width: 100%;
 }
 
-#monitoring #heatmapKecamatan .bio-heatmap-scroll {
-    display: block;
+#monitoring .heatmap-table-scroll {
     width: 100%;
     min-width: 0;
     max-width: 100%;
-    max-height: none;
-    overflow: visible;
-    border: 0;
+    max-height: 300px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
 }
 
-#monitoring #heatmapKecamatan .bio-heatmap-scroll table.heatmap-table {
-    display: table;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100%;
-    table-layout: fixed !important;
-    border-collapse: collapse;
+#monitoring .heatmap-explanation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+    color: #475569;
+    font-size: 10px;
+    line-height: 1.4;
 }
 
-/* Fixed column proportions, all three stay visible. */
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table th:nth-child(1),
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table td:nth-child(1) {
-    width: 23%;
-}
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table th:nth-child(2),
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table td:nth-child(2) {
-    width: 32%;
-}
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table th:nth-child(3),
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table td:nth-child(3) {
-    width: 45%;
+#monitoring .heatmap-color-legend {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
 }
 
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table th,
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table td {
-    display: table-cell !important;
+#monitoring .heatmap-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+#monitoring .heatmap-legend-item i {
+    width: 10px;
+    height: 10px;
+    flex: 0 0 auto;
+    border-radius: 3px;
+}
+
+#monitoring .heatmap-table {
+    width: max-content;
+    min-width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 3px 4px;
+    font-size: 10px;
+}
+
+#monitoring .heatmap-table th,
+#monitoring .heatmap-table td {
     box-sizing: border-box;
-    padding: 10px 8px !important;
-    font-size: 10px !important;
-    line-height: 1.5;
-    white-space: normal !important;
-    overflow-wrap: anywhere;
-    word-break: normal;
+    min-width: 104px;
+    max-width: 150px;
+    padding: 7px 6px;
+    line-height: 1.35;
+    text-align: center;
     vertical-align: middle;
+    white-space: normal;
+    overflow-wrap: break-word;
+    border-radius: 7px;
 }
 
-#monitoring #heatmapKecamatan .bio-heatmap-scroll .heatmap-table thead th {
+#monitoring .heatmap-table th:first-child,
+#monitoring .heatmap-table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    width: 145px;
+    min-width: 145px;
+    max-width: 145px;
+    text-align: left;
+}
+
+#monitoring .heatmap-table thead th {
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 2;
     background: #f3f7f0;
     color: #265322;
+    font-weight: 600;
+}
+
+#monitoring .heatmap-table thead th:first-child {
+    z-index: 4;
+}
+
+#monitoring .heatmap-value-cell {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    box-shadow: inset 0 0 0 1px rgba(36, 50, 56, 0.08);
+}
+
+#monitoring .heatmap-kecamatan-name {
+    background: #f0f7ef;
+    color: #334a35;
     font-weight: 600;
 }
 
@@ -3686,6 +3490,7 @@ td {
 #monitoring .monitoring-rekap-scroll th,
 #monitoring .monitoring-rekap-scroll td {
     padding: 9px 7px;
+    border-bottom: 1px solid #edf1e9;
     font-size: 10px;
     line-height: 1.4;
     white-space: normal;
@@ -3693,14 +3498,19 @@ td {
     text-align: left;
 }
 
+#monitoring .monitoring-rekap-scroll th:nth-child(1) { width: 50%; }
+#monitoring .monitoring-rekap-scroll th:nth-child(2) { width: 22%; }
+#monitoring .monitoring-rekap-scroll th:nth-child(3) { width: 28%; }
+
 #monitoring .heatmap-note {
+    margin: 10px 0 0;
+    color: #64748b;
     font-size: 10px;
     line-height: 1.5;
-    color: #64748b;
-    margin-top: 10px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
+    #monitoring .agri-monitoring-extra,
     #monitoring .monitoring-bottom-grid {
         grid-template-columns: 1fr;
     }
@@ -3711,10 +3521,32 @@ td {
     #monitoring .monitoring-rekap-card {
         padding: 14px;
     }
-    #monitoring .monitoring-heatmap-scroll,
+
     #monitoring .monitoring-rekap-scroll {
-        height: 300px;
         max-height: 300px;
+    }
+
+    #monitoring .heatmap-table-scroll {
+        max-height: 240px;
+    }
+
+}
+
+@media (max-width: 650px) {
+    #monitoring .filter-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #monitoring .filter-card select,
+    #monitoring .filter-card .green-button {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #monitoring #kediriMap {
+        height: 340px !important;
+        min-height: 340px;
     }
 }
 
@@ -3784,29 +3616,6 @@ td {
         max-height: 280px;
     }
 }
-
-/* ==========================================
-   TOP 5 KOMODITAS BIOFARMAKA
-========================================== */
-
-#dashboard .dash-bio-commodity-list {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-}
-
-#dashboard .dash-bio-commodity-item {
-    gap: 6px;
-}
-
-#dashboard .dash-bio-commodity-head {
-    min-height: 24px;
-}
-
-#dashboard .dash-bio-progress {
-    height: 7px;
-}
-
 
 /* ==========================================
    DASHBOARD - FINAL ORGANIZED LAYOUT
@@ -3917,19 +3726,6 @@ td {
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* Lima komoditas biofarmaka tetap compact */
-#dashboard .dash-bio-commodity-list {
-    gap: 13px;
-}
-
-#dashboard .dash-bio-commodity-item {
-    gap: 6px;
-}
-
-#dashboard .dash-bio-progress {
-    height: 7px;
-}
-
 /* Early Warning */
 #dashboard .dashboard-warning-grid {
     display: grid;
@@ -4028,3 +3824,790 @@ td {
         max-height: 270px;
     }
 }
+
+
+/* ==========================================
+   DASHBOARD - FINAL 5 SECTION LAYOUT
+========================================== */
+
+/* Search tidak ditampilkan */
+.topbar .search-box {
+    display: none;
+}
+
+.topbar {
+    justify-content: flex-end;
+}
+
+.top-actions {
+    margin-left: auto;
+}
+
+/* Jarak antar-section */
+#dashboard .dashboard-organized-content {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Grafik dan peta sejajar */
+#dashboard .dashboard-analysis-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(0, 1fr);
+    gap: 16px;
+    align-items: stretch;
+}
+
+#dashboard .dashboard-analysis-grid > .card {
+    min-width: 0;
+    align-self: stretch;
+}
+
+/* Grafik dibuat compact */
+#dashboard .dashboard-analysis-grid
+.trend-card .chart-container {
+    height: 310px;
+    min-height: 310px;
+    max-height: 310px;
+    flex: none;
+}
+
+/* Peta sama tinggi dengan grafik */
+#dashboard .dashboard-analysis-grid
+#dashboardKediriMap {
+    height: 310px !important;
+    min-height: 310px !important;
+    max-height: 310px;
+}
+
+/* Hortikultura */
+#dashboard .dash-horti-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+#dashboard .dash-horti-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+#dashboard .dash-horti-heading h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #265322;
+}
+
+#dashboard .dash-horti-heading p {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+#dashboard .dash-horti-label {
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: #edf5e8;
+    color: #265322;
+    font-size: 11px;
+}
+
+#dashboard .dash-horti-stats,
+#dashboard .dash-horti-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#dashboard .dash-bio-section .dash-bio-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+#dashboard .dash-horti-kpi {
+    padding: 17px 20px;
+    border: 1px solid #e3e9e0;
+    border-radius: 14px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#dashboard .dash-horti-kpi span {
+    font-size: 11px;
+    color: #64748b;
+}
+
+#dashboard .dash-horti-kpi strong {
+    font-size: 23px;
+    font-weight: 700;
+    color: #265322;
+}
+
+#dashboard .dash-horti-card {
+    min-width: 0;
+    padding: 20px;
+}
+
+#dashboard .dash-bio-card .card-header h3 {
+    margin: 0 0 6px;
+    color: #265322;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#dashboard .dash-bio-card .card-header small {
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+#dashboard #hortiCommodityList,
+#dashboard #hortiRegionList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#dashboard #dashboardBioCommodities,
+#dashboard #dashboardBioTopRegions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 120px;
+    margin-top: 12px;
+}
+
+#dashboard .dash-horti-item {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+#dashboard .dash-horti-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#dashboard .dash-horti-item-head strong {
+    color: #173d2c;
+    font-size: 12px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+#dashboard .dash-horti-item-head span {
+    font-size: 11px;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+#dashboard .dash-horti-track {
+    width: 100%;
+    height: 7px;
+    border-radius: 10px;
+    background: #edf1e9;
+    overflow: hidden;
+}
+
+#dashboard .dash-horti-track > div {
+    height: 100%;
+    background: #60982c;
+    border-radius: 10px;
+}
+
+#dashboard .dash-horti-note {
+    margin: 0;
+    font-size: 10px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    #dashboard .dashboard-analysis-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 850px) {
+    #dashboard .dash-horti-grid,
+    #dashboard .dash-horti-stats {
+        grid-template-columns: 1fr;
+    }
+
+    #dashboard .dash-bio-section .dash-bio-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    #dashboard .dashboard-analysis-grid
+    .trend-card .chart-container {
+        height: 270px;
+        min-height: 270px;
+        max-height: 270px;
+    }
+
+    #dashboard .dashboard-analysis-grid
+    #dashboardKediriMap {
+        height: 270px !important;
+        min-height: 270px !important;
+        max-height: 270px;
+    }
+}
+
+/* FIX UKURAN PETA DASHBOARD */
+
+#dashboard #dashboardKediriMap {
+    display: block;
+    width: 100%;
+    height: 310px !important;
+    min-height: 310px !important;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #edf2e8;
+}
+
+#dashboard .status-card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 650px) {
+    #dashboard #dashboardKediriMap {
+        height: 270px !important;
+        min-height: 270px !important;
+    }
+}
+
+
+/* ==========================================================
+   AGRIDASH V.01
+   DASHBOARD LAYOUT - FINAL
+========================================================== */
+
+/* ==========================================================
+   01. RINGKASAN KPI
+========================================================== */
+
+#dashboard .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+    margin-bottom: 24px;
+}
+
+#dashboard .stats-grid > .stat-card {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* EARLY WARNING */
+
+#dashboard .dashboard-ews-kpi {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8df;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+#dashboard .dash-ews-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#dashboard .dash-ews-top .stat-icon {
+    flex-shrink: 0;
+}
+
+#dashboard .dashboard-ews-kpi .stat-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #265322;
+}
+
+#dashboard .dashboard-ews-kpi #dashboardWarnings {
+    width: 100%;
+    min-width: 0;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+#dashboard .dashboard-ews-kpi #dashboardWarnings > div {
+    padding: 12px !important;
+    border-radius: 10px !important;
+}
+
+#dashboard .dashboard-ews-kpi #dashboardWarnings p {
+    font-size: 11px !important;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ==========================================================
+   02. ANALISIS TANAMAN PANGAN
+========================================================== */
+
+/* DUA KOLOM DASHBOARD */
+
+#dashboard .main-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+    margin-bottom: 24px;
+}
+
+#dashboard .main-grid > .card {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    grid-column: auto;
+    box-sizing: border-box;
+}
+
+#dashboard .warning-list-card {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 17px;
+}
+
+#dashboard #dashboardWarnings {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#dashboard #dashboardWarnings > .dashboard-ews-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+#dashboard .dashboard-ews-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: var(--ews-background);
+}
+
+#dashboard .dashboard-ews-status > i {
+    flex-shrink: 0;
+    color: var(--ews-color);
+    font-size: 19px;
+}
+
+#dashboard .dashboard-ews-status-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+#dashboard .dashboard-ews-status-copy small {
+    color: #64748b;
+    font-size: 10px;
+}
+
+#dashboard .dashboard-ews-status-copy strong {
+    color: var(--ews-color);
+    font-size: 14px;
+}
+
+#dashboard .dashboard-ews-status > span {
+    margin-left: auto;
+    color: #475569;
+    font-size: 11px;
+    text-align: right;
+}
+
+#dashboard .dashboard-ews-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+#dashboard .dashboard-ews-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+    padding: 10px 11px;
+    border: 1px solid #e3e9e0;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+#dashboard .dashboard-ews-metric small {
+    color: #64748b;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+#dashboard .dashboard-ews-metric strong {
+    color: #265322;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+#dashboard .dashboard-ews-metric strong span {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+#dashboard .dashboard-ews-summary {
+    padding: 10px 12px;
+    border-left: 3px solid var(--ews-color);
+    border-radius: 8px;
+    background: #f7faf6;
+}
+
+#dashboard .dashboard-ews-summary > strong {
+    color: #265322;
+    font-size: 11px;
+}
+
+#dashboard .dashboard-ews-summary p {
+    margin: 4px 0 6px;
+    color: #475569;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+#dashboard .dashboard-ews-summary small {
+    color: #94a3b8;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+#dashboard .trend-card,
+#dashboard .dashboard-ranking-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#dashboard .trend-card .chart-container {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 260px;
+    min-height: 260px;
+    max-height: 260px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+#dashboard .trend-card .chart-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* PETA STATUS WILAYAH */
+
+#dashboard .status-card {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#dashboard #dashboardKediriMap {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 240px !important;
+    min-height: 240px !important;
+    border-radius: 12px;
+    background: #eef3ea;
+    z-index: 0;
+}
+
+#dashboard .map-legend {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+#dashboard .dashboard-cluster-summary {
+    margin-top: 12px;
+}
+
+#dashboard #top5Kecamatan {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    min-width: 0;
+}
+
+#dashboard #top5Kecamatan .dash-horti-item {
+    flex: 1;
+    justify-content: center;
+}
+
+/* ==========================================================
+   03. POTENSI BIOFARMAKA
+   04. POTENSI HORTIKULTURA
+
+   KEDUA BAGIAN MENGGUNAKAN DESAIN YANG SAMA
+========================================================== */
+
+#dashboard .dash-category-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    min-width: 0;
+    margin-top: 30px;
+}
+
+/* HEADER KATEGORI */
+
+#dashboard .dash-category-section .dash-horti-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+#dashboard .dash-category-section .dash-horti-heading h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #265322;
+    margin: 0 0 6px;
+}
+
+#dashboard .dash-category-section .dash-horti-heading p {
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+#dashboard .dash-category-section .dash-horti-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 7px 13px;
+    border-radius: 30px;
+    background: #edf5e8;
+    color: #265322;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* KPI BIOFARMAKA DAN HORTIKULTURA */
+
+#dashboard .dash-category-section .dash-horti-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+}
+
+#dashboard .dash-horti-section .dash-horti-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#dashboard .dash-category-section .dash-horti-kpi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    min-width: 0;
+    min-height: 86px;
+    padding: 17px 20px;
+    background: #ffffff;
+    border: 1px solid #e3e9e0;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+#dashboard .dash-category-section .dash-horti-kpi span {
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+#dashboard .dash-category-section .dash-horti-kpi strong {
+    font-size: 23px;
+    font-weight: 700;
+    color: #265322;
+}
+
+/* DUA CARD RANKING */
+
+#dashboard .dash-category-section .dash-horti-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+}
+
+#dashboard .dash-category-section .dash-horti-grid > .card {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+#dashboard .dash-category-section .dash-horti-card {
+    padding: 20px;
+    border-radius: 14px;
+}
+
+#dashboard .dash-category-section .dash-horti-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #265322;
+}
+
+#dashboard .dash-category-section .dash-horti-card small {
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* AREA DAFTAR RANKING */
+
+#dashboard .dash-category-section .dash-ranking-list,
+#dashboard .dash-category-section #dashboardBioCommodities,
+#dashboard .dash-category-section #dashboardBioTopRegions,
+#dashboard .dash-category-section #hortiCommodityList,
+#dashboard .dash-category-section #hortiRegionList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 120px;
+    margin-top: 12px;
+}
+
+/* BAR RANKING */
+
+#dashboard .dash-category-section .dash-horti-item {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+#dashboard .dash-category-section .dash-horti-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#dashboard .dash-category-section .dash-horti-item-head strong {
+    font-size: 12px;
+    font-weight: 600;
+    color: #173d2c;
+    overflow-wrap: anywhere;
+}
+
+#dashboard .dash-category-section .dash-horti-item-head span {
+    font-size: 11px;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+#dashboard .dash-category-section .dash-horti-track {
+    width: 100%;
+    height: 7px;
+    border-radius: 15px;
+    background: #edf1e9;
+    overflow: hidden;
+}
+
+#dashboard .dash-category-section .dash-horti-track > div {
+    height: 100%;
+    border-radius: 15px;
+    background: #60982c;
+}
+
+/* KETERANGAN SUMBER */
+
+#dashboard .dash-category-section .dash-horti-note {
+    margin: 0;
+    font-size: 10px;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================
+   RESPONSIVE DASHBOARD
+========================================================== */
+
+@media (max-width: 950px) {
+
+    #dashboard .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #dashboard .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #dashboard .dash-category-section .dash-horti-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #dashboard .stats-grid,
+    #dashboard .dash-category-section .dash-horti-stats,
+    #dashboard .dash-horti-section .dash-horti-stats {
+        grid-template-columns: 1fr;
+    }
+
+    #dashboard .dash-category-section .dash-horti-heading {
+        flex-wrap: wrap;
+    }
+
+    #dashboard .trend-card .chart-container {
+        height: 240px;
+        min-height: 240px;
+        max-height: 240px;
+    }
+
+    #dashboard #dashboardKediriMap {
+        height: 240px !important;
+        min-height: 240px !important;
+    }
+
+}
+
+

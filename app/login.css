@@ -230,67 +230,28 @@ body {
 }
 
 /* =========================================================
-   ROLE SWITCH
-========================================================= */
-
-.role-switch {
-
-    display: flex;
-
-    gap: 6px;
-
-    background: #eef3ea;
-
-    padding: 5px;
-
-    border-radius: 13px;
-
-    margin-bottom: 18px;
-
-}
-
-.role-btn {
-
-    flex: 1;
-
-    border: none;
-
-    background: transparent;
-
-    padding: 10px 4px;
-
-    border-radius: 9px;
-
-    font-size: 11px;
-
-    font-weight: 500;
-
-    color: #728078;
-
-    cursor: pointer;
-
-    transition: .2s;
-
-    white-space: nowrap;
-
-}
-
-.role-btn.active {
-
-    background: #60982c;
-
-    color: #fff;
-
-    box-shadow: 0 4px 12px rgba(96, 152, 44, .35);
-
-}
-
-/* =========================================================
    FORM
 ========================================================= */
 
 .form-group {
     margin-bottom: 14px;
+}
+
+.password-change-panel[hidden] {
+    display: none !important;
+}
+
+.password-change-panel h3 {
+    margin-bottom: 5px;
+    color: #265322;
+    font-size: 15px;
+}
+
+.password-change-panel > p {
+    margin-bottom: 16px;
+    color: #728078;
+    font-size: 11px;
+    line-height: 1.6;
 }
 
 .form-group label {
@@ -431,38 +392,10 @@ body {
 
 }
 
-.demo-box {
-
-    margin-top: 18px;
-
-    padding: 11px 13px;
-
-    background: #f0f7ec;
-
-    border: 1px dashed #a9cf86;
-
-    border-radius: 12px;
-
-    font-size: 11px;
-
-    color: #265322;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-}
-
-.demo-box code {
-
-    background: #dcecd0;
-
-    padding: 1px 6px;
-
-    border-radius: 5px;
-
+.login-btn:disabled {
+    cursor: wait;
+    opacity: .75;
+    transform: none;
 }
 
 /* =========================================================

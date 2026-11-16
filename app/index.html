@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="auth-pending">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-auth-required="true">
 <div class="app">
 
     <!-- SIDEBAR -->
@@ -102,13 +102,18 @@
 
             </div>
 
-                <div class="user-profile">
-                    <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
-                    <div class="user-info">
-                        <strong>Admin</strong>
-                        <small>Super Admin</small>
+                <div class="topbar-user-actions">
+                    <div class="user-profile">
+                        <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div class="user-info">
+                            <strong>Pengguna</strong>
+                            <small>Memverifikasi sesi...</small>
+                        </div>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <i class="fa-solid fa-chevron-down"></i>
+                    <button type="button" class="logout-button" id="logoutBtn" aria-label="Keluar">
+                        <i class="fa-solid fa-right-from-bracket"></i><span>Keluar</span>
+                    </button>
                 </div>
         </header>
 
@@ -222,48 +227,14 @@
                     </div>
                 </div>
 
-                <!-- STATUS WILAYAH DASHBOARD -->
-                <div class="card status-card">
-
+                <div class="card dashboard-ranking-card">
                     <div class="card-header">
-                        <div>
-                            <h3>Peta Status Wilayah</h3>
-                            <small>Potensi pertanian Kabupaten Kediri</small>
-                        </div>
-
-                        <a href="#"
-                        onclick="showPage('monitoring');return false;">
-                            Lihat Detail →
-                        </a>
+                        <h3>🏆 Top 5 Kecamatan Tanaman Pangan <span>(Produksi)</span></h3>
+                        <a href="#" onclick="showPage('monitoring');return false;">Lihat Semua →</a>
                     </div>
-
-                    <!-- PETA INTERAKTIF -->
-                    <div id="dashboardKediriMap"></div>
-
-                    <!-- LEGENDA WARNA -->
-                    <div class="map-legend">
-                        <span>
-                            <i style="background:#D95363;"></i>
-                            Rendah
-                        </span>
-
-                        <span>
-                            <i style="background:#9066B5;"></i>
-                            Sedang
-                        </span>
-
-                        <span>
-                            <i style="background:#2878C8;"></i>
-                            Tinggi
-                        </span>
+                    <div class="ranking" id="top5Kecamatan">
+                        <p>Memuat data kecamatan...</p>
                     </div>
-
-                    <!-- RINGKASAN CLUSTER -->
-                    <div id="dashboardClusterSummary"
-                        class="dashboard-cluster-summary">
-                        Memuat status wilayah...
-                    </div>
-
                 </div>
 
                 <div class="card warning-list-card">
@@ -275,27 +246,39 @@
                         <p>Data peringatan belum tersedia.</p>
                     </div>
                 </div>
-            </div>
 
-            <!-- BOTTOM GRID -->
-            <div class="bottom-grid">
-                <div class="card">
+                <!-- STATUS WILAYAH DASHBOARD -->
+                <div class="card status-card">
                     <div class="card-header">
-                        <h3>🏆 Top 5 Kecamatan <span>(Produksi)</span></h3>
-                        <a href="#" onclick="showPage('monitoring');return false;">Lihat Semua →</a>
-                    </div>
-                    <div class="ranking" id="top5Kecamatan">
-                        <p>Memuat data kecamatan...</p>
-                    </div>
-                </div>
+                        <div>
+                            <h3>Peta Status Wilayah</h3>
+                            <small>Potensi pertanian Kabupaten Kediri</small>
+                        </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <h3>🌱 Komoditas Utama</h3>
-                        <a href="#" onclick="showPage('ketahanan');return false;">Lihat Analisis →</a>
+                        <a href="#" onclick="showPage('monitoring');return false;">
+                            Lihat Detail →
+                        </a>
                     </div>
-                    <div id="dashboardKomoditas">
-                        <p>Memuat data komoditas...</p>
+
+                    <div id="dashboardKediriMap"></div>
+
+                    <div class="map-legend">
+                        <span>
+                            <i style="background:#D95363;"></i>
+                            Rendah
+                        </span>
+                        <span>
+                            <i style="background:#9066B5;"></i>
+                            Sedang
+                        </span>
+                        <span>
+                            <i style="background:#2878C8;"></i>
+                            Tinggi
+                        </span>
+                    </div>
+
+                    <div id="dashboardClusterSummary" class="dashboard-cluster-summary">
+                        Memuat status wilayah...
                     </div>
                 </div>
             </div>
@@ -319,90 +302,59 @@
                     <span class="dash-bio-period">2020–2025</span>
                 </div>
 
+                <div class="dash-bio-stats dash-horti-stats">
+                    <div class="dash-horti-kpi">
+                        <span>Kecamatan Tercakup</span>
+                        <strong id="dashboardBioRegions">—</strong>
+                    </div>
+
+                    <div class="dash-horti-kpi">
+                        <span>Komoditas Biofarmaka</span>
+                        <strong id="dashboardBioTotalCommodities">—</strong>
+                    </div>
+
+                    <div class="dash-horti-kpi">
+                        <span>Kelengkapan Produksi</span>
+                        <strong id="dashboardBioCompleteness">—</strong>
+                    </div>
+                </div>
+
                 <!-- KONTEN UTAMA -->
-                <div class="dash-bio-grid">
+                <div class="dash-bio-grid dash-horti-grid">
 
                     <!-- KOMODITAS DOMINAN -->
-                    <div class="card dash-bio-card">
-
-                        <div class="dash-bio-card-header">
+                    <div class="card dash-bio-card dash-horti-card">
+                        <div class="card-header">
                             <div>
                                 <h3>Top 5 Komoditas Utama Biofarmaka</h3>
                                 <small>
-                                    Lima komoditas yang paling sering masuk
-                                    Top 3 unggulan kecamatan
+                                    Frekuensi kemunculan dalam Top 3 unggulan kecamatan
                                 </small>
                             </div>
-
-                            <i class="fa-solid fa-leaf"></i>
                         </div>
 
                         <div id="dashboardBioCommodities"
-                            class="dash-bio-commodity-list">
+                            class="dash-horti-ranking-list">
                             Memuat komoditas biofarmaka...
                         </div>
-
                     </div>
 
                     <!-- TOP 5 KECAMATAN -->
-                    <div class="card dash-bio-card">
-
-                        <div class="dash-bio-card-header">
+                    <div class="card dash-bio-card dash-horti-card">
+                        <div class="card-header">
                             <div>
                                 <h3>Top 5 Kecamatan Biofarmaka</h3>
                                 <small>
                                     Produksi rata-rata tahunan tertinggi
                                 </small>
                             </div>
-
-                            <i class="fa-solid fa-ranking-star"></i>
                         </div>
 
                         <div id="dashboardBioTopRegions"
-                            class="dash-bio-region-list">
+                            class="dash-horti-ranking-list">
                             Memuat kecamatan...
                         </div>
-
                     </div>
-
-                </div>
-
-                <!-- KPI RINGKAS -->
-                <div class="dash-bio-stats">
-
-                    <div class="dash-bio-stat">
-                        <div class="dash-bio-stat-icon">
-                            <i class="fa-solid fa-database"></i>
-                        </div>
-
-                        <div>
-                            <span>Observasi</span>
-                            <strong id="dashboardBioObservations">—</strong>
-                        </div>
-                    </div>
-
-                    <div class="dash-bio-stat">
-                        <div class="dash-bio-stat-icon">
-                            <i class="fa-solid fa-seedling"></i>
-                        </div>
-
-                        <div>
-                            <span>Komoditas Biofarmaka</span>
-                            <strong id="dashboardBioTotalCommodities">—</strong>
-                        </div>
-                    </div>
-
-                    <div class="dash-bio-stat">
-                        <div class="dash-bio-stat-icon">
-                            <i class="fa-solid fa-chart-pie"></i>
-                        </div>
-
-                        <div>
-                            <span>Kelengkapan Produksi</span>
-                            <strong id="dashboardBioCompleteness">—</strong>
-                        </div>
-                    </div>
-
                 </div>
 
                 <p class="dash-bio-footnote">
@@ -413,10 +365,83 @@
                 </p>
 
             </div>
-        </section>
 
-        <!-- MONITORING WILAYAH -->
-        
+        <!-- ==========================================
+            04. POTENSI HORTIKULTURA
+        ========================================== -->
+
+        <section class="dash-horti-section">
+
+            <div class="dash-horti-heading">
+                <div>
+                    <h2>Potensi Hortikultura</h2>
+                    <p>
+                        Persebaran komoditas unggulan dan produksi
+                        hortikultura per kecamatan Kabupaten Kediri
+                    </p>
+                </div>
+                <span class="dash-horti-label">Hortikultura</span>
+            </div>
+
+            <div class="dash-horti-stats">
+
+                <div class="dash-horti-kpi">
+                    <span>Kecamatan Tercakup</span>
+                    <strong id="hortiTotalKecamatan">—</strong>
+                </div>
+
+                <div class="dash-horti-kpi">
+                    <span>Komoditas Hortikuktura</span>
+                    <strong id="hortiTotalKomoditas">—</strong>
+                </div>
+
+            </div>
+
+            <div class="dash-horti-grid">
+
+                <div class="card dash-horti-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Top 5 Komoditas Hortikultura</h3>
+                            <small>
+                                Frekuensi kemunculan dalam Top 3
+                                unggulan kecamatan
+                            </small>
+                        </div>
+                    </div>
+
+                    <div id="hortiCommodityList">
+                        Memuat komoditas...
+                    </div>
+                </div>
+
+                <div class="card dash-horti-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Top 5 Kecamatan Hortikultura</h3>
+                            <small>
+                                Produksi rata-rata tahunan berdasarkan
+                                laporan klaster
+                            </small>
+                        </div>
+                    </div>
+
+                    <div id="hortiRegionList">
+                        Memuat kecamatan...
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="dash-horti-note">
+                Komoditas diurutkan berdasarkan frekuensi masuk Top 3,
+                bukan total produksi. Ranking wilayah menggunakan
+                produksi rata-rata tahunan dari data klaster.
+            </p>
+
+        </section> <!-- Penutup Potensi Hortikultura -->
+        </section> <!-- Penutup Dashboard -->
+
         <!-- =========================================
             MONITORING WILAYAH
         ========================================= -->
@@ -526,9 +551,10 @@
                             Kategori Komoditas
                         </label>
 
-                        <select id="heatmapCategory" onchange="loadHeatmap()">
+                        <select id="heatmapCategory">
                             <option value="pangan">Tanaman Pangan</option>
                             <option value="biofarmaka">Biofarmaka</option>
+                            <option value="hortikultura">Hortikultura</option>
                         </select>
                     </div>
 
@@ -551,16 +577,15 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Kecamatan</th>
-                                    <th>Produksi</th>
-                                    <th>Luas</th>
-                                    <th>Status</th>
+                                    <th>Kecamatan &amp; Produksi</th>
+                                    <th>Luas Panen</th>
+                                    <th>Potensi</th>
                                 </tr>
                             </thead>
 
                             <tbody id="tabelMonitoring">
                                 <tr>
-                                    <td colspan="4">
+                                    <td colspan="3">
                                         Memuat data kecamatan...
                                     </td>
                                 </tr>
@@ -571,28 +596,6 @@
                 </div>
 
             </div>
-
-
-            <!-- PCA CLUSTERING -->
-            <div class="card monitoring-pca-card">
-                <div class="card-header">
-                    <div>
-                        <h3>Visualisasi PCA Clustering</h3>
-                        <small>
-                            Pengelompokan kecamatan berdasarkan karakteristik pertanian
-                        </small>
-                    </div>
-                </div>
-
-                <div class="chart-container">
-                    <canvas id="pcaChart"></canvas>
-                </div>
-
-                <div id="pcaClusterSummary">
-                    Memuat hasil PCA...
-                </div>
-            </div>
-
         </section>
 
 
@@ -753,24 +756,29 @@
                 </button>
             </div>
 
-            <div class="filter-card">
-                <select id="forecastKomoditas">
-                    <option value="">Pilih Komoditas</option>
-                    <option value="Padi">Padi</option>
-                    <option value="Jagung">Jagung</option>
-                    <option value="Kedelai">Kedelai</option>
+            <div class="filter-card forecast-filter-card">
+                <select id="forecastKategori" aria-label="Kategori pertanian">
+                    <option value="tanaman_pangan">Tanaman Pangan</option>
+                    <option value="biofarmaka">Biofarmaka</option>
+                    <option value="hortikultura">Hortikultura</option>
+                </select>
+                <select id="forecastKecamatan" aria-label="Wilayah prediksi">
+                    <option value="kabupaten">Kabupaten Kediri</option>
+                </select>
+                <select id="forecastKomoditas" aria-label="Komoditas prediksi">
+                    <option value="">Semua Komoditas</option>
                 </select>
             </div>
 
-            <div class="two-column">
-                <div class="card">
+            <div class="forecast-main-grid">
+                <div class="card forecast-chart-card">
                     <div class="card-header">
                         <div>
                             <h3>Forecasting Produksi</h3>
-                            <small>Perbandingan data aktual dan hasil prediksi</small>
+                            <small>Data aktual dan prediksi dari model yang tersedia</small>
                         </div>
                     </div>
-                    <div class="chart-container">
+                    <div class="chart-container forecasting-chart-container">
                         <canvas id="forecastingChart"></canvas>
                     </div>
                     <div id="forecastingSummary">
@@ -778,58 +786,17 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header"><h3>⚠️ Potensi Risiko</h3></div>
+                <div class="card forecast-risk-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>⚠️ Indikator Risiko</h3>
+                            <small>Perubahan produksi model dan EWS cuaca BMKG ditampilkan terpisah</small>
+                        </div>
+                    </div>
                     <div id="riskList">
                         <p>Memuat informasi risiko...</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- EVALUASI FORECASTING BIOFARMAKA -->
-            <div class="card bio-card" style="margin-top:20px;">
-
-                <div class="bio-card-head">
-                    <h3>Evaluasi Forecasting Biofarmaka</h3>
-                    <small>
-                        Perbandingan tingkat kesalahan prediksi
-                        berdasarkan WAPE (%).
-                    </small>
-                </div>
-
-                <div class="bio-filter-row">
-                    <select id="bioLevelFilter">
-                        <option value="kabupaten" selected>Kabupaten</option>
-                        <option value="kecamatan">Kecamatan</option>
-                    </select>
-
-                    <select id="bioTargetFilter">
-                        <option value="produksi" selected>Produksi</option>
-                        <option value="luas">Luas Panen</option>
-                    </select>
-
-                    <select id="bioYearFilter">
-                        <option value="2023" selected>2023</option>
-                        <option value="2024">2024</option>
-                    </select>
-                </div>
-
-                <!-- RINGKASAN MODEL TERBAIK -->
-                <div id="bioBestModel" class="bio-best-model">
-                    Memuat evaluasi...
-                </div>
-
-                <!-- GRAFIK -->
-                <div class="bio-forecast-chart-wrap">
-                    <canvas id="bioForecastEvaluationChart"></canvas>
-                </div>
-
-                <p class="bio-forecast-note">
-                    Grafik menunjukkan nilai WAPE (%).
-                    Semakin rendah nilainya, semakin kecil
-                    tingkat kesalahan prediksi.
-                </p>
-
             </div>
 
         </section>
@@ -841,92 +808,59 @@
                     <h1>Ketahanan Pangan</h1>
                     <p>Analisis pengelompokan wilayah berdasarkan kondisi pertanian.</p>
                 </div>
-                <button class="green-button" onclick="loadClustering()">
+                <button class="green-button" onclick="loadKetahananAnalyses()">
                     <i class="fa-solid fa-rotate"></i> Perbarui Analisis
                 </button>
             </div>
 
-            <div class="stats-grid ketahanan-stats">
-                <div class="stat-card">
-                    <span class="stat-label">Jumlah Cluster</span>
-                    <h2 id="jumlahCluster">--</h2>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Kecamatan Teranalisis</span>
-                    <h2 id="jumlahKecamatanCluster">--</h2>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-label">Metode Clustering</span>
-                    <h2 id="metodeClustering">K-Means</h2>
-                    <small class="comparison">
-                        Pengelompokan berdasarkan karakteristik produksi
-                    </small>
-                </div>
-            </div>
-
-            <div class="two-column">
-                <div class="card">
-                    <div class="card-header"><h3>Distribusi Cluster</h3></div>
-                    <div class="chart-container">
-                        <canvas id="clusterDistributionChart"></canvas>
+            <div class="card ketahanan-table-card recommendation-card potential-analysis-card">
+                <div class="potential-analysis-header">
+                    <div>
+                        <h3>Analisis Potensi &amp; Rekomendasi Komoditas</h3>
+                        <small id="commodityAnalysisMode">Rekomendasi Komoditas Tanaman Pangan</small>
+                    </div>
+                    <div class="potential-analysis-filters">
+                        <label class="recommendation-region-filter">
+                            Kategori
+                            <select id="potentialCategoryFilter" aria-label="Pilih kategori komoditas">
+                                <option value="tanaman_pangan">Tanaman Pangan</option>
+                                <option value="biofarmaka">Biofarmaka</option>
+                                <option value="hortikultura">Hortikultura</option>
+                            </select>
+                        </label>
+                        <label class="recommendation-region-filter">
+                            Kecamatan
+                            <select id="recommendationKecamatanFilter" aria-label="Filter kecamatan rekomendasi">
+                                <option value="">Semua Kecamatan</option>
+                            </select>
+                        </label>
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="card-header"><h3>Karakteristik Cluster</h3></div>
-                    <div id="clusterDescription">
-                        <p>Memuat karakteristik cluster...</p>
-                    </div>
+                <div class="potential-analysis-body">
+                    <section class="potential-analysis-visual">
+                        <h4 id="potentialAnalysisChartTitle">Grafik Potensi &amp; Rekomendasi</h4>
+                        <p id="potentialAnalysisChartCaption" class="potential-analysis-chart-caption">Visualisasi berdasarkan data kategori yang dipilih.</p>
+                        <div class="potential-analysis-chart-wrap">
+                            <canvas id="potentialAnalysisChart" role="img" aria-label="Grafik potensi dan rekomendasi komoditas"></canvas>
+                            <p id="potentialAnalysisChartEmpty" hidden>Memuat grafik...</p>
+                        </div>
+                    </section>
+                    <section class="potential-analysis-ranking-panel">
+                        <h4>Ranking Komoditas</h4>
+                        <p id="recommendationRankingCaption" class="potential-analysis-caption">Memuat analisis komoditas...</p>
+                        <div id="recommendationRanking" class="recommendation-ranking" aria-live="polite">
+                            <p>Memuat analisis komoditas...</p>
+                        </div>
+                    </section>
                 </div>
-            </div>
-
-            <div class="card cluster-insight-card" style="margin-bottom:20px;">
-                <h3>Interpretasi Hasil Clustering</h3>
-
-                <p style="font-size:13px;line-height:1.8;color:#475569;margin-top:10px;">
-                    Analisis K-Means mengelompokkan kecamatan berdasarkan
-                    kemiripan karakteristik produksi komoditas pangan.
-                    Setiap cluster menggambarkan kelompok wilayah dengan
-                    pola pertanian yang relatif serupa.
-
-                    Perbedaan antarkelompok dapat diamati melalui
-                    jumlah kecamatan, rata-rata produksi, dan komoditas
-                    yang dominan. Hasil ini membantu mengidentifikasi
-                    karakteristik pertanian wilayah sebagai bahan
-                    pertimbangan perencanaan dan pengembangan komoditas.
-                </p>
-            </div>
-
-            <div class="card" style="margin-top:20px;">
-                <div class="card-header"><h3>Hasil Clustering Kecamatan</h3></div>
-                <div class="table-responsive ketahanan-table-scroll">
+                <div id="recommendationTableWrapper" class="table-responsive ketahanan-table-scroll recommendation-table-scroll" hidden>
                     <table>
                         <thead>
                             <tr>
                                 <th>Kecamatan</th>
-                                <th>Cluster</th>
-                                <th>Produksi</th>
-                                <th>Produktivitas</th>
-                                <th>Kategori</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tabelCluster">
-                            <tr><td colspan="5">Memuat hasil clustering...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="card" style="margin-top:20px;">
-                <div class="card-header"><h3>Rekomendasi Komoditas</h3></div>
-                <div class="table-responsive ketahanan-table-scroll">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Kecamatan</th>
-                                <th>Komoditas Rekomendasi</th>
-                                <th>Potensi</th>
-                                <th>Alasan Rekomendasi</th>
+                                <th>Rank</th>
+                                <th>Komoditas</th>
+                                <th>Skor API</th>
                             </tr>
                         </thead>
                         <tbody id="tabelRekomendasi">
@@ -936,92 +870,105 @@
                 </div>
             </div>
 
-            <!-- ==========================================
-                ANALISIS CLUSTERING BIOFARMAKA
-            ========================================== -->
-            <div class="bio-ketahanan-section">
+            <div class="cluster-analysis-heading">
+                <h2>Analisis Klaster Tanaman Pangan</h2>
+                <p>Pengelompokan kecamatan berdasarkan karakteristik dan pola produksi pertanian.</p>
+            </div>
 
-                <div class="bio-ketahanan-heading">
+            <div class="card cluster-distribution-card">
+                <div class="card-header"><h3>Distribusi Cluster Tanaman Pangan</h3></div>
+                <div class="chart-container">
+                    <canvas id="clusterDistributionChart"></canvas>
+                </div>
+            </div>
+
+            <div class="ketahanan-results-grid cluster-analysis-results-grid">
+                <div class="card ketahanan-table-card">
+                    <div class="card-header"><h3>Hasil Clustering Kecamatan</h3></div>
+                    <div class="table-responsive ketahanan-table-scroll">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Kecamatan</th>
+                                    <th>Cluster</th>
+                                    <th>Kategori Potensi</th>
+                                    <th>Top 3 Komoditas</th>
+                                    <th>Rerata Produksi (Ton)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabelCluster">
+                                <tr><td colspan="5">Memuat hasil clustering...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card cluster-interpretation-card">
+                    <div class="card-header"><h3>Interpretasi Hasil Clustering</h3></div>
+                    <div id="clusterDescription" class="cluster-interpretation-list">
+                        <p>Memuat karakteristik cluster...</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="crop-cluster-section" id="biofarmakaClusterSection">
+                <div class="crop-cluster-heading">
                     <div>
                         <h2>Analisis Klaster Biofarmaka</h2>
-                        <p>
-                            Pengelompokan wilayah berdasarkan
-                            karakteristik produksi tanaman biofarmaka
-                            di Kabupaten Kediri.
-                        </p>
+                        <p>Distribusi kecamatan dan agregasi produksi aktual komoditas Biofarmaka.</p>
                     </div>
-
-                    <span class="bio-period">2020–2025</span>
                 </div>
-
-                <div class="bio-ketahanan-grid">
-
-                    <!-- DISTRIBUSI KLASTER -->
-                    <div class="card bio-card bio-distribution-card">
-
-                        <div class="bio-card-head">
-                            <h3>Distribusi Klaster</h3>
-                            <small>
-                                Proporsi kecamatan berdasarkan
-                                hasil klasterisasi biofarmaka
-                            </small>
-                        </div>
-
-                        <div class="bio-chart-wrap">
-                            <canvas id="bioClusterChart"></canvas>
-                        </div>
-
-                        <div id="bioClusterInfo">
-                            Memuat distribusi klaster...
-                        </div>
-
+                <div class="crop-cluster-overview-grid">
+                    <div class="card crop-cluster-card">
+                        <div class="card-header"><h3>Distribusi Cluster</h3></div>
+                        <div class="crop-cluster-chart-wrap"><canvas id="bioClusterChart"></canvas></div>
                     </div>
-
-                    <!-- POTENSI PER KECAMATAN -->
-                    <div class="card bio-card bio-potential-card">
-
-                        <div class="bio-card-head">
-                            <h3>Potensi Biofarmaka per Kecamatan</h3>
-                            <small>
-                                Produksi rata-rata tahunan dan
-                                komoditas dominan setiap kecamatan
-                            </small>
-                        </div>
-
-                        <div class="bio-table-scroll bio-potential-scroll">
-
+                </div>
+                <div class="ketahanan-results-grid crop-cluster-results-grid">
+                    <div class="card ketahanan-table-card">
+                        <div class="card-header"><h3>Hasil Clustering Kecamatan</h3></div>
+                        <div class="table-responsive crop-cluster-table-scroll">
                             <table>
-                                <thead>
-                                    <tr>
-                                        <th>Kecamatan</th>
-                                        <th>Klaster</th>
-                                        <th>Rerata Produksi (kg/tahun)</th>
-                                        <th>Top 3 Komoditas</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody id="bioClusterTable">
-                                    <tr>
-                                        <td colspan="4">
-                                            Memuat potensi biofarmaka...
-                                        </td>
-                                    </tr>
-                                </tbody>
+                                <thead><tr><th>Kecamatan</th><th>Cluster</th><th>Rerata Produksi (kg/tahun)</th><th>Top 3 Komoditas</th></tr></thead>
+                                <tbody id="bioClusterTable"><tr><td colspan="4">Memuat data Biofarmaka...</td></tr></tbody>
                             </table>
-
                         </div>
-
-                        <p class="bio-table-caption">
-                            Data diurutkan berdasarkan produksi
-                            rata-rata tahunan tertinggi.
-                            Scroll tabel untuk melihat seluruh kecamatan.
-                        </p>
-
                     </div>
-
+                    <div class="card cluster-interpretation-card">
+                        <div class="card-header"><h3>Interpretasi Hasil Clustering</h3></div>
+                        <div id="bioClusterInfo" class="cluster-interpretation-list">Memuat karakteristik cluster...</div>
+                    </div>
                 </div>
+            </section>
 
-            </div>
+            <section class="crop-cluster-section" id="hortikulturaClusterSection">
+                <div class="crop-cluster-heading">
+                    <div>
+                        <h2>Analisis Klaster Hortikultura</h2>
+                        <p>Distribusi kecamatan dan agregasi produksi aktual komoditas Hortikultura.</p>
+                    </div>
+                </div>
+                <div class="crop-cluster-overview-grid">
+                    <div class="card crop-cluster-card">
+                        <div class="card-header"><h3>Distribusi Cluster</h3></div>
+                        <div class="crop-cluster-chart-wrap"><canvas id="hortiClusterChart"></canvas></div>
+                    </div>
+                </div>
+                <div class="ketahanan-results-grid crop-cluster-results-grid">
+                    <div class="card ketahanan-table-card">
+                        <div class="card-header"><h3>Hasil Clustering Kecamatan</h3></div>
+                        <div class="table-responsive crop-cluster-table-scroll">
+                            <table>
+                                <thead><tr><th>Kecamatan</th><th>Cluster</th><th>Rerata Produksi (kg/tahun)</th><th>Top 3 Komoditas</th></tr></thead>
+                                <tbody id="hortiClusterTable"><tr><td colspan="4">Memuat data Hortikultura...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card cluster-interpretation-card">
+                        <div class="card-header"><h3>Interpretasi Hasil Clustering</h3></div>
+                        <div id="hortiClusterInfo" class="cluster-interpretation-list">Memuat karakteristik cluster...</div>
+                    </div>
+                </div>
+            </section>
         </section>
 
         <!-- DATA CENTER -->
@@ -1039,11 +986,11 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Dataset Tersedia</h3>
-                    <label for="uploadDataset" class="green-button">
+                    <label for="uploadDataset" class="green-button" data-roles="super_admin">
                         <i class="fa-solid fa-upload"></i> Upload Dataset
                     </label>
                     <input type="file" id="uploadDataset" accept=".csv,.xlsx,.xls" hidden
-                           onchange="uploadDatasetFile(this)">
+                           onchange="uploadDatasetFile(this)" data-roles="super_admin">
                 </div>
 
                 <div class="table-responsive">
@@ -1088,83 +1035,6 @@
                 <div id="daftarLaporan">
                     <p>Memuat daftar laporan...</p>
                 </div>
-            </div>
-
-            <!-- ========================================
-                ANALISIS BIOFARMAKA
-            ======================================== -->
-            <div class="bio-section">
-
-                <div class="bio-section-heading">
-                    <div>
-                        <h2>Analisis Biofarmaka</h2>
-                        <p>
-                            Ringkasan statistik, potensi wilayah,
-                            dan evaluasi forecasting biofarmaka.
-                        </p>
-                    </div>
-
-                    <span class="bio-period">2020–2025</span>
-                </div>
-
-                <!-- KPI -->
-                <div class="bio-kpi-grid">
-
-                    <div class="bio-kpi">
-                        <span>Observasi</span>
-                        <strong id="bioTotalData">—</strong>
-                        <small>Data keseluruhan</small>
-                    </div>
-
-                    <div class="bio-kpi">
-                        <span>Kecamatan</span>
-                        <strong id="bioKecamatan">—</strong>
-                        <small>Wilayah teranalisis</small>
-                    </div>
-
-                    <div class="bio-kpi">
-                        <span>Komoditas</span>
-                        <strong id="bioKomoditas">—</strong>
-                        <small>Jenis biofarmaka</small>
-                    </div>
-
-                    <div class="bio-kpi">
-                        <span>Kelengkapan Produksi</span>
-                        <strong id="bioKelengkapan">—</strong>
-                        <small>Nilai produksi tersedia</small>
-                    </div>
-
-                </div>
-
-                <!-- KELENGKAPAN DATA BIOFARMAKA -->
-                <div class="card bio-card">
-
-                    <div class="bio-card-head">
-                        <h3>Kelengkapan Data</h3>
-                        <small>Persentase data tersedia</small>
-                    </div>
-
-                    <div id="bioCompleteness">
-                        Memuat statistik...
-                    </div>
-
-                </div>
-
-                <!-- SELURUH LAPORAN -->
-                <div class="card bio-card">
-
-                    <div class="bio-card-head">
-                        <h3>Dokumen Analisis Biofarmaka</h3>
-                        <small>
-                            Delapan laporan hasil analisis
-                        </small>
-                    </div>
-
-                    <div id="bioFileList" class="bio-file-list">
-                        Memuat daftar laporan...
-                    </div>
-                </div>
-
             </div>
 
         </section>
@@ -1266,6 +1136,7 @@
 
 <!-- LEAFLET JAVASCRIPT -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="auth.js"></script>
 <!-- KALENDER INTERAKTIF -->
 <script src="calendar.js"></script>
 <script src="script.js"></script>

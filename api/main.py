@@ -5,6 +5,7 @@ import random
 import tempfile
 import threading
 import pickle
+from contextlib import asynccontextmanager
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from typing import Optional
@@ -44,14 +45,11 @@ SECRET_KEY = os.getenv("SECRET_KEY", "agri-dash-secret-key-change-this")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "1440"))
 API_INDONESIA_KEY = os.getenv("API_INDONESIA_KEY")
+APP_ENVIRONMENT = os.getenv("AGRIDASH_ENVIRONMENT", os.getenv("APP_ENV", "development")).strip().lower()
 BMKG_BASE_URL = "https://api.bmkg.go.id/publik/prakiraan-cuaca"
-
-DEFAULT_ADMIN_PASSWORD = os.getenv("DEFAULT_ADMIN_PASSWORD", "admin123")
 
 if SECRET_KEY == "agri-dash-secret-key-change-this":
     print("[WARNING] SECRET_KEY masih default. Atur SECRET_KEY acak di api/.env.")
-if DEFAULT_ADMIN_PASSWORD == "admin123":
-    print("[WARNING] Password admin default (admin123). Atur DEFAULT_ADMIN_PASSWORD di api/.env sebelum deploy.")
 
 
 # =========================================================
@@ -69,7 +67,7 @@ BIO_DIR = DATA_DIR / "biofarmaka"
 AUTH_DIR = API_DIR / "auth"
 USERS_FILE = AUTH_DIR / "users.json"
 AUDIT_FILE = AUTH_DIR / "audit_trail.jsonl"
-FILE_LOCK = threading.Lock()
+FILE_LOCK = threading.RLock()
 
 # Folder hasil pemodelan. Data bisa ada di output/ (hasil notebook) atau data/model_ready/ (hasil preprocessing).
 MODEL_READY_DIR = PROJECT_DIR / "data" / "model_ready"
@@ -117,6 +115,17 @@ CSV_FILES = {
     "hortikultura_produktivitas_ekstrem": MODEL_READY_DIR / "produktivitas_ekstrem_hortikultura.csv",
 }
 
+FORECAST_ACTUAL_FILES = {
+    "biofarmaka": {
+        "kabupaten": PROJECT_DIR / "data" / "clean" / "biofarmaka" / "biofarmaka_keseluruhan.csv",
+        "kecamatan": PROJECT_DIR / "data" / "clean" / "biofarmaka" / "biofarmaka_kecamatan.csv",
+    },
+    "hortikultura": {
+        "kabupaten": PROJECT_DIR / "data" / "clean" / "hortikultura" / "hortikultura_kabupaten_clean.csv",
+        "kecamatan": PROJECT_DIR / "data" / "clean" / "hortikultura" / "hortikultura_kecamatan_clean.csv",
+    },
+}
+
 REQUIRED_COLUMNS = ["kecamatan", "tanaman", "luas_panen_ha", "produksi_ton", "produktivitas_kuintal_ha"]
 NUMERIC_COLUMNS = ["luas_panen_ha", "produksi_ton", "produktivitas_kuintal_ha"]
 
@@ -141,10 +150,17 @@ load_bundle()
 # 3. FASTAPI APPLICATION
 # =========================================================
 
+@asynccontextmanager
+async def lifespan(_app):
+    require_changed_demo_passwords_in_production()
+    yield
+
+
 app = FastAPI(
     title="AgriDash API",
     description="API Monitoring Pertanian dan Ketahanan Pangan Kabupaten Kediri",
-    version="0.1.0"
+    version="0.1.0",
+    lifespan=lifespan,
 )
 
 app.add_middleware(
@@ -328,12 +344,21 @@ def build_status_wilayah():
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login")
-oauth2_optional = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login", auto_error=False)
+
+BOOTSTRAP_ACCOUNTS = (
+    {"username": "superadmin", "role": "super_admin", "password": os.getenv("AGRIDASH_SUPERADMIN_INITIAL_PASSWORD", "super123")},
+    {"username": "user", "role": "user", "password": os.getenv("AGRIDASH_USER_INITIAL_PASSWORD", "user123")},
+)
+BOOTSTRAP_ACCOUNT_VERSION = 1
 
 class UserCreate(BaseModel):
     username: str
     password: str
-    role: str = "admin"
+    role: str = "user"
+
+class PasswordChange(BaseModel):
+    current_password: str
+    new_password: str
 
 class PrediksiRequest(BaseModel):
     kecamatan: str
@@ -341,18 +366,76 @@ class PrediksiRequest(BaseModel):
     bulan_ke_depan: int = 1
 
 def read_users():
-    if not USERS_FILE.exists():
-        default_admin = {"id": 1, "username": "admin", "password_hash": pwd_context.hash(DEFAULT_ADMIN_PASSWORD), "role": "super_admin"}
-        AUTH_DIR.mkdir(parents=True, exist_ok=True)
-        USERS_FILE.write_text(json.dumps([default_admin], indent=2), encoding="utf-8")
-        return [default_admin]
+    with FILE_LOCK:
+        if not USERS_FILE.exists():
+            users = []
+        else:
+            try:
+                users = json.loads(USERS_FILE.read_text(encoding="utf-8"))
+                if not isinstance(users, list) or any(not isinstance(user, dict) for user in users):
+                    raise ValueError("Format users.json tidak valid")
+            except (OSError, ValueError) as error:
+                raise HTTPException(status_code=500, detail=f"Gagal membaca user: {error}")
 
-    try:
-        users = json.loads(USERS_FILE.read_text(encoding="utf-8"))
-        if not isinstance(users, list): raise ValueError("Format users.json tidak valid")
+        changed = False
+        for account in BOOTSTRAP_ACCOUNTS:
+            username = account["username"]
+            matching = [
+                index for index, user in enumerate(users)
+                if str(user.get("username", "")).casefold() == username.casefold()
+            ]
+
+            if matching:
+                user = users[matching[0]]
+                duplicate_indices = set(matching[1:])
+                if duplicate_indices:
+                    users = [entry for index, entry in enumerate(users) if index not in duplicate_indices]
+                    changed = True
+                if user.get("username") != username:
+                    user["username"] = username
+                    changed = True
+                if user.get("role") != account["role"]:
+                    user["role"] = account["role"]
+                    changed = True
+                if (
+                    user.get("bootstrap_version") != BOOTSTRAP_ACCOUNT_VERSION
+                    or not user.get("password_hash")
+                    or "must_change_password" not in user
+                ):
+                    user["password_hash"] = pwd_context.hash(account["password"])
+                    user["must_change_password"] = True
+                    user["bootstrap_version"] = BOOTSTRAP_ACCOUNT_VERSION
+                    changed = True
+            else:
+                next_id = max(
+                    (entry.get("id", 0) for entry in users if isinstance(entry.get("id", 0), int)),
+                    default=0,
+                ) + 1
+                users.append({
+                    "id": next_id,
+                    "username": username,
+                    "password_hash": pwd_context.hash(account["password"]),
+                    "role": account["role"],
+                    "must_change_password": True,
+                    "bootstrap_version": BOOTSTRAP_ACCOUNT_VERSION,
+                })
+                changed = True
+
+        if changed:
+            save_users(users)
         return users
-    except (OSError, ValueError) as error:
-        raise HTTPException(status_code=500, detail=f"Gagal membaca user: {error}")
+
+
+def require_changed_demo_passwords_in_production():
+    if APP_ENVIRONMENT not in {"production", "prod"}:
+        return
+    users = read_users()
+    bootstrap_usernames = {account["username"] for account in BOOTSTRAP_ACCOUNTS}
+    if any(
+        user.get("username") in bootstrap_usernames and user.get("must_change_password")
+        for user in users
+    ):
+        raise RuntimeError("Change all initial demo passwords before starting in production.")
 
 def save_users(users):
     AUTH_DIR.mkdir(parents=True, exist_ok=True)
@@ -381,9 +464,11 @@ def user_from_token(token):
 def get_current_user(token: str = Depends(oauth2_scheme)):
     return user_from_token(token)
 
-def get_current_admin(user: dict = Depends(get_current_user)):
-    if user.get("role") not in ["admin", "super_admin"]:
-        raise HTTPException(status_code=403, detail="Akses hanya untuk admin.")
+def get_current_super_admin(user: dict = Depends(get_current_user)):
+    if user.get("role") != "super_admin":
+        raise HTTPException(status_code=403, detail="Akses hanya untuk Super Admin.")
+    if user.get("must_change_password"):
+        raise HTTPException(status_code=403, detail="Ganti password awal sebelum menggunakan fitur Super Admin.")
     return user
 
 def write_audit(username, action, details=""):
@@ -422,14 +507,9 @@ def health_check():
 # =========================================================
 
 @app.post("/api/v1/auth/register")
-def register_user(user: UserCreate, token: Optional[str] = Depends(oauth2_optional)):
+def register_user(user: UserCreate, current_user: dict = Depends(get_current_super_admin)):
     with FILE_LOCK:
         users = read_users()
-        if users:
-            if not token: raise HTTPException(status_code=401, detail="Registrasi memerlukan admin.")
-            current = user_from_token(token)
-            if current["role"] not in ["admin", "super_admin"]:
-                raise HTTPException(status_code=403, detail="Akses hanya admin.")
 
         username = user.username.strip()
         if not username or len(user.password) < 8:
@@ -439,8 +519,14 @@ def register_user(user: UserCreate, token: Optional[str] = Depends(oauth2_option
         if any(u["username"] == username for u in users):
             raise HTTPException(status_code=400, detail="Username sudah terdaftar.")
 
-        role = "admin" if not users else user.role
-        users.append({"id": max([u.get("id", 0) for u in users], default=0) + 1, "username": username, "password_hash": pwd_context.hash(user.password), "role": role})
+        role = user.role
+        users.append({
+            "id": max([u.get("id", 0) for u in users], default=0) + 1,
+            "username": username,
+            "password_hash": pwd_context.hash(user.password),
+            "role": role,
+            "must_change_password": True,
+        })
         save_users(users)
 
     return {"message": "Registrasi berhasil.", "username": username, "role": role}
@@ -454,7 +540,51 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
 
     token = create_access_token({"sub": user["username"], "role": user["role"]})
     write_audit(user["username"], "Login", "Login berhasil")
-    return {"access_token": token, "token_type": "bearer", "username": user["username"], "role": user["role"]}
+    return {
+        "access_token": token,
+        "token_type": "bearer",
+        "username": user["username"],
+        "role": user["role"],
+        "must_change_password": bool(user.get("must_change_password", False)),
+    }
+
+
+@app.get("/api/v1/auth/me")
+def get_authenticated_user(user: dict = Depends(get_current_user)):
+    return {
+        "username": user["username"],
+        "role": user["role"],
+        "must_change_password": bool(user.get("must_change_password", False)),
+    }
+
+
+@app.post("/api/v1/auth/change-password")
+def change_password(change: PasswordChange, current_user: dict = Depends(get_current_user)):
+    new_password_bytes = change.new_password.encode("utf-8")
+    if len(change.new_password) < 12 or len(new_password_bytes) > 72:
+        raise HTTPException(status_code=400, detail="Password baru harus 12–72 byte.")
+    try:
+        current_password_matches = pwd_context.verify(change.current_password, current_user["password_hash"])
+        password_is_unchanged = pwd_context.verify(change.new_password, current_user["password_hash"])
+    except ValueError:
+        current_password_matches = False
+        password_is_unchanged = False
+    if not current_password_matches:
+        raise HTTPException(status_code=400, detail="Password saat ini tidak sesuai.")
+    if password_is_unchanged:
+        raise HTTPException(status_code=400, detail="Password baru harus berbeda dari password saat ini.")
+
+    with FILE_LOCK:
+        users = read_users()
+        user = next((entry for entry in users if entry.get("username") == current_user["username"]), None)
+        if not user:
+            raise HTTPException(status_code=401, detail="Akun tidak ditemukan.")
+        user["password_hash"] = pwd_context.hash(change.new_password)
+        user["must_change_password"] = False
+        save_users(users)
+
+    write_audit(current_user["username"], "Password changed")
+    return {"message": "Password berhasil diperbarui.", "must_change_password": False}
 
 
 # =========================================================
@@ -502,7 +632,7 @@ def get_ringkasan_tanaman():
 # =========================================================
 
 @app.post("/api/v1/tanaman-pangan/upload")
-def upload_tanaman_pangan(file: UploadFile = File(...), current_user: dict = Depends(get_current_admin)):
+def upload_tanaman_pangan(file: UploadFile = File(...), current_user: dict = Depends(get_current_super_admin)):
     filename = (file.filename or "").lower()
     if not filename.endswith((".csv", ".xlsx", ".xls")):
         raise HTTPException(status_code=400, detail="Format file harus CSV atau Excel.")
@@ -675,7 +805,7 @@ def get_harga_pangan():
 # =========================================================
 
 @app.get("/api/v1/audit-trail")
-def get_audit_trail(user: dict = Depends(get_current_admin)):
+def get_audit_trail(user: dict = Depends(get_current_super_admin)):
     if not AUDIT_FILE.exists(): return {"total": 0, "data": []}
     with FILE_LOCK:
         lines = AUDIT_FILE.read_text(encoding="utf-8").splitlines()
@@ -801,6 +931,42 @@ def download_file(file_key: str):
 def frontend_clustering():
     df = load_clustering_df()
     return {"total": len(df), "columns": list(df.columns), "cluster_column": get_cluster_column(df), "data": dataframe_records(df)}
+
+@app.get("/api/v1/model/crop-clustering")
+def frontend_crop_clustering(kategori: str = Query(...)):
+    category = normalize_text(kategori)
+    if category not in {"biofarmaka", "hortikultura"}:
+        raise HTTPException(status_code=400, detail="Kategori harus biofarmaka atau hortikultura.")
+
+    cluster_path = CSV_FILES[f"{category}_klaster"]
+    production_path = FORECAST_ACTUAL_FILES[category]["kecamatan"]
+    if not cluster_path.is_file() or not production_path.is_file():
+        raise HTTPException(status_code=404, detail=f"Data klaster atau produksi {category} tidak ditemukan.")
+
+    cluster_df = normalize_columns(read_agri_csv(cluster_path))
+    production_df = normalize_columns(read_agri_csv(production_path))
+    cluster_region = get_kecamatan_column(cluster_df)
+    cluster_column = get_cluster_column(cluster_df)
+    average_column = find_column(cluster_df, PROD_CANDS_KL)
+    top3_column = find_column(cluster_df, TOP3_CANDS)
+    production_region = get_kecamatan_column(production_df)
+    commodity_column = find_column(production_df, KOM_CANDS)
+    value_column = find_column(production_df, ["produksi_kg", "produksi"])
+
+    if not all([cluster_region, cluster_column, average_column, top3_column]):
+        raise HTTPException(status_code=422, detail=f"Kolom hasil klaster {category} belum lengkap.")
+    if not all([production_region, commodity_column, value_column]):
+        raise HTTPException(status_code=422, detail=f"Kolom produksi aktual {category} belum lengkap.")
+
+    clusters = cluster_df[[cluster_region, cluster_column, average_column, top3_column]].copy()
+    clusters.columns = ["kecamatan", "cluster", "produksi_rata2_kg_per_tahun", "top3_komoditas"]
+    production = production_df[[production_region, commodity_column, value_column]].copy()
+    production.columns = ["kecamatan", "komoditas", "produksi"]
+    return {
+        "kategori": category,
+        "clusters": dataframe_records(clusters),
+        "production": dataframe_records(production),
+    }
 
 @app.get("/api/v1/model/pca")
 def frontend_pca():
@@ -1004,16 +1170,70 @@ def build_overview(prefix):
     for key, value in load_stats_file(CSV_FILES.get("statistik_keseluruhan")).items():
         stats[key] = {**stats.get(key, {}), **value}
 
-    # --- top 5 komoditas & kecamatan
-    top_komoditas, top_kecamatan = [], []
-    if pr is not None and pr_kom and pr_val:
-        s = pr.assign(_v=to_num(pr[pr_val])).groupby(pr_kom)["_v"].sum().sort_values(ascending=False)
-        top_komoditas = [str(i) for i in s.head(5).index]
+    
+    # =====================================================
+    # TOP 5 KOMODITAS DAN KECAMATAN
+    # Berdasarkan laporan klaster, bukan penjumlahan prediksi
+    # =====================================================
+
+    from collections import Counter
+
+    top_komoditas = []
+    top_kecamatan = []
+
+    # 1. TOP 5 KOMODITAS
+    # Frekuensi kemunculan dalam Top 3 tiap kecamatan
+
+    frekuensi = Counter()
+
+    if kl is not None:
+        top3_col = find_column(kl, TOP3_CANDS)
+
+        if top3_col:
+            for value in kl[top3_col].dropna():
+                nama_komoditas = {
+                    nama.strip().replace("_", " ").title()
+                    for nama in str(value).replace(";", ",").split(",")
+                    if nama.strip() and nama.strip() != "—"
+                }
+
+                frekuensi.update(nama_komoditas)
+
+    top_komoditas = [
+        nama
+        for nama, jumlah in sorted(
+            frekuensi.items(),
+            key=lambda item: (-item[1], item[0])
+        )[:5]
+    ]
+
+    # Detail frekuensi untuk visualisasi
+    top_komoditas_detail = [
+        {
+            "komoditas": nama,
+            "jumlah_kecamatan": frekuensi[nama]
+        }
+        for nama in top_komoditas
+    ]
+
+
+    # 2. TOP 5 KECAMATAN
+    # Produksi rata-rata berdasarkan laporan klaster
+
     if records and prod_col_kl:
-        top_kecamatan = [r["kecamatan"] for r in sorted(records, key=lambda r: r["produksi_rata2_kg_per_tahun"] or 0, reverse=True)[:5]]
-    elif pr is not None and pr_kec and pr_val:
-        s = pr.assign(_v=to_num(pr[pr_val])).groupby(pr_kec)["_v"].sum().sort_values(ascending=False)
-        top_kecamatan = [str(i) for i in s.head(5).index]
+        valid_records = [
+            row for row in records
+            if row["produksi_rata2_kg_per_tahun"] is not None
+        ]
+
+        top_kecamatan = [
+            row["kecamatan"]
+            for row in sorted(
+                valid_records,
+                key=lambda row: row["produksi_rata2_kg_per_tahun"],
+                reverse=True
+            )[:5]
+        ]
 
     report_keys = {
         "backtest": f"{prefix}_backtest",
@@ -1047,6 +1267,8 @@ def build_overview(prefix):
         "backtest": backtest,
         "laporan": laporan,
         "top_komoditas": top_komoditas,
+        "top_komoditas_detail": top_komoditas_detail,
+        "top_komoditas_metode": "Frekuensi kemunculan dalam Top 3 kecamatan",
         "top_kecamatan": top_kecamatan,
         "kolom": {
             "klaster": list(kl.columns) if kl is not None else [],
@@ -1075,8 +1297,102 @@ def standardize_forecast_columns(df):
     return df.rename(columns=ren)
 
 
+def build_crop_forecasting(category):
+    prediction_path = CSV_FILES.get(f"{category}_prediksi")
+    if not prediction_path or not prediction_path.exists():
+        raise HTTPException(status_code=404, detail=f"File prediksi {category} tidak ditemukan.")
+
+    predictions = normalize_columns(read_agri_csv(prediction_path))
+    level_col = find_column(predictions, ["level"])
+    target_col = find_column(predictions, ["target"])
+    commodity_col = find_column(predictions, KOM_CANDS)
+    year_col = find_column(predictions, ["tahun", "year"])
+    value_col = find_column(predictions, ["prediksi", "forecast", "yhat"])
+    region_col = get_kecamatan_column(predictions)
+    unit_col = find_column(predictions, ["unit", "satuan"])
+    if not all([level_col, target_col, commodity_col, year_col, value_col]):
+        raise HTTPException(status_code=422, detail=f"Kolom wajib file prediksi {category} belum lengkap.")
+
+    production_predictions = predictions[
+        predictions[target_col].astype(str).str.strip().str.casefold().eq("produksi")
+    ]
+    unit_by_series = {}
+    forecast_rows = []
+    for _, row in production_predictions.iterrows():
+        level = normalize_text(row[level_col])
+        commodity = str(row[commodity_col]).strip()
+        region = str(row[region_col]).strip() if region_col and pd.notna(row[region_col]) else ""
+        unit = str(row[unit_col]).strip() if unit_col and pd.notna(row[unit_col]) else ""
+        series_key = (level, normalize_text(commodity), normalize_text(region))
+        if unit:
+            unit_by_series.setdefault(series_key, unit)
+        value = safe_float(row[value_col])
+        if value is None:
+            continue
+        forecast_rows.append({
+            "tahun": _year_str(row[year_col]),
+            "kecamatan": region or None,
+            "komoditas": commodity,
+            "target": "produksi",
+            "nilai": value,
+            "tipe": "Prediksi",
+            "level": level,
+            "unit": unit or None,
+        })
+
+    actual_rows = []
+    for level, path in FORECAST_ACTUAL_FILES[category].items():
+        if not path.exists():
+            continue
+        actual = normalize_columns(read_agri_csv(path))
+        actual_year_col = find_column(actual, ["tahun", "year"])
+        actual_commodity_col = find_column(actual, KOM_CANDS)
+        actual_value_col = find_column(actual, ["produksi", "produksi_kg", "produksi_ton", "nilai", "value"])
+        actual_region_col = get_kecamatan_column(actual)
+        if not all([actual_year_col, actual_commodity_col, actual_value_col]):
+            raise HTTPException(status_code=422, detail=f"Kolom aktual file {path.name} belum lengkap.")
+
+        for _, row in actual.iterrows():
+            value = safe_float(row[actual_value_col])
+            commodity = str(row[actual_commodity_col]).strip() if pd.notna(row[actual_commodity_col]) else ""
+            region = str(row[actual_region_col]).strip() if actual_region_col and pd.notna(row[actual_region_col]) else ""
+            if value is None or not commodity or (level == "kecamatan" and not region):
+                continue
+            series_key = (level, normalize_text(commodity), normalize_text(region))
+            actual_rows.append({
+                "tahun": _year_str(row[actual_year_col]),
+                "kecamatan": region or None,
+                "komoditas": commodity,
+                "target": "produksi",
+                "nilai": value,
+                "tipe": "Aktual",
+                "level": level,
+                "unit": unit_by_series.get(series_key),
+            })
+
+    backtest_path = CSV_FILES.get(f"{category}_backtest")
+    backtest = []
+    if backtest_path and backtest_path.exists():
+        backtest = extract_backtest(normalize_columns(read_agri_csv(backtest_path)))
+
+    data = actual_rows + forecast_rows
+    return {
+        "kategori": category,
+        "total": len(data),
+        "columns": list(data[0].keys()) if data else [],
+        "data": data,
+        "backtest": backtest,
+    }
+
+
 @app.get("/api/v1/model/forecasting")
-def frontend_forecasting():
+def frontend_forecasting(kategori: str = "tanaman_pangan"):
+    category = normalize_text(kategori).replace(" ", "_")
+    if category in FORECAST_ACTUAL_FILES:
+        return build_crop_forecasting(category)
+    if category != "tanaman_pangan":
+        raise HTTPException(status_code=400, detail="Kategori forecasting tidak valid.")
+
     if MODEL_BUNDLE and "forecast_long" in MODEL_BUNDLE:
         df = standardize_forecast_columns(normalize_columns(MODEL_BUNDLE["forecast_long"].copy()))
         return {"total": len(df), "columns": list(df.columns), "data": dataframe_records(df)}
@@ -1196,4 +1512,55 @@ def root():
         "docs": "/docs",
         "health": "/health",
         "timestamp": datetime.now().isoformat()
+    }
+
+
+# =========================================================
+# DASHBOARD HORTIKULTURA
+# =========================================================
+
+@app.get("/api/v1/hortikultura/dashboard")
+def get_dashboard_hortikultura():
+
+    klaster_path = CSV_FILES["hortikultura_klaster"]
+    prediksi_path = CSV_FILES["hortikultura_prediksi"]
+
+    def baca_data(path):
+        if not path.is_file():
+            return {
+                "available": False,
+                "columns": [],
+                "data": []
+            }
+
+        df = normalize_columns(read_csv_excel(path))
+
+        return {
+            "available": True,
+            "columns": list(df.columns),
+            "data": dataframe_records(df)
+        }
+
+    klaster = baca_data(klaster_path)
+    prediksi = baca_data(prediksi_path)
+
+    if not klaster["available"] and not prediksi["available"]:
+        raise HTTPException(
+            status_code=404,
+            detail="Dataset Hortikultura tidak ditemukan."
+        )
+
+    kecamatan = set()
+
+    for sumber in [klaster, prediksi]:
+        for row in sumber["data"]:
+            nama = row.get("kecamatan")
+            if nama is not None and str(nama).strip():
+                kecamatan.add(str(nama).strip())
+
+    return {
+        "sumber": "output/hortikultura",
+        "total_kecamatan": len(kecamatan),
+        "klaster": klaster,
+        "prediksi": prediksi
     }
