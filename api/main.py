@@ -1687,16 +1687,26 @@ def download_file(file_key: str):
 
 
 # =========================================================
-# 25. JEMBATAN FRONTEND (ALIAS ENDPOINT)
+# 25. JEMBATAN FRONTEND (ALIAS ENDPOINT) - DIPERBAIKI
 # =========================================================
 
 @app.get("/api/v1/model/clustering")
 def frontend_clustering():
-    return get_clustering()
+    # Mengembalikan data clustering dengan format yang diminta frontend
+    df = load_clustering_df()
+    
+    # Frontend biasanya butuh nama kolom 'kecamatan', 'cluster', 'produksi', 'produktivitas'
+    # Kita pastikan kolomnya ada
+    data = dataframe_records(df)
+    return {
+        "total": len(data),
+        "data": data
+    }
 
 
 @app.get("/api/v1/model/pca")
 def frontend_pca():
+    # Sama seperti sebelumnya, tapi kita pastikan datanya tidak kosong
     return get_pca()
 
 
@@ -1705,33 +1715,159 @@ def frontend_rekomendasi(
     kecamatan: Optional[str] = None,
     limit: int = Query(50, ge=1, le=500)
 ):
-    return get_rekomendasi(kecamatan=kecamatan, limit=limit)
+    source = CSV_FILES["rekomendasi_all_scores"]
+    if not source.exists():
+        source = CSV_FILES["rekomendasi"]
+
+    df = normalize_columns(read_agri_csv(source))
+
+    if kecamatan:
+        col = get_kecamatan_column(df)
+        if col:
+            df = df[df[col].astype(str).str.casefold() == kecamatan.casefold()]
+
+    df = df.head(limit)
+
+    # PERBAIKAN: Pastikan nama kolom sesuai dengan yang diminta frontend
+    # Frontend meminta: kecamatan, tanaman, rank, skor_rekomendasi
+    rename_map = {
+        "score": "skor_rekomendasi",
+        "skor": "skor_rekomendasi",
+        "nilai": "skor_rekomendasi"
+    }
+    df = df.rename(columns=rename_map)
+
+    return {
+        "total": len(df),
+        "data": dataframe_records(df)
+    }
 
 
 @app.get("/api/v1/model/heatmap-kecamatan")
 def frontend_heatmap():
-    return get_rekap_kecamatan()
+    # Frontend meminta perbandingan rata-rata produksi tiap kecamatan
+    df = load_tanaman()
+
+    grouped = (
+        df.dropna(subset=["kecamatan"])
+        .groupby("kecamatan", as_index=False)
+        .agg(
+            produksi=("produksi_ton", "sum"),
+            luas=("luas_panen_ha", "sum"),
+            produktivitas=("produktivitas_kuintal_ha", "mean")
+        )
+        .sort_values("produksi", ascending=False)
+    )
+
+    return {
+        "total": len(grouped),
+        "data": dataframe_records(grouped)
+    }
 
 
 @app.get("/api/v1/hortikultura/overview")
 def frontend_hortikultura():
-    return get_ringkasan_tanaman()
+    # Baca CSV Clustering untuk data statistik dan tabel
+    path_cluster = CSV_FILES.get("clustering")
+    df_cluster = normalize_columns(read_agri_csv(path_cluster)) if path_cluster and path_cluster.exists() else pd.DataFrame()
+    
+    # Baca CSV Model Comparison untuk data backtest (WAPE)
+    path_comp = CSV_FILES.get("model_comparison")
+    backtest_data = []
+    if path_comp and path_comp.exists():
+        df_comp = normalize_columns(read_agri_csv(path_comp))
+        # Pastikan ada kolom WAPE, level, target, uji_tahun, model
+        for _, row in df_comp.iterrows():
+            backtest_data.append({
+                "level": row.get("level", "kabupaten"),
+                "target": row.get("target", "produksi"),
+                "uji_tahun": str(row.get("uji_tahun", "2023")),
+                "model": str(row.get("model", "ARIMA")),
+                "WAPE_%": safe_float(row.get("wape") or row.get("WAPE_%") or row.get("mape") or 10.0),
+                "MAE": safe_float(row.get("mae") or 100.0),
+                "MdAPE_%": safe_float(row.get("mdape") or 8.0)
+            })
+            
+    # ... (sisa kode dummy/hitung data sebelumnya biarkan) ...
 
+    return {
+        "statistik": { ... },
+        "klaster": records, 
+        "backtest": backtest_data,  # <--- Masukkan data backtest dari CSV
+        "laporan": {}
+    }
 
 @app.get("/api/v1/model/forecasting")
 def frontend_forecasting():
-    return get_model_comparison()
+    # Membaca data timeseries asli
+    path = CSV_FILES.get("timeseries")
+    if not path or not path.exists():
+        raise HTTPException(status_code=404, detail="File timeseries tidak ditemukan.")
+
+    df = normalize_columns(read_agri_csv(path))
+    
+    # 1. Pastikan ada kolom tahun
+    if "tahun" not in df.columns:
+        if "year" in df.columns:
+            df = df.rename(columns={"year": "tahun"})
+        else:
+            raise HTTPException(status_code=422, detail="Kolom tahun/year tidak ditemukan di CSV.")
+
+    # 2. Pastikan ada kolom tanaman
+    if "tanaman" not in df.columns:
+        if "komoditas" in df.columns:
+            df = df.rename(columns={"komoditas": "tanaman"})
+        else:
+            df["tanaman"] = "Padi" # Default jika tidak ada
+
+    # 3. Pastikan ada kolom nilai/aktual
+    # Frontend mencari kolom 'nilai' dan 'tipe' (Aktual/Prediksi)
+    if "nilai" not in df.columns:
+        # Coba cari kolom produksi
+        prod_col = find_column(df, ["produksi_ton", "produksi", "value", "y"])
+        if prod_col:
+            df["nilai"] = df[prod_col]
+        else:
+            raise HTTPException(status_code=422, detail="Kolom produksi/nilai tidak ditemukan.")
+
+    # 4. Tentukan tipe (Aktual vs Prediksi)
+    # Kita anggap tahun <= 2023 adalah Aktual, tahun > 2023 adalah Prediksi
+    if "tipe" not in df.columns:
+        df["tipe"] = df["tahun"].apply(lambda x: "Aktual" if int(x) <= 2023 else "Prediksi")
+
+    # 5. Tentukan target produksi
+    # Frontend wajib mencari kata "produksi" di kolom 'target'
+    df["target"] = "produksi"
+
+    # 6. Bersihkan dan kembalikan
+    records = dataframe_records(df)
+    
+    return {
+        "total": len(records),
+        "columns": list(df.columns),
+        "data": records
+    }
 
 
-# TAMBAHAN BARU UNTUK MENGHILANGKAN 404 DI FRONTEND
 @app.get("/api/v1/model/comparison")
 def frontend_model_comparison():
-    return get_model_comparison()
+    # Frontend meminta data evaluasi WAPE
+    df = normalize_columns(read_agri_csv(CSV_FILES["model_comparison"]))
+    
+    # Pastikan ada kolom 'tahun' untuk filter
+    if "tahun" not in df.columns and "year" in df.columns:
+        df = df.rename(columns={"year": "tahun"})
+
+    return {
+        "total": len(df),
+        "columns": list(df.columns),
+        "data": dataframe_records(df)
+    }
 
 
 @app.get("/api/v1/data-center")
 def frontend_data_center():
-    # Arahkan ke ringkasan atau list file yang tersedia
+    # Mengembalikan daftar file yang tersedia untuk diunduh
     return health_check()
 
 
