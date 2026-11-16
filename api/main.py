@@ -68,7 +68,7 @@ if SECRET_KEY == "agri-dash-secret-key-change-this":
 # 2. KONFIGURASI DATASET
 # =========================================================
 
-# PERUBAHAN: Membaca file langsung dari folder output/
+# Membaca file langsung dari folder output/
 DATA_DIR = PROJECT_DIR / "output"
 
 # Laporan (jika ada folder outputs/reports)
@@ -1506,7 +1506,7 @@ def get_clustering():
 
 
 # =========================================================
-# 22. PCA
+# 22. PCA (DIPERBAIKI UNTUK POSTGRESQL)
 # =========================================================
 
 @app.get("/api/v1/model/pca")
@@ -1518,29 +1518,33 @@ def get_pca():
     if len(df) < 2:
         raise HTTPException(
             status_code=400,
-            detail="Data tidak cukup untuk PCA."
+            detail="Data tidak cukup untuk PCA (minimal 2 baris)."
         )
 
     cluster_col = get_cluster_column(df)
     kecamatan_col = get_kecamatan_column(df)
 
+    # Ambil hanya kolom numerik dan pastikan tipenya benar
     numeric_df = df.select_dtypes(
         include=[np.number]
     ).copy()
 
+    # Konversi paksa semua kolom numerik ke float
+    for col in numeric_df.columns:
+        numeric_df[col] = pd.to_numeric(
+            numeric_df[col],
+            errors="coerce"
+        )
+
+    # Kolom yang harus dikecualikan
     exclude = {
-        "id",
-        "no",
-        "nomor",
-        "cluster_id",
-        "cluster_agg_id",
+        "id", "no", "nomor",
+        "cluster_id", "cluster_agg_id",
         "total_produksi_mean"
     }
 
     if cluster_col:
-        exclude.add(
-            str(cluster_col).lower()
-        )
+        exclude.add(str(cluster_col).lower())
 
     numeric_df = numeric_df[
         [
@@ -1562,7 +1566,10 @@ def get_pca():
     if numeric_df.shape[1] < 2:
         raise HTTPException(
             status_code=400,
-            detail="PCA membutuhkan dua fitur numerik."
+            detail=(
+                f"PCA membutuhkan minimal dua fitur numerik. "
+                f"Kolom tersedia: {list(numeric_df.columns)}"
+            )
         )
 
     numeric_df = numeric_df.fillna(
