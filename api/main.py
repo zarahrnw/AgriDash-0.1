@@ -71,30 +71,57 @@ USERS_FILE = AUTH_DIR / "users.json"
 AUDIT_FILE = AUTH_DIR / "audit_trail.jsonl"
 FILE_LOCK = threading.Lock()
 
-PRIMARY_DATA_FILE = PANGAN_DIR / "tanaman_panganoutput_rekomendasi_all_scores.csv"
+# Folder hasil pemodelan. Data bisa ada di output/ (hasil notebook) atau data/model_ready/ (hasil preprocessing).
+MODEL_READY_DIR = PROJECT_DIR / "data" / "model_ready"
+PANGAN_SEARCH_DIRS = [PANGAN_DIR, MODEL_READY_DIR / "tanaman_pangan"]
+
+
+def find_output(directories, suffix):
+    """Cari file berdasarkan akhiran nama (tahan terhadap perbedaan prefix, mis. tanaman_pangan_ vs tanaman_pangan)."""
+    for directory in directories:
+        if directory.exists():
+            hits = sorted(directory.glob(f"*{suffix}"))
+            if hits:
+                return hits[0]
+    return directories[0] / suffix
+
+
+PRIMARY_DATA_FILE = find_output(PANGAN_SEARCH_DIRS, "output_rekomendasi_all_scores.csv")
 UPLOAD_DATA_FILE = PANGAN_DIR / "tanaman_pangan_upload.csv"
 
 CSV_FILES = {
     "tanaman_pangan": PRIMARY_DATA_FILE,
-    "clustering": PANGAN_DIR / "tanaman_panganoutput_clustering_pangan.csv",
-    "rekomendasi": PANGAN_DIR / "tanaman_panganoutput_rekomendasi_pangan.csv",
-    "rekomendasi_all_scores": PANGAN_DIR / "tanaman_panganoutput_rekomendasi_all_scores.csv",
-    "timeseries": PANGAN_DIR / "tanaman_panganoutput_timeseries_pangan.csv",
-    "model_comparison": PANGAN_DIR / "tanaman_panganoutput_model_comparison.csv",
-    "dashboard_summary": PANGAN_DIR / "tanaman_panganoutput_dashboard_summary.csv",
-    
-    # File Hortikultura & Biofarmaka
+    "clustering": find_output(PANGAN_SEARCH_DIRS, "output_clustering_pangan.csv"),
+    "rekomendasi": find_output(PANGAN_SEARCH_DIRS, "output_rekomendasi_pangan.csv"),
+    "rekomendasi_all_scores": PRIMARY_DATA_FILE,
+    "timeseries": find_output(PANGAN_SEARCH_DIRS, "output_timeseries_pangan.csv"),
+    "model_comparison": find_output(PANGAN_SEARCH_DIRS, "output_model_comparison.csv"),
+    "dashboard_summary": find_output(PANGAN_SEARCH_DIRS, "output_dashboard_summary.csv"),
+
+    # Hortikultura & Biofarmaka (output/)
     "hortikultura_klaster": HORTI_DIR / "klaster_kecamatan_hortikultura.csv",
     "hortikultura_prediksi": HORTI_DIR / "prediksi_ets_hortikultura.csv",
     "biofarmaka_klaster": BIO_DIR / "klaster_kecamatan_biofarmaka.csv",
-    "biofarmaka_prediksi": BIO_DIR / "prediksi_ets_biofarmaka.csv"
+    "biofarmaka_prediksi": BIO_DIR / "prediksi_ets_biofarmaka.csv",
+
+    # Laporan analisis (data/model_ready/)
+    "biofarmaka_backtest": MODEL_READY_DIR / "backtest_forecast_biofarmaka.csv",
+    "hortikultura_backtest": MODEL_READY_DIR / "backtest_forecast_hortikultura.csv",
+    "biofarmaka_evaluasi_klaster": MODEL_READY_DIR / "evaluasi_klaster_biofarmaka.csv",
+    "hortikultura_evaluasi_klaster": MODEL_READY_DIR / "evaluasi_klaster_hortikultura.csv",
+    "dokumentasi_preprocessing": MODEL_READY_DIR / "dokumentasi_preprocessing.csv",
+    "konflik_satuan": MODEL_READY_DIR / "konflik_satuan.csv",
+    "inspeksi_dataset": MODEL_READY_DIR / "ringkasan_inspeksi_dataset.csv",
+    "statistik_keseluruhan": MODEL_READY_DIR / "statistik_deskriptif_keseluruhan.csv",
+    "statistik_per_komoditas": MODEL_READY_DIR / "statistik_deskriptif_per_komoditas.csv",
+    "hortikultura_produktivitas_ekstrem": MODEL_READY_DIR / "produktivitas_ekstrem_hortikultura.csv",
 }
 
 REQUIRED_COLUMNS = ["kecamatan", "tanaman", "luas_panen_ha", "produksi_ton", "produktivitas_kuintal_ha"]
 NUMERIC_COLUMNS = ["luas_panen_ha", "produksi_ton", "produktivitas_kuintal_ha"]
 
 # Load Model Bundle .pkl (Tanaman Pangan)
-MODEL_BUNDLE_PATH = PANGAN_DIR / "tanaman_panganagridash_model_bundle.pkl"
+MODEL_BUNDLE_PATH = find_output(PANGAN_SEARCH_DIRS, "agridash_model_bundle.pkl")
 MODEL_BUNDLE = None
 
 def load_bundle():
@@ -504,7 +531,7 @@ def upload_tanaman_pangan(file: UploadFile = File(...), current_user: dict = Dep
 
     for col in NUMERIC_COLUMNS: df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    PANGAN_DIR.mkdir(parents=True, exist_ok=True)
     with FILE_LOCK:
         with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8-sig", suffix=".csv", dir=PANGAN_DIR, newline="", delete=False) as temp:
             df.to_csv(temp, index=False)
@@ -881,6 +908,53 @@ def _count_col(df, cands):
     return int(df[col].notna().sum()) if col else 0
 
 
+STAT_ALIASES = {
+    "tahun": ["tahun", "year", "periode"],
+    "kecamatan": ["kecamatan", "wilayah"],
+    "komoditas": ["komoditas", "tanaman", "jenis_tanaman"],
+    "produksi": ["produksi", "produksi_kg", "produksi_ton"],
+    "luas": ["luas", "luas_panen", "luas_panen_ha", "luas_ha"],
+    "produktivitas": ["produktivitas", "produktivitas_kuintal_ha", "produktivitas_kg_ha"],
+}
+STAT_LABELS = {"count", "unique", "mean", "std", "min", "max", "top", "freq"}
+
+
+def _stat_value(value):
+    if value is None or (isinstance(value, float) and pd.isna(value)):
+        return None
+    number = safe_float(value)
+    return number if number is not None else str(value)
+
+
+def load_stats_file(path):
+    """Baca statistik_deskriptif_*.csv (format describe()) -> {variabel: {count, unique, ...}}."""
+    if not path or not path.exists():
+        return {}
+    try:
+        df = normalize_columns(read_csv_excel(path))
+    except Exception:
+        return {}
+    if df.empty or len(df.columns) < 2:
+        return {}
+    first = df.columns[0]
+    labels = df[first].astype(str).str.strip().str.lower()
+    raw = {}
+    if labels.isin(STAT_LABELS).any():  # baris = statistik, kolom = variabel
+        for col in df.columns[1:]:
+            raw[col] = {lab: _stat_value(v) for lab, v in zip(labels, df[col])}
+    elif any(c in STAT_LABELS for c in df.columns):  # baris = variabel
+        for _, row in df.iterrows():
+            key = normalize_text(row[first]).replace(" ", "_")
+            raw[key] = {c: _stat_value(row[c]) for c in df.columns[1:] if c in STAT_LABELS}
+    out = {}
+    for target, cands in STAT_ALIASES.items():
+        for cand in cands:
+            if cand in raw:
+                out[target] = raw[cand]
+                break
+    return out
+
+
 def build_overview(prefix):
     kl_path = CSV_FILES[f"{prefix}_klaster"]
     pr_path = CSV_FILES[f"{prefix}_prediksi"]
@@ -926,6 +1000,10 @@ def build_overview(prefix):
         "produktivitas": {"count": _count_col(base, ["produktivitas", "produktivitas_kuintal_ha", "produktivitas_mean"])},
     }
 
+    # Statistik resmi dari data/model_ready/statistik_deskriptif_keseluruhan.csv menimpa hitungan sementara
+    for key, value in load_stats_file(CSV_FILES.get("statistik_keseluruhan")).items():
+        stats[key] = {**stats.get(key, {}), **value}
+
     # --- top 5 komoditas & kecamatan
     top_komoditas, top_kecamatan = [], []
     if pr is not None and pr_kom and pr_val:
@@ -937,16 +1015,36 @@ def build_overview(prefix):
         s = pr.assign(_v=to_num(pr[pr_val])).groupby(pr_kec)["_v"].sum().sort_values(ascending=False)
         top_kecamatan = [str(i) for i in s.head(5).index]
 
-    laporan = {
-        "klaster": {"filename": kl_path.name, "available": kl_path.exists(), "file_key": f"{prefix}_klaster"},
-        "prediksi": {"filename": pr_path.name, "available": pr_path.exists(), "file_key": f"{prefix}_prediksi"},
+    report_keys = {
+        "backtest": f"{prefix}_backtest",
+        "preprocessing": "dokumentasi_preprocessing",
+        "evaluasi_klaster": f"{prefix}_evaluasi_klaster",
+        "klaster": f"{prefix}_klaster",
+        "konflik_satuan": "konflik_satuan",
+        "inspeksi": "inspeksi_dataset",
+        "statistik": "statistik_keseluruhan",
+        "statistik_komoditas": "statistik_per_komoditas",
     }
+    laporan = {}
+    for label, file_key in report_keys.items():
+        path = CSV_FILES[file_key]
+        laporan[label] = {"filename": path.name, "available": path.exists(), "file_key": file_key}
+
+    backtest = []
+    bt_path = CSV_FILES.get(f"{prefix}_backtest")
+    if bt_path and bt_path.exists():
+        try:
+            backtest = extract_backtest(normalize_columns(read_csv_excel(bt_path)))
+        except Exception:
+            backtest = []
+    if not backtest:
+        backtest = extract_backtest(pr)
 
     return {
         "kategori": prefix,
         "statistik": stats,
         "klaster": records,
-        "backtest": extract_backtest(pr),
+        "backtest": backtest,
         "laporan": laporan,
         "top_komoditas": top_komoditas,
         "top_kecamatan": top_kecamatan,
